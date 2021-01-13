@@ -218,8 +218,7 @@
       "items": {
         "title": "An object value",
         "required": [
-          "name",
-          "type"
+          "name"
         ],
         "properties": {
           "name": {

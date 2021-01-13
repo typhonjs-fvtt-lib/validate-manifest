@@ -35,30 +35,44 @@
       "default": "",
       "pattern": "^(.*)$",
       "examples": [
-        "ft"
+        "ft, m"
       ],
       "$id": "#/definitions/gridUnits",
       "type": "string"
     },
     "primaryTokenAttribute": {
-      "title": "A string value",
+      "title": "A string value or null",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "resources.health"
       ],
       "$id": "#/definitions/primaryTokenAttribute",
-      "type": "string"
+      "anyOf": [
+        {
+          "pattern": "^(.*)$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "secondaryTokenAttribute": {
-      "title": "A string value",
+      "title": "A string value or null",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "resources.power"
       ],
       "$id": "#/definitions/secondaryTokenAttribute",
-      "type": "string"
+      "anyOf": [
+        {
+          "pattern": "^(.*)$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
     }
   }
 }

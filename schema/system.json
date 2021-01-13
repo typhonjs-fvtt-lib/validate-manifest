@@ -30,6 +30,72 @@
     },
     "minimumCoreVersion": {
       "$ref": "shared/shared-base.json#/definitions/minimumCoreVersion"
+    },
+    "compatibleCoreVersion": {
+      "$ref": "shared/shared-base.json#/definitions/compatibleCoreVersion"
+    },
+    "scripts": {
+      "$ref": "shared/shared-base.json#/definitions/scripts"
+    },
+    "esmodules": {
+      "$ref": "shared/shared-base.json#/definitions/esmodules"
+    },
+    "styles": {
+      "$ref": "shared/shared-base.json#/definitions/styles"
+    },
+    "packs": {
+      "$ref": "shared/shared-base.json#/definitions/packs"
+    },
+    "dependencies": {
+      "$ref": "shared/shared-base.json#/definitions/dependencies"
+    },
+    "languages": {
+      "$ref": "shared/shared-base.json#/definitions/languages"
+    },
+    "authors": {
+      "$ref": "shared/shared-base.json#/definitions/authors"
+    },
+    "socket": {
+      "$ref": "shared/shared-base.json#/definitions/socket"
+    },
+    "templateVersion": {
+      "$ref": "shared/shared-system.json#/definitions/templateVersion"
+    },
+    "initiative": {
+      "$ref": "shared/shared-system.json#/definitions/initiative"
+    },
+    "gridDistance": {
+      "$ref": "shared/shared-system.json#/definitions/gridDistance"
+    },
+    "gridUnits": {
+      "$ref": "shared/shared-system.json#/definitions/gridUnits"
+    },
+    "primaryTokenAttribute": {
+      "$ref": "shared/shared-system.json#/definitions/primaryTokenAttribute"
+    },
+    "secondaryTokenAttribute": {
+      "$ref": "shared/shared-system.json#/definitions/secondaryTokenAttribute"
+    },
+    "url": {
+      "$ref": "shared/shared-base.json#/definitions/url"
+    },
+    "manifest": {
+      "$ref": "shared/shared-base.json#/definitions/manifest"
+    },
+    "download": {
+      "$ref": "shared/shared-base.json#/definitions/download"
+    },
+    "license": {
+      "$ref": "shared/shared-base.json#/definitions/license"
+    },
+    "readme": {
+      "$ref": "shared/shared-base.json#/definitions/readme"
+    },
+    "bugs": {
+      "$ref": "shared/shared-base.json#/definitions/bugs"
+    },
+    "changelog": {
+      "$ref": "shared/shared-base.json#/definitions/changelog"
     }
   }
 }
