@@ -53,7 +53,14 @@
       "$ref": "shared/shared-base.json#/definitions/languages"
     },
     "system": {
-      "$ref": "shared/shared-module.json#/definitions/system"
+      "oneOf": [
+        {
+          "$ref": "shared/shared-base.json#/definitions/system"
+        },
+        {
+          "$ref": "shared/shared-base.json#/definitions/systems"
+        }
+      ]
     },
     "authors": {
       "$ref": "shared/shared-base.json#/definitions/authors"

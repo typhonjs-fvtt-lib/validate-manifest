@@ -124,9 +124,26 @@
         "required": [
           "name",
           "label",
-          "system",
           "path",
           "entity"
+        ],
+        "oneOf": [
+          {
+            "required": [
+              "module"
+            ]
+          },
+          {
+            "required": [
+              "system"
+            ]
+          },
+          {
+            "required": [
+              "module",
+              "system"
+            ]
+          }
         ],
         "properties": {
           "name": {
@@ -149,15 +166,25 @@
             "$id": "#/definitions/packs/items/properties/label",
             "type": "string"
           },
-          "system": {
+          "module": {
             "title": "A string value",
             "default": "",
             "pattern": "^(.*)$",
             "examples": [
-              "system-name"
+              "module-name"
             ],
-            "$id": "#/definitions/packs/items/properties/system",
+            "$id": "#/definitions/packs/items/properties/module",
             "type": "string"
+          },
+          "system": {
+            "oneOf": [
+              {
+                "$ref": "#/definitions/system"
+              },
+              {
+                "$ref": "#/definitions/systems"
+              }
+            ]
           },
           "path": {
             "title": "A string value",
@@ -277,6 +304,31 @@
         "type": "object"
       },
       "$id": "#/definitions/languages",
+      "type": "array"
+    },
+    "system": {
+      "title": "A string value",
+      "default": "",
+      "pattern": "^(.*)$",
+      "examples": [
+        "dnd5e"
+      ],
+      "$id": "#/definitions/system",
+      "type": "string"
+    },
+    "systems": {
+      "title": "An array of items",
+      "items": {
+        "title": "A string value",
+        "default": "",
+        "pattern": "^(.*)$",
+        "examples": [
+          "dnd5e"
+        ],
+        "$id": "#/definitions/systems/items",
+        "type": "string"
+      },
+      "$id": "#/definitions/systems",
       "type": "array"
     },
     "authors": {
