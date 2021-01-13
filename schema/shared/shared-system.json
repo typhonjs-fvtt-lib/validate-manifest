@@ -1,0 +1,64 @@
+{
+  "$id": "shared/shared-system.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "templateVersion": {
+      "title": "An integer value",
+      "default": 0,
+      "examples": [
+        2
+      ],
+      "$id": "#/definitions/templateVersion",
+      "type": "integer"
+    },
+    "initiative": {
+      "title": "A string value",
+      "default": "",
+      "pattern": "^(.*)$",
+      "examples": [
+        "1d20"
+      ],
+      "$id": "#/definitions/initiative",
+      "type": "string"
+    },
+    "gridDistance": {
+      "title": "An integer value",
+      "default": 0,
+      "examples": [
+        5
+      ],
+      "$id": "#/definitions/gridDistance",
+      "type": "integer"
+    },
+    "gridUnits": {
+      "title": "A string value",
+      "default": "",
+      "pattern": "^(.*)$",
+      "examples": [
+        "ft"
+      ],
+      "$id": "#/definitions/gridUnits",
+      "type": "string"
+    },
+    "primaryTokenAttribute": {
+      "title": "A string value",
+      "default": "",
+      "pattern": "^(.*)$",
+      "examples": [
+        "resources.health"
+      ],
+      "$id": "#/definitions/primaryTokenAttribute",
+      "type": "string"
+    },
+    "secondaryTokenAttribute": {
+      "title": "A string value",
+      "default": "",
+      "pattern": "^(.*)$",
+      "examples": [
+        "resources.power"
+      ],
+      "$id": "#/definitions/secondaryTokenAttribute",
+      "type": "string"
+    }
+  }
+}

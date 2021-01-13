@@ -1,0 +1,86 @@
+{
+  "$id": "validateModule",
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FoundryVTT module.json",
+  "definitions": {},
+  "required": [
+    "name",
+    "title",
+    "description",
+    "author",
+    "version",
+    "minimumCoreVersion"
+  ],
+  "properties": {
+    "name": {
+      "$ref": "shared/shared-base.json#/definitions/name"
+    },
+    "title": {
+      "$ref": "shared/shared-base.json#/definitions/title"
+    },
+    "description": {
+      "$ref": "shared/shared-base.json#/definitions/description"
+    },
+    "author": {
+      "$ref": "shared/shared-base.json#/definitions/author"
+    },
+    "version": {
+      "$ref": "shared/shared-base.json#/definitions/version"
+    },
+    "minimumCoreVersion": {
+      "$ref": "shared/shared-base.json#/definitions/minimumCoreVersion"
+    },
+    "compatibleCoreVersion": {
+      "$ref": "shared/shared-base.json#/definitions/compatibleCoreVersion"
+    },
+    "scripts": {
+      "$ref": "shared/shared-base.json#/definitions/scripts"
+    },
+    "esmodules": {
+      "$ref": "shared/shared-base.json#/definitions/esmodules"
+    },
+    "styles": {
+      "$ref": "shared/shared-base.json#/definitions/styles"
+    },
+    "packs": {
+      "$ref": "shared/shared-base.json#/definitions/packs"
+    },
+    "dependencies": {
+      "$ref": "shared/shared-base.json#/definitions/dependencies"
+    },
+    "languages": {
+      "$ref": "shared/shared-base.json#/definitions/languages"
+    },
+    "system": {
+      "$ref": "shared/shared-module.json#/definitions/system"
+    },
+    "authors": {
+      "$ref": "shared/shared-base.json#/definitions/authors"
+    },
+    "socket": {
+      "$ref": "shared/shared-base.json#/definitions/socket"
+    },
+    "url": {
+      "$ref": "shared/shared-base.json#/definitions/url"
+    },
+    "manifest": {
+      "$ref": "shared/shared-base.json#/definitions/manifest"
+    },
+    "download": {
+      "$ref": "shared/shared-base.json#/definitions/download"
+    },
+    "license": {
+      "$ref": "shared/shared-base.json#/definitions/license"
+    },
+    "readme": {
+      "$ref": "shared/shared-base.json#/definitions/readme"
+    },
+    "bugs": {
+      "$ref": "shared/shared-base.json#/definitions/bugs"
+    },
+    "changelog": {
+      "$ref": "shared/shared-base.json#/definitions/changelog"
+    }
+  }
+}

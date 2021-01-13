@@ -1,0 +1,6 @@
+{
+  "$id": "shared/shared-manifest+.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "name": "a-module",
+  "title": "A Module",
+  "description": "Some description",
+  "author": "typhonrt",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.7.5",
+
+  "compatibleCoreVersion": "1.0.0",
+
+  "scripts": ["ascript.js"],
+  "esmodules": ["index.js"],
+  "styles": ["styles.css"],
+
+  "packs": [
+    {
+      "name": "pack-name",
+      "label": "Pack Title",
+      "system": "system-name",
+      "path": "./packs/pack-name.db",
+      "entity": "Item"
+    },
+    {
+      "name": "pack-name B",
+      "label": "Pack Title B",
+      "system": ["system-1", "system-2"],
+      "path": "./packs/pack-name.db",
+      "entity": "Item"
+    },
+    {
+      "name": "myscenedatabasename",
+      "label": "The Human-Readable Name for My Compendium",
+      "module": "MyModuleName",
+      "path": "packs/my-scenes-right-here.db",
+      "entity": "Scene"
+    }
+  ],
+
+  "dependencies": [
+    {
+      "name": "dice-so-nice",
+      "manifest": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/2.0.3/module/module.json",
+      "type": "module"
+    }
+  ],
+
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+
+  "system": "dnd5e",
+
+  "authors": [
+    {
+      "name": "Atropos",
+      "email": "admin@foundryvtt.com",
+      "url": "https://foundryvtt.com"
+    }
+  ],
+
+  "socket": true,
+
+  "url": "https://someaddress.com/",
+  "manifest": "https://someaddress.com/module.json",
+  "download": "https://someaddress.com/module.zip",
+
+  "license": "LICENSE",
+  "readme": "README.md",
+
+  "bugs": "https://github.com/some-user/a-module/issues",
+  "changelog": "https://github.com/some-user/a-module/releases"
+}
