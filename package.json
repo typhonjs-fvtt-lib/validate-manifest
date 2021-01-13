@@ -1,5 +1,5 @@
 {
-  "name": "fvttdev",
+  "name": "manifest-plus",
   "description": "Provides JSON schemas for FVTT module / system manifests & manifest+ extensions.",
   "version": "0.0.0",
   "author": "typhonrt",
@@ -13,6 +13,7 @@
     "chai": "^4.0.0",
     "eslint": "^7.0.0",
     "gitdown": "^3.0.0",
+    "husky": "^5.0.0",
     "mocha": "^8.0.0",
     "nyc": "^15.0.0",
     "prettier": "^2.0.0",
@@ -42,5 +43,10 @@
     "compile-validators": "ajv compile --all-errors --inline-refs=false -s \"schema/*.json\" -r \"schema/shared/*.json\" -c ajv-keywords/dist/keywords/typeof -o > dist/validators.js && prettier --write \"./dist/validators.js\"",
     "create-specification": "gitdown ./.specification/ManifestPlus.md --output-file ./ManifestPlus.md",
     "test": "nyc mocha --forbid-only \"test/src/**/*.test.js\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run compile-validators && npm run test && npm run create-specification"
+    }
   }
 }
