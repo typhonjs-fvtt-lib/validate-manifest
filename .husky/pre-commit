@@ -1,7 +1,0 @@
-#!/bin/sh
-. "$(dirname $0)/_/husky.sh"
-
-npm run compile-validators
-npm test
-npm run create-specification
-git add -A .
