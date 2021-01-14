@@ -6,14 +6,22 @@
 module.exports = {
    group: {
       validateModule: true,
+      validateModuleStrict: true,
       validateModulePlus: true,
+      validateModulePlusStrict: true,
       validateSystem: true,
+      validateSystemStrict: true,
       validateSystemPlus: true,
+      validateSystemPlusStrict: true
    },
    type: {
-      validBase: true,
       invalidBase: true,
+      invalidBaseStrict: true,
+      invalidPlus: true,
+      invalidPlusStrict: true,
+      validBase: true,
+      validBaseStrict: true,
       validPlus: true,
-      invalidPlus: true
+      validPlusStrict: true
    }
 };

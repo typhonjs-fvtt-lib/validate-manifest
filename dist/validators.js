@@ -245,10 +245,9 @@ function validate60(
 const schema23 = {
   title: "A string value",
   default: "",
-  pattern: "^(.*)$",
   examples: ["1.0.0"],
   $id: "#/definitions/version",
-  type: "string",
+  oneOf: [{ type: "string", pattern: "^(.*)$" }, { type: "number" }],
 };
 function validate62(
   data,
@@ -256,12 +255,16 @@ function validate62(
 ) {
   /*# sourceURL="#/definitions/version" */ let vErrors = null;
   let errors = 0;
+  const _errs0 = errors;
+  let valid0 = false;
+  let passing0 = null;
+  const _errs1 = errors;
   if (typeof data === "string") {
     if (!pattern0.test(data)) {
       const err0 = {
         keyword: "pattern",
         dataPath,
-        schemaPath: "#/pattern",
+        schemaPath: "#/oneOf/0/pattern",
         params: { pattern: "^(.*)$" },
         message: 'should match pattern "' + "^(.*)$" + '"',
       };
@@ -276,7 +279,7 @@ function validate62(
     const err1 = {
       keyword: "type",
       dataPath,
-      schemaPath: "#/type",
+      schemaPath: "#/oneOf/0/type",
       params: { type: "string" },
       message: "should be string",
     };
@@ -286,6 +289,61 @@ function validate62(
       vErrors.push(err1);
     }
     errors++;
+  }
+  var _valid0 = _errs1 === errors;
+  if (_valid0) {
+    valid0 = true;
+    passing0 = 0;
+  }
+  const _errs2 = errors;
+  if (!(typeof data == "number" && isFinite(data))) {
+    const err2 = {
+      keyword: "type",
+      dataPath,
+      schemaPath: "#/oneOf/1/type",
+      params: { type: "number" },
+      message: "should be number",
+    };
+    if (vErrors === null) {
+      vErrors = [err2];
+    } else {
+      vErrors.push(err2);
+    }
+    errors++;
+  }
+  var _valid0 = _errs2 === errors;
+  if (_valid0 && valid0) {
+    valid0 = false;
+    passing0 = [passing0, 1];
+  } else {
+    if (_valid0) {
+      valid0 = true;
+      passing0 = 1;
+    }
+  }
+  if (!valid0) {
+    const err3 = {
+      keyword: "oneOf",
+      dataPath,
+      schemaPath: "#/oneOf",
+      params: { passingSchemas: passing0 },
+      message: "should match exactly one schema in oneOf",
+    };
+    if (vErrors === null) {
+      vErrors = [err3];
+    } else {
+      vErrors.push(err3);
+    }
+    errors++;
+  } else {
+    errors = _errs0;
+    if (vErrors !== null) {
+      if (_errs0) {
+        vErrors.length = _errs0;
+      } else {
+        vErrors = null;
+      }
+    }
   }
   validate62.errors = vErrors;
   return errors === 0;
@@ -3164,12 +3222,16 @@ function validate117(
 ) {
   /*# sourceURL="#/definitions/version" */ let vErrors = null;
   let errors = 0;
+  const _errs0 = errors;
+  let valid0 = false;
+  let passing0 = null;
+  const _errs1 = errors;
   if (typeof data === "string") {
     if (!pattern0.test(data)) {
       const err0 = {
         keyword: "pattern",
         dataPath,
-        schemaPath: "#/pattern",
+        schemaPath: "#/oneOf/0/pattern",
         params: { pattern: "^(.*)$" },
         message: 'should match pattern "' + "^(.*)$" + '"',
       };
@@ -3184,7 +3246,7 @@ function validate117(
     const err1 = {
       keyword: "type",
       dataPath,
-      schemaPath: "#/type",
+      schemaPath: "#/oneOf/0/type",
       params: { type: "string" },
       message: "should be string",
     };
@@ -3194,6 +3256,61 @@ function validate117(
       vErrors.push(err1);
     }
     errors++;
+  }
+  var _valid0 = _errs1 === errors;
+  if (_valid0) {
+    valid0 = true;
+    passing0 = 0;
+  }
+  const _errs2 = errors;
+  if (!(typeof data == "number" && isFinite(data))) {
+    const err2 = {
+      keyword: "type",
+      dataPath,
+      schemaPath: "#/oneOf/1/type",
+      params: { type: "number" },
+      message: "should be number",
+    };
+    if (vErrors === null) {
+      vErrors = [err2];
+    } else {
+      vErrors.push(err2);
+    }
+    errors++;
+  }
+  var _valid0 = _errs2 === errors;
+  if (_valid0 && valid0) {
+    valid0 = false;
+    passing0 = [passing0, 1];
+  } else {
+    if (_valid0) {
+      valid0 = true;
+      passing0 = 1;
+    }
+  }
+  if (!valid0) {
+    const err3 = {
+      keyword: "oneOf",
+      dataPath,
+      schemaPath: "#/oneOf",
+      params: { passingSchemas: passing0 },
+      message: "should match exactly one schema in oneOf",
+    };
+    if (vErrors === null) {
+      vErrors = [err3];
+    } else {
+      vErrors.push(err3);
+    }
+    errors++;
+  } else {
+    errors = _errs0;
+    if (vErrors !== null) {
+      if (_errs0) {
+        vErrors.length = _errs0;
+      } else {
+        vErrors = null;
+      }
+    }
   }
   validate117.errors = vErrors;
   return errors === 0;
@@ -5707,5 +5824,607 @@ function validate168(
     errors++;
   }
   validate168.errors = vErrors;
+  return errors === 0;
+}
+exports.validateModuleStrict = validate170;
+const schema77 = {
+  $id: "validateModuleStrict",
+  type: "object",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "FoundryVTT module.json w/ strict requirements",
+  allOf: [{ $ref: "validateModule" }, { $ref: "../shared/strict-base.json" }],
+  definitions: {},
+  properties: {},
+};
+const schema78 = {
+  $id: "shared/strict-base.json",
+  type: "object",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "FoundryVTT shared strict base between module & system.json",
+  definitions: {},
+  properties: {
+    version: { $ref: "shared-strict-base.json#/definitions/version" },
+    minimumCoreVersion: {
+      $ref: "shared-strict-base.json#/definitions/minimumCoreVersion",
+    },
+    compatibleCoreVersion: {
+      $ref: "shared-strict-base.json#/definitions/compatibleCoreVersion",
+    },
+  },
+};
+const schema80 = {
+  title: "A semantic version string value",
+  default: "",
+  examples: ["1.0.0"],
+  $id: "#/definitions/version",
+  type: "string",
+  pattern:
+    "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+  errorMessage:
+    '"version" should be a string that uses semantic versioning; current value: ${/version}',
+};
+const pattern70 = new RegExp(
+  "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+  "u"
+);
+function validate174(
+  data,
+  { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
+) {
+  /*# sourceURL="#/definitions/version" */ let vErrors = null;
+  let errors = 0;
+  if (typeof data === "string") {
+    if (!pattern70.test(data)) {
+      const err0 = {
+        keyword: "pattern",
+        dataPath,
+        schemaPath: "#/pattern",
+        params: {
+          pattern:
+            "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+        },
+        message:
+          'should match pattern "' +
+          "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$" +
+          '"',
+      };
+      if (vErrors === null) {
+        vErrors = [err0];
+      } else {
+        vErrors.push(err0);
+      }
+      errors++;
+    }
+  } else {
+    const err1 = {
+      keyword: "type",
+      dataPath,
+      schemaPath: "#/type",
+      params: { type: "string" },
+      message: "should be string",
+    };
+    if (vErrors === null) {
+      vErrors = [err1];
+    } else {
+      vErrors.push(err1);
+    }
+    errors++;
+  }
+  if (errors > 0) {
+    const emErrs0 = [];
+    for (const err2 of vErrors) {
+      if (
+        err2.keyword !== "errorMessage" &&
+        !err2.emUsed &&
+        (err2.dataPath === dataPath ||
+          (err2.dataPath.indexOf(dataPath) === 0 &&
+            err2.dataPath[dataPath.length] === "/")) &&
+        err2.schemaPath.indexOf("#") === 0 &&
+        err2.schemaPath["#".length] === "/"
+      ) {
+        emErrs0.push(err2);
+        err2.emUsed = true;
+      }
+    }
+    if (emErrs0.length) {
+      const err3 = {
+        keyword: "errorMessage",
+        dataPath,
+        schemaPath: "#/errorMessage",
+        params: { errors: emErrs0 },
+        message:
+          '"version" should be a string that uses semantic versioning; current value: ' +
+          JSON.stringify(rootData && rootData.version),
+      };
+      if (vErrors === null) {
+        vErrors = [err3];
+      } else {
+        vErrors.push(err3);
+      }
+      errors++;
+    }
+    const emErrs1 = [];
+    for (const err4 of vErrors) {
+      if (!err4.emUsed) {
+        emErrs1.push(err4);
+      }
+    }
+    vErrors = emErrs1;
+    errors = emErrs1.length;
+  }
+  validate174.errors = vErrors;
+  return errors === 0;
+}
+const schema81 = {
+  title: "A semantic version string value",
+  default: "",
+  examples: ["1.0.0"],
+  $id: "#/definitions/minimumCoreVersion",
+  type: "string",
+  pattern:
+    "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+  errorMessage:
+    '"minimumCoreVersion" should be a string that uses semantic versioning; current value: ${/minimumCoreVersion}',
+};
+function validate176(
+  data,
+  { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
+) {
+  /*# sourceURL="#/definitions/minimumCoreVersion" */ let vErrors = null;
+  let errors = 0;
+  if (typeof data === "string") {
+    if (!pattern70.test(data)) {
+      const err0 = {
+        keyword: "pattern",
+        dataPath,
+        schemaPath: "#/pattern",
+        params: {
+          pattern:
+            "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+        },
+        message:
+          'should match pattern "' +
+          "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$" +
+          '"',
+      };
+      if (vErrors === null) {
+        vErrors = [err0];
+      } else {
+        vErrors.push(err0);
+      }
+      errors++;
+    }
+  } else {
+    const err1 = {
+      keyword: "type",
+      dataPath,
+      schemaPath: "#/type",
+      params: { type: "string" },
+      message: "should be string",
+    };
+    if (vErrors === null) {
+      vErrors = [err1];
+    } else {
+      vErrors.push(err1);
+    }
+    errors++;
+  }
+  if (errors > 0) {
+    const emErrs0 = [];
+    for (const err2 of vErrors) {
+      if (
+        err2.keyword !== "errorMessage" &&
+        !err2.emUsed &&
+        (err2.dataPath === dataPath ||
+          (err2.dataPath.indexOf(dataPath) === 0 &&
+            err2.dataPath[dataPath.length] === "/")) &&
+        err2.schemaPath.indexOf("#") === 0 &&
+        err2.schemaPath["#".length] === "/"
+      ) {
+        emErrs0.push(err2);
+        err2.emUsed = true;
+      }
+    }
+    if (emErrs0.length) {
+      const err3 = {
+        keyword: "errorMessage",
+        dataPath,
+        schemaPath: "#/errorMessage",
+        params: { errors: emErrs0 },
+        message:
+          '"minimumCoreVersion" should be a string that uses semantic versioning; current value: ' +
+          JSON.stringify(rootData && rootData.minimumCoreVersion),
+      };
+      if (vErrors === null) {
+        vErrors = [err3];
+      } else {
+        vErrors.push(err3);
+      }
+      errors++;
+    }
+    const emErrs1 = [];
+    for (const err4 of vErrors) {
+      if (!err4.emUsed) {
+        emErrs1.push(err4);
+      }
+    }
+    vErrors = emErrs1;
+    errors = emErrs1.length;
+  }
+  validate176.errors = vErrors;
+  return errors === 0;
+}
+const schema82 = {
+  title: "A semantic version string value",
+  default: "",
+  examples: ["1.0.0"],
+  $id: "#/definitions/compatibleCoreVersion",
+  type: "string",
+  pattern:
+    "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+  errorMessage:
+    '"compatibleCoreVersion" should be a string that uses semantic versioning; current value: ${/compatibleCoreVersion}',
+};
+function validate178(
+  data,
+  { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
+) {
+  /*# sourceURL="#/definitions/compatibleCoreVersion" */ let vErrors = null;
+  let errors = 0;
+  if (typeof data === "string") {
+    if (!pattern70.test(data)) {
+      const err0 = {
+        keyword: "pattern",
+        dataPath,
+        schemaPath: "#/pattern",
+        params: {
+          pattern:
+            "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+        },
+        message:
+          'should match pattern "' +
+          "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$" +
+          '"',
+      };
+      if (vErrors === null) {
+        vErrors = [err0];
+      } else {
+        vErrors.push(err0);
+      }
+      errors++;
+    }
+  } else {
+    const err1 = {
+      keyword: "type",
+      dataPath,
+      schemaPath: "#/type",
+      params: { type: "string" },
+      message: "should be string",
+    };
+    if (vErrors === null) {
+      vErrors = [err1];
+    } else {
+      vErrors.push(err1);
+    }
+    errors++;
+  }
+  if (errors > 0) {
+    const emErrs0 = [];
+    for (const err2 of vErrors) {
+      if (
+        err2.keyword !== "errorMessage" &&
+        !err2.emUsed &&
+        (err2.dataPath === dataPath ||
+          (err2.dataPath.indexOf(dataPath) === 0 &&
+            err2.dataPath[dataPath.length] === "/")) &&
+        err2.schemaPath.indexOf("#") === 0 &&
+        err2.schemaPath["#".length] === "/"
+      ) {
+        emErrs0.push(err2);
+        err2.emUsed = true;
+      }
+    }
+    if (emErrs0.length) {
+      const err3 = {
+        keyword: "errorMessage",
+        dataPath,
+        schemaPath: "#/errorMessage",
+        params: { errors: emErrs0 },
+        message:
+          '"compatibleCoreVersion" should be a string that uses semantic versioning; current value: ' +
+          JSON.stringify(rootData && rootData.compatibleCoreVersion),
+      };
+      if (vErrors === null) {
+        vErrors = [err3];
+      } else {
+        vErrors.push(err3);
+      }
+      errors++;
+    }
+    const emErrs1 = [];
+    for (const err4 of vErrors) {
+      if (!err4.emUsed) {
+        emErrs1.push(err4);
+      }
+    }
+    vErrors = emErrs1;
+    errors = emErrs1.length;
+  }
+  validate178.errors = vErrors;
+  return errors === 0;
+}
+function validate172(
+  data,
+  { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
+) {
+  /*# sourceURL="shared/strict-base.json" */ let vErrors = null;
+  let errors = 0;
+  if (data && typeof data == "object" && !Array.isArray(data)) {
+    if (data.version !== undefined) {
+      if (
+        !validate174(data.version, {
+          dataPath: dataPath + "/version",
+          parentData: data,
+          parentDataProperty: "version",
+          rootData,
+        })
+      ) {
+        vErrors =
+          vErrors === null
+            ? validate174.errors
+            : vErrors.concat(validate174.errors);
+        errors = vErrors.length;
+      }
+    }
+    if (data.minimumCoreVersion !== undefined) {
+      if (
+        !validate176(data.minimumCoreVersion, {
+          dataPath: dataPath + "/minimumCoreVersion",
+          parentData: data,
+          parentDataProperty: "minimumCoreVersion",
+          rootData,
+        })
+      ) {
+        vErrors =
+          vErrors === null
+            ? validate176.errors
+            : vErrors.concat(validate176.errors);
+        errors = vErrors.length;
+      }
+    }
+    if (data.compatibleCoreVersion !== undefined) {
+      if (
+        !validate178(data.compatibleCoreVersion, {
+          dataPath: dataPath + "/compatibleCoreVersion",
+          parentData: data,
+          parentDataProperty: "compatibleCoreVersion",
+          rootData,
+        })
+      ) {
+        vErrors =
+          vErrors === null
+            ? validate178.errors
+            : vErrors.concat(validate178.errors);
+        errors = vErrors.length;
+      }
+    }
+  } else {
+    const err0 = {
+      keyword: "type",
+      dataPath,
+      schemaPath: "#/type",
+      params: { type: "object" },
+      message: "should be object",
+    };
+    if (vErrors === null) {
+      vErrors = [err0];
+    } else {
+      vErrors.push(err0);
+    }
+    errors++;
+  }
+  validate172.errors = vErrors;
+  return errors === 0;
+}
+function validate170(
+  data,
+  { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
+) {
+  /*# sourceURL="validateModuleStrict" */ let vErrors = null;
+  let errors = 0;
+  if (
+    !validate52(data, { dataPath, parentData, parentDataProperty, rootData })
+  ) {
+    vErrors =
+      vErrors === null ? validate52.errors : vErrors.concat(validate52.errors);
+    errors = vErrors.length;
+  }
+  if (
+    !validate172(data, { dataPath, parentData, parentDataProperty, rootData })
+  ) {
+    vErrors =
+      vErrors === null
+        ? validate172.errors
+        : vErrors.concat(validate172.errors);
+    errors = vErrors.length;
+  }
+  if (!(data && typeof data == "object" && !Array.isArray(data))) {
+    const err0 = {
+      keyword: "type",
+      dataPath,
+      schemaPath: "#/type",
+      params: { type: "object" },
+      message: "should be object",
+    };
+    if (vErrors === null) {
+      vErrors = [err0];
+    } else {
+      vErrors.push(err0);
+    }
+    errors++;
+  }
+  validate170.errors = vErrors;
+  return errors === 0;
+}
+exports.validateModulePlusStrict = validate181;
+const schema83 = {
+  $id: "validateModulePlusStrict",
+  type: "object",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "FoundryVTT module.json w/ manifest+ and strict requirements",
+  allOf: [
+    { $ref: "validateModulePlus" },
+    { $ref: "../shared/strict-base.json" },
+  ],
+  definitions: {},
+  properties: {},
+};
+function validate181(
+  data,
+  { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
+) {
+  /*# sourceURL="validateModulePlusStrict" */ let vErrors = null;
+  let errors = 0;
+  if (
+    !validate106(data, { dataPath, parentData, parentDataProperty, rootData })
+  ) {
+    vErrors =
+      vErrors === null
+        ? validate106.errors
+        : vErrors.concat(validate106.errors);
+    errors = vErrors.length;
+  }
+  if (
+    !validate172(data, { dataPath, parentData, parentDataProperty, rootData })
+  ) {
+    vErrors =
+      vErrors === null
+        ? validate172.errors
+        : vErrors.concat(validate172.errors);
+    errors = vErrors.length;
+  }
+  if (!(data && typeof data == "object" && !Array.isArray(data))) {
+    const err0 = {
+      keyword: "type",
+      dataPath,
+      schemaPath: "#/type",
+      params: { type: "object" },
+      message: "should be object",
+    };
+    if (vErrors === null) {
+      vErrors = [err0];
+    } else {
+      vErrors.push(err0);
+    }
+    errors++;
+  }
+  validate181.errors = vErrors;
+  return errors === 0;
+}
+exports.validateSystemStrict = validate184;
+const schema84 = {
+  $id: "validateSystemStrict",
+  type: "object",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "FoundryVTT system.json w/ strict requirements",
+  allOf: [{ $ref: "validateSystem" }, { $ref: "../shared/strict-base.json" }],
+  definitions: {},
+  properties: {},
+};
+function validate184(
+  data,
+  { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
+) {
+  /*# sourceURL="validateSystemStrict" */ let vErrors = null;
+  let errors = 0;
+  if (
+    !validate108(data, { dataPath, parentData, parentDataProperty, rootData })
+  ) {
+    vErrors =
+      vErrors === null
+        ? validate108.errors
+        : vErrors.concat(validate108.errors);
+    errors = vErrors.length;
+  }
+  if (
+    !validate172(data, { dataPath, parentData, parentDataProperty, rootData })
+  ) {
+    vErrors =
+      vErrors === null
+        ? validate172.errors
+        : vErrors.concat(validate172.errors);
+    errors = vErrors.length;
+  }
+  if (!(data && typeof data == "object" && !Array.isArray(data))) {
+    const err0 = {
+      keyword: "type",
+      dataPath,
+      schemaPath: "#/type",
+      params: { type: "object" },
+      message: "should be object",
+    };
+    if (vErrors === null) {
+      vErrors = [err0];
+    } else {
+      vErrors.push(err0);
+    }
+    errors++;
+  }
+  validate184.errors = vErrors;
+  return errors === 0;
+}
+exports.validateSystemPlusStrict = validate187;
+const schema85 = {
+  $id: "validateSystemPlusStrict",
+  type: "object",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "FoundryVTT system.json w/ manifest+",
+  allOf: [
+    { $ref: "validateSystemPlus" },
+    { $ref: "../shared/strict-base.json" },
+  ],
+  definitions: {},
+  properties: {},
+};
+function validate187(
+  data,
+  { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
+) {
+  /*# sourceURL="validateSystemPlusStrict" */ let vErrors = null;
+  let errors = 0;
+  if (
+    !validate168(data, { dataPath, parentData, parentDataProperty, rootData })
+  ) {
+    vErrors =
+      vErrors === null
+        ? validate168.errors
+        : vErrors.concat(validate168.errors);
+    errors = vErrors.length;
+  }
+  if (
+    !validate172(data, { dataPath, parentData, parentDataProperty, rootData })
+  ) {
+    vErrors =
+      vErrors === null
+        ? validate172.errors
+        : vErrors.concat(validate172.errors);
+    errors = vErrors.length;
+  }
+  if (!(data && typeof data == "object" && !Array.isArray(data))) {
+    const err0 = {
+      keyword: "type",
+      dataPath,
+      schemaPath: "#/type",
+      params: { type: "object" },
+      message: "should be object",
+    };
+    if (vErrors === null) {
+      vErrors = [err0];
+    } else {
+      vErrors.push(err0);
+    }
+    errors++;
+  }
+  validate187.errors = vErrors;
   return errors === 0;
 }
