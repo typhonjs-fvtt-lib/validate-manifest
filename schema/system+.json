@@ -3,33 +3,8 @@
   "type": "object",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "FoundryVTT system.json w/ manifest+",
+  "allOf": [{ "$ref": "validateSystem" }],
   "definitions": {},
-  "required": [
-    "name",
-    "title",
-    "description",
-    "author",
-    "version",
-    "minimumCoreVersion"
-  ],
   "properties": {
-    "name": {
-      "$ref": "shared/shared-base.json#/definitions/name"
-    },
-    "title": {
-      "$ref": "shared/shared-base.json#/definitions/title"
-    },
-    "description": {
-      "$ref": "shared/shared-base.json#/definitions/description"
-    },
-    "author": {
-      "$ref": "shared/shared-base.json#/definitions/author"
-    },
-    "version": {
-      "$ref": "shared/shared-base.json#/definitions/version"
-    },
-    "minimumCoreVersion": {
-      "$ref": "shared/shared-base.json#/definitions/minimumCoreVersion"
-    }
   }
 }
