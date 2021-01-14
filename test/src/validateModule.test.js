@@ -1,54 +1,64 @@
-const chai = require('chai');
+const chai                 = require('chai');
 
-const FileUtil = require('../util/FileUtil');
+const FileUtil             = require('../util/FileUtil');
+const test                 = require('../util/test');
 
-const { validateModule } = require('../../dist/validators');
+const { validateModule }   = require('../../dist/validators');
 
-describe('validateModule', () =>
+if (test.group.validateModule)
 {
-   describe('valid (base)', () =>
+   describe('validateModule', () =>
    {
-      const validData = FileUtil.loadFiles('./test/fixture/manifests/module/valid');
-
-      for (const key of validData.keys())
+      if (test.type.validBase)
       {
-         const test = validData.get(key);
-
-         it(key, (done) =>
+         describe('valid (base)', () =>
          {
-            if (!validateModule(test.data))
+            const validData = FileUtil.loadFiles('./test/fixture/manifests/module/valid');
+
+            for (const key of validData.keys())
             {
-               done(`\n${JSON.stringify(validateModule.errors, null, 3)}`);
+               const test = validData.get(key);
+
+               it(key, (done) =>
+               {
+                  if (!validateModule(test.data))
+                  {
+                     done(`\n${JSON.stringify(validateModule.errors, null, 3)}`);
+                  }
+                  else
+                  {
+                     done();
+                  }
+               });
             }
-            else
+         });
+      }
+
+      if (test.type.invalidBase)
+      {
+         describe('invalid (base)', () =>
+         {
+            const errors = FileUtil.loadFiles('./test/fixture/manifests/module/errors');
+            const invalidData = FileUtil.loadFiles('./test/fixture/manifests/module/invalid');
+
+            for (const key of invalidData.keys())
             {
-               done();
+               const test = invalidData.get(key);
+
+               it(key, (done) =>
+               {
+                  if (!validateModule(test.data))
+                  {
+                     chai.expect(validateModule.errors).to.be.deep.equal(errors.get(key).data);
+                     done();
+                  }
+                  else
+                  {
+                     done(false);
+                  }
+               });
             }
          });
       }
    });
-
-   describe('invalid (base)', () =>
-   {
-      const errors = FileUtil.loadFiles('./test/fixture/manifests/module/errors');
-      const invalidData = FileUtil.loadFiles('./test/fixture/manifests/module/invalid');
-
-      for (const key of invalidData.keys())
-      {
-         const test = invalidData.get(key);
-
-         it(key, (done) =>
-         {
-            if (!validateModule(test.data))
-            {
-               chai.expect(validateModule.errors).to.be.deep.equal(errors.get(key).data);
-               done();
-            }
-            else
-            {
-               done(false);
-            }
-         });
-      }
-   });
-});
+}

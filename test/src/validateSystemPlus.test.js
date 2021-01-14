@@ -1,54 +1,64 @@
-const chai = require('chai');
+const chai                    = require('chai');
 
-const FileUtil = require('../util/FileUtil');
+const FileUtil                = require('../util/FileUtil');
+const test                    = require('../util/test');
 
-const { validateSystemPlus } = require('../../dist/validators');
+const { validateSystemPlus }  = require('../../dist/validators');
 
-describe('validateSystemPlus', () =>
+if (test.group.validateSystemPlus)
 {
-   describe('valid (base)', () =>
+   describe('validateSystemPlus', () =>
    {
-      const validData = FileUtil.loadFiles('./test/fixture/manifests/system/valid');
-
-      for (const key of validData.keys())
+      if (test.type.validBase)
       {
-         const test = validData.get(key);
-
-         it(key, (done) =>
+         describe('valid (base)', () =>
          {
-            if (!validateSystemPlus(test.data))
+            const validData = FileUtil.loadFiles('./test/fixture/manifests/system/valid');
+
+            for (const key of validData.keys())
             {
-               done(`\n${JSON.stringify(validateSystemPlus.errors, null, 3)}`);
+               const test = validData.get(key);
+
+               it(key, (done) =>
+               {
+                  if (!validateSystemPlus(test.data))
+                  {
+                     done(`\n${JSON.stringify(validateSystemPlus.errors, null, 3)}`);
+                  }
+                  else
+                  {
+                     done();
+                  }
+               });
             }
-            else
+         });
+      }
+
+      if (test.type.invalidBase)
+      {
+         describe('invalid (base)', () =>
+         {
+            const errors = FileUtil.loadFiles('./test/fixture/manifests/system/errors');
+            const invalidData = FileUtil.loadFiles('./test/fixture/manifests/system/invalid');
+
+            for (const key of invalidData.keys())
             {
-               done();
+               const test = invalidData.get(key);
+
+               it(key, (done) =>
+               {
+                  if (!validateSystemPlus(test.data))
+                  {
+                     chai.expect(validateSystemPlus.errors).to.be.deep.equal(errors.get(key).data);
+                     done();
+                  }
+                  else
+                  {
+                     done(false);
+                  }
+               });
             }
          });
       }
    });
-
-   describe('invalid (base)', () =>
-   {
-      const errors = FileUtil.loadFiles('./test/fixture/manifests/system/errors');
-      const invalidData = FileUtil.loadFiles('./test/fixture/manifests/system/invalid');
-
-      for (const key of invalidData.keys())
-      {
-         const test = invalidData.get(key);
-
-         it(key, (done) =>
-         {
-            if (!validateSystemPlus(test.data))
-            {
-               chai.expect(validateSystemPlus.errors).to.be.deep.equal(errors.get(key).data);
-               done();
-            }
-            else
-            {
-               done(false);
-            }
-         });
-      }
-   });
-});
+}
