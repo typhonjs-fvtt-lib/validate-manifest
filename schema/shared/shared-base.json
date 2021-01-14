@@ -45,12 +45,19 @@
     "version": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "1.0.0"
       ],
       "$id": "#/definitions/version",
-      "type": "string"
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        {
+          "type": "number"
+        }
+      ]
     },
     "minimumCoreVersion": {
       "title": "A string value",
