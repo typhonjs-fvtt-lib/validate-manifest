@@ -2,13 +2,13 @@ const chai = require('chai');
 
 const FileUtil = require('../util/FileUtil');
 
-const { validateModule } = require('../../dist/validators');
+const { validateSystemPlus } = require('../../dist/validators');
 
-describe('validateModule', () =>
+describe('validateSystemPlus', () =>
 {
    describe('valid (base)', () =>
    {
-      const validData = FileUtil.loadFiles('./test/fixture/manifests/module/valid');
+      const validData = FileUtil.loadFiles('./test/fixture/manifests/system/valid');
 
       for (const key of validData.keys())
       {
@@ -16,9 +16,9 @@ describe('validateModule', () =>
 
          it(key, (done) =>
          {
-            if (!validateModule(test.data))
+            if (!validateSystemPlus(test.data))
             {
-               done(`\n${JSON.stringify(validateModule.errors, null, 3)}`);
+               done(`\n${JSON.stringify(validateSystemPlus.errors, null, 3)}`);
             }
             else
             {
@@ -30,8 +30,8 @@ describe('validateModule', () =>
 
    describe('invalid (base)', () =>
    {
-      const errors = FileUtil.loadFiles('./test/fixture/manifests/module/errors');
-      const invalidData = FileUtil.loadFiles('./test/fixture/manifests/module/invalid');
+      const errors = FileUtil.loadFiles('./test/fixture/manifests/system/errors');
+      const invalidData = FileUtil.loadFiles('./test/fixture/manifests/system/invalid');
 
       for (const key of invalidData.keys())
       {
@@ -39,9 +39,9 @@ describe('validateModule', () =>
 
          it(key, (done) =>
          {
-            if (!validateModule(test.data))
+            if (!validateSystemPlus(test.data))
             {
-               chai.expect(validateModule.errors).to.be.deep.equal(errors.get(key).data);
+               chai.expect(validateSystemPlus.errors).to.be.deep.equal(errors.get(key).data);
                done();
             }
             else

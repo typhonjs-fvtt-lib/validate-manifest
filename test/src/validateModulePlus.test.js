@@ -2,9 +2,9 @@ const chai = require('chai');
 
 const FileUtil = require('../util/FileUtil');
 
-const { validateModule } = require('../../dist/validators');
+const { validateModulePlus } = require('../../dist/validators');
 
-describe('validateModule', () =>
+describe('validateModulePlus', () =>
 {
    describe('valid (base)', () =>
    {
@@ -16,9 +16,9 @@ describe('validateModule', () =>
 
          it(key, (done) =>
          {
-            if (!validateModule(test.data))
+            if (!validateModulePlus(test.data))
             {
-               done(`\n${JSON.stringify(validateModule.errors, null, 3)}`);
+               done(`\n${JSON.stringify(validateModulePlus.errors, null, 3)}`);
             }
             else
             {
@@ -39,9 +39,9 @@ describe('validateModule', () =>
 
          it(key, (done) =>
          {
-            if (!validateModule(test.data))
+            if (!validateModulePlus(test.data))
             {
-               chai.expect(validateModule.errors).to.be.deep.equal(errors.get(key).data);
+               chai.expect(validateModulePlus.errors).to.be.deep.equal(errors.get(key).data);
                done();
             }
             else
