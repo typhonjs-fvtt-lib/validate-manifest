@@ -9,6 +9,7 @@
   "devDependencies": {
     "ajv": "^7.0.0",
     "ajv-cli": "^4.0.0",
+    "ajv-errors": "^2.0.0",
     "ajv-keywords": "^4.0.0",
     "chai": "^4.0.0",
     "eslint": "^7.0.0",
@@ -39,8 +40,8 @@
   "license": "MIT",
   "repository": "typhonjs-fvtt/manifest-plus",
   "scripts": {
-    "compile-validators": "ajv compile --all-errors --inline-refs=false -s \"schema/*.json\" -r \"schema/shared/*.json\" -c ajv-keywords/dist/keywords/typeof -o > dist/validators.js && prettier --write \"./dist/validators.js\"",
+    "compile-validators": "ajv compile --all-errors --inline-refs=false -s \"schema/*.json\" -r \"schema/shared/*.json\" -c ajv-errors -c ajv-keywords/dist/keywords/typeof -o > dist/validators.js && prettier --write \"./dist/validators.js\"",
     "create-specification": "gitdown ./.specification/ManifestPlus.md --output-file ./ManifestPlus.md",
-    "test": "nyc mocha --forbid-only \"test/src/**/*.test.js\""
+    "test": "nyc mocha \"test/src/**/*.test.js\""
   }
 }
