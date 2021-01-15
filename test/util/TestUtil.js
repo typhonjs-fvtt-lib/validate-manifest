@@ -20,8 +20,13 @@ class TestUtil
     */
    static invalid(testFunction, dirPath, isStrict = false)
    {
-      const errors = FileUtil.loadFiles(`${dirPath}${path.sep}errors`);
-      const invalidData = FileUtil.loadFiles(`${dirPath}${path.sep}invalid`);
+      const errorPath = `${dirPath}${path.sep}errors`;
+      const invalidPath = `${dirPath}${path.sep}invalid`;
+
+      if (!fs.existsSync(errorPath) || !fs.existsSync(invalidPath)) { return; }
+
+      const errors = FileUtil.loadFiles(errorPath);
+      const invalidData = FileUtil.loadFiles(invalidPath);
 
       for (const key of invalidData.keys())
       {
@@ -69,7 +74,11 @@ class TestUtil
     */
    static valid(testFunction, dirPath, isStrict = false)
    {
-      const validData = FileUtil.loadFiles(`${dirPath}${path.sep}valid`);
+      const validPath = `${dirPath}${path.sep}valid`;
+
+      if (!fs.existsSync(validPath)) { return; }
+
+      const validData = FileUtil.loadFiles(validPath);
 
       for (const key of validData.keys())
       {
