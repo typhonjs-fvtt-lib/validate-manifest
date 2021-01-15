@@ -1,10 +1,8 @@
 /**
  * Defines which tests will be run by group and type.
- *
- * @type {{type: {invalidBaseStrict: boolean, validCommonStrict: boolean, validPlus: boolean, validBase: boolean, validPlusStrict: boolean, invalidPlusStrict: boolean, invalidCommon: boolean, validCommon: boolean, invalidCommonStrict: boolean, invalidBase: boolean, invalidPlus: boolean, validBaseStrict: boolean}, createErrorData: boolean, group: {validateModuleStrict: boolean, validateSystemPlusStrict: boolean, validateModulePlusStrict: boolean, validateSystem: boolean, validateSystemStrict: boolean, validateSystemPlus: boolean, validateModulePlus: boolean, validateModule: boolean}}}
  */
 module.exports = {
-   group: {
+   functionName: {
       validateModule: true,
       validateModuleStrict: true,
       validateModulePlus: true,
@@ -14,20 +12,70 @@ module.exports = {
       validateSystemPlus: true,
       validateSystemPlusStrict: true
    },
-   type: {
-      invalidCommon: true,
-      invalidCommonStrict: true,
-      invalidBase: true,
-      invalidBaseStrict: true,
-      invalidPlus: true,
-      invalidPlusStrict: true,
-      validCommon: true,
-      validCommonStrict: true,
-      validBase: true,
-      validBaseStrict: true,
-      validPlus: true,
-      validPlusStrict: true
+
+   categories: {
+      common: true,
+      loose: true,
+      strict: true
    },
-   // When error data does not exist it will be created when TestUtil.invalid is invoked
-   createErrorData: false
+
+   // Run different types of tests.
+   type: {
+      "base": true,
+      "module": true,
+      "module+": true,
+      "system": true,
+      "system+": true,
+   },
+
+   // Run valid / invalid tests.
+   valid: true,
+   invalid: true,
+
+   // When error data does not exist it will be created when TestUtil.invalid is invoked.
+   createErrorData: false,
+
+   // Defines the function to run and the associated categories, type, and if it is strict.
+   functionData: {
+      validateModule: {
+         categories: ['common', 'loose'],
+         type: ['base', 'module'],
+         isStrict: false
+      },
+      validateModulePlus: {
+         categories: ['common', 'loose'],
+         type: ['base', 'module', 'module+'],
+         isStrict: false
+      },
+      validateSystem: {
+         categories: ['common', 'loose'],
+         type: ['base', 'system'],
+         isStrict: false
+      },
+      validateSystemPlus: {
+         categories: ['common', 'loose'],
+         type: ['base', 'system', 'system+'],
+         isStrict: false
+      },
+      validateModuleStrict: {
+         categories: ['common', 'loose', 'strict'],
+         type: ['base', 'module'],
+         isStrict: true
+      },
+      validateModulePlusStrict: {
+         categories: ['common', 'loose', 'strict'],
+         type: ['base', 'module', 'module+'],
+         isStrict: true
+      },
+      validateSystemStrict: {
+         categories: ['common', 'loose', 'strict'],
+         type: ['base', 'system'],
+         isStrict: true
+      },
+      validateSystemPlusStrict: {
+         categories: ['common', 'loose', 'strict'],
+         type: ['base', 'system', 'system+'],
+         isStrict: true
+      }
+   }
 };

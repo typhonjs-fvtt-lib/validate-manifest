@@ -90,6 +90,54 @@ class TestUtil
          });
       }
    }
+
+   /**
+    * Runs all applicable tests depending on data defined in `test.js`
+    */
+   static run()
+   {
+      for (const functionName in test.functionData)
+      {
+         if (!test.functionName[functionName]) { continue; }
+
+         const testFunction = require('../../dist/validators')['validateModule'];
+
+         const data = test.functionData[functionName];
+
+         describe(functionName, () =>
+         {
+            for (const category of data.categories)
+            {
+               if (!test.categories[category]) { continue; }
+
+               for (const type of data.type)
+               {
+                  if (!test.type[type]) { continue; }
+
+                  const dirPath = `./test/fixture/manifests/${category}/${type}`;
+
+                  if (!fs.existsSync(dirPath)) { continue; }
+
+                  if (test.valid)
+                  {
+                     describe(`${category} - ${type} - valid`, () =>
+                     {
+                        TestUtil.valid(testFunction, dirPath, data.isStrict);
+                     });
+                  }
+
+                  if (test.invalid)
+                  {
+                     describe(`${category} - ${type} - invalid`, () =>
+                     {
+                        TestUtil.invalid(testFunction, dirPath, data.isStrict);
+                     });
+                  }
+               }
+            }
+         });
+      }
+   }
 }
 
 module.exports = TestUtil;
