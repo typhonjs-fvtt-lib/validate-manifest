@@ -4,6 +4,10 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "FoundryVTT shared strict base between module & system.json",
   "definitions": {},
+  "allOf":
+  [
+    { "$ref": "../common/base.json"}
+  ],
   "properties": {
     "version": {
       "$ref": "../../definitions/strict/base.json#/definitions/version"
@@ -13,6 +17,9 @@
     },
     "compatibleCoreVersion": {
       "$ref": "../../definitions/strict/base.json#/definitions/compatibleCoreVersion"
+    },
+    "packs": {
+      "$ref": "../../definitions/base.json#/definitions/packs"
     }
   }
 }

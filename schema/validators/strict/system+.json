@@ -5,13 +5,8 @@
   "title": "FoundryVTT system.json w/ manifest+ and strict requirements",
   "allOf":
   [
-    { "$ref": "../shared/properties/system.json" },
-    { "$ref": "../shared/properties/strict/base.json"}
+    { "$ref": "../../shared/properties/strict/system.json"}
   ],
-  "definitions": {},
   "properties": {
-    "packs": {
-      "$ref": "../shared/definitions/base.json#/definitions/packs"
-    }
   }
 }

@@ -1,0 +1,25 @@
+{
+  "$id": "shared/properties/strict/module.json",
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FoundryVTT common properties for strict module.json",
+  "allOf":
+  [
+    { "$ref": "base.json"}
+  ],
+  "properties": {
+    "system": {
+      "oneOf": [
+        {
+          "$ref": "../../definitions/base.json#/definitions/system"
+        },
+        {
+          "$ref": "../../definitions/base.json#/definitions/systems"
+        }
+      ]
+    },
+    "packs": {
+      "$ref": "../../definitions/base.json#/definitions/packs"
+    }
+  }
+}
