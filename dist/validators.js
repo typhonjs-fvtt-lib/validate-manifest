@@ -15,38 +15,42 @@ const schema28 = {
     "minimumCoreVersion",
   ],
   properties: {
-    name: { $ref: "shared/shared-base.json#/definitions/name" },
-    title: { $ref: "shared/shared-base.json#/definitions/title" },
-    description: { $ref: "shared/shared-base.json#/definitions/description" },
-    author: { $ref: "shared/shared-base.json#/definitions/author" },
-    version: { $ref: "shared/shared-base.json#/definitions/version" },
+    name: { $ref: "shared/definitions/base.json#/definitions/name" },
+    title: { $ref: "shared/definitions/base.json#/definitions/title" },
+    description: {
+      $ref: "shared/definitions/base.json#/definitions/description",
+    },
+    author: { $ref: "shared/definitions/base.json#/definitions/author" },
+    version: { $ref: "shared/definitions/base.json#/definitions/version" },
     minimumCoreVersion: {
-      $ref: "shared/shared-base.json#/definitions/minimumCoreVersion",
+      $ref: "shared/definitions/base.json#/definitions/minimumCoreVersion",
     },
     compatibleCoreVersion: {
-      $ref: "shared/shared-base.json#/definitions/compatibleCoreVersion",
+      $ref: "shared/definitions/base.json#/definitions/compatibleCoreVersion",
     },
-    scripts: { $ref: "shared/shared-base.json#/definitions/scripts" },
-    esmodules: { $ref: "shared/shared-base.json#/definitions/esmodules" },
-    styles: { $ref: "shared/shared-base.json#/definitions/styles" },
-    packs: { $ref: "shared/shared-base.json#/definitions/packs" },
-    dependencies: { $ref: "shared/shared-base.json#/definitions/dependencies" },
-    languages: { $ref: "shared/shared-base.json#/definitions/languages" },
+    scripts: { $ref: "shared/definitions/base.json#/definitions/scripts" },
+    esmodules: { $ref: "shared/definitions/base.json#/definitions/esmodules" },
+    styles: { $ref: "shared/definitions/base.json#/definitions/styles" },
+    packs: { $ref: "shared/definitions/base.json#/definitions/packs" },
+    dependencies: {
+      $ref: "shared/definitions/base.json#/definitions/dependencies",
+    },
+    languages: { $ref: "shared/definitions/base.json#/definitions/languages" },
     system: {
       oneOf: [
-        { $ref: "shared/shared-base.json#/definitions/system" },
-        { $ref: "shared/shared-base.json#/definitions/systems" },
+        { $ref: "shared/definitions/base.json#/definitions/system" },
+        { $ref: "shared/definitions/base.json#/definitions/systems" },
       ],
     },
-    authors: { $ref: "shared/shared-base.json#/definitions/authors" },
-    socket: { $ref: "shared/shared-base.json#/definitions/socket" },
-    url: { $ref: "shared/shared-base.json#/definitions/url" },
-    manifest: { $ref: "shared/shared-base.json#/definitions/manifest" },
-    download: { $ref: "shared/shared-base.json#/definitions/download" },
-    license: { $ref: "shared/shared-base.json#/definitions/license" },
-    readme: { $ref: "shared/shared-base.json#/definitions/readme" },
-    bugs: { $ref: "shared/shared-base.json#/definitions/bugs" },
-    changelog: { $ref: "shared/shared-base.json#/definitions/changelog" },
+    authors: { $ref: "shared/definitions/base.json#/definitions/authors" },
+    socket: { $ref: "shared/definitions/base.json#/definitions/socket" },
+    url: { $ref: "shared/definitions/base.json#/definitions/url" },
+    manifest: { $ref: "shared/definitions/base.json#/definitions/manifest" },
+    download: { $ref: "shared/definitions/base.json#/definitions/download" },
+    license: { $ref: "shared/definitions/base.json#/definitions/license" },
+    readme: { $ref: "shared/definitions/base.json#/definitions/readme" },
+    bugs: { $ref: "shared/definitions/base.json#/definitions/bugs" },
+    changelog: { $ref: "shared/definitions/base.json#/definitions/changelog" },
   },
 };
 const schema30 = {
@@ -1034,7 +1038,8 @@ function validate25(
           const err6 = {
             keyword: "pattern",
             dataPath: dataPath + "/name",
-            schemaPath: "shared/shared-base.json#/definitions/name/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/name/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -1049,7 +1054,7 @@ function validate25(
         const err7 = {
           keyword: "type",
           dataPath: dataPath + "/name",
-          schemaPath: "shared/shared-base.json#/definitions/name/type",
+          schemaPath: "shared/definitions/base.json#/definitions/name/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -1068,7 +1073,8 @@ function validate25(
           const err8 = {
             keyword: "pattern",
             dataPath: dataPath + "/title",
-            schemaPath: "shared/shared-base.json#/definitions/title/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/title/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -1083,7 +1089,7 @@ function validate25(
         const err9 = {
           keyword: "type",
           dataPath: dataPath + "/title",
-          schemaPath: "shared/shared-base.json#/definitions/title/type",
+          schemaPath: "shared/definitions/base.json#/definitions/title/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -1103,7 +1109,7 @@ function validate25(
             keyword: "pattern",
             dataPath: dataPath + "/description",
             schemaPath:
-              "shared/shared-base.json#/definitions/description/pattern",
+              "shared/definitions/base.json#/definitions/description/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -1118,7 +1124,8 @@ function validate25(
         const err11 = {
           keyword: "type",
           dataPath: dataPath + "/description",
-          schemaPath: "shared/shared-base.json#/definitions/description/type",
+          schemaPath:
+            "shared/definitions/base.json#/definitions/description/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -1137,7 +1144,8 @@ function validate25(
           const err12 = {
             keyword: "pattern",
             dataPath: dataPath + "/author",
-            schemaPath: "shared/shared-base.json#/definitions/author/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/author/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -1152,7 +1160,7 @@ function validate25(
         const err13 = {
           keyword: "type",
           dataPath: dataPath + "/author",
-          schemaPath: "shared/shared-base.json#/definitions/author/type",
+          schemaPath: "shared/definitions/base.json#/definitions/author/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -1176,7 +1184,7 @@ function validate25(
             keyword: "pattern",
             dataPath: dataPath + "/version",
             schemaPath:
-              "shared/shared-base.json#/definitions/version/oneOf/0/pattern",
+              "shared/definitions/base.json#/definitions/version/oneOf/0/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -1192,7 +1200,7 @@ function validate25(
           keyword: "type",
           dataPath: dataPath + "/version",
           schemaPath:
-            "shared/shared-base.json#/definitions/version/oneOf/0/type",
+            "shared/definitions/base.json#/definitions/version/oneOf/0/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -1214,7 +1222,7 @@ function validate25(
           keyword: "type",
           dataPath: dataPath + "/version",
           schemaPath:
-            "shared/shared-base.json#/definitions/version/oneOf/1/type",
+            "shared/definitions/base.json#/definitions/version/oneOf/1/type",
           params: { type: "number" },
           message: "should be number",
         };
@@ -1239,7 +1247,7 @@ function validate25(
         const err17 = {
           keyword: "oneOf",
           dataPath: dataPath + "/version",
-          schemaPath: "shared/shared-base.json#/definitions/version/oneOf",
+          schemaPath: "shared/definitions/base.json#/definitions/version/oneOf",
           params: { passingSchemas: passing0 },
           message: "should match exactly one schema in oneOf",
         };
@@ -1268,7 +1276,7 @@ function validate25(
             keyword: "pattern",
             dataPath: dataPath + "/minimumCoreVersion",
             schemaPath:
-              "shared/shared-base.json#/definitions/minimumCoreVersion/pattern",
+              "shared/definitions/base.json#/definitions/minimumCoreVersion/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -1284,7 +1292,7 @@ function validate25(
           keyword: "type",
           dataPath: dataPath + "/minimumCoreVersion",
           schemaPath:
-            "shared/shared-base.json#/definitions/minimumCoreVersion/type",
+            "shared/definitions/base.json#/definitions/minimumCoreVersion/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -1304,7 +1312,7 @@ function validate25(
             keyword: "pattern",
             dataPath: dataPath + "/compatibleCoreVersion",
             schemaPath:
-              "shared/shared-base.json#/definitions/compatibleCoreVersion/pattern",
+              "shared/definitions/base.json#/definitions/compatibleCoreVersion/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -1320,7 +1328,7 @@ function validate25(
           keyword: "type",
           dataPath: dataPath + "/compatibleCoreVersion",
           schemaPath:
-            "shared/shared-base.json#/definitions/compatibleCoreVersion/type",
+            "shared/definitions/base.json#/definitions/compatibleCoreVersion/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -1344,7 +1352,7 @@ function validate25(
                 keyword: "pattern",
                 dataPath: dataPath + "/scripts/" + i0,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/scripts/items/pattern",
+                  "shared/definitions/base.json#/definitions/scripts/items/pattern",
                 params: { pattern: "^(.*)$" },
                 message: 'should match pattern "' + "^(.*)$" + '"',
               };
@@ -1360,7 +1368,7 @@ function validate25(
               keyword: "type",
               dataPath: dataPath + "/scripts/" + i0,
               schemaPath:
-                "shared/shared-base.json#/definitions/scripts/items/type",
+                "shared/definitions/base.json#/definitions/scripts/items/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -1376,7 +1384,7 @@ function validate25(
         const err24 = {
           keyword: "type",
           dataPath: dataPath + "/scripts",
-          schemaPath: "shared/shared-base.json#/definitions/scripts/type",
+          schemaPath: "shared/definitions/base.json#/definitions/scripts/type",
           params: { type: "array" },
           message: "should be array",
         };
@@ -1400,7 +1408,7 @@ function validate25(
                 keyword: "pattern",
                 dataPath: dataPath + "/esmodules/" + i1,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/esmodules/items/pattern",
+                  "shared/definitions/base.json#/definitions/esmodules/items/pattern",
                 params: { pattern: "^(.*)$" },
                 message: 'should match pattern "' + "^(.*)$" + '"',
               };
@@ -1416,7 +1424,7 @@ function validate25(
               keyword: "type",
               dataPath: dataPath + "/esmodules/" + i1,
               schemaPath:
-                "shared/shared-base.json#/definitions/esmodules/items/type",
+                "shared/definitions/base.json#/definitions/esmodules/items/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -1432,7 +1440,8 @@ function validate25(
         const err27 = {
           keyword: "type",
           dataPath: dataPath + "/esmodules",
-          schemaPath: "shared/shared-base.json#/definitions/esmodules/type",
+          schemaPath:
+            "shared/definitions/base.json#/definitions/esmodules/type",
           params: { type: "array" },
           message: "should be array",
         };
@@ -1456,7 +1465,7 @@ function validate25(
                 keyword: "pattern",
                 dataPath: dataPath + "/styles/" + i2,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/styles/items/pattern",
+                  "shared/definitions/base.json#/definitions/styles/items/pattern",
                 params: { pattern: "^(.*)$" },
                 message: 'should match pattern "' + "^(.*)$" + '"',
               };
@@ -1472,7 +1481,7 @@ function validate25(
               keyword: "type",
               dataPath: dataPath + "/styles/" + i2,
               schemaPath:
-                "shared/shared-base.json#/definitions/styles/items/type",
+                "shared/definitions/base.json#/definitions/styles/items/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -1488,7 +1497,7 @@ function validate25(
         const err30 = {
           keyword: "type",
           dataPath: dataPath + "/styles",
-          schemaPath: "shared/shared-base.json#/definitions/styles/type",
+          schemaPath: "shared/definitions/base.json#/definitions/styles/type",
           params: { type: "array" },
           message: "should be array",
         };
@@ -1528,7 +1537,7 @@ function validate25(
                 keyword: "required",
                 dataPath: dataPath + "/dependencies/" + i3,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/dependencies/items/required",
+                  "shared/definitions/base.json#/definitions/dependencies/items/required",
                 params: { missingProperty: "name" },
                 message: "should have required property '" + "name" + "'",
               };
@@ -1547,7 +1556,7 @@ function validate25(
                     keyword: "pattern",
                     dataPath: dataPath + "/dependencies/" + i3 + "/name",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/dependencies/items/properties/name/pattern",
+                      "shared/definitions/base.json#/definitions/dependencies/items/properties/name/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -1563,7 +1572,7 @@ function validate25(
                   keyword: "type",
                   dataPath: dataPath + "/dependencies/" + i3 + "/name",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/dependencies/items/properties/name/type",
+                    "shared/definitions/base.json#/definitions/dependencies/items/properties/name/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -1583,7 +1592,7 @@ function validate25(
                     keyword: "pattern",
                     dataPath: dataPath + "/dependencies/" + i3 + "/manifest",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/dependencies/items/properties/manifest/pattern",
+                      "shared/definitions/base.json#/definitions/dependencies/items/properties/manifest/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -1599,7 +1608,7 @@ function validate25(
                   keyword: "type",
                   dataPath: dataPath + "/dependencies/" + i3 + "/manifest",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/dependencies/items/properties/manifest/type",
+                    "shared/definitions/base.json#/definitions/dependencies/items/properties/manifest/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -1619,7 +1628,7 @@ function validate25(
                     keyword: "pattern",
                     dataPath: dataPath + "/dependencies/" + i3 + "/type",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/dependencies/items/properties/type/pattern",
+                      "shared/definitions/base.json#/definitions/dependencies/items/properties/type/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -1635,7 +1644,7 @@ function validate25(
                   keyword: "type",
                   dataPath: dataPath + "/dependencies/" + i3 + "/type",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/dependencies/items/properties/type/type",
+                    "shared/definitions/base.json#/definitions/dependencies/items/properties/type/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -1652,7 +1661,7 @@ function validate25(
               keyword: "type",
               dataPath: dataPath + "/dependencies/" + i3,
               schemaPath:
-                "shared/shared-base.json#/definitions/dependencies/items/type",
+                "shared/definitions/base.json#/definitions/dependencies/items/type",
               params: { type: "object" },
               message: "should be object",
             };
@@ -1668,7 +1677,8 @@ function validate25(
         const err39 = {
           keyword: "type",
           dataPath: dataPath + "/dependencies",
-          schemaPath: "shared/shared-base.json#/definitions/dependencies/type",
+          schemaPath:
+            "shared/definitions/base.json#/definitions/dependencies/type",
           params: { type: "array" },
           message: "should be array",
         };
@@ -1692,7 +1702,7 @@ function validate25(
                 keyword: "required",
                 dataPath: dataPath + "/languages/" + i4,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/languages/items/required",
+                  "shared/definitions/base.json#/definitions/languages/items/required",
                 params: { missingProperty: "lang" },
                 message: "should have required property '" + "lang" + "'",
               };
@@ -1708,7 +1718,7 @@ function validate25(
                 keyword: "required",
                 dataPath: dataPath + "/languages/" + i4,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/languages/items/required",
+                  "shared/definitions/base.json#/definitions/languages/items/required",
                 params: { missingProperty: "name" },
                 message: "should have required property '" + "name" + "'",
               };
@@ -1724,7 +1734,7 @@ function validate25(
                 keyword: "required",
                 dataPath: dataPath + "/languages/" + i4,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/languages/items/required",
+                  "shared/definitions/base.json#/definitions/languages/items/required",
                 params: { missingProperty: "path" },
                 message: "should have required property '" + "path" + "'",
               };
@@ -1743,7 +1753,7 @@ function validate25(
                     keyword: "pattern",
                     dataPath: dataPath + "/languages/" + i4 + "/lang",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/languages/items/properties/lang/pattern",
+                      "shared/definitions/base.json#/definitions/languages/items/properties/lang/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -1759,7 +1769,7 @@ function validate25(
                   keyword: "type",
                   dataPath: dataPath + "/languages/" + i4 + "/lang",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/languages/items/properties/lang/type",
+                    "shared/definitions/base.json#/definitions/languages/items/properties/lang/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -1779,7 +1789,7 @@ function validate25(
                     keyword: "pattern",
                     dataPath: dataPath + "/languages/" + i4 + "/name",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/languages/items/properties/name/pattern",
+                      "shared/definitions/base.json#/definitions/languages/items/properties/name/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -1795,7 +1805,7 @@ function validate25(
                   keyword: "type",
                   dataPath: dataPath + "/languages/" + i4 + "/name",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/languages/items/properties/name/type",
+                    "shared/definitions/base.json#/definitions/languages/items/properties/name/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -1815,7 +1825,7 @@ function validate25(
                     keyword: "pattern",
                     dataPath: dataPath + "/languages/" + i4 + "/path",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/languages/items/properties/path/pattern",
+                      "shared/definitions/base.json#/definitions/languages/items/properties/path/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -1831,7 +1841,7 @@ function validate25(
                   keyword: "type",
                   dataPath: dataPath + "/languages/" + i4 + "/path",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/languages/items/properties/path/type",
+                    "shared/definitions/base.json#/definitions/languages/items/properties/path/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -1848,7 +1858,7 @@ function validate25(
               keyword: "type",
               dataPath: dataPath + "/languages/" + i4,
               schemaPath:
-                "shared/shared-base.json#/definitions/languages/items/type",
+                "shared/definitions/base.json#/definitions/languages/items/type",
               params: { type: "object" },
               message: "should be object",
             };
@@ -1864,7 +1874,8 @@ function validate25(
         const err50 = {
           keyword: "type",
           dataPath: dataPath + "/languages",
-          schemaPath: "shared/shared-base.json#/definitions/languages/type",
+          schemaPath:
+            "shared/definitions/base.json#/definitions/languages/type",
           params: { type: "array" },
           message: "should be array",
         };
@@ -1887,7 +1898,8 @@ function validate25(
           const err51 = {
             keyword: "pattern",
             dataPath: dataPath + "/system",
-            schemaPath: "shared/shared-base.json#/definitions/system/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/system/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -1902,7 +1914,7 @@ function validate25(
         const err52 = {
           keyword: "type",
           dataPath: dataPath + "/system",
-          schemaPath: "shared/shared-base.json#/definitions/system/type",
+          schemaPath: "shared/definitions/base.json#/definitions/system/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -1929,7 +1941,7 @@ function validate25(
                 keyword: "pattern",
                 dataPath: dataPath + "/system/" + i5,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/systems/items/pattern",
+                  "shared/definitions/base.json#/definitions/systems/items/pattern",
                 params: { pattern: "^(.*)$" },
                 message: 'should match pattern "' + "^(.*)$" + '"',
               };
@@ -1945,7 +1957,7 @@ function validate25(
               keyword: "type",
               dataPath: dataPath + "/system/" + i5,
               schemaPath:
-                "shared/shared-base.json#/definitions/systems/items/type",
+                "shared/definitions/base.json#/definitions/systems/items/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -1961,7 +1973,7 @@ function validate25(
         const err55 = {
           keyword: "type",
           dataPath: dataPath + "/system",
-          schemaPath: "shared/shared-base.json#/definitions/systems/type",
+          schemaPath: "shared/definitions/base.json#/definitions/systems/type",
           params: { type: "array" },
           message: "should be array",
         };
@@ -2019,7 +2031,7 @@ function validate25(
                 keyword: "required",
                 dataPath: dataPath + "/authors/" + i6,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/authors/items/required",
+                  "shared/definitions/base.json#/definitions/authors/items/required",
                 params: { missingProperty: "name" },
                 message: "should have required property '" + "name" + "'",
               };
@@ -2038,7 +2050,7 @@ function validate25(
                     keyword: "pattern",
                     dataPath: dataPath + "/authors/" + i6 + "/name",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/authors/items/properties/name/pattern",
+                      "shared/definitions/base.json#/definitions/authors/items/properties/name/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -2054,7 +2066,7 @@ function validate25(
                   keyword: "type",
                   dataPath: dataPath + "/authors/" + i6 + "/name",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/authors/items/properties/name/type",
+                    "shared/definitions/base.json#/definitions/authors/items/properties/name/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -2074,7 +2086,7 @@ function validate25(
                     keyword: "pattern",
                     dataPath: dataPath + "/authors/" + i6 + "/email",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/authors/items/properties/email/pattern",
+                      "shared/definitions/base.json#/definitions/authors/items/properties/email/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -2090,7 +2102,7 @@ function validate25(
                   keyword: "type",
                   dataPath: dataPath + "/authors/" + i6 + "/email",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/authors/items/properties/email/type",
+                    "shared/definitions/base.json#/definitions/authors/items/properties/email/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -2110,7 +2122,7 @@ function validate25(
                     keyword: "pattern",
                     dataPath: dataPath + "/authors/" + i6 + "/url",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/authors/items/properties/url/pattern",
+                      "shared/definitions/base.json#/definitions/authors/items/properties/url/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -2126,7 +2138,7 @@ function validate25(
                   keyword: "type",
                   dataPath: dataPath + "/authors/" + i6 + "/url",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/authors/items/properties/url/type",
+                    "shared/definitions/base.json#/definitions/authors/items/properties/url/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -2143,7 +2155,7 @@ function validate25(
               keyword: "type",
               dataPath: dataPath + "/authors/" + i6,
               schemaPath:
-                "shared/shared-base.json#/definitions/authors/items/type",
+                "shared/definitions/base.json#/definitions/authors/items/type",
               params: { type: "object" },
               message: "should be object",
             };
@@ -2159,7 +2171,7 @@ function validate25(
         const err65 = {
           keyword: "type",
           dataPath: dataPath + "/authors",
-          schemaPath: "shared/shared-base.json#/definitions/authors/type",
+          schemaPath: "shared/definitions/base.json#/definitions/authors/type",
           params: { type: "array" },
           message: "should be array",
         };
@@ -2176,7 +2188,7 @@ function validate25(
         const err66 = {
           keyword: "type",
           dataPath: dataPath + "/socket",
-          schemaPath: "shared/shared-base.json#/definitions/socket/type",
+          schemaPath: "shared/definitions/base.json#/definitions/socket/type",
           params: { type: "boolean" },
           message: "should be boolean",
         };
@@ -2195,7 +2207,7 @@ function validate25(
           const err67 = {
             keyword: "pattern",
             dataPath: dataPath + "/url",
-            schemaPath: "shared/shared-base.json#/definitions/url/pattern",
+            schemaPath: "shared/definitions/base.json#/definitions/url/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -2210,7 +2222,7 @@ function validate25(
         const err68 = {
           keyword: "type",
           dataPath: dataPath + "/url",
-          schemaPath: "shared/shared-base.json#/definitions/url/type",
+          schemaPath: "shared/definitions/base.json#/definitions/url/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -2229,7 +2241,8 @@ function validate25(
           const err69 = {
             keyword: "pattern",
             dataPath: dataPath + "/manifest",
-            schemaPath: "shared/shared-base.json#/definitions/manifest/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/manifest/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -2244,7 +2257,7 @@ function validate25(
         const err70 = {
           keyword: "type",
           dataPath: dataPath + "/manifest",
-          schemaPath: "shared/shared-base.json#/definitions/manifest/type",
+          schemaPath: "shared/definitions/base.json#/definitions/manifest/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -2263,7 +2276,8 @@ function validate25(
           const err71 = {
             keyword: "pattern",
             dataPath: dataPath + "/download",
-            schemaPath: "shared/shared-base.json#/definitions/download/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/download/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -2278,7 +2292,7 @@ function validate25(
         const err72 = {
           keyword: "type",
           dataPath: dataPath + "/download",
-          schemaPath: "shared/shared-base.json#/definitions/download/type",
+          schemaPath: "shared/definitions/base.json#/definitions/download/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -2297,7 +2311,8 @@ function validate25(
           const err73 = {
             keyword: "pattern",
             dataPath: dataPath + "/license",
-            schemaPath: "shared/shared-base.json#/definitions/license/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/license/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -2312,7 +2327,7 @@ function validate25(
         const err74 = {
           keyword: "type",
           dataPath: dataPath + "/license",
-          schemaPath: "shared/shared-base.json#/definitions/license/type",
+          schemaPath: "shared/definitions/base.json#/definitions/license/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -2331,7 +2346,8 @@ function validate25(
           const err75 = {
             keyword: "pattern",
             dataPath: dataPath + "/readme",
-            schemaPath: "shared/shared-base.json#/definitions/readme/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/readme/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -2346,7 +2362,7 @@ function validate25(
         const err76 = {
           keyword: "type",
           dataPath: dataPath + "/readme",
-          schemaPath: "shared/shared-base.json#/definitions/readme/type",
+          schemaPath: "shared/definitions/base.json#/definitions/readme/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -2365,7 +2381,8 @@ function validate25(
           const err77 = {
             keyword: "pattern",
             dataPath: dataPath + "/bugs",
-            schemaPath: "shared/shared-base.json#/definitions/bugs/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/bugs/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -2380,7 +2397,7 @@ function validate25(
         const err78 = {
           keyword: "type",
           dataPath: dataPath + "/bugs",
-          schemaPath: "shared/shared-base.json#/definitions/bugs/type",
+          schemaPath: "shared/definitions/base.json#/definitions/bugs/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -2400,7 +2417,7 @@ function validate25(
             keyword: "pattern",
             dataPath: dataPath + "/changelog",
             schemaPath:
-              "shared/shared-base.json#/definitions/changelog/pattern",
+              "shared/definitions/base.json#/definitions/changelog/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -2415,7 +2432,8 @@ function validate25(
         const err80 = {
           keyword: "type",
           dataPath: dataPath + "/changelog",
-          schemaPath: "shared/shared-base.json#/definitions/changelog/type",
+          schemaPath:
+            "shared/definitions/base.json#/definitions/changelog/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -2502,46 +2520,55 @@ const schema57 = {
     "minimumCoreVersion",
   ],
   properties: {
-    name: { $ref: "shared/shared-base.json#/definitions/name" },
-    title: { $ref: "shared/shared-base.json#/definitions/title" },
-    description: { $ref: "shared/shared-base.json#/definitions/description" },
-    author: { $ref: "shared/shared-base.json#/definitions/author" },
-    version: { $ref: "shared/shared-base.json#/definitions/version" },
+    name: { $ref: "shared/definitions/base.json#/definitions/name" },
+    title: { $ref: "shared/definitions/base.json#/definitions/title" },
+    description: {
+      $ref: "shared/definitions/base.json#/definitions/description",
+    },
+    author: { $ref: "shared/definitions/base.json#/definitions/author" },
+    version: { $ref: "shared/definitions/base.json#/definitions/version" },
     minimumCoreVersion: {
-      $ref: "shared/shared-base.json#/definitions/minimumCoreVersion",
+      $ref: "shared/definitions/base.json#/definitions/minimumCoreVersion",
     },
     compatibleCoreVersion: {
-      $ref: "shared/shared-base.json#/definitions/compatibleCoreVersion",
+      $ref: "shared/definitions/base.json#/definitions/compatibleCoreVersion",
     },
-    scripts: { $ref: "shared/shared-base.json#/definitions/scripts" },
-    esmodules: { $ref: "shared/shared-base.json#/definitions/esmodules" },
-    styles: { $ref: "shared/shared-base.json#/definitions/styles" },
-    packs: { $ref: "shared/shared-base.json#/definitions/packs" },
-    dependencies: { $ref: "shared/shared-base.json#/definitions/dependencies" },
-    languages: { $ref: "shared/shared-base.json#/definitions/languages" },
-    authors: { $ref: "shared/shared-base.json#/definitions/authors" },
-    socket: { $ref: "shared/shared-base.json#/definitions/socket" },
+    scripts: { $ref: "shared/definitions/base.json#/definitions/scripts" },
+    esmodules: { $ref: "shared/definitions/base.json#/definitions/esmodules" },
+    styles: { $ref: "shared/definitions/base.json#/definitions/styles" },
+    packs: { $ref: "shared/definitions/base.json#/definitions/packs" },
+    dependencies: {
+      $ref: "shared/definitions/base.json#/definitions/dependencies",
+    },
+    languages: { $ref: "shared/definitions/base.json#/definitions/languages" },
+    authors: { $ref: "shared/definitions/base.json#/definitions/authors" },
+    socket: { $ref: "shared/definitions/base.json#/definitions/socket" },
     templateVersion: {
-      $ref: "shared/shared-system.json#/definitions/templateVersion",
+      $ref: "shared/definitions/system.json#/definitions/templateVersion",
     },
-    initiative: { $ref: "shared/shared-system.json#/definitions/initiative" },
+    initiative: {
+      $ref: "shared/definitions/system.json#/definitions/initiative",
+    },
     gridDistance: {
-      $ref: "shared/shared-system.json#/definitions/gridDistance",
+      $ref: "shared/definitions/system.json#/definitions/gridDistance",
     },
-    gridUnits: { $ref: "shared/shared-system.json#/definitions/gridUnits" },
+    gridUnits: {
+      $ref: "shared/definitions/system.json#/definitions/gridUnits",
+    },
     primaryTokenAttribute: {
-      $ref: "shared/shared-system.json#/definitions/primaryTokenAttribute",
+      $ref: "shared/definitions/system.json#/definitions/primaryTokenAttribute",
     },
     secondaryTokenAttribute: {
-      $ref: "shared/shared-system.json#/definitions/secondaryTokenAttribute",
+      $ref:
+        "shared/definitions/system.json#/definitions/secondaryTokenAttribute",
     },
-    url: { $ref: "shared/shared-base.json#/definitions/url" },
-    manifest: { $ref: "shared/shared-base.json#/definitions/manifest" },
-    download: { $ref: "shared/shared-base.json#/definitions/download" },
-    license: { $ref: "shared/shared-base.json#/definitions/license" },
-    readme: { $ref: "shared/shared-base.json#/definitions/readme" },
-    bugs: { $ref: "shared/shared-base.json#/definitions/bugs" },
-    changelog: { $ref: "shared/shared-base.json#/definitions/changelog" },
+    url: { $ref: "shared/definitions/base.json#/definitions/url" },
+    manifest: { $ref: "shared/definitions/base.json#/definitions/manifest" },
+    download: { $ref: "shared/definitions/base.json#/definitions/download" },
+    license: { $ref: "shared/definitions/base.json#/definitions/license" },
+    readme: { $ref: "shared/definitions/base.json#/definitions/readme" },
+    bugs: { $ref: "shared/definitions/base.json#/definitions/bugs" },
+    changelog: { $ref: "shared/definitions/base.json#/definitions/changelog" },
   },
 };
 const schema76 = {
@@ -3217,7 +3244,8 @@ function validate31(
           const err6 = {
             keyword: "pattern",
             dataPath: dataPath + "/name",
-            schemaPath: "shared/shared-base.json#/definitions/name/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/name/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -3232,7 +3260,7 @@ function validate31(
         const err7 = {
           keyword: "type",
           dataPath: dataPath + "/name",
-          schemaPath: "shared/shared-base.json#/definitions/name/type",
+          schemaPath: "shared/definitions/base.json#/definitions/name/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -3251,7 +3279,8 @@ function validate31(
           const err8 = {
             keyword: "pattern",
             dataPath: dataPath + "/title",
-            schemaPath: "shared/shared-base.json#/definitions/title/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/title/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -3266,7 +3295,7 @@ function validate31(
         const err9 = {
           keyword: "type",
           dataPath: dataPath + "/title",
-          schemaPath: "shared/shared-base.json#/definitions/title/type",
+          schemaPath: "shared/definitions/base.json#/definitions/title/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -3286,7 +3315,7 @@ function validate31(
             keyword: "pattern",
             dataPath: dataPath + "/description",
             schemaPath:
-              "shared/shared-base.json#/definitions/description/pattern",
+              "shared/definitions/base.json#/definitions/description/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -3301,7 +3330,8 @@ function validate31(
         const err11 = {
           keyword: "type",
           dataPath: dataPath + "/description",
-          schemaPath: "shared/shared-base.json#/definitions/description/type",
+          schemaPath:
+            "shared/definitions/base.json#/definitions/description/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -3320,7 +3350,8 @@ function validate31(
           const err12 = {
             keyword: "pattern",
             dataPath: dataPath + "/author",
-            schemaPath: "shared/shared-base.json#/definitions/author/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/author/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -3335,7 +3366,7 @@ function validate31(
         const err13 = {
           keyword: "type",
           dataPath: dataPath + "/author",
-          schemaPath: "shared/shared-base.json#/definitions/author/type",
+          schemaPath: "shared/definitions/base.json#/definitions/author/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -3359,7 +3390,7 @@ function validate31(
             keyword: "pattern",
             dataPath: dataPath + "/version",
             schemaPath:
-              "shared/shared-base.json#/definitions/version/oneOf/0/pattern",
+              "shared/definitions/base.json#/definitions/version/oneOf/0/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -3375,7 +3406,7 @@ function validate31(
           keyword: "type",
           dataPath: dataPath + "/version",
           schemaPath:
-            "shared/shared-base.json#/definitions/version/oneOf/0/type",
+            "shared/definitions/base.json#/definitions/version/oneOf/0/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -3397,7 +3428,7 @@ function validate31(
           keyword: "type",
           dataPath: dataPath + "/version",
           schemaPath:
-            "shared/shared-base.json#/definitions/version/oneOf/1/type",
+            "shared/definitions/base.json#/definitions/version/oneOf/1/type",
           params: { type: "number" },
           message: "should be number",
         };
@@ -3422,7 +3453,7 @@ function validate31(
         const err17 = {
           keyword: "oneOf",
           dataPath: dataPath + "/version",
-          schemaPath: "shared/shared-base.json#/definitions/version/oneOf",
+          schemaPath: "shared/definitions/base.json#/definitions/version/oneOf",
           params: { passingSchemas: passing0 },
           message: "should match exactly one schema in oneOf",
         };
@@ -3451,7 +3482,7 @@ function validate31(
             keyword: "pattern",
             dataPath: dataPath + "/minimumCoreVersion",
             schemaPath:
-              "shared/shared-base.json#/definitions/minimumCoreVersion/pattern",
+              "shared/definitions/base.json#/definitions/minimumCoreVersion/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -3467,7 +3498,7 @@ function validate31(
           keyword: "type",
           dataPath: dataPath + "/minimumCoreVersion",
           schemaPath:
-            "shared/shared-base.json#/definitions/minimumCoreVersion/type",
+            "shared/definitions/base.json#/definitions/minimumCoreVersion/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -3487,7 +3518,7 @@ function validate31(
             keyword: "pattern",
             dataPath: dataPath + "/compatibleCoreVersion",
             schemaPath:
-              "shared/shared-base.json#/definitions/compatibleCoreVersion/pattern",
+              "shared/definitions/base.json#/definitions/compatibleCoreVersion/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -3503,7 +3534,7 @@ function validate31(
           keyword: "type",
           dataPath: dataPath + "/compatibleCoreVersion",
           schemaPath:
-            "shared/shared-base.json#/definitions/compatibleCoreVersion/type",
+            "shared/definitions/base.json#/definitions/compatibleCoreVersion/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -3527,7 +3558,7 @@ function validate31(
                 keyword: "pattern",
                 dataPath: dataPath + "/scripts/" + i0,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/scripts/items/pattern",
+                  "shared/definitions/base.json#/definitions/scripts/items/pattern",
                 params: { pattern: "^(.*)$" },
                 message: 'should match pattern "' + "^(.*)$" + '"',
               };
@@ -3543,7 +3574,7 @@ function validate31(
               keyword: "type",
               dataPath: dataPath + "/scripts/" + i0,
               schemaPath:
-                "shared/shared-base.json#/definitions/scripts/items/type",
+                "shared/definitions/base.json#/definitions/scripts/items/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -3559,7 +3590,7 @@ function validate31(
         const err24 = {
           keyword: "type",
           dataPath: dataPath + "/scripts",
-          schemaPath: "shared/shared-base.json#/definitions/scripts/type",
+          schemaPath: "shared/definitions/base.json#/definitions/scripts/type",
           params: { type: "array" },
           message: "should be array",
         };
@@ -3583,7 +3614,7 @@ function validate31(
                 keyword: "pattern",
                 dataPath: dataPath + "/esmodules/" + i1,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/esmodules/items/pattern",
+                  "shared/definitions/base.json#/definitions/esmodules/items/pattern",
                 params: { pattern: "^(.*)$" },
                 message: 'should match pattern "' + "^(.*)$" + '"',
               };
@@ -3599,7 +3630,7 @@ function validate31(
               keyword: "type",
               dataPath: dataPath + "/esmodules/" + i1,
               schemaPath:
-                "shared/shared-base.json#/definitions/esmodules/items/type",
+                "shared/definitions/base.json#/definitions/esmodules/items/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -3615,7 +3646,8 @@ function validate31(
         const err27 = {
           keyword: "type",
           dataPath: dataPath + "/esmodules",
-          schemaPath: "shared/shared-base.json#/definitions/esmodules/type",
+          schemaPath:
+            "shared/definitions/base.json#/definitions/esmodules/type",
           params: { type: "array" },
           message: "should be array",
         };
@@ -3639,7 +3671,7 @@ function validate31(
                 keyword: "pattern",
                 dataPath: dataPath + "/styles/" + i2,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/styles/items/pattern",
+                  "shared/definitions/base.json#/definitions/styles/items/pattern",
                 params: { pattern: "^(.*)$" },
                 message: 'should match pattern "' + "^(.*)$" + '"',
               };
@@ -3655,7 +3687,7 @@ function validate31(
               keyword: "type",
               dataPath: dataPath + "/styles/" + i2,
               schemaPath:
-                "shared/shared-base.json#/definitions/styles/items/type",
+                "shared/definitions/base.json#/definitions/styles/items/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -3671,7 +3703,7 @@ function validate31(
         const err30 = {
           keyword: "type",
           dataPath: dataPath + "/styles",
-          schemaPath: "shared/shared-base.json#/definitions/styles/type",
+          schemaPath: "shared/definitions/base.json#/definitions/styles/type",
           params: { type: "array" },
           message: "should be array",
         };
@@ -3711,7 +3743,7 @@ function validate31(
                 keyword: "required",
                 dataPath: dataPath + "/dependencies/" + i3,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/dependencies/items/required",
+                  "shared/definitions/base.json#/definitions/dependencies/items/required",
                 params: { missingProperty: "name" },
                 message: "should have required property '" + "name" + "'",
               };
@@ -3730,7 +3762,7 @@ function validate31(
                     keyword: "pattern",
                     dataPath: dataPath + "/dependencies/" + i3 + "/name",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/dependencies/items/properties/name/pattern",
+                      "shared/definitions/base.json#/definitions/dependencies/items/properties/name/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -3746,7 +3778,7 @@ function validate31(
                   keyword: "type",
                   dataPath: dataPath + "/dependencies/" + i3 + "/name",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/dependencies/items/properties/name/type",
+                    "shared/definitions/base.json#/definitions/dependencies/items/properties/name/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -3766,7 +3798,7 @@ function validate31(
                     keyword: "pattern",
                     dataPath: dataPath + "/dependencies/" + i3 + "/manifest",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/dependencies/items/properties/manifest/pattern",
+                      "shared/definitions/base.json#/definitions/dependencies/items/properties/manifest/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -3782,7 +3814,7 @@ function validate31(
                   keyword: "type",
                   dataPath: dataPath + "/dependencies/" + i3 + "/manifest",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/dependencies/items/properties/manifest/type",
+                    "shared/definitions/base.json#/definitions/dependencies/items/properties/manifest/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -3802,7 +3834,7 @@ function validate31(
                     keyword: "pattern",
                     dataPath: dataPath + "/dependencies/" + i3 + "/type",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/dependencies/items/properties/type/pattern",
+                      "shared/definitions/base.json#/definitions/dependencies/items/properties/type/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -3818,7 +3850,7 @@ function validate31(
                   keyword: "type",
                   dataPath: dataPath + "/dependencies/" + i3 + "/type",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/dependencies/items/properties/type/type",
+                    "shared/definitions/base.json#/definitions/dependencies/items/properties/type/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -3835,7 +3867,7 @@ function validate31(
               keyword: "type",
               dataPath: dataPath + "/dependencies/" + i3,
               schemaPath:
-                "shared/shared-base.json#/definitions/dependencies/items/type",
+                "shared/definitions/base.json#/definitions/dependencies/items/type",
               params: { type: "object" },
               message: "should be object",
             };
@@ -3851,7 +3883,8 @@ function validate31(
         const err39 = {
           keyword: "type",
           dataPath: dataPath + "/dependencies",
-          schemaPath: "shared/shared-base.json#/definitions/dependencies/type",
+          schemaPath:
+            "shared/definitions/base.json#/definitions/dependencies/type",
           params: { type: "array" },
           message: "should be array",
         };
@@ -3875,7 +3908,7 @@ function validate31(
                 keyword: "required",
                 dataPath: dataPath + "/languages/" + i4,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/languages/items/required",
+                  "shared/definitions/base.json#/definitions/languages/items/required",
                 params: { missingProperty: "lang" },
                 message: "should have required property '" + "lang" + "'",
               };
@@ -3891,7 +3924,7 @@ function validate31(
                 keyword: "required",
                 dataPath: dataPath + "/languages/" + i4,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/languages/items/required",
+                  "shared/definitions/base.json#/definitions/languages/items/required",
                 params: { missingProperty: "name" },
                 message: "should have required property '" + "name" + "'",
               };
@@ -3907,7 +3940,7 @@ function validate31(
                 keyword: "required",
                 dataPath: dataPath + "/languages/" + i4,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/languages/items/required",
+                  "shared/definitions/base.json#/definitions/languages/items/required",
                 params: { missingProperty: "path" },
                 message: "should have required property '" + "path" + "'",
               };
@@ -3926,7 +3959,7 @@ function validate31(
                     keyword: "pattern",
                     dataPath: dataPath + "/languages/" + i4 + "/lang",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/languages/items/properties/lang/pattern",
+                      "shared/definitions/base.json#/definitions/languages/items/properties/lang/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -3942,7 +3975,7 @@ function validate31(
                   keyword: "type",
                   dataPath: dataPath + "/languages/" + i4 + "/lang",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/languages/items/properties/lang/type",
+                    "shared/definitions/base.json#/definitions/languages/items/properties/lang/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -3962,7 +3995,7 @@ function validate31(
                     keyword: "pattern",
                     dataPath: dataPath + "/languages/" + i4 + "/name",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/languages/items/properties/name/pattern",
+                      "shared/definitions/base.json#/definitions/languages/items/properties/name/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -3978,7 +4011,7 @@ function validate31(
                   keyword: "type",
                   dataPath: dataPath + "/languages/" + i4 + "/name",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/languages/items/properties/name/type",
+                    "shared/definitions/base.json#/definitions/languages/items/properties/name/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -3998,7 +4031,7 @@ function validate31(
                     keyword: "pattern",
                     dataPath: dataPath + "/languages/" + i4 + "/path",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/languages/items/properties/path/pattern",
+                      "shared/definitions/base.json#/definitions/languages/items/properties/path/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -4014,7 +4047,7 @@ function validate31(
                   keyword: "type",
                   dataPath: dataPath + "/languages/" + i4 + "/path",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/languages/items/properties/path/type",
+                    "shared/definitions/base.json#/definitions/languages/items/properties/path/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -4031,7 +4064,7 @@ function validate31(
               keyword: "type",
               dataPath: dataPath + "/languages/" + i4,
               schemaPath:
-                "shared/shared-base.json#/definitions/languages/items/type",
+                "shared/definitions/base.json#/definitions/languages/items/type",
               params: { type: "object" },
               message: "should be object",
             };
@@ -4047,7 +4080,8 @@ function validate31(
         const err50 = {
           keyword: "type",
           dataPath: dataPath + "/languages",
-          schemaPath: "shared/shared-base.json#/definitions/languages/type",
+          schemaPath:
+            "shared/definitions/base.json#/definitions/languages/type",
           params: { type: "array" },
           message: "should be array",
         };
@@ -4071,7 +4105,7 @@ function validate31(
                 keyword: "required",
                 dataPath: dataPath + "/authors/" + i5,
                 schemaPath:
-                  "shared/shared-base.json#/definitions/authors/items/required",
+                  "shared/definitions/base.json#/definitions/authors/items/required",
                 params: { missingProperty: "name" },
                 message: "should have required property '" + "name" + "'",
               };
@@ -4090,7 +4124,7 @@ function validate31(
                     keyword: "pattern",
                     dataPath: dataPath + "/authors/" + i5 + "/name",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/authors/items/properties/name/pattern",
+                      "shared/definitions/base.json#/definitions/authors/items/properties/name/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -4106,7 +4140,7 @@ function validate31(
                   keyword: "type",
                   dataPath: dataPath + "/authors/" + i5 + "/name",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/authors/items/properties/name/type",
+                    "shared/definitions/base.json#/definitions/authors/items/properties/name/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -4126,7 +4160,7 @@ function validate31(
                     keyword: "pattern",
                     dataPath: dataPath + "/authors/" + i5 + "/email",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/authors/items/properties/email/pattern",
+                      "shared/definitions/base.json#/definitions/authors/items/properties/email/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -4142,7 +4176,7 @@ function validate31(
                   keyword: "type",
                   dataPath: dataPath + "/authors/" + i5 + "/email",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/authors/items/properties/email/type",
+                    "shared/definitions/base.json#/definitions/authors/items/properties/email/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -4162,7 +4196,7 @@ function validate31(
                     keyword: "pattern",
                     dataPath: dataPath + "/authors/" + i5 + "/url",
                     schemaPath:
-                      "shared/shared-base.json#/definitions/authors/items/properties/url/pattern",
+                      "shared/definitions/base.json#/definitions/authors/items/properties/url/pattern",
                     params: { pattern: "^(.*)$" },
                     message: 'should match pattern "' + "^(.*)$" + '"',
                   };
@@ -4178,7 +4212,7 @@ function validate31(
                   keyword: "type",
                   dataPath: dataPath + "/authors/" + i5 + "/url",
                   schemaPath:
-                    "shared/shared-base.json#/definitions/authors/items/properties/url/type",
+                    "shared/definitions/base.json#/definitions/authors/items/properties/url/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -4195,7 +4229,7 @@ function validate31(
               keyword: "type",
               dataPath: dataPath + "/authors/" + i5,
               schemaPath:
-                "shared/shared-base.json#/definitions/authors/items/type",
+                "shared/definitions/base.json#/definitions/authors/items/type",
               params: { type: "object" },
               message: "should be object",
             };
@@ -4211,7 +4245,7 @@ function validate31(
         const err59 = {
           keyword: "type",
           dataPath: dataPath + "/authors",
-          schemaPath: "shared/shared-base.json#/definitions/authors/type",
+          schemaPath: "shared/definitions/base.json#/definitions/authors/type",
           params: { type: "array" },
           message: "should be array",
         };
@@ -4228,7 +4262,7 @@ function validate31(
         const err60 = {
           keyword: "type",
           dataPath: dataPath + "/socket",
-          schemaPath: "shared/shared-base.json#/definitions/socket/type",
+          schemaPath: "shared/definitions/base.json#/definitions/socket/type",
           params: { type: "boolean" },
           message: "should be boolean",
         };
@@ -4254,7 +4288,7 @@ function validate31(
           keyword: "type",
           dataPath: dataPath + "/templateVersion",
           schemaPath:
-            "shared/shared-system.json#/definitions/templateVersion/type",
+            "shared/definitions/system.json#/definitions/templateVersion/type",
           params: { type: "integer" },
           message: "should be integer",
         };
@@ -4274,7 +4308,7 @@ function validate31(
             keyword: "pattern",
             dataPath: dataPath + "/initiative",
             schemaPath:
-              "shared/shared-system.json#/definitions/initiative/pattern",
+              "shared/definitions/system.json#/definitions/initiative/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -4289,7 +4323,8 @@ function validate31(
         const err63 = {
           keyword: "type",
           dataPath: dataPath + "/initiative",
-          schemaPath: "shared/shared-system.json#/definitions/initiative/type",
+          schemaPath:
+            "shared/definitions/system.json#/definitions/initiative/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -4315,7 +4350,7 @@ function validate31(
           keyword: "type",
           dataPath: dataPath + "/gridDistance",
           schemaPath:
-            "shared/shared-system.json#/definitions/gridDistance/type",
+            "shared/definitions/system.json#/definitions/gridDistance/type",
           params: { type: "integer" },
           message: "should be integer",
         };
@@ -4335,7 +4370,7 @@ function validate31(
             keyword: "pattern",
             dataPath: dataPath + "/gridUnits",
             schemaPath:
-              "shared/shared-system.json#/definitions/gridUnits/pattern",
+              "shared/definitions/system.json#/definitions/gridUnits/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -4350,7 +4385,8 @@ function validate31(
         const err66 = {
           keyword: "type",
           dataPath: dataPath + "/gridUnits",
-          schemaPath: "shared/shared-system.json#/definitions/gridUnits/type",
+          schemaPath:
+            "shared/definitions/system.json#/definitions/gridUnits/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -4373,7 +4409,7 @@ function validate31(
             keyword: "pattern",
             dataPath: dataPath + "/primaryTokenAttribute",
             schemaPath:
-              "shared/shared-system.json#/definitions/primaryTokenAttribute/anyOf/0/pattern",
+              "shared/definitions/system.json#/definitions/primaryTokenAttribute/anyOf/0/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -4389,7 +4425,7 @@ function validate31(
           keyword: "type",
           dataPath: dataPath + "/primaryTokenAttribute",
           schemaPath:
-            "shared/shared-system.json#/definitions/primaryTokenAttribute/anyOf/0/type",
+            "shared/definitions/system.json#/definitions/primaryTokenAttribute/anyOf/0/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -4409,7 +4445,7 @@ function validate31(
             keyword: "type",
             dataPath: dataPath + "/primaryTokenAttribute",
             schemaPath:
-              "shared/shared-system.json#/definitions/primaryTokenAttribute/anyOf/1/type",
+              "shared/definitions/system.json#/definitions/primaryTokenAttribute/anyOf/1/type",
             params: { type: "null" },
             message: "should be null",
           };
@@ -4428,7 +4464,7 @@ function validate31(
           keyword: "anyOf",
           dataPath: dataPath + "/primaryTokenAttribute",
           schemaPath:
-            "shared/shared-system.json#/definitions/primaryTokenAttribute/anyOf",
+            "shared/definitions/system.json#/definitions/primaryTokenAttribute/anyOf",
           params: {},
           message: "should match some schema in anyOf",
         };
@@ -4460,7 +4496,7 @@ function validate31(
             keyword: "pattern",
             dataPath: dataPath + "/secondaryTokenAttribute",
             schemaPath:
-              "shared/shared-system.json#/definitions/secondaryTokenAttribute/anyOf/0/pattern",
+              "shared/definitions/system.json#/definitions/secondaryTokenAttribute/anyOf/0/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -4476,7 +4512,7 @@ function validate31(
           keyword: "type",
           dataPath: dataPath + "/secondaryTokenAttribute",
           schemaPath:
-            "shared/shared-system.json#/definitions/secondaryTokenAttribute/anyOf/0/type",
+            "shared/definitions/system.json#/definitions/secondaryTokenAttribute/anyOf/0/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -4496,7 +4532,7 @@ function validate31(
             keyword: "type",
             dataPath: dataPath + "/secondaryTokenAttribute",
             schemaPath:
-              "shared/shared-system.json#/definitions/secondaryTokenAttribute/anyOf/1/type",
+              "shared/definitions/system.json#/definitions/secondaryTokenAttribute/anyOf/1/type",
             params: { type: "null" },
             message: "should be null",
           };
@@ -4515,7 +4551,7 @@ function validate31(
           keyword: "anyOf",
           dataPath: dataPath + "/secondaryTokenAttribute",
           schemaPath:
-            "shared/shared-system.json#/definitions/secondaryTokenAttribute/anyOf",
+            "shared/definitions/system.json#/definitions/secondaryTokenAttribute/anyOf",
           params: {},
           message: "should match some schema in anyOf",
         };
@@ -4543,7 +4579,7 @@ function validate31(
           const err75 = {
             keyword: "pattern",
             dataPath: dataPath + "/url",
-            schemaPath: "shared/shared-base.json#/definitions/url/pattern",
+            schemaPath: "shared/definitions/base.json#/definitions/url/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -4558,7 +4594,7 @@ function validate31(
         const err76 = {
           keyword: "type",
           dataPath: dataPath + "/url",
-          schemaPath: "shared/shared-base.json#/definitions/url/type",
+          schemaPath: "shared/definitions/base.json#/definitions/url/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -4577,7 +4613,8 @@ function validate31(
           const err77 = {
             keyword: "pattern",
             dataPath: dataPath + "/manifest",
-            schemaPath: "shared/shared-base.json#/definitions/manifest/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/manifest/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -4592,7 +4629,7 @@ function validate31(
         const err78 = {
           keyword: "type",
           dataPath: dataPath + "/manifest",
-          schemaPath: "shared/shared-base.json#/definitions/manifest/type",
+          schemaPath: "shared/definitions/base.json#/definitions/manifest/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -4611,7 +4648,8 @@ function validate31(
           const err79 = {
             keyword: "pattern",
             dataPath: dataPath + "/download",
-            schemaPath: "shared/shared-base.json#/definitions/download/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/download/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -4626,7 +4664,7 @@ function validate31(
         const err80 = {
           keyword: "type",
           dataPath: dataPath + "/download",
-          schemaPath: "shared/shared-base.json#/definitions/download/type",
+          schemaPath: "shared/definitions/base.json#/definitions/download/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -4645,7 +4683,8 @@ function validate31(
           const err81 = {
             keyword: "pattern",
             dataPath: dataPath + "/license",
-            schemaPath: "shared/shared-base.json#/definitions/license/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/license/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -4660,7 +4699,7 @@ function validate31(
         const err82 = {
           keyword: "type",
           dataPath: dataPath + "/license",
-          schemaPath: "shared/shared-base.json#/definitions/license/type",
+          schemaPath: "shared/definitions/base.json#/definitions/license/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -4679,7 +4718,8 @@ function validate31(
           const err83 = {
             keyword: "pattern",
             dataPath: dataPath + "/readme",
-            schemaPath: "shared/shared-base.json#/definitions/readme/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/readme/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -4694,7 +4734,7 @@ function validate31(
         const err84 = {
           keyword: "type",
           dataPath: dataPath + "/readme",
-          schemaPath: "shared/shared-base.json#/definitions/readme/type",
+          schemaPath: "shared/definitions/base.json#/definitions/readme/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -4713,7 +4753,8 @@ function validate31(
           const err85 = {
             keyword: "pattern",
             dataPath: dataPath + "/bugs",
-            schemaPath: "shared/shared-base.json#/definitions/bugs/pattern",
+            schemaPath:
+              "shared/definitions/base.json#/definitions/bugs/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -4728,7 +4769,7 @@ function validate31(
         const err86 = {
           keyword: "type",
           dataPath: dataPath + "/bugs",
-          schemaPath: "shared/shared-base.json#/definitions/bugs/type",
+          schemaPath: "shared/definitions/base.json#/definitions/bugs/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -4748,7 +4789,7 @@ function validate31(
             keyword: "pattern",
             dataPath: dataPath + "/changelog",
             schemaPath:
-              "shared/shared-base.json#/definitions/changelog/pattern",
+              "shared/definitions/base.json#/definitions/changelog/pattern",
             params: { pattern: "^(.*)$" },
             message: 'should match pattern "' + "^(.*)$" + '"',
           };
@@ -4763,7 +4804,8 @@ function validate31(
         const err88 = {
           keyword: "type",
           dataPath: dataPath + "/changelog",
-          schemaPath: "shared/shared-base.json#/definitions/changelog/type",
+          schemaPath:
+            "shared/definitions/base.json#/definitions/changelog/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -4840,23 +4882,30 @@ const schema90 = {
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
   title: "FoundryVTT module.json w/ strict requirements",
-  allOf: [{ $ref: "validateModule" }, { $ref: "../shared/strict-base.json" }],
+  allOf: [
+    { $ref: "validateModule" },
+    { $ref: "../shared/properties/strict/base.json" },
+  ],
   definitions: {},
   properties: {},
 };
 const schema91 = {
-  $id: "shared/strict-base.json",
+  $id: "shared/properties/strict/base.json",
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
   title: "FoundryVTT shared strict base between module & system.json",
   definitions: {},
   properties: {
-    version: { $ref: "shared-strict-base.json#/definitions/version" },
+    version: {
+      $ref: "../../definitions/strict/base.json#/definitions/version",
+    },
     minimumCoreVersion: {
-      $ref: "shared-strict-base.json#/definitions/minimumCoreVersion",
+      $ref:
+        "../../definitions/strict/base.json#/definitions/minimumCoreVersion",
     },
     compatibleCoreVersion: {
-      $ref: "shared-strict-base.json#/definitions/compatibleCoreVersion",
+      $ref:
+        "../../definitions/strict/base.json#/definitions/compatibleCoreVersion",
     },
   },
 };
@@ -4901,7 +4950,7 @@ function validate39(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
-  /*# sourceURL="shared/strict-base.json" */ let vErrors = null;
+  /*# sourceURL="shared/properties/strict/base.json" */ let vErrors = null;
   let errors = 0;
   if (data && typeof data == "object" && !Array.isArray(data)) {
     if (data.version !== undefined) {
@@ -4911,7 +4960,8 @@ function validate39(
           const err0 = {
             keyword: "pattern",
             dataPath: dataPath + "/version",
-            schemaPath: "shared-strict-base.json#/definitions/version/pattern",
+            schemaPath:
+              "../../definitions/strict/base.json#/definitions/version/pattern",
             params: {
               pattern:
                 "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
@@ -4932,7 +4982,8 @@ function validate39(
         const err1 = {
           keyword: "type",
           dataPath: dataPath + "/version",
-          schemaPath: "shared-strict-base.json#/definitions/version/type",
+          schemaPath:
+            "../../definitions/strict/base.json#/definitions/version/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -4953,10 +5004,10 @@ function validate39(
               (err2.dataPath.indexOf(dataPath + "/version") === 0 &&
                 err2.dataPath[dataPath + "/version".length] === "/")) &&
             err2.schemaPath.indexOf(
-              "shared-strict-base.json#/definitions/version"
+              "../../definitions/strict/base.json#/definitions/version"
             ) === 0 &&
             err2.schemaPath[
-              "shared-strict-base.json#/definitions/version".length
+              "../../definitions/strict/base.json#/definitions/version".length
             ] === "/"
           ) {
             emErrs0.push(err2);
@@ -4968,7 +5019,7 @@ function validate39(
             keyword: "errorMessage",
             dataPath: dataPath + "/version",
             schemaPath:
-              "shared-strict-base.json#/definitions/version/errorMessage",
+              "../../definitions/strict/base.json#/definitions/version/errorMessage",
             params: { errors: emErrs0 },
             message:
               '"version" should be a string that uses semantic versioning; current value: ' +
@@ -4999,7 +5050,7 @@ function validate39(
             keyword: "pattern",
             dataPath: dataPath + "/minimumCoreVersion",
             schemaPath:
-              "shared-strict-base.json#/definitions/minimumCoreVersion/pattern",
+              "../../definitions/strict/base.json#/definitions/minimumCoreVersion/pattern",
             params: {
               pattern:
                 "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
@@ -5021,7 +5072,7 @@ function validate39(
           keyword: "type",
           dataPath: dataPath + "/minimumCoreVersion",
           schemaPath:
-            "shared-strict-base.json#/definitions/minimumCoreVersion/type",
+            "../../definitions/strict/base.json#/definitions/minimumCoreVersion/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -5043,10 +5094,11 @@ function validate39(
                 err7.dataPath[dataPath + "/minimumCoreVersion".length] ===
                   "/")) &&
             err7.schemaPath.indexOf(
-              "shared-strict-base.json#/definitions/minimumCoreVersion"
+              "../../definitions/strict/base.json#/definitions/minimumCoreVersion"
             ) === 0 &&
             err7.schemaPath[
-              "shared-strict-base.json#/definitions/minimumCoreVersion".length
+              "../../definitions/strict/base.json#/definitions/minimumCoreVersion"
+                .length
             ] === "/"
           ) {
             emErrs2.push(err7);
@@ -5058,7 +5110,7 @@ function validate39(
             keyword: "errorMessage",
             dataPath: dataPath + "/minimumCoreVersion",
             schemaPath:
-              "shared-strict-base.json#/definitions/minimumCoreVersion/errorMessage",
+              "../../definitions/strict/base.json#/definitions/minimumCoreVersion/errorMessage",
             params: { errors: emErrs2 },
             message:
               '"minimumCoreVersion" should be a string that uses semantic versioning; current value: ' +
@@ -5089,7 +5141,7 @@ function validate39(
             keyword: "pattern",
             dataPath: dataPath + "/compatibleCoreVersion",
             schemaPath:
-              "shared-strict-base.json#/definitions/compatibleCoreVersion/pattern",
+              "../../definitions/strict/base.json#/definitions/compatibleCoreVersion/pattern",
             params: {
               pattern:
                 "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
@@ -5111,7 +5163,7 @@ function validate39(
           keyword: "type",
           dataPath: dataPath + "/compatibleCoreVersion",
           schemaPath:
-            "shared-strict-base.json#/definitions/compatibleCoreVersion/type",
+            "../../definitions/strict/base.json#/definitions/compatibleCoreVersion/type",
           params: { type: "string" },
           message: "should be string",
         };
@@ -5134,10 +5186,10 @@ function validate39(
                 err12.dataPath[dataPath + "/compatibleCoreVersion".length] ===
                   "/")) &&
             err12.schemaPath.indexOf(
-              "shared-strict-base.json#/definitions/compatibleCoreVersion"
+              "../../definitions/strict/base.json#/definitions/compatibleCoreVersion"
             ) === 0 &&
             err12.schemaPath[
-              "shared-strict-base.json#/definitions/compatibleCoreVersion"
+              "../../definitions/strict/base.json#/definitions/compatibleCoreVersion"
                 .length
             ] === "/"
           ) {
@@ -5150,7 +5202,7 @@ function validate39(
             keyword: "errorMessage",
             dataPath: dataPath + "/compatibleCoreVersion",
             schemaPath:
-              "shared-strict-base.json#/definitions/compatibleCoreVersion/errorMessage",
+              "../../definitions/strict/base.json#/definitions/compatibleCoreVersion/errorMessage",
             params: { errors: emErrs4 },
             message:
               '"compatibleCoreVersion" should be a string that uses semantic versioning; current value: ' +
@@ -5237,7 +5289,7 @@ const schema96 = {
   title: "FoundryVTT module.json w/ manifest+ and strict requirements",
   allOf: [
     { $ref: "validateModulePlus" },
-    { $ref: "../shared/strict-base.json" },
+    { $ref: "../shared/properties/strict/base.json" },
   ],
   definitions: {},
   properties: {},
@@ -5286,7 +5338,10 @@ const schema97 = {
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
   title: "FoundryVTT system.json w/ strict requirements",
-  allOf: [{ $ref: "validateSystem" }, { $ref: "../shared/strict-base.json" }],
+  allOf: [
+    { $ref: "validateSystem" },
+    { $ref: "../shared/properties/strict/base.json" },
+  ],
   definitions: {},
   properties: {},
 };
@@ -5336,7 +5391,7 @@ const schema98 = {
   title: "FoundryVTT system.json w/ manifest+",
   allOf: [
     { $ref: "validateSystemPlus" },
-    { $ref: "../shared/strict-base.json" },
+    { $ref: "../shared/properties/strict/base.json" },
   ],
   definitions: {},
   properties: {},

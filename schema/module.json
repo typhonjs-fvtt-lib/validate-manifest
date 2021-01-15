@@ -14,80 +14,80 @@
   ],
   "properties": {
     "name": {
-      "$ref": "shared/shared-base.json#/definitions/name"
+      "$ref": "shared/definitions/base.json#/definitions/name"
     },
     "title": {
-      "$ref": "shared/shared-base.json#/definitions/title"
+      "$ref": "shared/definitions/base.json#/definitions/title"
     },
     "description": {
-      "$ref": "shared/shared-base.json#/definitions/description"
+      "$ref": "shared/definitions/base.json#/definitions/description"
     },
     "author": {
-      "$ref": "shared/shared-base.json#/definitions/author"
+      "$ref": "shared/definitions/base.json#/definitions/author"
     },
     "version": {
-      "$ref": "shared/shared-base.json#/definitions/version"
+      "$ref": "shared/definitions/base.json#/definitions/version"
     },
     "minimumCoreVersion": {
-      "$ref": "shared/shared-base.json#/definitions/minimumCoreVersion"
+      "$ref": "shared/definitions/base.json#/definitions/minimumCoreVersion"
     },
     "compatibleCoreVersion": {
-      "$ref": "shared/shared-base.json#/definitions/compatibleCoreVersion"
+      "$ref": "shared/definitions/base.json#/definitions/compatibleCoreVersion"
     },
     "scripts": {
-      "$ref": "shared/shared-base.json#/definitions/scripts"
+      "$ref": "shared/definitions/base.json#/definitions/scripts"
     },
     "esmodules": {
-      "$ref": "shared/shared-base.json#/definitions/esmodules"
+      "$ref": "shared/definitions/base.json#/definitions/esmodules"
     },
     "styles": {
-      "$ref": "shared/shared-base.json#/definitions/styles"
+      "$ref": "shared/definitions/base.json#/definitions/styles"
     },
     "packs": {
-      "$ref": "shared/shared-base.json#/definitions/packs"
+      "$ref": "shared/definitions/base.json#/definitions/packs"
     },
     "dependencies": {
-      "$ref": "shared/shared-base.json#/definitions/dependencies"
+      "$ref": "shared/definitions/base.json#/definitions/dependencies"
     },
     "languages": {
-      "$ref": "shared/shared-base.json#/definitions/languages"
+      "$ref": "shared/definitions/base.json#/definitions/languages"
     },
     "system": {
       "oneOf": [
         {
-          "$ref": "shared/shared-base.json#/definitions/system"
+          "$ref": "shared/definitions/base.json#/definitions/system"
         },
         {
-          "$ref": "shared/shared-base.json#/definitions/systems"
+          "$ref": "shared/definitions/base.json#/definitions/systems"
         }
       ]
     },
     "authors": {
-      "$ref": "shared/shared-base.json#/definitions/authors"
+      "$ref": "shared/definitions/base.json#/definitions/authors"
     },
     "socket": {
-      "$ref": "shared/shared-base.json#/definitions/socket"
+      "$ref": "shared/definitions/base.json#/definitions/socket"
     },
     "url": {
-      "$ref": "shared/shared-base.json#/definitions/url"
+      "$ref": "shared/definitions/base.json#/definitions/url"
     },
     "manifest": {
-      "$ref": "shared/shared-base.json#/definitions/manifest"
+      "$ref": "shared/definitions/base.json#/definitions/manifest"
     },
     "download": {
-      "$ref": "shared/shared-base.json#/definitions/download"
+      "$ref": "shared/definitions/base.json#/definitions/download"
     },
     "license": {
-      "$ref": "shared/shared-base.json#/definitions/license"
+      "$ref": "shared/definitions/base.json#/definitions/license"
     },
     "readme": {
-      "$ref": "shared/shared-base.json#/definitions/readme"
+      "$ref": "shared/definitions/base.json#/definitions/readme"
     },
     "bugs": {
-      "$ref": "shared/shared-base.json#/definitions/bugs"
+      "$ref": "shared/definitions/base.json#/definitions/bugs"
     },
     "changelog": {
-      "$ref": "shared/shared-base.json#/definitions/changelog"
+      "$ref": "shared/definitions/base.json#/definitions/changelog"
     }
   }
 }

@@ -1,18 +1,18 @@
 {
-  "$id": "shared/strict-base.json",
+  "$id": "shared/properties/strict/base.json",
   "type": "object",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "FoundryVTT shared strict base between module & system.json",
   "definitions": {},
   "properties": {
     "version": {
-      "$ref": "shared-strict-base.json#/definitions/version"
+      "$ref": "../../definitions/strict/base.json#/definitions/version"
     },
     "minimumCoreVersion": {
-      "$ref": "shared-strict-base.json#/definitions/minimumCoreVersion"
+      "$ref": "../../definitions/strict/base.json#/definitions/minimumCoreVersion"
     },
     "compatibleCoreVersion": {
-      "$ref": "shared-strict-base.json#/definitions/compatibleCoreVersion"
+      "$ref": "../../definitions/strict/base.json#/definitions/compatibleCoreVersion"
     }
   }
 }

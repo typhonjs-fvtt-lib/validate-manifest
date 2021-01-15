@@ -1,5 +1,5 @@
 {
-  "$id": "shared/shared-system.json",
+  "$id": "shared/definitions/system.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "templateVersion": {

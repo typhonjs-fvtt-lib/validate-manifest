@@ -6,7 +6,7 @@
   "allOf":
   [
     { "$ref": "validateModule" },
-    { "$ref": "../shared/strict-base.json" }
+    { "$ref": "../shared/properties/strict/base.json"}
   ],
   "definitions": {},
   "properties": {

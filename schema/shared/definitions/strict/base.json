@@ -1,5 +1,5 @@
 {
-  "$id": "shared/shared-strict-base.json",
+  "$id": "shared/definitions/strict/base.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "version": {
