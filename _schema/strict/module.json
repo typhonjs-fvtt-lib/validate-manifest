@@ -5,13 +5,10 @@
   "title": "FoundryVTT module.json w/ strict requirements",
   "allOf":
   [
-    { "$ref": "../shared/properties/module.json" },
+    { "$ref": "validateModule" },
     { "$ref": "../shared/properties/strict/base.json"}
   ],
   "definitions": {},
   "properties": {
-    "packs": {
-      "$ref": "../shared/definitions/base.json#/definitions/packs"
-    }
   }
 }

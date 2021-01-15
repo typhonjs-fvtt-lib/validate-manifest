@@ -3,13 +3,8 @@
   "type": "object",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "FoundryVTT module.json w/ manifest+",
-  "allOf":
-  [
-    { "$ref": "shared/properties/module.json"}
-  ],
+  "allOf": [{ "$ref": "validateModule" }],
+  "definitions": {},
   "properties": {
-    "packs": {
-      "$ref": "shared/definitions/base.json#/definitions/packs"
-    }
   }
 }

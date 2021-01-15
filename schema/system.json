@@ -3,99 +3,10 @@
   "type": "object",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "FoundryVTT system.json",
-  "definitions": {},
-  "required": [
-    "name",
-    "title",
-    "description",
-    "author",
-    "version",
-    "minimumCoreVersion"
+  "allOf":
+  [
+    { "$ref": "shared/properties/system.json"}
   ],
   "properties": {
-    "name": {
-      "$ref": "shared/definitions/base.json#/definitions/name"
-    },
-    "title": {
-      "$ref": "shared/definitions/base.json#/definitions/title"
-    },
-    "description": {
-      "$ref": "shared/definitions/base.json#/definitions/description"
-    },
-    "author": {
-      "$ref": "shared/definitions/base.json#/definitions/author"
-    },
-    "version": {
-      "$ref": "shared/definitions/base.json#/definitions/version"
-    },
-    "minimumCoreVersion": {
-      "$ref": "shared/definitions/base.json#/definitions/minimumCoreVersion"
-    },
-    "compatibleCoreVersion": {
-      "$ref": "shared/definitions/base.json#/definitions/compatibleCoreVersion"
-    },
-    "scripts": {
-      "$ref": "shared/definitions/base.json#/definitions/scripts"
-    },
-    "esmodules": {
-      "$ref": "shared/definitions/base.json#/definitions/esmodules"
-    },
-    "styles": {
-      "$ref": "shared/definitions/base.json#/definitions/styles"
-    },
-    "packs": {
-      "$ref": "shared/definitions/base.json#/definitions/packs"
-    },
-    "dependencies": {
-      "$ref": "shared/definitions/base.json#/definitions/dependencies"
-    },
-    "languages": {
-      "$ref": "shared/definitions/base.json#/definitions/languages"
-    },
-    "authors": {
-      "$ref": "shared/definitions/base.json#/definitions/authors"
-    },
-    "socket": {
-      "$ref": "shared/definitions/base.json#/definitions/socket"
-    },
-    "templateVersion": {
-      "$ref": "shared/definitions/system.json#/definitions/templateVersion"
-    },
-    "initiative": {
-      "$ref": "shared/definitions/system.json#/definitions/initiative"
-    },
-    "gridDistance": {
-      "$ref": "shared/definitions/system.json#/definitions/gridDistance"
-    },
-    "gridUnits": {
-      "$ref": "shared/definitions/system.json#/definitions/gridUnits"
-    },
-    "primaryTokenAttribute": {
-      "$ref": "shared/definitions/system.json#/definitions/primaryTokenAttribute"
-    },
-    "secondaryTokenAttribute": {
-      "$ref": "shared/definitions/system.json#/definitions/secondaryTokenAttribute"
-    },
-    "url": {
-      "$ref": "shared/definitions/base.json#/definitions/url"
-    },
-    "manifest": {
-      "$ref": "shared/definitions/base.json#/definitions/manifest"
-    },
-    "download": {
-      "$ref": "shared/definitions/base.json#/definitions/download"
-    },
-    "license": {
-      "$ref": "shared/definitions/base.json#/definitions/license"
-    },
-    "readme": {
-      "$ref": "shared/definitions/base.json#/definitions/readme"
-    },
-    "bugs": {
-      "$ref": "shared/definitions/base.json#/definitions/bugs"
-    },
-    "changelog": {
-      "$ref": "shared/definitions/base.json#/definitions/changelog"
-    }
   }
 }

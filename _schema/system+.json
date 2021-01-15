@@ -3,10 +3,8 @@
   "type": "object",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "FoundryVTT system.json w/ manifest+",
-  "allOf":
-  [
-    { "$ref": "shared/properties/system.json"}
-  ],
+  "allOf": [{ "$ref": "validateSystem" }],
+  "definitions": {},
   "properties": {
   }
 }
