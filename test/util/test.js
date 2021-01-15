@@ -1,7 +1,7 @@
 /**
  * Defines which tests will be run by group and type.
  *
- * @type {{type: {invalidBaseStrict: boolean, validCommonStrict: boolean, validPlus: boolean, validBase: boolean, validPlusStrict: boolean, invalidPlusStrict: boolean, invalidCommon: boolean, validCommon: boolean, invalidCommonStrict: boolean, invalidBase: boolean, invalidPlus: boolean, validBaseStrict: boolean}, group: {validateModuleStrict: boolean, validateSystemPlusStrict: boolean, validateModulePlusStrict: boolean, validateSystem: boolean, validateSystemStrict: boolean, validateSystemPlus: boolean, validateModulePlus: boolean, validateModule: boolean}}}
+ * @type {{type: {invalidBaseStrict: boolean, validCommonStrict: boolean, validPlus: boolean, validBase: boolean, validPlusStrict: boolean, invalidPlusStrict: boolean, invalidCommon: boolean, validCommon: boolean, invalidCommonStrict: boolean, invalidBase: boolean, invalidPlus: boolean, validBaseStrict: boolean}, createErrorData: boolean, group: {validateModuleStrict: boolean, validateSystemPlusStrict: boolean, validateModulePlusStrict: boolean, validateSystem: boolean, validateSystemStrict: boolean, validateSystemPlus: boolean, validateModulePlus: boolean, validateModule: boolean}}}
  */
 module.exports = {
    group: {
@@ -27,5 +27,7 @@ module.exports = {
       validBaseStrict: true,
       validPlus: true,
       validPlusStrict: true
-   }
+   },
+   // When error data does not exist it will be created when TestUtil.invalid is invoked
+   createErrorData: false
 };

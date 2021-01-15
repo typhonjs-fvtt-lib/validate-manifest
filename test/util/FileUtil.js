@@ -1,6 +1,8 @@
 const fs                = require("fs");
 const path              = require("path");
 
+const stripJsonComments = require('strip-json-comments');
+
 /**
  * Provides a file loading to load JSON files and convert them into a Map.
  */
@@ -25,7 +27,7 @@ class FileUtil
          if (isFile)
          {
             const baseName = path.basename(absPath);
-            const data = JSON.parse(fs.readFileSync(absPath, 'utf8'));
+            const data = JSON.parse(stripJsonComments(fs.readFileSync(absPath, 'utf8')));
 
             results.set(baseName, {
                absPath,

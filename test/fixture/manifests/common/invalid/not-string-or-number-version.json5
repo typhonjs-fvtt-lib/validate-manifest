@@ -1,3 +1,4 @@
+// Skips for strict validation which is tested with /strict/common/not-semver-version.json5
 {
   "__strictskip": true,
   "name": "a-module",
