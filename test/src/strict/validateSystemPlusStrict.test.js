@@ -1,7 +1,7 @@
-const TestUtil                      = require('../util/TestUtil');
-const test                          = require('../util/test');
+const TestUtil                      = require('../../util/TestUtil');
+const test                          = require('../../util/test');
 
-const { validateSystemPlusStrict }  = require('../../dist/validators');
+const { validateSystemPlusStrict }  = require('../../../dist/validators');
 
 if (test.group.validateSystemPlusStrict)
 {
@@ -11,7 +11,7 @@ if (test.group.validateSystemPlusStrict)
       {
          describe('valid (common)', () =>
          {
-            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/common', true);
+            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/loose/common', true);
          });
       }
 
@@ -19,7 +19,7 @@ if (test.group.validateSystemPlusStrict)
       {
          describe('invalid (common)', () =>
          {
-            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/common', true);
+            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/loose/common', true);
          });
       }
 
@@ -27,7 +27,7 @@ if (test.group.validateSystemPlusStrict)
       {
          describe('valid (base)', () =>
          {
-            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/system', true);
+            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/loose/system', true);
          });
       }
 
@@ -35,7 +35,7 @@ if (test.group.validateSystemPlusStrict)
       {
          describe('invalid (base)', () =>
          {
-            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/system', true);
+            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/loose/system', true);
          });
       }
 
@@ -43,7 +43,7 @@ if (test.group.validateSystemPlusStrict)
       {
          describe('valid (plus)', () =>
          {
-            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/system+', true);
+            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/loose/system+', true);
          });
       }
 
@@ -51,7 +51,7 @@ if (test.group.validateSystemPlusStrict)
       {
          describe('invalid (plus)', () =>
          {
-            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/system+', true);
+            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/loose/system+', true);
          });
       }
 
@@ -59,7 +59,7 @@ if (test.group.validateSystemPlusStrict)
       {
          describe('valid strict (common)', () =>
          {
-            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/strict-common');
+            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/strict/common');
          });
       }
 
@@ -67,7 +67,7 @@ if (test.group.validateSystemPlusStrict)
       {
          describe('invalid strict (common)', () =>
          {
-            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/strict-common');
+            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/strict/common');
          });
       }
 
@@ -75,7 +75,7 @@ if (test.group.validateSystemPlusStrict)
       {
          describe('valid strict (base)', () =>
          {
-            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/strict-system');
+            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/strict/system');
          });
       }
 
@@ -83,7 +83,7 @@ if (test.group.validateSystemPlusStrict)
       {
          describe('invalid strict (base)', () =>
          {
-            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/strict-system');
+            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/strict/system');
          });
       }
 
@@ -91,7 +91,7 @@ if (test.group.validateSystemPlusStrict)
       {
          describe('valid strict (plus)', () =>
          {
-            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/strict-system+');
+            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/strict/system+');
          });
       }
 
@@ -99,7 +99,7 @@ if (test.group.validateSystemPlusStrict)
       {
          describe('invalid strict (plus)', () =>
          {
-            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/strict-system+');
+            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/strict/system+');
          });
       }
    });

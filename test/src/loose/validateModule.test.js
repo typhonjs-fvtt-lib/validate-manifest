@@ -1,7 +1,7 @@
-const TestUtil             = require('../util/TestUtil');
-const test                 = require('../util/test');
+const TestUtil             = require('../../util/TestUtil');
+const test                 = require('../../util/test');
 
-const { validateModule }   = require('../../dist/validators');
+const { validateModule }   = require('../../../dist/validators');
 
 if (test.group.validateModule)
 {
@@ -11,7 +11,7 @@ if (test.group.validateModule)
       {
          describe('valid (common)', () =>
          {
-            TestUtil.valid(validateModule, './test/fixture/manifests/common');
+            TestUtil.valid(validateModule, './test/fixture/manifests/loose/common');
          });
       }
 
@@ -19,7 +19,7 @@ if (test.group.validateModule)
       {
          describe('invalid (common)', () =>
          {
-            TestUtil.invalid(validateModule, './test/fixture/manifests/common');
+            TestUtil.invalid(validateModule, './test/fixture/manifests/loose/common');
          });
       }
 
@@ -27,7 +27,7 @@ if (test.group.validateModule)
       {
          describe('valid (base)', () =>
          {
-            TestUtil.valid(validateModule, './test/fixture/manifests/module');
+            TestUtil.valid(validateModule, './test/fixture/manifests/loose/module');
          });
       }
 
@@ -35,7 +35,7 @@ if (test.group.validateModule)
       {
          describe('invalid (base)', () =>
          {
-            TestUtil.invalid(validateModule, './test/fixture/manifests/module');
+            TestUtil.invalid(validateModule, './test/fixture/manifests/loose/module');
          });
       }
    });

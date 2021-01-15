@@ -1,7 +1,7 @@
-const TestUtil                = require('../util/TestUtil');
-const test                    = require('../util/test');
+const TestUtil                = require('../../util/TestUtil');
+const test                    = require('../../util/test');
 
-const { validateModulePlus }  = require('../../dist/validators');
+const { validateModulePlus }  = require('../../../dist/validators');
 
 if (test.group.validateModulePlus)
 {
@@ -11,7 +11,7 @@ if (test.group.validateModulePlus)
       {
          describe('valid (common)', () =>
          {
-            TestUtil.valid(validateModulePlus, './test/fixture/manifests/common');
+            TestUtil.valid(validateModulePlus, './test/fixture/manifests/loose/common');
          });
       }
 
@@ -19,7 +19,7 @@ if (test.group.validateModulePlus)
       {
          describe('invalid (common)', () =>
          {
-            TestUtil.invalid(validateModulePlus, './test/fixture/manifests/common');
+            TestUtil.invalid(validateModulePlus, './test/fixture/manifests/loose/common');
          });
       }
 
@@ -27,7 +27,7 @@ if (test.group.validateModulePlus)
       {
          describe('valid (base)', () =>
          {
-            TestUtil.valid(validateModulePlus, './test/fixture/manifests/module');
+            TestUtil.valid(validateModulePlus, './test/fixture/manifests/loose/module');
          });
       }
 
@@ -35,7 +35,7 @@ if (test.group.validateModulePlus)
       {
          describe('invalid (base)', () =>
          {
-            TestUtil.invalid(validateModulePlus, './test/fixture/manifests/module');
+            TestUtil.invalid(validateModulePlus, './test/fixture/manifests/loose/module');
          });
       }
 
@@ -43,7 +43,7 @@ if (test.group.validateModulePlus)
       {
          describe('valid (plus)', () =>
          {
-            TestUtil.valid(validateModulePlus, './test/fixture/manifests/module+');
+            TestUtil.valid(validateModulePlus, './test/fixture/manifests/loose/module+');
          });
       }
 
@@ -51,7 +51,7 @@ if (test.group.validateModulePlus)
       {
          describe('invalid (plus)', () =>
          {
-            TestUtil.invalid(validateModulePlus, './test/fixture/manifests/module+');
+            TestUtil.invalid(validateModulePlus, './test/fixture/manifests/loose/module+');
          });
       }
    });

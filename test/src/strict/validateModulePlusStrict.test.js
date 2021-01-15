@@ -1,7 +1,7 @@
-const TestUtil                      = require('../util/TestUtil');
-const test                          = require('../util/test');
+const TestUtil                      = require('../../util/TestUtil');
+const test                          = require('../../util/test');
 
-const { validateModulePlusStrict }  = require('../../dist/validators');
+const { validateModulePlusStrict }  = require('../../../dist/validators');
 
 if (test.group.validateModulePlusStrict)
 {
@@ -11,7 +11,7 @@ if (test.group.validateModulePlusStrict)
       {
          describe('valid (common)', () =>
          {
-            TestUtil.valid(validateModulePlusStrict, './test/fixture/manifests/common', true);
+            TestUtil.valid(validateModulePlusStrict, './test/fixture/manifests/loose/common', true);
          });
       }
 
@@ -19,7 +19,7 @@ if (test.group.validateModulePlusStrict)
       {
          describe('invalid (common)', () =>
          {
-            TestUtil.invalid(validateModulePlusStrict, './test/fixture/manifests/common', true);
+            TestUtil.invalid(validateModulePlusStrict, './test/fixture/manifests/loose/common', true);
          });
       }
 
@@ -27,7 +27,7 @@ if (test.group.validateModulePlusStrict)
       {
          describe('valid (base)', () =>
          {
-            TestUtil.valid(validateModulePlusStrict, './test/fixture/manifests/module', true);
+            TestUtil.valid(validateModulePlusStrict, './test/fixture/manifests/loose/module', true);
          });
       }
 
@@ -35,7 +35,7 @@ if (test.group.validateModulePlusStrict)
       {
          describe('invalid (base)', () =>
          {
-            TestUtil.invalid(validateModulePlusStrict, './test/fixture/manifests/module', true);
+            TestUtil.invalid(validateModulePlusStrict, './test/fixture/manifests/loose/module', true);
          });
       }
 
@@ -43,7 +43,7 @@ if (test.group.validateModulePlusStrict)
       {
          describe('valid (plus)', () =>
          {
-            TestUtil.valid(validateModulePlusStrict, './test/fixture/manifests/module+', true);
+            TestUtil.valid(validateModulePlusStrict, './test/fixture/manifests/loose/module+', true);
          });
       }
 
@@ -51,7 +51,7 @@ if (test.group.validateModulePlusStrict)
       {
          describe('invalid (plus)', () =>
          {
-            TestUtil.invalid(validateModulePlusStrict, './test/fixture/manifests/module+', true);
+            TestUtil.invalid(validateModulePlusStrict, './test/fixture/manifests/loose/module+', true);
          });
       }
 
@@ -59,7 +59,7 @@ if (test.group.validateModulePlusStrict)
       {
          describe('valid strict (common)', () =>
          {
-            TestUtil.valid(validateModulePlusStrict, './test/fixture/manifests/strict-common');
+            TestUtil.valid(validateModulePlusStrict, './test/fixture/manifests/strict/common');
          });
       }
 
@@ -67,7 +67,7 @@ if (test.group.validateModulePlusStrict)
       {
          describe('invalid strict (common)', () =>
          {
-            TestUtil.invalid(validateModulePlusStrict, './test/fixture/manifests/strict-common');
+            TestUtil.invalid(validateModulePlusStrict, './test/fixture/manifests/strict/common');
          });
       }
 
@@ -75,7 +75,7 @@ if (test.group.validateModulePlusStrict)
       {
          describe('valid strict (base)', () =>
          {
-            TestUtil.valid(validateModulePlusStrict, './test/fixture/manifests/strict-module');
+            TestUtil.valid(validateModulePlusStrict, './test/fixture/manifests/strict/module');
          });
       }
 
@@ -83,7 +83,7 @@ if (test.group.validateModulePlusStrict)
       {
          describe('invalid strict (base)', () =>
          {
-            TestUtil.invalid(validateModulePlusStrict, './test/fixture/manifests/strict-module');
+            TestUtil.invalid(validateModulePlusStrict, './test/fixture/manifests/strict/module');
          });
       }
 
@@ -91,7 +91,7 @@ if (test.group.validateModulePlusStrict)
       {
          describe('valid strict (plus)', () =>
          {
-            TestUtil.valid(validateModulePlusStrict, './test/fixture/manifests/strict-module+');
+            TestUtil.valid(validateModulePlusStrict, './test/fixture/manifests/strict/module+');
          });
       }
 
@@ -99,7 +99,7 @@ if (test.group.validateModulePlusStrict)
       {
          describe('invalid strict (plus)', () =>
          {
-            TestUtil.invalid(validateModulePlusStrict, './test/fixture/manifests/strict-module+');
+            TestUtil.invalid(validateModulePlusStrict, './test/fixture/manifests/strict/module+');
          });
       }
    });

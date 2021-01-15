@@ -1,7 +1,7 @@
-const TestUtil                = require('../util/TestUtil');
-const test                    = require('../util/test');
+const TestUtil                = require('../../util/TestUtil');
+const test                    = require('../../util/test');
 
-const { validateSystemPlus }  = require('../../dist/validators');
+const { validateSystemPlus }  = require('../../../dist/validators');
 
 if (test.group.validateSystemPlus)
 {
@@ -11,7 +11,7 @@ if (test.group.validateSystemPlus)
       {
          describe('valid (common)', () =>
          {
-            TestUtil.valid(validateSystemPlus, './test/fixture/manifests/common');
+            TestUtil.valid(validateSystemPlus, './test/fixture/manifests/loose/common');
          });
       }
 
@@ -19,7 +19,7 @@ if (test.group.validateSystemPlus)
       {
          describe('invalid (common)', () =>
          {
-            TestUtil.invalid(validateSystemPlus, './test/fixture/manifests/common');
+            TestUtil.invalid(validateSystemPlus, './test/fixture/manifests/loose/common');
          });
       }
 
@@ -27,7 +27,7 @@ if (test.group.validateSystemPlus)
       {
          describe('valid (base)', () =>
          {
-            TestUtil.valid(validateSystemPlus, './test/fixture/manifests/system');
+            TestUtil.valid(validateSystemPlus, './test/fixture/manifests/loose/system');
          });
       }
 
@@ -35,7 +35,7 @@ if (test.group.validateSystemPlus)
       {
          describe('invalid (base)', () =>
          {
-            TestUtil.invalid(validateSystemPlus, './test/fixture/manifests/system');
+            TestUtil.invalid(validateSystemPlus, './test/fixture/manifests/loose/system');
          });
       }
 
@@ -43,7 +43,7 @@ if (test.group.validateSystemPlus)
       {
          describe('valid (plus)', () =>
          {
-            TestUtil.valid(validateSystemPlus, './test/fixture/manifests/system+');
+            TestUtil.valid(validateSystemPlus, './test/fixture/manifests/loose/system+');
          });
       }
 
@@ -51,7 +51,7 @@ if (test.group.validateSystemPlus)
       {
          describe('invalid (plus)', () =>
          {
-            TestUtil.invalid(validateSystemPlus, './test/fixture/manifests/system+');
+            TestUtil.invalid(validateSystemPlus, './test/fixture/manifests/loose/system+');
          });
       }
    });
