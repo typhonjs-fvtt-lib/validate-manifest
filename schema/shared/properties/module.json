@@ -8,15 +8,5 @@
     { "$ref": "base.json"}
   ],
   "properties": {
-    "system": {
-      "oneOf": [
-        {
-          "$ref": "../definitions/base.json#/definitions/system"
-        },
-        {
-          "$ref": "../definitions/base.json#/definitions/systems"
-        }
-      ]
-    }
   }
 }

@@ -1,3 +1,4 @@
+const fs       = require('fs');
 const path     = require('path');
 
 const chai     = require('chai');
@@ -21,6 +22,16 @@ class TestUtil
          {
             if (!testFunction(test.data))
             {
+               const error = errors.get(key);
+               if (error === void 0)
+               {
+                  done(new Error(
+                   `Error data for'${key}' missing - creating it:\n${JSON.stringify(testFunction.errors, null, 3)}`));
+
+                  fs.writeFileSync(`${dirPath}${path.sep}errors${path.sep}${key}`,
+                   JSON.stringify(testFunction.errors, null, 3));
+               }
+
                chai.expect(testFunction.errors).to.be.deep.equal(errors.get(key).data);
                done();
             }

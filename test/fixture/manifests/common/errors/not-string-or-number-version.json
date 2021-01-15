@@ -1,0 +1,42 @@
+[
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/version",
+      "schemaPath": "#/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "type",
+               "dataPath": "/version",
+               "schemaPath": "#/oneOf/0/type",
+               "params": {
+                  "type": "string"
+               },
+               "message": "should be string",
+               "emUsed": true
+            },
+            {
+               "keyword": "type",
+               "dataPath": "/version",
+               "schemaPath": "#/oneOf/1/type",
+               "params": {
+                  "type": "number"
+               },
+               "message": "should be number",
+               "emUsed": true
+            },
+            {
+               "keyword": "oneOf",
+               "dataPath": "/version",
+               "schemaPath": "#/oneOf",
+               "params": {
+                  "passingSchemas": null
+               },
+               "message": "should match exactly one schema in oneOf",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "\"version\" should be a string or number; current value: true"
+   }
+]

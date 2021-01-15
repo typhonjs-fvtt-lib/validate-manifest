@@ -8,6 +8,16 @@
     { "$ref": "shared/properties/module.json"}
   ],
   "properties": {
+    "system": {
+      "oneOf": [
+        {
+          "$ref": "../shared/definitions/base.json#/definitions/system"
+        },
+        {
+          "$ref": "../shared/definitions/base.json#/definitions/systems"
+        }
+      ]
+    },
     "packs": {
       "$ref": "shared/definitions/base.json#/definitions/packs"
     }

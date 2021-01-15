@@ -1,0 +1,8 @@
+{
+  "name": "a-module",
+  "title": "A Module",
+  "description": 1,
+  "author": "typhonrt",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.7.5"
+}

@@ -57,7 +57,10 @@
         {
           "type": "number"
         }
-      ]
+      ],
+      "errorMessage": {
+        "_": "\"version\" should be a string or number; current value: ${/version}"
+      }
     },
     "minimumCoreVersion": {
       "title": "A string value",
