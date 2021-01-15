@@ -1,5 +1,5 @@
 {
-  "$id": "shared/definitions/base.json",
+  "$id": "shared/definitions/common/base.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "name": {
@@ -40,46 +40,6 @@
         "typhonrt"
       ],
       "$id": "#/definitions/author",
-      "type": "string"
-    },
-    "version": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "1.0.0"
-      ],
-      "$id": "#/definitions/version",
-      "oneOf": [
-        {
-          "type": "string",
-          "pattern": "^(.*)$"
-        },
-        {
-          "type": "number"
-        }
-      ],
-      "errorMessage": {
-        "_": "\"version\" should be a string or number; current value: ${/version}"
-      }
-    },
-    "minimumCoreVersion": {
-      "title": "A string value",
-      "default": "",
-      "pattern": "^(.*)$",
-      "examples": [
-        "0.7.5"
-      ],
-      "$id": "#/definitions/minimumCoreVersion",
-      "type": "string"
-    },
-    "compatibleCoreVersion": {
-      "title": "A string value",
-      "default": "",
-      "pattern": "^(.*)$",
-      "examples": [
-        "1.0.0"
-      ],
-      "$id": "#/definitions/compatibleCoreVersion",
       "type": "string"
     },
     "scripts": {
@@ -125,102 +85,6 @@
         "type": "string"
       },
       "$id": "#/definitions/styles",
-      "type": "array"
-    },
-    "packs": {
-      "title": "An array of items",
-      "items": {
-        "title": "An object value",
-        "required": [
-          "name",
-          "label",
-          "path",
-          "entity"
-        ],
-        "oneOf": [
-          {
-            "required": [
-              "module"
-            ]
-          },
-          {
-            "required": [
-              "system"
-            ]
-          },
-          {
-            "required": [
-              "module",
-              "system"
-            ]
-          }
-        ],
-        "properties": {
-          "name": {
-            "title": "A string value",
-            "default": "",
-            "pattern": "^(.*)$",
-            "examples": [
-              "pack-name"
-            ],
-            "$id": "#/definitions/packs/items/properties/name",
-            "type": "string"
-          },
-          "label": {
-            "title": "A string value",
-            "default": "",
-            "pattern": "^(.*)$",
-            "examples": [
-              "Pack Title"
-            ],
-            "$id": "#/definitions/packs/items/properties/label",
-            "type": "string"
-          },
-          "module": {
-            "title": "A string value",
-            "default": "",
-            "pattern": "^(.*)$",
-            "examples": [
-              "module-name"
-            ],
-            "$id": "#/definitions/packs/items/properties/module",
-            "type": "string"
-          },
-          "system": {
-            "oneOf": [
-              {
-                "$ref": "#/definitions/system"
-              },
-              {
-                "$ref": "#/definitions/systems"
-              }
-            ]
-          },
-          "path": {
-            "title": "A string value",
-            "default": "",
-            "pattern": "^(.*)$",
-            "examples": [
-              "./packs/pack-name.db"
-            ],
-            "$id": "#/definitions/packs/items/properties/path",
-            "type": "string"
-          },
-          "entity": {
-            "title": "A string value",
-            "default": "",
-            "pattern": "^(.*)$",
-            "examples": [
-              "Item"
-            ],
-            "$id": "#/definitions/packs/items/properties/entity",
-            "type": "string"
-          }
-        },
-        "$id": "#/definitions/packs/items",
-        "type": "object"
-      },
-      "$id": "#/definitions/packs",
       "type": "array"
     },
     "dependencies": {
@@ -313,31 +177,6 @@
         "type": "object"
       },
       "$id": "#/definitions/languages",
-      "type": "array"
-    },
-    "system": {
-      "title": "A string value",
-      "default": "",
-      "pattern": "^(.*)$",
-      "examples": [
-        "dnd5e"
-      ],
-      "$id": "#/definitions/system",
-      "type": "string"
-    },
-    "systems": {
-      "title": "An array of items",
-      "items": {
-        "title": "A string value",
-        "default": "",
-        "pattern": "^(.*)$",
-        "examples": [
-          "dnd5e"
-        ],
-        "$id": "#/definitions/systems/items",
-        "type": "string"
-      },
-      "$id": "#/definitions/systems",
       "type": "array"
     },
     "authors": {

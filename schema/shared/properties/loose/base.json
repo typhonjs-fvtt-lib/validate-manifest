@@ -9,13 +9,13 @@
   ],
   "properties": {
     "version": {
-      "$ref": "../../definitions/base.json#/definitions/version"
+      "$ref": "../../definitions/loose/base.json#/definitions/version"
     },
     "minimumCoreVersion": {
-      "$ref": "../../definitions/base.json#/definitions/minimumCoreVersion"
+      "$ref": "../../definitions/loose/base.json#/definitions/minimumCoreVersion"
     },
     "compatibleCoreVersion": {
-      "$ref": "../../definitions/base.json#/definitions/compatibleCoreVersion"
+      "$ref": "../../definitions/loose/base.json#/definitions/compatibleCoreVersion"
     }
   }
 }

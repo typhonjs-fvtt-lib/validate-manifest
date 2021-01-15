@@ -1,5 +1,5 @@
 {
-  "$id": "shared/definitions/module.json",
+  "$id": "shared/definitions/loose/module.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
   }

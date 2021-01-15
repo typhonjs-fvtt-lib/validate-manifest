@@ -11,15 +11,15 @@
     "system": {
       "oneOf": [
         {
-          "$ref": "../../definitions/base.json#/definitions/system"
+          "$ref": "../../definitions/loose/base.json#/definitions/system"
         },
         {
-          "$ref": "../../definitions/base.json#/definitions/systems"
+          "$ref": "../../definitions/loose/base.json#/definitions/systems"
         }
       ]
     },
     "packs": {
-      "$ref": "../../definitions/base.json#/definitions/packs"
+      "$ref": "../../definitions/loose/base.json#/definitions/packs"
     }
   }
 }

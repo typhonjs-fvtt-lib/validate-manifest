@@ -14,58 +14,58 @@
   ],
   "properties": {
     "name": {
-      "$ref": "../../definitions/base.json#/definitions/name"
+      "$ref": "../../definitions/common/base.json#/definitions/name"
     },
     "title": {
-      "$ref": "../../definitions/base.json#/definitions/title"
+      "$ref": "../../definitions/common/base.json#/definitions/title"
     },
     "description": {
-      "$ref": "../../definitions/base.json#/definitions/description"
+      "$ref": "../../definitions/common/base.json#/definitions/description"
     },
     "author": {
-      "$ref": "../../definitions/base.json#/definitions/author"
+      "$ref": "../../definitions/common/base.json#/definitions/author"
     },
     "scripts": {
-      "$ref": "../../definitions/base.json#/definitions/scripts"
+      "$ref": "../../definitions/common/base.json#/definitions/scripts"
     },
     "esmodules": {
-      "$ref": "../../definitions/base.json#/definitions/esmodules"
+      "$ref": "../../definitions/common/base.json#/definitions/esmodules"
     },
     "styles": {
-      "$ref": "../../definitions/base.json#/definitions/styles"
+      "$ref": "../../definitions/common/base.json#/definitions/styles"
     },
     "dependencies": {
-      "$ref": "../../definitions/base.json#/definitions/dependencies"
+      "$ref": "../../definitions/common/base.json#/definitions/dependencies"
     },
     "languages": {
-      "$ref": "../../definitions/base.json#/definitions/languages"
+      "$ref": "../../definitions/common/base.json#/definitions/languages"
     },
     "authors": {
-      "$ref": "../../definitions/base.json#/definitions/authors"
+      "$ref": "../../definitions/common/base.json#/definitions/authors"
     },
     "socket": {
-      "$ref": "../../definitions/base.json#/definitions/socket"
+      "$ref": "../../definitions/common/base.json#/definitions/socket"
     },
     "url": {
-      "$ref": "../../definitions/base.json#/definitions/url"
+      "$ref": "../../definitions/common/base.json#/definitions/url"
     },
     "manifest": {
-      "$ref": "../../definitions/base.json#/definitions/manifest"
+      "$ref": "../../definitions/common/base.json#/definitions/manifest"
     },
     "download": {
-      "$ref": "../../definitions/base.json#/definitions/download"
+      "$ref": "../../definitions/common/base.json#/definitions/download"
     },
     "license": {
-      "$ref": "../../definitions/base.json#/definitions/license"
+      "$ref": "../../definitions/common/base.json#/definitions/license"
     },
     "readme": {
-      "$ref": "../../definitions/base.json#/definitions/readme"
+      "$ref": "../../definitions/common/base.json#/definitions/readme"
     },
     "bugs": {
-      "$ref": "../../definitions/base.json#/definitions/bugs"
+      "$ref": "../../definitions/common/base.json#/definitions/bugs"
     },
     "changelog": {
-      "$ref": "../../definitions/base.json#/definitions/changelog"
+      "$ref": "../../definitions/common/base.json#/definitions/changelog"
     }
   }
 }

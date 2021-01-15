@@ -5,22 +5,22 @@
   "title": "FoundryVTT common properties for system.json",
   "properties": {
     "templateVersion": {
-      "$ref": "../../definitions/system.json#/definitions/templateVersion"
+      "$ref": "../../definitions/common/system.json#/definitions/templateVersion"
     },
     "initiative": {
-      "$ref": "../../definitions/system.json#/definitions/initiative"
+      "$ref": "../../definitions/common/system.json#/definitions/initiative"
     },
     "gridDistance": {
-      "$ref": "../../definitions/system.json#/definitions/gridDistance"
+      "$ref": "../../definitions/common/system.json#/definitions/gridDistance"
     },
     "gridUnits": {
-      "$ref": "../../definitions/system.json#/definitions/gridUnits"
+      "$ref": "../../definitions/common/system.json#/definitions/gridUnits"
     },
     "primaryTokenAttribute": {
-      "$ref": "../../definitions/system.json#/definitions/primaryTokenAttribute"
+      "$ref": "../../definitions/common/system.json#/definitions/primaryTokenAttribute"
     },
     "secondaryTokenAttribute": {
-      "$ref": "../../definitions/system.json#/definitions/secondaryTokenAttribute"
+      "$ref": "../../definitions/common/system.json#/definitions/secondaryTokenAttribute"
     }
   }
 }

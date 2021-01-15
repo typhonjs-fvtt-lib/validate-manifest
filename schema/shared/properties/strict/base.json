@@ -19,7 +19,7 @@
       "$ref": "../../definitions/strict/base.json#/definitions/compatibleCoreVersion"
     },
     "packs": {
-      "$ref": "../../definitions/base.json#/definitions/packs"
+      "$ref": "../../definitions/loose/base.json#/definitions/packs"
     }
   }
 }
