@@ -100,7 +100,7 @@ class TestUtil
       {
          if (!test.functionName[functionName]) { continue; }
 
-         const testFunction = require('../../dist/validators')['validateModule'];
+         const testFunction = require('../../dist/validators')[functionName];
 
          const data = test.functionData[functionName];
 
