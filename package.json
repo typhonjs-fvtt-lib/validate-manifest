@@ -41,7 +41,7 @@
   "license": "MIT",
   "repository": "typhonjs-fvtt/manifest-plus",
   "scripts": {
-    "compile-validators": "ajv compile --all-errors --inline-refs=false -r \"schema/shared/definitions/**/*.json\" -r \"schema/shared/properties/**/*.json\" -s \"schema/validators/**/*.json\" -c ajv-errors -c ajv-keywords/dist/keywords/typeof -o > dist/validators.js && prettier --write \"./dist/validators.js\"",
+    "compile-validators": "ajv compile --all-errors --inline-refs=false -r \"schema/shared/**/*.json\" -s \"schema/validators/**/*.json\" -c ajv-errors -c ajv-keywords/dist/keywords/typeof -o > dist/validators.js && prettier --write \"./dist/validators.js\"",
     "create-specification": "gitdown ./.specification/ManifestPlus.md --output-file ./ManifestPlus.md",
     "test": "nyc mocha \"test/src/**/*.test.js\""
   }
