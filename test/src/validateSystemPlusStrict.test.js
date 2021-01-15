@@ -1,6 +1,4 @@
-const chai                          = require('chai');
-
-const FileUtil                      = require('../util/FileUtil');
+const TestUtil                      = require('../util/TestUtil');
 const test                          = require('../util/test');
 
 const { validateSystemPlusStrict }  = require('../../dist/validators');
@@ -9,30 +7,27 @@ if (test.group.validateSystemPlusStrict)
 {
    describe('validateSystemPlusStrict', () =>
    {
+      if (test.type.validCommon)
+      {
+         describe('valid (common)', () =>
+         {
+            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/common', true);
+         });
+      }
+
+      if (test.type.invalidCommon)
+      {
+         describe('invalid (common)', () =>
+         {
+            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/common', true);
+         });
+      }
+
       if (test.type.validBase)
       {
          describe('valid (base)', () =>
          {
-            const validData = FileUtil.loadFiles('./test/fixture/manifests/system/valid');
-
-            for (const key of validData.keys())
-            {
-               const test = validData.get(key);
-
-               if ('__strictskip' in test.data) { continue; }
-
-               it(key, (done) =>
-               {
-                  if (!validateSystemPlusStrict(test.data))
-                  {
-                     done(`\n${JSON.stringify(validateSystemPlusStrict.errors, null, 3)}`);
-                  }
-                  else
-                  {
-                     done();
-                  }
-               });
-            }
+            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/system', true);
          });
       }
 
@@ -40,58 +35,71 @@ if (test.group.validateSystemPlusStrict)
       {
          describe('invalid (base)', () =>
          {
-            const errors = FileUtil.loadFiles('./test/fixture/manifests/system/errors');
-            const invalidData = FileUtil.loadFiles('./test/fixture/manifests/system/invalid');
+            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/system', true);
+         });
+      }
 
-            for (const key of invalidData.keys())
-            {
-               const test = invalidData.get(key);
+      if (test.type.validPlus)
+      {
+         describe('valid (plus)', () =>
+         {
+            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/system+', true);
+         });
+      }
 
-               if ('__strictskip' in test.data) { continue; }
+      if (test.type.invalidPlus)
+      {
+         describe('invalid (plus)', () =>
+         {
+            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/system+', true);
+         });
+      }
 
-               it(key, (done) =>
-               {
-                  if (!validateSystemPlusStrict(test.data))
-                  {
-                     chai.expect(validateSystemPlusStrict.errors).to.be.deep.equal(errors.get(key).data);
-                     done();
-                  }
-                  else
-                  {
-                     done(false);
-                  }
-               });
-            }
+      if (test.type.validCommonStrict)
+      {
+         describe('valid strict (common)', () =>
+         {
+            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/strict-common');
+         });
+      }
+
+      if (test.type.invalidCommonStrict)
+      {
+         describe('invalid strict (common)', () =>
+         {
+            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/strict-common');
+         });
+      }
+
+      if (test.type.validBaseStrict)
+      {
+         describe('valid strict (base)', () =>
+         {
+            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/strict-system');
          });
       }
 
       if (test.type.invalidBaseStrict)
       {
-         describe('invalid (base/strict)', () =>
+         describe('invalid strict (base)', () =>
          {
-            const errors = FileUtil.loadFiles('./test/fixture/manifests/strict-system/errors');
-            const invalidData = FileUtil.loadFiles('./test/fixture/manifests/strict-system/invalid');
+            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/strict-system');
+         });
+      }
 
-            for (const key of invalidData.keys())
-            {
-               const test = invalidData.get(key);
+      if (test.type.validPlusStrict)
+      {
+         describe('valid strict (plus)', () =>
+         {
+            TestUtil.valid(validateSystemPlusStrict, './test/fixture/manifests/strict-system+');
+         });
+      }
 
-               it(key, (done) =>
-               {
-                  if (!validateSystemPlusStrict(test.data))
-                  {
-                     // TODO REMOVE TESTING
-                     // done(`\n${JSON.stringify(validateModuleStrict.errors, null, 3)}`);
-
-                     chai.expect(validateSystemPlusStrict.errors).to.be.deep.equal(errors.get(key).data);
-                     done();
-                  }
-                  else
-                  {
-                     done(false);
-                  }
-               });
-            }
+      if (test.type.invalidPlusStrict)
+      {
+         describe('invalid strict (plus)', () =>
+         {
+            TestUtil.invalid(validateSystemPlusStrict, './test/fixture/manifests/strict-system+');
          });
       }
    });

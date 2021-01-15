@@ -1,7 +1,7 @@
 /**
  * Defines which tests will be run by group and type.
  *
- * @type {{type: {validPlus: boolean, validBase: boolean, invalidBase: boolean, invalidPlus: boolean}, group: {validateSystem: boolean, validateSystemPlus: boolean, validateModulePlus: boolean, validateModule: boolean}}}
+ * @type {{type: {invalidBaseStrict: boolean, validCommonStrict: boolean, validPlus: boolean, validBase: boolean, validPlusStrict: boolean, invalidPlusStrict: boolean, invalidCommon: boolean, validCommon: boolean, invalidCommonStrict: boolean, invalidBase: boolean, invalidPlus: boolean, validBaseStrict: boolean}, group: {validateModuleStrict: boolean, validateSystemPlusStrict: boolean, validateModulePlusStrict: boolean, validateSystem: boolean, validateSystemStrict: boolean, validateSystemPlus: boolean, validateModulePlus: boolean, validateModule: boolean}}}
  */
 module.exports = {
    group: {
@@ -15,10 +15,14 @@ module.exports = {
       validateSystemPlusStrict: true
    },
    type: {
+      invalidCommon: true,
+      invalidCommonStrict: true,
       invalidBase: true,
       invalidBaseStrict: true,
       invalidPlus: true,
       invalidPlusStrict: true,
+      validCommon: true,
+      validCommonStrict: true,
       validBase: true,
       validBaseStrict: true,
       validPlus: true,
