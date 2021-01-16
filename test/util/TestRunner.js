@@ -9,7 +9,7 @@ const test              = require('./test');
 /**
  * Provides convenience methods to setup Mocha tests based on JSON data files.
  */
-class TestUtil
+class TestRunner
 {
    /**
     * Handles invalid validation tests opening a source JSON file and comparing validation errors to stored error data.
@@ -25,8 +25,8 @@ class TestUtil
 
       if (!fs.existsSync(errorPath) || !fs.existsSync(invalidPath)) { return; }
 
-      const errors = TestUtil.loadFiles(errorPath);
-      const invalidData = TestUtil.loadFiles(invalidPath);
+      const errors = TestRunner.loadFiles(errorPath);
+      const invalidData = TestRunner.loadFiles(invalidPath);
 
       for (const key of invalidData.keys())
       {
@@ -128,7 +128,7 @@ class TestUtil
                   {
                      describe(`${category} - ${type} - valid`, () =>
                      {
-                        TestUtil.valid(testFunction, dirPath, data.isStrict);
+                        TestRunner.valid(testFunction, dirPath, data.isStrict);
                      });
                   }
 
@@ -136,7 +136,7 @@ class TestUtil
                   {
                      describe(`${category} - ${type} - invalid`, () =>
                      {
-                        TestUtil.invalid(testFunction, dirPath, data.isStrict);
+                        TestRunner.invalid(testFunction, dirPath, data.isStrict);
                      });
                   }
                }
@@ -158,7 +158,7 @@ class TestUtil
 
       if (!fs.existsSync(validPath)) { return; }
 
-      const validData = TestUtil.loadFiles(validPath);
+      const validData = TestRunner.loadFiles(validPath);
 
       for (const key of validData.keys())
       {
@@ -181,4 +181,4 @@ class TestUtil
    }
 }
 
-module.exports = TestUtil;
+module.exports = TestRunner;

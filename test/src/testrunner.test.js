@@ -1,1 +1,1 @@
-require('../util/TestUtil').run();
+require('../util/TestRunner').run();
