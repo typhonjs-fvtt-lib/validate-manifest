@@ -1,10 +1,10 @@
-const fs       = require('fs');
-const path     = require('path');
+const fs                = require('fs');
+const path              = require('path');
 
-const chai     = require('chai');
+const chai              = require('chai');
+const stripJsonComments = require('strip-json-comments');
 
-const FileUtil = require('./FileUtil');
-const test     = require('./test');
+const test              = require('./test');
 
 /**
  * Provides convenience methods to setup Mocha tests based on JSON data files.
@@ -25,8 +25,8 @@ class TestUtil
 
       if (!fs.existsSync(errorPath) || !fs.existsSync(invalidPath)) { return; }
 
-      const errors = FileUtil.loadFiles(errorPath);
-      const invalidData = FileUtil.loadFiles(invalidPath);
+      const errors = TestUtil.loadFiles(errorPath);
+      const invalidData = TestUtil.loadFiles(invalidPath);
 
       for (const key of invalidData.keys())
       {
@@ -66,38 +66,35 @@ class TestUtil
    }
 
    /**
-    * Handles valid validation tests opening a source JSON file and expecting it to validate.
+    * Returns a Map of all files found in the directory provided.
     *
-    * @param {function} testFunction - The ajv validation function to test.
-    * @param {string}   dirPath - The directory to open valid data.
-    * @param {boolean}  [isStrict=false] - Optional boolean to indicate for strict skip checks.
+    * @param {string}               dir - Directory to read.
+    * @param {Map<string, object>}  [results] - Output Map.
+    *
+    * @returns {Map<string, object>}
     */
-   static valid(testFunction, dirPath, isStrict = false)
+   static loadFiles(dir = '.', results = new Map())
    {
-      const validPath = `${dirPath}${path.sep}valid`;
-
-      if (!fs.existsSync(validPath)) { return; }
-
-      const validData = FileUtil.loadFiles(validPath);
-
-      for (const key of validData.keys())
+      fs.readdirSync(dir).forEach((filename) =>
       {
-         const test = validData.get(key);
+         const absPath = path.resolve(dir, filename);
+         const stat = fs.statSync(absPath);
+         const isFile = stat.isFile();
 
-         if (isStrict && '__strictskip' in test.data) { continue; }
-
-         it(key, (done) =>
+         if (isFile)
          {
-            if (!testFunction(test.data))
-            {
-               done(`\n${JSON.stringify(testFunction.errors, null, 3)}`);
-            }
-            else
-            {
-               done();
-            }
-         });
-      }
+            const baseName = path.basename(absPath);
+            const data = JSON.parse(stripJsonComments(fs.readFileSync(absPath, 'utf8')));
+
+            results.set(baseName, {
+               absPath,
+               baseName,
+               data
+            });
+         }
+      });
+
+      return results;
    }
 
    /**
@@ -143,6 +140,41 @@ class TestUtil
                      });
                   }
                }
+            }
+         });
+      }
+   }
+
+   /**
+    * Handles valid validation tests opening a source JSON file and expecting it to validate.
+    *
+    * @param {function} testFunction - The ajv validation function to test.
+    * @param {string}   dirPath - The directory to open valid data.
+    * @param {boolean}  [isStrict=false] - Optional boolean to indicate for strict skip checks.
+    */
+   static valid(testFunction, dirPath, isStrict = false)
+   {
+      const validPath = `${dirPath}${path.sep}valid`;
+
+      if (!fs.existsSync(validPath)) { return; }
+
+      const validData = TestUtil.loadFiles(validPath);
+
+      for (const key of validData.keys())
+      {
+         const test = validData.get(key);
+
+         if (isStrict && '__strictskip' in test.data) { continue; }
+
+         it(key, (done) =>
+         {
+            if (!testFunction(test.data))
+            {
+               done(`\n${JSON.stringify(testFunction.errors, null, 3)}`);
+            }
+            else
+            {
+               done();
             }
          });
       }
