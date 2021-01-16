@@ -1,0 +1,12 @@
+{
+  "$id": "shared/properties/loose/system+.json",
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FoundryVTT system.json & manifest+ (loose)",
+  "allOf":
+  [
+    { "$ref": "system.json"}
+  ],
+  "properties": {
+  }
+}

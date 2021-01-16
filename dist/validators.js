@@ -12,7 +12,7 @@ const schema18 = {
   $id: "shared/properties/loose/module.json",
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
-  title: "FoundryVTT common properties for loose module.json",
+  title: "FoundryVTT module.json (loose)",
   allOf: [{ $ref: "base.json" }],
   properties: {
     system: {
@@ -3192,14 +3192,22 @@ const schema49 = {
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
   title: "FoundryVTT module.json w/ manifest+",
-  allOf: [{ $ref: "../../shared/properties/loose/module.json" }],
+  allOf: [{ $ref: "../../shared/properties/loose/module+.json" }],
   properties: {},
 };
-function validate113(
+const schema50 = {
+  $id: "shared/properties/loose/module+.json",
+  type: "object",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "FoundryVTT module.json & manifest+ (loose)",
+  allOf: [{ $ref: "module.json" }],
+  properties: {},
+};
+function validate114(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
-  /*# sourceURL="validateModulePlus" */ let vErrors = null;
+  /*# sourceURL="shared/properties/loose/module+.json" */ let vErrors = null;
   let errors = 0;
   if (
     !validate53(data, { dataPath, parentData, parentDataProperty, rootData })
@@ -3223,11 +3231,44 @@ function validate113(
     }
     errors++;
   }
+  validate114.errors = vErrors;
+  return errors === 0;
+}
+function validate113(
+  data,
+  { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
+) {
+  /*# sourceURL="validateModulePlus" */ let vErrors = null;
+  let errors = 0;
+  if (
+    !validate114(data, { dataPath, parentData, parentDataProperty, rootData })
+  ) {
+    vErrors =
+      vErrors === null
+        ? validate114.errors
+        : vErrors.concat(validate114.errors);
+    errors = vErrors.length;
+  }
+  if (!(data && typeof data == "object" && !Array.isArray(data))) {
+    const err0 = {
+      keyword: "type",
+      dataPath,
+      schemaPath: "#/type",
+      params: { type: "object" },
+      message: "should be object",
+    };
+    if (vErrors === null) {
+      vErrors = [err0];
+    } else {
+      vErrors.push(err0);
+    }
+    errors++;
+  }
   validate113.errors = vErrors;
   return errors === 0;
 }
-exports.validateSystem = validate115;
-const schema50 = {
+exports.validateSystem = validate117;
+const schema51 = {
   $id: "validateSystem",
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
@@ -3235,15 +3276,15 @@ const schema50 = {
   allOf: [{ $ref: "../../shared/properties/loose/system.json" }],
   properties: {},
 };
-const schema51 = {
+const schema52 = {
   $id: "shared/properties/loose/system.json",
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
-  title: "FoundryVTT common properties for loose system.json",
+  title: "FoundryVTT system.json (loose)",
   allOf: [{ $ref: "base.json" }, { $ref: "../common/system.json" }],
   properties: {},
 };
-const schema52 = {
+const schema53 = {
   $id: "shared/properties/common/system.json",
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
@@ -3271,14 +3312,14 @@ const schema52 = {
     },
   },
 };
-const schema54 = {
+const schema55 = {
   title: "An integer value",
   default: 0,
   examples: [2],
   $id: "#/definitions/templateVersion",
   type: "integer",
 };
-function validate120(
+function validate122(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -3301,10 +3342,10 @@ function validate120(
     }
     errors++;
   }
-  validate120.errors = vErrors;
+  validate122.errors = vErrors;
   return errors === 0;
 }
-const schema55 = {
+const schema56 = {
   title: "A string value",
   default: "",
   pattern: "^(.*)$",
@@ -3312,7 +3353,7 @@ const schema55 = {
   $id: "#/definitions/initiative",
   type: "string",
 };
-function validate122(
+function validate124(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -3349,17 +3390,17 @@ function validate122(
     }
     errors++;
   }
-  validate122.errors = vErrors;
+  validate124.errors = vErrors;
   return errors === 0;
 }
-const schema56 = {
+const schema57 = {
   title: "An integer value",
   default: 0,
   examples: [5],
   $id: "#/definitions/gridDistance",
   type: "integer",
 };
-function validate124(
+function validate126(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -3382,10 +3423,10 @@ function validate124(
     }
     errors++;
   }
-  validate124.errors = vErrors;
+  validate126.errors = vErrors;
   return errors === 0;
 }
-const schema57 = {
+const schema58 = {
   title: "A string value",
   default: "",
   pattern: "^(.*)$",
@@ -3393,7 +3434,7 @@ const schema57 = {
   $id: "#/definitions/gridUnits",
   type: "string",
 };
-function validate126(
+function validate128(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -3430,17 +3471,17 @@ function validate126(
     }
     errors++;
   }
-  validate126.errors = vErrors;
+  validate128.errors = vErrors;
   return errors === 0;
 }
-const schema58 = {
+const schema59 = {
   title: "A string value or null",
   default: "",
   examples: ["resources.health"],
   $id: "#/definitions/primaryTokenAttribute",
   anyOf: [{ pattern: "^(.*)$", type: "string" }, { type: "null" }],
 };
-function validate128(
+function validate130(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -3526,17 +3567,17 @@ function validate128(
       }
     }
   }
-  validate128.errors = vErrors;
+  validate130.errors = vErrors;
   return errors === 0;
 }
-const schema59 = {
+const schema60 = {
   title: "A string value or null",
   default: "",
   examples: ["resources.power"],
   $id: "#/definitions/secondaryTokenAttribute",
   anyOf: [{ pattern: "^(.*)$", type: "string" }, { type: "null" }],
 };
-function validate130(
+function validate132(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -3622,10 +3663,10 @@ function validate130(
       }
     }
   }
-  validate130.errors = vErrors;
+  validate132.errors = vErrors;
   return errors === 0;
 }
-function validate118(
+function validate120(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -3634,26 +3675,10 @@ function validate118(
   if (data && typeof data == "object" && !Array.isArray(data)) {
     if (data.templateVersion !== undefined) {
       if (
-        !validate120(data.templateVersion, {
+        !validate122(data.templateVersion, {
           dataPath: dataPath + "/templateVersion",
           parentData: data,
           parentDataProperty: "templateVersion",
-          rootData,
-        })
-      ) {
-        vErrors =
-          vErrors === null
-            ? validate120.errors
-            : vErrors.concat(validate120.errors);
-        errors = vErrors.length;
-      }
-    }
-    if (data.initiative !== undefined) {
-      if (
-        !validate122(data.initiative, {
-          dataPath: dataPath + "/initiative",
-          parentData: data,
-          parentDataProperty: "initiative",
           rootData,
         })
       ) {
@@ -3664,12 +3689,12 @@ function validate118(
         errors = vErrors.length;
       }
     }
-    if (data.gridDistance !== undefined) {
+    if (data.initiative !== undefined) {
       if (
-        !validate124(data.gridDistance, {
-          dataPath: dataPath + "/gridDistance",
+        !validate124(data.initiative, {
+          dataPath: dataPath + "/initiative",
           parentData: data,
-          parentDataProperty: "gridDistance",
+          parentDataProperty: "initiative",
           rootData,
         })
       ) {
@@ -3680,12 +3705,12 @@ function validate118(
         errors = vErrors.length;
       }
     }
-    if (data.gridUnits !== undefined) {
+    if (data.gridDistance !== undefined) {
       if (
-        !validate126(data.gridUnits, {
-          dataPath: dataPath + "/gridUnits",
+        !validate126(data.gridDistance, {
+          dataPath: dataPath + "/gridDistance",
           parentData: data,
-          parentDataProperty: "gridUnits",
+          parentDataProperty: "gridDistance",
           rootData,
         })
       ) {
@@ -3696,12 +3721,12 @@ function validate118(
         errors = vErrors.length;
       }
     }
-    if (data.primaryTokenAttribute !== undefined) {
+    if (data.gridUnits !== undefined) {
       if (
-        !validate128(data.primaryTokenAttribute, {
-          dataPath: dataPath + "/primaryTokenAttribute",
+        !validate128(data.gridUnits, {
+          dataPath: dataPath + "/gridUnits",
           parentData: data,
-          parentDataProperty: "primaryTokenAttribute",
+          parentDataProperty: "gridUnits",
           rootData,
         })
       ) {
@@ -3712,9 +3737,25 @@ function validate118(
         errors = vErrors.length;
       }
     }
+    if (data.primaryTokenAttribute !== undefined) {
+      if (
+        !validate130(data.primaryTokenAttribute, {
+          dataPath: dataPath + "/primaryTokenAttribute",
+          parentData: data,
+          parentDataProperty: "primaryTokenAttribute",
+          rootData,
+        })
+      ) {
+        vErrors =
+          vErrors === null
+            ? validate130.errors
+            : vErrors.concat(validate130.errors);
+        errors = vErrors.length;
+      }
+    }
     if (data.secondaryTokenAttribute !== undefined) {
       if (
-        !validate130(data.secondaryTokenAttribute, {
+        !validate132(data.secondaryTokenAttribute, {
           dataPath: dataPath + "/secondaryTokenAttribute",
           parentData: data,
           parentDataProperty: "secondaryTokenAttribute",
@@ -3723,8 +3764,8 @@ function validate118(
       ) {
         vErrors =
           vErrors === null
-            ? validate130.errors
-            : vErrors.concat(validate130.errors);
+            ? validate132.errors
+            : vErrors.concat(validate132.errors);
         errors = vErrors.length;
       }
     }
@@ -3743,10 +3784,10 @@ function validate118(
     }
     errors++;
   }
-  validate118.errors = vErrors;
+  validate120.errors = vErrors;
   return errors === 0;
 }
-function validate116(
+function validate118(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -3759,6 +3800,39 @@ function validate116(
       vErrors === null ? validate54.errors : vErrors.concat(validate54.errors);
     errors = vErrors.length;
   }
+  if (
+    !validate120(data, { dataPath, parentData, parentDataProperty, rootData })
+  ) {
+    vErrors =
+      vErrors === null
+        ? validate120.errors
+        : vErrors.concat(validate120.errors);
+    errors = vErrors.length;
+  }
+  if (!(data && typeof data == "object" && !Array.isArray(data))) {
+    const err0 = {
+      keyword: "type",
+      dataPath,
+      schemaPath: "#/type",
+      params: { type: "object" },
+      message: "should be object",
+    };
+    if (vErrors === null) {
+      vErrors = [err0];
+    } else {
+      vErrors.push(err0);
+    }
+    errors++;
+  }
+  validate118.errors = vErrors;
+  return errors === 0;
+}
+function validate117(
+  data,
+  { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
+) {
+  /*# sourceURL="validateSystem" */ let vErrors = null;
+  let errors = 0;
   if (
     !validate118(data, { dataPath, parentData, parentDataProperty, rootData })
   ) {
@@ -3783,22 +3857,39 @@ function validate116(
     }
     errors++;
   }
-  validate116.errors = vErrors;
+  validate117.errors = vErrors;
   return errors === 0;
 }
-function validate115(
+exports.validateSystemPlus = validate136;
+const schema61 = {
+  $id: "validateSystemPlus",
+  type: "object",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "FoundryVTT system.json w/ manifest+",
+  allOf: [{ $ref: "../../shared/properties/loose/system+.json" }],
+  properties: {},
+};
+const schema62 = {
+  $id: "shared/properties/loose/system+.json",
+  type: "object",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "FoundryVTT system.json & manifest+ (loose)",
+  allOf: [{ $ref: "system.json" }],
+  properties: {},
+};
+function validate137(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
-  /*# sourceURL="validateSystem" */ let vErrors = null;
+  /*# sourceURL="shared/properties/loose/system+.json" */ let vErrors = null;
   let errors = 0;
   if (
-    !validate116(data, { dataPath, parentData, parentDataProperty, rootData })
+    !validate118(data, { dataPath, parentData, parentDataProperty, rootData })
   ) {
     vErrors =
       vErrors === null
-        ? validate116.errors
-        : vErrors.concat(validate116.errors);
+        ? validate118.errors
+        : vErrors.concat(validate118.errors);
     errors = vErrors.length;
   }
   if (!(data && typeof data == "object" && !Array.isArray(data))) {
@@ -3816,31 +3907,22 @@ function validate115(
     }
     errors++;
   }
-  validate115.errors = vErrors;
+  validate137.errors = vErrors;
   return errors === 0;
 }
-exports.validateSystemPlus = validate134;
-const schema60 = {
-  $id: "validateSystemPlus",
-  type: "object",
-  $schema: "http://json-schema.org/draft-07/schema#",
-  title: "FoundryVTT system.json w/ manifest+",
-  allOf: [{ $ref: "../../shared/properties/loose/system.json" }],
-  properties: {},
-};
-function validate134(
+function validate136(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
   /*# sourceURL="validateSystemPlus" */ let vErrors = null;
   let errors = 0;
   if (
-    !validate116(data, { dataPath, parentData, parentDataProperty, rootData })
+    !validate137(data, { dataPath, parentData, parentDataProperty, rootData })
   ) {
     vErrors =
       vErrors === null
-        ? validate116.errors
-        : vErrors.concat(validate116.errors);
+        ? validate137.errors
+        : vErrors.concat(validate137.errors);
     errors = vErrors.length;
   }
   if (!(data && typeof data == "object" && !Array.isArray(data))) {
@@ -3858,11 +3940,11 @@ function validate134(
     }
     errors++;
   }
-  validate134.errors = vErrors;
+  validate136.errors = vErrors;
   return errors === 0;
 }
-exports.validateModuleStrict = validate136;
-const schema61 = {
+exports.validateModuleStrict = validate140;
+const schema63 = {
   $id: "validateModuleStrict",
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
@@ -3870,11 +3952,11 @@ const schema61 = {
   allOf: [{ $ref: "../../shared/properties/strict/module.json" }],
   properties: {},
 };
-const schema62 = {
+const schema64 = {
   $id: "shared/properties/strict/module.json",
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
-  title: "FoundryVTT common properties for strict module.json",
+  title: "FoundryVTT module.json (strict)",
   allOf: [{ $ref: "base.json" }],
   properties: {
     system: {
@@ -3886,7 +3968,7 @@ const schema62 = {
     packs: { $ref: "../../definitions/loose/base.json#/definitions/packs" },
   },
 };
-const schema63 = {
+const schema65 = {
   $id: "shared/properties/strict/base.json",
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
@@ -3908,7 +3990,7 @@ const schema63 = {
     packs: { $ref: "../../definitions/loose/base.json#/definitions/packs" },
   },
 };
-const schema65 = {
+const schema67 = {
   title: "A semantic version string value",
   default: "",
   examples: ["1.0.0"],
@@ -3923,7 +4005,7 @@ const pattern39 = new RegExp(
   "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
   "u"
 );
-function validate141(
+function validate145(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -4008,10 +4090,10 @@ function validate141(
     vErrors = emErrs1;
     errors = emErrs1.length;
   }
-  validate141.errors = vErrors;
+  validate145.errors = vErrors;
   return errors === 0;
 }
-const schema66 = {
+const schema68 = {
   title: "A semantic version string value",
   default: "",
   examples: ["1.0.0"],
@@ -4022,7 +4104,7 @@ const schema66 = {
   errorMessage:
     '"minimumCoreVersion" should be a string that uses semantic versioning; current value: ${/minimumCoreVersion}',
 };
-function validate143(
+function validate147(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -4107,10 +4189,10 @@ function validate143(
     vErrors = emErrs1;
     errors = emErrs1.length;
   }
-  validate143.errors = vErrors;
+  validate147.errors = vErrors;
   return errors === 0;
 }
-const schema67 = {
+const schema69 = {
   title: "A semantic version string value",
   default: "",
   examples: ["1.0.0"],
@@ -4121,7 +4203,7 @@ const schema67 = {
   errorMessage:
     '"compatibleCoreVersion" should be a string that uses semantic versioning; current value: ${/compatibleCoreVersion}',
 };
-function validate145(
+function validate149(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -4206,10 +4288,10 @@ function validate145(
     vErrors = emErrs1;
     errors = emErrs1.length;
   }
-  validate145.errors = vErrors;
+  validate149.errors = vErrors;
   return errors === 0;
 }
-function validate147(
+function validate151(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -4677,10 +4759,10 @@ function validate147(
     }
     errors++;
   }
-  validate147.errors = vErrors;
+  validate151.errors = vErrors;
   return errors === 0;
 }
-function validate138(
+function validate142(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -4696,42 +4778,10 @@ function validate138(
   if (data && typeof data == "object" && !Array.isArray(data)) {
     if (data.version !== undefined) {
       if (
-        !validate141(data.version, {
+        !validate145(data.version, {
           dataPath: dataPath + "/version",
           parentData: data,
           parentDataProperty: "version",
-          rootData,
-        })
-      ) {
-        vErrors =
-          vErrors === null
-            ? validate141.errors
-            : vErrors.concat(validate141.errors);
-        errors = vErrors.length;
-      }
-    }
-    if (data.minimumCoreVersion !== undefined) {
-      if (
-        !validate143(data.minimumCoreVersion, {
-          dataPath: dataPath + "/minimumCoreVersion",
-          parentData: data,
-          parentDataProperty: "minimumCoreVersion",
-          rootData,
-        })
-      ) {
-        vErrors =
-          vErrors === null
-            ? validate143.errors
-            : vErrors.concat(validate143.errors);
-        errors = vErrors.length;
-      }
-    }
-    if (data.compatibleCoreVersion !== undefined) {
-      if (
-        !validate145(data.compatibleCoreVersion, {
-          dataPath: dataPath + "/compatibleCoreVersion",
-          parentData: data,
-          parentDataProperty: "compatibleCoreVersion",
           rootData,
         })
       ) {
@@ -4742,9 +4792,41 @@ function validate138(
         errors = vErrors.length;
       }
     }
+    if (data.minimumCoreVersion !== undefined) {
+      if (
+        !validate147(data.minimumCoreVersion, {
+          dataPath: dataPath + "/minimumCoreVersion",
+          parentData: data,
+          parentDataProperty: "minimumCoreVersion",
+          rootData,
+        })
+      ) {
+        vErrors =
+          vErrors === null
+            ? validate147.errors
+            : vErrors.concat(validate147.errors);
+        errors = vErrors.length;
+      }
+    }
+    if (data.compatibleCoreVersion !== undefined) {
+      if (
+        !validate149(data.compatibleCoreVersion, {
+          dataPath: dataPath + "/compatibleCoreVersion",
+          parentData: data,
+          parentDataProperty: "compatibleCoreVersion",
+          rootData,
+        })
+      ) {
+        vErrors =
+          vErrors === null
+            ? validate149.errors
+            : vErrors.concat(validate149.errors);
+        errors = vErrors.length;
+      }
+    }
     if (data.packs !== undefined) {
       if (
-        !validate147(data.packs, {
+        !validate151(data.packs, {
           dataPath: dataPath + "/packs",
           parentData: data,
           parentDataProperty: "packs",
@@ -4753,8 +4835,8 @@ function validate138(
       ) {
         vErrors =
           vErrors === null
-            ? validate147.errors
-            : vErrors.concat(validate147.errors);
+            ? validate151.errors
+            : vErrors.concat(validate151.errors);
         errors = vErrors.length;
       }
     }
@@ -4773,10 +4855,10 @@ function validate138(
     }
     errors++;
   }
-  validate138.errors = vErrors;
+  validate142.errors = vErrors;
   return errors === 0;
 }
-function validate152(
+function validate156(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -4813,10 +4895,10 @@ function validate152(
     }
     errors++;
   }
-  validate152.errors = vErrors;
+  validate156.errors = vErrors;
   return errors === 0;
 }
-function validate154(
+function validate158(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -4873,10 +4955,10 @@ function validate154(
     }
     errors++;
   }
-  validate154.errors = vErrors;
+  validate158.errors = vErrors;
   return errors === 0;
 }
-function validate156(
+function validate160(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
@@ -5344,22 +5426,22 @@ function validate156(
     }
     errors++;
   }
-  validate156.errors = vErrors;
+  validate160.errors = vErrors;
   return errors === 0;
 }
-function validate137(
+function validate141(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
   /*# sourceURL="shared/properties/strict/module.json" */ let vErrors = null;
   let errors = 0;
   if (
-    !validate138(data, { dataPath, parentData, parentDataProperty, rootData })
+    !validate142(data, { dataPath, parentData, parentDataProperty, rootData })
   ) {
     vErrors =
       vErrors === null
-        ? validate138.errors
-        : vErrors.concat(validate138.errors);
+        ? validate142.errors
+        : vErrors.concat(validate142.errors);
     errors = vErrors.length;
   }
   if (data && typeof data == "object" && !Array.isArray(data)) {
@@ -5370,7 +5452,7 @@ function validate137(
       let passing0 = null;
       const _errs3 = errors;
       if (
-        !validate152(data0, {
+        !validate156(data0, {
           dataPath: dataPath + "/system",
           parentData: data,
           parentDataProperty: "system",
@@ -5379,8 +5461,8 @@ function validate137(
       ) {
         vErrors =
           vErrors === null
-            ? validate152.errors
-            : vErrors.concat(validate152.errors);
+            ? validate156.errors
+            : vErrors.concat(validate156.errors);
         errors = vErrors.length;
       }
       var _valid0 = _errs3 === errors;
@@ -5390,7 +5472,7 @@ function validate137(
       }
       const _errs4 = errors;
       if (
-        !validate154(data0, {
+        !validate158(data0, {
           dataPath: dataPath + "/system",
           parentData: data,
           parentDataProperty: "system",
@@ -5399,8 +5481,8 @@ function validate137(
       ) {
         vErrors =
           vErrors === null
-            ? validate154.errors
-            : vErrors.concat(validate154.errors);
+            ? validate158.errors
+            : vErrors.concat(validate158.errors);
         errors = vErrors.length;
       }
       var _valid0 = _errs4 === errors;
@@ -5440,7 +5522,7 @@ function validate137(
     }
     if (data.packs !== undefined) {
       if (
-        !validate156(data.packs, {
+        !validate160(data.packs, {
           dataPath: dataPath + "/packs",
           parentData: data,
           parentDataProperty: "packs",
@@ -5449,8 +5531,8 @@ function validate137(
       ) {
         vErrors =
           vErrors === null
-            ? validate156.errors
-            : vErrors.concat(validate156.errors);
+            ? validate160.errors
+            : vErrors.concat(validate160.errors);
         errors = vErrors.length;
       }
     }
@@ -5469,22 +5551,22 @@ function validate137(
     }
     errors++;
   }
-  validate137.errors = vErrors;
+  validate141.errors = vErrors;
   return errors === 0;
 }
-function validate136(
+function validate140(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
   /*# sourceURL="validateModuleStrict" */ let vErrors = null;
   let errors = 0;
   if (
-    !validate137(data, { dataPath, parentData, parentDataProperty, rootData })
+    !validate141(data, { dataPath, parentData, parentDataProperty, rootData })
   ) {
     vErrors =
       vErrors === null
-        ? validate137.errors
-        : vErrors.concat(validate137.errors);
+        ? validate141.errors
+        : vErrors.concat(validate141.errors);
     errors = vErrors.length;
   }
   if (!(data && typeof data == "object" && !Array.isArray(data))) {
@@ -5502,31 +5584,72 @@ function validate136(
     }
     errors++;
   }
-  validate136.errors = vErrors;
+  validate140.errors = vErrors;
   return errors === 0;
 }
-exports.validateModulePlusStrict = validate161;
-const schema72 = {
+exports.validateModulePlusStrict = validate165;
+const schema74 = {
   $id: "validateModulePlusStrict",
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
   title: "FoundryVTT module.json w/ manifest+ and strict requirements",
-  allOf: [{ $ref: "../../shared/properties/strict/module.json" }],
+  allOf: [{ $ref: "../../shared/properties/strict/module+.json" }],
   properties: {},
 };
-function validate161(
+const schema75 = {
+  $id: "shared/properties/strict/module+.json",
+  type: "object",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "FoundryVTT module.json & manifest+ (strict)",
+  allOf: [{ $ref: "module.json" }],
+  properties: {},
+};
+function validate166(
+  data,
+  { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
+) {
+  /*# sourceURL="shared/properties/strict/module+.json" */ let vErrors = null;
+  let errors = 0;
+  if (
+    !validate141(data, { dataPath, parentData, parentDataProperty, rootData })
+  ) {
+    vErrors =
+      vErrors === null
+        ? validate141.errors
+        : vErrors.concat(validate141.errors);
+    errors = vErrors.length;
+  }
+  if (!(data && typeof data == "object" && !Array.isArray(data))) {
+    const err0 = {
+      keyword: "type",
+      dataPath,
+      schemaPath: "#/type",
+      params: { type: "object" },
+      message: "should be object",
+    };
+    if (vErrors === null) {
+      vErrors = [err0];
+    } else {
+      vErrors.push(err0);
+    }
+    errors++;
+  }
+  validate166.errors = vErrors;
+  return errors === 0;
+}
+function validate165(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
   /*# sourceURL="validateModulePlusStrict" */ let vErrors = null;
   let errors = 0;
   if (
-    !validate137(data, { dataPath, parentData, parentDataProperty, rootData })
+    !validate166(data, { dataPath, parentData, parentDataProperty, rootData })
   ) {
     vErrors =
       vErrors === null
-        ? validate137.errors
-        : vErrors.concat(validate137.errors);
+        ? validate166.errors
+        : vErrors.concat(validate166.errors);
     errors = vErrors.length;
   }
   if (!(data && typeof data == "object" && !Array.isArray(data))) {
@@ -5544,11 +5667,11 @@ function validate161(
     }
     errors++;
   }
-  validate161.errors = vErrors;
+  validate165.errors = vErrors;
   return errors === 0;
 }
-exports.validateSystemStrict = validate163;
-const schema73 = {
+exports.validateSystemStrict = validate169;
+const schema76 = {
   $id: "validateSystemStrict",
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
@@ -5556,36 +5679,36 @@ const schema73 = {
   allOf: [{ $ref: "../../shared/properties/strict/system.json" }],
   properties: {},
 };
-const schema74 = {
+const schema77 = {
   $id: "shared/properties/strict/system.json",
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
-  title: "FoundryVTT common properties for system.json",
+  title: "FoundryVTT system.json (strict)",
   allOf: [{ $ref: "base.json" }, { $ref: "../common/system.json" }],
   properties: {},
 };
-function validate164(
+function validate170(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
   /*# sourceURL="shared/properties/strict/system.json" */ let vErrors = null;
   let errors = 0;
   if (
-    !validate138(data, { dataPath, parentData, parentDataProperty, rootData })
+    !validate142(data, { dataPath, parentData, parentDataProperty, rootData })
   ) {
     vErrors =
       vErrors === null
-        ? validate138.errors
-        : vErrors.concat(validate138.errors);
+        ? validate142.errors
+        : vErrors.concat(validate142.errors);
     errors = vErrors.length;
   }
   if (
-    !validate118(data, { dataPath, parentData, parentDataProperty, rootData })
+    !validate120(data, { dataPath, parentData, parentDataProperty, rootData })
   ) {
     vErrors =
       vErrors === null
-        ? validate118.errors
-        : vErrors.concat(validate118.errors);
+        ? validate120.errors
+        : vErrors.concat(validate120.errors);
     errors = vErrors.length;
   }
   if (!(data && typeof data == "object" && !Array.isArray(data))) {
@@ -5603,22 +5726,22 @@ function validate164(
     }
     errors++;
   }
-  validate164.errors = vErrors;
+  validate170.errors = vErrors;
   return errors === 0;
 }
-function validate163(
+function validate169(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
   /*# sourceURL="validateSystemStrict" */ let vErrors = null;
   let errors = 0;
   if (
-    !validate164(data, { dataPath, parentData, parentDataProperty, rootData })
+    !validate170(data, { dataPath, parentData, parentDataProperty, rootData })
   ) {
     vErrors =
       vErrors === null
-        ? validate164.errors
-        : vErrors.concat(validate164.errors);
+        ? validate170.errors
+        : vErrors.concat(validate170.errors);
     errors = vErrors.length;
   }
   if (!(data && typeof data == "object" && !Array.isArray(data))) {
@@ -5636,31 +5759,72 @@ function validate163(
     }
     errors++;
   }
-  validate163.errors = vErrors;
+  validate169.errors = vErrors;
   return errors === 0;
 }
-exports.validateSystemPlusStrict = validate168;
-const schema75 = {
+exports.validateSystemPlusStrict = validate174;
+const schema78 = {
   $id: "validateSystemPlusStrict",
   type: "object",
   $schema: "http://json-schema.org/draft-07/schema#",
   title: "FoundryVTT system.json w/ manifest+ and strict requirements",
-  allOf: [{ $ref: "../../shared/properties/strict/system.json" }],
+  allOf: [{ $ref: "../../shared/properties/strict/system+.json" }],
   properties: {},
 };
-function validate168(
+const schema79 = {
+  $id: "shared/properties/strict/system+.json",
+  type: "object",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "FoundryVTT system.json & manifest+ (strict)",
+  allOf: [{ $ref: "system.json" }],
+  properties: {},
+};
+function validate175(
+  data,
+  { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
+) {
+  /*# sourceURL="shared/properties/strict/system+.json" */ let vErrors = null;
+  let errors = 0;
+  if (
+    !validate170(data, { dataPath, parentData, parentDataProperty, rootData })
+  ) {
+    vErrors =
+      vErrors === null
+        ? validate170.errors
+        : vErrors.concat(validate170.errors);
+    errors = vErrors.length;
+  }
+  if (!(data && typeof data == "object" && !Array.isArray(data))) {
+    const err0 = {
+      keyword: "type",
+      dataPath,
+      schemaPath: "#/type",
+      params: { type: "object" },
+      message: "should be object",
+    };
+    if (vErrors === null) {
+      vErrors = [err0];
+    } else {
+      vErrors.push(err0);
+    }
+    errors++;
+  }
+  validate175.errors = vErrors;
+  return errors === 0;
+}
+function validate174(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
   /*# sourceURL="validateSystemPlusStrict" */ let vErrors = null;
   let errors = 0;
   if (
-    !validate164(data, { dataPath, parentData, parentDataProperty, rootData })
+    !validate175(data, { dataPath, parentData, parentDataProperty, rootData })
   ) {
     vErrors =
       vErrors === null
-        ? validate164.errors
-        : vErrors.concat(validate164.errors);
+        ? validate175.errors
+        : vErrors.concat(validate175.errors);
     errors = vErrors.length;
   }
   if (!(data && typeof data == "object" && !Array.isArray(data))) {
@@ -5678,6 +5842,6 @@ function validate168(
     }
     errors++;
   }
-  validate168.errors = vErrors;
+  validate174.errors = vErrors;
   return errors === 0;
 }

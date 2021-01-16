@@ -5,7 +5,7 @@
   "title": "FoundryVTT system.json w/ manifest+ and strict requirements",
   "allOf":
   [
-    { "$ref": "../../shared/properties/strict/system.json"}
+    { "$ref": "../../shared/properties/strict/system+.json"}
   ],
   "properties": {
   }

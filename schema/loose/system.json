@@ -1,0 +1,457 @@
+{
+  "$id": "loose/system.json",
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FoundryVTT system.json (loose)",
+  "allOf": [
+    {
+      "$id": "shared/properties/loose/base.json",
+      "type": "object",
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "FoundryVTT common properties for loose module.json & system.json",
+      "allOf": [
+        {
+          "$id": "shared/properties/common/base.json",
+          "type": "object",
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "title": "FoundryVTT shared base between module & system.json",
+          "definitions": {},
+          "required": [
+            "name",
+            "title",
+            "description",
+            "author",
+            "version",
+            "minimumCoreVersion"
+          ],
+          "properties": {
+            "name": {
+              "title": "A string value",
+              "default": "",
+              "pattern": "^(.*)$",
+              "examples": [
+                "a-module"
+              ],
+              "$id": "#/definitions/name",
+              "type": "string"
+            },
+            "title": {
+              "title": "A string value",
+              "default": "",
+              "pattern": "^(.*)$",
+              "examples": [
+                "A Module"
+              ],
+              "$id": "#/definitions/title",
+              "type": "string"
+            },
+            "description": {
+              "title": "A string value",
+              "default": "",
+              "pattern": "^(.*)$",
+              "examples": [
+                "Some description"
+              ],
+              "$id": "#/definitions/description",
+              "type": "string"
+            },
+            "author": {
+              "title": "A string value",
+              "default": "",
+              "pattern": "^(.*)$",
+              "examples": [
+                "typhonrt"
+              ],
+              "$id": "#/definitions/author",
+              "type": "string"
+            },
+            "scripts": {
+              "title": "An array of items",
+              "items": {
+                "title": "A string value",
+                "default": "",
+                "pattern": "^(.*)$",
+                "examples": [
+                  "ascript.js"
+                ],
+                "$id": "#/properties/scripts/items",
+                "type": "string"
+              },
+              "$id": "#/definitions/scripts",
+              "type": "array"
+            },
+            "esmodules": {
+              "title": "An array of items",
+              "items": {
+                "title": "A string value",
+                "default": "",
+                "pattern": "^(.*)$",
+                "examples": [
+                  "index.js"
+                ],
+                "$id": "#/definitions/esmodules/items",
+                "type": "string"
+              },
+              "$id": "#/definitions/esmodules",
+              "type": "array"
+            },
+            "styles": {
+              "title": "An array of items",
+              "items": {
+                "title": "A string value",
+                "default": "",
+                "pattern": "^(.*)$",
+                "examples": [
+                  "styles.css"
+                ],
+                "$id": "#/definitions/styles/items",
+                "type": "string"
+              },
+              "$id": "#/definitions/styles",
+              "type": "array"
+            },
+            "dependencies": {
+              "title": "An array of items",
+              "items": {
+                "title": "An object value",
+                "required": [
+                  "name"
+                ],
+                "properties": {
+                  "name": {
+                    "title": "A string value",
+                    "default": "",
+                    "pattern": "^(.*)$",
+                    "examples": [
+                      "dice-so-nice"
+                    ],
+                    "$id": "#/definitions/dependencies/items/properties/name",
+                    "type": "string"
+                  },
+                  "manifest": {
+                    "title": "A string value",
+                    "default": "",
+                    "pattern": "^(.*)$",
+                    "examples": [
+                      "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/2.0.3/module/module.json"
+                    ],
+                    "$id": "#/definitions/dependencies/items/properties/manifest",
+                    "type": "string"
+                  },
+                  "type": {
+                    "title": "A string value",
+                    "default": "",
+                    "pattern": "^(.*)$",
+                    "examples": [
+                      "module"
+                    ],
+                    "$id": "#/definitions/dependencies/items/properties/type",
+                    "type": "string"
+                  }
+                },
+                "$id": "#/definitions/dependencies/items",
+                "type": "object"
+              },
+              "$id": "#/definitions/dependencies",
+              "type": "array"
+            },
+            "languages": {
+              "title": "An array of items",
+              "items": {
+                "title": "An object value",
+                "required": [
+                  "lang",
+                  "name",
+                  "path"
+                ],
+                "properties": {
+                  "lang": {
+                    "title": "A string value",
+                    "default": "",
+                    "pattern": "^(.*)$",
+                    "examples": [
+                      "en"
+                    ],
+                    "$id": "#/definitions/languages/items/properties/lang",
+                    "type": "string"
+                  },
+                  "name": {
+                    "title": "A string value",
+                    "default": "",
+                    "pattern": "^(.*)$",
+                    "examples": [
+                      "English"
+                    ],
+                    "$id": "#/definitions/languages/items/properties/name",
+                    "type": "string"
+                  },
+                  "path": {
+                    "title": "A string value",
+                    "default": "",
+                    "pattern": "^(.*)$",
+                    "examples": [
+                      "lang/en.json"
+                    ],
+                    "$id": "#/definitions/languages/items/properties/path",
+                    "type": "string"
+                  }
+                },
+                "$id": "#/definitions/languages/items",
+                "type": "object"
+              },
+              "$id": "#/definitions/languages",
+              "type": "array"
+            },
+            "authors": {
+              "title": "An array of items",
+              "items": {
+                "title": "An object value",
+                "required": [
+                  "name"
+                ],
+                "properties": {
+                  "name": {
+                    "title": "A string value",
+                    "default": "",
+                    "pattern": "^(.*)$",
+                    "examples": [
+                      "Atropos"
+                    ],
+                    "$id": "#/definitions/authors/items/properties/name",
+                    "type": "string"
+                  },
+                  "email": {
+                    "title": "A string value",
+                    "default": "",
+                    "pattern": "^(.*)$",
+                    "examples": [
+                      "admin@foundryvtt.com"
+                    ],
+                    "$id": "#/definitions/authors/items/properties/email",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "A string value",
+                    "default": "",
+                    "pattern": "^(.*)$",
+                    "examples": [
+                      "https://foundryvtt.com"
+                    ],
+                    "$id": "#/definitions/authors/items/properties/url",
+                    "type": "string"
+                  }
+                },
+                "$id": "#/definitions/authors/items",
+                "type": "object"
+              },
+              "$id": "#/definitions/authors",
+              "type": "array"
+            },
+            "socket": {
+              "title": "A boolean value",
+              "default": false,
+              "examples": [
+                true
+              ],
+              "$id": "#/definitions/socket",
+              "type": "boolean"
+            },
+            "url": {
+              "title": "A string value",
+              "default": "",
+              "pattern": "^(.*)$",
+              "examples": [
+                "https://someaddress.com/"
+              ],
+              "$id": "#/definitions/url",
+              "type": "string"
+            },
+            "manifest": {
+              "title": "A string value",
+              "default": "",
+              "pattern": "^(.*)$",
+              "examples": [
+                "https://someaddress.com/module.json"
+              ],
+              "$id": "#/definitions/manifest",
+              "type": "string"
+            },
+            "download": {
+              "title": "A string value",
+              "default": "",
+              "pattern": "^(.*)$",
+              "examples": [
+                "https://someaddress.com/module.zip"
+              ],
+              "$id": "#/definitions/download",
+              "type": "string"
+            },
+            "license": {
+              "title": "A string value",
+              "default": "",
+              "pattern": "^(.*)$",
+              "examples": [
+                "LICENSE"
+              ],
+              "$id": "#/definitions/license",
+              "type": "string"
+            },
+            "readme": {
+              "title": "A string value",
+              "default": "",
+              "pattern": "^(.*)$",
+              "examples": [
+                "README.md"
+              ],
+              "$id": "#/definitions/readme",
+              "type": "string"
+            },
+            "bugs": {
+              "title": "A string value",
+              "default": "",
+              "pattern": "^(.*)$",
+              "examples": [
+                "https://github.com/some-user/a-module/issues"
+              ],
+              "$id": "#/definitions/bugs",
+              "type": "string"
+            },
+            "changelog": {
+              "title": "A string value",
+              "default": "",
+              "pattern": "^(.*)$",
+              "examples": [
+                "https://github.com/some-user/a-module/releases"
+              ],
+              "$id": "#/definitions/changelog",
+              "type": "string"
+            }
+          }
+        }
+      ],
+      "properties": {
+        "version": {
+          "title": "A string value",
+          "default": "",
+          "examples": [
+            "1.0.0"
+          ],
+          "$id": "#/definitions/version",
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "errorMessage": {
+            "_": "\"version\" should be a string or number; current value: ${/version}"
+          }
+        },
+        "minimumCoreVersion": {
+          "title": "A string value",
+          "default": "",
+          "pattern": "^(.*)$",
+          "examples": [
+            "0.7.5"
+          ],
+          "$id": "#/definitions/minimumCoreVersion",
+          "type": "string"
+        },
+        "compatibleCoreVersion": {
+          "title": "A string value",
+          "default": "",
+          "pattern": "^(.*)$",
+          "examples": [
+            "1.0.0"
+          ],
+          "$id": "#/definitions/compatibleCoreVersion",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "$id": "shared/properties/common/system.json",
+      "type": "object",
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "FoundryVTT common properties for system.json",
+      "properties": {
+        "templateVersion": {
+          "title": "An integer value",
+          "default": 0,
+          "examples": [
+            2
+          ],
+          "$id": "#/definitions/templateVersion",
+          "type": "integer"
+        },
+        "initiative": {
+          "title": "A string value",
+          "default": "",
+          "pattern": "^(.*)$",
+          "examples": [
+            "1d20"
+          ],
+          "$id": "#/definitions/initiative",
+          "type": "string"
+        },
+        "gridDistance": {
+          "title": "An integer value",
+          "default": 0,
+          "examples": [
+            5
+          ],
+          "$id": "#/definitions/gridDistance",
+          "type": "integer"
+        },
+        "gridUnits": {
+          "title": "A string value",
+          "default": "",
+          "pattern": "^(.*)$",
+          "examples": [
+            "ft, m"
+          ],
+          "$id": "#/definitions/gridUnits",
+          "type": "string"
+        },
+        "primaryTokenAttribute": {
+          "title": "A string value or null",
+          "default": "",
+          "examples": [
+            "resources.health"
+          ],
+          "$id": "#/definitions/primaryTokenAttribute",
+          "anyOf": [
+            {
+              "pattern": "^(.*)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "secondaryTokenAttribute": {
+          "title": "A string value or null",
+          "default": "",
+          "examples": [
+            "resources.power"
+          ],
+          "$id": "#/definitions/secondaryTokenAttribute",
+          "anyOf": [
+            {
+              "pattern": "^(.*)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "properties": {}
+}

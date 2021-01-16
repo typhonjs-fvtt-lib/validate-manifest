@@ -5,7 +5,7 @@
   "title": "FoundryVTT module.json w/ manifest+",
   "allOf":
   [
-    { "$ref": "../../shared/properties/loose/module.json"}
+    { "$ref": "../../shared/properties/loose/module+.json"}
   ],
   "properties": {
   }
