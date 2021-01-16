@@ -1,0 +1,20 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/styles/0",
+      "schemaPath": "#/items/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/styles/1",
+      "schemaPath": "#/items/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]
