@@ -13,36 +13,36 @@ const $RefParser  = require("@apidevtools/json-schema-ref-parser");
       // Compile / bundle loose schema into single files.
       let schema = await $RefParser.bundle('./src/schema/shared/properties/loose/module.json');
       schema.$id = 'loose/module.json';
-      fs.writeFileSync('./schema/loose/module.json', JSON.stringify(schema, null, 2));
+      fs.writeFileSync('./schema/loose/module.json', JSON.stringify(schema, null, 3));
 
       schema = await $RefParser.bundle('./src/schema/shared/properties/loose/module+.json');
       schema.$id = 'loose/module+.json';
-      fs.writeFileSync('./schema/loose/module+.json', JSON.stringify(schema, null, 2));
+      fs.writeFileSync('./schema/loose/module+.json', JSON.stringify(schema, null, 3));
 
       schema = await $RefParser.bundle('./src/schema/shared/properties/loose/system.json');
       schema.$id = 'loose/system.json';
-      fs.writeFileSync('./schema/loose/system.json', JSON.stringify(schema, null, 2));
+      fs.writeFileSync('./schema/loose/system.json', JSON.stringify(schema, null, 3));
 
       schema = await $RefParser.bundle('./src/schema/shared/properties/loose/system+.json');
       schema.$id = 'loose/system+.json';
-      fs.writeFileSync('./schema/loose/system+.json', JSON.stringify(schema, null, 2));
+      fs.writeFileSync('./schema/loose/system+.json', JSON.stringify(schema, null, 3));
 
       // Compile / bundle strict schema into single files.
       schema = await $RefParser.bundle('./src/schema/shared/properties/strict/module.json');
       schema.$id = 'strict/module.json';
-      fs.writeFileSync('./schema/strict/module.json', JSON.stringify(schema, null, 2));
+      fs.writeFileSync('./schema/strict/module.json', JSON.stringify(schema, null, 3));
 
       schema = await $RefParser.bundle('./src/schema/shared/properties/strict/module+.json');
       schema.$id = 'strict/module+.json';
-      fs.writeFileSync('./schema/strict/module+.json', JSON.stringify(schema, null, 2));
+      fs.writeFileSync('./schema/strict/module+.json', JSON.stringify(schema, null, 3));
 
       schema = await $RefParser.bundle('./src/schema/shared/properties/strict/system.json');
       schema.$id = 'strict/system.json';
-      fs.writeFileSync('./schema/strict/system.json', JSON.stringify(schema, null, 2));
+      fs.writeFileSync('./schema/strict/system.json', JSON.stringify(schema, null, 3));
 
       schema = await $RefParser.bundle('./src/schema/shared/properties/strict/system+.json');
       schema.$id = 'strict/system+.json';
-      fs.writeFileSync('./schema/strict/system+.json', JSON.stringify(schema, null, 2));
+      fs.writeFileSync('./schema/strict/system+.json', JSON.stringify(schema, null, 3));
    }
    catch (err)
    {
