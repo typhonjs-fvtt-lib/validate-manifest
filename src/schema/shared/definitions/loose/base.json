@@ -19,7 +19,7 @@
         }
       ],
       "errorMessage": {
-        "_": "\"version\" should be a string or number; current value: ${/version}"
+        "_": "'version' should be a string or number"
       }
     },
     "minimumCoreVersion": {

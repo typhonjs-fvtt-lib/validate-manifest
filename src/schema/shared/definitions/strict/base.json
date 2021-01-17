@@ -11,7 +11,7 @@
       "$id": "#/definitions/version",
       "type": "string",
       "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
-      "errorMessage": "\"version\" should be a string that uses semantic versioning; current value: ${/version}"
+      "errorMessage": "'version' should be a string that uses semantic versioning"
     },
     "minimumCoreVersion": {
       "title": "A semantic version string value",
@@ -22,7 +22,7 @@
       "$id": "#/definitions/minimumCoreVersion",
       "type": "string",
       "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
-      "errorMessage": "\"minimumCoreVersion\" should be a string that uses semantic versioning; current value: ${/minimumCoreVersion}"
+      "errorMessage": "'minimumCoreVersion' should be a string that uses semantic versioning"
     },
     "compatibleCoreVersion": {
       "title": "A semantic version string value",
@@ -33,7 +33,7 @@
       "$id": "#/definitions/compatibleCoreVersion",
       "type": "string",
       "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
-      "errorMessage": "\"compatibleCoreVersion\" should be a string that uses semantic versioning; current value: ${/compatibleCoreVersion}"
+      "errorMessage": "'compatibleCoreVersion' should be a string that uses semantic versioning"
     }
   }
 }
