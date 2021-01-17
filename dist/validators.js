@@ -535,10 +535,12 @@ const schema29 = {
       type: {
         title: "A string value",
         default: "",
-        pattern: "^(.*)$",
+        pattern: "^(module|system|world)$",
         examples: ["module"],
         $id: "#/definitions/dependencies/items/properties/type",
         type: "string",
+        errorMessage:
+          "'type' should be one of the following strings: 'module', 'system', or 'world'",
       },
     },
     $id: "#/definitions/dependencies/items",
@@ -547,6 +549,7 @@ const schema29 = {
   $id: "#/definitions/dependencies",
   type: "array",
 };
+const pattern9 = new RegExp("^(module|system|world)$", "u");
 function validate71(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
@@ -644,13 +647,14 @@ function validate71(
         if (data0.type !== undefined) {
           let data3 = data0.type;
           if (typeof data3 === "string") {
-            if (!pattern0.test(data3)) {
+            if (!pattern9.test(data3)) {
               const err5 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/type",
                 schemaPath: "#/items/properties/type/pattern",
-                params: { pattern: "^(.*)$" },
-                message: 'should match pattern "' + "^(.*)$" + '"',
+                params: { pattern: "^(module|system|world)$" },
+                message:
+                  'should match pattern "' + "^(module|system|world)$" + '"',
               };
               if (vErrors === null) {
                 vErrors = [err5];
@@ -674,9 +678,51 @@ function validate71(
             }
             errors++;
           }
+          if (errors > 0) {
+            const emErrs0 = [];
+            for (const err7 of vErrors) {
+              if (
+                err7.keyword !== "errorMessage" &&
+                !err7.emUsed &&
+                (err7.dataPath === dataPath + "/" + i0 + "/type" ||
+                  (err7.dataPath.indexOf(dataPath + "/" + i0 + "/type") === 0 &&
+                    err7.dataPath[dataPath + "/" + i0 + "/type".length] ===
+                      "/")) &&
+                err7.schemaPath.indexOf("#/items/properties/type") === 0 &&
+                err7.schemaPath["#/items/properties/type".length] === "/"
+              ) {
+                emErrs0.push(err7);
+                err7.emUsed = true;
+              }
+            }
+            if (emErrs0.length) {
+              const err8 = {
+                keyword: "errorMessage",
+                dataPath: dataPath + "/" + i0 + "/type",
+                schemaPath: "#/items/properties/type/errorMessage",
+                params: { errors: emErrs0 },
+                message:
+                  "'type' should be one of the following strings: 'module', 'system', or 'world'",
+              };
+              if (vErrors === null) {
+                vErrors = [err8];
+              } else {
+                vErrors.push(err8);
+              }
+              errors++;
+            }
+            const emErrs1 = [];
+            for (const err9 of vErrors) {
+              if (!err9.emUsed) {
+                emErrs1.push(err9);
+              }
+            }
+            vErrors = emErrs1;
+            errors = emErrs1.length;
+          }
         }
       } else {
-        const err7 = {
+        const err10 = {
           keyword: "type",
           dataPath: dataPath + "/" + i0,
           schemaPath: "#/items/type",
@@ -684,15 +730,15 @@ function validate71(
           message: "should be object",
         };
         if (vErrors === null) {
-          vErrors = [err7];
+          vErrors = [err10];
         } else {
-          vErrors.push(err7);
+          vErrors.push(err10);
         }
         errors++;
       }
     }
   } else {
-    const err8 = {
+    const err11 = {
       keyword: "type",
       dataPath,
       schemaPath: "#/type",
@@ -700,9 +746,9 @@ function validate71(
       message: "should be array",
     };
     if (vErrors === null) {
-      vErrors = [err8];
+      vErrors = [err11];
     } else {
-      vErrors.push(err8);
+      vErrors.push(err11);
     }
     errors++;
   }
@@ -1913,9 +1959,7 @@ const schema41 = {
   examples: ["1.0.0"],
   $id: "#/definitions/version",
   oneOf: [{ type: "string", pattern: "^(.*)$" }, { type: "number" }],
-  errorMessage: {
-    _: '"version" should be a string or number; current value: ${/version}',
-  },
+  errorMessage: { _: "'version' should be a string or number" },
 };
 function validate95(
   data,
@@ -2015,14 +2059,7 @@ function validate95(
   }
   if (errors > 0) {
     const emErrors0 = { _: [] };
-    const templates0 = {
-      _: function () {
-        return (
-          '"version" should be a string or number; current value: ' +
-          JSON.stringify(rootData && rootData.version)
-        );
-      },
-    };
+    const templates0 = {};
     for (const err4 of vErrors) {
       if (
         err4.keyword !== "errorMessage" &&
@@ -2077,9 +2114,7 @@ function validate95(
         dataPath,
         schemaPath: "#/errorMessage",
         params: { errors: emErrs0 },
-        message:
-          '"version" should be a string or number; current value: ' +
-          JSON.stringify(rootData && rootData.version),
+        message: "'version' should be a string or number",
       };
       if (vErrors === null) {
         vErrors = [err7];
@@ -3998,8 +4033,7 @@ const schema67 = {
   type: "string",
   pattern:
     "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
-  errorMessage:
-    '"version" should be a string that uses semantic versioning; current value: ${/version}',
+  errorMessage: "'version' should be a string that uses semantic versioning",
 };
 const pattern39 = new RegExp(
   "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
@@ -4070,9 +4104,7 @@ function validate145(
         dataPath,
         schemaPath: "#/errorMessage",
         params: { errors: emErrs0 },
-        message:
-          '"version" should be a string that uses semantic versioning; current value: ' +
-          JSON.stringify(rootData && rootData.version),
+        message: "'version' should be a string that uses semantic versioning",
       };
       if (vErrors === null) {
         vErrors = [err3];
@@ -4102,7 +4134,7 @@ const schema68 = {
   pattern:
     "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
   errorMessage:
-    '"minimumCoreVersion" should be a string that uses semantic versioning; current value: ${/minimumCoreVersion}',
+    "'minimumCoreVersion' should be a string that uses semantic versioning",
 };
 function validate147(
   data,
@@ -4170,8 +4202,7 @@ function validate147(
         schemaPath: "#/errorMessage",
         params: { errors: emErrs0 },
         message:
-          '"minimumCoreVersion" should be a string that uses semantic versioning; current value: ' +
-          JSON.stringify(rootData && rootData.minimumCoreVersion),
+          "'minimumCoreVersion' should be a string that uses semantic versioning",
       };
       if (vErrors === null) {
         vErrors = [err3];
@@ -4201,7 +4232,7 @@ const schema69 = {
   pattern:
     "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
   errorMessage:
-    '"compatibleCoreVersion" should be a string that uses semantic versioning; current value: ${/compatibleCoreVersion}',
+    "'compatibleCoreVersion' should be a string that uses semantic versioning",
 };
 function validate149(
   data,
@@ -4269,8 +4300,7 @@ function validate149(
         schemaPath: "#/errorMessage",
         params: { errors: emErrs0 },
         message:
-          '"compatibleCoreVersion" should be a string that uses semantic versioning; current value: ' +
-          JSON.stringify(rootData && rootData.compatibleCoreVersion),
+          "'compatibleCoreVersion' should be a string that uses semantic versioning",
       };
       if (vErrors === null) {
         vErrors = [err3];
