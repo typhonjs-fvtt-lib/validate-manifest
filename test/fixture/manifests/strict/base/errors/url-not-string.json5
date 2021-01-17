@@ -1,0 +1,22 @@
+[
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/url",
+      "schemaPath": "#/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "type",
+               "dataPath": "/url",
+               "schemaPath": "#/type",
+               "params": {
+                  "type": "string"
+               },
+               "message": "should be string",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "'url' should be a string and / or appears malformed"
+   }
+]
