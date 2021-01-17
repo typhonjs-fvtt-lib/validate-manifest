@@ -1,0 +1,22 @@
+[
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/dependencies/0/type",
+      "schemaPath": "#/items/properties/type/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/dependencies/0/type",
+               "schemaPath": "#/items/properties/type/pattern",
+               "params": {
+                  "pattern": "^(module|system|world)$"
+               },
+               "message": "should match pattern \"^(module|system|world)$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "'type' should be one of the following strings: 'module', 'system', or 'world'"
+   }
+]

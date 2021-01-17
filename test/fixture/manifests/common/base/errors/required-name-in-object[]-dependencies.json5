@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "required",
+      "dataPath": "/dependencies/0",
+      "schemaPath": "#/items/required",
+      "params": {
+         "missingProperty": "name"
+      },
+      "message": "should have required property 'name'"
+   }
+]

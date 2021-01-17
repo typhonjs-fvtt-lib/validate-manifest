@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/dependencies",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   }
+]
