@@ -16,6 +16,9 @@
     },
     "compatibleCoreVersion": {
       "$ref": "../../definitions/loose/base.json#/definitions/compatibleCoreVersion"
+    },
+    "url": {
+      "$ref": "../../definitions/loose/base.json#/definitions/url"
     }
   }
 }

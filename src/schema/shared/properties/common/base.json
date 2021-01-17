@@ -46,9 +46,6 @@
     "socket": {
       "$ref": "../../definitions/common/base.json#/definitions/socket"
     },
-    "url": {
-      "$ref": "../../definitions/common/base.json#/definitions/url"
-    },
     "manifest": {
       "$ref": "../../definitions/common/base.json#/definitions/manifest"
     },
