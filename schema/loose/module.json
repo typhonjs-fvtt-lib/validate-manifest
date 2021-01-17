@@ -257,16 +257,6 @@
                      "$id": "#/definitions/socket",
                      "type": "boolean"
                   },
-                  "url": {
-                     "title": "A string value",
-                     "default": "",
-                     "pattern": "^(.*)$",
-                     "examples": [
-                        "https://someaddress.com/"
-                     ],
-                     "$id": "#/definitions/url",
-                     "type": "string"
-                  },
                   "manifest": {
                      "title": "A string value",
                      "default": "",
@@ -369,6 +359,16 @@
                   "1.0.0"
                ],
                "$id": "#/definitions/compatibleCoreVersion",
+               "type": "string"
+            },
+            "url": {
+               "title": "A string value",
+               "default": "",
+               "pattern": "^(.*)$",
+               "examples": [
+                  "https://someaddress.com/"
+               ],
+               "$id": "#/definitions/url",
                "type": "string"
             }
          }
