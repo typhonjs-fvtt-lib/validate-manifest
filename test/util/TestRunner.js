@@ -59,7 +59,7 @@ class TestRunner
             }
             else
             {
-               done(false);
+               done(new Error(`Data should have been invalid:\n${JSON.stringify(invalid.data, null, 3)}`));
             }
          });
       }
