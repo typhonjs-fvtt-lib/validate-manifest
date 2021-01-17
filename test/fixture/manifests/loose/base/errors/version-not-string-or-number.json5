@@ -37,6 +37,6 @@
             }
          ]
       },
-      "message": "\"version\" should be a string or number; current value: true"
+      "message": "'version' should be a string or number"
    }
 ]
