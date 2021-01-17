@@ -1,4 +1,4 @@
-// Skips for strict validation which is tested with /strict/common/not-semver-minimumCoreVersion.json5
+// Skips for strict validation which is tested with /strict/common/minimumCoreVersion-not-semver.json5
 {
   "__strictskip": true,
   "name": "a-module",
