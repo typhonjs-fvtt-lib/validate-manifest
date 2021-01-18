@@ -1,0 +1,42 @@
+common/base:
+- languages
+- license
+- readme
+
+move to loose / strict
+- figure out a generic URL include
+- download
+- manifest
+- bugs
+- changelog
+- authors
+
+loose/base:
+- download
+- manifest
+- bugs
+- changelog
+- authors
+
+strict/base:
+- download
+- manifest
+- bugs
+- changelog
+- authors
+  - regex for each manifest+ type
+
+----- manifest plus
+
+- conflicts
+- deprecated
+- includes
+- library
+- media
+- version / manifestPlusVersion
+
+------
+
+Descriptive data for definitions
+  - proper descriptions
+  - proper examples
