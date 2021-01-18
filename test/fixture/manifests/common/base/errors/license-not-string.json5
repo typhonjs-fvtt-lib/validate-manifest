@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/license",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]
