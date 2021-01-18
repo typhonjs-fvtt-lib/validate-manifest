@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/socket",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "boolean"
+      },
+      "message": "should be boolean"
+   }
+]
