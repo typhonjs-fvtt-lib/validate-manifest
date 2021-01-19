@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "pattern",
+      "dataPath": "/scripts/0",
+      "schemaPath": "#/pattern",
+      "params": {
+         "pattern": "^(.*).js$"
+      },
+      "message": "should match pattern \"^(.*).js$\""
+   }
+]
