@@ -11,6 +11,11 @@
       "type": "string",
       "pattern": "^(.+).css$"
     },
+    "file-db": {
+      "$id": "#/definitions/file-db",
+      "type": "string",
+      "pattern": "^(.+).db$"
+    },
     "file-js": {
       "$id": "#/definitions/file-js",
       "type": "string",
