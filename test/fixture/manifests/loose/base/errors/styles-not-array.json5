@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/styles",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   }
+]

@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/styles/0",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]
