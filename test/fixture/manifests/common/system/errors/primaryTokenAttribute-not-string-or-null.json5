@@ -1,0 +1,14 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/primaryTokenAttribute",
+      "schemaPath": "#/type",
+      "params": {
+         "type": [
+            "null",
+            "string"
+         ]
+      },
+      "message": "should be null,string"
+   }
+]
