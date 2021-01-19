@@ -1,3 +1,4 @@
+// Skip strict validation as version is tested by /strict/base/invalid/version-not-semver.json5
 {
   "__strictskip": true,
   "name": "a-module",
