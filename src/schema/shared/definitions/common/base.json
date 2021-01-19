@@ -42,21 +42,6 @@
       "$id": "#/definitions/author",
       "type": "string"
     },
-    "scripts": {
-      "title": "An array of items",
-      "items": {
-        "title": "A string value",
-        "default": "",
-        "pattern": "^(.*)$",
-        "examples": [
-          "ascript.js"
-        ],
-        "$id": "#/properties/scripts/items",
-        "type": "string"
-      },
-      "$id": "#/definitions/scripts",
-      "type": "array"
-    },
     "styles": {
       "title": "An array of items",
       "items": {

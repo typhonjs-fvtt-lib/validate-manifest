@@ -21,6 +21,9 @@
     "esmodules": {
       "$ref": "../../definitions/strict/base.json#/definitions/esmodules"
     },
+    "scripts": {
+      "$ref": "../../definitions/strict/base.json#/definitions/scripts"
+    },
     "packs": {
       "$ref": "../../definitions/loose/base.json#/definitions/packs"
     },

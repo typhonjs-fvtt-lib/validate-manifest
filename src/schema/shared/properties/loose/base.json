@@ -20,6 +20,9 @@
     "esmodules": {
       "$ref": "../../definitions/loose/base.json#/definitions/esmodules"
     },
+    "scripts": {
+      "$ref": "../../definitions/loose/base.json#/definitions/scripts"
+    },
     "url": {
       "$ref": "../../definitions/loose/base.json#/definitions/url"
     },

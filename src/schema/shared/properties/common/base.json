@@ -25,9 +25,6 @@
     "author": {
       "$ref": "../../definitions/common/base.json#/definitions/author"
     },
-    "scripts": {
-      "$ref": "../../definitions/common/base.json#/definitions/scripts"
-    },
     "styles": {
       "$ref": "../../definitions/common/base.json#/definitions/styles"
     },

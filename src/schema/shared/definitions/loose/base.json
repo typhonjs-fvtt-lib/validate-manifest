@@ -56,6 +56,20 @@
       "$id": "#/definitions/esmodules",
       "type": "array"
     },
+    "scripts": {
+      "title": "An array of items",
+      "items": {
+        "$id": "#/properties/scripts/items",
+        "title": "A string value",
+        "default": "",
+        "examples": [
+          "ascript.js"
+        ],
+        "allOf": [{ "$ref": "../strict/fragments.json#/definitions/all" }]
+      },
+      "$id": "#/definitions/scripts",
+      "type": "array"
+    },
     "system": {
       "title": "A string value",
       "default": "",
