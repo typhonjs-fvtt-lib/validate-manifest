@@ -5,5 +5,5 @@
   "author": "typhonrt",
   "version": "1.0.0",
   "minimumCoreVersion": "0.7.5",
-  "manifest": "httpblah://bad-url"
+  "manifest": "http://good-url.com/module.json"
 }
