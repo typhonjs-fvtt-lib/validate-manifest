@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/languages/0/name",
+      "schemaPath": "#/items/properties/name/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]

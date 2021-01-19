@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "pattern",
+      "dataPath": "/languages/0/path",
+      "schemaPath": "#/pattern",
+      "params": {
+         "pattern": "^(.+).json$"
+      },
+      "message": "should match pattern \"^(.+).json$\""
+   }
+]

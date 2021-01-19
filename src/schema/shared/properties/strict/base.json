@@ -33,6 +33,9 @@
     "packs": {
       "$ref": "../../definitions/loose/base.json#/definitions/packs"
     },
+    "languages": {
+      "$ref": "../../definitions/strict/base.json#/definitions/languages"
+    },
     "url": {
       "$ref": "../../definitions/strict/base.json#/definitions/url"
     },

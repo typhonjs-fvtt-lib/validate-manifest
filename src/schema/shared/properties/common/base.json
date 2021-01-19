@@ -25,9 +25,6 @@
     "dependencies": {
       "$ref": "../../definitions/common/base.json#/definitions/dependencies"
     },
-    "languages": {
-      "$ref": "../../definitions/common/base.json#/definitions/languages"
-    },
     "authors": {
       "$ref": "../../definitions/common/base.json#/definitions/authors"
     },

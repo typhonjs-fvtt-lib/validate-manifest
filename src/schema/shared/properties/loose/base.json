@@ -29,6 +29,9 @@
     "styles": {
       "$ref": "../../definitions/loose/base.json#/definitions/styles"
     },
+    "languages": {
+      "$ref": "../../definitions/loose/base.json#/definitions/languages"
+    },
     "url": {
       "$ref": "../../definitions/loose/base.json#/definitions/url"
     },

@@ -11,7 +11,9 @@
       ],
       "type": "string",
       "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
-      "errorMessage": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
+      "errorMessage": {
+        "pattern": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
+      }
     },
     "version": {
       "title": "A semantic version string value",
@@ -107,6 +109,51 @@
         "allOf": [{ "$ref": "fragments.json#/definitions/file-css" }]
       },
       "$id": "#/definitions/styles",
+      "type": "array"
+    },
+    "languages": {
+      "title": "An array of items",
+      "items": {
+        "title": "An object value",
+        "required": [
+          "lang",
+          "name",
+          "path"
+        ],
+        "properties": {
+          "lang": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "en"
+            ],
+            "$id": "#/definitions/languages/items/properties/lang",
+            "type": "string"
+          },
+          "name": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "English"
+            ],
+            "$id": "#/definitions/languages/items/properties/name",
+            "type": "string"
+          },
+          "path": {
+            "$id": "#/definitions/languages/items/properties/path",
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "lang/en.json"
+            ],
+            "allOf": [{ "$ref": "fragments.json#/definitions/file-json"}]
+          }
+        },
+        "$id": "#/definitions/languages/items",
+        "type": "object"
+      },
+
+      "$id": "#/definitions/languages",
       "type": "array"
     },
     "bugs": {

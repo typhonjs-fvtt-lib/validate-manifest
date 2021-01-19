@@ -90,6 +90,49 @@
       "$id": "#/definitions/styles",
       "type": "array"
     },
+    "languages": {
+      "title": "An array of items",
+      "items": {
+        "title": "An object value",
+        "required": [
+          "lang",
+          "name",
+          "path"
+        ],
+        "properties": {
+          "lang": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "en"
+            ],
+            "$id": "#/definitions/languages/items/properties/lang",
+            "type": "string"
+          },
+          "name": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "English"
+            ],
+            "$id": "#/definitions/languages/items/properties/name",
+            "type": "string"
+          },
+          "path": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "lang/en.json"
+            ],
+            "allOf": [{ "$ref": "../strict/fragments.json#/definitions/all"}]
+          }
+        },
+        "$id": "#/definitions/languages/items",
+        "type": "object"
+      },
+      "$id": "#/definitions/languages",
+      "type": "array"
+    },
     "system": {
       "title": "A string value",
       "default": "",
