@@ -6,13 +6,17 @@
       "params": {
          "errors": [
             {
-               "keyword": "pattern",
+               "keyword": "enum",
                "dataPath": "/dependencies/0/type",
-               "schemaPath": "#/items/properties/type/pattern",
+               "schemaPath": "#/items/properties/type/enum",
                "params": {
-                  "pattern": "^(module|system|world)$"
+                  "allowedValues": [
+                     "module",
+                     "system",
+                     "world"
+                  ]
                },
-               "message": "should match pattern \"^(module|system|world)$\"",
+               "message": "should be equal to one of the allowed values",
                "emUsed": true
             }
          ]
