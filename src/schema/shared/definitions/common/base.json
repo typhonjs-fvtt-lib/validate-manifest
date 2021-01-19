@@ -5,7 +5,6 @@
     "name": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "a-module"
       ],
@@ -15,7 +14,6 @@
     "title": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "A Module"
       ],
@@ -25,7 +23,6 @@
     "description": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "Some description"
       ],
@@ -35,7 +32,6 @@
     "author": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "typhonrt"
       ],
@@ -53,7 +49,6 @@
           "name": {
             "title": "A string value",
             "default": "",
-            "pattern": "^(.*)$",
             "examples": [
               "dice-so-nice"
             ],
@@ -63,7 +58,6 @@
           "manifest": {
             "title": "A string value",
             "default": "",
-            "pattern": "^(.*)$",
             "examples": [
               "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/2.0.3/module/module.json"
             ],
@@ -101,7 +95,6 @@
           "lang": {
             "title": "A string value",
             "default": "",
-            "pattern": "^(.*)$",
             "examples": [
               "en"
             ],
@@ -111,7 +104,6 @@
           "name": {
             "title": "A string value",
             "default": "",
-            "pattern": "^(.*)$",
             "examples": [
               "English"
             ],
@@ -121,7 +113,6 @@
           "path": {
             "title": "A string value",
             "default": "",
-            "pattern": "^(.*)$",
             "examples": [
               "lang/en.json"
             ],
@@ -146,7 +137,6 @@
           "name": {
             "title": "A string value",
             "default": "",
-            "pattern": "^(.*)$",
             "examples": [
               "Atropos"
             ],
@@ -156,7 +146,6 @@
           "email": {
             "title": "A string value",
             "default": "",
-            "pattern": "^(.*)$",
             "examples": [
               "admin@foundryvtt.com"
             ],
@@ -166,7 +155,6 @@
           "url": {
             "title": "A string value",
             "default": "",
-            "pattern": "^(.*)$",
             "examples": [
               "https://foundryvtt.com"
             ],
@@ -192,7 +180,6 @@
     "license": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "LICENSE"
       ],
@@ -202,7 +189,6 @@
     "readme": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "README.md"
       ],

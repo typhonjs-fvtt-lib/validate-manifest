@@ -4,8 +4,7 @@
   "definitions": {
     "all": {
       "$id": "#/definitions/all",
-      "type": "string",
-      "pattern": "^(.*)$"
+      "type": "string"
     },
     "file-css": {
       "$id": "#/definitions/file-css",

@@ -14,7 +14,6 @@
     "initiative": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "1d20"
       ],
@@ -33,7 +32,6 @@
     "gridUnits": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "ft, m"
       ],
@@ -49,7 +47,6 @@
       "$id": "#/definitions/primaryTokenAttribute",
       "anyOf": [
         {
-          "pattern": "^(.*)$",
           "type": "string"
         },
         {
@@ -66,7 +63,6 @@
       "$id": "#/definitions/secondaryTokenAttribute",
       "anyOf": [
         {
-          "pattern": "^(.*)$",
           "type": "string"
         },
         {

@@ -11,8 +11,7 @@
       "$id": "#/definitions/version",
       "oneOf": [
         {
-          "type": "string",
-          "pattern": "^(.*)$"
+          "type": "string"
         },
         {
           "type": "number"
@@ -25,7 +24,6 @@
     "minimumCoreVersion": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "0.7.5"
       ],
@@ -35,7 +33,6 @@
     "compatibleCoreVersion": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "1.0.0"
       ],
@@ -87,7 +84,6 @@
     "system": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "dnd5e"
       ],
@@ -99,7 +95,6 @@
       "items": {
         "title": "A string value",
         "default": "",
-        "pattern": "^(.*)$",
         "examples": [
           "dnd5e"
         ],
@@ -141,7 +136,6 @@
           "name": {
             "title": "A string value",
             "default": "",
-            "pattern": "^(.*)$",
             "examples": [
               "pack-name"
             ],
@@ -151,7 +145,6 @@
           "label": {
             "title": "A string value",
             "default": "",
-            "pattern": "^(.*)$",
             "examples": [
               "Pack Title"
             ],
@@ -161,7 +154,6 @@
           "module": {
             "title": "A string value",
             "default": "",
-            "pattern": "^(.*)$",
             "examples": [
               "module-name"
             ],
@@ -181,7 +173,6 @@
           "path": {
             "title": "A string value",
             "default": "",
-            "pattern": "^(.*)$",
             "examples": [
               "./packs/pack-name.db"
             ],
@@ -191,7 +182,6 @@
           "entity": {
             "title": "A string value",
             "default": "",
-            "pattern": "^(.*)$",
             "examples": [
               "Item"
             ],
@@ -208,7 +198,6 @@
     "url": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "https://someaddress.com/"
       ],
@@ -218,7 +207,6 @@
     "download": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "https://someaddress.com/module.zip"
       ],
@@ -228,7 +216,6 @@
     "manifest": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "https://someaddress.com/module.json"
       ],
@@ -238,7 +225,6 @@
     "bugs": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "https://github.com/some-user/a-module/issues"
       ],
@@ -248,7 +234,6 @@
     "changelog": {
       "title": "A string value",
       "default": "",
-      "pattern": "^(.*)$",
       "examples": [
         "https://github.com/some-user/a-module/releases"
       ],
