@@ -1,7 +1,7 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/styles",
+      "dataPath": "/scripts",
       "schemaPath": "#/type",
       "params": {
          "type": "array"
