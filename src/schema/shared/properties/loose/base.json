@@ -17,6 +17,9 @@
     "compatibleCoreVersion": {
       "$ref": "../../definitions/loose/base.json#/definitions/compatibleCoreVersion"
     },
+    "esmodules": {
+      "$ref": "../../definitions/loose/base.json#/definitions/esmodules"
+    },
     "url": {
       "$ref": "../../definitions/loose/base.json#/definitions/url"
     },

@@ -28,9 +28,6 @@
     "scripts": {
       "$ref": "../../definitions/common/base.json#/definitions/scripts"
     },
-    "esmodules": {
-      "$ref": "../../definitions/common/base.json#/definitions/esmodules"
-    },
     "styles": {
       "$ref": "../../definitions/common/base.json#/definitions/styles"
     },

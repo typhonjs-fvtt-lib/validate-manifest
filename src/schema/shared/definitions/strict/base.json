@@ -9,7 +9,7 @@
         "1.0.0"
       ],
       "$id": "#/definitions/version",
-      "allOf": [{ "$ref": "fragments.json#/definitions/semver" }],
+      "allOf": [{ "$ref": "fragments.json#/definitions/semver"}],
       "errorMessage": "'version' should be a string that uses semantic versioning"
     },
     "minimumCoreVersion": {
@@ -19,7 +19,7 @@
         "1.0.0"
       ],
       "$id": "#/definitions/minimumCoreVersion",
-      "allOf": [{ "$ref": "fragments.json#/definitions/semver" }],
+      "allOf": [{ "$ref": "fragments.json#/definitions/semver"}],
       "errorMessage": "'minimumCoreVersion' should be a string that uses semantic versioning"
     },
     "compatibleCoreVersion": {
@@ -29,7 +29,7 @@
         "1.0.0"
       ],
       "$id": "#/definitions/compatibleCoreVersion",
-      "allOf": [{ "$ref": "fragments.json#/definitions/semver" }],
+      "allOf": [{ "$ref": "fragments.json#/definitions/semver"}],
       "errorMessage": "'compatibleCoreVersion' should be a string that uses semantic versioning"
     },
     "url": {
@@ -39,7 +39,7 @@
         "https://someaddress.com/"
       ],
       "$id": "#/definitions/url",
-      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern" }],
+      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern"}],
       "errorMessage": {
         "pattern": "'url' should be a string and / or appears to be a malformed url"
       }
@@ -51,10 +51,24 @@
       "examples": [
         "https://someaddress.com/module.zip"
       ],
-      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern" }],
+      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern"}],
       "errorMessage": {
         "pattern": "'download' should be a string and / or appears to be a malformed url"
       }
+    },
+    "esmodules": {
+      "title": "An array of items",
+      "items": {
+        "$id": "#/definitions/esmodules/items",
+        "title": "A string value",
+        "default": "",
+        "examples": [
+          "index.js"
+        ],
+        "allOf": [{ "$ref": "fragments.json#/definitions/file-js"}]
+      },
+      "$id": "#/definitions/esmodules",
+      "type": "array"
     },
     "manifest": {
       "$id": "#/definitions/manifest",
@@ -63,7 +77,7 @@
       "examples": [
         "https://someaddress.com/module.json"
       ],
-      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern" }],
+      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern"}],
       "errorMessage": {
         "pattern": "'manifest' should be a string and / or appears to be a malformed url"
       }
@@ -75,7 +89,7 @@
       "examples": [
         "https://github.com/some-user/a-module/issues"
       ],
-      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern" }],
+      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern"}],
       "errorMessage": {
         "pattern": "'bugs' should be a string and / or appears to be a malformed url"
       }
@@ -87,7 +101,7 @@
       "examples": [
         "https://github.com/some-user/a-module/releases"
       ],
-      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern" }],
+      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern"}],
       "errorMessage": {
         "pattern": "'changelog' should be a string and / or appears to be a malformed url"
       }

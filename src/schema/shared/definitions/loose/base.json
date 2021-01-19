@@ -42,6 +42,20 @@
       "$id": "#/definitions/compatibleCoreVersion",
       "type": "string"
     },
+    "esmodules": {
+      "title": "An array of items",
+      "items": {
+        "$id": "#/definitions/esmodules/items",
+        "title": "A string value",
+        "default": "",
+        "examples": [
+          "index.js"
+        ],
+        "allOf": [{ "$ref": "../strict/fragments.json#/definitions/all"}]
+      },
+      "$id": "#/definitions/esmodules",
+      "type": "array"
+    },
     "system": {
       "title": "A string value",
       "default": "",

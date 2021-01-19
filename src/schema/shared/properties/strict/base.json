@@ -18,6 +18,9 @@
     "compatibleCoreVersion": {
       "$ref": "../../definitions/strict/base.json#/definitions/compatibleCoreVersion"
     },
+    "esmodules": {
+      "$ref": "../../definitions/strict/base.json#/definitions/esmodules"
+    },
     "packs": {
       "$ref": "../../definitions/loose/base.json#/definitions/packs"
     },

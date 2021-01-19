@@ -2,6 +2,26 @@
   "$id": "shared/definitions/strict/fragments.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "all": {
+      "$id": "#/definitions/all",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "file-css": {
+      "$id": "#/definitions/file-css",
+      "type": "string",
+      "pattern": "^(.*).css$"
+    },
+    "file-js": {
+      "$id": "#/definitions/file-js",
+      "type": "string",
+      "pattern": "^(.*).js$"
+    },
+    "file-json": {
+      "$id": "#/definitions/file-json",
+      "type": "string",
+      "pattern": "^(.*).json$"
+    },
     "semver": {
       "$id": "#/definitions/semver",
       "type": "string",

@@ -57,21 +57,6 @@
       "$id": "#/definitions/scripts",
       "type": "array"
     },
-    "esmodules": {
-      "title": "An array of items",
-      "items": {
-        "title": "A string value",
-        "default": "",
-        "pattern": "^(.*)$",
-        "examples": [
-          "index.js"
-        ],
-        "$id": "#/definitions/esmodules/items",
-        "type": "string"
-      },
-      "$id": "#/definitions/esmodules",
-      "type": "array"
-    },
     "styles": {
       "title": "An array of items",
       "items": {
