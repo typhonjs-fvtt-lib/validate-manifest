@@ -25,6 +25,9 @@
     },
     "manifest": {
       "$ref": "../../definitions/loose/base.json#/definitions/manifest"
+    },
+    "bugs": {
+      "$ref": "../../definitions/loose/base.json#/definitions/bugs"
     }
   }
 }

@@ -67,6 +67,18 @@
       "errorMessage": {
         "pattern": "'manifest' should be a string and / or appears to be a malformed url"
       }
+    },
+    "bugs": {
+      "$id": "#/definitions/bugs",
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "https://github.com/some-user/a-module/issues"
+      ],
+      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern" }],
+      "errorMessage": {
+        "pattern": "'bugs' should be a string and / or appears to be a malformed url"
+      }
     }
   }
 }

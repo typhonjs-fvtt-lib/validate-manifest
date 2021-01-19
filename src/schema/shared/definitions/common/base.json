@@ -254,16 +254,6 @@
       "$id": "#/definitions/readme",
       "type": "string"
     },
-    "bugs": {
-      "title": "A string value",
-      "default": "",
-      "pattern": "^(.*)$",
-      "examples": [
-        "https://github.com/some-user/a-module/issues"
-      ],
-      "$id": "#/definitions/bugs",
-      "type": "string"
-    },
     "changelog": {
       "title": "A string value",
       "default": "",

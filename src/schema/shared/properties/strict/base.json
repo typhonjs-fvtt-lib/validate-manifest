@@ -29,6 +29,9 @@
     },
     "manifest": {
       "$ref": "../../definitions/strict/base.json#/definitions/manifest"
+    },
+    "bugs": {
+      "$ref": "../../definitions/strict/base.json#/definitions/bugs"
     }
   }
 }
