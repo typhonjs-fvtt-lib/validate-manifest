@@ -46,6 +46,6 @@
     "compile-validators": "ajv compile --all-errors --inline-refs=false -r \"src/schema/shared/**/*.json\" -s \"src/schema/validators/**/*.json\" -c ajv-errors -c ajv-keywords/dist/keywords/typeof -o > dist/validators.js && prettier --write \"./dist/validators.js\"",
     "compile-schema": "node src/compile/compileSchema.js",
     "create-specification": "gitdown ./.specification/ManifestPlus.md --output-file ./ManifestPlus.md",
-    "test": "nyc mocha \"test/src/**/*.test.js\""
+    "test": "nyc --reporter=lcov --reporter=text-summary mocha \"test/src/**/*.test.js\""
   }
 }
