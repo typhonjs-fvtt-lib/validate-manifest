@@ -49,9 +49,6 @@
     "manifest": {
       "$ref": "../../definitions/common/base.json#/definitions/manifest"
     },
-    "download": {
-      "$ref": "../../definitions/common/base.json#/definitions/download"
-    },
     "license": {
       "$ref": "../../definitions/common/base.json#/definitions/license"
     },

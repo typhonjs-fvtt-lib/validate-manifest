@@ -19,6 +19,9 @@
     },
     "url": {
       "$ref": "../../definitions/loose/base.json#/definitions/url"
+    },
+    "download": {
+      "$ref": "../../definitions/loose/base.json#/definitions/download"
     }
   }
 }

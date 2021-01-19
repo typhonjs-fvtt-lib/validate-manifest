@@ -172,6 +172,16 @@
       ],
       "$id": "#/definitions/url",
       "type": "string"
+    },
+    "download": {
+      "title": "A string value",
+      "default": "",
+      "pattern": "^(.*)$",
+      "examples": [
+        "https://someaddress.com/module.zip"
+      ],
+      "$id": "#/definitions/download",
+      "type": "string"
     }
   }
 }

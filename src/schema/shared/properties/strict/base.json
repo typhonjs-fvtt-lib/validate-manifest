@@ -23,6 +23,9 @@
     },
     "url": {
       "$ref": "../../definitions/strict/base.json#/definitions/url"
+    },
+    "download": {
+      "$ref": "../../definitions/strict/base.json#/definitions/download"
     }
   }
 }
