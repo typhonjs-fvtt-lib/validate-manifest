@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "'url' should be a string and / or appears malformed"
+      "message": "'url' should be a string and / or appears to be a malformed url"
    }
 ]
