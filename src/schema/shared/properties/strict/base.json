@@ -24,6 +24,9 @@
     "scripts": {
       "$ref": "../../definitions/strict/base.json#/definitions/scripts"
     },
+    "styles": {
+      "$ref": "../../definitions/strict/base.json#/definitions/styles"
+    },
     "packs": {
       "$ref": "../../definitions/loose/base.json#/definitions/packs"
     },

@@ -70,6 +70,20 @@
       "$id": "#/definitions/scripts",
       "type": "array"
     },
+    "styles": {
+      "title": "An array of items",
+      "items": {
+        "$id": "#/definitions/styles/items",
+        "title": "A string value",
+        "default": "",
+        "examples": [
+          "styles.css"
+        ],
+        "allOf": [{ "$ref": "../strict/fragments.json#/definitions/all" }]
+      },
+      "$id": "#/definitions/styles",
+      "type": "array"
+    },
     "system": {
       "title": "A string value",
       "default": "",

@@ -23,6 +23,9 @@
     "scripts": {
       "$ref": "../../definitions/loose/base.json#/definitions/scripts"
     },
+    "styles": {
+      "$ref": "../../definitions/loose/base.json#/definitions/styles"
+    },
     "url": {
       "$ref": "../../definitions/loose/base.json#/definitions/url"
     },

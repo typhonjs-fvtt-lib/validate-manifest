@@ -79,9 +79,23 @@
         "examples": [
           "ascript.js"
         ],
-        "allOf": [{ "$ref": "../strict/fragments.json#/definitions/file-js" }]
+        "allOf": [{ "$ref": "fragments.json#/definitions/file-js" }]
       },
       "$id": "#/definitions/scripts",
+      "type": "array"
+    },
+    "styles": {
+      "title": "An array of items",
+      "items": {
+        "$id": "#/definitions/styles/items",
+        "title": "A string value",
+        "default": "",
+        "examples": [
+          "styles.css"
+        ],
+        "allOf": [{ "$ref": "fragments.json#/definitions/file-css" }]
+      },
+      "$id": "#/definitions/styles",
       "type": "array"
     },
     "manifest": {

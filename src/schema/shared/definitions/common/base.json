@@ -42,21 +42,6 @@
       "$id": "#/definitions/author",
       "type": "string"
     },
-    "styles": {
-      "title": "An array of items",
-      "items": {
-        "title": "A string value",
-        "default": "",
-        "pattern": "^(.*)$",
-        "examples": [
-          "styles.css"
-        ],
-        "$id": "#/definitions/styles/items",
-        "type": "string"
-      },
-      "$id": "#/definitions/styles",
-      "type": "array"
-    },
     "dependencies": {
       "title": "An array of items",
       "items": {
