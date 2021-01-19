@@ -79,6 +79,18 @@
       "errorMessage": {
         "pattern": "'bugs' should be a string and / or appears to be a malformed url"
       }
+    },
+    "changelog": {
+      "$id": "#/definitions/changelog",
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "https://github.com/some-user/a-module/releases"
+      ],
+      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern" }],
+      "errorMessage": {
+        "pattern": "'changelog' should be a string and / or appears to be a malformed url"
+      }
     }
   }
 }

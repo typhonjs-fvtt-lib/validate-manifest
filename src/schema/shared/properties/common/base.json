@@ -51,9 +51,6 @@
     },
     "readme": {
       "$ref": "../../definitions/common/base.json#/definitions/readme"
-    },
-    "changelog": {
-      "$ref": "../../definitions/common/base.json#/definitions/changelog"
     }
   }
 }

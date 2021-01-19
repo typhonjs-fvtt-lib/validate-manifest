@@ -28,6 +28,9 @@
     },
     "bugs": {
       "$ref": "../../definitions/loose/base.json#/definitions/bugs"
+    },
+    "changelog": {
+      "$ref": "../../definitions/loose/base.json#/definitions/changelog"
     }
   }
 }

@@ -253,16 +253,6 @@
       ],
       "$id": "#/definitions/readme",
       "type": "string"
-    },
-    "changelog": {
-      "title": "A string value",
-      "default": "",
-      "pattern": "^(.*)$",
-      "examples": [
-        "https://github.com/some-user/a-module/releases"
-      ],
-      "$id": "#/definitions/changelog",
-      "type": "string"
     }
   }
 }
