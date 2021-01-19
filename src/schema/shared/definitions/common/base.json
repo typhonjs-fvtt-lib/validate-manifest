@@ -67,12 +67,12 @@
           "type": {
             "title": "A string value",
             "default": "",
-            "pattern": "^(module|system|world)$",
             "examples": [
               "module"
             ],
             "$id": "#/definitions/dependencies/items/properties/type",
             "type": "string",
+            "enum": ["module", "system", "world"],
             "errorMessage": "'type' should be one of the following strings: 'module', 'system', or 'world'"
           }
         },
