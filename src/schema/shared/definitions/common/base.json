@@ -2,15 +2,6 @@
   "$id": "shared/definitions/common/base.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "name": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "a-module"
-      ],
-      "$id": "#/definitions/name",
-      "type": "string"
-    },
     "title": {
       "title": "A string value",
       "default": "",

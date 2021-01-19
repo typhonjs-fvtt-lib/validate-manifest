@@ -8,6 +8,9 @@
     { "$ref": "../common/base.json"}
   ],
   "properties": {
+    "name": {
+      "$ref": "../../definitions/loose/base.json#/definitions/name"
+    },
     "version": {
       "$ref": "../../definitions/loose/base.json#/definitions/version"
     },

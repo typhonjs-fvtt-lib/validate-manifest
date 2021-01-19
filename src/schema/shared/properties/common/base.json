@@ -13,9 +13,6 @@
     "minimumCoreVersion"
   ],
   "properties": {
-    "name": {
-      "$ref": "../../definitions/common/base.json#/definitions/name"
-    },
     "title": {
       "$ref": "../../definitions/common/base.json#/definitions/title"
     },

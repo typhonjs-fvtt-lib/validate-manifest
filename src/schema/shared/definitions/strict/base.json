@@ -2,6 +2,17 @@
   "$id": "shared/definitions/strict/base.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "name": {
+      "$id": "#/definitions/name",
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "a-module"
+      ],
+      "type": "string",
+      "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
+      "errorMessage": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
+    },
     "version": {
       "title": "A semantic version string value",
       "default": "",
