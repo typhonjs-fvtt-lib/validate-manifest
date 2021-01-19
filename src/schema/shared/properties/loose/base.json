@@ -22,6 +22,9 @@
     },
     "download": {
       "$ref": "../../definitions/loose/base.json#/definitions/download"
+    },
+    "manifest": {
+      "$ref": "../../definitions/loose/base.json#/definitions/manifest"
     }
   }
 }

@@ -234,16 +234,6 @@
       "$id": "#/definitions/socket",
       "type": "boolean"
     },
-    "manifest": {
-      "title": "A string value",
-      "default": "",
-      "pattern": "^(.*)$",
-      "examples": [
-        "https://someaddress.com/module.json"
-      ],
-      "$id": "#/definitions/manifest",
-      "type": "string"
-    },
     "license": {
       "title": "A string value",
       "default": "",

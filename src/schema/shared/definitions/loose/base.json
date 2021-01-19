@@ -182,6 +182,16 @@
       ],
       "$id": "#/definitions/download",
       "type": "string"
+    },
+    "manifest": {
+      "title": "A string value",
+      "default": "",
+      "pattern": "^(.*)$",
+      "examples": [
+        "https://someaddress.com/module.json"
+      ],
+      "$id": "#/definitions/manifest",
+      "type": "string"
     }
   }
 }
