@@ -9,5 +9,8 @@
     { "$ref": "../common/system.json"}
   ],
   "properties": {
+    "manifest": {
+      "$ref": "../../definitions/strict/system.json#/definitions/manifest"
+    }
   }
 }

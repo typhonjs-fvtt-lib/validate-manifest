@@ -98,18 +98,6 @@
       "$id": "#/definitions/styles",
       "type": "array"
     },
-    "manifest": {
-      "$id": "#/definitions/manifest",
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "https://someaddress.com/module.json"
-      ],
-      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern"}],
-      "errorMessage": {
-        "pattern": "'manifest' should be a string and / or appears to be a malformed url"
-      }
-    },
     "bugs": {
       "$id": "#/definitions/bugs",
       "title": "A string value",

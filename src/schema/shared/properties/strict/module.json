@@ -20,6 +20,9 @@
     },
     "packs": {
       "$ref": "../../definitions/loose/base.json#/definitions/packs"
+    },
+    "manifest": {
+      "$ref": "../../definitions/strict/module.json#/definitions/manifest"
     }
   }
 }

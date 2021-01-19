@@ -1,0 +1,18 @@
+{
+  "$id": "shared/definitions/strict/module.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "manifest": {
+      "$id": "#/definitions/manifest",
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "https://someaddress.com/module.json"
+      ],
+      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern-module-json"}],
+      "errorMessage": {
+        "pattern": "'manifest' should be a string and / or appears to be a malformed url"
+      }
+    }
+  }
+}
