@@ -51,7 +51,7 @@
       "examples": [
         "https://someaddress.com/module.zip"
       ],
-      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern"}],
+      "allOf": [{ "$ref": "fragments.json#/definitions/url-pattern-zip"}],
       "errorMessage": {
         "pattern": "'download' should be a string and / or appears to be a malformed url"
       }
