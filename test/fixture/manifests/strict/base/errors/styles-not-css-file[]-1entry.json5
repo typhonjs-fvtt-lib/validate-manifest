@@ -4,8 +4,8 @@
       "dataPath": "/styles/0",
       "schemaPath": "#/pattern",
       "params": {
-         "pattern": "^(.*).css$"
+         "pattern": "^(.+).css$"
       },
-      "message": "should match pattern \"^(.*).css$\""
+      "message": "should match pattern \"^(.+).css$\""
    }
 ]

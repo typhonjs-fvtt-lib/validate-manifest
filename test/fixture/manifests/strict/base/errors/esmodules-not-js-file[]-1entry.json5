@@ -4,8 +4,8 @@
       "dataPath": "/esmodules/0",
       "schemaPath": "#/pattern",
       "params": {
-         "pattern": "^(.*).js$"
+         "pattern": "^(.+).js$"
       },
-      "message": "should match pattern \"^(.*).js$\""
+      "message": "should match pattern \"^(.+).js$\""
    }
 ]
