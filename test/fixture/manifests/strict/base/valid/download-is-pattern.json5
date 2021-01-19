@@ -5,5 +5,5 @@
   "author": "typhonrt",
   "version": "1.0.0",
   "minimumCoreVersion": "0.7.5",
-  "download": "http://bad-url.com/module.tar.gz"
+  "download": "http://good-url.com/module.zip"
 }
