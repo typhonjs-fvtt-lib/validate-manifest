@@ -7,5 +7,8 @@
     {
       "$ref": "../../shared/properties/loose/system.json"
     }
-  ]
+  ],
+  "errorMessage": {
+    "type": "package manifest should be an object"
+  }
 }
