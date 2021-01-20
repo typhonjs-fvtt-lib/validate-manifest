@@ -79,7 +79,7 @@ class TestRunner
       {
          const absPath = path.resolve(dir, filename);
          const stat = fs.statSync(absPath);
-         const isFile = stat.isFile();
+         const isFile = stat.isFile() && path.extname(filename) === '.json5';
 
          if (isFile)
          {
