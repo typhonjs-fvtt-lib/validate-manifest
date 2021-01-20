@@ -6,7 +6,5 @@
   "allOf":
   [
     { "$ref": "../../shared/properties/loose/module+.json"}
-  ],
-  "properties": {
-  }
+  ]
 }

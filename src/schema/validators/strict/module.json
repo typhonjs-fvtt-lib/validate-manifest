@@ -6,7 +6,5 @@
   "allOf":
   [
     { "$ref": "../../shared/properties/strict/module.json"}
-  ],
-  "properties": {
-  }
+  ]
 }
