@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/scripts/0",
-      "schemaPath": "#/type",
+      "schemaPath": "#/items/type",
       "params": {
          "type": "string"
       },

@@ -2,7 +2,7 @@
    {
       "keyword": "pattern",
       "dataPath": "/scripts/0",
-      "schemaPath": "#/pattern",
+      "schemaPath": "#/items/pattern",
       "params": {
          "pattern": "^(.+).js$"
       },

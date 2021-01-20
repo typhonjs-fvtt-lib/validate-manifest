@@ -2,7 +2,7 @@
    {
       "keyword": "pattern",
       "dataPath": "/styles/0",
-      "schemaPath": "#/pattern",
+      "schemaPath": "#/items/pattern",
       "params": {
          "pattern": "^(.+).css$"
       },
