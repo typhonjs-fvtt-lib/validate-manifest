@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "required",
+      "dataPath": "/languages/0",
+      "schemaPath": "#/items/required",
+      "params": {
+         "missingProperty": "path"
+      },
+      "message": "should have required property 'path'"
+   }
+]
