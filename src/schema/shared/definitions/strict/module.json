@@ -20,12 +20,20 @@
       "oneOf": [
         {
           "title": "A string value",
-          "type": "string"
+          "type": "string",
+          "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+          "errorMessage": {
+            "pattern": "'system' should be a string that is alpha-numeric with only underscore and hyphen separators"
+          }
         },
         {
           "items": {
             "title": "A string value",
-            "type": "string"
+            "type": "string",
+            "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+            "errorMessage": {
+              "pattern": "'system' should be a string that is alpha-numeric with only underscore and hyphen separators"
+            }
           },
           "title": "An array of items",
           "type": "array"
