@@ -16,9 +16,9 @@ class TestRunner
     *
     * @param {function} testFunction - The ajv validation function to test.
     * @param {string}   dirPath - The directory to open error and invalid data.
-    * @param {boolean}  [isStrict=false] - Optional boolean to indicate for strict skip checks.
+    * @param {object}   functionDesc - Data describing the function.
     */
-   static invalid(testFunction, dirPath, isStrict = false)
+   static invalid(testFunction, dirPath, functionDesc)
    {
       const errorPath = `${dirPath}${path.sep}errors`;
       const invalidPath = `${dirPath}${path.sep}invalid`;
@@ -32,7 +32,7 @@ class TestRunner
       {
          const invalid = invalidData.get(key);
 
-         if (isStrict && '__strictskip' in invalid.data) { continue; }
+         if (functionDesc.isStrict && '__strictskip' in invalid.data) { continue; }
 
          it(key, (done) =>
          {
@@ -128,7 +128,7 @@ class TestRunner
                   {
                      describe(`${category} - ${type} - valid`, () =>
                      {
-                        TestRunner.valid(testFunction, dirPath, data.isStrict);
+                        TestRunner.valid(testFunction, dirPath, data);
                      });
                   }
 
@@ -136,7 +136,7 @@ class TestRunner
                   {
                      describe(`${category} - ${type} - invalid`, () =>
                      {
-                        TestRunner.invalid(testFunction, dirPath, data.isStrict);
+                        TestRunner.invalid(testFunction, dirPath, data);
                      });
                   }
                }
@@ -150,9 +150,9 @@ class TestRunner
     *
     * @param {function} testFunction - The ajv validation function to test.
     * @param {string}   dirPath - The directory to open valid data.
-    * @param {boolean}  [isStrict=false] - Optional boolean to indicate for strict skip checks.
+    * @param {object}   functionDesc - Data describing the function.
     */
-   static valid(testFunction, dirPath, isStrict = false)
+   static valid(testFunction, dirPath, functionDesc)
    {
       const validPath = `${dirPath}${path.sep}valid`;
 
@@ -164,7 +164,7 @@ class TestRunner
       {
          const test = validData.get(key);
 
-         if (isStrict && '__strictskip' in test.data) { continue; }
+         if (functionDesc.isStrict && '__strictskip' in test.data) { continue; }
 
          it(key, (done) =>
          {

@@ -15,7 +15,9 @@ module.exports = {
 
    categories: {
       loose: true,
-      strict: true
+      strict: true,
+      plus: true,
+      notplus: true
    },
 
    // Run different types of tests.
@@ -37,44 +39,52 @@ module.exports = {
    // Defines the function to run and the associated categories, type, and if it is strict.
    functionData: {
       validateModule: {
-         categories: ['loose'],
+         categories: ['loose', 'notplus'],
          type: ['base', 'module'],
-         isStrict: false
+         isStrict: false,
+         isManifestPlus: false
       },
       validateModulePlus: {
-         categories: ['loose'],
+         categories: ['loose', 'plus'],
          type: ['base', 'module', 'module+'],
-         isStrict: false
+         isStrict: false,
+         isManifestPlus: true
       },
       validateSystem: {
-         categories: ['loose'],
+         categories: ['loose', 'notplus'],
          type: ['base', 'system'],
-         isStrict: false
+         isStrict: false,
+         isManifestPlus: false
       },
       validateSystemPlus: {
-         categories: ['loose'],
+         categories: ['loose', 'plus'],
          type: ['base', 'system', 'system+'],
-         isStrict: false
+         isStrict: false,
+         isManifestPlus: true
       },
       validateModuleStrict: {
-         categories: ['loose', 'strict'],
+         categories: ['loose', 'strict', 'notplus'],
          type: ['base', 'module'],
-         isStrict: true
+         isStrict: true,
+         isManifestPlus: false
       },
       validateModulePlusStrict: {
-         categories: ['loose', 'strict'],
+         categories: ['loose', 'strict', 'plus'],
          type: ['base', 'module', 'module+'],
-         isStrict: true
+         isStrict: true,
+         isManifestPlus: true
       },
       validateSystemStrict: {
-         categories: ['loose', 'strict'],
+         categories: ['loose', 'strict', 'notplus'],
          type: ['base', 'system'],
-         isStrict: true
+         isStrict: true,
+         isManifestPlus: false
       },
       validateSystemPlusStrict: {
-         categories: ['loose', 'strict'],
+         categories: ['loose', 'strict', 'plus'],
          type: ['base', 'system', 'system+'],
-         isStrict: true
+         isStrict: true,
+         isManifestPlus: true
       }
    }
 };
