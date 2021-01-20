@@ -1,0 +1,12 @@
+{
+  "$id": "shared/definitions/loose/base.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "version": {
+      "oneOf": [{ "type": "string" }, { "type": "number" }],
+      "errorMessage": {
+        "_": "'version' should be a string or number"
+      }
+    }
+  }
+}

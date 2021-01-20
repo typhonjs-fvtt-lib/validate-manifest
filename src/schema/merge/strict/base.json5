@@ -1,0 +1,69 @@
+{
+  "$id": "shared/definitions/strict/base.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "name": {
+      "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
+      "errorMessage": {
+        "pattern": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
+      }
+    },
+    "version": {
+      "type": "string",
+      // Replace with semver include
+      "$$include": { "target": "semver", "data": { "name": "version" } }
+    },
+    "minimumCoreVersion": {
+      // Replace with semver include
+      "$$include": { "target": "semver", "data": { "name": "minimumCoreVersion" } }
+    },
+    "compatibleCoreVersion": {
+      // Replace with semver include
+      "$$include": { "target": "semver", "data": { "name": "compatibleCoreVersion" } }
+    },
+    "url": {
+      // Replace with url-pattern include
+      "$$include": { "target": "url-pattern", "data": { "name": "url" } }
+    },
+    "download": {
+      // Replace with url-pattern-zip include
+      "$$include": { "target": "url-pattern-zip", "data": { "name": "download" } }
+    },
+    "esmodules": {
+      "items": {
+        // Replace with file-js include
+        "$$include": { "target": "file-js" }
+      }
+    },
+    "scripts": {
+      "items": {
+        // Replace with file-js include
+        "$$include": { "target": "file-js" }
+      }
+    },
+    "styles": {
+      "items": {
+        // Replace with file-css include
+        "$$include": { "target": "file-css" }
+      }
+    },
+    "languages": {
+      "items": {
+        "properties": {
+          "path": {
+            // Replace with file-json include
+            "$$include": { "target": "file-json" }
+          }
+        }
+      }
+    },
+    "bugs": {
+      // Replace with url-pattern include
+      "$$include": { "target": "url-pattern", "data": { "name": "bugs" } }
+    },
+    "changelog": {
+      // Replace with url-pattern include
+      "$$include": { "target": "url-pattern", "data": { "name": "changelog" } }
+    }
+  }
+}

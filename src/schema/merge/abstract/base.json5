@@ -1,0 +1,148 @@
+{
+  "$id": "shared/definitions/abstract/base.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "name": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "a-module"
+      ],
+      "type": "string"
+    },
+    "version": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "1.0.0"
+      ]
+    },
+    "minimumCoreVersion": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "0.7.5"
+      ],
+      "type": "string"
+    },
+    "compatibleCoreVersion": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "1.0.0"
+      ],
+      "type": "string"
+    },
+    "esmodules": {
+      "title": "An array of items",
+      "items": {
+        "title": "A string value",
+        "default": "",
+        "examples": [
+          "index.js"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "scripts": {
+      "title": "An array of items",
+      "items": {
+        "title": "A string value",
+        "default": "",
+        "examples": [
+          "ascript.js"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "styles": {
+      "title": "An array of items",
+      "items": {
+        "title": "A string value",
+        "default": "",
+        "examples": [
+          "styles.css"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "languages": {
+      "$id": "#/definitions/languages",
+      "type": "array",
+      "title": "An array of items",
+      "items": {
+        "$id": "#/definitions/languages/items",
+        "type": "object",
+        "title": "An object value",
+        "required": [
+          "lang",
+          "name",
+          "path"
+        ],
+        "properties": {
+          "lang": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "en"
+            ],
+            "$id": "#/definitions/languages/items/properties/lang",
+            "type": "string"
+          },
+          "name": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "English"
+            ],
+            "$id": "#/definitions/languages/items/properties/name",
+            "type": "string"
+          },
+          "path": {
+            "$id": "#/definitions/languages/items/properties/path",
+            "title": "A string value",
+            "examples": [
+              "lang/en.json"
+            ],
+            "type": "string"
+          }
+        }
+      }
+    },
+    "url": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "https://someaddress.com/"
+      ],
+      "type": "string"
+    },
+    "download": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "https://someaddress.com/module.zip"
+      ],
+      "type": "string"
+    },
+    "bugs": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "https://github.com/some-user/a-module/issues"
+      ],
+      "type": "string"
+    },
+    "changelog": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "https://github.com/some-user/a-module/releases"
+      ],
+      "type": "string"
+    }
+  }
+}

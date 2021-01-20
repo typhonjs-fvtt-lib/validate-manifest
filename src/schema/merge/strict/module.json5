@@ -1,0 +1,10 @@
+{
+  "$id": "shared/definitions/strict/module.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "manifest": {
+      // Replace with url-pattern-module-json include
+      "$$include": { "target": "url-pattern-module-json", "data": { "name": "manifest" } }
+    }
+  }
+}
