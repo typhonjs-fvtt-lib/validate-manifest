@@ -1,346 +1,80 @@
 {
    "$id": "strict/module+.json",
-   "type": "object",
    "$schema": "http://json-schema.org/draft-07/schema#",
    "title": "FoundryVTT module.json & manifest+ (strict)",
+   "type": "object",
    "allOf": [
       {
          "$id": "shared/properties/strict/module.json",
-         "type": "object",
          "$schema": "http://json-schema.org/draft-07/schema#",
          "title": "FoundryVTT module.json (strict)",
+         "type": "object",
          "allOf": [
             {
                "$id": "shared/properties/strict/base.json",
-               "type": "object",
                "$schema": "http://json-schema.org/draft-07/schema#",
                "title": "FoundryVTT shared strict base between module & system.json",
-               "definitions": {},
-               "allOf": [
-                  {
-                     "$id": "shared/properties/common/base.json",
-                     "type": "object",
-                     "$schema": "http://json-schema.org/draft-07/schema#",
-                     "title": "FoundryVTT shared base between module & system.json",
-                     "definitions": {},
-                     "required": [
-                        "name",
-                        "title",
-                        "description",
-                        "author",
-                        "version",
-                        "minimumCoreVersion"
-                     ],
-                     "properties": {
-                        "title": {
-                           "title": "A string value",
-                           "default": "",
-                           "examples": [
-                              "A Module"
-                           ],
-                           "$id": "#/definitions/title",
-                           "type": "string"
-                        },
-                        "description": {
-                           "title": "A string value",
-                           "default": "",
-                           "examples": [
-                              "Some description"
-                           ],
-                           "$id": "#/definitions/description",
-                           "type": "string"
-                        },
-                        "author": {
-                           "title": "A string value",
-                           "default": "",
-                           "examples": [
-                              "typhonrt"
-                           ],
-                           "$id": "#/definitions/author",
-                           "type": "string"
-                        },
-                        "dependencies": {
-                           "title": "An array of items",
-                           "items": {
-                              "title": "An object value",
-                              "required": [
-                                 "name"
-                              ],
-                              "properties": {
-                                 "name": {
-                                    "title": "A string value",
-                                    "default": "",
-                                    "examples": [
-                                       "dice-so-nice"
-                                    ],
-                                    "$id": "#/definitions/dependencies/items/properties/name",
-                                    "type": "string"
-                                 },
-                                 "manifest": {
-                                    "title": "A string value",
-                                    "default": "",
-                                    "examples": [
-                                       "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/2.0.3/module/module.json"
-                                    ],
-                                    "$id": "#/definitions/dependencies/items/properties/manifest",
-                                    "type": "string"
-                                 },
-                                 "type": {
-                                    "title": "A string value",
-                                    "default": "",
-                                    "examples": [
-                                       "module"
-                                    ],
-                                    "$id": "#/definitions/dependencies/items/properties/type",
-                                    "type": "string",
-                                    "enum": [
-                                       "module",
-                                       "system",
-                                       "world"
-                                    ],
-                                    "errorMessage": "'type' should be one of the following strings: 'module', 'system', or 'world'"
-                                 }
-                              },
-                              "$id": "#/definitions/dependencies/items",
-                              "type": "object"
-                           },
-                           "$id": "#/definitions/dependencies",
-                           "type": "array"
-                        },
-                        "authors": {
-                           "title": "An array of items",
-                           "items": {
-                              "title": "An object value",
-                              "required": [
-                                 "name"
-                              ],
-                              "properties": {
-                                 "name": {
-                                    "title": "A string value",
-                                    "default": "",
-                                    "examples": [
-                                       "Atropos"
-                                    ],
-                                    "$id": "#/definitions/authors/items/properties/name",
-                                    "type": "string"
-                                 },
-                                 "email": {
-                                    "title": "A string value",
-                                    "default": "",
-                                    "examples": [
-                                       "admin@foundryvtt.com"
-                                    ],
-                                    "$id": "#/definitions/authors/items/properties/email",
-                                    "type": "string"
-                                 },
-                                 "url": {
-                                    "title": "A string value",
-                                    "default": "",
-                                    "examples": [
-                                       "https://foundryvtt.com"
-                                    ],
-                                    "$id": "#/definitions/authors/items/properties/url",
-                                    "type": "string"
-                                 }
-                              },
-                              "$id": "#/definitions/authors/items",
-                              "type": "object"
-                           },
-                           "$id": "#/definitions/authors",
-                           "type": "array"
-                        },
-                        "socket": {
-                           "title": "A boolean value",
-                           "default": false,
-                           "examples": [
-                              true
-                           ],
-                           "$id": "#/definitions/socket",
-                           "type": "boolean"
-                        },
-                        "license": {
-                           "title": "A string value",
-                           "default": "",
-                           "examples": [
-                              "LICENSE"
-                           ],
-                           "$id": "#/definitions/license",
-                           "type": "string"
-                        },
-                        "readme": {
-                           "title": "A string value",
-                           "default": "",
-                           "examples": [
-                              "README.md"
-                           ],
-                           "$id": "#/definitions/readme",
-                           "type": "string"
-                        }
-                     }
-                  }
+               "type": "object",
+               "required": [
+                  "name",
+                  "title",
+                  "description",
+                  "author",
+                  "version",
+                  "minimumCoreVersion"
                ],
                "properties": {
-                  "name": {
-                     "title": "A string value",
+                  "author": {
                      "default": "",
                      "examples": [
-                        "a-module"
+                        "typhonrt"
                      ],
-                     "type": "string",
-                     "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
-                     "errorMessage": {
-                        "pattern": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
-                     }
-                  },
-                  "version": {
                      "title": "A string value",
-                     "default": "",
-                     "examples": [
-                        "1.0.0"
-                     ],
-                     "type": "string",
-                     "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
-                     "errorMessage": {
-                        "pattern": "'version' should be a string that uses semantic versioning"
-                     }
+                     "type": "string"
                   },
-                  "minimumCoreVersion": {
-                     "title": "A string value",
-                     "default": "",
-                     "examples": [
-                        "0.7.5"
-                     ],
-                     "type": "string",
-                     "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
-                     "errorMessage": {
-                        "pattern": "'minimumCoreVersion' should be a string that uses semantic versioning"
-                     }
-                  },
-                  "compatibleCoreVersion": {
-                     "title": "A string value",
-                     "default": "",
-                     "examples": [
-                        "1.0.0"
-                     ],
-                     "type": "string",
-                     "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
-                     "errorMessage": {
-                        "pattern": "'compatibleCoreVersion' should be a string that uses semantic versioning"
-                     }
-                  },
-                  "esmodules": {
-                     "title": "An array of items",
+                  "authors": {
                      "items": {
-                        "title": "A string value",
-                        "default": "",
-                        "examples": [
-                           "index.js"
-                        ],
-                        "type": "string",
-                        "pattern": "^(.+).js$"
-                     },
-                     "type": "array"
-                  },
-                  "scripts": {
-                     "title": "An array of items",
-                     "items": {
-                        "title": "A string value",
-                        "default": "",
-                        "examples": [
-                           "ascript.js"
-                        ],
-                        "type": "string",
-                        "pattern": "^(.+).js$"
-                     },
-                     "type": "array"
-                  },
-                  "styles": {
-                     "title": "An array of items",
-                     "items": {
-                        "title": "A string value",
-                        "default": "",
-                        "examples": [
-                           "styles.css"
-                        ],
-                        "type": "string",
-                        "pattern": "^(.+).css$"
-                     },
-                     "type": "array"
-                  },
-                  "languages": {
-                     "$id": "#/definitions/languages",
-                     "type": "array",
-                     "title": "An array of items",
-                     "items": {
-                        "$id": "#/definitions/languages/items",
-                        "type": "object",
-                        "title": "An object value",
-                        "required": [
-                           "lang",
-                           "name",
-                           "path"
-                        ],
                         "properties": {
-                           "lang": {
-                              "title": "A string value",
+                           "email": {
                               "default": "",
                               "examples": [
-                                 "en"
+                                 "admin@foundryvtt.com"
                               ],
-                              "$id": "#/definitions/languages/items/properties/lang",
+                              "title": "A string value",
                               "type": "string"
                            },
                            "name": {
-                              "title": "A string value",
                               "default": "",
                               "examples": [
-                                 "English"
+                                 "Atropos"
                               ],
-                              "$id": "#/definitions/languages/items/properties/name",
+                              "title": "A string value",
                               "type": "string"
                            },
-                           "path": {
-                              "$id": "#/definitions/languages/items/properties/path",
-                              "title": "A string value",
+                           "url": {
+                              "default": "",
                               "examples": [
-                                 "lang/en.json"
+                                 "https://foundryvtt.com"
                               ],
-                              "type": "string",
-                              "pattern": "^(.+).json$"
+                              "title": "A string value",
+                              "type": "string"
                            }
-                        }
-                     }
-                  },
-                  "url": {
-                     "title": "A string value",
-                     "default": "",
-                     "examples": [
-                        "https://someaddress.com/"
-                     ],
-                     "type": "string",
-                     "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
-                     "errorMessage": {
-                        "pattern": "'url' should be a string and / or appears to be a malformed url"
-                     }
-                  },
-                  "download": {
-                     "title": "A string value",
-                     "default": "",
-                     "examples": [
-                        "https://someaddress.com/module.zip"
-                     ],
-                     "type": "string",
-                     "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?/(.+).zip$",
-                     "errorMessage": {
-                        "pattern": "'download' should be a string and / or appears to be a malformed url"
-                     }
+                        },
+                        "required": [
+                           "name"
+                        ],
+                        "title": "An object value",
+                        "type": "object"
+                     },
+                     "title": "An array of items",
+                     "type": "array"
                   },
                   "bugs": {
-                     "title": "A string value",
                      "default": "",
                      "examples": [
                         "https://github.com/some-user/a-module/issues"
                      ],
+                     "title": "A string value",
                      "type": "string",
                      "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
                      "errorMessage": {
@@ -348,15 +82,248 @@
                      }
                   },
                   "changelog": {
-                     "title": "A string value",
                      "default": "",
                      "examples": [
                         "https://github.com/some-user/a-module/releases"
                      ],
+                     "title": "A string value",
                      "type": "string",
                      "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
                      "errorMessage": {
                         "pattern": "'changelog' should be a string and / or appears to be a malformed url"
+                     }
+                  },
+                  "compatibleCoreVersion": {
+                     "default": "",
+                     "examples": [
+                        "1.0.0"
+                     ],
+                     "title": "A string value",
+                     "type": "string",
+                     "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+                     "errorMessage": {
+                        "pattern": "'compatibleCoreVersion' should be a string that uses semantic versioning"
+                     }
+                  },
+                  "dependencies": {
+                     "items": {
+                        "properties": {
+                           "manifest": {
+                              "default": "",
+                              "examples": [
+                                 "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/2.0.3/module/module.json"
+                              ],
+                              "title": "A string value",
+                              "type": "string"
+                           },
+                           "name": {
+                              "default": "",
+                              "examples": [
+                                 "dice-so-nice"
+                              ],
+                              "title": "A string value",
+                              "type": "string"
+                           },
+                           "type": {
+                              "default": "",
+                              "enum": [
+                                 "module",
+                                 "system",
+                                 "world"
+                              ],
+                              "errorMessage": "'type' should be one of the following strings: 'module', 'system', or 'world'",
+                              "examples": [
+                                 "module"
+                              ],
+                              "title": "A string value",
+                              "type": "string"
+                           }
+                        },
+                        "required": [
+                           "name"
+                        ],
+                        "title": "An object value",
+                        "type": "object"
+                     },
+                     "title": "An array of items",
+                     "type": "array"
+                  },
+                  "description": {
+                     "default": "",
+                     "examples": [
+                        "Some description"
+                     ],
+                     "title": "A string value",
+                     "type": "string"
+                  },
+                  "download": {
+                     "default": "",
+                     "examples": [
+                        "https://someaddress.com/module.zip"
+                     ],
+                     "title": "A string value",
+                     "type": "string",
+                     "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?/(.+).zip$",
+                     "errorMessage": {
+                        "pattern": "'download' should be a string and / or appears to be a malformed url"
+                     }
+                  },
+                  "esmodules": {
+                     "items": {
+                        "default": "",
+                        "examples": [
+                           "index.js"
+                        ],
+                        "title": "A string value",
+                        "type": "string",
+                        "pattern": "^(.+).js$"
+                     },
+                     "title": "An array of items",
+                     "type": "array"
+                  },
+                  "languages": {
+                     "items": {
+                        "properties": {
+                           "lang": {
+                              "default": "",
+                              "examples": [
+                                 "en"
+                              ],
+                              "title": "A string value",
+                              "type": "string"
+                           },
+                           "name": {
+                              "default": "",
+                              "examples": [
+                                 "English"
+                              ],
+                              "title": "A string value",
+                              "type": "string"
+                           },
+                           "path": {
+                              "examples": [
+                                 "lang/en.json"
+                              ],
+                              "title": "A string value",
+                              "type": "string",
+                              "pattern": "^(.+).json$"
+                           }
+                        },
+                        "required": [
+                           "lang",
+                           "name",
+                           "path"
+                        ],
+                        "title": "An object value",
+                        "type": "object"
+                     },
+                     "title": "An array of items",
+                     "type": "array"
+                  },
+                  "license": {
+                     "default": "",
+                     "examples": [
+                        "LICENSE"
+                     ],
+                     "title": "A string value",
+                     "type": "string"
+                  },
+                  "minimumCoreVersion": {
+                     "default": "",
+                     "examples": [
+                        "0.7.5"
+                     ],
+                     "title": "A string value",
+                     "type": "string",
+                     "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+                     "errorMessage": {
+                        "pattern": "'minimumCoreVersion' should be a string that uses semantic versioning"
+                     }
+                  },
+                  "name": {
+                     "default": "",
+                     "examples": [
+                        "a-module"
+                     ],
+                     "title": "A string value",
+                     "type": "string",
+                     "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
+                     "errorMessage": {
+                        "pattern": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
+                     }
+                  },
+                  "readme": {
+                     "default": "",
+                     "examples": [
+                        "README.md"
+                     ],
+                     "title": "A string value",
+                     "type": "string"
+                  },
+                  "scripts": {
+                     "items": {
+                        "default": "",
+                        "examples": [
+                           "ascript.js"
+                        ],
+                        "title": "A string value",
+                        "type": "string",
+                        "pattern": "^(.+).js$"
+                     },
+                     "title": "An array of items",
+                     "type": "array"
+                  },
+                  "socket": {
+                     "default": false,
+                     "examples": [
+                        true
+                     ],
+                     "title": "A boolean value",
+                     "type": "boolean"
+                  },
+                  "styles": {
+                     "items": {
+                        "default": "",
+                        "examples": [
+                           "styles.css"
+                        ],
+                        "title": "A string value",
+                        "type": "string",
+                        "pattern": "^(.+).css$"
+                     },
+                     "title": "An array of items",
+                     "type": "array"
+                  },
+                  "title": {
+                     "default": "",
+                     "examples": [
+                        "A Module"
+                     ],
+                     "title": "A string value",
+                     "type": "string"
+                  },
+                  "url": {
+                     "default": "",
+                     "examples": [
+                        "https://someaddress.com/"
+                     ],
+                     "title": "A string value",
+                     "type": "string",
+                     "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+                     "errorMessage": {
+                        "pattern": "'url' should be a string and / or appears to be a malformed url"
+                     }
+                  },
+                  "version": {
+                     "default": "",
+                     "examples": [
+                        "1.0.0"
+                     ],
+                     "title": "A string value",
+                     "type": "string",
+                     "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+                     "errorMessage": {
+                        "pattern": "'version' should be a string that uses semantic versioning"
                      }
                   }
                }
@@ -364,12 +331,10 @@
          ],
          "properties": {
             "manifest": {
-               "$id": "#/definitions/manifest",
-               "title": "A string value",
-               "default": "",
                "examples": [
                   "https://someaddress.com/module.json"
                ],
+               "title": "A string value",
                "type": "string",
                "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?/module.json$",
                "errorMessage": {
@@ -377,28 +342,32 @@
                }
             },
             "system": {
+               "examples": [
+                  "dnd5e"
+               ],
                "oneOf": [
                   {
                      "title": "A string value",
-                     "default": "",
-                     "examples": [
-                        "dnd5e"
-                     ],
-                     "type": "string"
+                     "type": "string",
+                     "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+                     "errorMessage": {
+                        "pattern": "'system' should be a string that is alpha-numeric with only underscore and hyphen separators"
+                     }
                   },
                   {
-                     "title": "An array of items",
                      "items": {
                         "title": "A string value",
-                        "default": "",
-                        "examples": [
-                           "dnd5e"
-                        ],
-                        "type": "string"
+                        "type": "string",
+                        "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+                        "errorMessage": {
+                           "pattern": "'system' should be a string that is alpha-numeric with only underscore and hyphen separators"
+                        }
                      },
+                     "title": "An array of items",
                      "type": "array"
                   }
-               ]
+               ],
+               "errorMessage": "'system' should be a string or array of strings"
             }
          }
       }
