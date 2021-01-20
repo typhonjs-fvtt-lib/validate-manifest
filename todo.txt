@@ -1,10 +1,8 @@
-- test manifest field
-- test dependencies->type
-  - to be world / module / system
-  - to not be the above
+- authors
+  - add strict pattern matching
 
 - packs
-- authors
+  - add strict pattern matching
 
 - manifest-plus
   - conflicts
@@ -13,11 +11,8 @@
   - library
   - media
   - version / manifestPlusVersion
-
   - authors
     - regex for each manifest+ type
-
-- alphabetize JSON definitions / properties.
 
 ------
 
