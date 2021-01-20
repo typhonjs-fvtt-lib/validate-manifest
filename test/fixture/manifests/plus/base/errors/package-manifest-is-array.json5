@@ -1,0 +1,52 @@
+[
+   {
+      "keyword": "errorMessage",
+      "dataPath": "",
+      "schemaPath": "#/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "type",
+               "dataPath": "",
+               "schemaPath": "#/type",
+               "params": {
+                  "type": "object"
+               },
+               "message": "should be object",
+               "emUsed": true
+            },
+            {
+               "keyword": "type",
+               "dataPath": "",
+               "schemaPath": "#/type",
+               "params": {
+                  "type": "object"
+               },
+               "message": "should be object",
+               "emUsed": true
+            },
+            {
+               "keyword": "type",
+               "dataPath": "",
+               "schemaPath": "#/type",
+               "params": {
+                  "type": "object"
+               },
+               "message": "should be object",
+               "emUsed": true
+            },
+            {
+               "keyword": "type",
+               "dataPath": "",
+               "schemaPath": "#/type",
+               "params": {
+                  "type": "object"
+               },
+               "message": "should be object",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "package manifest should be an object"
+   }
+]
