@@ -2,28 +2,17 @@
   "$id": "shared/definitions/strict/base.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "name": {
-      "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
-      "errorMessage": {
-        "pattern": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
-      }
+    "bugs": {
+      // Replace with url-pattern include
+      "$$include": { "target": "url-pattern", "data": { "name": "bugs" } }
     },
-    "version": {
-      "type": "string",
-      // Replace with semver include
-      "$$include": { "target": "semver", "data": { "name": "version" } }
-    },
-    "minimumCoreVersion": {
-      // Replace with semver include
-      "$$include": { "target": "semver", "data": { "name": "minimumCoreVersion" } }
+    "changelog": {
+      // Replace with url-pattern include
+      "$$include": { "target": "url-pattern", "data": { "name": "changelog" } }
     },
     "compatibleCoreVersion": {
       // Replace with semver include
       "$$include": { "target": "semver", "data": { "name": "compatibleCoreVersion" } }
-    },
-    "url": {
-      // Replace with url-pattern include
-      "$$include": { "target": "url-pattern", "data": { "name": "url" } }
     },
     "download": {
       // Replace with url-pattern-zip include
@@ -34,6 +23,24 @@
         // Replace with file-js include
         "$$include": { "target": "file-js" }
       }
+    },
+    "languages": {
+      "items": {
+        "properties": {
+          "path": {
+            // Replace with file-json include
+            "$$include": { "target": "file-json" }
+          }
+        }
+      }
+    },
+    "minimumCoreVersion": {
+      // Replace with semver include
+      "$$include": { "target": "semver", "data": { "name": "minimumCoreVersion" } }
+    },
+    "name": {
+      // Replace with package-name include
+      "$$include": { "target": "package-name", "data": { "name": "name" } }
     },
     "scripts": {
       "items": {
@@ -47,23 +54,14 @@
         "$$include": { "target": "file-css" }
       }
     },
-    "languages": {
-      "items": {
-        "properties": {
-          "path": {
-            // Replace with file-json include
-            "$$include": { "target": "file-json" }
-          }
-        }
-      }
-    },
-    "bugs": {
+    "url": {
       // Replace with url-pattern include
-      "$$include": { "target": "url-pattern", "data": { "name": "bugs" } }
+      "$$include": { "target": "url-pattern", "data": { "name": "url" } }
     },
-    "changelog": {
-      // Replace with url-pattern include
-      "$$include": { "target": "url-pattern", "data": { "name": "changelog" } }
+    "version": {
+      "type": "string",
+      // Replace with semver include
+      "$$include": { "target": "semver", "data": { "name": "version" } }
     }
   }
 }

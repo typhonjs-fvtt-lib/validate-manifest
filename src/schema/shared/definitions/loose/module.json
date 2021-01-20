@@ -3,32 +3,28 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "manifest": {
-      "$id": "#/definitions/manifest",
-      "title": "A string value",
-      "default": "",
       "examples": [
         "https://someaddress.com/module.json"
       ],
+      "title": "A string value",
       "type": "string"
     },
     "system": {
-      "title": "A string value",
-      "default": "",
       "examples": [
         "dnd5e"
       ],
+      "title": "A string value",
       "type": "string"
     },
     "systems": {
-      "title": "An array of items",
       "items": {
-        "title": "A string value",
-        "default": "",
         "examples": [
           "dnd5e"
         ],
+        "title": "A string value",
         "type": "string"
       },
+      "title": "An array of items",
       "type": "array"
     }
   }

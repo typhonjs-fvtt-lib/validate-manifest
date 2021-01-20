@@ -2,20 +2,294 @@
   "$id": "shared/definitions/loose/base.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "name": {
-      "title": "A string value",
+    "author": {
+      "$id": "#/definitions/author",
       "default": "",
       "examples": [
-        "a-module"
+        "typhonrt"
       ],
+      "title": "A string value",
       "type": "string"
     },
-    "version": {
+    "authors": {
+      "$id": "#/definitions/authors",
+      "items": {
+        "$id": "#/definitions/authors/items",
+        "properties": {
+          "email": {
+            "$id": "#/definitions/authors/items/properties/email",
+            "default": "",
+            "examples": [
+              "admin@foundryvtt.com"
+            ],
+            "title": "A string value",
+            "type": "string"
+          },
+          "name": {
+            "$id": "#/definitions/authors/items/properties/name",
+            "default": "",
+            "examples": [
+              "Atropos"
+            ],
+            "title": "A string value",
+            "type": "string"
+          },
+          "url": {
+            "$id": "#/definitions/authors/items/properties/url",
+            "default": "",
+            "examples": [
+              "https://foundryvtt.com"
+            ],
+            "title": "A string value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "An object value",
+        "type": "object"
+      },
+      "title": "An array of items",
+      "type": "array"
+    },
+    "bugs": {
+      "default": "",
+      "examples": [
+        "https://github.com/some-user/a-module/issues"
+      ],
       "title": "A string value",
+      "type": "string"
+    },
+    "changelog": {
+      "default": "",
+      "examples": [
+        "https://github.com/some-user/a-module/releases"
+      ],
+      "title": "A string value",
+      "type": "string"
+    },
+    "compatibleCoreVersion": {
       "default": "",
       "examples": [
         "1.0.0"
       ],
+      "title": "A string value",
+      "type": "string"
+    },
+    "dependencies": {
+      "$id": "#/definitions/dependencies",
+      "items": {
+        "$id": "#/definitions/dependencies/items",
+        "properties": {
+          "manifest": {
+            "$id": "#/definitions/dependencies/items/properties/manifest",
+            "default": "",
+            "examples": [
+              "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/2.0.3/module/module.json"
+            ],
+            "title": "A string value",
+            "type": "string"
+          },
+          "name": {
+            "$id": "#/definitions/dependencies/items/properties/name",
+            "default": "",
+            "examples": [
+              "dice-so-nice"
+            ],
+            "title": "A string value",
+            "type": "string"
+          },
+          "type": {
+            "$id": "#/definitions/dependencies/items/properties/type",
+            "default": "",
+            "enum": [
+              "module",
+              "system",
+              "world"
+            ],
+            "errorMessage": "'type' should be one of the following strings: 'module', 'system', or 'world'",
+            "examples": [
+              "module"
+            ],
+            "title": "A string value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "An object value",
+        "type": "object"
+      },
+      "title": "An array of items",
+      "type": "array"
+    },
+    "description": {
+      "$id": "#/definitions/description",
+      "default": "",
+      "examples": [
+        "Some description"
+      ],
+      "title": "A string value",
+      "type": "string"
+    },
+    "download": {
+      "default": "",
+      "examples": [
+        "https://someaddress.com/module.zip"
+      ],
+      "title": "A string value",
+      "type": "string"
+    },
+    "esmodules": {
+      "items": {
+        "default": "",
+        "examples": [
+          "index.js"
+        ],
+        "title": "A string value",
+        "type": "string"
+      },
+      "title": "An array of items",
+      "type": "array"
+    },
+    "languages": {
+      "$id": "#/definitions/languages",
+      "items": {
+        "$id": "#/definitions/languages/items",
+        "properties": {
+          "lang": {
+            "$id": "#/definitions/languages/items/properties/lang",
+            "default": "",
+            "examples": [
+              "en"
+            ],
+            "title": "A string value",
+            "type": "string"
+          },
+          "name": {
+            "$id": "#/definitions/languages/items/properties/name",
+            "default": "",
+            "examples": [
+              "English"
+            ],
+            "title": "A string value",
+            "type": "string"
+          },
+          "path": {
+            "$id": "#/definitions/languages/items/properties/path",
+            "examples": [
+              "lang/en.json"
+            ],
+            "title": "A string value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "lang",
+          "name",
+          "path"
+        ],
+        "title": "An object value",
+        "type": "object"
+      },
+      "title": "An array of items",
+      "type": "array"
+    },
+    "license": {
+      "$id": "#/definitions/license",
+      "default": "",
+      "examples": [
+        "LICENSE"
+      ],
+      "title": "A string value",
+      "type": "string"
+    },
+    "minimumCoreVersion": {
+      "default": "",
+      "examples": [
+        "0.7.5"
+      ],
+      "title": "A string value",
+      "type": "string"
+    },
+    "name": {
+      "default": "",
+      "examples": [
+        "a-module"
+      ],
+      "title": "A string value",
+      "type": "string"
+    },
+    "readme": {
+      "$id": "#/definitions/readme",
+      "default": "",
+      "examples": [
+        "README.md"
+      ],
+      "title": "A string value",
+      "type": "string"
+    },
+    "scripts": {
+      "items": {
+        "default": "",
+        "examples": [
+          "ascript.js"
+        ],
+        "title": "A string value",
+        "type": "string"
+      },
+      "title": "An array of items",
+      "type": "array"
+    },
+    "socket": {
+      "$id": "#/definitions/socket",
+      "default": false,
+      "examples": [
+        true
+      ],
+      "title": "A boolean value",
+      "type": "boolean"
+    },
+    "styles": {
+      "items": {
+        "default": "",
+        "examples": [
+          "styles.css"
+        ],
+        "title": "A string value",
+        "type": "string"
+      },
+      "title": "An array of items",
+      "type": "array"
+    },
+    "title": {
+      "$id": "#/definitions/title",
+      "default": "",
+      "examples": [
+        "A Module"
+      ],
+      "title": "A string value",
+      "type": "string"
+    },
+    "url": {
+      "default": "",
+      "examples": [
+        "https://someaddress.com/"
+      ],
+      "title": "A string value",
+      "type": "string"
+    },
+    "version": {
+      "default": "",
+      "examples": [
+        "1.0.0"
+      ],
+      "title": "A string value",
+      "errorMessage": {
+        "_": "'version' should be a string or number"
+      },
       "oneOf": [
         {
           "type": "string"
@@ -23,281 +297,7 @@
         {
           "type": "number"
         }
-      ],
-      "errorMessage": {
-        "_": "'version' should be a string or number"
-      }
-    },
-    "minimumCoreVersion": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "0.7.5"
-      ],
-      "type": "string"
-    },
-    "compatibleCoreVersion": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "1.0.0"
-      ],
-      "type": "string"
-    },
-    "title": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "A Module"
-      ],
-      "$id": "#/definitions/title",
-      "type": "string"
-    },
-    "description": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "Some description"
-      ],
-      "$id": "#/definitions/description",
-      "type": "string"
-    },
-    "author": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "typhonrt"
-      ],
-      "$id": "#/definitions/author",
-      "type": "string"
-    },
-    "dependencies": {
-      "title": "An array of items",
-      "items": {
-        "title": "An object value",
-        "required": [
-          "name"
-        ],
-        "properties": {
-          "name": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "dice-so-nice"
-            ],
-            "$id": "#/definitions/dependencies/items/properties/name",
-            "type": "string"
-          },
-          "manifest": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/2.0.3/module/module.json"
-            ],
-            "$id": "#/definitions/dependencies/items/properties/manifest",
-            "type": "string"
-          },
-          "type": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "module"
-            ],
-            "$id": "#/definitions/dependencies/items/properties/type",
-            "type": "string",
-            "enum": [
-              "module",
-              "system",
-              "world"
-            ],
-            "errorMessage": "'type' should be one of the following strings: 'module', 'system', or 'world'"
-          }
-        },
-        "$id": "#/definitions/dependencies/items",
-        "type": "object"
-      },
-      "$id": "#/definitions/dependencies",
-      "type": "array"
-    },
-    "authors": {
-      "title": "An array of items",
-      "items": {
-        "title": "An object value",
-        "required": [
-          "name"
-        ],
-        "properties": {
-          "name": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "Atropos"
-            ],
-            "$id": "#/definitions/authors/items/properties/name",
-            "type": "string"
-          },
-          "email": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "admin@foundryvtt.com"
-            ],
-            "$id": "#/definitions/authors/items/properties/email",
-            "type": "string"
-          },
-          "url": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "https://foundryvtt.com"
-            ],
-            "$id": "#/definitions/authors/items/properties/url",
-            "type": "string"
-          }
-        },
-        "$id": "#/definitions/authors/items",
-        "type": "object"
-      },
-      "$id": "#/definitions/authors",
-      "type": "array"
-    },
-    "socket": {
-      "title": "A boolean value",
-      "default": false,
-      "examples": [
-        true
-      ],
-      "$id": "#/definitions/socket",
-      "type": "boolean"
-    },
-    "license": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "LICENSE"
-      ],
-      "$id": "#/definitions/license",
-      "type": "string"
-    },
-    "readme": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "README.md"
-      ],
-      "$id": "#/definitions/readme",
-      "type": "string"
-    },
-    "esmodules": {
-      "title": "An array of items",
-      "items": {
-        "title": "A string value",
-        "default": "",
-        "examples": [
-          "index.js"
-        ],
-        "type": "string"
-      },
-      "type": "array"
-    },
-    "scripts": {
-      "title": "An array of items",
-      "items": {
-        "title": "A string value",
-        "default": "",
-        "examples": [
-          "ascript.js"
-        ],
-        "type": "string"
-      },
-      "type": "array"
-    },
-    "styles": {
-      "title": "An array of items",
-      "items": {
-        "title": "A string value",
-        "default": "",
-        "examples": [
-          "styles.css"
-        ],
-        "type": "string"
-      },
-      "type": "array"
-    },
-    "languages": {
-      "$id": "#/definitions/languages",
-      "type": "array",
-      "title": "An array of items",
-      "items": {
-        "$id": "#/definitions/languages/items",
-        "type": "object",
-        "title": "An object value",
-        "required": [
-          "lang",
-          "name",
-          "path"
-        ],
-        "properties": {
-          "lang": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "en"
-            ],
-            "$id": "#/definitions/languages/items/properties/lang",
-            "type": "string"
-          },
-          "name": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "English"
-            ],
-            "$id": "#/definitions/languages/items/properties/name",
-            "type": "string"
-          },
-          "path": {
-            "$id": "#/definitions/languages/items/properties/path",
-            "title": "A string value",
-            "examples": [
-              "lang/en.json"
-            ],
-            "type": "string"
-          }
-        }
-      }
-    },
-    "url": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "https://someaddress.com/"
-      ],
-      "type": "string"
-    },
-    "download": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "https://someaddress.com/module.zip"
-      ],
-      "type": "string"
-    },
-    "bugs": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "https://github.com/some-user/a-module/issues"
-      ],
-      "type": "string"
-    },
-    "changelog": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "https://github.com/some-user/a-module/releases"
-      ],
-      "type": "string"
+      ]
     }
   }
 }

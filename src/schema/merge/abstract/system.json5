@@ -3,66 +3,65 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "gridDistance": {
-      "title": "An integer value",
       "default": 0,
       "examples": [
         5
       ],
-      "$id": "#/definitions/gridDistance",
+      "title": "An integer value",
       "type": "integer"
     },
     "gridUnits": {
-      "title": "A string value",
       "default": "",
       "examples": [
         "ft, m"
       ],
-      "$id": "#/definitions/gridUnits",
+      "title": "A string value",
       "type": "string"
     },
     "initiative": {
-      "title": "A string value",
       "default": "",
       "examples": [
         "1d20"
       ],
-      "$id": "#/definitions/initiative",
+      "title": "A string value",
       "type": "string"
     },
     "manifest": {
-      "$id": "#/definitions/manifest",
-      "title": "A string value",
       "default": "",
       "examples": [
         "https://someaddress.com/system.json"
       ],
+      "title": "A string value",
       "type": "string"
     },
     "primaryTokenAttribute": {
-      "title": "A string value or null",
       "default": "",
       "examples": [
         "resources.health"
       ],
-      "$id": "#/definitions/primaryTokenAttribute",
-      "type": ["null","string"]
+      "title": "A string value or null",
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "secondaryTokenAttribute": {
-      "title": "A string value or null",
       "default": "",
       "examples": [
         "resources.power"
       ],
-      "$id": "#/definitions/secondaryTokenAttribute",
-      "type": ["null","string"]
+      "title": "A string value or null",
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "templateVersion": {
-      "title": "An integer value",
       "default": 0,
       "examples": [
         2
       ],
-      "$id": "#/definitions/templateVersion",
+      "title": "An integer value",
       "type": "integer"
     }
   }

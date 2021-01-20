@@ -1,11 +1,12 @@
 {
   "$id": "shared/properties/strict/module.json",
-  "type": "object",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "FoundryVTT module.json (strict)",
-  "allOf":
-  [
-    { "$ref": "base.json"}
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "base.json"
+    }
   ],
   "properties": {
     "manifest": {

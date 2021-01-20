@@ -1,8 +1,8 @@
 {
   "$id": "shared/properties/strict/base.json",
-  "type": "object",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "FoundryVTT shared strict base between module & system.json",
+  "type": "object",
   "required": [
     "name",
     "title",
@@ -12,65 +12,65 @@
     "minimumCoreVersion"
   ],
   "properties": {
-    "title": {
-      "$ref": "../../definitions/strict/base.json#/definitions/title"
-    },
-    "description": {
-      "$ref": "../../definitions/strict/base.json#/definitions/description"
-    },
     "author": {
       "$ref": "../../definitions/strict/base.json#/definitions/author"
     },
-    "dependencies": {
-      "$ref": "../../definitions/strict/base.json#/definitions/dependencies"
-    },
     "authors": {
       "$ref": "../../definitions/strict/base.json#/definitions/authors"
-    },
-    "socket": {
-      "$ref": "../../definitions/strict/base.json#/definitions/socket"
-    },
-    "license": {
-      "$ref": "../../definitions/strict/base.json#/definitions/license"
-    },
-    "readme": {
-      "$ref": "../../definitions/loose/base.json#/definitions/readme"
-    },
-    "name": {
-      "$ref": "../../definitions/strict/base.json#/definitions/name"
-    },
-    "version": {
-      "$ref": "../../definitions/strict/base.json#/definitions/version"
-    },
-    "minimumCoreVersion": {
-      "$ref": "../../definitions/strict/base.json#/definitions/minimumCoreVersion"
-    },
-    "compatibleCoreVersion": {
-      "$ref": "../../definitions/strict/base.json#/definitions/compatibleCoreVersion"
-    },
-    "esmodules": {
-      "$ref": "../../definitions/strict/base.json#/definitions/esmodules"
-    },
-    "scripts": {
-      "$ref": "../../definitions/strict/base.json#/definitions/scripts"
-    },
-    "styles": {
-      "$ref": "../../definitions/strict/base.json#/definitions/styles"
-    },
-    "languages": {
-      "$ref": "../../definitions/strict/base.json#/definitions/languages"
-    },
-    "url": {
-      "$ref": "../../definitions/strict/base.json#/definitions/url"
-    },
-    "download": {
-      "$ref": "../../definitions/strict/base.json#/definitions/download"
     },
     "bugs": {
       "$ref": "../../definitions/strict/base.json#/definitions/bugs"
     },
     "changelog": {
       "$ref": "../../definitions/strict/base.json#/definitions/changelog"
+    },
+    "compatibleCoreVersion": {
+      "$ref": "../../definitions/strict/base.json#/definitions/compatibleCoreVersion"
+    },
+    "dependencies": {
+      "$ref": "../../definitions/strict/base.json#/definitions/dependencies"
+    },
+    "description": {
+      "$ref": "../../definitions/strict/base.json#/definitions/description"
+    },
+    "download": {
+      "$ref": "../../definitions/strict/base.json#/definitions/download"
+    },
+    "esmodules": {
+      "$ref": "../../definitions/strict/base.json#/definitions/esmodules"
+    },
+    "languages": {
+      "$ref": "../../definitions/strict/base.json#/definitions/languages"
+    },
+    "license": {
+      "$ref": "../../definitions/strict/base.json#/definitions/license"
+    },
+    "minimumCoreVersion": {
+      "$ref": "../../definitions/strict/base.json#/definitions/minimumCoreVersion"
+    },
+    "name": {
+      "$ref": "../../definitions/strict/base.json#/definitions/name"
+    },
+    "readme": {
+      "$ref": "../../definitions/loose/base.json#/definitions/readme"
+    },
+    "scripts": {
+      "$ref": "../../definitions/strict/base.json#/definitions/scripts"
+    },
+    "socket": {
+      "$ref": "../../definitions/strict/base.json#/definitions/socket"
+    },
+    "styles": {
+      "$ref": "../../definitions/strict/base.json#/definitions/styles"
+    },
+    "title": {
+      "$ref": "../../definitions/strict/base.json#/definitions/title"
+    },
+    "url": {
+      "$ref": "../../definitions/strict/base.json#/definitions/url"
+    },
+    "version": {
+      "$ref": "../../definitions/strict/base.json#/definitions/version"
     }
   }
 }

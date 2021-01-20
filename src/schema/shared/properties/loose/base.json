@@ -1,8 +1,8 @@
 {
   "$id": "shared/properties/loose/base.json",
-  "type": "object",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "FoundryVTT common properties for loose module.json & system.json",
+  "type": "object",
   "required": [
     "name",
     "title",
@@ -12,65 +12,65 @@
     "minimumCoreVersion"
   ],
   "properties": {
-    "title": {
-      "$ref": "../../definitions/loose/base.json#/definitions/title"
-    },
-    "description": {
-      "$ref": "../../definitions/loose/base.json#/definitions/description"
-    },
     "author": {
       "$ref": "../../definitions/loose/base.json#/definitions/author"
     },
-    "dependencies": {
-      "$ref": "../../definitions/loose/base.json#/definitions/dependencies"
-    },
     "authors": {
       "$ref": "../../definitions/loose/base.json#/definitions/authors"
-    },
-    "socket": {
-      "$ref": "../../definitions/loose/base.json#/definitions/socket"
-    },
-    "license": {
-      "$ref": "../../definitions/loose/base.json#/definitions/license"
-    },
-    "readme": {
-      "$ref": "../../definitions/loose/base.json#/definitions/readme"
-    },
-    "name": {
-      "$ref": "../../definitions/loose/base.json#/definitions/name"
-    },
-    "version": {
-      "$ref": "../../definitions/loose/base.json#/definitions/version"
-    },
-    "minimumCoreVersion": {
-      "$ref": "../../definitions/loose/base.json#/definitions/minimumCoreVersion"
-    },
-    "compatibleCoreVersion": {
-      "$ref": "../../definitions/loose/base.json#/definitions/compatibleCoreVersion"
-    },
-    "esmodules": {
-      "$ref": "../../definitions/loose/base.json#/definitions/esmodules"
-    },
-    "scripts": {
-      "$ref": "../../definitions/loose/base.json#/definitions/scripts"
-    },
-    "styles": {
-      "$ref": "../../definitions/loose/base.json#/definitions/styles"
-    },
-    "languages": {
-      "$ref": "../../definitions/loose/base.json#/definitions/languages"
-    },
-    "url": {
-      "$ref": "../../definitions/loose/base.json#/definitions/url"
-    },
-    "download": {
-      "$ref": "../../definitions/loose/base.json#/definitions/download"
     },
     "bugs": {
       "$ref": "../../definitions/loose/base.json#/definitions/bugs"
     },
     "changelog": {
       "$ref": "../../definitions/loose/base.json#/definitions/changelog"
+    },
+    "compatibleCoreVersion": {
+      "$ref": "../../definitions/loose/base.json#/definitions/compatibleCoreVersion"
+    },
+    "dependencies": {
+      "$ref": "../../definitions/loose/base.json#/definitions/dependencies"
+    },
+    "description": {
+      "$ref": "../../definitions/loose/base.json#/definitions/description"
+    },
+    "download": {
+      "$ref": "../../definitions/loose/base.json#/definitions/download"
+    },
+    "esmodules": {
+      "$ref": "../../definitions/loose/base.json#/definitions/esmodules"
+    },
+    "languages": {
+      "$ref": "../../definitions/loose/base.json#/definitions/languages"
+    },
+    "license": {
+      "$ref": "../../definitions/loose/base.json#/definitions/license"
+    },
+    "minimumCoreVersion": {
+      "$ref": "../../definitions/loose/base.json#/definitions/minimumCoreVersion"
+    },
+    "name": {
+      "$ref": "../../definitions/loose/base.json#/definitions/name"
+    },
+    "readme": {
+      "$ref": "../../definitions/loose/base.json#/definitions/readme"
+    },
+    "scripts": {
+      "$ref": "../../definitions/loose/base.json#/definitions/scripts"
+    },
+    "socket": {
+      "$ref": "../../definitions/loose/base.json#/definitions/socket"
+    },
+    "styles": {
+      "$ref": "../../definitions/loose/base.json#/definitions/styles"
+    },
+    "title": {
+      "$ref": "../../definitions/loose/base.json#/definitions/title"
+    },
+    "url": {
+      "$ref": "../../definitions/loose/base.json#/definitions/url"
+    },
+    "version": {
+      "$ref": "../../definitions/loose/base.json#/definitions/version"
     }
   }
 }
