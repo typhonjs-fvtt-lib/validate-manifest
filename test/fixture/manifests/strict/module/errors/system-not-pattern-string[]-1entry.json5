@@ -1,0 +1,52 @@
+[
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/system/0",
+      "schemaPath": "#/oneOf/1/items/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/system/0",
+               "schemaPath": "#/oneOf/1/items/pattern",
+               "params": {
+                  "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$"
+               },
+               "message": "should match pattern \"^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "'system' should be a string that is alpha-numeric with only underscore and hyphen separators"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/system",
+      "schemaPath": "#/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "type",
+               "dataPath": "/system",
+               "schemaPath": "#/oneOf/0/type",
+               "params": {
+                  "type": "string"
+               },
+               "message": "should be string",
+               "emUsed": true
+            },
+            {
+               "keyword": "oneOf",
+               "dataPath": "/system",
+               "schemaPath": "#/oneOf",
+               "params": {
+                  "passingSchemas": null
+               },
+               "message": "should match exactly one schema in oneOf",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "'system' should be a string or array of strings"
+   }
+]
