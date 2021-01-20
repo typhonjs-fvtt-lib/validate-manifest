@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/authors/0",
+      "schemaPath": "#/items/type",
+      "params": {
+         "type": "object"
+      },
+      "message": "should be object"
+   }
+]
