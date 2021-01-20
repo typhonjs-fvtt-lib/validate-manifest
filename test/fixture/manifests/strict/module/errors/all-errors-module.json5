@@ -1,0 +1,242 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/author",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/authors",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/bugs",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/changelog",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/compatibleCoreVersion",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/dependencies",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/description",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/download",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/esmodules",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/languages",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/license",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/minimumCoreVersion",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/name",
+      "schemaPath": "#/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/name",
+               "schemaPath": "#/pattern",
+               "params": {
+                  "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$"
+               },
+               "message": "should match pattern \"^([a-z0-9]+-?)*[a-z0-9]+$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/readme",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/scripts",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/socket",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "boolean"
+      },
+      "message": "should be boolean"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/styles",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/title",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/url",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/version",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/manifest",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/system",
+      "schemaPath": "#/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "type",
+               "dataPath": "/system",
+               "schemaPath": "#/oneOf/0/type",
+               "params": {
+                  "type": "string"
+               },
+               "message": "should be string",
+               "emUsed": true
+            },
+            {
+               "keyword": "type",
+               "dataPath": "/system",
+               "schemaPath": "#/oneOf/1/type",
+               "params": {
+                  "type": "array"
+               },
+               "message": "should be array",
+               "emUsed": true
+            },
+            {
+               "keyword": "oneOf",
+               "dataPath": "/system",
+               "schemaPath": "#/oneOf",
+               "params": {
+                  "passingSchemas": null
+               },
+               "message": "should match exactly one schema in oneOf",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "'system' should be a string or array of strings"
+   }
+]

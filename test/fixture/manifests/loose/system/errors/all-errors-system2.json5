@@ -1,0 +1,282 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/author",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/authors",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/bugs",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/changelog",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/compatibleCoreVersion",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/dependencies",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/description",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/download",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/esmodules",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/languages",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/license",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/minimumCoreVersion",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/name",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/readme",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/scripts",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/socket",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "boolean"
+      },
+      "message": "should be boolean"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/styles",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/title",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/url",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/version",
+      "schemaPath": "#/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "type",
+               "dataPath": "/version",
+               "schemaPath": "#/oneOf/0/type",
+               "params": {
+                  "type": "string"
+               },
+               "message": "should be string",
+               "emUsed": true
+            },
+            {
+               "keyword": "type",
+               "dataPath": "/version",
+               "schemaPath": "#/oneOf/1/type",
+               "params": {
+                  "type": "number"
+               },
+               "message": "should be number",
+               "emUsed": true
+            },
+            {
+               "keyword": "oneOf",
+               "dataPath": "/version",
+               "schemaPath": "#/oneOf",
+               "params": {
+                  "passingSchemas": null
+               },
+               "message": "should match exactly one schema in oneOf",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "'version' should be a string or number"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/gridDistance",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "integer"
+      },
+      "message": "should be integer"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/gridUnits",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/initiative",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/manifest",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/primaryTokenAttribute",
+      "schemaPath": "#/type",
+      "params": {
+         "type": [
+            "null",
+            "string"
+         ]
+      },
+      "message": "should be null,string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/secondaryTokenAttribute",
+      "schemaPath": "#/type",
+      "params": {
+         "type": [
+            "null",
+            "string"
+         ]
+      },
+      "message": "should be null,string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/templateVersion",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "integer"
+      },
+      "message": "should be integer"
+   }
+]

@@ -1,0 +1,37 @@
+{
+  "__strictskip": true,
+  "name": false,
+  "title": false,
+  "description": false,
+  "author": false,
+  "version": false,
+  "minimumCoreVersion": false,
+
+  "compatibleCoreVersion": false,
+
+  "scripts": false,
+  "esmodules": false,
+  "styles": false,
+
+  "packs": false,
+
+  "dependencies": false,
+
+  "languages": false,
+
+  "system": false,
+
+  "authors": false,
+
+  "socket": 0,
+
+  "url": false,
+  "manifest": false,
+  "download": false,
+
+  "license": false,
+  "readme": false,
+
+  "bugs": false,
+  "changelog": false
+}
