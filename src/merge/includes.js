@@ -23,6 +23,15 @@ module.exports = {
       pattern: '^(.+).json$'
     };
   },
+  'package-name': (data) =>
+  {
+    return {
+      pattern: '^([a-z0-9]+-?)*[a-z0-9]+$',
+      errorMessage: {
+        pattern: `'${data.name}' should be a string that is lowercase alpha-numeric with only separating hyphens`
+      }
+    };
+  },
   'semver': (data) =>
   {
     return {
