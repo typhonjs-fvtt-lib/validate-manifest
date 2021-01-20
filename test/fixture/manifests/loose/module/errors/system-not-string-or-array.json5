@@ -1,0 +1,29 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/system",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/system",
+      "schemaPath": "#/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
+      "keyword": "oneOf",
+      "dataPath": "/system",
+      "schemaPath": "#/properties/system/oneOf",
+      "params": {
+         "passingSchemas": null
+      },
+      "message": "should match exactly one schema in oneOf"
+   }
+]
