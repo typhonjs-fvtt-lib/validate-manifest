@@ -3,7 +3,6 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "author": {
-      "$id": "#/definitions/author",
       "default": "",
       "examples": [
         "typhonrt"
@@ -12,12 +11,9 @@
       "type": "string"
     },
     "authors": {
-      "$id": "#/definitions/authors",
       "items": {
-        "$id": "#/definitions/authors/items",
         "properties": {
           "email": {
-            "$id": "#/definitions/authors/items/properties/email",
             "default": "",
             "examples": [
               "admin@foundryvtt.com"
@@ -26,7 +22,6 @@
             "type": "string"
           },
           "name": {
-            "$id": "#/definitions/authors/items/properties/name",
             "default": "",
             "examples": [
               "Atropos"
@@ -35,7 +30,6 @@
             "type": "string"
           },
           "url": {
-            "$id": "#/definitions/authors/items/properties/url",
             "default": "",
             "examples": [
               "https://foundryvtt.com"
@@ -90,12 +84,9 @@
       }
     },
     "dependencies": {
-      "$id": "#/definitions/dependencies",
       "items": {
-        "$id": "#/definitions/dependencies/items",
         "properties": {
           "manifest": {
-            "$id": "#/definitions/dependencies/items/properties/manifest",
             "default": "",
             "examples": [
               "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/2.0.3/module/module.json"
@@ -104,7 +95,6 @@
             "type": "string"
           },
           "name": {
-            "$id": "#/definitions/dependencies/items/properties/name",
             "default": "",
             "examples": [
               "dice-so-nice"
@@ -113,7 +103,6 @@
             "type": "string"
           },
           "type": {
-            "$id": "#/definitions/dependencies/items/properties/type",
             "default": "",
             "enum": [
               "module",
@@ -138,7 +127,6 @@
       "type": "array"
     },
     "description": {
-      "$id": "#/definitions/description",
       "default": "",
       "examples": [
         "Some description"
@@ -172,12 +160,9 @@
       "type": "array"
     },
     "languages": {
-      "$id": "#/definitions/languages",
       "items": {
-        "$id": "#/definitions/languages/items",
         "properties": {
           "lang": {
-            "$id": "#/definitions/languages/items/properties/lang",
             "default": "",
             "examples": [
               "en"
@@ -186,7 +171,6 @@
             "type": "string"
           },
           "name": {
-            "$id": "#/definitions/languages/items/properties/name",
             "default": "",
             "examples": [
               "English"
@@ -195,7 +179,6 @@
             "type": "string"
           },
           "path": {
-            "$id": "#/definitions/languages/items/properties/path",
             "examples": [
               "lang/en.json"
             ],
@@ -216,7 +199,6 @@
       "type": "array"
     },
     "license": {
-      "$id": "#/definitions/license",
       "default": "",
       "examples": [
         "LICENSE"
@@ -249,7 +231,6 @@
       }
     },
     "readme": {
-      "$id": "#/definitions/readme",
       "default": "",
       "examples": [
         "README.md"
@@ -271,7 +252,6 @@
       "type": "array"
     },
     "socket": {
-      "$id": "#/definitions/socket",
       "default": false,
       "examples": [
         true
@@ -293,7 +273,6 @@
       "type": "array"
     },
     "title": {
-      "$id": "#/definitions/title",
       "default": "",
       "examples": [
         "A Module"
