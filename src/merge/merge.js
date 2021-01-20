@@ -33,7 +33,7 @@ function process(base, merge)
    const baseData = JSON.parse(stripJsonComments(fs.readFileSync(basePath, 'utf8')));
    const mergeData = JSON.parse(stripJsonComments(fs.readFileSync(mergePath, 'utf8')));
 
-   const merged = deepmerge(baseData, mergeData);
+   const merged = deepmerge(baseData, mergeData, { arrayMerge: combineMerge });
 
    processIncludes(merged);
 
@@ -49,7 +49,7 @@ function process(base, merge)
  */
 function processIncludes(data)
 {
-   if (typeof data === 'object' && !Array.isArray(data))
+   if (typeof data === 'object')
    {
       for (const key in data)
       {
@@ -75,4 +75,38 @@ function processIncludes(data)
          }
       }
    }
+}
+
+/**
+ * Provides the array merge functionality for `deepmerge` to combine elements.
+ *
+ * @param {Array}    target - target array
+ *
+ * @param {Array}    source - source array
+ *
+ * @param {object}   options - deepmerge options
+ *
+ * @returns {*}
+ */
+function combineMerge(target, source, options)
+{
+   const destination = target.slice();
+
+   source.forEach((item, index) =>
+   {
+      if (typeof destination[index] === 'undefined')
+      {
+         destination[index] = options.cloneUnlessOtherwiseSpecified(item, options);
+      }
+      else if (options.isMergeableObject(item))
+      {
+         destination[index] = deepmerge(target[index], item, options);
+      }
+      else if (target.indexOf(item) === -1)
+      {
+         destination.push(item);
+      }
+   });
+
+   return destination;
 }
