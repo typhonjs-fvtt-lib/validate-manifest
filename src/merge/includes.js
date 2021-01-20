@@ -32,6 +32,15 @@ module.exports = {
       }
     };
   },
+  'package-name-loose': (data) =>  // Not as strict test for package names; allows uppercase and underscore
+  {
+    return {
+      pattern: '^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$',
+      errorMessage: {
+        pattern: `'${data.name}' should be a string that is alpha-numeric with only underscore and hyphen separators`
+      }
+    };
+  },
   'semver': (data) =>
   {
     return {
