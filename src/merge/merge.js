@@ -17,6 +17,13 @@ process('abstract/module', 'strict/module');
 process('abstract/system', 'loose/system');
 process('abstract/system', 'strict/system');
 
+/**
+ * Processes abstract and a merge schema file and saves it in the shared schema definitions under the merge dir /
+ * basename.
+ *
+ * @param {string}   base - The directory / basename of abstract schema.
+ * @param {string}   merge - The directory / basename of merge schema.
+ */
 function process(base, merge)
 {
    const basePath = `./src/schema/merge/${base}.json5`;
@@ -34,10 +41,11 @@ function process(base, merge)
 }
 
 /**
- * Performs a naive depth traversal of an object. The data structure _must not_ have circular references.
- * The result of the callback function is used to modify in place the given data.
+ * Performs a depth traversal of an object and processes `$$include` keys. It is expected that the $$include field
+ * is an object with at least a `target` entry to match the function to invoke in `./includes.js`. An optional `data`
+ * field may be included to pass to the function.
  *
- * @param {object|Array}   data - An object or array.
+ * @param {object|Array}   data - An object to traverse for includes.
  */
 function processIncludes(data)
 {
