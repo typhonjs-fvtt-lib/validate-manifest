@@ -5,6 +5,20 @@
     "manifest": {
       // Replace with url-pattern-module-json include
       "$$include": { "target": "url-pattern-module-json", "data": { "name": "manifest" } }
+    },
+    "system": {
+      "oneOf": [
+        {
+          // Replace with package-name-loose include
+          "$$include": { "target": "package-name-loose", "data": { "name": "system" } }
+        },
+        {
+          "items": {
+            // Replace with package-name-loose include
+            "$$include": { "target": "package-name-loose", "data": { "name": "system" } }
+          }
+        }
+      ]
     }
   }
 }
