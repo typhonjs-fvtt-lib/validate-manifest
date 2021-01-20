@@ -17,19 +17,21 @@
       "examples": [
         "dnd5e"
       ],
-      "title": "A string value",
-      "type": "string"
-    },
-    "systems": {
-      "items": {
-        "examples": [
-          "dnd5e"
-        ],
-        "title": "A string value",
-        "type": "string"
-      },
-      "title": "An array of items",
-      "type": "array"
+      "oneOf": [
+        {
+          "title": "A string value",
+          "type": "string"
+        },
+        {
+          "items": {
+            "title": "A string value",
+            "type": "string"
+          },
+          "title": "An array of items",
+          "type": "array"
+        }
+      ],
+      "errorMessage": "'system' should be a string or array of strings"
     }
   }
 }

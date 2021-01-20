@@ -13,14 +13,7 @@
       "$ref": "../../definitions/strict/module.json#/definitions/manifest"
     },
     "system": {
-      "oneOf": [
-        {
-          "$ref": "../../definitions/strict/module.json#/definitions/system"
-        },
-        {
-          "$ref": "../../definitions/strict/module.json#/definitions/systems"
-        }
-      ]
+      "$ref": "../../definitions/strict/module.json#/definitions/system"
     }
   }
 }

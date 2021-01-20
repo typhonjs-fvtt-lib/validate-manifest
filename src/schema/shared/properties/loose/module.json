@@ -13,14 +13,7 @@
       "$ref": "../../definitions/loose/module.json#/definitions/manifest"
     },
     "system": {
-      "oneOf": [
-        {
-          "$ref": "../../definitions/loose/module.json#/definitions/system"
-        },
-        {
-          "$ref": "../../definitions/loose/module.json#/definitions/systems"
-        }
-      ]
+      "$ref": "../../definitions/loose/module.json#/definitions/system"
     }
   }
 }
