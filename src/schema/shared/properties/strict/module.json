@@ -8,21 +8,18 @@
     { "$ref": "base.json"}
   ],
   "properties": {
+    "manifest": {
+      "$ref": "../../definitions/strict/module.json#/definitions/manifest"
+    },
     "system": {
       "oneOf": [
         {
-          "$ref": "../../definitions/loose/base.json#/definitions/system"
+          "$ref": "../../definitions/strict/module.json#/definitions/system"
         },
         {
-          "$ref": "../../definitions/loose/base.json#/definitions/systems"
+          "$ref": "../../definitions/strict/module.json#/definitions/systems"
         }
       ]
-    },
-    "packs": {
-      "$ref": "../../definitions/loose/base.json#/definitions/packs"
-    },
-    "manifest": {
-      "$ref": "../../definitions/strict/module.json#/definitions/manifest"
     }
   }
 }

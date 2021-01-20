@@ -30,9 +30,6 @@
     "styles": {
       "$ref": "../../definitions/strict/base.json#/definitions/styles"
     },
-    "packs": {
-      "$ref": "../../definitions/loose/base.json#/definitions/packs"
-    },
     "languages": {
       "$ref": "../../definitions/strict/base.json#/definitions/languages"
     },
