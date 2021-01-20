@@ -3,12 +3,39 @@
   "type": "object",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "FoundryVTT shared strict base between module & system.json",
-  "definitions": {},
-  "allOf":
-  [
-    { "$ref": "../common/base.json"}
+  "required": [
+    "name",
+    "title",
+    "description",
+    "author",
+    "version",
+    "minimumCoreVersion"
   ],
   "properties": {
+    "title": {
+      "$ref": "../../definitions/strict/base.json#/definitions/title"
+    },
+    "description": {
+      "$ref": "../../definitions/strict/base.json#/definitions/description"
+    },
+    "author": {
+      "$ref": "../../definitions/strict/base.json#/definitions/author"
+    },
+    "dependencies": {
+      "$ref": "../../definitions/strict/base.json#/definitions/dependencies"
+    },
+    "authors": {
+      "$ref": "../../definitions/strict/base.json#/definitions/authors"
+    },
+    "socket": {
+      "$ref": "../../definitions/strict/base.json#/definitions/socket"
+    },
+    "license": {
+      "$ref": "../../definitions/strict/base.json#/definitions/license"
+    },
+    "readme": {
+      "$ref": "../../definitions/loose/base.json#/definitions/readme"
+    },
     "name": {
       "$ref": "../../definitions/strict/base.json#/definitions/name"
     },

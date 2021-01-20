@@ -5,12 +5,29 @@
   "title": "FoundryVTT system.json (loose)",
   "allOf":
   [
-    { "$ref": "base.json"},
-    { "$ref": "../common/system.json"}
+    { "$ref": "base.json"}
   ],
   "properties": {
+    "initiative": {
+      "$ref": "../../definitions/loose/system.json#/definitions/initiative"
+    },
+    "gridDistance": {
+      "$ref": "../../definitions/loose/system.json#/definitions/gridDistance"
+    },
+    "gridUnits": {
+      "$ref": "../../definitions/loose/system.json#/definitions/gridUnits"
+    },
     "manifest": {
       "$ref": "../../definitions/loose/system.json#/definitions/manifest"
+    },
+    "primaryTokenAttribute": {
+      "$ref": "../../definitions/loose/system.json#/definitions/primaryTokenAttribute"
+    },
+    "secondaryTokenAttribute": {
+      "$ref": "../../definitions/loose/system.json#/definitions/secondaryTokenAttribute"
+    },
+    "templateVersion": {
+      "$ref": "../../definitions/loose/system.json#/definitions/templateVersion"
     }
   }
 }

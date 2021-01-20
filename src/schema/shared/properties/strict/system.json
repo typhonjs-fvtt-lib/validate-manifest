@@ -5,12 +5,29 @@
   "title": "FoundryVTT system.json (strict)",
   "allOf":
   [
-    { "$ref": "base.json"},
-    { "$ref": "../common/system.json"}
+    { "$ref": "base.json"}
   ],
   "properties": {
+    "initiative": {
+      "$ref": "../../definitions/strict/system.json#/definitions/initiative"
+    },
+    "gridDistance": {
+      "$ref": "../../definitions/strict/system.json#/definitions/gridDistance"
+    },
+    "gridUnits": {
+      "$ref": "../../definitions/strict/system.json#/definitions/gridUnits"
+    },
     "manifest": {
       "$ref": "../../definitions/strict/system.json#/definitions/manifest"
+    },
+    "primaryTokenAttribute": {
+      "$ref": "../../definitions/strict/system.json#/definitions/primaryTokenAttribute"
+    },
+    "secondaryTokenAttribute": {
+      "$ref": "../../definitions/strict/system.json#/definitions/secondaryTokenAttribute"
+    },
+    "templateVersion": {
+      "$ref": "../../definitions/strict/system.json#/definitions/templateVersion"
     }
   }
 }

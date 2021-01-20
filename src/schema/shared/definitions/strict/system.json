@@ -2,6 +2,33 @@
   "$id": "shared/definitions/strict/system.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "gridDistance": {
+      "title": "An integer value",
+      "default": 0,
+      "examples": [
+        5
+      ],
+      "$id": "#/definitions/gridDistance",
+      "type": "integer"
+    },
+    "gridUnits": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "ft, m"
+      ],
+      "$id": "#/definitions/gridUnits",
+      "type": "string"
+    },
+    "initiative": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "1d20"
+      ],
+      "$id": "#/definitions/initiative",
+      "type": "string"
+    },
     "manifest": {
       "$id": "#/definitions/manifest",
       "title": "A string value",
@@ -14,6 +41,39 @@
       "errorMessage": {
         "pattern": "'manifest' should be a string and / or appears to be a malformed url"
       }
+    },
+    "primaryTokenAttribute": {
+      "title": "A string value or null",
+      "default": "",
+      "examples": [
+        "resources.health"
+      ],
+      "$id": "#/definitions/primaryTokenAttribute",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "secondaryTokenAttribute": {
+      "title": "A string value or null",
+      "default": "",
+      "examples": [
+        "resources.power"
+      ],
+      "$id": "#/definitions/secondaryTokenAttribute",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "templateVersion": {
+      "title": "An integer value",
+      "default": 0,
+      "examples": [
+        2
+      ],
+      "$id": "#/definitions/templateVersion",
+      "type": "integer"
     }
   }
 }

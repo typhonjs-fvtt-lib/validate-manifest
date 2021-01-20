@@ -50,6 +50,150 @@
         "pattern": "'compatibleCoreVersion' should be a string that uses semantic versioning"
       }
     },
+    "title": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "A Module"
+      ],
+      "$id": "#/definitions/title",
+      "type": "string"
+    },
+    "description": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "Some description"
+      ],
+      "$id": "#/definitions/description",
+      "type": "string"
+    },
+    "author": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "typhonrt"
+      ],
+      "$id": "#/definitions/author",
+      "type": "string"
+    },
+    "dependencies": {
+      "title": "An array of items",
+      "items": {
+        "title": "An object value",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "dice-so-nice"
+            ],
+            "$id": "#/definitions/dependencies/items/properties/name",
+            "type": "string"
+          },
+          "manifest": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/2.0.3/module/module.json"
+            ],
+            "$id": "#/definitions/dependencies/items/properties/manifest",
+            "type": "string"
+          },
+          "type": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "module"
+            ],
+            "$id": "#/definitions/dependencies/items/properties/type",
+            "type": "string",
+            "enum": [
+              "module",
+              "system",
+              "world"
+            ],
+            "errorMessage": "'type' should be one of the following strings: 'module', 'system', or 'world'"
+          }
+        },
+        "$id": "#/definitions/dependencies/items",
+        "type": "object"
+      },
+      "$id": "#/definitions/dependencies",
+      "type": "array"
+    },
+    "authors": {
+      "title": "An array of items",
+      "items": {
+        "title": "An object value",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "Atropos"
+            ],
+            "$id": "#/definitions/authors/items/properties/name",
+            "type": "string"
+          },
+          "email": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "admin@foundryvtt.com"
+            ],
+            "$id": "#/definitions/authors/items/properties/email",
+            "type": "string"
+          },
+          "url": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "https://foundryvtt.com"
+            ],
+            "$id": "#/definitions/authors/items/properties/url",
+            "type": "string"
+          }
+        },
+        "$id": "#/definitions/authors/items",
+        "type": "object"
+      },
+      "$id": "#/definitions/authors",
+      "type": "array"
+    },
+    "socket": {
+      "title": "A boolean value",
+      "default": false,
+      "examples": [
+        true
+      ],
+      "$id": "#/definitions/socket",
+      "type": "boolean"
+    },
+    "license": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "LICENSE"
+      ],
+      "$id": "#/definitions/license",
+      "type": "string"
+    },
+    "readme": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "README.md"
+      ],
+      "$id": "#/definitions/readme",
+      "type": "string"
+    },
     "esmodules": {
       "title": "An array of items",
       "items": {
