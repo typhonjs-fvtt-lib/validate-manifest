@@ -1,0 +1,185 @@
+{
+  "$id": "shared/definitions/strict/base.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "name": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "a-module"
+      ],
+      "type": "string",
+      "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
+      "errorMessage": {
+        "pattern": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
+      }
+    },
+    "version": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "1.0.0"
+      ],
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+      "errorMessage": {
+        "pattern": "'version' should be a string that uses semantic versioning"
+      }
+    },
+    "minimumCoreVersion": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "0.7.5"
+      ],
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+      "errorMessage": {
+        "pattern": "'minimumCoreVersion' should be a string that uses semantic versioning"
+      }
+    },
+    "compatibleCoreVersion": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "1.0.0"
+      ],
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+      "errorMessage": {
+        "pattern": "'compatibleCoreVersion' should be a string that uses semantic versioning"
+      }
+    },
+    "esmodules": {
+      "title": "An array of items",
+      "items": {
+        "title": "A string value",
+        "default": "",
+        "examples": [
+          "index.js"
+        ],
+        "type": "string",
+        "pattern": "^(.+).js$"
+      },
+      "type": "array"
+    },
+    "scripts": {
+      "title": "An array of items",
+      "items": {
+        "title": "A string value",
+        "default": "",
+        "examples": [
+          "ascript.js"
+        ],
+        "type": "string",
+        "pattern": "^(.+).js$"
+      },
+      "type": "array"
+    },
+    "styles": {
+      "title": "An array of items",
+      "items": {
+        "title": "A string value",
+        "default": "",
+        "examples": [
+          "styles.css"
+        ],
+        "type": "string",
+        "pattern": "^(.+).css$"
+      },
+      "type": "array"
+    },
+    "languages": {
+      "$id": "#/definitions/languages",
+      "type": "array",
+      "title": "An array of items",
+      "items": {
+        "$id": "#/definitions/languages/items",
+        "type": "object",
+        "title": "An object value",
+        "required": [
+          "lang",
+          "name",
+          "path"
+        ],
+        "properties": {
+          "lang": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "en"
+            ],
+            "$id": "#/definitions/languages/items/properties/lang",
+            "type": "string"
+          },
+          "name": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "English"
+            ],
+            "$id": "#/definitions/languages/items/properties/name",
+            "type": "string"
+          },
+          "path": {
+            "$id": "#/definitions/languages/items/properties/path",
+            "title": "A string value",
+            "examples": [
+              "lang/en.json"
+            ],
+            "type": "string",
+            "pattern": "^(.+).json$"
+          }
+        }
+      }
+    },
+    "url": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "https://someaddress.com/"
+      ],
+      "type": "string",
+      "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+      "errorMessage": {
+        "pattern": "'url' should be a string and / or appears to be a malformed url"
+      }
+    },
+    "download": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "https://someaddress.com/module.zip"
+      ],
+      "type": "string",
+      "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?/(.+).zip$",
+      "errorMessage": {
+        "pattern": "'download' should be a string and / or appears to be a malformed url"
+      }
+    },
+    "bugs": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "https://github.com/some-user/a-module/issues"
+      ],
+      "type": "string",
+      "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+      "errorMessage": {
+        "pattern": "'bugs' should be a string and / or appears to be a malformed url"
+      }
+    },
+    "changelog": {
+      "title": "A string value",
+      "default": "",
+      "examples": [
+        "https://github.com/some-user/a-module/releases"
+      ],
+      "type": "string",
+      "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+      "errorMessage": {
+        "pattern": "'changelog' should be a string and / or appears to be a malformed url"
+      }
+    }
+  }
+}

@@ -8,7 +8,6 @@
       "examples": [
         "a-module"
       ],
-      "$id": "#/definitions/name",
       "type": "string"
     },
     "version": {
@@ -17,7 +16,6 @@
       "examples": [
         "1.0.0"
       ],
-      "$id": "#/definitions/version",
       "oneOf": [
         {
           "type": "string"
@@ -36,7 +34,6 @@
       "examples": [
         "0.7.5"
       ],
-      "$id": "#/definitions/minimumCoreVersion",
       "type": "string"
     },
     "compatibleCoreVersion": {
@@ -45,54 +42,51 @@
       "examples": [
         "1.0.0"
       ],
-      "$id": "#/definitions/compatibleCoreVersion",
       "type": "string"
     },
     "esmodules": {
       "title": "An array of items",
       "items": {
-        "$id": "#/definitions/esmodules/items",
         "title": "A string value",
         "default": "",
         "examples": [
           "index.js"
         ],
-        "allOf": [{ "$ref": "../strict/fragments.json#/definitions/all"}]
+        "type": "string"
       },
-      "$id": "#/definitions/esmodules",
       "type": "array"
     },
     "scripts": {
       "title": "An array of items",
       "items": {
-        "$id": "#/properties/scripts/items",
         "title": "A string value",
         "default": "",
         "examples": [
           "ascript.js"
         ],
-        "allOf": [{ "$ref": "../strict/fragments.json#/definitions/all" }]
+        "type": "string"
       },
-      "$id": "#/definitions/scripts",
       "type": "array"
     },
     "styles": {
       "title": "An array of items",
       "items": {
-        "$id": "#/definitions/styles/items",
         "title": "A string value",
         "default": "",
         "examples": [
           "styles.css"
         ],
-        "allOf": [{ "$ref": "../strict/fragments.json#/definitions/all" }]
+        "type": "string"
       },
-      "$id": "#/definitions/styles",
       "type": "array"
     },
     "languages": {
+      "$id": "#/definitions/languages",
+      "type": "array",
       "title": "An array of items",
       "items": {
+        "$id": "#/definitions/languages/items",
+        "type": "object",
         "title": "An object value",
         "required": [
           "lang",
@@ -119,133 +113,15 @@
             "type": "string"
           },
           "path": {
+            "$id": "#/definitions/languages/items/properties/path",
             "title": "A string value",
-            "default": "",
             "examples": [
               "lang/en.json"
             ],
-            "allOf": [{ "$ref": "../strict/fragments.json#/definitions/all"}]
-          }
-        },
-        "$id": "#/definitions/languages/items",
-        "type": "object"
-      },
-      "$id": "#/definitions/languages",
-      "type": "array"
-    },
-    "system": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "dnd5e"
-      ],
-      "$id": "#/definitions/system",
-      "type": "string"
-    },
-    "systems": {
-      "title": "An array of items",
-      "items": {
-        "title": "A string value",
-        "default": "",
-        "examples": [
-          "dnd5e"
-        ],
-        "$id": "#/definitions/systems/items",
-        "type": "string"
-      },
-      "$id": "#/definitions/systems",
-      "type": "array"
-    },
-    "packs": {
-      "title": "An array of items",
-      "items": {
-        "title": "An object value",
-        "required": [
-          "name",
-          "label",
-          "path",
-          "entity"
-        ],
-        "oneOf": [
-          {
-            "required": [
-              "module"
-            ]
-          },
-          {
-            "required": [
-              "system"
-            ]
-          },
-          {
-            "required": [
-              "module",
-              "system"
-            ]
-          }
-        ],
-        "properties": {
-          "name": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "pack-name"
-            ],
-            "$id": "#/definitions/packs/items/properties/name",
-            "type": "string"
-          },
-          "label": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "Pack Title"
-            ],
-            "$id": "#/definitions/packs/items/properties/label",
-            "type": "string"
-          },
-          "module": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "module-name"
-            ],
-            "$id": "#/definitions/packs/items/properties/module",
-            "type": "string"
-          },
-          "system": {
-            "oneOf": [
-              {
-                "$ref": "#/definitions/system"
-              },
-              {
-                "$ref": "#/definitions/systems"
-              }
-            ]
-          },
-          "path": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "./packs/pack-name.db"
-            ],
-            "$id": "#/definitions/packs/items/properties/path",
-            "type": "string"
-          },
-          "entity": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "Item"
-            ],
-            "$id": "#/definitions/packs/items/properties/entity",
             "type": "string"
           }
-        },
-        "$id": "#/definitions/packs/items",
-        "type": "object"
-      },
-      "$id": "#/definitions/packs",
-      "type": "array"
+        }
+      }
     },
     "url": {
       "title": "A string value",
@@ -253,7 +129,6 @@
       "examples": [
         "https://someaddress.com/"
       ],
-      "$id": "#/definitions/url",
       "type": "string"
     },
     "download": {
@@ -262,16 +137,6 @@
       "examples": [
         "https://someaddress.com/module.zip"
       ],
-      "$id": "#/definitions/download",
-      "type": "string"
-    },
-    "manifest": {
-      "title": "A string value",
-      "default": "",
-      "examples": [
-        "https://someaddress.com/module.json"
-      ],
-      "$id": "#/definitions/manifest",
       "type": "string"
     },
     "bugs": {
@@ -280,7 +145,6 @@
       "examples": [
         "https://github.com/some-user/a-module/issues"
       ],
-      "$id": "#/definitions/bugs",
       "type": "string"
     },
     "changelog": {
@@ -289,7 +153,6 @@
       "examples": [
         "https://github.com/some-user/a-module/releases"
       ],
-      "$id": "#/definitions/changelog",
       "type": "string"
     }
   }
