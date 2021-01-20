@@ -25,20 +25,9 @@
                   "minimumCoreVersion"
                ],
                "properties": {
-                  "name": {
-                     "title": "A string value",
-                     "default": "",
-                     "pattern": "^(.*)$",
-                     "examples": [
-                        "a-module"
-                     ],
-                     "$id": "#/definitions/name",
-                     "type": "string"
-                  },
                   "title": {
                      "title": "A string value",
                      "default": "",
-                     "pattern": "^(.*)$",
                      "examples": [
                         "A Module"
                      ],
@@ -48,7 +37,6 @@
                   "description": {
                      "title": "A string value",
                      "default": "",
-                     "pattern": "^(.*)$",
                      "examples": [
                         "Some description"
                      ],
@@ -58,57 +46,11 @@
                   "author": {
                      "title": "A string value",
                      "default": "",
-                     "pattern": "^(.*)$",
                      "examples": [
                         "typhonrt"
                      ],
                      "$id": "#/definitions/author",
                      "type": "string"
-                  },
-                  "scripts": {
-                     "title": "An array of items",
-                     "items": {
-                        "title": "A string value",
-                        "default": "",
-                        "pattern": "^(.*)$",
-                        "examples": [
-                           "ascript.js"
-                        ],
-                        "$id": "#/properties/scripts/items",
-                        "type": "string"
-                     },
-                     "$id": "#/definitions/scripts",
-                     "type": "array"
-                  },
-                  "esmodules": {
-                     "title": "An array of items",
-                     "items": {
-                        "title": "A string value",
-                        "default": "",
-                        "pattern": "^(.*)$",
-                        "examples": [
-                           "index.js"
-                        ],
-                        "$id": "#/definitions/esmodules/items",
-                        "type": "string"
-                     },
-                     "$id": "#/definitions/esmodules",
-                     "type": "array"
-                  },
-                  "styles": {
-                     "title": "An array of items",
-                     "items": {
-                        "title": "A string value",
-                        "default": "",
-                        "pattern": "^(.*)$",
-                        "examples": [
-                           "styles.css"
-                        ],
-                        "$id": "#/definitions/styles/items",
-                        "type": "string"
-                     },
-                     "$id": "#/definitions/styles",
-                     "type": "array"
                   },
                   "dependencies": {
                      "title": "An array of items",
@@ -121,7 +63,6 @@
                            "name": {
                               "title": "A string value",
                               "default": "",
-                              "pattern": "^(.*)$",
                               "examples": [
                                  "dice-so-nice"
                               ],
@@ -131,7 +72,6 @@
                            "manifest": {
                               "title": "A string value",
                               "default": "",
-                              "pattern": "^(.*)$",
                               "examples": [
                                  "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/2.0.3/module/module.json"
                               ],
@@ -141,12 +81,16 @@
                            "type": {
                               "title": "A string value",
                               "default": "",
-                              "pattern": "^(module|system|world)$",
                               "examples": [
                                  "module"
                               ],
                               "$id": "#/definitions/dependencies/items/properties/type",
                               "type": "string",
+                              "enum": [
+                                 "module",
+                                 "system",
+                                 "world"
+                              ],
                               "errorMessage": "'type' should be one of the following strings: 'module', 'system', or 'world'"
                            }
                         },
@@ -154,53 +98,6 @@
                         "type": "object"
                      },
                      "$id": "#/definitions/dependencies",
-                     "type": "array"
-                  },
-                  "languages": {
-                     "title": "An array of items",
-                     "items": {
-                        "title": "An object value",
-                        "required": [
-                           "lang",
-                           "name",
-                           "path"
-                        ],
-                        "properties": {
-                           "lang": {
-                              "title": "A string value",
-                              "default": "",
-                              "pattern": "^(.*)$",
-                              "examples": [
-                                 "en"
-                              ],
-                              "$id": "#/definitions/languages/items/properties/lang",
-                              "type": "string"
-                           },
-                           "name": {
-                              "title": "A string value",
-                              "default": "",
-                              "pattern": "^(.*)$",
-                              "examples": [
-                                 "English"
-                              ],
-                              "$id": "#/definitions/languages/items/properties/name",
-                              "type": "string"
-                           },
-                           "path": {
-                              "title": "A string value",
-                              "default": "",
-                              "pattern": "^(.*)$",
-                              "examples": [
-                                 "lang/en.json"
-                              ],
-                              "$id": "#/definitions/languages/items/properties/path",
-                              "type": "string"
-                           }
-                        },
-                        "$id": "#/definitions/languages/items",
-                        "type": "object"
-                     },
-                     "$id": "#/definitions/languages",
                      "type": "array"
                   },
                   "authors": {
@@ -214,7 +111,6 @@
                            "name": {
                               "title": "A string value",
                               "default": "",
-                              "pattern": "^(.*)$",
                               "examples": [
                                  "Atropos"
                               ],
@@ -224,7 +120,6 @@
                            "email": {
                               "title": "A string value",
                               "default": "",
-                              "pattern": "^(.*)$",
                               "examples": [
                                  "admin@foundryvtt.com"
                               ],
@@ -234,7 +129,6 @@
                            "url": {
                               "title": "A string value",
                               "default": "",
-                              "pattern": "^(.*)$",
                               "examples": [
                                  "https://foundryvtt.com"
                               ],
@@ -257,30 +151,9 @@
                      "$id": "#/definitions/socket",
                      "type": "boolean"
                   },
-                  "manifest": {
-                     "title": "A string value",
-                     "default": "",
-                     "pattern": "^(.*)$",
-                     "examples": [
-                        "https://someaddress.com/module.json"
-                     ],
-                     "$id": "#/definitions/manifest",
-                     "type": "string"
-                  },
-                  "download": {
-                     "title": "A string value",
-                     "default": "",
-                     "pattern": "^(.*)$",
-                     "examples": [
-                        "https://someaddress.com/module.zip"
-                     ],
-                     "$id": "#/definitions/download",
-                     "type": "string"
-                  },
                   "license": {
                      "title": "A string value",
                      "default": "",
-                     "pattern": "^(.*)$",
                      "examples": [
                         "LICENSE"
                      ],
@@ -290,48 +163,33 @@
                   "readme": {
                      "title": "A string value",
                      "default": "",
-                     "pattern": "^(.*)$",
                      "examples": [
                         "README.md"
                      ],
                      "$id": "#/definitions/readme",
-                     "type": "string"
-                  },
-                  "bugs": {
-                     "title": "A string value",
-                     "default": "",
-                     "pattern": "^(.*)$",
-                     "examples": [
-                        "https://github.com/some-user/a-module/issues"
-                     ],
-                     "$id": "#/definitions/bugs",
-                     "type": "string"
-                  },
-                  "changelog": {
-                     "title": "A string value",
-                     "default": "",
-                     "pattern": "^(.*)$",
-                     "examples": [
-                        "https://github.com/some-user/a-module/releases"
-                     ],
-                     "$id": "#/definitions/changelog",
                      "type": "string"
                   }
                }
             }
          ],
          "properties": {
+            "name": {
+               "title": "A string value",
+               "default": "",
+               "examples": [
+                  "a-module"
+               ],
+               "type": "string"
+            },
             "version": {
                "title": "A string value",
                "default": "",
                "examples": [
                   "1.0.0"
                ],
-               "$id": "#/definitions/version",
                "oneOf": [
                   {
-                     "type": "string",
-                     "pattern": "^(.*)$"
+                     "type": "string"
                   },
                   {
                      "type": "number"
@@ -344,31 +202,128 @@
             "minimumCoreVersion": {
                "title": "A string value",
                "default": "",
-               "pattern": "^(.*)$",
                "examples": [
                   "0.7.5"
                ],
-               "$id": "#/definitions/minimumCoreVersion",
                "type": "string"
             },
             "compatibleCoreVersion": {
                "title": "A string value",
                "default": "",
-               "pattern": "^(.*)$",
                "examples": [
                   "1.0.0"
                ],
-               "$id": "#/definitions/compatibleCoreVersion",
                "type": "string"
+            },
+            "esmodules": {
+               "title": "An array of items",
+               "items": {
+                  "title": "A string value",
+                  "default": "",
+                  "examples": [
+                     "index.js"
+                  ],
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "scripts": {
+               "title": "An array of items",
+               "items": {
+                  "title": "A string value",
+                  "default": "",
+                  "examples": [
+                     "ascript.js"
+                  ],
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "styles": {
+               "title": "An array of items",
+               "items": {
+                  "title": "A string value",
+                  "default": "",
+                  "examples": [
+                     "styles.css"
+                  ],
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "languages": {
+               "$id": "#/definitions/languages",
+               "type": "array",
+               "title": "An array of items",
+               "items": {
+                  "$id": "#/definitions/languages/items",
+                  "type": "object",
+                  "title": "An object value",
+                  "required": [
+                     "lang",
+                     "name",
+                     "path"
+                  ],
+                  "properties": {
+                     "lang": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "en"
+                        ],
+                        "$id": "#/definitions/languages/items/properties/lang",
+                        "type": "string"
+                     },
+                     "name": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "English"
+                        ],
+                        "$id": "#/definitions/languages/items/properties/name",
+                        "type": "string"
+                     },
+                     "path": {
+                        "$id": "#/definitions/languages/items/properties/path",
+                        "title": "A string value",
+                        "examples": [
+                           "lang/en.json"
+                        ],
+                        "type": "string"
+                     }
+                  }
+               }
             },
             "url": {
                "title": "A string value",
                "default": "",
-               "pattern": "^(.*)$",
                "examples": [
                   "https://someaddress.com/"
                ],
-               "$id": "#/definitions/url",
+               "type": "string"
+            },
+            "download": {
+               "title": "A string value",
+               "default": "",
+               "examples": [
+                  "https://someaddress.com/module.zip"
+               ],
+               "type": "string"
+            },
+            "bugs": {
+               "title": "A string value",
+               "default": "",
+               "examples": [
+                  "https://github.com/some-user/a-module/issues"
+               ],
+               "type": "string"
+            },
+            "changelog": {
+               "title": "A string value",
+               "default": "",
+               "examples": [
+                  "https://github.com/some-user/a-module/releases"
+               ],
                "type": "string"
             }
          }
@@ -391,7 +346,6 @@
             "initiative": {
                "title": "A string value",
                "default": "",
-               "pattern": "^(.*)$",
                "examples": [
                   "1d20"
                ],
@@ -410,7 +364,6 @@
             "gridUnits": {
                "title": "A string value",
                "default": "",
-               "pattern": "^(.*)$",
                "examples": [
                   "ft, m"
                ],
@@ -424,14 +377,9 @@
                   "resources.health"
                ],
                "$id": "#/definitions/primaryTokenAttribute",
-               "anyOf": [
-                  {
-                     "pattern": "^(.*)$",
-                     "type": "string"
-                  },
-                  {
-                     "type": "null"
-                  }
+               "type": [
+                  "null",
+                  "string"
                ]
             },
             "secondaryTokenAttribute": {
@@ -441,18 +389,23 @@
                   "resources.power"
                ],
                "$id": "#/definitions/secondaryTokenAttribute",
-               "anyOf": [
-                  {
-                     "pattern": "^(.*)$",
-                     "type": "string"
-                  },
-                  {
-                     "type": "null"
-                  }
+               "type": [
+                  "null",
+                  "string"
                ]
             }
          }
       }
    ],
-   "properties": {}
+   "properties": {
+      "manifest": {
+         "$id": "#/definitions/manifest",
+         "title": "A string value",
+         "default": "",
+         "examples": [
+            "https://someaddress.com/system.json"
+         ],
+         "type": "string"
+      }
+   }
 }
