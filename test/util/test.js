@@ -14,7 +14,6 @@ module.exports = {
    },
 
    categories: {
-      common: true,
       loose: true,
       strict: true
    },
@@ -33,47 +32,47 @@ module.exports = {
    invalid: true,
 
    // When error data does not exist it will be created when TestUtil.invalid is invoked.
-   createErrorData: false,
+   createErrorData: true,
 
    // Defines the function to run and the associated categories, type, and if it is strict.
    functionData: {
       validateModule: {
-         categories: ['common', 'loose'],
+         categories: ['loose'],
          type: ['base', 'module'],
          isStrict: false
       },
       validateModulePlus: {
-         categories: ['common', 'loose'],
+         categories: ['loose'],
          type: ['base', 'module', 'module+'],
          isStrict: false
       },
       validateSystem: {
-         categories: ['common', 'loose'],
+         categories: ['loose'],
          type: ['base', 'system'],
          isStrict: false
       },
       validateSystemPlus: {
-         categories: ['common', 'loose'],
+         categories: ['loose'],
          type: ['base', 'system', 'system+'],
          isStrict: false
       },
       validateModuleStrict: {
-         categories: ['common', 'loose', 'strict'],
+         categories: ['loose', 'strict'],
          type: ['base', 'module'],
          isStrict: true
       },
       validateModulePlusStrict: {
-         categories: ['common', 'loose', 'strict'],
+         categories: ['loose', 'strict'],
          type: ['base', 'module', 'module+'],
          isStrict: true
       },
       validateSystemStrict: {
-         categories: ['common', 'loose', 'strict'],
+         categories: ['loose', 'strict'],
          type: ['base', 'system'],
          isStrict: true
       },
       validateSystemPlusStrict: {
-         categories: ['common', 'loose', 'strict'],
+         categories: ['loose', 'strict'],
          type: ['base', 'system', 'system+'],
          isStrict: true
       }
