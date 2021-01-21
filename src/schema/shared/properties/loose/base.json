@@ -15,9 +15,6 @@
     "author": {
       "$ref": "../../definitions/loose/base.json#/definitions/author"
     },
-    "authors": {
-      "$ref": "../../definitions/loose/base.json#/definitions/authors"
-    },
     "bugs": {
       "$ref": "../../definitions/loose/base.json#/definitions/bugs"
     },

@@ -5,30 +5,12 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "base.json"
+      "$ref": "base-system.json"
     }
   ],
   "properties": {
-    "gridDistance": {
-      "$ref": "../../definitions/strict/system.json#/definitions/gridDistance"
-    },
-    "gridUnits": {
-      "$ref": "../../definitions/strict/system.json#/definitions/gridUnits"
-    },
-    "initiative": {
-      "$ref": "../../definitions/strict/system.json#/definitions/initiative"
-    },
-    "manifest": {
-      "$ref": "../../definitions/strict/system.json#/definitions/manifest"
-    },
-    "primaryTokenAttribute": {
-      "$ref": "../../definitions/strict/system.json#/definitions/primaryTokenAttribute"
-    },
-    "secondaryTokenAttribute": {
-      "$ref": "../../definitions/strict/system.json#/definitions/secondaryTokenAttribute"
-    },
-    "templateVersion": {
-      "$ref": "../../definitions/strict/system.json#/definitions/templateVersion"
+    "authors": {
+      "$ref": "../../definitions/strict/authors.json#/definitions/authors"
     }
   }
 }

@@ -1,0 +1,34 @@
+{
+  "$id": "shared/properties/strict/base-system.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FoundryVTT shared strict base for system.json",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "base.json"
+    }
+  ],
+  "properties": {
+    "gridDistance": {
+      "$ref": "../../definitions/strict/system.json#/definitions/gridDistance"
+    },
+    "gridUnits": {
+      "$ref": "../../definitions/strict/system.json#/definitions/gridUnits"
+    },
+    "initiative": {
+      "$ref": "../../definitions/strict/system.json#/definitions/initiative"
+    },
+    "manifest": {
+      "$ref": "../../definitions/strict/system.json#/definitions/manifest"
+    },
+    "primaryTokenAttribute": {
+      "$ref": "../../definitions/strict/system.json#/definitions/primaryTokenAttribute"
+    },
+    "secondaryTokenAttribute": {
+      "$ref": "../../definitions/strict/system.json#/definitions/secondaryTokenAttribute"
+    },
+    "templateVersion": {
+      "$ref": "../../definitions/strict/system.json#/definitions/templateVersion"
+    }
+  }
+}

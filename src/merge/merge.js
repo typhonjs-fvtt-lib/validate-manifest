@@ -5,6 +5,10 @@ const stripJsonComments = require('strip-json-comments');
 
 const includes          = require('./includes');
 
+// Authors
+process('abstract/authors', 'loose/authors');
+process('abstract/authors', 'strict/authors');
+
 // Base
 process('abstract/base', 'loose/base');
 process('abstract/base', 'strict/base');

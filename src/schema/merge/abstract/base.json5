@@ -10,43 +10,6 @@
       "title": "A string value",
       "type": "string"
     },
-    "authors": {
-      "items": {
-        "properties": {
-          "email": {
-            "default": "",
-            "examples": [
-              "admin@foundryvtt.com"
-            ],
-            "title": "A string value",
-            "type": "string"
-          },
-          "name": {
-            "default": "",
-            "examples": [
-              "Atropos"
-            ],
-            "title": "A string value",
-            "type": "string"
-          },
-          "url": {
-            "default": "",
-            "examples": [
-              "https://foundryvtt.com"
-            ],
-            "title": "A string value",
-            "type": "string"
-          }
-        },
-        "required": [
-          "name"
-        ],
-        "title": "An object value",
-        "type": "object"
-      },
-      "title": "An array of items",
-      "type": "array"
-    },
     "bugs": {
       "default": "",
       "examples": [

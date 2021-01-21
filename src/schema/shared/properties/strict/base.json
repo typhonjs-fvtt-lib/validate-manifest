@@ -15,9 +15,6 @@
     "author": {
       "$ref": "../../definitions/strict/base.json#/definitions/author"
     },
-    "authors": {
-      "$ref": "../../definitions/strict/base.json#/definitions/authors"
-    },
     "bugs": {
       "$ref": "../../definitions/strict/base.json#/definitions/bugs"
     },

@@ -5,8 +5,12 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "module.json"
+      "$ref": "base-module.json"
     }
   ],
-  "properties": {}
+  "properties": {
+    "authors": {
+      "$ref": "../../definitions/loose/authors.json#/definitions/authors"
+    }
+  }
 }

@@ -1,0 +1,34 @@
+{
+  "$id": "shared/properties/loose/base-system.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FoundryVTT shared loose base for system.json",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "base.json"
+    }
+  ],
+  "properties": {
+    "gridDistance": {
+      "$ref": "../../definitions/loose/system.json#/definitions/gridDistance"
+    },
+    "gridUnits": {
+      "$ref": "../../definitions/loose/system.json#/definitions/gridUnits"
+    },
+    "initiative": {
+      "$ref": "../../definitions/loose/system.json#/definitions/initiative"
+    },
+    "manifest": {
+      "$ref": "../../definitions/loose/system.json#/definitions/manifest"
+    },
+    "primaryTokenAttribute": {
+      "$ref": "../../definitions/loose/system.json#/definitions/primaryTokenAttribute"
+    },
+    "secondaryTokenAttribute": {
+      "$ref": "../../definitions/loose/system.json#/definitions/secondaryTokenAttribute"
+    },
+    "templateVersion": {
+      "$ref": "../../definitions/loose/system.json#/definitions/templateVersion"
+    }
+  }
+}

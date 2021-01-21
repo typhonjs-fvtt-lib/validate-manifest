@@ -5,15 +5,12 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "base.json"
+      "$ref": "base-module.json"
     }
   ],
   "properties": {
-    "manifest": {
-      "$ref": "../../definitions/strict/module.json#/definitions/manifest"
-    },
-    "system": {
-      "$ref": "../../definitions/strict/module.json#/definitions/system"
+    "authors": {
+      "$ref": "../../definitions/strict/authors.json#/definitions/authors"
     }
   }
 }
