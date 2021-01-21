@@ -10,7 +10,7 @@
   ],
   "properties": {
     "authors": {
-      "$ref": "../../definitions/strict/authors.json#/definitions/authors"
+      "$ref": "../../definitions/strict/authors.json#/definitions/authors+"
     }
   }
 }

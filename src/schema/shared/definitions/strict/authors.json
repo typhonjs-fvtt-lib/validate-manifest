@@ -4,40 +4,95 @@
   "definitions": {
     "authors": {
       "items": {
-        "properties": {
-          "email": {
-            "default": "",
-            "examples": [
-              "admin@foundryvtt.com"
-            ],
-            "title": "A string value",
-            "type": "string"
-          },
-          "name": {
-            "default": "",
-            "examples": [
-              "Atropos"
-            ],
-            "title": "A string value",
-            "type": "string"
-          },
-          "url": {
-            "default": "",
-            "examples": [
-              "https://foundryvtt.com"
-            ],
-            "title": "A string value",
-            "type": "string"
-          }
-        },
-        "required": [
-          "name"
-        ],
+        "$ref": "#/definitions/properties-author",
         "title": "An object value",
         "type": "object"
       },
       "title": "An array of items",
       "type": "array"
+    },
+    "authors+": {
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/properties-author"
+          },
+          {
+            "$ref": "#/definitions/properties-author+"
+          }
+        ],
+        "type": "object",
+        "title": "An object value"
+      },
+      "title": "An array of items",
+      "type": "array"
+    },
+    "properties-author": {
+      "properties": {
+        "email": {
+          "default": "",
+          "examples": [
+            "admin@foundryvtt.com"
+          ],
+          "title": "A string value",
+          "type": "string"
+        },
+        "name": {
+          "default": "",
+          "examples": [
+            "Atropos"
+          ],
+          "title": "A string value",
+          "type": "string"
+        },
+        "url": {
+          "default": "",
+          "examples": [
+            "https://foundryvtt.com"
+          ],
+          "title": "A string value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "properties-author+": {
+      "properties": {
+        "discord": {
+          "default": "",
+          "examples": [
+            "discordID#0001"
+          ],
+          "title": "A string value",
+          "type": "string"
+        },
+        "twitter": {
+          "default": "",
+          "examples": [
+            "@TwitterHandle"
+          ],
+          "title": "A string value",
+          "type": "string"
+        },
+        "patreon": {
+          "default": "",
+          "examples": [
+            "patreonName"
+          ],
+          "title": "A string value",
+          "type": "string"
+        },
+        "reddit": {
+          "default": "",
+          "examples": [
+            "u/RedditUsername"
+          ],
+          "title": "A string value",
+          "type": "string"
+        }
+      }
     }
   }
 }
