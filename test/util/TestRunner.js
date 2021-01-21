@@ -7,6 +7,12 @@ const stripJsonComments = require('strip-json-comments');
 const test              = require('./test');
 
 /**
+ * Captures the right hand schema path data for sanitizing error data.
+ * @type {RegExp}
+ */
+const s_SCHEMAPATH_REGEX = /^.*(#.*)$/;
+
+/**
  * Provides convenience methods to setup Mocha tests based on JSON data files.
  */
 class TestRunner
@@ -38,6 +44,9 @@ class TestRunner
          {
             if (!testFunction(invalid.data))
             {
+               // Sanitize / remove left hand inlineRef data.
+               TestRunner.removeLefthandSchemaPath(testFunction.errors);
+
                const error = errors.get(key);
 
                if (error === void 0)
@@ -95,6 +104,37 @@ class TestRunner
       });
 
       return results;
+   }
+
+   /**
+    * Performs a depth traversal of an object and processes `schemaPath` keys to remove the left hand inlineRefs data
+    * that changes between the loose / strict / manifest+ variations.
+    *
+    * @param {object|Array}   data - An object to traverse for `schemaPath`.
+    */
+   static removeLefthandSchemaPath(data)
+   {
+      if (typeof data === 'object')
+      {
+         for (const key in data)
+         {
+            // eslint-disable-next-line no-prototype-builtins
+            if (data.hasOwnProperty(key) && key !== 'schemaPath')
+            {
+               TestRunner.removeLefthandSchemaPath(data[key]);
+            }
+         }
+
+         // Store only the right hand schemaPath data.
+         if (data && typeof data.schemaPath === 'string')
+         {
+            const match = s_SCHEMAPATH_REGEX.exec(data.schemaPath);
+            if (match !== null)
+            {
+               data.schemaPath = match[1];
+            }
+         }
+      }
    }
 
    /**
