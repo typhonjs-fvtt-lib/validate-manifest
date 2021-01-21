@@ -64,14 +64,6 @@
           "title": "A string value",
           "type": "string"
         },
-        "twitter": {
-          "default": "",
-          "examples": [
-            "@TwitterHandle"
-          ],
-          "title": "A string value",
-          "type": "string"
-        },
         "patreon": {
           "default": "",
           "examples": [
@@ -84,6 +76,14 @@
           "default": "",
           "examples": [
             "u/RedditUsername"
+          ],
+          "title": "A string value",
+          "type": "string"
+        },
+        "twitter": {
+          "default": "",
+          "examples": [
+            "@TwitterHandle"
           ],
           "title": "A string value",
           "type": "string"

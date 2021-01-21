@@ -23,6 +23,24 @@ module.exports = {
       pattern: '^(.+).json$'
     };
   },
+  'pattern-discord': (data) =>   // https://ihateregex.io/expr/discord-username/
+  {
+    return {
+      pattern: '^.{3,32}#[0-9]{4}$',
+      errorMessage: {
+        pattern: `'${data.name}' should be a string that is a valid Discord user name`
+      }
+    };
+  },
+  'pattern-email': (data) =>   // https://www.codespot.org/javascript-email-validation/
+  {
+    return {
+      pattern: '^(([^<>()\\[\\]\\\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@"]+)*)|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$',
+      errorMessage: {
+        pattern: `'${data.name}' should be a string that is a valid email address`
+      }
+    };
+  },
   'pattern-package-name': (data) =>
   {
     return {
@@ -41,12 +59,30 @@ module.exports = {
       }
     };
   },
+  'pattern-reddit': (data) =>
+  {
+    return {
+      pattern: '^u/[A-Za-z0-9_-]+$',
+      errorMessage: {
+        pattern: `'${data.name}' should be a string that is a valid Reddit user name`
+      }
+    };
+  },
   'pattern-semver': (data) =>
   {
     return {
       pattern: '^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$',
       errorMessage: {
         pattern: `'${data.name}' should be a string that uses semantic versioning`
+      }
+    };
+  },
+  'pattern-twitter': (data) =>
+  {
+    return {
+      pattern: '^@[A-Za-z0-9_]{1,15}$',
+      errorMessage: {
+        pattern: `'${data.name}' should be a string that is a valid twitter user name`
       }
     };
   },
