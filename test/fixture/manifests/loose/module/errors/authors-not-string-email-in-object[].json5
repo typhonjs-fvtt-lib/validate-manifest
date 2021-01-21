@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/authors/0/email",
+      "schemaPath": "#/definitions/properties-author/properties/email/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]

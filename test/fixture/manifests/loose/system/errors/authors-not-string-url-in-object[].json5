@@ -1,8 +1,8 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/authors/0/name",
-      "schemaPath": "#/definitions/authors/items/properties/name/type",
+      "dataPath": "/authors/0/url",
+      "schemaPath": "#/definitions/properties-author/properties/url/type",
       "params": {
          "type": "string"
       },

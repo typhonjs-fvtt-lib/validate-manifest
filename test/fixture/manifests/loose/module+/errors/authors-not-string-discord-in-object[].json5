@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/authors/0/discord",
+      "schemaPath": "#/definitions/properties-author+/properties/discord/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]

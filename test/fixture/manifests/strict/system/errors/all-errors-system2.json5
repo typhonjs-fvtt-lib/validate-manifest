@@ -253,7 +253,7 @@
    {
       "keyword": "type",
       "dataPath": "/authors",
-      "schemaPath": "#/definitions/authors/type",
+      "schemaPath": "#/type",
       "params": {
          "type": "array"
       },

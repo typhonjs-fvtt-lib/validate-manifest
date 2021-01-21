@@ -251,7 +251,7 @@
    {
       "keyword": "type",
       "dataPath": "/authors/0",
-      "schemaPath": "#/definitions/authors/items/type",
+      "schemaPath": "#/items/type",
       "params": {
          "type": "object"
       },
@@ -260,7 +260,7 @@
    {
       "keyword": "required",
       "dataPath": "/authors/1",
-      "schemaPath": "#/definitions/authors/items/required",
+      "schemaPath": "#/definitions/properties-author/required",
       "params": {
          "missingProperty": "name"
       },

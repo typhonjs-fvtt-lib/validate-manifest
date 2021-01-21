@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/authors/0/patreon",
+      "schemaPath": "#/definitions/properties-author+/properties/patreon/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]

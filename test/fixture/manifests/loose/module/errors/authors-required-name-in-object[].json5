@@ -2,7 +2,7 @@
    {
       "keyword": "required",
       "dataPath": "/authors/0",
-      "schemaPath": "#/definitions/authors/items/required",
+      "schemaPath": "#/definitions/properties-author/required",
       "params": {
          "missingProperty": "name"
       },

@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/authors/0/url",
-      "schemaPath": "#/definitions/authors/items/properties/url/type",
+      "schemaPath": "#/definitions/properties-author/properties/url/type",
       "params": {
          "type": "string"
       },
