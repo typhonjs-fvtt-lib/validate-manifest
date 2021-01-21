@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/includes",
+      "schemaPath": "#/definitions/includes/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   }
+]

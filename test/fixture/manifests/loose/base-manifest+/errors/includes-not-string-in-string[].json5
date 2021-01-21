@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/includes/0",
+      "schemaPath": "#/definitions/includes/items/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]

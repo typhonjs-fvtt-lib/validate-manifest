@@ -1,0 +1,12 @@
+[
+   {
+      "keyword": "uniqueItems",
+      "dataPath": "/includes",
+      "schemaPath": "#/definitions/includes/uniqueItems",
+      "params": {
+         "i": 0,
+         "j": 1
+      },
+      "message": "should NOT have duplicate items (items ## 1 and 0 are identical)"
+   }
+]

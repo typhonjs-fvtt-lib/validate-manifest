@@ -1,0 +1,12 @@
+{
+  "name": "a-module",
+  "title": "A Module",
+  "description": "Some description",
+  "author": "typhonrt",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.7.5",
+  "includes": [
+    "some/path/to/something",
+    "some/path/to/something"
+  ]
+}
