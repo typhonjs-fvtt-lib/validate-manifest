@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/media/0/thumbnail",
+      "schemaPath": "#/definitions/media-item-loose/properties/thumbnail/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]

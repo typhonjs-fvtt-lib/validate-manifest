@@ -1,0 +1,20 @@
+[
+   {
+      "keyword": "additionalProperties",
+      "dataPath": "/media/0",
+      "schemaPath": "#/definitions/media-item-strict/allOf/0/then/additionalProperties",
+      "params": {
+         "additionalProperty": "foo"
+      },
+      "message": "should NOT have additional properties"
+   },
+   {
+      "keyword": "if",
+      "dataPath": "/media/0",
+      "schemaPath": "#/definitions/media-item-strict/allOf/0/if",
+      "params": {
+         "failingKeyword": "then"
+      },
+      "message": "should match \"then\" schema"
+   }
+]

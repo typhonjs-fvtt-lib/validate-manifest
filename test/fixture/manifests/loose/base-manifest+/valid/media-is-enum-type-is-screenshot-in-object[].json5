@@ -1,0 +1,10 @@
+{
+  "__strictskip": true,
+  "name": "a-module",
+  "title": "A Module",
+  "description": "Some description",
+  "author": "typhonrt",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.7.5",
+  "media": [{ "type": "screenshot", "url": "http://good.com" }]
+}

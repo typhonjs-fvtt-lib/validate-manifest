@@ -1,0 +1,16 @@
+[
+   {
+      "keyword": "enum",
+      "dataPath": "/media/0/type",
+      "schemaPath": "#/definitions/media-item-loose/properties/type/enum",
+      "params": {
+         "allowedValues": [
+            "cover",
+            "icon",
+            "screenshot",
+            "video"
+         ]
+      },
+      "message": "should be equal to one of the allowed values"
+   }
+]

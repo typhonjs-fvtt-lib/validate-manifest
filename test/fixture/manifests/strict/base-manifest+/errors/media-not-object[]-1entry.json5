@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/media/0",
+      "schemaPath": "#/definitions/media-item-strict/type",
+      "params": {
+         "type": "object"
+      },
+      "message": "should be object"
+   }
+]

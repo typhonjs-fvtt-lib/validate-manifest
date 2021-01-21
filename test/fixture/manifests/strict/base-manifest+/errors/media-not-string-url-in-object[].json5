@@ -1,0 +1,29 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/media/0/url",
+      "schemaPath": "#/definitions/media-item-strict/allOf/1/then/properties/url/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "if",
+      "dataPath": "/media/0",
+      "schemaPath": "#/definitions/media-item-strict/allOf/1/if",
+      "params": {
+         "failingKeyword": "then"
+      },
+      "message": "should match \"then\" schema"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/media/0/url",
+      "schemaPath": "#/definitions/media-item-strict/properties/url/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]
