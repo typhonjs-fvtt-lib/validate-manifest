@@ -10,15 +10,6 @@
    },
    {
       "keyword": "type",
-      "dataPath": "/authors",
-      "schemaPath": "#/definitions/authors/type",
-      "params": {
-         "type": "array"
-      },
-      "message": "should be array"
-   },
-   {
-      "keyword": "type",
       "dataPath": "/bugs",
       "schemaPath": "#/definitions/bugs/type",
       "params": {
@@ -238,5 +229,14 @@
          ]
       },
       "message": "'system' should be a string or array of strings"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/authors",
+      "schemaPath": "#/definitions/authors/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
    }
 ]

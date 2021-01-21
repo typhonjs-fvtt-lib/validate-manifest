@@ -10,24 +10,6 @@
    },
    {
       "keyword": "type",
-      "dataPath": "/authors/0",
-      "schemaPath": "#/definitions/authors/items/type",
-      "params": {
-         "type": "object"
-      },
-      "message": "should be object"
-   },
-   {
-      "keyword": "required",
-      "dataPath": "/authors/1",
-      "schemaPath": "#/definitions/authors/items/required",
-      "params": {
-         "missingProperty": "name"
-      },
-      "message": "should have required property 'name'"
-   },
-   {
-      "keyword": "type",
       "dataPath": "/bugs",
       "schemaPath": "#/definitions/bugs/type",
       "params": {
@@ -285,5 +267,23 @@
          ]
       },
       "message": "'system' should be a string or array of strings"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/authors/0",
+      "schemaPath": "#/definitions/authors/items/type",
+      "params": {
+         "type": "object"
+      },
+      "message": "should be object"
+   },
+   {
+      "keyword": "required",
+      "dataPath": "/authors/1",
+      "schemaPath": "#/definitions/authors/items/required",
+      "params": {
+         "missingProperty": "name"
+      },
+      "message": "should have required property 'name'"
    }
 ]

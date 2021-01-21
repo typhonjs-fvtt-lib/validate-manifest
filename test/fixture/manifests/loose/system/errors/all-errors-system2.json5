@@ -10,15 +10,6 @@
    },
    {
       "keyword": "type",
-      "dataPath": "/authors",
-      "schemaPath": "#/definitions/authors/type",
-      "params": {
-         "type": "array"
-      },
-      "message": "should be array"
-   },
-   {
-      "keyword": "type",
       "dataPath": "/bugs",
       "schemaPath": "#/definitions/bugs/type",
       "params": {
@@ -278,5 +269,14 @@
          "type": "integer"
       },
       "message": "should be integer"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/authors",
+      "schemaPath": "#/definitions/authors/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
    }
 ]

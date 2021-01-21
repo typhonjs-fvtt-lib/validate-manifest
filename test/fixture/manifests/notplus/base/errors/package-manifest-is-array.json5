@@ -34,6 +34,16 @@
                },
                "message": "should be object",
                "emUsed": true
+            },
+            {
+               "keyword": "type",
+               "dataPath": "",
+               "schemaPath": "#/type",
+               "params": {
+                  "type": "object"
+               },
+               "message": "should be object",
+               "emUsed": true
             }
          ]
       },
