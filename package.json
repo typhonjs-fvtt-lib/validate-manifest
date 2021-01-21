@@ -43,7 +43,7 @@
   "license": "MIT",
   "repository": "typhonjs-fvtt/manifest-plus",
   "scripts": {
-    "compile": "node src/merge/merge.js && node src/compile/compileSchema.js && ajv compile --all-errors -r \"src/schema/shared/**/*.json\" -s \"src/schema/validators/**/*.json\" -c ajv-errors -c ajv-keywords/dist/keywords/typeof -o > dist/validators.js && prettier --write \"./dist/validators.js\"",
+    "compile": "node src/merge/merge.js && node src/compile/compileSchema.js && ajv compile --all-errors --strict-types=false -r \"src/schema/shared/**/*.json\" -s \"src/schema/validators/**/*.json\" -c ajv-errors -c ajv-keywords/dist/keywords/typeof -o > dist/validators.js && prettier --write \"./dist/validators.js\"",
     "create-specification": "gitdown ./.specification/ManifestPlus.md --output-file ./ManifestPlus.md",
     "test": "npm run compile && nyc --reporter=lcov --reporter=text-summary mocha \"test/src/**/*.test.js\""
   }
