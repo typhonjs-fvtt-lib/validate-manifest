@@ -30,7 +30,14 @@
             "examples": [
               "1.0.0"
             ],
-            "oneOf": [{ "type": "string" }, { "type": "number" }],
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ],
             "title": "A string value"
           },
           "versionMin": {
@@ -38,7 +45,14 @@
             "examples": [
               "1.0.0"
             ],
-            "oneOf": [{ "type": "string" }, { "type": "number" }],
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ],
             "title": "A string value"
           }
         },
@@ -49,7 +63,6 @@
         "title": "An object value",
         "type": "object"
       },
-
       "title": "An array of items",
       "type": "array"
     },
@@ -80,7 +93,6 @@
             "title": "An object value",
             "type": "object"
           },
-
           "title": "An array of items",
           "type": "array"
         },
@@ -114,7 +126,15 @@
       },
       "title": "An array of items",
       "type": "array"
+    },
+    "library": {
+      "examples": [
+        true
+      ],
+      "title": "A boolean value",
+      "type": "boolean"
     }
+
 
 /*
 strict -> "uniqueItems": true

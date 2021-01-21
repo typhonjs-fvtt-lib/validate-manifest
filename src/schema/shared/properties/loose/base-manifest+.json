@@ -12,6 +12,9 @@
     },
     "includes": {
       "$ref": "../../definitions/loose/base-manifest+.json#/definitions/includes"
+    },
+    "library": {
+      "$ref": "../../definitions/loose/base-manifest+.json#/definitions/library"
     }
   }
 }

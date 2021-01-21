@@ -143,6 +143,13 @@
       "title": "An array of items",
       "type": "array",
       "uniqueItems": true
+    },
+    "library": {
+      "examples": [
+        true
+      ],
+      "title": "A boolean value",
+      "type": "boolean"
     }
   }
 }

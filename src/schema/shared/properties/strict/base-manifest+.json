@@ -12,6 +12,9 @@
     },
     "includes": {
       "$ref": "../../definitions/strict/base-manifest+.json#/definitions/includes"
+    },
+    "library": {
+      "$ref": "../../definitions/strict/base-manifest+.json#/definitions/library"
     }
   }
 }

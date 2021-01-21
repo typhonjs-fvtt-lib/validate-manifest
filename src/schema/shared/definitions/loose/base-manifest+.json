@@ -126,6 +126,13 @@
       },
       "title": "An array of items",
       "type": "array"
+    },
+    "library": {
+      "examples": [
+        true
+      ],
+      "title": "A boolean value",
+      "type": "boolean"
     }
   }
 }
