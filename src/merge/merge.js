@@ -13,6 +13,10 @@ process('abstract/authors', 'strict/authors');
 process('abstract/base', 'loose/base');
 process('abstract/base', 'strict/base');
 
+// Base Manifest+
+process('abstract/base-manifest+', 'loose/base-manifest+');
+process('abstract/base-manifest+', 'strict/base-manifest+');
+
 // Module
 process('abstract/module', 'loose/module');
 process('abstract/module', 'strict/module');

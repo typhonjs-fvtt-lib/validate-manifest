@@ -5,6 +5,9 @@
   "type": "object",
   "allOf": [
     {
+      "$ref": "base-manifest+.json"
+    },
+    {
       "$ref": "base-module.json"
     }
   ],

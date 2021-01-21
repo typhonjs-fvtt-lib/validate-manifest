@@ -1,0 +1,11 @@
+{
+  "$id": "shared/properties/strict/base-manifest+.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FoundryVTT shared loose base for manifest+",
+  "type": "object",
+  "properties": {
+    "conflicts": {
+      "$ref": "../../definitions/strict/base-manifest+.json#/definitions/conflicts"
+    }
+  }
+}

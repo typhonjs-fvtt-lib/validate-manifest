@@ -1,0 +1,74 @@
+{
+  "$id": "shared/definitions/strict/base-manifest+.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "conflicts": {
+      "items": {
+        "properties": {
+          "name": {
+            "examples": [
+              "dice-so-nice"
+            ],
+            "title": "A string value",
+            "type": "string",
+            "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+            "errorMessage": {
+              "pattern": "'conflicts' should be a string that is alpha-numeric with only underscore and hyphen separators"
+            }
+          },
+          "type": {
+            "enum": [
+              "module",
+              "system",
+              "world"
+            ],
+            "errorMessage": "'type' should be one of the following strings: 'module', 'system', or 'world'",
+            "examples": [
+              "module"
+            ],
+            "title": "A string value",
+            "type": "string"
+          },
+          "versionMax": {
+            "errorMessage": "'versionMax' should be a string or number",
+            "examples": [
+              "1.0.0"
+            ],
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "title": "A string value"
+          },
+          "versionMin": {
+            "errorMessage": "'versionMin' should be a string or number",
+            "examples": [
+              "1.0.0"
+            ],
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "title": "A string value"
+          }
+        },
+        "required": [
+          "name",
+          "type"
+        ],
+        "title": "An object value",
+        "type": "object"
+      },
+      "title": "An array of items",
+      "type": "array"
+    }
+  }
+}
