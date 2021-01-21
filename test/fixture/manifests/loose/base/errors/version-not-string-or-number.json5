@@ -2,13 +2,13 @@
    {
       "keyword": "errorMessage",
       "dataPath": "/version",
-      "schemaPath": "#/errorMessage",
+      "schemaPath": "#/definitions/version/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "type",
                "dataPath": "/version",
-               "schemaPath": "#/oneOf/0/type",
+               "schemaPath": "#/definitions/version/oneOf/0/type",
                "params": {
                   "type": "string"
                },
@@ -18,7 +18,7 @@
             {
                "keyword": "type",
                "dataPath": "/version",
-               "schemaPath": "#/oneOf/1/type",
+               "schemaPath": "#/definitions/version/oneOf/1/type",
                "params": {
                   "type": "number"
                },
@@ -28,7 +28,7 @@
             {
                "keyword": "oneOf",
                "dataPath": "/version",
-               "schemaPath": "#/oneOf",
+               "schemaPath": "#/definitions/version/oneOf",
                "params": {
                   "passingSchemas": null
                },

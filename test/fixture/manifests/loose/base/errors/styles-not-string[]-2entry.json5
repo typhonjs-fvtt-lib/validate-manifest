@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/styles/0",
-      "schemaPath": "#/items/type",
+      "schemaPath": "#/definitions/styles/items/type",
       "params": {
          "type": "string"
       },
@@ -11,7 +11,7 @@
    {
       "keyword": "type",
       "dataPath": "/styles/1",
-      "schemaPath": "#/items/type",
+      "schemaPath": "#/definitions/styles/items/type",
       "params": {
          "type": "string"
       },

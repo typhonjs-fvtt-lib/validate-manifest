@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/socket",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/socket/type",
       "params": {
          "type": "boolean"
       },

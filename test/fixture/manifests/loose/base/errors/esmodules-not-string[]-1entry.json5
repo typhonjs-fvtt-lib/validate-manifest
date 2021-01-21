@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/esmodules/0",
-      "schemaPath": "#/items/type",
+      "schemaPath": "#/definitions/esmodules/items/type",
       "params": {
          "type": "string"
       },

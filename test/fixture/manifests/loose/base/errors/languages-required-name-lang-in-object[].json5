@@ -2,7 +2,7 @@
    {
       "keyword": "required",
       "dataPath": "/languages/0",
-      "schemaPath": "#/items/required",
+      "schemaPath": "#/definitions/languages/items/required",
       "params": {
          "missingProperty": "name"
       },

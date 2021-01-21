@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/languages",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/languages/type",
       "params": {
          "type": "array"
       },

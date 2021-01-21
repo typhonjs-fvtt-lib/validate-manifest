@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/gridDistance",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/gridDistance/type",
       "params": {
          "type": "integer"
       },

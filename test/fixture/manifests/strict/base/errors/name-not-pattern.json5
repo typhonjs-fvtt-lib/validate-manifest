@@ -2,13 +2,13 @@
    {
       "keyword": "errorMessage",
       "dataPath": "/name",
-      "schemaPath": "#/errorMessage",
+      "schemaPath": "#/definitions/name/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
                "dataPath": "/name",
-               "schemaPath": "#/pattern",
+               "schemaPath": "#/definitions/name/pattern",
                "params": {
                   "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$"
                },

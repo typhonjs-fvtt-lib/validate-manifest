@@ -2,7 +2,7 @@
    {
       "keyword": "pattern",
       "dataPath": "/languages/0/path",
-      "schemaPath": "#/items/properties/path/pattern",
+      "schemaPath": "#/definitions/languages/items/properties/path/pattern",
       "params": {
          "pattern": "^(.+).json$"
       },

@@ -2,13 +2,13 @@
    {
       "keyword": "errorMessage",
       "dataPath": "/version",
-      "schemaPath": "#/errorMessage",
+      "schemaPath": "#/definitions/version/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
                "dataPath": "/version",
-               "schemaPath": "#/pattern",
+               "schemaPath": "#/definitions/version/pattern",
                "params": {
                   "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
                },

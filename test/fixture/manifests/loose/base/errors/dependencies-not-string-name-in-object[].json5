@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/dependencies/0/name",
-      "schemaPath": "#/items/properties/name/type",
+      "schemaPath": "#/definitions/dependencies/items/properties/name/type",
       "params": {
          "type": "string"
       },

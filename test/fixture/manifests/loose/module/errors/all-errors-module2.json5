@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/author",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/author/type",
       "params": {
          "type": "string"
       },
@@ -11,7 +11,7 @@
    {
       "keyword": "type",
       "dataPath": "/authors/0",
-      "schemaPath": "#/items/type",
+      "schemaPath": "#/definitions/authors/items/type",
       "params": {
          "type": "object"
       },
@@ -20,7 +20,7 @@
    {
       "keyword": "required",
       "dataPath": "/authors/1",
-      "schemaPath": "#/items/required",
+      "schemaPath": "#/definitions/authors/items/required",
       "params": {
          "missingProperty": "name"
       },
@@ -29,7 +29,7 @@
    {
       "keyword": "type",
       "dataPath": "/bugs",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/bugs/type",
       "params": {
          "type": "string"
       },
@@ -38,7 +38,7 @@
    {
       "keyword": "type",
       "dataPath": "/changelog",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/changelog/type",
       "params": {
          "type": "string"
       },
@@ -47,7 +47,7 @@
    {
       "keyword": "type",
       "dataPath": "/compatibleCoreVersion",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/compatibleCoreVersion/type",
       "params": {
          "type": "string"
       },
@@ -56,7 +56,7 @@
    {
       "keyword": "type",
       "dataPath": "/dependencies/0",
-      "schemaPath": "#/items/type",
+      "schemaPath": "#/definitions/dependencies/items/type",
       "params": {
          "type": "object"
       },
@@ -65,7 +65,7 @@
    {
       "keyword": "required",
       "dataPath": "/dependencies/1",
-      "schemaPath": "#/items/required",
+      "schemaPath": "#/definitions/dependencies/items/required",
       "params": {
          "missingProperty": "name"
       },
@@ -74,7 +74,7 @@
    {
       "keyword": "type",
       "dataPath": "/description",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/description/type",
       "params": {
          "type": "string"
       },
@@ -83,7 +83,7 @@
    {
       "keyword": "type",
       "dataPath": "/download",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/download/type",
       "params": {
          "type": "string"
       },
@@ -92,7 +92,7 @@
    {
       "keyword": "type",
       "dataPath": "/esmodules",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/esmodules/type",
       "params": {
          "type": "array"
       },
@@ -101,7 +101,7 @@
    {
       "keyword": "type",
       "dataPath": "/languages/0",
-      "schemaPath": "#/items/type",
+      "schemaPath": "#/definitions/languages/items/type",
       "params": {
          "type": "object"
       },
@@ -110,7 +110,7 @@
    {
       "keyword": "required",
       "dataPath": "/languages/1",
-      "schemaPath": "#/items/required",
+      "schemaPath": "#/definitions/languages/items/required",
       "params": {
          "missingProperty": "lang"
       },
@@ -119,7 +119,7 @@
    {
       "keyword": "type",
       "dataPath": "/license",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/license/type",
       "params": {
          "type": "string"
       },
@@ -128,7 +128,7 @@
    {
       "keyword": "type",
       "dataPath": "/minimumCoreVersion",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/minimumCoreVersion/type",
       "params": {
          "type": "string"
       },
@@ -137,7 +137,7 @@
    {
       "keyword": "type",
       "dataPath": "/name",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/name/type",
       "params": {
          "type": "string"
       },
@@ -146,7 +146,7 @@
    {
       "keyword": "type",
       "dataPath": "/readme",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/readme/type",
       "params": {
          "type": "string"
       },
@@ -155,7 +155,7 @@
    {
       "keyword": "type",
       "dataPath": "/scripts",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/scripts/type",
       "params": {
          "type": "array"
       },
@@ -164,7 +164,7 @@
    {
       "keyword": "type",
       "dataPath": "/socket",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/socket/type",
       "params": {
          "type": "boolean"
       },
@@ -173,7 +173,7 @@
    {
       "keyword": "type",
       "dataPath": "/styles",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/styles/type",
       "params": {
          "type": "array"
       },
@@ -182,7 +182,7 @@
    {
       "keyword": "type",
       "dataPath": "/title",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/title/type",
       "params": {
          "type": "string"
       },
@@ -191,7 +191,7 @@
    {
       "keyword": "type",
       "dataPath": "/url",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/url/type",
       "params": {
          "type": "string"
       },
@@ -200,13 +200,13 @@
    {
       "keyword": "errorMessage",
       "dataPath": "/version",
-      "schemaPath": "#/errorMessage",
+      "schemaPath": "#/definitions/version/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "type",
                "dataPath": "/version",
-               "schemaPath": "#/oneOf/0/type",
+               "schemaPath": "#/definitions/version/oneOf/0/type",
                "params": {
                   "type": "string"
                },
@@ -216,7 +216,7 @@
             {
                "keyword": "type",
                "dataPath": "/version",
-               "schemaPath": "#/oneOf/1/type",
+               "schemaPath": "#/definitions/version/oneOf/1/type",
                "params": {
                   "type": "number"
                },
@@ -226,7 +226,7 @@
             {
                "keyword": "oneOf",
                "dataPath": "/version",
-               "schemaPath": "#/oneOf",
+               "schemaPath": "#/definitions/version/oneOf",
                "params": {
                   "passingSchemas": null
                },
@@ -240,7 +240,7 @@
    {
       "keyword": "type",
       "dataPath": "/manifest",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/manifest/type",
       "params": {
          "type": "string"
       },
@@ -249,13 +249,13 @@
    {
       "keyword": "errorMessage",
       "dataPath": "/system",
-      "schemaPath": "#/errorMessage",
+      "schemaPath": "#/definitions/system/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "type",
                "dataPath": "/system",
-               "schemaPath": "#/oneOf/0/type",
+               "schemaPath": "#/definitions/system/oneOf/0/type",
                "params": {
                   "type": "string"
                },
@@ -265,7 +265,7 @@
             {
                "keyword": "type",
                "dataPath": "/system",
-               "schemaPath": "#/oneOf/1/type",
+               "schemaPath": "#/definitions/system/oneOf/1/type",
                "params": {
                   "type": "array"
                },
@@ -275,7 +275,7 @@
             {
                "keyword": "oneOf",
                "dataPath": "/system",
-               "schemaPath": "#/oneOf",
+               "schemaPath": "#/definitions/system/oneOf",
                "params": {
                   "passingSchemas": null
                },

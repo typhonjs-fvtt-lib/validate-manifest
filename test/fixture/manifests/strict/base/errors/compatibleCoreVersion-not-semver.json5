@@ -2,13 +2,13 @@
    {
       "keyword": "errorMessage",
       "dataPath": "/compatibleCoreVersion",
-      "schemaPath": "#/errorMessage",
+      "schemaPath": "#/definitions/compatibleCoreVersion/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
                "dataPath": "/compatibleCoreVersion",
-               "schemaPath": "#/pattern",
+               "schemaPath": "#/definitions/compatibleCoreVersion/pattern",
                "params": {
                   "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
                },

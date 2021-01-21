@@ -2,13 +2,13 @@
    {
       "keyword": "errorMessage",
       "dataPath": "/system",
-      "schemaPath": "#/oneOf/0/errorMessage",
+      "schemaPath": "#/definitions/system/oneOf/0/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
                "dataPath": "/system",
-               "schemaPath": "#/oneOf/0/pattern",
+               "schemaPath": "#/definitions/system/oneOf/0/pattern",
                "params": {
                   "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$"
                },
@@ -22,13 +22,13 @@
    {
       "keyword": "errorMessage",
       "dataPath": "/system",
-      "schemaPath": "#/errorMessage",
+      "schemaPath": "#/definitions/system/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "type",
                "dataPath": "/system",
-               "schemaPath": "#/oneOf/1/type",
+               "schemaPath": "#/definitions/system/oneOf/1/type",
                "params": {
                   "type": "array"
                },
@@ -38,7 +38,7 @@
             {
                "keyword": "oneOf",
                "dataPath": "/system",
-               "schemaPath": "#/oneOf",
+               "schemaPath": "#/definitions/system/oneOf",
                "params": {
                   "passingSchemas": null
                },

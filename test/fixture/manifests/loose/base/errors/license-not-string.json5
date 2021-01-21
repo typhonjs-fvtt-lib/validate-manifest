@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/license",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/license/type",
       "params": {
          "type": "string"
       },

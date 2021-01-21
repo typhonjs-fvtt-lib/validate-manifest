@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/changelog",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/changelog/type",
       "params": {
          "type": "string"
       },

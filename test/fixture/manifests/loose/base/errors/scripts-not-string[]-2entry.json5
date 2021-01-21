@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/scripts/0",
-      "schemaPath": "#/items/type",
+      "schemaPath": "#/definitions/scripts/items/type",
       "params": {
          "type": "string"
       },
@@ -11,7 +11,7 @@
    {
       "keyword": "type",
       "dataPath": "/scripts/1",
-      "schemaPath": "#/items/type",
+      "schemaPath": "#/definitions/scripts/items/type",
       "params": {
          "type": "string"
       },

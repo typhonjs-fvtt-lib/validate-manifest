@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/secondaryTokenAttribute",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/secondaryTokenAttribute/type",
       "params": {
          "type": [
             "null",

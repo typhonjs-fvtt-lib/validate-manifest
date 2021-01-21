@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/styles",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/styles/type",
       "params": {
          "type": "array"
       },

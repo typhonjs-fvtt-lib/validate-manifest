@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/scripts",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/scripts/type",
       "params": {
          "type": "array"
       },

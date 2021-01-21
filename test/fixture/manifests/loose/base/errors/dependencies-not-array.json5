@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/dependencies",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/dependencies/type",
       "params": {
          "type": "array"
       },

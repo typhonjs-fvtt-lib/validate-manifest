@@ -2,7 +2,7 @@
    {
       "keyword": "required",
       "dataPath": "/dependencies/0",
-      "schemaPath": "#/items/required",
+      "schemaPath": "#/definitions/dependencies/items/required",
       "params": {
          "missingProperty": "name"
       },

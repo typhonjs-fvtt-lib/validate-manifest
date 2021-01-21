@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/dependencies/0/manifest",
-      "schemaPath": "#/items/properties/manifest/type",
+      "schemaPath": "#/definitions/dependencies/items/properties/manifest/type",
       "params": {
          "type": "string"
       },

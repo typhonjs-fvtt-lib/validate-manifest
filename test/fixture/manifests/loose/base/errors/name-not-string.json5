@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/name",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/name/type",
       "params": {
          "type": "string"
       },

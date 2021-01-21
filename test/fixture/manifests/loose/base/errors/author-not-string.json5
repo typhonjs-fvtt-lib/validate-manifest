@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/author",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/author/type",
       "params": {
          "type": "string"
       },

@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/readme",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/readme/type",
       "params": {
          "type": "string"
       },

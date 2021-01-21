@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/authors/0/email",
-      "schemaPath": "#/items/properties/email/type",
+      "schemaPath": "#/definitions/authors/items/properties/email/type",
       "params": {
          "type": "string"
       },

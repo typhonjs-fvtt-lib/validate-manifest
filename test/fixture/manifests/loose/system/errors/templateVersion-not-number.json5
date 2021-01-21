@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/templateVersion",
-      "schemaPath": "#/type",
+      "schemaPath": "#/definitions/templateVersion/type",
       "params": {
          "type": "integer"
       },

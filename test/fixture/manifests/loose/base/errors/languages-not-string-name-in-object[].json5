@@ -2,7 +2,7 @@
    {
       "keyword": "type",
       "dataPath": "/languages/0/name",
-      "schemaPath": "#/items/properties/name/type",
+      "schemaPath": "#/definitions/languages/items/properties/name/type",
       "params": {
          "type": "string"
       },
