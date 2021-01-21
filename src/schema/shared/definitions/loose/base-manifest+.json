@@ -140,6 +140,127 @@
       ],
       "title": "A string value",
       "type": "string"
+    },
+    "media": {
+      "items": {
+        "$ref": "#/definitions/media-item-loose"
+      },
+      "title": "An array of items",
+      "type": "array"
+    },
+    "media-item-loose": {
+      "type": "object",
+      "required": [
+        "type",
+        "url"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "cover",
+            "icon",
+            "screenshot",
+            "video"
+          ]
+        },
+        "url": {
+          "type": "string"
+        },
+        "loop": {
+          "type": "boolean"
+        },
+        "thumbnail": {
+          "type": "string"
+        }
+      }
+    },
+    "media-item-strict": {
+      "type": "object",
+      "required": [
+        "type",
+        "url"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "cover",
+            "icon",
+            "screenshot",
+            "video"
+          ]
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "video"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "cover",
+                  "icon",
+                  "screenshot",
+                  "video"
+                ]
+              },
+              "loop": {
+                "type": "boolean"
+              },
+              "thumbnail": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "oneOf": [
+                  {
+                    "const": "cover"
+                  },
+                  {
+                    "const": "icon"
+                  },
+                  {
+                    "const": "screenshot"
+                  }
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "cover",
+                  "icon",
+                  "screenshot",
+                  "video"
+                ]
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      ]
     }
   }
 }

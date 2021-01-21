@@ -1,3 +1,11 @@
 {
-  "$id": "shared/definitions/loose/base-manifest+.json"
+  "$id": "shared/definitions/loose/base-manifest+.json",
+
+  "definitions": {
+    "media": {
+      "items": {
+        "$ref": "#/definitions/media-item-loose"
+      }
+    }
+  }
 }

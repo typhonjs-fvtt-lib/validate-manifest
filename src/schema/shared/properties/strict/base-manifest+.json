@@ -18,6 +18,9 @@
     },
     "manifestPlusVersion": {
       "$ref": "../../definitions/strict/base-manifest+.json#/definitions/manifestPlusVersion"
+    },
+    "media": {
+      "$ref": "../../definitions/strict/base-manifest+.json#/definitions/media"
     }
   }
 }

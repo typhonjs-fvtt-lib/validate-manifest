@@ -39,6 +39,39 @@
     },
     "manifestPlusVersion": {
       "$$include": { "target": "pattern-semver", "data": { "name": "manifestPlusVersion" } }
+    },
+    "media": {
+      "items": {
+        "$ref": "#/definitions/media-item-strict"
+      }
+    },
+    "media-item-strict": {
+      "allOf": [
+        {
+          "then": {
+            "properties": {
+              "url": {
+                // video pattern include here
+                "$$include": { "target": "pattern-url", "data": { "name": "url" } }
+              }
+            }
+          }
+        },
+        {
+          "then": {
+            "properties": {
+              "thumbnail": {
+                // image pattern include here
+                "$$include": { "target": "pattern-url-image", "data": { "name": "thumbnail" } }
+              },
+              "url": {
+                // image pattern include here
+                "$$include": { "target": "pattern-url-image", "data": { "name": "url" } }
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }
