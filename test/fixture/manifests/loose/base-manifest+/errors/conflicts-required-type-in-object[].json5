@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "required",
+      "dataPath": "/conflicts/0",
+      "schemaPath": "#/definitions/conflicts/items/required",
+      "params": {
+         "missingProperty": "type"
+      },
+      "message": "should have required property 'type'"
+   }
+]

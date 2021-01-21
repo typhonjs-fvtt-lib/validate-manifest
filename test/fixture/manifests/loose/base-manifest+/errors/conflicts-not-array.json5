@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/conflicts",
+      "schemaPath": "#/definitions/conflicts/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   }
+]

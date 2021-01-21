@@ -1,0 +1,36 @@
+[
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/conflicts/0/type",
+      "schemaPath": "#/definitions/conflicts/items/properties/type/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "type",
+               "dataPath": "/conflicts/0/type",
+               "schemaPath": "#/definitions/conflicts/items/properties/type/type",
+               "params": {
+                  "type": "string"
+               },
+               "message": "should be string",
+               "emUsed": true
+            },
+            {
+               "keyword": "enum",
+               "dataPath": "/conflicts/0/type",
+               "schemaPath": "#/definitions/conflicts/items/properties/type/enum",
+               "params": {
+                  "allowedValues": [
+                     "module",
+                     "system",
+                     "world"
+                  ]
+               },
+               "message": "should be equal to one of the allowed values",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "'type' should be one of the following strings: 'module', 'system', or 'world'"
+   }
+]
