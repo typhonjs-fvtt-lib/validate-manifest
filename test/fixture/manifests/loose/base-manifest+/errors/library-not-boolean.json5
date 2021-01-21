@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/library",
+      "schemaPath": "#/definitions/library/type",
+      "params": {
+         "type": "boolean"
+      },
+      "message": "should be boolean"
+   }
+]
