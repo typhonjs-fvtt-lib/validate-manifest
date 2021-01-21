@@ -129,6 +129,20 @@
       },
       "title": "An object",
       "type": "object"
+    },
+    "includes": {
+      "items": {
+        "examples": [
+          "relative/path/to/files/script.js",
+          "relative/path/to/templates/template.html",
+          "path/to/image/assets/folder"
+        ],
+        "title": "A string value",
+        "type": "string"
+      },
+      "title": "An array of items",
+      "type": "array",
+      "uniqueItems": true
     }
   }
 }

@@ -9,6 +9,9 @@
     },
     "deprecated": {
       "$ref": "../../definitions/strict/base-manifest+.json#/definitions/deprecated"
+    },
+    "includes": {
+      "$ref": "../../definitions/strict/base-manifest+.json#/definitions/includes"
     }
   }
 }

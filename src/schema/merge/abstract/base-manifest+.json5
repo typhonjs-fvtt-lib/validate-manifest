@@ -101,20 +101,29 @@
       },
       "title": "An object",
       "type": "object"
+    },
+    "includes": {
+      "items": {
+        "examples": [
+          "relative/path/to/files/script.js",
+          "relative/path/to/templates/template.html",
+          "path/to/image/assets/folder"
+        ],
+        "title": "A string value",
+        "type": "string"
+      },
+      "title": "An array of items",
+      "type": "array"
     }
-
-
 
 /*
-"deprecated": {
-  "coreVersion": "0.7.0",                              - optional / strict semantic version
-  "reason": "This was added to foundry core.",         - strict required
-  "alternatives": [
-    {
-      "name": "module_name",                           - loose required / strict package-name-loose
-      "manifest": "https://link.com/to/manifest.json"  - loose required / strict pattern-url-manifest
-    }
-  ]
+strict -> "uniqueItems": true
+
+"includes": [
+	"relative/path/to/files/script.js",
+	"relative/path/to/templates/template.html",
+	"path/to/image/assets/folder"
+]
 }*/
   }
 }

@@ -33,6 +33,9 @@
           "$$include": { "target": "pattern-semver", "data": { "name": "coreVersion" } }
         }
       }
+    },
+    "includes": {
+      "uniqueItems": true
     }
   }
 }
