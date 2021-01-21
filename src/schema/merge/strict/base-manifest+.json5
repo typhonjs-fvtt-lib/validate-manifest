@@ -36,6 +36,9 @@
     },
     "includes": {
       "uniqueItems": true
+    },
+    "manifestPlusVersion": {
+      "$$include": { "target": "pattern-semver", "data": { "name": "manifestPlusVersion" } }
     }
   }
 }

@@ -133,6 +133,13 @@
       ],
       "title": "A boolean value",
       "type": "boolean"
+    },
+    "manifestPlusVersion": {
+      "examples": [
+        "1.0.0"
+      ],
+      "title": "A string value",
+      "type": "string"
     }
   }
 }
