@@ -52,6 +52,69 @@
 
       "title": "An array of items",
       "type": "array"
+    },
+    "deprecated": {
+      "properties": {
+        "alternatives": {
+          "items": {
+            "properties": {
+              "name": {
+                "examples": [
+                  "dice-so-nice"
+                ],
+                "title": "A string value",
+                "type": "string"
+              },
+              "manifest": {
+                "examples": [
+                  "https://link.com/to/manifest.json"
+                ],
+                "title": "A string value",
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "manifest"
+            ],
+            "title": "An object value",
+            "type": "object"
+          },
+
+          "title": "An array of items",
+          "type": "array"
+        },
+        "coreVersion": {
+          "examples": [
+            "0.7.5"
+          ],
+          "title": "A string value",
+          "type": "string"
+        },
+        "reason": {
+          "examples": [
+            "This was added to foundry core."
+          ],
+          "title": "A string value",
+          "type": "string"
+        }
+      },
+      "title": "An object",
+      "type": "object"
     }
+
+
+
+/*
+"deprecated": {
+  "coreVersion": "0.7.0",                              - optional / strict semantic version
+  "reason": "This was added to foundry core.",         - strict required
+  "alternatives": [
+    {
+      "name": "module_name",                           - loose required / strict package-name-loose
+      "manifest": "https://link.com/to/manifest.json"  - loose required / strict pattern-url-manifest
+    }
+  ]
+}*/
   }
 }

@@ -11,6 +11,28 @@
           }
         }
       }
+    },
+    "deprecated": {
+      "properties": {
+        "alternatives": {
+          "items": {
+            "properties": {
+              "name": {
+                // Replace with pattern-package-name-loose include
+                "$$include": { "target": "pattern-package-name-loose", "data": { "name": "name" } }
+              },
+              "manifest": {
+                // Replace with pattern-url-manifest include
+                "$$include": { "target": "pattern-url-manifest", "data": { "name": "manifest" } }
+              }
+            }
+          }
+        },
+        "coreVersion": {
+          // Replace with pattern-semver include
+          "$$include": { "target": "pattern-semver", "data": { "name": "coreVersion" } }
+        }
+      }
     }
   }
 }

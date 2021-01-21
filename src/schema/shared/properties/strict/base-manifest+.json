@@ -6,6 +6,9 @@
   "properties": {
     "conflicts": {
       "$ref": "../../definitions/strict/base-manifest+.json#/definitions/conflicts"
+    },
+    "deprecated": {
+      "$ref": "../../definitions/strict/base-manifest+.json#/definitions/deprecated"
     }
   }
 }

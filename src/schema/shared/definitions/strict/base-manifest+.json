@@ -69,6 +69,66 @@
       },
       "title": "An array of items",
       "type": "array"
+    },
+    "deprecated": {
+      "properties": {
+        "alternatives": {
+          "items": {
+            "properties": {
+              "name": {
+                "examples": [
+                  "dice-so-nice"
+                ],
+                "title": "A string value",
+                "type": "string",
+                "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+                "errorMessage": {
+                  "pattern": "'name' should be a string that is alpha-numeric with only underscore and hyphen separators"
+                }
+              },
+              "manifest": {
+                "examples": [
+                  "https://link.com/to/manifest.json"
+                ],
+                "title": "A string value",
+                "type": "string",
+                "pattern": "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(module|system).json$",
+                "errorMessage": {
+                  "pattern": "'manifest' should be an URL string ending in 'module.json' or 'system.json'"
+                }
+              }
+            },
+            "required": [
+              "name",
+              "manifest"
+            ],
+            "title": "An object value",
+            "type": "object"
+          },
+          "title": "An array of items",
+          "type": "array"
+        },
+        "coreVersion": {
+          "examples": [
+            "0.7.5"
+          ],
+          "title": "A string value",
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+          "errorMessage": {
+            "pattern": "'coreVersion' should be a string that uses semantic versioning"
+          }
+        },
+        "reason": {
+          "examples": [
+            "This was added to foundry core."
+          ],
+          "title": "A string value",
+          "type": "string"
+        }
+      },
+      "title": "An object",
+      "type": "object"
     }
   }
 }
