@@ -3,19 +3,19 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "manifest": {
-      // Replace with url-pattern-module-json include
-      "$$include": { "target": "url-pattern-module-json", "data": { "name": "manifest" } }
+      // Replace with pattern-url-module-json include
+      "$$include": { "target": "pattern-url-module-json", "data": { "name": "manifest" } }
     },
     "system": {
       "oneOf": [
         {
-          // Replace with package-name-loose include
-          "$$include": { "target": "package-name-loose", "data": { "name": "system" } }
+          // Replace with pattern-package-name-loose include
+          "$$include": { "target": "pattern-package-name-loose", "data": { "name": "system" } }
         },
         {
           "items": {
-            // Replace with package-name-loose include
-            "$$include": { "target": "package-name-loose", "data": { "name": "system" } }
+            // Replace with pattern-package-name-loose include
+            "$$include": { "target": "pattern-package-name-loose", "data": { "name": "system" } }
           }
         }
       ]

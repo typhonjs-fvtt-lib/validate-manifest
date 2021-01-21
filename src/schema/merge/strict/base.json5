@@ -3,20 +3,20 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "bugs": {
-      // Replace with url-pattern include
-      "$$include": { "target": "url-pattern", "data": { "name": "bugs" } }
+      // Replace with pattern-url include
+      "$$include": { "target": "pattern-url", "data": { "name": "bugs" } }
     },
     "changelog": {
-      // Replace with url-pattern include
-      "$$include": { "target": "url-pattern", "data": { "name": "changelog" } }
+      // Replace with pattern-url include
+      "$$include": { "target": "pattern-url", "data": { "name": "changelog" } }
     },
     "compatibleCoreVersion": {
-      // Replace with semver include
-      "$$include": { "target": "semver", "data": { "name": "compatibleCoreVersion" } }
+      // Replace with pattern-semver include
+      "$$include": { "target": "pattern-semver", "data": { "name": "compatibleCoreVersion" } }
     },
     "download": {
-      // Replace with url-pattern-zip include
-      "$$include": { "target": "url-pattern-zip", "data": { "name": "download" } }
+      // Replace with pattern-url-zip include
+      "$$include": { "target": "pattern-url-zip", "data": { "name": "download" } }
     },
     "esmodules": {
       "items": {
@@ -35,12 +35,12 @@
       }
     },
     "minimumCoreVersion": {
-      // Replace with semver include
-      "$$include": { "target": "semver", "data": { "name": "minimumCoreVersion" } }
+      // Replace with pattern-semver include
+      "$$include": { "target": "pattern-semver", "data": { "name": "minimumCoreVersion" } }
     },
     "name": {
-      // Replace with package-name include
-      "$$include": { "target": "package-name", "data": { "name": "name" } }
+      // Replace with pattern-package-name include
+      "$$include": { "target": "pattern-package-name", "data": { "name": "name" } }
     },
     "scripts": {
       "items": {
@@ -55,13 +55,13 @@
       }
     },
     "url": {
-      // Replace with url-pattern include
-      "$$include": { "target": "url-pattern", "data": { "name": "url" } }
+      // Replace with pattern-url include
+      "$$include": { "target": "pattern-url", "data": { "name": "url" } }
     },
     "version": {
       "type": "string",
-      // Replace with semver include
-      "$$include": { "target": "semver", "data": { "name": "version" } }
+      // Replace with pattern-semver include
+      "$$include": { "target": "pattern-semver", "data": { "name": "version" } }
     }
   }
 }
