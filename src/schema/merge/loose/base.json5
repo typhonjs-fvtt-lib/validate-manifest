@@ -3,9 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "version": {
-      "errorMessage": {
-        "_": "'version' should be a string or number"
-      },
+      "errorMessage": "'version' should be a string or number",
       "oneOf": [{ "type": "string" }, { "type": "number" }]
     }
   }
