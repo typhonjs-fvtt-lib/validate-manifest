@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/deprecated/coreVersion",
+      "schemaPath": "#/definitions/deprecated/properties/coreVersion/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]

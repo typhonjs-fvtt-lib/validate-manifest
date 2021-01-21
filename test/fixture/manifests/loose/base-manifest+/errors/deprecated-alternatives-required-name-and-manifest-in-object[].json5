@@ -1,0 +1,20 @@
+[
+   {
+      "keyword": "required",
+      "dataPath": "/deprecated/alternatives/0",
+      "schemaPath": "#/definitions/deprecated/properties/alternatives/items/required",
+      "params": {
+         "missingProperty": "name"
+      },
+      "message": "should have required property 'name'"
+   },
+   {
+      "keyword": "required",
+      "dataPath": "/deprecated/alternatives/0",
+      "schemaPath": "#/definitions/deprecated/properties/alternatives/items/required",
+      "params": {
+         "missingProperty": "manifest"
+      },
+      "message": "should have required property 'manifest'"
+   }
+]

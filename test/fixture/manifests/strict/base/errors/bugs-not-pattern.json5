@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "'bugs' should be a string and / or appears to be a malformed url"
+      "message": "'bugs' should be an URL string"
    }
 ]

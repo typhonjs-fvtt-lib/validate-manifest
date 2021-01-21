@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/deprecated/alternatives",
+      "schemaPath": "#/definitions/deprecated/properties/alternatives/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   }
+]

@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/deprecated/alternatives/0/manifest",
+      "schemaPath": "#/definitions/deprecated/properties/alternatives/items/properties/manifest/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]

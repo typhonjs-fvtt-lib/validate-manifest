@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/deprecated",
+      "schemaPath": "#/definitions/deprecated/type",
+      "params": {
+         "type": "object"
+      },
+      "message": "should be object"
+   }
+]

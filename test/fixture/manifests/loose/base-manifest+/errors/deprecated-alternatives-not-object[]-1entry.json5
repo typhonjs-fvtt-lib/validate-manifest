@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/deprecated/alternatives/0",
+      "schemaPath": "#/definitions/deprecated/properties/alternatives/items/type",
+      "params": {
+         "type": "object"
+      },
+      "message": "should be object"
+   }
+]
