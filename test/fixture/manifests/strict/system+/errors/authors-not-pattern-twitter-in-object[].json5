@@ -1,0 +1,22 @@
+[
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/authors/0/twitter",
+      "schemaPath": "#/definitions/properties-author+/properties/twitter/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/authors/0/twitter",
+               "schemaPath": "#/definitions/properties-author+/properties/twitter/pattern",
+               "params": {
+                  "pattern": "^@[A-Za-z0-9_]{1,15}$"
+               },
+               "message": "should match pattern \"^@[A-Za-z0-9_]{1,15}$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "'twitter' should be a string that is a valid twitter user name"
+   }
+]

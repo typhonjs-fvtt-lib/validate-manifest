@@ -5,5 +5,5 @@
   "author": "typhonrt",
   "version": "1.0.0",
   "minimumCoreVersion": "0.7.5",
-  "authors": [{ "email": "valid@email.com" }]
+  "authors": [{ "name": "typhonrt", "reddit": "u/not@reddit" }]
 }
