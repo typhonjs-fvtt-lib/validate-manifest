@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/manifestPlusVersion",
+      "schemaPath": "#/definitions/manifestPlusVersion/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]
