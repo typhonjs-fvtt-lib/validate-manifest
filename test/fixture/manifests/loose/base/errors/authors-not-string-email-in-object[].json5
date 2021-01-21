@@ -7,14 +7,5 @@
          "type": "string"
       },
       "message": "should be string"
-   },
-   {
-      "keyword": "type",
-      "dataPath": "/authors/0/name",
-      "schemaPath": "#/items/properties/name/type",
-      "params": {
-         "type": "string"
-      },
-      "message": "should be string"
    }
 ]
