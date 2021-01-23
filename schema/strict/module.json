@@ -304,6 +304,112 @@
                   "pattern": "'manifest' should be an URL string ending in 'module.json'"
                }
             },
+            "packs": {
+               "title": "An array of items",
+               "items": {
+                  "required": [
+                     "module",
+                     "name",
+                     "label",
+                     "path",
+                     "entity"
+                  ],
+                  "properties": {
+                     "module": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "module-name"
+                        ],
+                        "type": "string",
+                        "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+                        "errorMessage": {
+                           "pattern": "'module' should be a string that is alpha-numeric with only underscore and hyphen separators"
+                        }
+                     },
+                     "system": {
+                        "examples": [
+                           "dnd5e"
+                        ],
+                        "oneOf": [
+                           {
+                              "title": "A string value",
+                              "type": "string",
+                              "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+                              "errorMessage": {
+                                 "pattern": "'system' should be a string that is alpha-numeric with only underscore and hyphen separators"
+                              }
+                           },
+                           {
+                              "items": {
+                                 "title": "A string value",
+                                 "type": "string",
+                                 "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+                                 "errorMessage": {
+                                    "pattern": "'system' should be a string that is alpha-numeric with only underscore and hyphen separators"
+                                 }
+                              },
+                              "title": "An array of items",
+                              "type": "array"
+                           }
+                        ],
+                        "errorMessage": "'system' should be a string or array of strings"
+                     },
+                     "name": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "pack-name"
+                        ],
+                        "type": "string",
+                        "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
+                        "errorMessage": {
+                           "pattern": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
+                        }
+                     },
+                     "label": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "Pack Title"
+                        ],
+                        "type": "string"
+                     },
+                     "path": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "./packs/pack-name.db"
+                        ],
+                        "type": "string",
+                        "pattern": "^(.+).db$"
+                     },
+                     "entity": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "Item"
+                        ],
+                        "enum": [
+                           "Actor",
+                           "ChatMessage",
+                           "Combat",
+                           "Item",
+                           "Folder",
+                           "JournalEntry",
+                           "Macro",
+                           "Playlist",
+                           "RollTable",
+                           "Scene",
+                           "User"
+                        ]
+                     }
+                  },
+                  "title": "An object value",
+                  "type": "object"
+               },
+               "type": "array"
+            },
             "system": {
                "examples": [
                   "dnd5e"

@@ -213,16 +213,10 @@
                      "if": {
                         "properties": {
                            "type": {
-                              "oneOf": [
-                                 {
-                                    "const": "cover"
-                                 },
-                                 {
-                                    "const": "icon"
-                                 },
-                                 {
-                                    "const": "screenshot"
-                                 }
+                              "enum": [
+                                 "cover",
+                                 "icon",
+                                 "screenshot"
                               ]
                            }
                         }
@@ -597,6 +591,84 @@
                "errorMessage": {
                   "pattern": "'manifest' should be an URL string ending in 'system.json'"
                }
+            },
+            "packs": {
+               "title": "An array of items",
+               "items": {
+                  "required": [
+                     "system",
+                     "name",
+                     "label",
+                     "path",
+                     "entity"
+                  ],
+                  "properties": {
+                     "system": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "system-name"
+                        ],
+                        "type": "string",
+                        "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+                        "errorMessage": {
+                           "pattern": "'system' should be a string that is alpha-numeric with only underscore and hyphen separators"
+                        }
+                     },
+                     "name": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "pack-name"
+                        ],
+                        "type": "string",
+                        "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
+                        "errorMessage": {
+                           "pattern": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
+                        }
+                     },
+                     "label": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "Pack Title"
+                        ],
+                        "type": "string"
+                     },
+                     "path": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "./packs/pack-name.db"
+                        ],
+                        "type": "string",
+                        "pattern": "^(.+).db$"
+                     },
+                     "entity": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "Item"
+                        ],
+                        "enum": [
+                           "Actor",
+                           "ChatMessage",
+                           "Combat",
+                           "Item",
+                           "Folder",
+                           "JournalEntry",
+                           "Macro",
+                           "Playlist",
+                           "RollTable",
+                           "Scene",
+                           "User"
+                        ]
+                     }
+                  },
+                  "title": "An object value",
+                  "type": "object"
+               },
+               "type": "array"
             },
             "primaryTokenAttribute": {
                "default": "",
