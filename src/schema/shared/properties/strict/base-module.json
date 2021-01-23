@@ -13,7 +13,7 @@
       "$ref": "../../definitions/strict/module.json#/definitions/manifest"
     },
     "packs": {
-      "$ref": "../../definitions/strict/system.json#/definitions/packs"
+      "$ref": "../../definitions/strict/module.json#/definitions/packs"
     },
     "system": {
       "$ref": "../../definitions/strict/module.json#/definitions/system"

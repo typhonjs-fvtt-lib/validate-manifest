@@ -7,25 +7,25 @@
       "$$include": { "target": "pattern-url-system-json", "data": { "name": "manifest" } }
     },
     "packs": {
-      "title": "An array of items",
       "items": {
-        "title": "An object value",
-        "required": [
-          "name",
-          "label",
-          "path",
-          "entity"
-        ],
         "properties": {
+          "entity": {
+            "enum": [
+              "Actor", "ChatMessage", "Combat", "Item", "Folder", "JournalEntry", "Macro", "Playlist", "RollTable",
+              "Scene", "User"
+            ]
+          },
+          "name": {
+            // Replace with pattern-package-name-loose include
+            "$$include": { "target": "pattern-package-name", "data": { "name": "name" } }
+          },
           "path": {
             // Replace with pattern-file-db include
             "$$include": { "target": "pattern-file-db", "data": { "name": "path" } }
           },
-          "entity": {
-            "enum": [
-              "Actor", "ChatMessage", "Combat", "Item", "Folder", "JournalEntry", "Macro", "Playlist", "RollTable",
-               "Scene", "User"
-            ]
+          "system": {
+            // Replace with pattern-package-name-loose include
+            "$$include": { "target": "pattern-package-name-loose", "data": { "name": "system" } }
           }
         }
       }

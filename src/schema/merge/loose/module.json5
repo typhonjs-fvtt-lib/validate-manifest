@@ -1,3 +1,15 @@
 {
-  "$id": "shared/definitions/loose/module.json"
+  "$id": "shared/definitions/loose/module.json",
+
+  "definitions": {
+    "packs": {
+      "items": {
+        "properties": {
+          "entity": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
 }

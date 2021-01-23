@@ -42,8 +42,7 @@
             "default": "",
             "examples": [
               "Item"
-            ],
-            "type": "string"
+            ]
           }
         },
         "type": "object"

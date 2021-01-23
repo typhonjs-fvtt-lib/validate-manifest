@@ -49,7 +49,24 @@
             "type": "string"
           },
           "system": {
-            "$ref": "#/definitions/system"
+            "examples": [
+              "dnd5e"
+            ],
+            "oneOf": [
+              {
+                "title": "A string value",
+                "type": "string"
+              },
+              {
+                "items": {
+                  "title": "A string value",
+                  "type": "string"
+                },
+                "title": "An array of items",
+                "type": "array"
+              }
+            ],
+            "errorMessage": "'system' should be a string or array of strings"
           },
           "name": {
             "title": "A string value",

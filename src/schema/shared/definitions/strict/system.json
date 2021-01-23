@@ -85,7 +85,11 @@
             "examples": [
               "system-name"
             ],
-            "type": "string"
+            "type": "string",
+            "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+            "errorMessage": {
+              "pattern": "'system' should be a string that is alpha-numeric with only underscore and hyphen separators"
+            }
           },
           "name": {
             "title": "A string value",
@@ -93,7 +97,11 @@
             "examples": [
               "pack-name"
             ],
-            "type": "string"
+            "type": "string",
+            "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
+            "errorMessage": {
+              "pattern": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
+            }
           },
           "label": {
             "title": "A string value",
@@ -118,7 +126,6 @@
             "examples": [
               "Item"
             ],
-            "type": "string",
             "enum": [
               "Actor",
               "ChatMessage",

@@ -19,6 +19,44 @@
           }
         }
       ]
+    },
+    "packs": {
+      "items": {
+        "properties": {
+          "entity": {
+            "enum": [
+              "Actor", "ChatMessage", "Combat", "Item", "Folder", "JournalEntry", "Macro", "Playlist", "RollTable",
+              "Scene", "User"
+            ]
+          },
+          "module": {
+            // Replace with pattern-package-name-loose include
+            "$$include": { "target": "pattern-package-name-loose", "data": { "name": "module" } }
+          },
+          "name": {
+            // Replace with pattern-package-name-loose include
+            "$$include": { "target": "pattern-package-name", "data": { "name": "name" } }
+          },
+          "path": {
+            // Replace with pattern-file-db include
+            "$$include": { "target": "pattern-file-db", "data": { "name": "path" } }
+          },
+          "system": {
+            "oneOf": [
+              {
+                // Replace with pattern-package-name-loose include
+                "$$include": { "target": "pattern-package-name-loose", "data": { "name": "system" } }
+              },
+              {
+                "items": {
+                  // Replace with pattern-package-name-loose include
+                  "$$include": { "target": "pattern-package-name-loose", "data": { "name": "system" } }
+                }
+              }
+            ]
+          }
+        }
+      }
     }
   }
 }
