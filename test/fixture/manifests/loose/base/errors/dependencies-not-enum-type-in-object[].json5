@@ -1,26 +1,15 @@
 [
    {
-      "keyword": "errorMessage",
+      "keyword": "enum",
       "dataPath": "/dependencies/0/type",
-      "schemaPath": "#/definitions/dependencies/items/properties/type/errorMessage",
+      "schemaPath": "#/definitions/dependencies/items/properties/type/enum",
       "params": {
-         "errors": [
-            {
-               "keyword": "enum",
-               "dataPath": "/dependencies/0/type",
-               "schemaPath": "#/definitions/dependencies/items/properties/type/enum",
-               "params": {
-                  "allowedValues": [
-                     "module",
-                     "system",
-                     "world"
-                  ]
-               },
-               "message": "should be equal to one of the allowed values",
-               "emUsed": true
-            }
+         "allowedValues": [
+            "module",
+            "system",
+            "world"
          ]
       },
-      "message": "'type' should be one of the following strings: 'module', 'system', or 'world'"
+      "message": "should be equal to one of the allowed values"
    }
 ]

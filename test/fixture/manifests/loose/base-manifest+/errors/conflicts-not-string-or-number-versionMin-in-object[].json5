@@ -37,6 +37,6 @@
             }
          ]
       },
-      "message": "'versionMin' should be a string or number"
+      "message": "should be a string or number"
    }
 ]

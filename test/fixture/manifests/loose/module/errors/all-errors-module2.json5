@@ -217,7 +217,7 @@
             }
          ]
       },
-      "message": "'version' should be a string or number"
+      "message": "should be a string or number"
    },
    {
       "keyword": "type",
@@ -346,7 +346,7 @@
             }
          ]
       },
-      "message": "'system' should be a string or array of strings"
+      "message": "should be a string or array of strings"
    },
    {
       "keyword": "type",
@@ -449,7 +449,7 @@
             }
          ]
       },
-      "message": "'system' should be a string or array of strings"
+      "message": "should be a string or array of strings"
    },
    {
       "keyword": "type",

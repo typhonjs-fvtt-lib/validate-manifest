@@ -217,7 +217,7 @@
             }
          ]
       },
-      "message": "'version' should be a string or number"
+      "message": "should be a string or number"
    },
    {
       "keyword": "type",

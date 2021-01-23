@@ -37,6 +37,6 @@
             }
          ]
       },
-      "message": "'system' should be a string or array of strings"
+      "message": "should be a string or array of strings"
    }
 ]

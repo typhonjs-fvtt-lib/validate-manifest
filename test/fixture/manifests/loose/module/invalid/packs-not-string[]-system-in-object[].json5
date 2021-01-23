@@ -1,3 +1,4 @@
+// Note: this test case generates two errors even though `errorMessage` is used.
 {
   "name": "a-module",
   "title": "A Module",
