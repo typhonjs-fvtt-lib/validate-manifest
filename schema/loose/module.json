@@ -82,12 +82,10 @@
                                  "system",
                                  "world"
                               ],
-                              "errorMessage": "'type' should be one of the following strings: 'module', 'system', or 'world'",
                               "examples": [
                                  "module"
                               ],
-                              "title": "A string value",
-                              "type": "string"
+                              "title": "A string value"
                            }
                         },
                         "required": [
@@ -251,7 +249,7 @@
                         "1.0.0"
                      ],
                      "title": "A string value",
-                     "errorMessage": "'version' should be a string or number",
+                     "errorMessage": "should be a string or number",
                      "oneOf": [
                         {
                            "type": "string"
@@ -309,7 +307,7 @@
                               "type": "array"
                            }
                         ],
-                        "errorMessage": "'system' should be a string or array of strings"
+                        "errorMessage": "should be a string or array of strings"
                      },
                      "name": {
                         "title": "A string value",
@@ -367,7 +365,7 @@
                      "type": "array"
                   }
                ],
-               "errorMessage": "'system' should be a string or array of strings"
+               "errorMessage": "should be a string or array of strings"
             }
          }
       }

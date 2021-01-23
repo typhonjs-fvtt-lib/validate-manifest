@@ -41,7 +41,7 @@
                      "type": "string",
                      "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
                      "errorMessage": {
-                        "pattern": "'bugs' should be an URL string"
+                        "pattern": "should be an URL string"
                      }
                   },
                   "changelog": {
@@ -53,7 +53,7 @@
                      "type": "string",
                      "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
                      "errorMessage": {
-                        "pattern": "'changelog' should be an URL string"
+                        "pattern": "should be an URL string"
                      }
                   },
                   "compatibleCoreVersion": {
@@ -65,7 +65,7 @@
                      "type": "string",
                      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
                      "errorMessage": {
-                        "pattern": "'compatibleCoreVersion' should be a string that uses semantic versioning"
+                        "pattern": "should be a string that uses semantic versioning"
                      }
                   },
                   "dependencies": {
@@ -94,12 +94,10 @@
                                  "system",
                                  "world"
                               ],
-                              "errorMessage": "'type' should be one of the following strings: 'module', 'system', or 'world'",
                               "examples": [
                                  "module"
                               ],
-                              "title": "A string value",
-                              "type": "string"
+                              "title": "A string value"
                            }
                         },
                         "required": [
@@ -128,7 +126,7 @@
                      "type": "string",
                      "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(.+).zip$",
                      "errorMessage": {
-                        "pattern": "'download' should be an URL string ending in '.zip'"
+                        "pattern": "should be an URL string ending in '.zip'"
                      }
                   },
                   "esmodules": {
@@ -200,7 +198,7 @@
                      "type": "string",
                      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
                      "errorMessage": {
-                        "pattern": "'minimumCoreVersion' should be a string that uses semantic versioning"
+                        "pattern": "should be a string that uses semantic versioning"
                      }
                   },
                   "name": {
@@ -212,7 +210,7 @@
                      "type": "string",
                      "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
                      "errorMessage": {
-                        "pattern": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
+                        "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
                      }
                   },
                   "readme": {
@@ -274,7 +272,7 @@
                      "type": "string",
                      "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
                      "errorMessage": {
-                        "pattern": "'url' should be an URL string"
+                        "pattern": "should be an URL string"
                      }
                   },
                   "version": {
@@ -286,7 +284,7 @@
                      "type": "string",
                      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
                      "errorMessage": {
-                        "pattern": "'version' should be a string that uses semantic versioning"
+                        "pattern": "should be a string that uses semantic versioning"
                      }
                   }
                }
@@ -301,7 +299,7 @@
                "type": "string",
                "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/module.json$",
                "errorMessage": {
-                  "pattern": "'manifest' should be an URL string ending in 'module.json'"
+                  "pattern": "should be an URL string ending in 'module.json'"
                }
             },
             "packs": {
@@ -324,7 +322,7 @@
                         "type": "string",
                         "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
                         "errorMessage": {
-                           "pattern": "'module' should be a string that is alpha-numeric with only underscore and hyphen separators"
+                           "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
                         }
                      },
                      "system": {
@@ -337,7 +335,7 @@
                               "type": "string",
                               "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
                               "errorMessage": {
-                                 "pattern": "'system' should be a string that is alpha-numeric with only underscore and hyphen separators"
+                                 "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
                               }
                            },
                            {
@@ -346,14 +344,14 @@
                                  "type": "string",
                                  "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
                                  "errorMessage": {
-                                    "pattern": "'system' should be a string that is alpha-numeric with only underscore and hyphen separators"
+                                    "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
                                  }
                               },
                               "title": "An array of items",
                               "type": "array"
                            }
                         ],
-                        "errorMessage": "'system' should be a string or array of strings"
+                        "errorMessage": "should be a string or array of strings"
                      },
                      "name": {
                         "title": "A string value",
@@ -364,7 +362,7 @@
                         "type": "string",
                         "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
                         "errorMessage": {
-                           "pattern": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
+                           "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
                         }
                      },
                      "label": {
@@ -420,7 +418,7 @@
                      "type": "string",
                      "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
                      "errorMessage": {
-                        "pattern": "'system' should be a string that is alpha-numeric with only underscore and hyphen separators"
+                        "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
                      }
                   },
                   {
@@ -429,14 +427,14 @@
                         "type": "string",
                         "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
                         "errorMessage": {
-                           "pattern": "'system' should be a string that is alpha-numeric with only underscore and hyphen separators"
+                           "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
                         }
                      },
                      "title": "An array of items",
                      "type": "array"
                   }
                ],
-               "errorMessage": "'system' should be a string or array of strings"
+               "errorMessage": "should be a string or array of strings"
             }
          }
       }
@@ -456,7 +454,7 @@
                   "type": "string",
                   "pattern": "^(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$",
                   "errorMessage": {
-                     "pattern": "'email' should be a string that is a valid email address"
+                     "pattern": "should be a string that is a valid email address"
                   }
                },
                "name": {
@@ -476,7 +474,7 @@
                   "type": "string",
                   "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
                   "errorMessage": {
-                     "pattern": "'url' should be an URL string"
+                     "pattern": "should be an URL string"
                   }
                }
             },
