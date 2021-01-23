@@ -27,7 +27,7 @@
           "type": "array"
         }
       ],
-      "errorMessage": "'system' should be a string or array of strings"
+      "errorMessage": "should be a string or array of strings"
     },
     "packs": {
       "title": "An array of items",
@@ -62,7 +62,7 @@
                 "type": "array"
               }
             ],
-            "errorMessage": "'system' should be a string or array of strings"
+            "errorMessage": "should be a string or array of strings"
           }
         }
       }

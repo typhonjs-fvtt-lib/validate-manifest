@@ -72,12 +72,10 @@
               "system",
               "world"
             ],
-            "errorMessage": "'type' should be one of the following strings: 'module', 'system', or 'world'",
             "examples": [
               "module"
             ],
-            "title": "A string value",
-            "type": "string"
+            "title": "A string value"
           }
         },
         "required": [

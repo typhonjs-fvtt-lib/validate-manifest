@@ -18,15 +18,13 @@
               "system",
               "world"
             ],
-            "errorMessage": "'type' should be one of the following strings: 'module', 'system', or 'world'",
             "examples": [
               "module"
             ],
-            "title": "A string value",
-            "type": "string"
+            "title": "A string value"
           },
           "versionMax": {
-            "errorMessage": "'versionMax' should be a string or number",
+            "errorMessage": "should be a string or number",
             "examples": [
               "1.0.0"
             ],
@@ -41,7 +39,7 @@
             "title": "A string value"
           },
           "versionMin": {
-            "errorMessage": "'versionMin' should be a string or number",
+            "errorMessage": "should be a string or number",
             "examples": [
               "1.0.0"
             ],
