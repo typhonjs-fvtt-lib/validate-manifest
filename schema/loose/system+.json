@@ -5,9 +5,186 @@
    "type": "object",
    "allOf": [
       {
-         "$id": "shared/properties/loose/system.json",
+         "$id": "shared/properties/loose/base-manifest+.json",
          "$schema": "http://json-schema.org/draft-07/schema#",
-         "title": "FoundryVTT system.json (loose)",
+         "title": "FoundryVTT shared loose base for manifest+",
+         "type": "object",
+         "properties": {
+            "conflicts": {
+               "items": {
+                  "properties": {
+                     "name": {
+                        "examples": [
+                           "dice-so-nice"
+                        ],
+                        "title": "A string value",
+                        "type": "string"
+                     },
+                     "type": {
+                        "enum": [
+                           "module",
+                           "system",
+                           "world"
+                        ],
+                        "errorMessage": "'type' should be one of the following strings: 'module', 'system', or 'world'",
+                        "examples": [
+                           "module"
+                        ],
+                        "title": "A string value",
+                        "type": "string"
+                     },
+                     "versionMax": {
+                        "errorMessage": "'versionMax' should be a string or number",
+                        "examples": [
+                           "1.0.0"
+                        ],
+                        "oneOf": [
+                           {
+                              "type": "string"
+                           },
+                           {
+                              "type": "number"
+                           }
+                        ],
+                        "title": "A string value"
+                     },
+                     "versionMin": {
+                        "errorMessage": "'versionMin' should be a string or number",
+                        "examples": [
+                           "1.0.0"
+                        ],
+                        "oneOf": [
+                           {
+                              "type": "string"
+                           },
+                           {
+                              "type": "number"
+                           }
+                        ],
+                        "title": "A string value"
+                     }
+                  },
+                  "required": [
+                     "name",
+                     "type"
+                  ],
+                  "title": "An object value",
+                  "type": "object"
+               },
+               "title": "An array of items",
+               "type": "array"
+            },
+            "deprecated": {
+               "properties": {
+                  "alternatives": {
+                     "items": {
+                        "properties": {
+                           "name": {
+                              "examples": [
+                                 "dice-so-nice"
+                              ],
+                              "title": "A string value",
+                              "type": "string"
+                           },
+                           "manifest": {
+                              "examples": [
+                                 "https://link.com/to/manifest.json"
+                              ],
+                              "title": "A string value",
+                              "type": "string"
+                           }
+                        },
+                        "required": [
+                           "name",
+                           "manifest"
+                        ],
+                        "title": "An object value",
+                        "type": "object"
+                     },
+                     "title": "An array of items",
+                     "type": "array"
+                  },
+                  "coreVersion": {
+                     "examples": [
+                        "0.7.5"
+                     ],
+                     "title": "A string value",
+                     "type": "string"
+                  },
+                  "reason": {
+                     "examples": [
+                        "This was added to foundry core."
+                     ],
+                     "title": "A string value",
+                     "type": "string"
+                  }
+               },
+               "title": "An object",
+               "type": "object"
+            },
+            "includes": {
+               "items": {
+                  "examples": [
+                     "relative/path/to/files/script.js",
+                     "relative/path/to/templates/template.html",
+                     "path/to/image/assets/folder"
+                  ],
+                  "title": "A string value",
+                  "type": "string"
+               },
+               "title": "An array of items",
+               "type": "array"
+            },
+            "library": {
+               "examples": [
+                  true
+               ],
+               "title": "A boolean value",
+               "type": "boolean"
+            },
+            "manifestPlusVersion": {
+               "examples": [
+                  "1.0.0"
+               ],
+               "title": "A string value",
+               "type": "string"
+            },
+            "media": {
+               "items": {
+                  "type": "object",
+                  "required": [
+                     "type",
+                     "url"
+                  ],
+                  "properties": {
+                     "type": {
+                        "enum": [
+                           "cover",
+                           "icon",
+                           "screenshot",
+                           "video"
+                        ]
+                     },
+                     "url": {
+                        "type": "string"
+                     },
+                     "loop": {
+                        "type": "boolean"
+                     },
+                     "thumbnail": {
+                        "type": "string"
+                     }
+                  }
+               },
+               "title": "An array of items",
+               "type": "array"
+            }
+         }
+      },
+      {
+         "$id": "shared/properties/loose/base-system.json",
+         "$schema": "http://json-schema.org/draft-07/schema#",
+         "title": "FoundryVTT shared loose base for system.json",
          "type": "object",
          "allOf": [
             {
@@ -31,43 +208,6 @@
                      ],
                      "title": "A string value",
                      "type": "string"
-                  },
-                  "authors": {
-                     "items": {
-                        "properties": {
-                           "email": {
-                              "default": "",
-                              "examples": [
-                                 "admin@foundryvtt.com"
-                              ],
-                              "title": "A string value",
-                              "type": "string"
-                           },
-                           "name": {
-                              "default": "",
-                              "examples": [
-                                 "Atropos"
-                              ],
-                              "title": "A string value",
-                              "type": "string"
-                           },
-                           "url": {
-                              "default": "",
-                              "examples": [
-                                 "https://foundryvtt.com"
-                              ],
-                              "title": "A string value",
-                              "type": "string"
-                           }
-                        },
-                        "required": [
-                           "name"
-                        ],
-                        "title": "An object value",
-                        "type": "object"
-                     },
-                     "title": "An array of items",
-                     "type": "array"
                   },
                   "bugs": {
                      "default": "",
@@ -288,9 +428,7 @@
                         "1.0.0"
                      ],
                      "title": "A string value",
-                     "errorMessage": {
-                        "_": "'version' should be a string or number"
-                     },
+                     "errorMessage": "'version' should be a string or number",
                      "oneOf": [
                         {
                            "type": "string"
@@ -369,5 +507,83 @@
          }
       }
    ],
-   "properties": {}
+   "properties": {
+      "authors": {
+         "items": {
+            "allOf": [
+               {
+                  "properties": {
+                     "email": {
+                        "default": "",
+                        "examples": [
+                           "admin@foundryvtt.com"
+                        ],
+                        "title": "A string value",
+                        "type": "string"
+                     },
+                     "name": {
+                        "default": "",
+                        "examples": [
+                           "Atropos"
+                        ],
+                        "title": "A string value",
+                        "type": "string"
+                     },
+                     "url": {
+                        "default": "",
+                        "examples": [
+                           "https://foundryvtt.com"
+                        ],
+                        "title": "A string value",
+                        "type": "string"
+                     }
+                  },
+                  "required": [
+                     "name"
+                  ]
+               },
+               {
+                  "properties": {
+                     "discord": {
+                        "default": "",
+                        "examples": [
+                           "discordID#0001"
+                        ],
+                        "title": "A string value",
+                        "type": "string"
+                     },
+                     "patreon": {
+                        "default": "",
+                        "examples": [
+                           "patreonName"
+                        ],
+                        "title": "A string value",
+                        "type": "string"
+                     },
+                     "reddit": {
+                        "default": "",
+                        "examples": [
+                           "u/RedditUsername"
+                        ],
+                        "title": "A string value",
+                        "type": "string"
+                     },
+                     "twitter": {
+                        "default": "",
+                        "examples": [
+                           "@TwitterHandle"
+                        ],
+                        "title": "A string value",
+                        "type": "string"
+                     }
+                  }
+               }
+            ],
+            "type": "object",
+            "title": "An object value"
+         },
+         "title": "An array of items",
+         "type": "array"
+      }
+   }
 }
