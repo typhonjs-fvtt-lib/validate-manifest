@@ -159,44 +159,42 @@
     },
     "media-item-strict": {
       "type": "object",
-      "required": ["type", "url"],
 
-      "properties": {
-        "type": { "enum": ["cover", "icon", "screenshot", "video"] },
-        "url": { "type": "string" }
+      "if": {
+        "properties": { "type": { "const": "video" } }
       },
-      "allOf": [
-        {
-          "if": {
-            "properties": { "type": { "const": "video" } }
-          },
-          "then": {
-            "properties": {
-              "type": { "enum": ["cover", "icon", "screenshot", "video"] },
-              "loop": { "type": "boolean" },
-              "thumbnail": { "type": "string" },
-              "url": {
-                "type": "string"
-              }
-            },
-            "additionalProperties": false
-          }
+      "then": {
+        "properties": {
+          "type": { "type": "string" },
+          "loop": { "type": "boolean" },
+          "thumbnail": { "type": "string" },
+          "url": { "type": "string" }
         },
-        {
-          "if": {
-            "properties": { "type": { "oneOf": [{ "const": "cover" }, { "const": "icon" }, { "const": "screenshot" }] } }
+        "required": ["type", "url"],
+        "additionalProperties": false
+      },
+      "else": {
+
+        "if": {
+          "properties": { "type": { "oneOf": [{ "const": "cover" }, { "const": "icon" }, { "const": "screenshot" }] } }
+        },
+        "then": {
+          "properties": {
+            "type": { "enum": ["cover", "icon", "screenshot", "video"] },
+            "url": {
+              "type": "string"
+            }
           },
-          "then": {
-            "properties": {
-              "type": { "enum": ["cover", "icon", "screenshot", "video"] },
-              "url": {
-                "type": "string"
-              }
-            },
-            "additionalProperties": false
-          }
+          "required": ["type", "url"],
+          "additionalProperties": false
+        },
+        "else": {
+          "properties": {
+            "type": { "enum": ["cover", "icon", "screenshot", "video"] }
+          },
+          "required": ["type"]
         }
-      ]
+      }
     }
   }
 }

@@ -46,32 +46,28 @@
       }
     },
     "media-item-strict": {
-      "allOf": [
-        {
-          "then": {
-            "properties": {
-              "url": {
-                // video pattern include here
-                "$$include": { "target": "pattern-url", "data": { "name": "url" } }
-              }
-            }
+      "then": {
+        "properties": {
+          "thumbnail": {
+            // image pattern include here
+            "$$include": { "target": "pattern-url-image", "data": { "name": "url" } }
+          },
+          "url": {
+            // video pattern include here
+            "$$include": { "target": "pattern-url", "data": { "name": "url" } }
           }
-        },
-        {
-          "then": {
-            "properties": {
-              "thumbnail": {
-                // image pattern include here
-                "$$include": { "target": "pattern-url-image", "data": { "name": "thumbnail" } }
-              },
-              "url": {
-                // image pattern include here
-                "$$include": { "target": "pattern-url-image", "data": { "name": "url" } }
-              }
+        }
+      },
+      "else": {
+        "then": {
+          "properties": {
+            "url": {
+              // image pattern include here
+              "$$include": { "target": "pattern-url-image", "data": { "name": "url" } }
             }
           }
         }
-      ]
+      }
     }
   }
 }
