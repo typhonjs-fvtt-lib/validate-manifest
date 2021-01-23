@@ -181,17 +181,13 @@
         "then": {
           "properties": {
             "type": { "enum": ["cover", "icon", "screenshot", "video"] },
-            "url": {
-              "type": "string"
-            }
+            "url": { "type": "string" }
           },
           "required": ["type", "url"],
           "additionalProperties": false
         },
         "else": {
-          "properties": {
-            "type": { "enum": ["cover", "icon", "screenshot", "video"] }
-          },
+          "properties": { "type": { "enum": ["cover", "icon", "screenshot", "video"] } },
           "required": ["type"]
         }
       }
