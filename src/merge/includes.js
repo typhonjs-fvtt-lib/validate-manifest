@@ -1,28 +1,4 @@
 module.exports = {
-  'file-css': () =>
-  {
-    return {
-      pattern: '^(.+).css$'
-    };
-  },
-  'file-db': () =>
-  {
-    return {
-      pattern: '^(.+).db$'
-    };
-  },
-  'file-js': () =>
-  {
-    return {
-      pattern: '^(.+).js$'
-    };
-  },
-  'file-json': () =>
-  {
-    return {
-      pattern: '^(.+).json$'
-    };
-  },
   'pattern-discord': (data) =>   // https://ihateregex.io/expr/discord-username/
   {
     return {
@@ -30,6 +6,30 @@ module.exports = {
       errorMessage: {
         pattern: `'${data.name}' should be a string that is a valid Discord user name`
       }
+    };
+  },
+  'pattern-file-css': () =>
+  {
+    return {
+      pattern: '^(.+).css$'
+    };
+  },
+  'pattern-file-db': () =>
+  {
+    return {
+      pattern: '^(.+).db$'
+    };
+  },
+  'pattern-file-js': () =>
+  {
+    return {
+      pattern: '^(.+).js$'
+    };
+  },
+  'pattern-file-json': () =>
+  {
+    return {
+      pattern: '^(.+).json$'
     };
   },
   'pattern-email': (data) =>   // https://www.codespot.org/javascript-email-validation/
