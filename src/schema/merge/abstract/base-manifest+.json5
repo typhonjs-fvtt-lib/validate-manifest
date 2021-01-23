@@ -176,7 +176,7 @@
       "else": {
 
         "if": {
-          "properties": { "type": { "oneOf": [{ "const": "cover" }, { "const": "icon" }, { "const": "screenshot" }] } }
+          "properties": { "type": { "enum": ["cover", "icon", "screenshot"] } }
         },
         "then": {
           "properties": {
