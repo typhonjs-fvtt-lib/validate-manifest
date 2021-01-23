@@ -20,16 +20,16 @@
     },
     "esmodules": {
       "items": {
-        // Replace with file-js include
-        "$$include": { "target": "file-js" }
+        // Replace with pattern-file-js include
+        "$$include": { "target": "pattern-file-js", "data": { "name": "esmodules" } }
       }
     },
     "languages": {
       "items": {
         "properties": {
           "path": {
-            // Replace with file-json include
-            "$$include": { "target": "file-json" }
+            // Replace with pattern-file-json include
+            "$$include": { "target": "pattern-file-json", "data": { "name": "path" }}
           }
         }
       }
@@ -44,14 +44,14 @@
     },
     "scripts": {
       "items": {
-        // Replace with file-js include
-        "$$include": { "target": "file-js" }
+        // Replace with pattern-file-js include
+        "$$include": { "target": "pattern-file-js", "data": { "name": "scripts" } }
       }
     },
     "styles": {
       "items": {
-        // Replace with file-css include
-        "$$include": { "target": "file-css" }
+        // Replace with pattern-file-css include
+        "$$include": { "target": "pattern-file-css", "data": { "name": "styles" } }
       }
     },
     "url": {
