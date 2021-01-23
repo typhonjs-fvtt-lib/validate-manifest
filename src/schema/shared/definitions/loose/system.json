@@ -63,6 +63,63 @@
       ],
       "title": "An integer value",
       "type": "integer"
+    },
+    "packs": {
+      "title": "An array of items",
+      "items": {
+        "required": [
+          "system",
+          "name",
+          "label",
+          "path",
+          "entity"
+        ],
+        "properties": {
+          "system": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "system-name"
+            ],
+            "type": "string"
+          },
+          "name": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "pack-name"
+            ],
+            "type": "string"
+          },
+          "label": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "Pack Title"
+            ],
+            "type": "string"
+          },
+          "path": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "./packs/pack-name.db"
+            ],
+            "type": "string"
+          },
+          "entity": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "Item"
+            ],
+            "type": "string"
+          }
+        },
+        "title": "An object value",
+        "type": "object"
+      },
+      "type": "array"
     }
   }
 }

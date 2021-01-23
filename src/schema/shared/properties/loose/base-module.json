@@ -12,6 +12,9 @@
     "manifest": {
       "$ref": "../../definitions/loose/module.json#/definitions/manifest"
     },
+    "packs": {
+      "$ref": "../../definitions/loose/module.json#/definitions/packs"
+    },
     "system": {
       "$ref": "../../definitions/loose/module.json#/definitions/system"
     }

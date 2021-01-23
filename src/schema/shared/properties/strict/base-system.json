@@ -21,6 +21,9 @@
     "manifest": {
       "$ref": "../../definitions/strict/system.json#/definitions/manifest"
     },
+    "packs": {
+      "$ref": "../../definitions/strict/system.json#/definitions/packs"
+    },
     "primaryTokenAttribute": {
       "$ref": "../../definitions/strict/system.json#/definitions/primaryTokenAttribute"
     },

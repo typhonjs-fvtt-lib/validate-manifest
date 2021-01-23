@@ -63,6 +63,24 @@
       ],
       "title": "An integer value",
       "type": "integer"
+    },
+    "packs": {
+      "title": "An array of items",
+      "items": {
+        "required": [
+          "system"
+        ],
+        "properties": {
+          "system": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "system-name"
+            ],
+            "type": "string"
+          }
+        }
+      }
     }
   }
 }

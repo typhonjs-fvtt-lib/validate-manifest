@@ -1,56 +1,18 @@
 {
-  "$id": "shared/definitions/loose/module.json",
+  "$id": "shared/definitions/abstract/base-packs.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "manifest": {
-      "examples": [
-        "https://someaddress.com/module.json"
-      ],
-      "title": "A string value",
-      "type": "string"
-    },
-    "system": {
-      "examples": [
-        "dnd5e"
-      ],
-      "oneOf": [
-        {
-          "title": "A string value",
-          "type": "string"
-        },
-        {
-          "items": {
-            "title": "A string value",
-            "type": "string"
-          },
-          "title": "An array of items",
-          "type": "array"
-        }
-      ],
-      "errorMessage": "'system' should be a string or array of strings"
-    },
     "packs": {
       "title": "An array of items",
       "items": {
+        "title": "An object value",
         "required": [
-          "module",
           "name",
           "label",
           "path",
           "entity"
         ],
         "properties": {
-          "module": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "module-name"
-            ],
-            "type": "string"
-          },
-          "system": {
-            "$ref": "#/definitions/system"
-          },
           "name": {
             "title": "A string value",
             "default": "",
@@ -84,7 +46,6 @@
             "type": "string"
           }
         },
-        "title": "An object value",
         "type": "object"
       },
       "type": "array"

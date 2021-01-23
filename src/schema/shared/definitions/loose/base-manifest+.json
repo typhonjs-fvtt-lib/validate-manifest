@@ -208,16 +208,10 @@
         "if": {
           "properties": {
             "type": {
-              "oneOf": [
-                {
-                  "const": "cover"
-                },
-                {
-                  "const": "icon"
-                },
-                {
-                  "const": "screenshot"
-                }
+              "enum": [
+                "cover",
+                "icon",
+                "screenshot"
               ]
             }
           }

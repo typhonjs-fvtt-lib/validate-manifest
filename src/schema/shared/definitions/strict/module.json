@@ -40,6 +40,66 @@
         }
       ],
       "errorMessage": "'system' should be a string or array of strings"
+    },
+    "packs": {
+      "title": "An array of items",
+      "items": {
+        "required": [
+          "module",
+          "name",
+          "label",
+          "path",
+          "entity"
+        ],
+        "properties": {
+          "module": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "module-name"
+            ],
+            "type": "string"
+          },
+          "system": {
+            "$ref": "#/definitions/system"
+          },
+          "name": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "pack-name"
+            ],
+            "type": "string"
+          },
+          "label": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "Pack Title"
+            ],
+            "type": "string"
+          },
+          "path": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "./packs/pack-name.db"
+            ],
+            "type": "string"
+          },
+          "entity": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "Item"
+            ],
+            "type": "string"
+          }
+        },
+        "title": "An object value",
+        "type": "object"
+      },
+      "type": "array"
     }
   }
 }
