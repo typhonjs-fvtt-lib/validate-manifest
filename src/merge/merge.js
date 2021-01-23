@@ -38,8 +38,27 @@ function process(base, merge)
    const mergePath = `./src/schema/merge/${merge}.json5`;
    const destPath = `./src/schema/shared/definitions/${merge}.json`;
 
-   const baseData = JSON.parse(stripJsonComments(fs.readFileSync(basePath, 'utf8')));
-   const mergeData = JSON.parse(stripJsonComments(fs.readFileSync(mergePath, 'utf8')));
+   let baseData, mergeData;
+
+   try
+   {
+      baseData = JSON.parse(stripJsonComments(fs.readFileSync(basePath, 'utf8')));
+   }
+   catch (err)
+   {
+      console.error(`Merge - error in JSON file: ${basePath}`);
+      throw err;
+   }
+
+   try
+   {
+      mergeData = JSON.parse(stripJsonComments(fs.readFileSync(mergePath, 'utf8')));
+   }
+   catch (err)
+   {
+      console.error(`Merge - error in JSON file: ${basePath}`);
+      throw err;
+   }
 
    const merged = deepmerge(baseData, mergeData, { arrayMerge: combineMerge });
 
