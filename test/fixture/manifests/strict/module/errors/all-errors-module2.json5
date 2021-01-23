@@ -209,6 +209,241 @@
       "message": "should be string"
    },
    {
+      "keyword": "type",
+      "dataPath": "/packs/0",
+      "schemaPath": "#/definitions/packs/items/type",
+      "params": {
+         "type": "object"
+      },
+      "message": "should be object"
+   },
+   {
+      "keyword": "required",
+      "dataPath": "/packs/1",
+      "schemaPath": "#/definitions/packs/items/required",
+      "params": {
+         "missingProperty": "module"
+      },
+      "message": "should have required property 'module'"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/packs/1/system",
+      "schemaPath": "#/definitions/packs/items/properties/system/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "type",
+               "dataPath": "/packs/1/system",
+               "schemaPath": "#/definitions/packs/items/properties/system/oneOf/0/type",
+               "params": {
+                  "type": "string"
+               },
+               "message": "should be string",
+               "emUsed": true
+            },
+            {
+               "keyword": "type",
+               "dataPath": "/packs/1/system",
+               "schemaPath": "#/definitions/packs/items/properties/system/oneOf/1/type",
+               "params": {
+                  "type": "array"
+               },
+               "message": "should be array",
+               "emUsed": true
+            },
+            {
+               "keyword": "oneOf",
+               "dataPath": "/packs/1/system",
+               "schemaPath": "#/definitions/packs/items/properties/system/oneOf",
+               "params": {
+                  "passingSchemas": null
+               },
+               "message": "should match exactly one schema in oneOf",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "'system' should be a string or array of strings"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/1/name",
+      "schemaPath": "#/definitions/packs/items/properties/name/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/1/label",
+      "schemaPath": "#/definitions/packs/items/properties/label/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/1/path",
+      "schemaPath": "#/definitions/packs/items/properties/path/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "enum",
+      "dataPath": "/packs/1/entity",
+      "schemaPath": "#/definitions/packs/items/properties/entity/enum",
+      "params": {
+         "allowedValues": [
+            "Actor",
+            "ChatMessage",
+            "Combat",
+            "Item",
+            "Folder",
+            "JournalEntry",
+            "Macro",
+            "Playlist",
+            "RollTable",
+            "Scene",
+            "User"
+         ]
+      },
+      "message": "should be equal to one of the allowed values"
+   },
+   {
+      "keyword": "required",
+      "dataPath": "/packs/2",
+      "schemaPath": "#/definitions/packs/items/required",
+      "params": {
+         "missingProperty": "module"
+      },
+      "message": "should have required property 'module'"
+   },
+   {
+      "keyword": "required",
+      "dataPath": "/packs/2",
+      "schemaPath": "#/definitions/packs/items/required",
+      "params": {
+         "missingProperty": "path"
+      },
+      "message": "should have required property 'path'"
+   },
+   {
+      "keyword": "required",
+      "dataPath": "/packs/2",
+      "schemaPath": "#/definitions/packs/items/required",
+      "params": {
+         "missingProperty": "entity"
+      },
+      "message": "should have required property 'entity'"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/2/system/0",
+      "schemaPath": "#/definitions/packs/items/properties/system/oneOf/1/items/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/packs/2/system",
+      "schemaPath": "#/definitions/packs/items/properties/system/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "type",
+               "dataPath": "/packs/2/system",
+               "schemaPath": "#/definitions/packs/items/properties/system/oneOf/0/type",
+               "params": {
+                  "type": "string"
+               },
+               "message": "should be string",
+               "emUsed": true
+            },
+            {
+               "keyword": "oneOf",
+               "dataPath": "/packs/2/system",
+               "schemaPath": "#/definitions/packs/items/properties/system/oneOf",
+               "params": {
+                  "passingSchemas": null
+               },
+               "message": "should match exactly one schema in oneOf",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "'system' should be a string or array of strings"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/2/name",
+      "schemaPath": "#/definitions/packs/items/properties/name/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/2/label",
+      "schemaPath": "#/definitions/packs/items/properties/label/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "required",
+      "dataPath": "/packs/3",
+      "schemaPath": "#/definitions/packs/items/required",
+      "params": {
+         "missingProperty": "name"
+      },
+      "message": "should have required property 'name'"
+   },
+   {
+      "keyword": "required",
+      "dataPath": "/packs/3",
+      "schemaPath": "#/definitions/packs/items/required",
+      "params": {
+         "missingProperty": "entity"
+      },
+      "message": "should have required property 'entity'"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/3/module",
+      "schemaPath": "#/definitions/packs/items/properties/module/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/3/label",
+      "schemaPath": "#/definitions/packs/items/properties/label/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/3/path",
+      "schemaPath": "#/definitions/packs/items/properties/path/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
       "keyword": "errorMessage",
       "dataPath": "/system",
       "schemaPath": "#/definitions/system/errorMessage",

@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/packs/0/label",
+      "schemaPath": "#/definitions/packs/items/properties/label/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]

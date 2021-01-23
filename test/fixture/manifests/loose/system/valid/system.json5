@@ -28,16 +28,16 @@
       "entity": "Item"
     },
     {
-      "name": "pack-name B",
+      "name": "pack-name-b",
       "label": "Pack Title B",
-      "system": ["system-1", "system-2"],
+      "system": "system-name",
       "path": "./packs/pack-name.db",
       "entity": "Item"
     },
     {
       "name": "myscenedatabasename",
       "label": "The Human-Readable Name for My Compendium",
-      "module": "MyModuleName",
+      "system": "system-name",
       "path": "packs/my-scenes-right-here.db",
       "entity": "Scene"
     }

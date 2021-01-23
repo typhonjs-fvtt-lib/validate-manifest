@@ -18,7 +18,7 @@
     {
       "name": false,
       "label": false,
-      "system": false,
+      "module": false,
       "path": false,
       "entity": false
     },

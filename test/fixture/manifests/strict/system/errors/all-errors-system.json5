@@ -237,6 +237,129 @@
    },
    {
       "keyword": "type",
+      "dataPath": "/packs/0",
+      "schemaPath": "#/definitions/packs/items/type",
+      "params": {
+         "type": "object"
+      },
+      "message": "should be object"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/1/system",
+      "schemaPath": "#/definitions/packs/items/properties/system/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/1/name",
+      "schemaPath": "#/definitions/packs/items/properties/name/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/1/label",
+      "schemaPath": "#/definitions/packs/items/properties/label/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/1/path",
+      "schemaPath": "#/definitions/packs/items/properties/path/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "enum",
+      "dataPath": "/packs/1/entity",
+      "schemaPath": "#/definitions/packs/items/properties/entity/enum",
+      "params": {
+         "allowedValues": [
+            "Actor",
+            "ChatMessage",
+            "Combat",
+            "Item",
+            "Folder",
+            "JournalEntry",
+            "Macro",
+            "Playlist",
+            "RollTable",
+            "Scene",
+            "User"
+         ]
+      },
+      "message": "should be equal to one of the allowed values"
+   },
+   {
+      "keyword": "required",
+      "dataPath": "/packs/2",
+      "schemaPath": "#/definitions/packs/items/required",
+      "params": {
+         "missingProperty": "name"
+      },
+      "message": "should have required property 'name'"
+   },
+   {
+      "keyword": "required",
+      "dataPath": "/packs/2",
+      "schemaPath": "#/definitions/packs/items/required",
+      "params": {
+         "missingProperty": "label"
+      },
+      "message": "should have required property 'label'"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/2/system",
+      "schemaPath": "#/definitions/packs/items/properties/system/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/2/path",
+      "schemaPath": "#/definitions/packs/items/properties/path/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "enum",
+      "dataPath": "/packs/2/entity",
+      "schemaPath": "#/definitions/packs/items/properties/entity/enum",
+      "params": {
+         "allowedValues": [
+            "Actor",
+            "ChatMessage",
+            "Combat",
+            "Item",
+            "Folder",
+            "JournalEntry",
+            "Macro",
+            "Playlist",
+            "RollTable",
+            "Scene",
+            "User"
+         ]
+      },
+      "message": "should be equal to one of the allowed values"
+   },
+   {
+      "keyword": "type",
       "dataPath": "/primaryTokenAttribute",
       "schemaPath": "#/definitions/primaryTokenAttribute/type",
       "params": {

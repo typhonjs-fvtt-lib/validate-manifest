@@ -191,6 +191,15 @@
       "message": "should be string"
    },
    {
+      "keyword": "type",
+      "dataPath": "/packs",
+      "schemaPath": "#/definitions/packs/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
       "keyword": "errorMessage",
       "dataPath": "/system",
       "schemaPath": "#/definitions/system/errorMessage",

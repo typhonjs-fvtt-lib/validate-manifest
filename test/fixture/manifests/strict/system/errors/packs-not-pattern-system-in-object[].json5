@@ -1,0 +1,22 @@
+[
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/packs/0/system",
+      "schemaPath": "#/definitions/packs/items/properties/system/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/packs/0/system",
+               "schemaPath": "#/definitions/packs/items/properties/system/pattern",
+               "params": {
+                  "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$"
+               },
+               "message": "should match pattern \"^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "'system' should be a string that is alpha-numeric with only underscore and hyphen separators"
+   }
+]

@@ -1,0 +1,17 @@
+{
+  "name": "a-module",
+  "title": "A Module",
+  "description": "Some description",
+  "author": "typhonrt",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.7.5",
+  "packs": [
+    {
+      "name": "pack-name",
+      "module": "MyModuleName",
+      "system": "system-name",
+      "path": "./packs/pack-name.db",
+      "entity": "Item"
+    }
+  ]
+}

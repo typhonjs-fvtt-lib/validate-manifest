@@ -219,6 +219,15 @@
    },
    {
       "keyword": "type",
+      "dataPath": "/packs",
+      "schemaPath": "#/definitions/packs/type",
+      "params": {
+         "type": "array"
+      },
+      "message": "should be array"
+   },
+   {
+      "keyword": "type",
       "dataPath": "/primaryTokenAttribute",
       "schemaPath": "#/definitions/primaryTokenAttribute/type",
       "params": {

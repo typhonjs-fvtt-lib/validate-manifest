@@ -1,0 +1,41 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/packs/0/system/0",
+      "schemaPath": "#/definitions/packs/items/properties/system/oneOf/1/items/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/packs/0/system",
+      "schemaPath": "#/definitions/packs/items/properties/system/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "type",
+               "dataPath": "/packs/0/system",
+               "schemaPath": "#/definitions/packs/items/properties/system/oneOf/0/type",
+               "params": {
+                  "type": "string"
+               },
+               "message": "should be string",
+               "emUsed": true
+            },
+            {
+               "keyword": "oneOf",
+               "dataPath": "/packs/0/system",
+               "schemaPath": "#/definitions/packs/items/properties/system/oneOf",
+               "params": {
+                  "passingSchemas": null
+               },
+               "message": "should match exactly one schema in oneOf",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "'system' should be a string or array of strings"
+   }
+]

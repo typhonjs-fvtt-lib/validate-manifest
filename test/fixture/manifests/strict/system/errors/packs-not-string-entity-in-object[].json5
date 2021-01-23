@@ -1,0 +1,23 @@
+[
+   {
+      "keyword": "enum",
+      "dataPath": "/packs/0/entity",
+      "schemaPath": "#/definitions/packs/items/properties/entity/enum",
+      "params": {
+         "allowedValues": [
+            "Actor",
+            "ChatMessage",
+            "Combat",
+            "Item",
+            "Folder",
+            "JournalEntry",
+            "Macro",
+            "Playlist",
+            "RollTable",
+            "Scene",
+            "User"
+         ]
+      },
+      "message": "should be equal to one of the allowed values"
+   }
+]

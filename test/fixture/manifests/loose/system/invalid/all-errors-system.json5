@@ -30,7 +30,7 @@
       "entity": false
     },
     {
-      "system": [false, "system-1", "system-2"],
+      "system": false,
       "path": false,
       "entity": false
     }

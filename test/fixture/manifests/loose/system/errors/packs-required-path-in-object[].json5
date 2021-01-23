@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "required",
+      "dataPath": "/packs/0",
+      "schemaPath": "#/definitions/packs/items/required",
+      "params": {
+         "missingProperty": "path"
+      },
+      "message": "should have required property 'path'"
+   }
+]

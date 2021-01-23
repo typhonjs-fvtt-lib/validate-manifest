@@ -16,13 +16,15 @@
     {
       "name": "pack-name",
       "label": "Pack Title",
+      "module": "MyModuleName",
       "system": "system-name",
       "path": "./packs/pack-name.db",
       "entity": "Item"
     },
     {
-      "name": "pack-name B",
+      "name": "pack-name-b",
       "label": "Pack Title B",
+      "module": "MyModuleName",
       "system": ["system-1", "system-2"],
       "path": "./packs/pack-name.db",
       "entity": "Item"

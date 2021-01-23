@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "pattern",
+      "dataPath": "/packs/0/path",
+      "schemaPath": "#/definitions/packs/items/properties/path/pattern",
+      "params": {
+         "pattern": "^(.+).db$"
+      },
+      "message": "should match pattern \"^(.+).db$\""
+   }
+]
