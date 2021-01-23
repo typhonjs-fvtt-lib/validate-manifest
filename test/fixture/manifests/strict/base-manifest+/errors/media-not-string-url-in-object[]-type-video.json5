@@ -1,8 +1,8 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/media/0/thumbnail",
-      "schemaPath": "#/definitions/media-item-strict/then/properties/thumbnail/type",
+      "dataPath": "/media/0/url",
+      "schemaPath": "#/definitions/media-item-strict/then/properties/url/type",
       "params": {
          "type": "string"
       },

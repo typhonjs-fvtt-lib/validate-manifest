@@ -4,8 +4,8 @@
       "dataPath": "/media/0",
       "schemaPath": "#/definitions/media-item-strict/then/required",
       "params": {
-         "missingProperty": "type"
+         "missingProperty": "url"
       },
-      "message": "should have required property 'type'"
+      "message": "should have required property 'url'"
    }
 ]

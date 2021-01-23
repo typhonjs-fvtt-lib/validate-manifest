@@ -7,5 +7,14 @@
          "missingProperty": "type"
       },
       "message": "should have required property 'type'"
+   },
+   {
+      "keyword": "required",
+      "dataPath": "/media/0",
+      "schemaPath": "#/definitions/media-item-strict/then/required",
+      "params": {
+         "missingProperty": "url"
+      },
+      "message": "should have required property 'url'"
    }
 ]

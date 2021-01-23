@@ -5,5 +5,5 @@
   "author": "typhonrt",
   "version": "1.0.0",
   "minimumCoreVersion": "0.7.5",
-  "media": [{ "type": "icon", "url": "http://good.com/image.png", "thumbnail": "http://bad.com/image" }]
+  "media": [{ "type": "video", "url": "http://good.com/image.png", "thumbnail": "http://bad.com/image" }]
 }

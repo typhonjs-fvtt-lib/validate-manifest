@@ -2,7 +2,7 @@
    {
       "keyword": "enum",
       "dataPath": "/media/0/type",
-      "schemaPath": "#/definitions/media-item-strict/properties/type/enum",
+      "schemaPath": "#/definitions/media-item-strict/else/else/properties/type/enum",
       "params": {
          "allowedValues": [
             "cover",
