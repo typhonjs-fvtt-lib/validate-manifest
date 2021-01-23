@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "'changelog' should be an URL string"
+      "message": "should be an URL string"
    }
 ]

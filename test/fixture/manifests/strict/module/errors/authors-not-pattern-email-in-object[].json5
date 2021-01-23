@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "'email' should be a string that is a valid email address"
+      "message": "should be a string that is a valid email address"
    }
 ]

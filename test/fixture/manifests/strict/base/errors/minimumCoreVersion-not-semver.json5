@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "'minimumCoreVersion' should be a string that uses semantic versioning"
+      "message": "should be a string that uses semantic versioning"
    }
 ]

@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "'url' should be an URL string"
+      "message": "should be an URL string"
    }
 ]

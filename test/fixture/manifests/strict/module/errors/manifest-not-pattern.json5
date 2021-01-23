@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "'manifest' should be an URL string ending in 'module.json'"
+      "message": "should be an URL string ending in 'module.json'"
    }
 ]

@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "'reddit' should be a string that is a valid Reddit user name"
+      "message": "should be a string that is a valid Reddit user name"
    }
 ]

@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "'download' should be an URL string ending in '.zip'"
+      "message": "should be an URL string ending in '.zip'"
    }
 ]

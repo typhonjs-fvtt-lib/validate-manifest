@@ -116,7 +116,7 @@
             }
          ]
       },
-      "message": "'name' should be a string that is lowercase alpha-numeric with only separating hyphens"
+      "message": "should be a string that is lowercase alpha-numeric with only separating hyphens"
    },
    {
       "keyword": "type",

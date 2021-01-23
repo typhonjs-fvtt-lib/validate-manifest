@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "'discord' should be a string that is a valid Discord user name"
+      "message": "should be a string that is a valid Discord user name"
    }
 ]

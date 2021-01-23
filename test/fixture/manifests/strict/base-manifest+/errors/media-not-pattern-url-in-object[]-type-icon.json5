@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "'url' should be a valid image URL string for <img> tags"
+      "message": "should be a valid image URL string for <img> tags"
    }
 ]

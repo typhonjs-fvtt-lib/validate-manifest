@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "'twitter' should be a string that is a valid twitter user name"
+      "message": "should be a string that is a valid twitter user name"
    }
 ]

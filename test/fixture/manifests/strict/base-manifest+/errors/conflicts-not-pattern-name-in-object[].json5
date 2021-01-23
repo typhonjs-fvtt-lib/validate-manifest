@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "'conflicts' should be a string that is alpha-numeric with only underscore and hyphen separators"
+      "message": "should be a string that is alpha-numeric with only underscore and hyphen separators"
    }
 ]
