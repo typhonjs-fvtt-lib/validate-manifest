@@ -23,6 +23,7 @@ module.exports = {
    // Run different types of tests.
    type: {
       "base": true,
+      "base-manifest+": true,
       "module": true,
       "module+": true,
       "system": true,
@@ -46,7 +47,7 @@ module.exports = {
       },
       validateModulePlus: {
          categories: ['loose', 'plus'],
-         type: ['base', 'module', 'module+'],
+         type: ['base', 'base-manifest+', 'module', 'module+'],
          isStrict: false,
          isManifestPlus: true
       },
@@ -58,7 +59,7 @@ module.exports = {
       },
       validateSystemPlus: {
          categories: ['loose', 'plus'],
-         type: ['base', 'system', 'system+'],
+         type: ['base', 'base-manifest+', 'system', 'system+'],
          isStrict: false,
          isManifestPlus: true
       },
@@ -70,7 +71,7 @@ module.exports = {
       },
       validateModulePlusStrict: {
          categories: ['loose', 'strict', 'plus'],
-         type: ['base', 'module', 'module+'],
+         type: ['base', 'base-manifest+', 'module', 'module+'],
          isStrict: true,
          isManifestPlus: true
       },
@@ -82,7 +83,7 @@ module.exports = {
       },
       validateSystemPlusStrict: {
          categories: ['loose', 'strict', 'plus'],
-         type: ['base', 'system', 'system+'],
+         type: ['base', 'base-manifest+', 'system', 'system+'],
          isStrict: true,
          isManifestPlus: true
       }

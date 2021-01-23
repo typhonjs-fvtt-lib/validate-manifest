@@ -93,7 +93,17 @@ class TestRunner
          if (isFile)
          {
             const baseName = path.basename(absPath);
-            const data = JSON.parse(stripJsonComments(fs.readFileSync(absPath, 'utf8')));
+            let data;
+
+            try
+            {
+               data = JSON.parse(stripJsonComments(fs.readFileSync(absPath, 'utf8')));
+            }
+            catch (err)
+            {
+               process.stderr.write(`Couldn't load as JSON: ${absPath}\n`);
+               throw err;
+            }
 
             results.set(baseName, {
                absPath,
