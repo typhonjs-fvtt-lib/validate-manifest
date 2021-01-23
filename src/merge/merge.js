@@ -6,48 +6,53 @@ const stripJsonComments = require('strip-json-comments');
 const includes          = require('./includes');
 
 // Authors
-process('abstract/authors', 'loose/authors');
-process('abstract/authors', 'strict/authors');
+process(['abstract/authors'], 'loose/authors');
+process(['abstract/authors'], 'strict/authors');
 
 // Base
-process('abstract/base', 'loose/base');
-process('abstract/base', 'strict/base');
+process(['abstract/base'], 'loose/base');
+process(['abstract/base'], 'strict/base');
 
 // Base Manifest+
-process('abstract/base-manifest+', 'loose/base-manifest+');
-process('abstract/base-manifest+', 'strict/base-manifest+');
+process(['abstract/base-manifest+'], 'loose/base-manifest+');
+process(['abstract/base-manifest+'], 'strict/base-manifest+');
 
 // Module
-process('abstract/module', 'loose/module');
-process('abstract/module', 'strict/module');
+process(['abstract/module', 'abstract/base-packs'], 'loose/module');
+process(['abstract/module', 'abstract/base-packs'], 'strict/module');
 
 // System
-process('abstract/system', 'loose/system');
-process('abstract/system', 'strict/system');
+process(['abstract/system', 'abstract/base-packs'], 'loose/system');
+process(['abstract/system', 'abstract/base-packs'], 'strict/system');
 
 /**
  * Processes abstract and a merge schema file and saves it in the shared schema definitions under the merge dir /
  * basename.
  *
- * @param {string}   base - The directory / basename of abstract schema.
+ * @param {string[]} base - The directory / basename of abstract schema.
  * @param {string}   merge - The directory / basename of merge schema.
  */
 function process(base, merge)
 {
-   const basePath = `./src/schema/merge/${base}.json5`;
    const mergePath = `./src/schema/merge/${merge}.json5`;
    const destPath = `./src/schema/shared/definitions/${merge}.json`;
 
-   let baseData, mergeData;
+   const baseData = [];
+   let mergeData;
 
-   try
+   for (let cntr = 0; cntr < base.length; cntr++)
    {
-      baseData = JSON.parse(stripJsonComments(fs.readFileSync(basePath, 'utf8')));
-   }
-   catch (err)
-   {
-      console.error(`Merge - error in JSON file: ${basePath}`);
-      throw err;
+      let basePath;
+      try
+      {
+         basePath = `./src/schema/merge/${base[cntr]}.json5`;
+         baseData.push(JSON.parse(stripJsonComments(fs.readFileSync(basePath, 'utf8'))));
+      }
+      catch (err)
+      {
+         console.error(`Merge - error in JSON file: ${basePath}`);
+         throw err;
+      }
    }
 
    try
@@ -56,11 +61,18 @@ function process(base, merge)
    }
    catch (err)
    {
-      console.error(`Merge - error in JSON file: ${basePath}`);
+      console.error(`Merge - error in JSON file: ${mergePath}`);
       throw err;
    }
 
-   const merged = deepmerge(baseData, mergeData, { arrayMerge: combineMerge });
+   let baseMerged = {};
+
+   for (let cntr = 0; cntr < baseData.length; cntr++)
+   {
+      baseMerged = deepmerge(baseMerged, baseData[cntr], { arrayMerge: combineMerge });
+   }
+
+   const merged = deepmerge(baseMerged, mergeData, { arrayMerge: combineMerge });
 
    processIncludes(merged);
 
