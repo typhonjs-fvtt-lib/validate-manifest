@@ -3,6 +3,17 @@ const {validateModulePlus, validateModulePlusStrict} = require('./validator-func
 const {validateSystem, validateSystemStrict} = require('./validator-functions');
 const {validateSystemPlus, validateSystemPlusStrict} = require('./validator-functions');
 
+/**
+ * Wrap all validation functions and filter any errors for `ajv` keywords that are "superfluous".
+ * The goal is to produce one error for one condition and `ajv` will output extra error conditions about the
+ * schema itself.
+ *
+ * Presently just `if` keywords are excluded.
+ *
+ * @param {function} wrappedFunction - The validator function to wrap.
+ *
+ * @returns {function(*=, *=): *}
+ */
 function wrap(wrappedFunction)
 {
    const wrapFunction = (data, options) => {
