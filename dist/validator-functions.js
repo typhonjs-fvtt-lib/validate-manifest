@@ -44,12 +44,6 @@ const schema53 = {
   items: {
     required: ["module", "name", "label", "path", "entity"],
     properties: {
-      module: {
-        title: "A string value",
-        default: "",
-        examples: ["module-name"],
-        type: "string",
-      },
       system: {
         examples: ["dnd5e"],
         oneOf: [
@@ -62,10 +56,10 @@ const schema53 = {
         ],
         errorMessage: "should be a string or array of strings",
       },
-      name: {
+      entity: {
         title: "A string value",
         default: "",
-        examples: ["pack-name"],
+        examples: ["Item"],
         type: "string",
       },
       label: {
@@ -74,16 +68,22 @@ const schema53 = {
         examples: ["Pack Title"],
         type: "string",
       },
+      module: {
+        title: "A string value",
+        default: "",
+        examples: ["module-name"],
+        type: "string",
+      },
+      name: {
+        title: "A string value",
+        default: "",
+        examples: ["pack-name"],
+        type: "string",
+      },
       path: {
         title: "A string value",
         default: "",
         examples: ["./packs/pack-name.db"],
-        type: "string",
-      },
-      entity: {
-        title: "A string value",
-        default: "",
-        examples: ["Item"],
         type: "string",
       },
     },
@@ -1299,13 +1299,18 @@ function validate26(
               }
               errors++;
             }
-            if (data2.module !== undefined) {
-              if (typeof data2.module !== "string") {
+            if (data2.system !== undefined) {
+              let data3 = data2.system;
+              const _errs7 = errors;
+              let valid6 = false;
+              let passing0 = null;
+              const _errs8 = errors;
+              if (typeof data3 !== "string") {
                 const err6 = {
                   keyword: "type",
-                  dataPath: dataPath + "/packs/" + i0 + "/module",
+                  dataPath: dataPath + "/packs/" + i0 + "/system",
                   schemaPath:
-                    "../../definitions/loose/module.json#/definitions/packs/items/properties/module/type",
+                    "../../definitions/loose/module.json#/definitions/packs/items/properties/system/oneOf/0/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -1316,40 +1321,17 @@ function validate26(
                 }
                 errors++;
               }
-            }
-            if (data2.system !== undefined) {
-              let data4 = data2.system;
-              const _errs8 = errors;
-              let valid6 = false;
-              let passing0 = null;
-              const _errs9 = errors;
-              if (typeof data4 !== "string") {
-                const err7 = {
-                  keyword: "type",
-                  dataPath: dataPath + "/packs/" + i0 + "/system",
-                  schemaPath:
-                    "../../definitions/loose/module.json#/definitions/packs/items/properties/system/oneOf/0/type",
-                  params: { type: "string" },
-                  message: "should be string",
-                };
-                if (vErrors === null) {
-                  vErrors = [err7];
-                } else {
-                  vErrors.push(err7);
-                }
-                errors++;
-              }
-              var _valid0 = _errs9 === errors;
+              var _valid0 = _errs8 === errors;
               if (_valid0) {
                 valid6 = true;
                 passing0 = 0;
               }
-              const _errs10 = errors;
-              if (Array.isArray(data4)) {
-                const len1 = data4.length;
+              const _errs9 = errors;
+              if (Array.isArray(data3)) {
+                const len1 = data3.length;
                 for (let i1 = 0; i1 < len1; i1++) {
-                  if (typeof data4[i1] !== "string") {
-                    const err8 = {
+                  if (typeof data3[i1] !== "string") {
+                    const err7 = {
                       keyword: "type",
                       dataPath: dataPath + "/packs/" + i0 + "/system/" + i1,
                       schemaPath:
@@ -1358,15 +1340,15 @@ function validate26(
                       message: "should be string",
                     };
                     if (vErrors === null) {
-                      vErrors = [err8];
+                      vErrors = [err7];
                     } else {
-                      vErrors.push(err8);
+                      vErrors.push(err7);
                     }
                     errors++;
                   }
                 }
               } else {
-                const err9 = {
+                const err8 = {
                   keyword: "type",
                   dataPath: dataPath + "/packs/" + i0 + "/system",
                   schemaPath:
@@ -1375,13 +1357,13 @@ function validate26(
                   message: "should be array",
                 };
                 if (vErrors === null) {
-                  vErrors = [err9];
+                  vErrors = [err8];
                 } else {
-                  vErrors.push(err9);
+                  vErrors.push(err8);
                 }
                 errors++;
               }
-              var _valid0 = _errs10 === errors;
+              var _valid0 = _errs9 === errors;
               if (_valid0 && valid6) {
                 valid6 = false;
                 passing0 = [passing0, 1];
@@ -1392,7 +1374,7 @@ function validate26(
                 }
               }
               if (!valid6) {
-                const err10 = {
+                const err9 = {
                   keyword: "oneOf",
                   dataPath: dataPath + "/packs/" + i0 + "/system",
                   schemaPath:
@@ -1401,16 +1383,16 @@ function validate26(
                   message: "should match exactly one schema in oneOf",
                 };
                 if (vErrors === null) {
-                  vErrors = [err10];
+                  vErrors = [err9];
                 } else {
-                  vErrors.push(err10);
+                  vErrors.push(err9);
                 }
                 errors++;
               } else {
-                errors = _errs8;
+                errors = _errs7;
                 if (vErrors !== null) {
-                  if (_errs8) {
-                    vErrors.length = _errs8;
+                  if (_errs7) {
+                    vErrors.length = _errs7;
                   } else {
                     vErrors = null;
                   }
@@ -1418,31 +1400,31 @@ function validate26(
               }
               if (errors > 0) {
                 const emErrs0 = [];
-                for (const err11 of vErrors) {
+                for (const err10 of vErrors) {
                   if (
-                    err11.keyword !== "errorMessage" &&
-                    !err11.emUsed &&
-                    (err11.dataPath === dataPath + "/packs/" + i0 + "/system" ||
-                      (err11.dataPath.indexOf(
+                    err10.keyword !== "errorMessage" &&
+                    !err10.emUsed &&
+                    (err10.dataPath === dataPath + "/packs/" + i0 + "/system" ||
+                      (err10.dataPath.indexOf(
                         dataPath + "/packs/" + i0 + "/system"
                       ) === 0 &&
-                        err11.dataPath[
+                        err10.dataPath[
                           dataPath + "/packs/" + i0 + "/system".length
                         ] === "/")) &&
-                    err11.schemaPath.indexOf(
+                    err10.schemaPath.indexOf(
                       "../../definitions/loose/module.json#/definitions/packs/items/properties/system"
                     ) === 0 &&
-                    err11.schemaPath[
+                    err10.schemaPath[
                       "../../definitions/loose/module.json#/definitions/packs/items/properties/system"
                         .length
                     ] === "/"
                   ) {
-                    emErrs0.push(err11);
-                    err11.emUsed = true;
+                    emErrs0.push(err10);
+                    err10.emUsed = true;
                   }
                 }
                 if (emErrs0.length) {
-                  const err12 = {
+                  const err11 = {
                     keyword: "errorMessage",
                     dataPath: dataPath + "/packs/" + i0 + "/system",
                     schemaPath:
@@ -1451,29 +1433,47 @@ function validate26(
                     message: "should be a string or array of strings",
                   };
                   if (vErrors === null) {
-                    vErrors = [err12];
+                    vErrors = [err11];
                   } else {
-                    vErrors.push(err12);
+                    vErrors.push(err11);
                   }
                   errors++;
                 }
                 const emErrs1 = [];
-                for (const err13 of vErrors) {
-                  if (!err13.emUsed) {
-                    emErrs1.push(err13);
+                for (const err12 of vErrors) {
+                  if (!err12.emUsed) {
+                    emErrs1.push(err12);
                   }
                 }
                 vErrors = emErrs1;
                 errors = emErrs1.length;
               }
             }
-            if (data2.name !== undefined) {
-              if (typeof data2.name !== "string") {
+            if (data2.entity !== undefined) {
+              if (typeof data2.entity !== "string") {
+                const err13 = {
+                  keyword: "type",
+                  dataPath: dataPath + "/packs/" + i0 + "/entity",
+                  schemaPath:
+                    "../../definitions/loose/module.json#/definitions/packs/items/properties/entity/type",
+                  params: { type: "string" },
+                  message: "should be string",
+                };
+                if (vErrors === null) {
+                  vErrors = [err13];
+                } else {
+                  vErrors.push(err13);
+                }
+                errors++;
+              }
+            }
+            if (data2.label !== undefined) {
+              if (typeof data2.label !== "string") {
                 const err14 = {
                   keyword: "type",
-                  dataPath: dataPath + "/packs/" + i0 + "/name",
+                  dataPath: dataPath + "/packs/" + i0 + "/label",
                   schemaPath:
-                    "../../definitions/loose/module.json#/definitions/packs/items/properties/name/type",
+                    "../../definitions/loose/module.json#/definitions/packs/items/properties/label/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -1485,13 +1485,13 @@ function validate26(
                 errors++;
               }
             }
-            if (data2.label !== undefined) {
-              if (typeof data2.label !== "string") {
+            if (data2.module !== undefined) {
+              if (typeof data2.module !== "string") {
                 const err15 = {
                   keyword: "type",
-                  dataPath: dataPath + "/packs/" + i0 + "/label",
+                  dataPath: dataPath + "/packs/" + i0 + "/module",
                   schemaPath:
-                    "../../definitions/loose/module.json#/definitions/packs/items/properties/label/type",
+                    "../../definitions/loose/module.json#/definitions/packs/items/properties/module/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -1503,13 +1503,13 @@ function validate26(
                 errors++;
               }
             }
-            if (data2.path !== undefined) {
-              if (typeof data2.path !== "string") {
+            if (data2.name !== undefined) {
+              if (typeof data2.name !== "string") {
                 const err16 = {
                   keyword: "type",
-                  dataPath: dataPath + "/packs/" + i0 + "/path",
+                  dataPath: dataPath + "/packs/" + i0 + "/name",
                   schemaPath:
-                    "../../definitions/loose/module.json#/definitions/packs/items/properties/path/type",
+                    "../../definitions/loose/module.json#/definitions/packs/items/properties/name/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -1521,13 +1521,13 @@ function validate26(
                 errors++;
               }
             }
-            if (data2.entity !== undefined) {
-              if (typeof data2.entity !== "string") {
+            if (data2.path !== undefined) {
+              if (typeof data2.path !== "string") {
                 const err17 = {
                   keyword: "type",
-                  dataPath: dataPath + "/packs/" + i0 + "/entity",
+                  dataPath: dataPath + "/packs/" + i0 + "/path",
                   schemaPath:
-                    "../../definitions/loose/module.json#/definitions/packs/items/properties/entity/type",
+                    "../../definitions/loose/module.json#/definitions/packs/items/properties/path/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -3427,10 +3427,10 @@ const schema80 = {
         examples: ["system-name"],
         type: "string",
       },
-      name: {
+      entity: {
         title: "A string value",
         default: "",
-        examples: ["pack-name"],
+        examples: ["Item"],
         type: "string",
       },
       label: {
@@ -3439,16 +3439,22 @@ const schema80 = {
         examples: ["Pack Title"],
         type: "string",
       },
+      module: {
+        title: "A string value",
+        default: "",
+        examples: ["module-name"],
+        type: "string",
+      },
+      name: {
+        title: "A string value",
+        default: "",
+        examples: ["pack-name"],
+        type: "string",
+      },
       path: {
         title: "A string value",
         default: "",
         examples: ["./packs/pack-name.db"],
-        type: "string",
-      },
-      entity: {
-        title: "A string value",
-        default: "",
-        examples: ["Item"],
         type: "string",
       },
     },
@@ -3674,13 +3680,13 @@ function validate49(
                 errors++;
               }
             }
-            if (data5.name !== undefined) {
-              if (typeof data5.name !== "string") {
+            if (data5.entity !== undefined) {
+              if (typeof data5.entity !== "string") {
                 const err10 = {
                   keyword: "type",
-                  dataPath: dataPath + "/packs/" + i0 + "/name",
+                  dataPath: dataPath + "/packs/" + i0 + "/entity",
                   schemaPath:
-                    "../../definitions/loose/system.json#/definitions/packs/items/properties/name/type",
+                    "../../definitions/loose/system.json#/definitions/packs/items/properties/entity/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -3710,13 +3716,13 @@ function validate49(
                 errors++;
               }
             }
-            if (data5.path !== undefined) {
-              if (typeof data5.path !== "string") {
+            if (data5.module !== undefined) {
+              if (typeof data5.module !== "string") {
                 const err12 = {
                   keyword: "type",
-                  dataPath: dataPath + "/packs/" + i0 + "/path",
+                  dataPath: dataPath + "/packs/" + i0 + "/module",
                   schemaPath:
-                    "../../definitions/loose/system.json#/definitions/packs/items/properties/path/type",
+                    "../../definitions/loose/system.json#/definitions/packs/items/properties/module/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -3728,13 +3734,13 @@ function validate49(
                 errors++;
               }
             }
-            if (data5.entity !== undefined) {
-              if (typeof data5.entity !== "string") {
+            if (data5.name !== undefined) {
+              if (typeof data5.name !== "string") {
                 const err13 = {
                   keyword: "type",
-                  dataPath: dataPath + "/packs/" + i0 + "/entity",
+                  dataPath: dataPath + "/packs/" + i0 + "/name",
                   schemaPath:
-                    "../../definitions/loose/system.json#/definitions/packs/items/properties/entity/type",
+                    "../../definitions/loose/system.json#/definitions/packs/items/properties/name/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -3746,8 +3752,26 @@ function validate49(
                 errors++;
               }
             }
+            if (data5.path !== undefined) {
+              if (typeof data5.path !== "string") {
+                const err14 = {
+                  keyword: "type",
+                  dataPath: dataPath + "/packs/" + i0 + "/path",
+                  schemaPath:
+                    "../../definitions/loose/system.json#/definitions/packs/items/properties/path/type",
+                  params: { type: "string" },
+                  message: "should be string",
+                };
+                if (vErrors === null) {
+                  vErrors = [err14];
+                } else {
+                  vErrors.push(err14);
+                }
+                errors++;
+              }
+            }
           } else {
-            const err14 = {
+            const err15 = {
               keyword: "type",
               dataPath: dataPath + "/packs/" + i0,
               schemaPath:
@@ -3756,40 +3780,21 @@ function validate49(
               message: "should be object",
             };
             if (vErrors === null) {
-              vErrors = [err14];
+              vErrors = [err15];
             } else {
-              vErrors.push(err14);
+              vErrors.push(err15);
             }
             errors++;
           }
         }
       } else {
-        const err15 = {
+        const err16 = {
           keyword: "type",
           dataPath: dataPath + "/packs",
           schemaPath:
             "../../definitions/loose/system.json#/definitions/packs/type",
           params: { type: "array" },
           message: "should be array",
-        };
-        if (vErrors === null) {
-          vErrors = [err15];
-        } else {
-          vErrors.push(err15);
-        }
-        errors++;
-      }
-    }
-    if (data.primaryTokenAttribute !== undefined) {
-      let data11 = data.primaryTokenAttribute;
-      if (data11 !== null && typeof data11 !== "string") {
-        const err16 = {
-          keyword: "type",
-          dataPath: dataPath + "/primaryTokenAttribute",
-          schemaPath:
-            "../../definitions/loose/system.json#/definitions/primaryTokenAttribute/type",
-          params: { type: schema81.type },
-          message: "should be null,string",
         };
         if (vErrors === null) {
           vErrors = [err16];
@@ -3799,15 +3804,15 @@ function validate49(
         errors++;
       }
     }
-    if (data.secondaryTokenAttribute !== undefined) {
-      let data12 = data.secondaryTokenAttribute;
+    if (data.primaryTokenAttribute !== undefined) {
+      let data12 = data.primaryTokenAttribute;
       if (data12 !== null && typeof data12 !== "string") {
         const err17 = {
           keyword: "type",
-          dataPath: dataPath + "/secondaryTokenAttribute",
+          dataPath: dataPath + "/primaryTokenAttribute",
           schemaPath:
-            "../../definitions/loose/system.json#/definitions/secondaryTokenAttribute/type",
-          params: { type: schema82.type },
+            "../../definitions/loose/system.json#/definitions/primaryTokenAttribute/type",
+          params: { type: schema81.type },
           message: "should be null,string",
         };
         if (vErrors === null) {
@@ -3818,23 +3823,16 @@ function validate49(
         errors++;
       }
     }
-    if (data.templateVersion !== undefined) {
-      let data13 = data.templateVersion;
-      if (
-        !(
-          typeof data13 == "number" &&
-          !(data13 % 1) &&
-          !isNaN(data13) &&
-          isFinite(data13)
-        )
-      ) {
+    if (data.secondaryTokenAttribute !== undefined) {
+      let data13 = data.secondaryTokenAttribute;
+      if (data13 !== null && typeof data13 !== "string") {
         const err18 = {
           keyword: "type",
-          dataPath: dataPath + "/templateVersion",
+          dataPath: dataPath + "/secondaryTokenAttribute",
           schemaPath:
-            "../../definitions/loose/system.json#/definitions/templateVersion/type",
-          params: { type: "integer" },
-          message: "should be integer",
+            "../../definitions/loose/system.json#/definitions/secondaryTokenAttribute/type",
+          params: { type: schema82.type },
+          message: "should be null,string",
         };
         if (vErrors === null) {
           vErrors = [err18];
@@ -3844,8 +3842,34 @@ function validate49(
         errors++;
       }
     }
+    if (data.templateVersion !== undefined) {
+      let data14 = data.templateVersion;
+      if (
+        !(
+          typeof data14 == "number" &&
+          !(data14 % 1) &&
+          !isNaN(data14) &&
+          isFinite(data14)
+        )
+      ) {
+        const err19 = {
+          keyword: "type",
+          dataPath: dataPath + "/templateVersion",
+          schemaPath:
+            "../../definitions/loose/system.json#/definitions/templateVersion/type",
+          params: { type: "integer" },
+          message: "should be integer",
+        };
+        if (vErrors === null) {
+          vErrors = [err19];
+        } else {
+          vErrors.push(err19);
+        }
+        errors++;
+      }
+    }
   } else {
-    const err19 = {
+    const err20 = {
       keyword: "type",
       dataPath,
       schemaPath: "#/type",
@@ -3853,9 +3877,9 @@ function validate49(
       message: "should be object",
     };
     if (vErrors === null) {
-      vErrors = [err19];
+      vErrors = [err20];
     } else {
-      vErrors.push(err19);
+      vErrors.push(err20);
     }
     errors++;
   }
@@ -4490,17 +4514,6 @@ const schema117 = {
   items: {
     required: ["module", "name", "label", "path", "entity"],
     properties: {
-      module: {
-        title: "A string value",
-        default: "",
-        examples: ["module-name"],
-        type: "string",
-        pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
-        errorMessage: {
-          pattern:
-            "should be a string that is alpha-numeric with only underscore and hyphen separators",
-        },
-      },
       system: {
         examples: ["dnd5e"],
         oneOf: [
@@ -4529,30 +4542,6 @@ const schema117 = {
         ],
         errorMessage: "should be a string or array of strings",
       },
-      name: {
-        title: "A string value",
-        default: "",
-        examples: ["pack-name"],
-        type: "string",
-        pattern: "^([a-z0-9]+-?)*[a-z0-9]+$",
-        errorMessage: {
-          pattern:
-            "should be a string that is lowercase alpha-numeric with only separating hyphens",
-        },
-      },
-      label: {
-        title: "A string value",
-        default: "",
-        examples: ["Pack Title"],
-        type: "string",
-      },
-      path: {
-        title: "A string value",
-        default: "",
-        examples: ["./packs/pack-name.db"],
-        type: "string",
-        pattern: "^(.+).db$",
-      },
       entity: {
         title: "A string value",
         default: "",
@@ -4570,6 +4559,41 @@ const schema117 = {
           "Scene",
           "User",
         ],
+      },
+      label: {
+        title: "A string value",
+        default: "",
+        examples: ["Pack Title"],
+        type: "string",
+      },
+      module: {
+        title: "A string value",
+        default: "",
+        examples: ["module-name"],
+        type: "string",
+        pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+        errorMessage: {
+          pattern:
+            "should be a string that is alpha-numeric with only underscore and hyphen separators",
+        },
+      },
+      name: {
+        title: "A string value",
+        default: "",
+        examples: ["pack-name"],
+        type: "string",
+        pattern: "^([a-z0-9]+-?)*[a-z0-9]+$",
+        errorMessage: {
+          pattern:
+            "should be a string that is lowercase alpha-numeric with only separating hyphens",
+        },
+      },
+      path: {
+        title: "A string value",
+        default: "",
+        examples: ["./packs/pack-name.db"],
+        type: "string",
+        pattern: "^(.+).db$",
       },
     },
     title: "An object value",
@@ -6460,15 +6484,19 @@ function validate65(
               }
               errors++;
             }
-            if (data2.module !== undefined) {
-              let data3 = data2.module;
+            if (data2.system !== undefined) {
+              let data3 = data2.system;
+              const _errs7 = errors;
+              let valid6 = false;
+              let passing0 = null;
+              const _errs8 = errors;
               if (typeof data3 === "string") {
                 if (!pattern13.test(data3)) {
                   const err10 = {
                     keyword: "pattern",
-                    dataPath: dataPath + "/packs/" + i0 + "/module",
+                    dataPath: dataPath + "/packs/" + i0 + "/system",
                     schemaPath:
-                      "../../definitions/strict/module.json#/definitions/packs/items/properties/module/pattern",
+                      "../../definitions/strict/module.json#/definitions/packs/items/properties/system/oneOf/0/pattern",
                     params: { pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" },
                     message:
                       'should match pattern "' +
@@ -6485,9 +6513,9 @@ function validate65(
               } else {
                 const err11 = {
                   keyword: "type",
-                  dataPath: dataPath + "/packs/" + i0 + "/module",
+                  dataPath: dataPath + "/packs/" + i0 + "/system",
                   schemaPath:
-                    "../../definitions/strict/module.json#/definitions/packs/items/properties/module/type",
+                    "../../definitions/strict/module.json#/definitions/packs/items/properties/system/oneOf/0/type",
                   params: { type: "string" },
                   message: "should be string",
                 };
@@ -6505,12 +6533,12 @@ function validate65(
                   if (
                     err12.keyword !== "errorMessage" &&
                     !err12.emUsed &&
-                    err12.dataPath === dataPath + "/packs/" + i0 + "/module" &&
+                    err12.dataPath === dataPath + "/packs/" + i0 + "/system" &&
                     err12.keyword in emErrors1 &&
                     err12.schemaPath.indexOf(
-                      "../../definitions/strict/module.json#/definitions/packs/items/properties/module"
+                      "../../definitions/strict/module.json#/definitions/packs/items/properties/system/oneOf/0"
                     ) === 0 &&
-                    /^\/[^\/]*$/.test(err12.schemaPath.slice(79))
+                    /^\/[^\/]*$/.test(err12.schemaPath.slice(87))
                   ) {
                     emErrors1[err12.keyword].push(err12);
                     err12.emUsed = true;
@@ -6520,16 +6548,15 @@ function validate65(
                   if (emErrors1[key1].length) {
                     const err13 = {
                       keyword: "errorMessage",
-                      dataPath: dataPath + "/packs/" + i0 + "/module",
+                      dataPath: dataPath + "/packs/" + i0 + "/system",
                       schemaPath:
-                        "../../definitions/strict/module.json#/definitions/packs/items/properties/module/errorMessage",
+                        "../../definitions/strict/module.json#/definitions/packs/items/properties/system/oneOf/0/errorMessage",
                       params: { errors: emErrors1[key1] },
                       message:
                         key1 in templates1
                           ? templates1[key1]()
-                          : schema117.items.properties.module.errorMessage[
-                              key1
-                            ],
+                          : schema117.items.properties.system.oneOf[0]
+                              .errorMessage[key1],
                     };
                     if (vErrors === null) {
                       vErrors = [err13];
@@ -6548,111 +6575,19 @@ function validate65(
                 vErrors = emErrs1;
                 errors = emErrs1.length;
               }
-            }
-            if (data2.system !== undefined) {
-              let data4 = data2.system;
-              const _errs8 = errors;
-              let valid6 = false;
-              let passing0 = null;
-              const _errs9 = errors;
-              if (typeof data4 === "string") {
-                if (!pattern13.test(data4)) {
-                  const err15 = {
-                    keyword: "pattern",
-                    dataPath: dataPath + "/packs/" + i0 + "/system",
-                    schemaPath:
-                      "../../definitions/strict/module.json#/definitions/packs/items/properties/system/oneOf/0/pattern",
-                    params: { pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" },
-                    message:
-                      'should match pattern "' +
-                      "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" +
-                      '"',
-                  };
-                  if (vErrors === null) {
-                    vErrors = [err15];
-                  } else {
-                    vErrors.push(err15);
-                  }
-                  errors++;
-                }
-              } else {
-                const err16 = {
-                  keyword: "type",
-                  dataPath: dataPath + "/packs/" + i0 + "/system",
-                  schemaPath:
-                    "../../definitions/strict/module.json#/definitions/packs/items/properties/system/oneOf/0/type",
-                  params: { type: "string" },
-                  message: "should be string",
-                };
-                if (vErrors === null) {
-                  vErrors = [err16];
-                } else {
-                  vErrors.push(err16);
-                }
-                errors++;
-              }
-              if (errors > 0) {
-                const emErrors2 = { pattern: [] };
-                const templates2 = {};
-                for (const err17 of vErrors) {
-                  if (
-                    err17.keyword !== "errorMessage" &&
-                    !err17.emUsed &&
-                    err17.dataPath === dataPath + "/packs/" + i0 + "/system" &&
-                    err17.keyword in emErrors2 &&
-                    err17.schemaPath.indexOf(
-                      "../../definitions/strict/module.json#/definitions/packs/items/properties/system/oneOf/0"
-                    ) === 0 &&
-                    /^\/[^\/]*$/.test(err17.schemaPath.slice(87))
-                  ) {
-                    emErrors2[err17.keyword].push(err17);
-                    err17.emUsed = true;
-                  }
-                }
-                for (const key2 in emErrors2) {
-                  if (emErrors2[key2].length) {
-                    const err18 = {
-                      keyword: "errorMessage",
-                      dataPath: dataPath + "/packs/" + i0 + "/system",
-                      schemaPath:
-                        "../../definitions/strict/module.json#/definitions/packs/items/properties/system/oneOf/0/errorMessage",
-                      params: { errors: emErrors2[key2] },
-                      message:
-                        key2 in templates2
-                          ? templates2[key2]()
-                          : schema117.items.properties.system.oneOf[0]
-                              .errorMessage[key2],
-                    };
-                    if (vErrors === null) {
-                      vErrors = [err18];
-                    } else {
-                      vErrors.push(err18);
-                    }
-                    errors++;
-                  }
-                }
-                const emErrs2 = [];
-                for (const err19 of vErrors) {
-                  if (!err19.emUsed) {
-                    emErrs2.push(err19);
-                  }
-                }
-                vErrors = emErrs2;
-                errors = emErrs2.length;
-              }
-              var _valid0 = _errs9 === errors;
+              var _valid0 = _errs8 === errors;
               if (_valid0) {
                 valid6 = true;
                 passing0 = 0;
               }
-              const _errs10 = errors;
-              if (Array.isArray(data4)) {
-                const len1 = data4.length;
+              const _errs9 = errors;
+              if (Array.isArray(data3)) {
+                const len1 = data3.length;
                 for (let i1 = 0; i1 < len1; i1++) {
-                  let data5 = data4[i1];
-                  if (typeof data5 === "string") {
-                    if (!pattern13.test(data5)) {
-                      const err20 = {
+                  let data4 = data3[i1];
+                  if (typeof data4 === "string") {
+                    if (!pattern13.test(data4)) {
+                      const err15 = {
                         keyword: "pattern",
                         dataPath: dataPath + "/packs/" + i0 + "/system/" + i1,
                         schemaPath:
@@ -6666,14 +6601,14 @@ function validate65(
                           '"',
                       };
                       if (vErrors === null) {
-                        vErrors = [err20];
+                        vErrors = [err15];
                       } else {
-                        vErrors.push(err20);
+                        vErrors.push(err15);
                       }
                       errors++;
                     }
                   } else {
-                    const err21 = {
+                    const err16 = {
                       keyword: "type",
                       dataPath: dataPath + "/packs/" + i0 + "/system/" + i1,
                       schemaPath:
@@ -6682,65 +6617,65 @@ function validate65(
                       message: "should be string",
                     };
                     if (vErrors === null) {
-                      vErrors = [err21];
+                      vErrors = [err16];
                     } else {
-                      vErrors.push(err21);
+                      vErrors.push(err16);
                     }
                     errors++;
                   }
                   if (errors > 0) {
-                    const emErrors3 = { pattern: [] };
-                    const templates3 = {};
-                    for (const err22 of vErrors) {
+                    const emErrors2 = { pattern: [] };
+                    const templates2 = {};
+                    for (const err17 of vErrors) {
                       if (
-                        err22.keyword !== "errorMessage" &&
-                        !err22.emUsed &&
-                        err22.dataPath ===
+                        err17.keyword !== "errorMessage" &&
+                        !err17.emUsed &&
+                        err17.dataPath ===
                           dataPath + "/packs/" + i0 + "/system/" + i1 &&
-                        err22.keyword in emErrors3 &&
-                        err22.schemaPath.indexOf(
+                        err17.keyword in emErrors2 &&
+                        err17.schemaPath.indexOf(
                           "../../definitions/strict/module.json#/definitions/packs/items/properties/system/oneOf/1/items"
                         ) === 0 &&
-                        /^\/[^\/]*$/.test(err22.schemaPath.slice(93))
+                        /^\/[^\/]*$/.test(err17.schemaPath.slice(93))
                       ) {
-                        emErrors3[err22.keyword].push(err22);
-                        err22.emUsed = true;
+                        emErrors2[err17.keyword].push(err17);
+                        err17.emUsed = true;
                       }
                     }
-                    for (const key3 in emErrors3) {
-                      if (emErrors3[key3].length) {
-                        const err23 = {
+                    for (const key2 in emErrors2) {
+                      if (emErrors2[key2].length) {
+                        const err18 = {
                           keyword: "errorMessage",
                           dataPath: dataPath + "/packs/" + i0 + "/system/" + i1,
                           schemaPath:
                             "../../definitions/strict/module.json#/definitions/packs/items/properties/system/oneOf/1/items/errorMessage",
-                          params: { errors: emErrors3[key3] },
+                          params: { errors: emErrors2[key2] },
                           message:
-                            key3 in templates3
-                              ? templates3[key3]()
+                            key2 in templates2
+                              ? templates2[key2]()
                               : schema117.items.properties.system.oneOf[1].items
-                                  .errorMessage[key3],
+                                  .errorMessage[key2],
                         };
                         if (vErrors === null) {
-                          vErrors = [err23];
+                          vErrors = [err18];
                         } else {
-                          vErrors.push(err23);
+                          vErrors.push(err18);
                         }
                         errors++;
                       }
                     }
-                    const emErrs3 = [];
-                    for (const err24 of vErrors) {
-                      if (!err24.emUsed) {
-                        emErrs3.push(err24);
+                    const emErrs2 = [];
+                    for (const err19 of vErrors) {
+                      if (!err19.emUsed) {
+                        emErrs2.push(err19);
                       }
                     }
-                    vErrors = emErrs3;
-                    errors = emErrs3.length;
+                    vErrors = emErrs2;
+                    errors = emErrs2.length;
                   }
                 }
               } else {
-                const err25 = {
+                const err20 = {
                   keyword: "type",
                   dataPath: dataPath + "/packs/" + i0 + "/system",
                   schemaPath:
@@ -6749,13 +6684,13 @@ function validate65(
                   message: "should be array",
                 };
                 if (vErrors === null) {
-                  vErrors = [err25];
+                  vErrors = [err20];
                 } else {
-                  vErrors.push(err25);
+                  vErrors.push(err20);
                 }
                 errors++;
               }
-              var _valid0 = _errs10 === errors;
+              var _valid0 = _errs9 === errors;
               if (_valid0 && valid6) {
                 valid6 = false;
                 passing0 = [passing0, 1];
@@ -6766,7 +6701,7 @@ function validate65(
                 }
               }
               if (!valid6) {
-                const err26 = {
+                const err21 = {
                   keyword: "oneOf",
                   dataPath: dataPath + "/packs/" + i0 + "/system",
                   schemaPath:
@@ -6775,66 +6710,208 @@ function validate65(
                   message: "should match exactly one schema in oneOf",
                 };
                 if (vErrors === null) {
-                  vErrors = [err26];
+                  vErrors = [err21];
                 } else {
-                  vErrors.push(err26);
+                  vErrors.push(err21);
                 }
                 errors++;
               } else {
-                errors = _errs8;
+                errors = _errs7;
                 if (vErrors !== null) {
-                  if (_errs8) {
-                    vErrors.length = _errs8;
+                  if (_errs7) {
+                    vErrors.length = _errs7;
                   } else {
                     vErrors = null;
                   }
                 }
               }
               if (errors > 0) {
-                const emErrs4 = [];
-                for (const err27 of vErrors) {
+                const emErrs3 = [];
+                for (const err22 of vErrors) {
                   if (
-                    err27.keyword !== "errorMessage" &&
-                    !err27.emUsed &&
-                    (err27.dataPath === dataPath + "/packs/" + i0 + "/system" ||
-                      (err27.dataPath.indexOf(
+                    err22.keyword !== "errorMessage" &&
+                    !err22.emUsed &&
+                    (err22.dataPath === dataPath + "/packs/" + i0 + "/system" ||
+                      (err22.dataPath.indexOf(
                         dataPath + "/packs/" + i0 + "/system"
                       ) === 0 &&
-                        err27.dataPath[
+                        err22.dataPath[
                           dataPath + "/packs/" + i0 + "/system".length
                         ] === "/")) &&
-                    err27.schemaPath.indexOf(
+                    err22.schemaPath.indexOf(
                       "../../definitions/strict/module.json#/definitions/packs/items/properties/system"
                     ) === 0 &&
-                    err27.schemaPath[
+                    err22.schemaPath[
                       "../../definitions/strict/module.json#/definitions/packs/items/properties/system"
                         .length
                     ] === "/"
                   ) {
-                    emErrs4.push(err27);
-                    err27.emUsed = true;
+                    emErrs3.push(err22);
+                    err22.emUsed = true;
                   }
                 }
-                if (emErrs4.length) {
-                  const err28 = {
+                if (emErrs3.length) {
+                  const err23 = {
                     keyword: "errorMessage",
                     dataPath: dataPath + "/packs/" + i0 + "/system",
                     schemaPath:
                       "../../definitions/strict/module.json#/definitions/packs/items/properties/system/errorMessage",
-                    params: { errors: emErrs4 },
+                    params: { errors: emErrs3 },
                     message: "should be a string or array of strings",
                   };
                   if (vErrors === null) {
-                    vErrors = [err28];
+                    vErrors = [err23];
                   } else {
-                    vErrors.push(err28);
+                    vErrors.push(err23);
                   }
                   errors++;
                 }
-                const emErrs5 = [];
+                const emErrs4 = [];
+                for (const err24 of vErrors) {
+                  if (!err24.emUsed) {
+                    emErrs4.push(err24);
+                  }
+                }
+                vErrors = emErrs4;
+                errors = emErrs4.length;
+              }
+            }
+            if (data2.entity !== undefined) {
+              let data5 = data2.entity;
+              if (
+                !(
+                  data5 === "Actor" ||
+                  data5 === "ChatMessage" ||
+                  data5 === "Combat" ||
+                  data5 === "Item" ||
+                  data5 === "Folder" ||
+                  data5 === "JournalEntry" ||
+                  data5 === "Macro" ||
+                  data5 === "Playlist" ||
+                  data5 === "RollTable" ||
+                  data5 === "Scene" ||
+                  data5 === "User"
+                )
+              ) {
+                const err25 = {
+                  keyword: "enum",
+                  dataPath: dataPath + "/packs/" + i0 + "/entity",
+                  schemaPath:
+                    "../../definitions/strict/module.json#/definitions/packs/items/properties/entity/enum",
+                  params: {
+                    allowedValues: schema117.items.properties.entity.enum,
+                  },
+                  message: "should be equal to one of the allowed values",
+                };
+                if (vErrors === null) {
+                  vErrors = [err25];
+                } else {
+                  vErrors.push(err25);
+                }
+                errors++;
+              }
+            }
+            if (data2.label !== undefined) {
+              if (typeof data2.label !== "string") {
+                const err26 = {
+                  keyword: "type",
+                  dataPath: dataPath + "/packs/" + i0 + "/label",
+                  schemaPath:
+                    "../../definitions/strict/module.json#/definitions/packs/items/properties/label/type",
+                  params: { type: "string" },
+                  message: "should be string",
+                };
+                if (vErrors === null) {
+                  vErrors = [err26];
+                } else {
+                  vErrors.push(err26);
+                }
+                errors++;
+              }
+            }
+            if (data2.module !== undefined) {
+              let data7 = data2.module;
+              if (typeof data7 === "string") {
+                if (!pattern13.test(data7)) {
+                  const err27 = {
+                    keyword: "pattern",
+                    dataPath: dataPath + "/packs/" + i0 + "/module",
+                    schemaPath:
+                      "../../definitions/strict/module.json#/definitions/packs/items/properties/module/pattern",
+                    params: { pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" },
+                    message:
+                      'should match pattern "' +
+                      "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" +
+                      '"',
+                  };
+                  if (vErrors === null) {
+                    vErrors = [err27];
+                  } else {
+                    vErrors.push(err27);
+                  }
+                  errors++;
+                }
+              } else {
+                const err28 = {
+                  keyword: "type",
+                  dataPath: dataPath + "/packs/" + i0 + "/module",
+                  schemaPath:
+                    "../../definitions/strict/module.json#/definitions/packs/items/properties/module/type",
+                  params: { type: "string" },
+                  message: "should be string",
+                };
+                if (vErrors === null) {
+                  vErrors = [err28];
+                } else {
+                  vErrors.push(err28);
+                }
+                errors++;
+              }
+              if (errors > 0) {
+                const emErrors3 = { pattern: [] };
+                const templates3 = {};
                 for (const err29 of vErrors) {
-                  if (!err29.emUsed) {
-                    emErrs5.push(err29);
+                  if (
+                    err29.keyword !== "errorMessage" &&
+                    !err29.emUsed &&
+                    err29.dataPath === dataPath + "/packs/" + i0 + "/module" &&
+                    err29.keyword in emErrors3 &&
+                    err29.schemaPath.indexOf(
+                      "../../definitions/strict/module.json#/definitions/packs/items/properties/module"
+                    ) === 0 &&
+                    /^\/[^\/]*$/.test(err29.schemaPath.slice(79))
+                  ) {
+                    emErrors3[err29.keyword].push(err29);
+                    err29.emUsed = true;
+                  }
+                }
+                for (const key3 in emErrors3) {
+                  if (emErrors3[key3].length) {
+                    const err30 = {
+                      keyword: "errorMessage",
+                      dataPath: dataPath + "/packs/" + i0 + "/module",
+                      schemaPath:
+                        "../../definitions/strict/module.json#/definitions/packs/items/properties/module/errorMessage",
+                      params: { errors: emErrors3[key3] },
+                      message:
+                        key3 in templates3
+                          ? templates3[key3]()
+                          : schema117.items.properties.module.errorMessage[
+                              key3
+                            ],
+                    };
+                    if (vErrors === null) {
+                      vErrors = [err30];
+                    } else {
+                      vErrors.push(err30);
+                    }
+                    errors++;
+                  }
+                }
+                const emErrs5 = [];
+                for (const err31 of vErrors) {
+                  if (!err31.emUsed) {
+                    emErrs5.push(err31);
                   }
                 }
                 vErrors = emErrs5;
@@ -6842,10 +6919,10 @@ function validate65(
               }
             }
             if (data2.name !== undefined) {
-              let data6 = data2.name;
-              if (typeof data6 === "string") {
-                if (!pattern7.test(data6)) {
-                  const err30 = {
+              let data8 = data2.name;
+              if (typeof data8 === "string") {
+                if (!pattern7.test(data8)) {
+                  const err32 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/name",
                     schemaPath:
@@ -6857,14 +6934,14 @@ function validate65(
                       '"',
                   };
                   if (vErrors === null) {
-                    vErrors = [err30];
+                    vErrors = [err32];
                   } else {
-                    vErrors.push(err30);
+                    vErrors.push(err32);
                   }
                   errors++;
                 }
               } else {
-                const err31 = {
+                const err33 = {
                   keyword: "type",
                   dataPath: dataPath + "/packs/" + i0 + "/name",
                   schemaPath:
@@ -6873,33 +6950,33 @@ function validate65(
                   message: "should be string",
                 };
                 if (vErrors === null) {
-                  vErrors = [err31];
+                  vErrors = [err33];
                 } else {
-                  vErrors.push(err31);
+                  vErrors.push(err33);
                 }
                 errors++;
               }
               if (errors > 0) {
                 const emErrors4 = { pattern: [] };
                 const templates4 = {};
-                for (const err32 of vErrors) {
+                for (const err34 of vErrors) {
                   if (
-                    err32.keyword !== "errorMessage" &&
-                    !err32.emUsed &&
-                    err32.dataPath === dataPath + "/packs/" + i0 + "/name" &&
-                    err32.keyword in emErrors4 &&
-                    err32.schemaPath.indexOf(
+                    err34.keyword !== "errorMessage" &&
+                    !err34.emUsed &&
+                    err34.dataPath === dataPath + "/packs/" + i0 + "/name" &&
+                    err34.keyword in emErrors4 &&
+                    err34.schemaPath.indexOf(
                       "../../definitions/strict/module.json#/definitions/packs/items/properties/name"
                     ) === 0 &&
-                    /^\/[^\/]*$/.test(err32.schemaPath.slice(77))
+                    /^\/[^\/]*$/.test(err34.schemaPath.slice(77))
                   ) {
-                    emErrors4[err32.keyword].push(err32);
-                    err32.emUsed = true;
+                    emErrors4[err34.keyword].push(err34);
+                    err34.emUsed = true;
                   }
                 }
                 for (const key4 in emErrors4) {
                   if (emErrors4[key4].length) {
-                    const err33 = {
+                    const err35 = {
                       keyword: "errorMessage",
                       dataPath: dataPath + "/packs/" + i0 + "/name",
                       schemaPath:
@@ -6911,46 +6988,28 @@ function validate65(
                           : schema117.items.properties.name.errorMessage[key4],
                     };
                     if (vErrors === null) {
-                      vErrors = [err33];
+                      vErrors = [err35];
                     } else {
-                      vErrors.push(err33);
+                      vErrors.push(err35);
                     }
                     errors++;
                   }
                 }
                 const emErrs6 = [];
-                for (const err34 of vErrors) {
-                  if (!err34.emUsed) {
-                    emErrs6.push(err34);
+                for (const err36 of vErrors) {
+                  if (!err36.emUsed) {
+                    emErrs6.push(err36);
                   }
                 }
                 vErrors = emErrs6;
                 errors = emErrs6.length;
               }
             }
-            if (data2.label !== undefined) {
-              if (typeof data2.label !== "string") {
-                const err35 = {
-                  keyword: "type",
-                  dataPath: dataPath + "/packs/" + i0 + "/label",
-                  schemaPath:
-                    "../../definitions/strict/module.json#/definitions/packs/items/properties/label/type",
-                  params: { type: "string" },
-                  message: "should be string",
-                };
-                if (vErrors === null) {
-                  vErrors = [err35];
-                } else {
-                  vErrors.push(err35);
-                }
-                errors++;
-              }
-            }
             if (data2.path !== undefined) {
-              let data8 = data2.path;
-              if (typeof data8 === "string") {
-                if (!pattern17.test(data8)) {
-                  const err36 = {
+              let data9 = data2.path;
+              if (typeof data9 === "string") {
+                if (!pattern17.test(data9)) {
+                  const err37 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/path",
                     schemaPath:
@@ -6959,55 +7018,20 @@ function validate65(
                     message: 'should match pattern "' + "^(.+).db$" + '"',
                   };
                   if (vErrors === null) {
-                    vErrors = [err36];
+                    vErrors = [err37];
                   } else {
-                    vErrors.push(err36);
+                    vErrors.push(err37);
                   }
                   errors++;
                 }
               } else {
-                const err37 = {
+                const err38 = {
                   keyword: "type",
                   dataPath: dataPath + "/packs/" + i0 + "/path",
                   schemaPath:
                     "../../definitions/strict/module.json#/definitions/packs/items/properties/path/type",
                   params: { type: "string" },
                   message: "should be string",
-                };
-                if (vErrors === null) {
-                  vErrors = [err37];
-                } else {
-                  vErrors.push(err37);
-                }
-                errors++;
-              }
-            }
-            if (data2.entity !== undefined) {
-              let data9 = data2.entity;
-              if (
-                !(
-                  data9 === "Actor" ||
-                  data9 === "ChatMessage" ||
-                  data9 === "Combat" ||
-                  data9 === "Item" ||
-                  data9 === "Folder" ||
-                  data9 === "JournalEntry" ||
-                  data9 === "Macro" ||
-                  data9 === "Playlist" ||
-                  data9 === "RollTable" ||
-                  data9 === "Scene" ||
-                  data9 === "User"
-                )
-              ) {
-                const err38 = {
-                  keyword: "enum",
-                  dataPath: dataPath + "/packs/" + i0 + "/entity",
-                  schemaPath:
-                    "../../definitions/strict/module.json#/definitions/packs/items/properties/entity/enum",
-                  params: {
-                    allowedValues: schema117.items.properties.entity.enum,
-                  },
-                  message: "should be equal to one of the allowed values",
                 };
                 if (vErrors === null) {
                   vErrors = [err38];
@@ -10542,30 +10566,6 @@ const schema144 = {
             "should be a string that is alpha-numeric with only underscore and hyphen separators",
         },
       },
-      name: {
-        title: "A string value",
-        default: "",
-        examples: ["pack-name"],
-        type: "string",
-        pattern: "^([a-z0-9]+-?)*[a-z0-9]+$",
-        errorMessage: {
-          pattern:
-            "should be a string that is lowercase alpha-numeric with only separating hyphens",
-        },
-      },
-      label: {
-        title: "A string value",
-        default: "",
-        examples: ["Pack Title"],
-        type: "string",
-      },
-      path: {
-        title: "A string value",
-        default: "",
-        examples: ["./packs/pack-name.db"],
-        type: "string",
-        pattern: "^(.+).db$",
-      },
       entity: {
         title: "A string value",
         default: "",
@@ -10583,6 +10583,41 @@ const schema144 = {
           "Scene",
           "User",
         ],
+      },
+      label: {
+        title: "A string value",
+        default: "",
+        examples: ["Pack Title"],
+        type: "string",
+      },
+      module: {
+        title: "A string value",
+        default: "",
+        examples: ["module-name"],
+        type: "string",
+        pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+        errorMessage: {
+          pattern:
+            "should be a string that is alpha-numeric with only underscore and hyphen separators",
+        },
+      },
+      name: {
+        title: "A string value",
+        default: "",
+        examples: ["pack-name"],
+        type: "string",
+        pattern: "^([a-z0-9]+-?)*[a-z0-9]+$",
+        errorMessage: {
+          pattern:
+            "should be a string that is lowercase alpha-numeric with only separating hyphens",
+        },
+      },
+      path: {
+        title: "A string value",
+        default: "",
+        examples: ["./packs/pack-name.db"],
+        type: "string",
+        pattern: "^(.+).db$",
       },
     },
     title: "An object value",
@@ -10954,11 +10989,153 @@ function validate88(
                 errors = emErrs1.length;
               }
             }
+            if (data5.entity !== undefined) {
+              let data7 = data5.entity;
+              if (
+                !(
+                  data7 === "Actor" ||
+                  data7 === "ChatMessage" ||
+                  data7 === "Combat" ||
+                  data7 === "Item" ||
+                  data7 === "Folder" ||
+                  data7 === "JournalEntry" ||
+                  data7 === "Macro" ||
+                  data7 === "Playlist" ||
+                  data7 === "RollTable" ||
+                  data7 === "Scene" ||
+                  data7 === "User"
+                )
+              ) {
+                const err18 = {
+                  keyword: "enum",
+                  dataPath: dataPath + "/packs/" + i0 + "/entity",
+                  schemaPath:
+                    "../../definitions/strict/system.json#/definitions/packs/items/properties/entity/enum",
+                  params: {
+                    allowedValues: schema144.items.properties.entity.enum,
+                  },
+                  message: "should be equal to one of the allowed values",
+                };
+                if (vErrors === null) {
+                  vErrors = [err18];
+                } else {
+                  vErrors.push(err18);
+                }
+                errors++;
+              }
+            }
+            if (data5.label !== undefined) {
+              if (typeof data5.label !== "string") {
+                const err19 = {
+                  keyword: "type",
+                  dataPath: dataPath + "/packs/" + i0 + "/label",
+                  schemaPath:
+                    "../../definitions/strict/system.json#/definitions/packs/items/properties/label/type",
+                  params: { type: "string" },
+                  message: "should be string",
+                };
+                if (vErrors === null) {
+                  vErrors = [err19];
+                } else {
+                  vErrors.push(err19);
+                }
+                errors++;
+              }
+            }
+            if (data5.module !== undefined) {
+              let data9 = data5.module;
+              if (typeof data9 === "string") {
+                if (!pattern13.test(data9)) {
+                  const err20 = {
+                    keyword: "pattern",
+                    dataPath: dataPath + "/packs/" + i0 + "/module",
+                    schemaPath:
+                      "../../definitions/strict/system.json#/definitions/packs/items/properties/module/pattern",
+                    params: { pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" },
+                    message:
+                      'should match pattern "' +
+                      "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" +
+                      '"',
+                  };
+                  if (vErrors === null) {
+                    vErrors = [err20];
+                  } else {
+                    vErrors.push(err20);
+                  }
+                  errors++;
+                }
+              } else {
+                const err21 = {
+                  keyword: "type",
+                  dataPath: dataPath + "/packs/" + i0 + "/module",
+                  schemaPath:
+                    "../../definitions/strict/system.json#/definitions/packs/items/properties/module/type",
+                  params: { type: "string" },
+                  message: "should be string",
+                };
+                if (vErrors === null) {
+                  vErrors = [err21];
+                } else {
+                  vErrors.push(err21);
+                }
+                errors++;
+              }
+              if (errors > 0) {
+                const emErrors2 = { pattern: [] };
+                const templates2 = {};
+                for (const err22 of vErrors) {
+                  if (
+                    err22.keyword !== "errorMessage" &&
+                    !err22.emUsed &&
+                    err22.dataPath === dataPath + "/packs/" + i0 + "/module" &&
+                    err22.keyword in emErrors2 &&
+                    err22.schemaPath.indexOf(
+                      "../../definitions/strict/system.json#/definitions/packs/items/properties/module"
+                    ) === 0 &&
+                    /^\/[^\/]*$/.test(err22.schemaPath.slice(79))
+                  ) {
+                    emErrors2[err22.keyword].push(err22);
+                    err22.emUsed = true;
+                  }
+                }
+                for (const key2 in emErrors2) {
+                  if (emErrors2[key2].length) {
+                    const err23 = {
+                      keyword: "errorMessage",
+                      dataPath: dataPath + "/packs/" + i0 + "/module",
+                      schemaPath:
+                        "../../definitions/strict/system.json#/definitions/packs/items/properties/module/errorMessage",
+                      params: { errors: emErrors2[key2] },
+                      message:
+                        key2 in templates2
+                          ? templates2[key2]()
+                          : schema144.items.properties.module.errorMessage[
+                              key2
+                            ],
+                    };
+                    if (vErrors === null) {
+                      vErrors = [err23];
+                    } else {
+                      vErrors.push(err23);
+                    }
+                    errors++;
+                  }
+                }
+                const emErrs2 = [];
+                for (const err24 of vErrors) {
+                  if (!err24.emUsed) {
+                    emErrs2.push(err24);
+                  }
+                }
+                vErrors = emErrs2;
+                errors = emErrs2.length;
+              }
+            }
             if (data5.name !== undefined) {
-              let data7 = data5.name;
-              if (typeof data7 === "string") {
-                if (!pattern7.test(data7)) {
-                  const err18 = {
+              let data10 = data5.name;
+              if (typeof data10 === "string") {
+                if (!pattern7.test(data10)) {
+                  const err25 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/name",
                     schemaPath:
@@ -10970,14 +11147,14 @@ function validate88(
                       '"',
                   };
                   if (vErrors === null) {
-                    vErrors = [err18];
+                    vErrors = [err25];
                   } else {
-                    vErrors.push(err18);
+                    vErrors.push(err25);
                   }
                   errors++;
                 }
               } else {
-                const err19 = {
+                const err26 = {
                   keyword: "type",
                   dataPath: dataPath + "/packs/" + i0 + "/name",
                   schemaPath:
@@ -10986,84 +11163,66 @@ function validate88(
                   message: "should be string",
                 };
                 if (vErrors === null) {
-                  vErrors = [err19];
+                  vErrors = [err26];
                 } else {
-                  vErrors.push(err19);
+                  vErrors.push(err26);
                 }
                 errors++;
               }
               if (errors > 0) {
-                const emErrors2 = { pattern: [] };
-                const templates2 = {};
-                for (const err20 of vErrors) {
+                const emErrors3 = { pattern: [] };
+                const templates3 = {};
+                for (const err27 of vErrors) {
                   if (
-                    err20.keyword !== "errorMessage" &&
-                    !err20.emUsed &&
-                    err20.dataPath === dataPath + "/packs/" + i0 + "/name" &&
-                    err20.keyword in emErrors2 &&
-                    err20.schemaPath.indexOf(
+                    err27.keyword !== "errorMessage" &&
+                    !err27.emUsed &&
+                    err27.dataPath === dataPath + "/packs/" + i0 + "/name" &&
+                    err27.keyword in emErrors3 &&
+                    err27.schemaPath.indexOf(
                       "../../definitions/strict/system.json#/definitions/packs/items/properties/name"
                     ) === 0 &&
-                    /^\/[^\/]*$/.test(err20.schemaPath.slice(77))
+                    /^\/[^\/]*$/.test(err27.schemaPath.slice(77))
                   ) {
-                    emErrors2[err20.keyword].push(err20);
-                    err20.emUsed = true;
+                    emErrors3[err27.keyword].push(err27);
+                    err27.emUsed = true;
                   }
                 }
-                for (const key2 in emErrors2) {
-                  if (emErrors2[key2].length) {
-                    const err21 = {
+                for (const key3 in emErrors3) {
+                  if (emErrors3[key3].length) {
+                    const err28 = {
                       keyword: "errorMessage",
                       dataPath: dataPath + "/packs/" + i0 + "/name",
                       schemaPath:
                         "../../definitions/strict/system.json#/definitions/packs/items/properties/name/errorMessage",
-                      params: { errors: emErrors2[key2] },
+                      params: { errors: emErrors3[key3] },
                       message:
-                        key2 in templates2
-                          ? templates2[key2]()
-                          : schema144.items.properties.name.errorMessage[key2],
+                        key3 in templates3
+                          ? templates3[key3]()
+                          : schema144.items.properties.name.errorMessage[key3],
                     };
                     if (vErrors === null) {
-                      vErrors = [err21];
+                      vErrors = [err28];
                     } else {
-                      vErrors.push(err21);
+                      vErrors.push(err28);
                     }
                     errors++;
                   }
                 }
-                const emErrs2 = [];
-                for (const err22 of vErrors) {
-                  if (!err22.emUsed) {
-                    emErrs2.push(err22);
+                const emErrs3 = [];
+                for (const err29 of vErrors) {
+                  if (!err29.emUsed) {
+                    emErrs3.push(err29);
                   }
                 }
-                vErrors = emErrs2;
-                errors = emErrs2.length;
-              }
-            }
-            if (data5.label !== undefined) {
-              if (typeof data5.label !== "string") {
-                const err23 = {
-                  keyword: "type",
-                  dataPath: dataPath + "/packs/" + i0 + "/label",
-                  schemaPath:
-                    "../../definitions/strict/system.json#/definitions/packs/items/properties/label/type",
-                  params: { type: "string" },
-                  message: "should be string",
-                };
-                if (vErrors === null) {
-                  vErrors = [err23];
-                } else {
-                  vErrors.push(err23);
-                }
-                errors++;
+                vErrors = emErrs3;
+                errors = emErrs3.length;
               }
             }
             if (data5.path !== undefined) {
-              let data9 = data5.path;
-              if (typeof data9 === "string") {
-                if (!pattern17.test(data9)) {
-                  const err24 = {
+              let data11 = data5.path;
+              if (typeof data11 === "string") {
+                if (!pattern17.test(data11)) {
+                  const err30 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/path",
                     schemaPath:
@@ -11072,14 +11231,14 @@ function validate88(
                     message: 'should match pattern "' + "^(.+).db$" + '"',
                   };
                   if (vErrors === null) {
-                    vErrors = [err24];
+                    vErrors = [err30];
                   } else {
-                    vErrors.push(err24);
+                    vErrors.push(err30);
                   }
                   errors++;
                 }
               } else {
-                const err25 = {
+                const err31 = {
                   keyword: "type",
                   dataPath: dataPath + "/packs/" + i0 + "/path",
                   schemaPath:
@@ -11088,50 +11247,15 @@ function validate88(
                   message: "should be string",
                 };
                 if (vErrors === null) {
-                  vErrors = [err25];
+                  vErrors = [err31];
                 } else {
-                  vErrors.push(err25);
-                }
-                errors++;
-              }
-            }
-            if (data5.entity !== undefined) {
-              let data10 = data5.entity;
-              if (
-                !(
-                  data10 === "Actor" ||
-                  data10 === "ChatMessage" ||
-                  data10 === "Combat" ||
-                  data10 === "Item" ||
-                  data10 === "Folder" ||
-                  data10 === "JournalEntry" ||
-                  data10 === "Macro" ||
-                  data10 === "Playlist" ||
-                  data10 === "RollTable" ||
-                  data10 === "Scene" ||
-                  data10 === "User"
-                )
-              ) {
-                const err26 = {
-                  keyword: "enum",
-                  dataPath: dataPath + "/packs/" + i0 + "/entity",
-                  schemaPath:
-                    "../../definitions/strict/system.json#/definitions/packs/items/properties/entity/enum",
-                  params: {
-                    allowedValues: schema144.items.properties.entity.enum,
-                  },
-                  message: "should be equal to one of the allowed values",
-                };
-                if (vErrors === null) {
-                  vErrors = [err26];
-                } else {
-                  vErrors.push(err26);
+                  vErrors.push(err31);
                 }
                 errors++;
               }
             }
           } else {
-            const err27 = {
+            const err32 = {
               keyword: "type",
               dataPath: dataPath + "/packs/" + i0,
               schemaPath:
@@ -11140,15 +11264,15 @@ function validate88(
               message: "should be object",
             };
             if (vErrors === null) {
-              vErrors = [err27];
+              vErrors = [err32];
             } else {
-              vErrors.push(err27);
+              vErrors.push(err32);
             }
             errors++;
           }
         }
       } else {
-        const err28 = {
+        const err33 = {
           keyword: "type",
           dataPath: dataPath + "/packs",
           schemaPath:
@@ -11157,17 +11281,17 @@ function validate88(
           message: "should be array",
         };
         if (vErrors === null) {
-          vErrors = [err28];
+          vErrors = [err33];
         } else {
-          vErrors.push(err28);
+          vErrors.push(err33);
         }
         errors++;
       }
     }
     if (data.primaryTokenAttribute !== undefined) {
-      let data11 = data.primaryTokenAttribute;
-      if (data11 !== null && typeof data11 !== "string") {
-        const err29 = {
+      let data12 = data.primaryTokenAttribute;
+      if (data12 !== null && typeof data12 !== "string") {
+        const err34 = {
           keyword: "type",
           dataPath: dataPath + "/primaryTokenAttribute",
           schemaPath:
@@ -11176,17 +11300,17 @@ function validate88(
           message: "should be null,string",
         };
         if (vErrors === null) {
-          vErrors = [err29];
+          vErrors = [err34];
         } else {
-          vErrors.push(err29);
+          vErrors.push(err34);
         }
         errors++;
       }
     }
     if (data.secondaryTokenAttribute !== undefined) {
-      let data12 = data.secondaryTokenAttribute;
-      if (data12 !== null && typeof data12 !== "string") {
-        const err30 = {
+      let data13 = data.secondaryTokenAttribute;
+      if (data13 !== null && typeof data13 !== "string") {
+        const err35 = {
           keyword: "type",
           dataPath: dataPath + "/secondaryTokenAttribute",
           schemaPath:
@@ -11195,24 +11319,24 @@ function validate88(
           message: "should be null,string",
         };
         if (vErrors === null) {
-          vErrors = [err30];
+          vErrors = [err35];
         } else {
-          vErrors.push(err30);
+          vErrors.push(err35);
         }
         errors++;
       }
     }
     if (data.templateVersion !== undefined) {
-      let data13 = data.templateVersion;
+      let data14 = data.templateVersion;
       if (
         !(
-          typeof data13 == "number" &&
-          !(data13 % 1) &&
-          !isNaN(data13) &&
-          isFinite(data13)
+          typeof data14 == "number" &&
+          !(data14 % 1) &&
+          !isNaN(data14) &&
+          isFinite(data14)
         )
       ) {
-        const err31 = {
+        const err36 = {
           keyword: "type",
           dataPath: dataPath + "/templateVersion",
           schemaPath:
@@ -11221,15 +11345,15 @@ function validate88(
           message: "should be integer",
         };
         if (vErrors === null) {
-          vErrors = [err31];
+          vErrors = [err36];
         } else {
-          vErrors.push(err31);
+          vErrors.push(err36);
         }
         errors++;
       }
     }
   } else {
-    const err32 = {
+    const err37 = {
       keyword: "type",
       dataPath,
       schemaPath: "#/type",
@@ -11237,9 +11361,9 @@ function validate88(
       message: "should be object",
     };
     if (vErrors === null) {
-      vErrors = [err32];
+      vErrors = [err37];
     } else {
-      vErrors.push(err32);
+      vErrors.push(err37);
     }
     errors++;
   }

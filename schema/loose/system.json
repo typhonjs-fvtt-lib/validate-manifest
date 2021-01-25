@@ -314,11 +314,11 @@
                         ],
                         "type": "string"
                      },
-                     "name": {
+                     "entity": {
                         "title": "A string value",
                         "default": "",
                         "examples": [
-                           "pack-name"
+                           "Item"
                         ],
                         "type": "string"
                      },
@@ -330,19 +330,27 @@
                         ],
                         "type": "string"
                      },
+                     "module": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "module-name"
+                        ],
+                        "type": "string"
+                     },
+                     "name": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "pack-name"
+                        ],
+                        "type": "string"
+                     },
                      "path": {
                         "title": "A string value",
                         "default": "",
                         "examples": [
                            "./packs/pack-name.db"
-                        ],
-                        "type": "string"
-                     },
-                     "entity": {
-                        "title": "A string value",
-                        "default": "",
-                        "examples": [
-                           "Item"
                         ],
                         "type": "string"
                      }

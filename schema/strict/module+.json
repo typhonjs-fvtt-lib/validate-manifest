@@ -574,18 +574,6 @@
                      "entity"
                   ],
                   "properties": {
-                     "module": {
-                        "title": "A string value",
-                        "default": "",
-                        "examples": [
-                           "module-name"
-                        ],
-                        "type": "string",
-                        "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
-                        "errorMessage": {
-                           "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
-                        }
-                     },
                      "system": {
                         "examples": [
                            "dnd5e"
@@ -614,35 +602,6 @@
                         ],
                         "errorMessage": "should be a string or array of strings"
                      },
-                     "name": {
-                        "title": "A string value",
-                        "default": "",
-                        "examples": [
-                           "pack-name"
-                        ],
-                        "type": "string",
-                        "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
-                        "errorMessage": {
-                           "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
-                        }
-                     },
-                     "label": {
-                        "title": "A string value",
-                        "default": "",
-                        "examples": [
-                           "Pack Title"
-                        ],
-                        "type": "string"
-                     },
-                     "path": {
-                        "title": "A string value",
-                        "default": "",
-                        "examples": [
-                           "./packs/pack-name.db"
-                        ],
-                        "type": "string",
-                        "pattern": "^(.+).db$"
-                     },
                      "entity": {
                         "title": "A string value",
                         "default": "",
@@ -662,6 +621,47 @@
                            "Scene",
                            "User"
                         ]
+                     },
+                     "label": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "Pack Title"
+                        ],
+                        "type": "string"
+                     },
+                     "module": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "module-name"
+                        ],
+                        "type": "string",
+                        "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+                        "errorMessage": {
+                           "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
+                        }
+                     },
+                     "name": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "pack-name"
+                        ],
+                        "type": "string",
+                        "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
+                        "errorMessage": {
+                           "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
+                        }
+                     },
+                     "path": {
+                        "title": "A string value",
+                        "default": "",
+                        "examples": [
+                           "./packs/pack-name.db"
+                        ],
+                        "type": "string",
+                        "pattern": "^(.+).db$"
                      }
                   },
                   "title": "An object value",
