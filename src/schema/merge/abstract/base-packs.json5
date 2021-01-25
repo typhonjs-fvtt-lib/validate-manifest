@@ -13,19 +13,34 @@
           "entity"
         ],
         "properties": {
-          "name": {
+          "entity": {
             "title": "A string value",
             "default": "",
             "examples": [
-              "pack-name"
-            ],
-            "type": "string"
+              "Item"
+            ]
           },
           "label": {
             "title": "A string value",
             "default": "",
             "examples": [
               "Pack Title"
+            ],
+            "type": "string"
+          },
+          "module": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "module-name"
+            ],
+            "type": "string"
+          },
+          "name": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "pack-name"
             ],
             "type": "string"
           },
@@ -36,13 +51,6 @@
               "./packs/pack-name.db"
             ],
             "type": "string"
-          },
-          "entity": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "Item"
-            ]
           }
         },
         "type": "object"

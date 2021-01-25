@@ -15,6 +15,10 @@
               "Scene", "User"
             ]
           },
+          "module": {
+            // Replace with pattern-package-name-loose include
+            "$$include": { "target": "pattern-package-name-loose", "data": { "name": "module" } }
+          },
           "name": {
             // Replace with pattern-package-name-loose include
             "$$include": { "target": "pattern-package-name", "data": { "name": "name" } }

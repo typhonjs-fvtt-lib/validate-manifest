@@ -36,14 +36,6 @@
           "module"
         ],
         "properties": {
-          "module": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "module-name"
-            ],
-            "type": "string"
-          },
           "system": {
             "examples": [
               "dnd5e"
