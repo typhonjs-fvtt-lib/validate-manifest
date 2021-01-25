@@ -254,33 +254,6 @@
       "message": "should be string"
    },
    {
-      "keyword": "type",
-      "dataPath": "/packs/1/name",
-      "schemaPath": "#/definitions/packs/items/properties/name/type",
-      "params": {
-         "type": "string"
-      },
-      "message": "should be string"
-   },
-   {
-      "keyword": "type",
-      "dataPath": "/packs/1/label",
-      "schemaPath": "#/definitions/packs/items/properties/label/type",
-      "params": {
-         "type": "string"
-      },
-      "message": "should be string"
-   },
-   {
-      "keyword": "type",
-      "dataPath": "/packs/1/path",
-      "schemaPath": "#/definitions/packs/items/properties/path/type",
-      "params": {
-         "type": "string"
-      },
-      "message": "should be string"
-   },
-   {
       "keyword": "enum",
       "dataPath": "/packs/1/entity",
       "schemaPath": "#/definitions/packs/items/properties/entity/enum",
@@ -300,6 +273,33 @@
          ]
       },
       "message": "should be equal to one of the allowed values"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/1/label",
+      "schemaPath": "#/definitions/packs/items/properties/label/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/1/name",
+      "schemaPath": "#/definitions/packs/items/properties/name/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/1/path",
+      "schemaPath": "#/definitions/packs/items/properties/path/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
    },
    {
       "keyword": "required",
@@ -329,15 +329,6 @@
       "message": "should be string"
    },
    {
-      "keyword": "type",
-      "dataPath": "/packs/2/path",
-      "schemaPath": "#/definitions/packs/items/properties/path/type",
-      "params": {
-         "type": "string"
-      },
-      "message": "should be string"
-   },
-   {
       "keyword": "enum",
       "dataPath": "/packs/2/entity",
       "schemaPath": "#/definitions/packs/items/properties/entity/enum",
@@ -357,6 +348,15 @@
          ]
       },
       "message": "should be equal to one of the allowed values"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/2/path",
+      "schemaPath": "#/definitions/packs/items/properties/path/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
    },
    {
       "keyword": "type",

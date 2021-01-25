@@ -267,33 +267,6 @@
       "message": "should be a string or array of strings"
    },
    {
-      "keyword": "type",
-      "dataPath": "/packs/1/name",
-      "schemaPath": "#/definitions/packs/items/properties/name/type",
-      "params": {
-         "type": "string"
-      },
-      "message": "should be string"
-   },
-   {
-      "keyword": "type",
-      "dataPath": "/packs/1/label",
-      "schemaPath": "#/definitions/packs/items/properties/label/type",
-      "params": {
-         "type": "string"
-      },
-      "message": "should be string"
-   },
-   {
-      "keyword": "type",
-      "dataPath": "/packs/1/path",
-      "schemaPath": "#/definitions/packs/items/properties/path/type",
-      "params": {
-         "type": "string"
-      },
-      "message": "should be string"
-   },
-   {
       "keyword": "enum",
       "dataPath": "/packs/1/entity",
       "schemaPath": "#/definitions/packs/items/properties/entity/enum",
@@ -313,6 +286,33 @@
          ]
       },
       "message": "should be equal to one of the allowed values"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/1/label",
+      "schemaPath": "#/definitions/packs/items/properties/label/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/1/name",
+      "schemaPath": "#/definitions/packs/items/properties/name/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   },
+   {
+      "keyword": "type",
+      "dataPath": "/packs/1/path",
+      "schemaPath": "#/definitions/packs/items/properties/path/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
    },
    {
       "keyword": "required",
@@ -382,8 +382,8 @@
    },
    {
       "keyword": "type",
-      "dataPath": "/packs/2/name",
-      "schemaPath": "#/definitions/packs/items/properties/name/type",
+      "dataPath": "/packs/2/label",
+      "schemaPath": "#/definitions/packs/items/properties/label/type",
       "params": {
          "type": "string"
       },
@@ -391,8 +391,8 @@
    },
    {
       "keyword": "type",
-      "dataPath": "/packs/2/label",
-      "schemaPath": "#/definitions/packs/items/properties/label/type",
+      "dataPath": "/packs/2/name",
+      "schemaPath": "#/definitions/packs/items/properties/name/type",
       "params": {
          "type": "string"
       },
@@ -418,8 +418,8 @@
    },
    {
       "keyword": "type",
-      "dataPath": "/packs/3/module",
-      "schemaPath": "#/definitions/packs/items/properties/module/type",
+      "dataPath": "/packs/3/label",
+      "schemaPath": "#/definitions/packs/items/properties/label/type",
       "params": {
          "type": "string"
       },
@@ -427,8 +427,8 @@
    },
    {
       "keyword": "type",
-      "dataPath": "/packs/3/label",
-      "schemaPath": "#/definitions/packs/items/properties/label/type",
+      "dataPath": "/packs/3/module",
+      "schemaPath": "#/definitions/packs/items/properties/module/type",
       "params": {
          "type": "string"
       },

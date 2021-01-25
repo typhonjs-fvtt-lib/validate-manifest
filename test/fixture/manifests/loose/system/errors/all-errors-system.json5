@@ -275,8 +275,8 @@
    },
    {
       "keyword": "type",
-      "dataPath": "/packs/1/name",
-      "schemaPath": "#/definitions/packs/items/properties/name/type",
+      "dataPath": "/packs/1/entity",
+      "schemaPath": "#/definitions/packs/items/properties/entity/type",
       "params": {
          "type": "string"
       },
@@ -293,8 +293,8 @@
    },
    {
       "keyword": "type",
-      "dataPath": "/packs/1/path",
-      "schemaPath": "#/definitions/packs/items/properties/path/type",
+      "dataPath": "/packs/1/name",
+      "schemaPath": "#/definitions/packs/items/properties/name/type",
       "params": {
          "type": "string"
       },
@@ -302,8 +302,8 @@
    },
    {
       "keyword": "type",
-      "dataPath": "/packs/1/entity",
-      "schemaPath": "#/definitions/packs/items/properties/entity/type",
+      "dataPath": "/packs/1/path",
+      "schemaPath": "#/definitions/packs/items/properties/path/type",
       "params": {
          "type": "string"
       },
@@ -338,8 +338,8 @@
    },
    {
       "keyword": "type",
-      "dataPath": "/packs/2/path",
-      "schemaPath": "#/definitions/packs/items/properties/path/type",
+      "dataPath": "/packs/2/entity",
+      "schemaPath": "#/definitions/packs/items/properties/entity/type",
       "params": {
          "type": "string"
       },
@@ -347,8 +347,8 @@
    },
    {
       "keyword": "type",
-      "dataPath": "/packs/2/entity",
-      "schemaPath": "#/definitions/packs/items/properties/entity/type",
+      "dataPath": "/packs/2/path",
+      "schemaPath": "#/definitions/packs/items/properties/path/type",
       "params": {
          "type": "string"
       },
