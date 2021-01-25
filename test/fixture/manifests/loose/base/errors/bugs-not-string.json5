@@ -1,8 +1,8 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/url",
-      "schemaPath": "#/definitions/url/type",
+      "dataPath": "/bugs",
+      "schemaPath": "#/definitions/bugs/type",
       "params": {
          "type": "string"
       },
