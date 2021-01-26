@@ -9,7 +9,7 @@
     {
       "name": "bad pack name",
       "label": "Pack Title",
-      "module": "a-module",
+      "module": "system-name",
       "system": "system-name",
       "path": "./packs/pack-name.db",
       "entity": "Actor"

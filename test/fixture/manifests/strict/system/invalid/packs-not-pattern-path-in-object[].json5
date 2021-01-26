@@ -9,7 +9,7 @@
     {
       "name": "pack-name",
       "label": "Pack Title",
-      "module": "a-module",
+      "module": "system-name",
       "system": "system-name",
       "path": "./packs/notdbfile",
       "entity": "Actor"

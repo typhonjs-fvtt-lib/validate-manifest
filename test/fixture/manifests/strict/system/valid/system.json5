@@ -37,7 +37,7 @@
     {
       "name": "myscenedatabasename",
       "label": "The Human-Readable Name for My Compendium",
-      "module": "MyModuleName",
+      "module": "system-name",
       "system": "system-name",
       "path": "packs/my-scenes-right-here.db",
       "entity": "Scene"

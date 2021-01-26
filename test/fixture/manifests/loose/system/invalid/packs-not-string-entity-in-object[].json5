@@ -12,7 +12,6 @@
     {
       "name": "pack-name",
       "label": "Pack Title",
-      "module": "MyModuleName",
       "system": "system-name",
       "path": "./packs/pack-name.db",
       "entity": false

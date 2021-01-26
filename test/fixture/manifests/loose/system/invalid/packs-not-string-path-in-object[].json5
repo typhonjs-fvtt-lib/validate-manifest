@@ -9,7 +9,6 @@
     {
       "name": "pack-name",
       "label": "Pack Title",
-      "module": "MyModuleName",
       "system": "system-name",
       "path": false,
       "entity": "Item"
