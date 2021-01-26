@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/version",
+      "schemaPath": "#/definitions/version/type",
+      "params": {
+         "type": "string"
+      },
+      "message": "should be string"
+   }
+]
