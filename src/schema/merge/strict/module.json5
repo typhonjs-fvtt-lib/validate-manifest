@@ -16,7 +16,7 @@
             ]
           },
           "module": {
-            // Replace with pattern-package-name-loose include
+            // Replace with pattern-package-name include
             "$$include": { "target": "pattern-package-name", "data": { "name": "module" } }
           },
           "name": {
