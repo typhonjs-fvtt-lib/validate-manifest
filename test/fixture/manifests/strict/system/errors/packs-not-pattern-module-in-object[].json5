@@ -1,14 +1,14 @@
 [
    {
       "keyword": "errorMessage",
-      "dataPath": "/packs/0/system",
-      "schemaPath": "#/definitions/packs/items/properties/system/errorMessage",
+      "dataPath": "/packs/0/module",
+      "schemaPath": "#/definitions/packs/items/properties/module/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/packs/0/system",
-               "schemaPath": "#/definitions/packs/items/properties/system/pattern",
+               "dataPath": "/packs/0/module",
+               "schemaPath": "#/definitions/packs/items/properties/module/pattern",
                "params": {
                   "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$"
                },
