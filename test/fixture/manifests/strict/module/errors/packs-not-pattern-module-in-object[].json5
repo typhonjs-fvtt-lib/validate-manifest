@@ -10,13 +10,13 @@
                "dataPath": "/packs/0/module",
                "schemaPath": "#/definitions/packs/items/properties/module/pattern",
                "params": {
-                  "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$"
+                  "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$"
                },
-               "message": "should match pattern \"^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$\"",
+               "message": "should match pattern \"^([a-z0-9]+-?)*[a-z0-9]+$\"",
                "emUsed": true
             }
          ]
       },
-      "message": "should be a string that is alpha-numeric with only underscore and hyphen separators"
+      "message": "should be a string that is lowercase alpha-numeric with only separating hyphens"
    }
 ]

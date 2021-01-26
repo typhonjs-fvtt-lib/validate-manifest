@@ -10,7 +10,7 @@
     {
       "name": "pack-name",
       "label": "Pack Title",
-      "module": "MyModuleName",
+      "module": "module-name",
       "system": [false],
       "path": "./packs/pack-name.db",
       "entity": "Item"

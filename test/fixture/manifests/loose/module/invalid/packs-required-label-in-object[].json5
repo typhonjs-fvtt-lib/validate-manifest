@@ -8,7 +8,7 @@
   "packs": [
     {
       "name": "pack-name",
-      "module": "MyModuleName",
+      "module": "module-name",
       "system": "system-name",
       "path": "./packs/pack-name.db",
       "entity": "Item"

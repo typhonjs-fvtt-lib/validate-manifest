@@ -16,7 +16,7 @@
     {
       "name": "pack-name",
       "label": "Pack Title",
-      "module": "MyModuleName",
+      "module": "module-name",
       "system": "system-name",
       "path": "./packs/pack-name.db",
       "entity": "Item"
@@ -24,7 +24,7 @@
     {
       "name": "pack-name-b",
       "label": "Pack Title B",
-      "module": "MyModuleName",
+      "module": "module-name",
       "system": ["system-1", "system-2"],
       "path": "./packs/pack-name.db",
       "entity": "Item"
@@ -32,7 +32,7 @@
     {
       "name": "myscenedatabasename",
       "label": "The Human-Readable Name for My Compendium",
-      "module": "MyModuleName",
+      "module": "module-name",
       "path": "packs/my-scenes-right-here.db",
       "entity": "Scene"
     }
