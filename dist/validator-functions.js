@@ -4571,10 +4571,10 @@ const schema117 = {
         default: "",
         examples: ["module-name"],
         type: "string",
-        pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+        pattern: "^([a-z0-9]+-?)*[a-z0-9]+$",
         errorMessage: {
           pattern:
-            "should be a string that is alpha-numeric with only underscore and hyphen separators",
+            "should be a string that is lowercase alpha-numeric with only separating hyphens",
         },
       },
       name: {
@@ -6832,16 +6832,16 @@ function validate65(
             if (data2.module !== undefined) {
               let data7 = data2.module;
               if (typeof data7 === "string") {
-                if (!pattern13.test(data7)) {
+                if (!pattern7.test(data7)) {
                   const err27 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/module",
                     schemaPath:
                       "../../definitions/strict/module.json#/definitions/packs/items/properties/module/pattern",
-                    params: { pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" },
+                    params: { pattern: "^([a-z0-9]+-?)*[a-z0-9]+$" },
                     message:
                       'should match pattern "' +
-                      "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" +
+                      "^([a-z0-9]+-?)*[a-z0-9]+$" +
                       '"',
                   };
                   if (vErrors === null) {
@@ -7981,10 +7981,11 @@ const schema131 = {
 };
 const schema132 = {
   type: "object",
+  required: ["type", "url"],
   if: { properties: { type: { const: "video" } } },
   then: {
     properties: {
-      type: { type: "string" },
+      type: { const: "video" },
       loop: { type: "boolean" },
       thumbnail: {
         type: "string",
@@ -8001,14 +8002,13 @@ const schema132 = {
         errorMessage: { pattern: "should be an URL string" },
       },
     },
-    required: ["type", "url"],
     additionalProperties: false,
   },
   else: {
     if: { properties: { type: { enum: ["cover", "icon", "screenshot"] } } },
     then: {
       properties: {
-        type: { enum: ["cover", "icon", "screenshot", "video"] },
+        type: { enum: ["cover", "icon", "screenshot"] },
         url: {
           type: "string",
           pattern:
@@ -8018,12 +8018,10 @@ const schema132 = {
           },
         },
       },
-      required: ["type", "url"],
       additionalProperties: false,
     },
     else: {
       properties: { type: { enum: ["cover", "icon", "screenshot", "video"] } },
-      required: ["type"],
     },
   },
 };
@@ -8041,32 +8039,17 @@ function validate79(
     const len0 = data.length;
     for (let i0 = 0; i0 < len0; i0++) {
       let data0 = data[i0];
-      if (!(data0 && typeof data0 == "object" && !Array.isArray(data0))) {
-        const err0 = {
-          keyword: "type",
-          dataPath: dataPath + "/" + i0,
-          schemaPath: "#/definitions/media-item-strict/type",
-          params: { type: "object" },
-          message: "should be object",
-        };
-        if (vErrors === null) {
-          vErrors = [err0];
-        } else {
-          vErrors.push(err0);
-        }
-        errors++;
-      }
       const _errs2 = errors;
       let valid2 = true;
       const _errs3 = errors;
       if (data0 && typeof data0 == "object" && !Array.isArray(data0)) {
         if (data0.type !== undefined) {
           if (!func0(data0.type, "video")) {
-            const err1 = {};
+            const err0 = {};
             if (vErrors === null) {
-              vErrors = [err1];
+              vErrors = [err0];
             } else {
-              vErrors.push(err1);
+              vErrors.push(err0);
             }
             errors++;
           }
@@ -8085,36 +8068,6 @@ function validate79(
       if (_valid0) {
         const _errs5 = errors;
         if (data0 && typeof data0 == "object" && !Array.isArray(data0)) {
-          if (data0.type === undefined) {
-            const err2 = {
-              keyword: "required",
-              dataPath: dataPath + "/" + i0,
-              schemaPath: "#/definitions/media-item-strict/then/required",
-              params: { missingProperty: "type" },
-              message: "should have required property '" + "type" + "'",
-            };
-            if (vErrors === null) {
-              vErrors = [err2];
-            } else {
-              vErrors.push(err2);
-            }
-            errors++;
-          }
-          if (data0.url === undefined) {
-            const err3 = {
-              keyword: "required",
-              dataPath: dataPath + "/" + i0,
-              schemaPath: "#/definitions/media-item-strict/then/required",
-              params: { missingProperty: "url" },
-              message: "should have required property '" + "url" + "'",
-            };
-            if (vErrors === null) {
-              vErrors = [err3];
-            } else {
-              vErrors.push(err3);
-            }
-            errors++;
-          }
           for (const key0 in data0) {
             if (
               !(
@@ -8124,7 +8077,7 @@ function validate79(
                 key0 === "url"
               )
             ) {
-              const err4 = {
+              const err1 = {
                 keyword: "additionalProperties",
                 dataPath: dataPath + "/" + i0,
                 schemaPath:
@@ -8133,34 +8086,34 @@ function validate79(
                 message: "should NOT have additional properties",
               };
               if (vErrors === null) {
-                vErrors = [err4];
+                vErrors = [err1];
               } else {
-                vErrors.push(err4);
+                vErrors.push(err1);
               }
               errors++;
             }
           }
           if (data0.type !== undefined) {
-            if (typeof data0.type !== "string") {
-              const err5 = {
-                keyword: "type",
+            if (!func0(data0.type, "video")) {
+              const err2 = {
+                keyword: "const",
                 dataPath: dataPath + "/" + i0 + "/type",
                 schemaPath:
-                  "#/definitions/media-item-strict/then/properties/type/type",
-                params: { type: "string" },
-                message: "should be string",
+                  "#/definitions/media-item-strict/then/properties/type/const",
+                params: { allowedValue: "video" },
+                message: "should be equal to constant",
               };
               if (vErrors === null) {
-                vErrors = [err5];
+                vErrors = [err2];
               } else {
-                vErrors.push(err5);
+                vErrors.push(err2);
               }
               errors++;
             }
           }
           if (data0.loop !== undefined) {
             if (typeof data0.loop !== "boolean") {
-              const err6 = {
+              const err3 = {
                 keyword: "type",
                 dataPath: dataPath + "/" + i0 + "/loop",
                 schemaPath:
@@ -8169,9 +8122,9 @@ function validate79(
                 message: "should be boolean",
               };
               if (vErrors === null) {
-                vErrors = [err6];
+                vErrors = [err3];
               } else {
-                vErrors.push(err6);
+                vErrors.push(err3);
               }
               errors++;
             }
@@ -8180,7 +8133,7 @@ function validate79(
             let data4 = data0.thumbnail;
             if (typeof data4 === "string") {
               if (!pattern27.test(data4)) {
-                const err7 = {
+                const err4 = {
                   keyword: "pattern",
                   dataPath: dataPath + "/" + i0 + "/thumbnail",
                   schemaPath:
@@ -8195,14 +8148,14 @@ function validate79(
                     '"',
                 };
                 if (vErrors === null) {
-                  vErrors = [err7];
+                  vErrors = [err4];
                 } else {
-                  vErrors.push(err7);
+                  vErrors.push(err4);
                 }
                 errors++;
               }
             } else {
-              const err8 = {
+              const err5 = {
                 keyword: "type",
                 dataPath: dataPath + "/" + i0 + "/thumbnail",
                 schemaPath:
@@ -8211,33 +8164,33 @@ function validate79(
                 message: "should be string",
               };
               if (vErrors === null) {
-                vErrors = [err8];
+                vErrors = [err5];
               } else {
-                vErrors.push(err8);
+                vErrors.push(err5);
               }
               errors++;
             }
             if (errors > 0) {
               const emErrors0 = { pattern: [] };
               const templates0 = {};
-              for (const err9 of vErrors) {
+              for (const err6 of vErrors) {
                 if (
-                  err9.keyword !== "errorMessage" &&
-                  !err9.emUsed &&
-                  err9.dataPath === dataPath + "/" + i0 + "/thumbnail" &&
-                  err9.keyword in emErrors0 &&
-                  err9.schemaPath.indexOf(
+                  err6.keyword !== "errorMessage" &&
+                  !err6.emUsed &&
+                  err6.dataPath === dataPath + "/" + i0 + "/thumbnail" &&
+                  err6.keyword in emErrors0 &&
+                  err6.schemaPath.indexOf(
                     "#/definitions/media-item-strict/then/properties/thumbnail"
                   ) === 0 &&
-                  /^\/[^\/]*$/.test(err9.schemaPath.slice(57))
+                  /^\/[^\/]*$/.test(err6.schemaPath.slice(57))
                 ) {
-                  emErrors0[err9.keyword].push(err9);
-                  err9.emUsed = true;
+                  emErrors0[err6.keyword].push(err6);
+                  err6.emUsed = true;
                 }
               }
               for (const key1 in emErrors0) {
                 if (emErrors0[key1].length) {
-                  const err10 = {
+                  const err7 = {
                     keyword: "errorMessage",
                     dataPath: dataPath + "/" + i0 + "/thumbnail",
                     schemaPath:
@@ -8251,17 +8204,17 @@ function validate79(
                           ],
                   };
                   if (vErrors === null) {
-                    vErrors = [err10];
+                    vErrors = [err7];
                   } else {
-                    vErrors.push(err10);
+                    vErrors.push(err7);
                   }
                   errors++;
                 }
               }
               const emErrs0 = [];
-              for (const err11 of vErrors) {
-                if (!err11.emUsed) {
-                  emErrs0.push(err11);
+              for (const err8 of vErrors) {
+                if (!err8.emUsed) {
+                  emErrs0.push(err8);
                 }
               }
               vErrors = emErrs0;
@@ -8272,7 +8225,7 @@ function validate79(
             let data5 = data0.url;
             if (typeof data5 === "string") {
               if (!pattern0.test(data5)) {
-                const err12 = {
+                const err9 = {
                   keyword: "pattern",
                   dataPath: dataPath + "/" + i0 + "/url",
                   schemaPath:
@@ -8287,14 +8240,14 @@ function validate79(
                     '"',
                 };
                 if (vErrors === null) {
-                  vErrors = [err12];
+                  vErrors = [err9];
                 } else {
-                  vErrors.push(err12);
+                  vErrors.push(err9);
                 }
                 errors++;
               }
             } else {
-              const err13 = {
+              const err10 = {
                 keyword: "type",
                 dataPath: dataPath + "/" + i0 + "/url",
                 schemaPath:
@@ -8303,33 +8256,33 @@ function validate79(
                 message: "should be string",
               };
               if (vErrors === null) {
-                vErrors = [err13];
+                vErrors = [err10];
               } else {
-                vErrors.push(err13);
+                vErrors.push(err10);
               }
               errors++;
             }
             if (errors > 0) {
               const emErrors1 = { pattern: [] };
               const templates1 = {};
-              for (const err14 of vErrors) {
+              for (const err11 of vErrors) {
                 if (
-                  err14.keyword !== "errorMessage" &&
-                  !err14.emUsed &&
-                  err14.dataPath === dataPath + "/" + i0 + "/url" &&
-                  err14.keyword in emErrors1 &&
-                  err14.schemaPath.indexOf(
+                  err11.keyword !== "errorMessage" &&
+                  !err11.emUsed &&
+                  err11.dataPath === dataPath + "/" + i0 + "/url" &&
+                  err11.keyword in emErrors1 &&
+                  err11.schemaPath.indexOf(
                     "#/definitions/media-item-strict/then/properties/url"
                   ) === 0 &&
-                  /^\/[^\/]*$/.test(err14.schemaPath.slice(51))
+                  /^\/[^\/]*$/.test(err11.schemaPath.slice(51))
                 ) {
-                  emErrors1[err14.keyword].push(err14);
-                  err14.emUsed = true;
+                  emErrors1[err11.keyword].push(err11);
+                  err11.emUsed = true;
                 }
               }
               for (const key2 in emErrors1) {
                 if (emErrors1[key2].length) {
-                  const err15 = {
+                  const err12 = {
                     keyword: "errorMessage",
                     dataPath: dataPath + "/" + i0 + "/url",
                     schemaPath:
@@ -8341,17 +8294,17 @@ function validate79(
                         : schema132.then.properties.url.errorMessage[key2],
                   };
                   if (vErrors === null) {
-                    vErrors = [err15];
+                    vErrors = [err12];
                   } else {
-                    vErrors.push(err15);
+                    vErrors.push(err12);
                   }
                   errors++;
                 }
               }
               const emErrs1 = [];
-              for (const err16 of vErrors) {
-                if (!err16.emUsed) {
-                  emErrs1.push(err16);
+              for (const err13 of vErrors) {
+                if (!err13.emUsed) {
+                  emErrs1.push(err13);
                 }
               }
               vErrors = emErrs1;
@@ -8373,11 +8326,11 @@ function validate79(
             if (
               !(data6 === "cover" || data6 === "icon" || data6 === "screenshot")
             ) {
-              const err17 = {};
+              const err14 = {};
               if (vErrors === null) {
-                vErrors = [err17];
+                vErrors = [err14];
               } else {
-                vErrors.push(err17);
+                vErrors.push(err14);
               }
               errors++;
             }
@@ -8396,41 +8349,9 @@ function validate79(
         if (_valid1) {
           const _errs15 = errors;
           if (data0 && typeof data0 == "object" && !Array.isArray(data0)) {
-            if (data0.type === undefined) {
-              const err18 = {
-                keyword: "required",
-                dataPath: dataPath + "/" + i0,
-                schemaPath:
-                  "#/definitions/media-item-strict/else/then/required",
-                params: { missingProperty: "type" },
-                message: "should have required property '" + "type" + "'",
-              };
-              if (vErrors === null) {
-                vErrors = [err18];
-              } else {
-                vErrors.push(err18);
-              }
-              errors++;
-            }
-            if (data0.url === undefined) {
-              const err19 = {
-                keyword: "required",
-                dataPath: dataPath + "/" + i0,
-                schemaPath:
-                  "#/definitions/media-item-strict/else/then/required",
-                params: { missingProperty: "url" },
-                message: "should have required property '" + "url" + "'",
-              };
-              if (vErrors === null) {
-                vErrors = [err19];
-              } else {
-                vErrors.push(err19);
-              }
-              errors++;
-            }
             for (const key3 in data0) {
               if (!(key3 === "type" || key3 === "url")) {
-                const err20 = {
+                const err15 = {
                   keyword: "additionalProperties",
                   dataPath: dataPath + "/" + i0,
                   schemaPath:
@@ -8439,9 +8360,9 @@ function validate79(
                   message: "should NOT have additional properties",
                 };
                 if (vErrors === null) {
-                  vErrors = [err20];
+                  vErrors = [err15];
                 } else {
-                  vErrors.push(err20);
+                  vErrors.push(err15);
                 }
                 errors++;
               }
@@ -8452,11 +8373,10 @@ function validate79(
                 !(
                   data7 === "cover" ||
                   data7 === "icon" ||
-                  data7 === "screenshot" ||
-                  data7 === "video"
+                  data7 === "screenshot"
                 )
               ) {
-                const err21 = {
+                const err16 = {
                   keyword: "enum",
                   dataPath: dataPath + "/" + i0 + "/type",
                   schemaPath:
@@ -8467,9 +8387,9 @@ function validate79(
                   message: "should be equal to one of the allowed values",
                 };
                 if (vErrors === null) {
-                  vErrors = [err21];
+                  vErrors = [err16];
                 } else {
-                  vErrors.push(err21);
+                  vErrors.push(err16);
                 }
                 errors++;
               }
@@ -8478,7 +8398,7 @@ function validate79(
               let data8 = data0.url;
               if (typeof data8 === "string") {
                 if (!pattern27.test(data8)) {
-                  const err22 = {
+                  const err17 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/" + i0 + "/url",
                     schemaPath:
@@ -8493,14 +8413,14 @@ function validate79(
                       '"',
                   };
                   if (vErrors === null) {
-                    vErrors = [err22];
+                    vErrors = [err17];
                   } else {
-                    vErrors.push(err22);
+                    vErrors.push(err17);
                   }
                   errors++;
                 }
               } else {
-                const err23 = {
+                const err18 = {
                   keyword: "type",
                   dataPath: dataPath + "/" + i0 + "/url",
                   schemaPath:
@@ -8509,33 +8429,33 @@ function validate79(
                   message: "should be string",
                 };
                 if (vErrors === null) {
-                  vErrors = [err23];
+                  vErrors = [err18];
                 } else {
-                  vErrors.push(err23);
+                  vErrors.push(err18);
                 }
                 errors++;
               }
               if (errors > 0) {
                 const emErrors2 = { pattern: [] };
                 const templates2 = {};
-                for (const err24 of vErrors) {
+                for (const err19 of vErrors) {
                   if (
-                    err24.keyword !== "errorMessage" &&
-                    !err24.emUsed &&
-                    err24.dataPath === dataPath + "/" + i0 + "/url" &&
-                    err24.keyword in emErrors2 &&
-                    err24.schemaPath.indexOf(
+                    err19.keyword !== "errorMessage" &&
+                    !err19.emUsed &&
+                    err19.dataPath === dataPath + "/" + i0 + "/url" &&
+                    err19.keyword in emErrors2 &&
+                    err19.schemaPath.indexOf(
                       "#/definitions/media-item-strict/else/then/properties/url"
                     ) === 0 &&
-                    /^\/[^\/]*$/.test(err24.schemaPath.slice(56))
+                    /^\/[^\/]*$/.test(err19.schemaPath.slice(56))
                   ) {
-                    emErrors2[err24.keyword].push(err24);
-                    err24.emUsed = true;
+                    emErrors2[err19.keyword].push(err19);
+                    err19.emUsed = true;
                   }
                 }
                 for (const key4 in emErrors2) {
                   if (emErrors2[key4].length) {
-                    const err25 = {
+                    const err20 = {
                       keyword: "errorMessage",
                       dataPath: dataPath + "/" + i0 + "/url",
                       schemaPath:
@@ -8549,17 +8469,17 @@ function validate79(
                             ],
                     };
                     if (vErrors === null) {
-                      vErrors = [err25];
+                      vErrors = [err20];
                     } else {
-                      vErrors.push(err25);
+                      vErrors.push(err20);
                     }
                     errors++;
                   }
                 }
                 const emErrs2 = [];
-                for (const err26 of vErrors) {
-                  if (!err26.emUsed) {
-                    emErrs2.push(err26);
+                for (const err21 of vErrors) {
+                  if (!err21.emUsed) {
+                    emErrs2.push(err21);
                   }
                 }
                 vErrors = emErrs2;
@@ -8573,22 +8493,6 @@ function validate79(
         } else {
           const _errs19 = errors;
           if (data0 && typeof data0 == "object" && !Array.isArray(data0)) {
-            if (data0.type === undefined) {
-              const err27 = {
-                keyword: "required",
-                dataPath: dataPath + "/" + i0,
-                schemaPath:
-                  "#/definitions/media-item-strict/else/else/required",
-                params: { missingProperty: "type" },
-                message: "should have required property '" + "type" + "'",
-              };
-              if (vErrors === null) {
-                vErrors = [err27];
-              } else {
-                vErrors.push(err27);
-              }
-              errors++;
-            }
             if (data0.type !== undefined) {
               let data9 = data0.type;
               if (
@@ -8599,7 +8503,7 @@ function validate79(
                   data9 === "video"
                 )
               ) {
-                const err28 = {
+                const err22 = {
                   keyword: "enum",
                   dataPath: dataPath + "/" + i0 + "/type",
                   schemaPath:
@@ -8610,9 +8514,9 @@ function validate79(
                   message: "should be equal to one of the allowed values",
                 };
                 if (vErrors === null) {
-                  vErrors = [err28];
+                  vErrors = [err22];
                 } else {
-                  vErrors.push(err28);
+                  vErrors.push(err22);
                 }
                 errors++;
               }
@@ -8623,7 +8527,7 @@ function validate79(
           ifClause1 = "else";
         }
         if (!valid5) {
-          const err29 = {
+          const err23 = {
             keyword: "if",
             dataPath: dataPath + "/" + i0,
             schemaPath: "#/definitions/media-item-strict/else/if",
@@ -8631,9 +8535,9 @@ function validate79(
             message: 'should match "' + ifClause1 + '" schema',
           };
           if (vErrors === null) {
-            vErrors = [err29];
+            vErrors = [err23];
           } else {
-            vErrors.push(err29);
+            vErrors.push(err23);
           }
           errors++;
         }
@@ -8642,7 +8546,7 @@ function validate79(
         ifClause0 = "else";
       }
       if (!valid2) {
-        const err30 = {
+        const err24 = {
           keyword: "if",
           dataPath: dataPath + "/" + i0,
           schemaPath: "#/definitions/media-item-strict/if",
@@ -8650,15 +8554,61 @@ function validate79(
           message: 'should match "' + ifClause0 + '" schema',
         };
         if (vErrors === null) {
-          vErrors = [err30];
+          vErrors = [err24];
         } else {
-          vErrors.push(err30);
+          vErrors.push(err24);
+        }
+        errors++;
+      }
+      if (data0 && typeof data0 == "object" && !Array.isArray(data0)) {
+        if (data0.type === undefined) {
+          const err25 = {
+            keyword: "required",
+            dataPath: dataPath + "/" + i0,
+            schemaPath: "#/definitions/media-item-strict/required",
+            params: { missingProperty: "type" },
+            message: "should have required property '" + "type" + "'",
+          };
+          if (vErrors === null) {
+            vErrors = [err25];
+          } else {
+            vErrors.push(err25);
+          }
+          errors++;
+        }
+        if (data0.url === undefined) {
+          const err26 = {
+            keyword: "required",
+            dataPath: dataPath + "/" + i0,
+            schemaPath: "#/definitions/media-item-strict/required",
+            params: { missingProperty: "url" },
+            message: "should have required property '" + "url" + "'",
+          };
+          if (vErrors === null) {
+            vErrors = [err26];
+          } else {
+            vErrors.push(err26);
+          }
+          errors++;
+        }
+      } else {
+        const err27 = {
+          keyword: "type",
+          dataPath: dataPath + "/" + i0,
+          schemaPath: "#/definitions/media-item-strict/type",
+          params: { type: "object" },
+          message: "should be object",
+        };
+        if (vErrors === null) {
+          vErrors = [err27];
+        } else {
+          vErrors.push(err27);
         }
         errors++;
       }
     }
   } else {
-    const err31 = {
+    const err28 = {
       keyword: "type",
       dataPath,
       schemaPath: "#/type",
@@ -8666,9 +8616,9 @@ function validate79(
       message: "should be array",
     };
     if (vErrors === null) {
-      vErrors = [err31];
+      vErrors = [err28];
     } else {
-      vErrors.push(err31);
+      vErrors.push(err28);
     }
     errors++;
   }
@@ -10560,10 +10510,10 @@ const schema144 = {
         default: "",
         examples: ["system-name"],
         type: "string",
-        pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+        pattern: "^([a-z0-9]+-?)*[a-z0-9]+$",
         errorMessage: {
           pattern:
-            "should be a string that is alpha-numeric with only underscore and hyphen separators",
+            "should be a string that is lowercase alpha-numeric with only separating hyphens",
         },
       },
       entity: {
@@ -10595,10 +10545,10 @@ const schema144 = {
         default: "",
         examples: ["module-name"],
         type: "string",
-        pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+        pattern: "^([a-z0-9]+-?)*[a-z0-9]+$",
         errorMessage: {
           pattern:
-            "should be a string that is alpha-numeric with only underscore and hyphen separators",
+            "should be a string that is lowercase alpha-numeric with only separating hyphens",
         },
       },
       name: {
@@ -10903,16 +10853,16 @@ function validate88(
             if (data5.system !== undefined) {
               let data6 = data5.system;
               if (typeof data6 === "string") {
-                if (!pattern13.test(data6)) {
+                if (!pattern7.test(data6)) {
                   const err13 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/system",
                     schemaPath:
                       "../../definitions/strict/system.json#/definitions/packs/items/properties/system/pattern",
-                    params: { pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" },
+                    params: { pattern: "^([a-z0-9]+-?)*[a-z0-9]+$" },
                     message:
                       'should match pattern "' +
-                      "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" +
+                      "^([a-z0-9]+-?)*[a-z0-9]+$" +
                       '"',
                   };
                   if (vErrors === null) {
@@ -11045,16 +10995,16 @@ function validate88(
             if (data5.module !== undefined) {
               let data9 = data5.module;
               if (typeof data9 === "string") {
-                if (!pattern13.test(data9)) {
+                if (!pattern7.test(data9)) {
                   const err20 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/module",
                     schemaPath:
                       "../../definitions/strict/system.json#/definitions/packs/items/properties/module/pattern",
-                    params: { pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" },
+                    params: { pattern: "^([a-z0-9]+-?)*[a-z0-9]+$" },
                     message:
                       'should match pattern "' +
-                      "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" +
+                      "^([a-z0-9]+-?)*[a-z0-9]+$" +
                       '"',
                   };
                   if (vErrors === null) {
