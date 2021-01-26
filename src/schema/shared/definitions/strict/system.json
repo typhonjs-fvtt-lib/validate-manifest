@@ -56,9 +56,9 @@
               "system-name"
             ],
             "type": "string",
-            "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+            "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
             "errorMessage": {
-              "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
+              "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
             }
           },
           "entity": {
@@ -96,9 +96,9 @@
               "module-name"
             ],
             "type": "string",
-            "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+            "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
             "errorMessage": {
-              "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
+              "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
             }
           },
           "name": {
