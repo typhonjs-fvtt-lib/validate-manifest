@@ -157,18 +157,18 @@
     },
     "media-item-strict": {
       "type": "object",
+      "required": ["type", "url"],
 
       "if": {
         "properties": { "type": { "const": "video" } }
       },
       "then": {
         "properties": {
-          "type": { "type": "string" },
+          "type": { "const": "video" },
           "loop": { "type": "boolean" },
           "thumbnail": { "type": "string" },
           "url": { "type": "string" }
         },
-        "required": ["type", "url"],
         "additionalProperties": false
       },
       "else": {
@@ -178,15 +178,13 @@
         },
         "then": {
           "properties": {
-            "type": { "enum": ["cover", "icon", "screenshot", "video"] },
+            "type": { "enum": ["cover", "icon", "screenshot"] },
             "url": { "type": "string" }
           },
-          "required": ["type", "url"],
           "additionalProperties": false
         },
         "else": {
-          "properties": { "type": { "enum": ["cover", "icon", "screenshot", "video"] } },
-          "required": ["type"]
+          "properties": { "type": { "enum": ["cover", "icon", "screenshot", "video"] } }
         }
       }
     }

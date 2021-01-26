@@ -195,6 +195,10 @@
     },
     "media-item-strict": {
       "type": "object",
+      "required": [
+        "type",
+        "url"
+      ],
       "if": {
         "properties": {
           "type": {
@@ -205,7 +209,7 @@
       "then": {
         "properties": {
           "type": {
-            "type": "string"
+            "const": "video"
           },
           "loop": {
             "type": "boolean"
@@ -225,10 +229,6 @@
             }
           }
         },
-        "required": [
-          "type",
-          "url"
-        ],
         "additionalProperties": false
       },
       "else": {
@@ -249,8 +249,7 @@
               "enum": [
                 "cover",
                 "icon",
-                "screenshot",
-                "video"
+                "screenshot"
               ]
             },
             "url": {
@@ -261,10 +260,6 @@
               }
             }
           },
-          "required": [
-            "type",
-            "url"
-          ],
           "additionalProperties": false
         },
         "else": {
@@ -277,10 +272,7 @@
                 "video"
               ]
             }
-          },
-          "required": [
-            "type"
-          ]
+          }
         }
       }
     }
