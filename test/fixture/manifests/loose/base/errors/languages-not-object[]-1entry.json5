@@ -1,0 +1,11 @@
+[
+   {
+      "keyword": "type",
+      "dataPath": "/languages/0",
+      "schemaPath": "#/definitions/languages/items/type",
+      "params": {
+         "type": "object"
+      },
+      "message": "should be object"
+   }
+]
