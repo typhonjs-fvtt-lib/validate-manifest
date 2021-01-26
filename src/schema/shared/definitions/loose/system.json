@@ -34,36 +34,6 @@
       "title": "A string value",
       "type": "string"
     },
-    "primaryTokenAttribute": {
-      "default": "",
-      "examples": [
-        "resources.health"
-      ],
-      "title": "A string value or null",
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "secondaryTokenAttribute": {
-      "default": "",
-      "examples": [
-        "resources.power"
-      ],
-      "title": "A string value or null",
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "templateVersion": {
-      "default": 0,
-      "examples": [
-        2
-      ],
-      "title": "An integer value",
-      "type": "integer"
-    },
     "packs": {
       "title": "An array of items",
       "items": {
@@ -128,6 +98,36 @@
         "type": "object"
       },
       "type": "array"
+    },
+    "primaryTokenAttribute": {
+      "default": "",
+      "examples": [
+        "resources.health"
+      ],
+      "title": "A string value or null",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "secondaryTokenAttribute": {
+      "default": "",
+      "examples": [
+        "resources.power"
+      ],
+      "title": "A string value or null",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "templateVersion": {
+      "default": 0,
+      "examples": [
+        2
+      ],
+      "title": "An integer value",
+      "type": "integer"
     }
   }
 }

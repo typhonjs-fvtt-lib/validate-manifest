@@ -6,20 +6,6 @@
       // Replace with pattern-url-module-json include
       "$$include": { "target": "pattern-url-module-json", "data": { "name": "manifest" } }
     },
-    "system": {
-      "oneOf": [
-        {
-          // Replace with pattern-package-name-loose include
-          "$$include": { "target": "pattern-package-name-loose", "data": { "name": "system" } }
-        },
-        {
-          "items": {
-            // Replace with pattern-package-name-loose include
-            "$$include": { "target": "pattern-package-name-loose", "data": { "name": "system" } }
-          }
-        }
-      ]
-    },
     "packs": {
       "items": {
         "properties": {
@@ -57,6 +43,20 @@
           }
         }
       }
+    },
+    "system": {
+      "oneOf": [
+        {
+          // Replace with pattern-package-name-loose include
+          "$$include": { "target": "pattern-package-name-loose", "data": { "name": "system" } }
+        },
+        {
+          "items": {
+            // Replace with pattern-package-name-loose include
+            "$$include": { "target": "pattern-package-name-loose", "data": { "name": "system" } }
+          }
+        }
+      ]
     }
   }
 }

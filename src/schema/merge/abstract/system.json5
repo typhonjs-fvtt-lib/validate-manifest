@@ -34,6 +34,24 @@
       "title": "A string value",
       "type": "string"
     },
+    "packs": {
+      "title": "An array of items",
+      "items": {
+        "required": [
+          "system"
+        ],
+        "properties": {
+          "system": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+              "system-name"
+            ],
+            "type": "string"
+          }
+        }
+      }
+    },
     "primaryTokenAttribute": {
       "default": "",
       "examples": [
@@ -63,24 +81,6 @@
       ],
       "title": "An integer value",
       "type": "integer"
-    },
-    "packs": {
-      "title": "An array of items",
-      "items": {
-        "required": [
-          "system"
-        ],
-        "properties": {
-          "system": {
-            "title": "A string value",
-            "default": "",
-            "examples": [
-              "system-name"
-            ],
-            "type": "string"
-          }
-        }
-      }
     }
   }
 }

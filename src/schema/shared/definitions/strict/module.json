@@ -13,34 +13,6 @@
         "pattern": "should be an URL string ending in 'module.json'"
       }
     },
-    "system": {
-      "examples": [
-        "dnd5e"
-      ],
-      "oneOf": [
-        {
-          "title": "A string value",
-          "type": "string",
-          "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
-          "errorMessage": {
-            "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
-          }
-        },
-        {
-          "items": {
-            "title": "A string value",
-            "type": "string",
-            "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
-            "errorMessage": {
-              "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
-            }
-          },
-          "title": "An array of items",
-          "type": "array"
-        }
-      ],
-      "errorMessage": "should be a string or array of strings"
-    },
     "packs": {
       "title": "An array of items",
       "items": {
@@ -146,6 +118,34 @@
         "type": "object"
       },
       "type": "array"
+    },
+    "system": {
+      "examples": [
+        "dnd5e"
+      ],
+      "oneOf": [
+        {
+          "title": "A string value",
+          "type": "string",
+          "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+          "errorMessage": {
+            "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
+          }
+        },
+        {
+          "items": {
+            "title": "A string value",
+            "type": "string",
+            "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+            "errorMessage": {
+              "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
+            }
+          },
+          "title": "An array of items",
+          "type": "array"
+        }
+      ],
+      "errorMessage": "should be a string or array of strings"
     }
   }
 }

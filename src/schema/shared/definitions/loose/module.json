@@ -9,26 +9,6 @@
       "title": "A string value",
       "type": "string"
     },
-    "system": {
-      "examples": [
-        "dnd5e"
-      ],
-      "oneOf": [
-        {
-          "title": "A string value",
-          "type": "string"
-        },
-        {
-          "items": {
-            "title": "A string value",
-            "type": "string"
-          },
-          "title": "An array of items",
-          "type": "array"
-        }
-      ],
-      "errorMessage": "should be a string or array of strings"
-    },
     "packs": {
       "title": "An array of items",
       "items": {
@@ -105,6 +85,26 @@
         "type": "object"
       },
       "type": "array"
+    },
+    "system": {
+      "examples": [
+        "dnd5e"
+      ],
+      "oneOf": [
+        {
+          "title": "A string value",
+          "type": "string"
+        },
+        {
+          "items": {
+            "title": "A string value",
+            "type": "string"
+          },
+          "title": "An array of items",
+          "type": "array"
+        }
+      ],
+      "errorMessage": "should be a string or array of strings"
     }
   }
 }
