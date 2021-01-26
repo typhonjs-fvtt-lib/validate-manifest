@@ -2,7 +2,7 @@
    {
       "keyword": "required",
       "dataPath": "/media/0",
-      "schemaPath": "#/definitions/media-item-strict/then/required",
+      "schemaPath": "#/definitions/media-item-strict/required",
       "params": {
          "missingProperty": "type"
       },
@@ -11,7 +11,7 @@
    {
       "keyword": "required",
       "dataPath": "/media/0",
-      "schemaPath": "#/definitions/media-item-strict/then/required",
+      "schemaPath": "#/definitions/media-item-strict/required",
       "params": {
          "missingProperty": "url"
       },
