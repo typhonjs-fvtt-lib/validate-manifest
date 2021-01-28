@@ -6,11 +6,11 @@
       "properties": {
         "email": {
           // Replace with pattern-email include
-          "$$include": { "target": "pattern-email", "data": { "name": "email" } }
+          "$$include": { "target": "pattern-email" }
         },
         "url": {
           // Replace with pattern-url include
-          "$$include": { "target": "pattern-url", "data": { "name": "url" } }
+          "$$include": { "target": "pattern-url" }
         }
       }
     },
@@ -18,15 +18,15 @@
       "properties": {
         "discord": {
           // Replace with pattern-discord include
-          "$$include": { "target": "pattern-discord", "data": { "name": "discord" } }
+          "$$include": { "target": "pattern-discord" }
         },
         "reddit": {
           // Replace with pattern-reddit include
-          "$$include": { "target": "pattern-reddit", "data": { "name": "reddit" } }
+          "$$include": { "target": "pattern-reddit" }
         },
         "twitter": {
           // Replace with pattern-twitter include
-          "$$include": { "target": "pattern-twitter", "data": { "name": "twitter" } }
+          "$$include": { "target": "pattern-twitter" }
         }
       }
     }

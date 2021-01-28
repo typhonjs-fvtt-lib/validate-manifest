@@ -4,7 +4,7 @@
   "definitions": {
     "manifest": {
       // Replace with pattern-url-module-json include
-      "$$include": { "target": "pattern-url-module-json", "data": { "name": "manifest" } }
+      "$$include": { "target": "pattern-url-module-json" }
     },
     "packs": {
       "items": {
@@ -17,15 +17,15 @@
           },
           "module": {
             // Replace with pattern-package-name include
-            "$$include": { "target": "pattern-package-name", "data": { "name": "module" } }
+            "$$include": { "target": "pattern-package-name" }
           },
           "name": {
             // Replace with pattern-package-name include
-            "$$include": { "target": "pattern-package-name", "data": { "name": "name" } }
+            "$$include": { "target": "pattern-package-name" }
           },
           "path": {
             // Replace with pattern-file-db include
-            "$$include": { "target": "pattern-file-db", "data": { "name": "path" } }
+            "$$include": { "target": "pattern-file-db" }
           },
           "system": {
             "oneOf": [

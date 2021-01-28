@@ -7,7 +7,7 @@
         "properties": {
           "name": {
             // Replace with pattern-package-name-loose include
-            "$$include": { "target": "pattern-package-name-loose", "data": { "name": "conflicts" } }
+            "$$include": { "target": "pattern-package-name-loose" }
           }
         }
       }
@@ -19,18 +19,18 @@
             "properties": {
               "name": {
                 // Replace with pattern-package-name-loose include
-                "$$include": { "target": "pattern-package-name-loose", "data": { "name": "name" } }
+                "$$include": { "target": "pattern-package-name-loose" }
               },
               "manifest": {
                 // Replace with pattern-url-manifest include
-                "$$include": { "target": "pattern-url-manifest", "data": { "name": "manifest" } }
+                "$$include": { "target": "pattern-url-manifest" }
               }
             }
           }
         },
         "coreVersion": {
           // Replace with pattern-semver include
-          "$$include": { "target": "pattern-semver", "data": { "name": "coreVersion" } }
+          "$$include": { "target": "pattern-semver" }
         }
       }
     },
@@ -38,7 +38,7 @@
       "uniqueItems": true
     },
     "manifestPlusVersion": {
-      "$$include": { "target": "pattern-semver", "data": { "name": "manifestPlusVersion" } }
+      "$$include": { "target": "pattern-semver" }
     },
     "media": {
       "items": {
@@ -50,11 +50,11 @@
         "properties": {
           "thumbnail": {
             // image pattern include here
-            "$$include": { "target": "pattern-url-image", "data": { "name": "url" } }
+            "$$include": { "target": "pattern-url-image" }
           },
           "url": {
             // video pattern include here
-            "$$include": { "target": "pattern-url", "data": { "name": "url" } }
+            "$$include": { "target": "pattern-url" }
           }
         }
       },
@@ -63,7 +63,7 @@
           "properties": {
             "url": {
               // image pattern include here
-              "$$include": { "target": "pattern-url-image", "data": { "name": "url" } }
+              "$$include": { "target": "pattern-url-image" }
             }
           }
         }
