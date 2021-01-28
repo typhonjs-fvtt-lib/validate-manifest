@@ -11,25 +11,37 @@ module.exports = {
   'pattern-file-css': () =>
   {
     return {
-      pattern: '^(.+).css$'
+      pattern: '^(.+).css$',
+      errorMessage: {
+        pattern: `should be a string that is a file ending in '*.css'`
+      }
     };
   },
   'pattern-file-db': () =>
   {
     return {
-      pattern: '^(.+).db$'
+      pattern: '^(.+).db$',
+      errorMessage: {
+        pattern: `should be a string that is a file ending in '*.db'`
+      }
     };
   },
   'pattern-file-js': () =>
   {
     return {
-      pattern: '^(.+).js$'
+      pattern: '^(.+).js$',
+      errorMessage: {
+        pattern: `should be a string that is a file ending in '*.js'`
+      }
     };
   },
   'pattern-file-json': () =>
   {
     return {
-      pattern: '^(.+).json$'
+      pattern: '^(.+).json$',
+      errorMessage: {
+        pattern: `should be a string that is a file ending in '*.json'`
+      }
     };
   },
   'pattern-email': () =>   // https://www.codespot.org/javascript-email-validation/

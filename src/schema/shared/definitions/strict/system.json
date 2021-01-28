@@ -120,7 +120,10 @@
               "./packs/pack-name.db"
             ],
             "type": "string",
-            "pattern": "^(.+).db$"
+            "pattern": "^(.+).db$",
+            "errorMessage": {
+              "pattern": "should be a string that is a file ending in '*.db'"
+            }
           }
         },
         "title": "An object value",

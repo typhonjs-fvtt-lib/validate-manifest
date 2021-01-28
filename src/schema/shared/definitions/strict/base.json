@@ -115,7 +115,10 @@
         ],
         "title": "A string value",
         "type": "string",
-        "pattern": "^(.+).js$"
+        "pattern": "^(.+).js$",
+        "errorMessage": {
+          "pattern": "should be a string that is a file ending in '*.js'"
+        }
       },
       "title": "An array of items",
       "type": "array"
@@ -145,7 +148,10 @@
             ],
             "title": "A string value",
             "type": "string",
-            "pattern": "^(.+).json$"
+            "pattern": "^(.+).json$",
+            "errorMessage": {
+              "pattern": "should be a string that is a file ending in '*.json'"
+            }
           }
         },
         "required": [
@@ -207,7 +213,10 @@
         ],
         "title": "A string value",
         "type": "string",
-        "pattern": "^(.+).js$"
+        "pattern": "^(.+).js$",
+        "errorMessage": {
+          "pattern": "should be a string that is a file ending in '*.js'"
+        }
       },
       "title": "An array of items",
       "type": "array"
@@ -228,7 +237,10 @@
         ],
         "title": "A string value",
         "type": "string",
-        "pattern": "^(.+).css$"
+        "pattern": "^(.+).css$",
+        "errorMessage": {
+          "pattern": "should be a string that is a file ending in '*.css'"
+        }
       },
       "title": "An array of items",
       "type": "array"
