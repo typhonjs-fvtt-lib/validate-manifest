@@ -1,11 +1,22 @@
 [
    {
-      "keyword": "pattern",
+      "keyword": "errorMessage",
       "dataPath": "/languages/0/path",
-      "schemaPath": "#/definitions/languages/items/properties/path/pattern",
+      "schemaPath": "#/definitions/languages/items/properties/path/errorMessage",
       "params": {
-         "pattern": "^(.+).json$"
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/languages/0/path",
+               "schemaPath": "#/definitions/languages/items/properties/path/pattern",
+               "params": {
+                  "pattern": "^(.+).json$"
+               },
+               "message": "should match pattern \"^(.+).json$\"",
+               "emUsed": true
+            }
+         ]
       },
-      "message": "should match pattern \"^(.+).json$\""
+      "message": "should be a string that is a file ending in '*.json'"
    }
 ]

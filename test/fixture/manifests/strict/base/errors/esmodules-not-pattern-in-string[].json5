@@ -1,0 +1,22 @@
+[
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/esmodules/0",
+      "schemaPath": "#/definitions/esmodules/items/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/esmodules/0",
+               "schemaPath": "#/definitions/esmodules/items/pattern",
+               "params": {
+                  "pattern": "^(.+).js$"
+               },
+               "message": "should match pattern \"^(.+).js$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "should be a string that is a file ending in '*.js'"
+   }
+]

@@ -1,11 +1,22 @@
 [
    {
-      "keyword": "pattern",
+      "keyword": "errorMessage",
       "dataPath": "/packs/0/path",
-      "schemaPath": "#/definitions/packs/items/properties/path/pattern",
+      "schemaPath": "#/definitions/packs/items/properties/path/errorMessage",
       "params": {
-         "pattern": "^(.+).db$"
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/packs/0/path",
+               "schemaPath": "#/definitions/packs/items/properties/path/pattern",
+               "params": {
+                  "pattern": "^(.+).db$"
+               },
+               "message": "should match pattern \"^(.+).db$\"",
+               "emUsed": true
+            }
+         ]
       },
-      "message": "should match pattern \"^(.+).db$\""
+      "message": "should be a string that is a file ending in '*.db'"
    }
 ]
