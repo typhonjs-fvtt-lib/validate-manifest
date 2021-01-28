@@ -22,7 +22,8 @@ function wrap(wrappedFunction)
 
       if (!result && Array.isArray(wrapFunction.errors) && wrapFunction.errors.length > 0)
       {
-         wrapFunction.errors = wrapFunction.errors.filter((error) => error.keyword !== 'if');
+         wrapFunction.errors = wrapFunction.errors.filter(
+          (error) => error.keyword !== 'if' && error.keyword !== 'pattern');
       }
 
       return result;
