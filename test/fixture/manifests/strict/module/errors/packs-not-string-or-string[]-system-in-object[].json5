@@ -1,14 +1,14 @@
 [
    {
       "keyword": "errorMessage",
-      "dataPath": "/system",
-      "schemaPath": "#/definitions/system/errorMessage",
+      "dataPath": "/packs/0/system",
+      "schemaPath": "#/definitions/packs/items/properties/system/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "type",
-               "dataPath": "/system",
-               "schemaPath": "#/definitions/system/oneOf/0/type",
+               "dataPath": "/packs/0/system",
+               "schemaPath": "#/definitions/packs/items/properties/system/oneOf/0/type",
                "params": {
                   "type": "string"
                },
@@ -16,19 +16,19 @@
                "emUsed": true
             },
             {
-               "keyword": "pattern",
-               "dataPath": "/system/0",
-               "schemaPath": "#/definitions/system/oneOf/1/items/pattern",
+               "keyword": "type",
+               "dataPath": "/packs/0/system",
+               "schemaPath": "#/definitions/packs/items/properties/system/oneOf/1/type",
                "params": {
-                  "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$"
+                  "type": "array"
                },
-               "message": "should match pattern \"^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$\"",
+               "message": "should be array",
                "emUsed": true
             },
             {
                "keyword": "oneOf",
-               "dataPath": "/system",
-               "schemaPath": "#/definitions/system/oneOf",
+               "dataPath": "/packs/0/system",
+               "schemaPath": "#/definitions/packs/items/properties/system/oneOf",
                "params": {
                   "passingSchemas": null
                },

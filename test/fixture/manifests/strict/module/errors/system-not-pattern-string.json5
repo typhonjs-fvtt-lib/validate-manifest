@@ -2,7 +2,7 @@
    {
       "keyword": "errorMessage",
       "dataPath": "/system",
-      "schemaPath": "#/definitions/system/oneOf/0/errorMessage",
+      "schemaPath": "#/definitions/system/errorMessage",
       "params": {
          "errors": [
             {
@@ -14,17 +14,7 @@
                },
                "message": "should match pattern \"^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$\"",
                "emUsed": true
-            }
-         ]
-      },
-      "message": "should be a string that is alpha-numeric with only underscore and hyphen separators"
-   },
-   {
-      "keyword": "errorMessage",
-      "dataPath": "/system",
-      "schemaPath": "#/definitions/system/errorMessage",
-      "params": {
-         "errors": [
+            },
             {
                "keyword": "type",
                "dataPath": "/system",
@@ -47,6 +37,6 @@
             }
          ]
       },
-      "message": "should be a string or array of strings"
+      "message": "should be a string or array of strings that are alpha-numeric with only underscore and hyphen separators"
    }
 ]

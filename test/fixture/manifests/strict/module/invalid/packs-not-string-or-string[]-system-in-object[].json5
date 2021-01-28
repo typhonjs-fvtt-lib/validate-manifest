@@ -1,6 +1,4 @@
-// Strict version tested here: `strict/module/invalid/packs-not-string[]-system-in-object[].json5`
 {
-  "__strictskip": true,
   "name": "a-module",
   "title": "A Module",
   "description": "Some description",
@@ -12,7 +10,7 @@
       "name": "pack-name",
       "label": "Pack Title",
       "module": "module-name",
-      "system": [false],
+      "system": false,
       "path": "./packs/pack-name.db",
       "entity": "Item"
     }

@@ -1,6 +1,4 @@
-// Strict skips and tests `strict/module/invalid/system-not-string[]-1entry.json5`
 {
-  "__strictskip": true,
   "name": "a-module",
   "title": "A Module",
   "description": "Some description",

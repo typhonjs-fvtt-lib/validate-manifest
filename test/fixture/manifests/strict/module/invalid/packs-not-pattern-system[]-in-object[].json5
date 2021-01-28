@@ -1,3 +1,5 @@
+// Note: this test case generates two errors even though `errorMessage` is used.
+// See: https://github.com/ajv-validator/ajv-errors/issues/83
 {
   "name": "a-module",
   "title": "A Module",

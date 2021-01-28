@@ -1,6 +1,6 @@
-// Strict version tested here: `strict/module/invalid/packs-not-string[]-system-in-object[].json5`
+// Note: this test case generates two errors even though `errorMessage` is used.
+// See: https://github.com/ajv-validator/ajv-errors/issues/83
 {
-  "__strictskip": true,
   "name": "a-module",
   "title": "A Module",
   "description": "Some description",

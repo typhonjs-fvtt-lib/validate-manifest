@@ -16,13 +16,13 @@
                "emUsed": true
             },
             {
-               "keyword": "pattern",
+               "keyword": "type",
                "dataPath": "/system/0",
-               "schemaPath": "#/definitions/system/oneOf/1/items/pattern",
+               "schemaPath": "#/definitions/system/oneOf/1/items/type",
                "params": {
-                  "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$"
+                  "type": "string"
                },
-               "message": "should match pattern \"^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$\"",
+               "message": "should be string",
                "emUsed": true
             },
             {
