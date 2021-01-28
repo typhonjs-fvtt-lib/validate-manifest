@@ -6,6 +6,8 @@ const stripJsonComments = require('strip-json-comments');
 
 const test              = require('./test');
 
+const betterErrors      = require('../../src/better-errors/bettererrors');
+
 /**
  * Captures the right hand schema path data for sanitizing error data.
  * @type {RegExp}
@@ -26,8 +28,11 @@ class TestRunner
     */
    static invalid(testFunction, dirPath, functionDesc)
    {
+      const betterErrorPath = `${dirPath}${path.sep}bettererrors`;
       const errorPath = `${dirPath}${path.sep}errors`;
       const invalidPath = `${dirPath}${path.sep}invalid`;
+
+      if (!fs.existsSync(betterErrorPath)) { return; }
 
       if (!fs.existsSync(errorPath) || !fs.existsSync(invalidPath)) { return; }
 
@@ -63,6 +68,19 @@ class TestRunner
                    `Error data for'${key}' missing${msg}:\n${JSON.stringify(testFunction.errors, null, 3)}`));
                }
 
+               const betterErrorFilepath = `${dirPath}${path.sep}bettererrors${path.sep}${key}.log`;
+
+               if (!fs.existsSync(betterErrorFilepath) && test.createErrorData)
+               {
+                  const betterData = betterErrors(testFunction.errors, invalid.file);
+                  let betterOutput = '';
+                  for (const betterEntry of betterData)
+                  {
+                     betterOutput += `${betterEntry.message}\n${betterEntry.codeFrame}\n\n`;
+                  }
+                  fs.writeFileSync(betterErrorFilepath, betterOutput);
+               }
+
                chai.expect(testFunction.errors).to.be.deep.equal(errors.get(key).data);
                done();
             }
@@ -77,27 +95,30 @@ class TestRunner
    /**
     * Returns a Map of all files found in the directory provided.
     *
-    * @param {string}               dir - Directory to read.
-    * @param {Map<string, object>}  [results] - Output Map.
+    * @param {string} dir - Directory to read.
+    * @param {string} extension - File extension to read.
     *
     * @returns {Map<string, object>}
     */
-   static loadFiles(dir = '.', results = new Map())
+   static loadFiles(dir = '.', extension = '.json5')
    {
+      const results = new Map();
+
       fs.readdirSync(dir).forEach((filename) =>
       {
          const absPath = path.resolve(dir, filename);
          const stat = fs.statSync(absPath);
-         const isFile = stat.isFile() && path.extname(filename) === '.json5';
+         const isFile = stat.isFile() && path.extname(filename) === extension;
 
          if (isFile)
          {
             const baseName = path.basename(absPath);
-            let data;
+            let data, file;
 
             try
             {
-               data = JSON.parse(stripJsonComments(fs.readFileSync(absPath, 'utf8')));
+               file = stripJsonComments(fs.readFileSync(absPath, 'utf8'));
+               data = JSON.parse(file);
             }
             catch (err)
             {
@@ -108,7 +129,8 @@ class TestRunner
             results.set(baseName, {
                absPath,
                baseName,
-               data
+               data,
+               file
             });
          }
       });
