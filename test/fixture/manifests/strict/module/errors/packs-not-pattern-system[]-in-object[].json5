@@ -1,14 +1,5 @@
 [
    {
-      "keyword": "pattern",
-      "dataPath": "/packs/0/system/0",
-      "schemaPath": "#/definitions/packs/items/properties/system/oneOf/1/items/pattern",
-      "params": {
-         "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$"
-      },
-      "message": "should match pattern \"^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$\""
-   },
-   {
       "keyword": "errorMessage",
       "dataPath": "/packs/0/system",
       "schemaPath": "#/definitions/packs/items/properties/system/errorMessage",
