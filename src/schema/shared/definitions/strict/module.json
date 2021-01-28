@@ -32,25 +32,19 @@
               {
                 "title": "A string value",
                 "type": "string",
-                "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
-                "errorMessage": {
-                  "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
-                }
+                "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$"
               },
               {
                 "items": {
                   "title": "A string value",
                   "type": "string",
-                  "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
-                  "errorMessage": {
-                    "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
-                  }
+                  "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$"
                 },
                 "title": "An array of items",
                 "type": "array"
               }
             ],
-            "errorMessage": "should be a string or array of strings"
+            "errorMessage": "should be a string or array of strings that are alpha-numeric with only underscore and hyphen separators"
           },
           "entity": {
             "title": "A string value",
@@ -127,25 +121,19 @@
         {
           "title": "A string value",
           "type": "string",
-          "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
-          "errorMessage": {
-            "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
-          }
+          "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$"
         },
         {
           "items": {
             "title": "A string value",
             "type": "string",
-            "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
-            "errorMessage": {
-              "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
-            }
+            "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$"
           },
           "title": "An array of items",
           "type": "array"
         }
       ],
-      "errorMessage": "should be a string or array of strings"
+      "errorMessage": "should be a string or array of strings that are alpha-numeric with only underscore and hyphen separators"
     }
   }
 }

@@ -50,14 +50,21 @@ module.exports = {
       }
     };
   },
-  'pattern-package-name-loose': () =>  // Not as strict test for package names; allows uppercase and underscore
+  // Not as strict test for package names; allows uppercase and underscore
+  'pattern-package-name-loose': ({ errorMessage = true } = {}) =>
   {
-    return {
-      pattern: '^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$',
-      errorMessage: {
-        pattern: `should be a string that is alpha-numeric with only underscore and hyphen separators`
-      }
+    const include = {
+      pattern: '^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$'
     };
+
+    if (errorMessage)
+    {
+      include.errorMessage = {
+        pattern: `should be a string that is alpha-numeric with only underscore and hyphen separators`
+      };
+    }
+
+    return include;
   },
   'pattern-reddit': () =>
   {

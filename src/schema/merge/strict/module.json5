@@ -31,15 +31,17 @@
             "oneOf": [
               {
                 // Replace with pattern-package-name-loose include
-                "$$include": { "target": "pattern-package-name-loose", "data": { "name": "system" } }
+                "$$include": { "target": "pattern-package-name-loose", "data": { "errorMessage": false } }
               },
               {
                 "items": {
                   // Replace with pattern-package-name-loose include
-                  "$$include": { "target": "pattern-package-name-loose", "data": { "name": "system" } }
+                  "$$include": { "target": "pattern-package-name-loose", "data": { "errorMessage": false } }
                 }
               }
-            ]
+            ],
+            "errorMessage":
+             "should be a string or array of strings that are alpha-numeric with only underscore and hyphen separators"
           }
         }
       }
@@ -48,15 +50,17 @@
       "oneOf": [
         {
           // Replace with pattern-package-name-loose include
-          "$$include": { "target": "pattern-package-name-loose", "data": { "name": "system" } }
+          "$$include": { "target": "pattern-package-name-loose", "data": { "errorMessage": false } }
         },
         {
           "items": {
             // Replace with pattern-package-name-loose include
-            "$$include": { "target": "pattern-package-name-loose", "data": { "name": "system" } }
+            "$$include": { "target": "pattern-package-name-loose", "data": { "errorMessage": false } }
           }
         }
-      ]
+      ],
+      "errorMessage":
+       "should be a string or array of strings that are alpha-numeric with only underscore and hyphen separators"
     }
   }
 }

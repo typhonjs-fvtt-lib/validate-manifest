@@ -7,9 +7,15 @@
         "properties": {
           "entity": {
             "type": "string"
+          },
+          "system": {
+            "errorMessage": "should be a string or array of strings"
           }
         }
       }
+    },
+    "system": {
+      "errorMessage": "should be a string or array of strings"
     }
   }
 }
