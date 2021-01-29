@@ -171,6 +171,10 @@
             "media": {
                "items": {
                   "type": "object",
+                  "required": [
+                     "type",
+                     "url"
+                  ],
                   "if": {
                      "properties": {
                         "type": {
@@ -181,7 +185,7 @@
                   "then": {
                      "properties": {
                         "type": {
-                           "type": "string"
+                           "const": "video"
                         },
                         "loop": {
                            "type": "boolean"
@@ -201,10 +205,6 @@
                            }
                         }
                      },
-                     "required": [
-                        "type",
-                        "url"
-                     ],
                      "additionalProperties": false
                   },
                   "else": {
@@ -225,8 +225,7 @@
                               "enum": [
                                  "cover",
                                  "icon",
-                                 "screenshot",
-                                 "video"
+                                 "screenshot"
                               ]
                            },
                            "url": {
@@ -237,10 +236,6 @@
                               }
                            }
                         },
-                        "required": [
-                           "type",
-                           "url"
-                        ],
                         "additionalProperties": false
                      },
                      "else": {
@@ -253,10 +248,7 @@
                                  "video"
                               ]
                            }
-                        },
-                        "required": [
-                           "type"
-                        ]
+                        }
                      }
                   }
                },
@@ -398,7 +390,10 @@
                         ],
                         "title": "A string value",
                         "type": "string",
-                        "pattern": "^(.+).js$"
+                        "pattern": "^(.+).js$",
+                        "errorMessage": {
+                           "pattern": "should be a file path string ending in '.js'"
+                        }
                      },
                      "title": "An array of items",
                      "type": "array"
@@ -428,7 +423,10 @@
                               ],
                               "title": "A string value",
                               "type": "string",
-                              "pattern": "^(.+).json$"
+                              "pattern": "^(.+).json$",
+                              "errorMessage": {
+                                 "pattern": "should be a file path string ending in '.json'"
+                              }
                            }
                         },
                         "required": [
@@ -490,7 +488,10 @@
                         ],
                         "title": "A string value",
                         "type": "string",
-                        "pattern": "^(.+).js$"
+                        "pattern": "^(.+).js$",
+                        "errorMessage": {
+                           "pattern": "should be a file path string ending in '.js'"
+                        }
                      },
                      "title": "An array of items",
                      "type": "array"
@@ -511,7 +512,10 @@
                         ],
                         "title": "A string value",
                         "type": "string",
-                        "pattern": "^(.+).css$"
+                        "pattern": "^(.+).css$",
+                        "errorMessage": {
+                           "pattern": "should be a file path string ending in '.css'"
+                        }
                      },
                      "title": "An array of items",
                      "type": "array"
@@ -606,9 +610,9 @@
                            "system-name"
                         ],
                         "type": "string",
-                        "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+                        "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
                         "errorMessage": {
-                           "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
+                           "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
                         }
                      },
                      "entity": {
@@ -646,9 +650,9 @@
                            "module-name"
                         ],
                         "type": "string",
-                        "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
+                        "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
                         "errorMessage": {
-                           "pattern": "should be a string that is alpha-numeric with only underscore and hyphen separators"
+                           "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
                         }
                      },
                      "name": {
@@ -670,7 +674,10 @@
                            "./packs/pack-name.db"
                         ],
                         "type": "string",
-                        "pattern": "^(.+).db$"
+                        "pattern": "^(.+).db$",
+                        "errorMessage": {
+                           "pattern": "should be a file path string ending in '.db'"
+                        }
                      }
                   },
                   "title": "An object value",
