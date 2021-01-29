@@ -17,7 +17,7 @@ const hash                 = require('object-hash');
  *
  * @param {number}   [options.wrapLength] - An integer specifying a line length to wrap the output message.
  *
- * @returns {{codeFrame: string, keyword: string, message: string, dataPath: string}[]}
+ * @returns {{codeFrame: string, error: object, keyword: string, message: string, dataPath: string}[]}
  */
 function betterErrors(errors, { file, highlightCode = true, wrapLength } = {})
 {
@@ -136,7 +136,7 @@ function betterErrors(errors, { file, highlightCode = true, wrapLength } = {})
          codeFrame = generateCodeFrame(file, jsonPointerLocs, { codeFrameNoColumn, highlightCode });
       }
 
-      results.push({ codeFrame, dataPath, keyword, message });
+      results.push({ codeFrame, dataPath, error, keyword, message });
    }
 
    return results;
