@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "should be a string that is a file ending in '*.css'"
+      "message": "should be a file path string ending in '.css'"
    }
 ]
