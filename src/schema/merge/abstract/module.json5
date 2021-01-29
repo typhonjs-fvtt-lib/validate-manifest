@@ -1,3 +1,8 @@
+/**
+ * Provides the base definition for the module manifest. The reason to separate the manifest into this file is simply
+ * to provide a module appropriate `example` and title. This schema is merged with `abstract/base-packs.json5`.
+ * See: `merge.js`
+ */
 {
   "$id": "shared/definitions/abstract/module.json",
   "$schema": "http://json-schema.org/draft-07/schema#",

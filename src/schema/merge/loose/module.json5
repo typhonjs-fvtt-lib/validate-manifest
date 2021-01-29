@@ -1,3 +1,7 @@
+/**
+ * Modifies the qualifying the $id. Merged with `abstract/base-packs.json5` & `abstract/module.json5`
+ * modifying the packs->items->entity type to be a string.
+ */
 {
   "$id": "shared/definitions/loose/module.json",
 

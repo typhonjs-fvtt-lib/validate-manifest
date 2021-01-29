@@ -1,3 +1,11 @@
+/**
+ * Exports an object with various template functions which are invoked in `merge.js` via the `$$includes` key in merge
+ * schema. The object returned from the function will be merged where the key is located and the key then removed.
+ *
+ * Presently all of the templates return pattern schema and an errorMessage for `ajv-errors`.
+ *
+ * @type {{"pattern-file-css": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-twitter": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-url-video": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-file-js": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-file-db": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-package-name-loose": (function({errorMessage?: *}=): {pattern: string}), "pattern-package-name": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-url-module-json": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-url-image": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-url-manifest": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-url-system-json": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-email": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-reddit": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-url": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-url-zip": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-file-json": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-url-json": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-discord": (function(): {pattern: string, errorMessage: {pattern: string}}), "pattern-semver": (function(): {pattern: string, errorMessage: {pattern: string}})}}
+ */
 module.exports = {
   'pattern-discord': () =>   // https://ihateregex.io/expr/discord-username/
   {
@@ -62,7 +70,8 @@ module.exports = {
       }
     };
   },
-  // Not as strict test for package names; allows uppercase and underscore
+  // Not as strict test for package names; allows uppercase and underscore with optional data field to omit the error
+  // message.
   'pattern-package-name-loose': ({ errorMessage = true } = {}) =>
   {
     const include = {

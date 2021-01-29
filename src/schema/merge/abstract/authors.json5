@@ -1,3 +1,9 @@
+/**
+ * Provides the definitions for authors and authors+ manifest plus additions. This data is separated from the main
+ * schema to allow easier definitions of the manifest plus additions as they add to the base authors attribute. Doing
+ * it in this manner also allows all the tests that are targeted at the base authors schema to apply to the authors+
+ * schema in addition to more tests for the extra manifest plus fields.
+ */
 {
   "$id": "shared/definitions/abstract/authors.json",
   "$schema": "http://json-schema.org/draft-07/schema#",

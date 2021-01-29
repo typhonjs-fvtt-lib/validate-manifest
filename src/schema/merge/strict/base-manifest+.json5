@@ -1,3 +1,7 @@
+/**
+ * Modifies the qualifying the $id. Merged with `abstract/base-manifest+.json5 modifying the media->items array for the
+ * strict definition in addition to adding pattern matching template includes.
+ */
 {
   "$id": "shared/definitions/strict/base-manifest+.json",
   "$schema": "http://json-schema.org/draft-07/schema#",

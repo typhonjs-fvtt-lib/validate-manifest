@@ -1,3 +1,7 @@
+/**
+ * Modifies the qualifying the $id. Merged with `abstract/base.json5 adding the specific loose `version` handling of the
+ * default manifest specification.
+ */
 {
   "$id": "shared/definitions/loose/base.json",
   "$schema": "http://json-schema.org/draft-07/schema#",

@@ -1,3 +1,6 @@
+/**
+ * Defines all of the base shared schema definitions across all of the generated variations.
+ */
 {
   "$id": "shared/definitions/abstract/base.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
