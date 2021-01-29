@@ -1,0 +1,9 @@
+/media/0/type should be equal to one of the allowed values: 'cover', 'icon',
+'screenshot', or 'video'
+   6 |   "version": "1.0.0",
+   7 |   "minimumCoreVersion": "0.7.5",
+>  8 |   "media": [{ "type": 2, "url": "http://good.com" }]
+     |                       ^
+   9 | }
+  10 | 
+

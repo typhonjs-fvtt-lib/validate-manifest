@@ -1,0 +1,8 @@
+should have required property 'name'
+   6 |   "version": "1.0.0",
+   7 |   "minimumCoreVersion": "0.7.5",
+>  8 |   "dependencies": [{}]
+     |                    ^^
+   9 | }
+  10 | 
+

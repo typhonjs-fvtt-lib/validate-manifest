@@ -1,0 +1,8 @@
+/minimumCoreVersion should be a string that uses semantic versioning
+  5 |   "author": "typhonrt",
+  6 |   "version": "1.0.0",
+> 7 |   "minimumCoreVersion": "A.0.0"
+    |                         ^^^^^^^
+  8 | }
+  9 | 
+

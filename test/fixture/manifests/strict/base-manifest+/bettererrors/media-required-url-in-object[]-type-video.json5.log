@@ -1,0 +1,8 @@
+should have required property 'url'
+   6 |   "version": "1.0.0",
+   7 |   "minimumCoreVersion": "0.7.5",
+>  8 |   "media": [{ "type": "video" }]
+     |             ^^^^^^^^^^^^^^^^^^^
+   9 | }
+  10 | 
+

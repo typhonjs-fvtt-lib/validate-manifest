@@ -1,0 +1,9 @@
+/packs/0/system should be string
+  10 |       "name": "pack-name",
+  11 |       "label": "Pack Title",
+> 12 |       "system": false,
+     |                 ^^^^^
+  13 |       "path": "./packs/pack-name.db",
+  14 |       "entity": "Item"
+  15 |     }
+

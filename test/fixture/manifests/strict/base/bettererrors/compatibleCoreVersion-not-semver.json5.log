@@ -1,0 +1,8 @@
+/compatibleCoreVersion should be a string that uses semantic versioning
+   6 |   "version": "1.0.0",
+   7 |   "minimumCoreVersion": "1.0.0",
+>  8 |   "compatibleCoreVersion": "A.0.0"
+     |                            ^^^^^^^
+   9 | }
+  10 | 
+

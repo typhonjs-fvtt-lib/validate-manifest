@@ -1,0 +1,9 @@
+/packs/0/path should be string
+  12 |       "module": "module-name",
+  13 |       "system": "system-name",
+> 14 |       "path": false,
+     |               ^^^^^
+  15 |       "entity": "Item"
+  16 |     }
+  17 |   ]
+

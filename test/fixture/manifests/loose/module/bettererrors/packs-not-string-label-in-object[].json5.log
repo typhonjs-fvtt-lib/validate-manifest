@@ -1,0 +1,9 @@
+/packs/0/label should be string
+   9 |     {
+  10 |       "name": "pack-name",
+> 11 |       "label": false,
+     |                ^^^^^
+  12 |       "module": "module-name",
+  13 |       "system": "system-name",
+  14 |       "path": "./packs/pack-name.db",
+

@@ -1,0 +1,5 @@
+ package manifest should be an object
+> 1 | []
+    | ^^
+  2 | 
+

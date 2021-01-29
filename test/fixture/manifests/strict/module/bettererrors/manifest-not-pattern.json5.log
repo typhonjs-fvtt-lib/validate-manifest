@@ -1,0 +1,8 @@
+/manifest should be an URL string ending in 'module.json'
+   6 |   "version": "1.0.0",
+   7 |   "minimumCoreVersion": "0.7.5",
+>  8 |   "manifest": "http://bad-url.com/"
+     |               ^^^^^^^^^^^^^^^^^^^^^
+   9 | }
+  10 | 
+

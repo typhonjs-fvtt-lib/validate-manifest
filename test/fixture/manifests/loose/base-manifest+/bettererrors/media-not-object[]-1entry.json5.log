@@ -1,0 +1,8 @@
+/media/0 should be object
+   7 |   "version": "1.0.0",
+   8 |   "minimumCoreVersion": "0.7.5",
+>  9 |   "media": [1]
+     |             ^
+  10 | }
+  11 | 
+

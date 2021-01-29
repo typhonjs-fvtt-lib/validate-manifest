@@ -1,0 +1,9 @@
+/packs/0/name should be string
+   8 |   "packs": [
+   9 |     {
+> 10 |       "name": false,
+     |               ^^^^^
+  11 |       "label": "Pack Title",
+  12 |       "module": "module-name",
+  13 |       "system": "system-name",
+

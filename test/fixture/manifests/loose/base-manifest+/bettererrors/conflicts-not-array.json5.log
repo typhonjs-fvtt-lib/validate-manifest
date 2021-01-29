@@ -1,0 +1,8 @@
+/conflicts should be array
+   6 |   "version": "1.0.0",
+   7 |   "minimumCoreVersion": "0.7.5",
+>  8 |   "conflicts": false
+     |                ^^^^^
+   9 | }
+  10 | 
+

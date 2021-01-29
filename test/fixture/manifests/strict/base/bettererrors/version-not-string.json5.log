@@ -1,0 +1,9 @@
+/version should be string
+  4 |   "description": "Some description",
+  5 |   "author": "typhonrt",
+> 6 |   "version": true,
+    |              ^^^^
+  7 |   "minimumCoreVersion": "0.7.5"
+  8 | }
+  9 | 
+

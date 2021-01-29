@@ -1,0 +1,10 @@
+/deprecated/alternatives/0/name should be a string that is alpha-numeric with
+only underscore and hyphen separators
+   7 |   "minimumCoreVersion": "0.7.5",
+   8 |   "deprecated": {
+>  9 |     "alternatives": [{ "name": "a bad package name", "manifest": "http://somewhere.com/system.json" }]
+     |                                ^^^^^^^^^^^^^^^^^^^^
+  10 |   }
+  11 | }
+  12 | 
+

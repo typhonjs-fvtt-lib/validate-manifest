@@ -1,0 +1,10 @@
+/packs/0/module should be a string that is lowercase alpha-numeric with only
+separating hyphens
+  10 |       "name": "pack-name",
+  11 |       "label": "Pack Title",
+> 12 |       "module": "bad system name",
+     |                 ^^^^^^^^^^^^^^^^^
+  13 |       "system": "system-name",
+  14 |       "path": "./packs/pack-name.db",
+  15 |       "entity": "Actor"
+

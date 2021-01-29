@@ -1,9 +1,9 @@
 /author should be string
-[0m [90m 3 | [39m  [32m"title"[39m[33m:[39m [32m"A Module"[39m[33m,[39m[0m
-[0m [90m 4 | [39m  [32m"description"[39m[33m:[39m [32m"Some description"[39m[33m,[39m[0m
-[0m[31m[1m>[22m[39m[90m 5 | [39m  [32m"author"[39m[33m:[39m [35m1[39m[33m,[39m[0m
-[0m [90m   | [39m            [31m[1m^[22m[39m[0m
-[0m [90m 6 | [39m  [32m"version"[39m[33m:[39m [32m"1.0.0"[39m[33m,[39m[0m
-[0m [90m 7 | [39m  [32m"minimumCoreVersion"[39m[33m:[39m [32m"0.7.5"[39m[0m
-[0m [90m 8 | [39m}[0m
+  3 |   "title": "A Module",
+  4 |   "description": "Some description",
+> 5 |   "author": 1,
+    |             ^
+  6 |   "version": "1.0.0",
+  7 |   "minimumCoreVersion": "0.7.5"
+  8 | }
 

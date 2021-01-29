@@ -1,0 +1,9 @@
+/title should be string
+  1 | {
+  2 |   "name": "a-module",
+> 3 |   "title": 1,
+    |            ^
+  4 |   "description": "Some description",
+  5 |   "author": "typhonrt",
+  6 |   "version": "1.0.0",
+

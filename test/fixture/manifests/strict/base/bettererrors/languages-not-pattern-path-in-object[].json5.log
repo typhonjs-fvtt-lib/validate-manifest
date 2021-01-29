@@ -1,0 +1,8 @@
+/languages/0/path should be a file path string ending in '.json'
+   6 |   "version": "1.0.0",
+   7 |   "minimumCoreVersion": "0.7.5",
+>  8 |   "languages": [{ "lang": "en", "name": "English", "path": "lang/en.jso" }]
+     |                                                            ^^^^^^^^^^^^^
+   9 | }
+  10 | 
+

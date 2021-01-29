@@ -1,0 +1,9 @@
+/description should be string
+  2 |   "name": "a-module",
+  3 |   "title": "A Module",
+> 4 |   "description": 1,
+    |                  ^
+  5 |   "author": "typhonrt",
+  6 |   "version": "1.0.0",
+  7 |   "minimumCoreVersion": "0.7.5"
+

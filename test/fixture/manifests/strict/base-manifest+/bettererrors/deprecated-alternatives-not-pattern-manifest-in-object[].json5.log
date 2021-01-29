@@ -1,0 +1,10 @@
+/deprecated/alternatives/0/manifest should be an URL string ending in
+'module.json' or 'system.json'
+   7 |   "minimumCoreVersion": "0.7.5",
+   8 |   "deprecated": {
+>  9 |     "alternatives": [{ "name": "a-module", "manifest": "http://bad-url" }]
+     |                                                        ^^^^^^^^^^^^^^^^
+  10 |   }
+  11 | }
+  12 | 
+

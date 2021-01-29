@@ -1,0 +1,16 @@
+should have required property 'type'
+   7 |   "version": "1.0.0",
+   8 |   "minimumCoreVersion": "0.7.5",
+>  9 |   "media": [{}]
+     |             ^^
+  10 | }
+  11 | 
+
+should have required property 'url'
+   7 |   "version": "1.0.0",
+   8 |   "minimumCoreVersion": "0.7.5",
+>  9 |   "media": [{}]
+     |             ^^
+  10 | }
+  11 | 
+

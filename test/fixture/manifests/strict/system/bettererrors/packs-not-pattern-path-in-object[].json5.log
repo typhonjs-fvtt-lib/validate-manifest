@@ -1,0 +1,9 @@
+/packs/0/path should be a file path string ending in '.db'
+  12 |       "module": "system-name",
+  13 |       "system": "system-name",
+> 14 |       "path": "./packs/notdbfile",
+     |               ^^^^^^^^^^^^^^^^^^^
+  15 |       "entity": "Actor"
+  16 |     }
+  17 |   ]
+

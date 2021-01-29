@@ -1,0 +1,9 @@
+/media/0/type should be equal to one of the allowed values: 'cover', 'icon',
+'screenshot', or 'video'
+   7 |   "version": "1.0.0",
+   8 |   "minimumCoreVersion": "0.7.5",
+>  9 |   "media": [{ "type": "foobar", "url": "http://good.com" }]
+     |                       ^^^^^^^^
+  10 | }
+  11 | 
+

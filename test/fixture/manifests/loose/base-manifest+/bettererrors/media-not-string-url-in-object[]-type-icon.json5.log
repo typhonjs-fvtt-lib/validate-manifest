@@ -1,0 +1,8 @@
+/media/0/url should be string
+   7 |   "version": "1.0.0",
+   8 |   "minimumCoreVersion": "0.7.5",
+>  9 |   "media": [{ "type": "icon", "url": false }]
+     |                                      ^^^^^
+  10 | }
+  11 | 
+

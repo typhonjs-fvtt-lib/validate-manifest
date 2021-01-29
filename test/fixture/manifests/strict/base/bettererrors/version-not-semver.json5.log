@@ -1,0 +1,9 @@
+/version should be a string that uses semantic versioning
+  4 |   "description": "Some description",
+  5 |   "author": "typhonrt",
+> 6 |   "version": "A.0.0",
+    |              ^^^^^^^
+  7 |   "minimumCoreVersion": "0.7.5"
+  8 | }
+  9 | 
+

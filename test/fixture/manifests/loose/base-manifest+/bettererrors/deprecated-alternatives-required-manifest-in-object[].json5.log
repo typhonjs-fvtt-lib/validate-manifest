@@ -1,0 +1,9 @@
+should have required property 'manifest'
+   7 |   "minimumCoreVersion": "0.7.5",
+   8 |   "deprecated": {
+>  9 |     "alternatives": [{ "name": "a-module" }]
+     |                      ^^^^^^^^^^^^^^^^^^^^^^
+  10 |   }
+  11 | }
+  12 | 
+

@@ -1,0 +1,9 @@
+/deprecated/alternatives/0/name should be string
+   7 |   "minimumCoreVersion": "0.7.5",
+   8 |   "deprecated": {
+>  9 |     "alternatives": [{ "name": false, "manifest": "http://somewhere.com/system.json" }]
+     |                                ^^^^^
+  10 |   }
+  11 | }
+  12 | 
+

@@ -1,0 +1,8 @@
+/conflicts/0/versionMin should be a string or number
+   6 |   "version": "1.0.0",
+   7 |   "minimumCoreVersion": "0.7.5",
+>  8 |   "conflicts": [{ "name":  "dep", "type": "module", "versionMin": false }]
+     |                                                                   ^^^^^
+   9 | }
+  10 | 
+

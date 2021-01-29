@@ -1,0 +1,8 @@
+should have required property 'url'
+   7 |   "version": "1.0.0",
+   8 |   "minimumCoreVersion": "0.7.5",
+>  9 |   "media": [{ "type": "icon" }]
+     |             ^^^^^^^^^^^^^^^^^^
+  10 | }
+  11 | 
+

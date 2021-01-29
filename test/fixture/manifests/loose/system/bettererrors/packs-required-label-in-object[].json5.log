@@ -1,0 +1,11 @@
+should have required property 'label'
+   7 |   "minimumCoreVersion": "0.7.5",
+   8 |   "packs": [
+>  9 |     {
+> 10 |       "name": "pack-name",
+> 11 |       "system": "system-name",
+> 12 |       "path": "./packs/pack-name.db",
+  13 |       "entity": "Item"
+  14 |     }
+  15 |   ]
+

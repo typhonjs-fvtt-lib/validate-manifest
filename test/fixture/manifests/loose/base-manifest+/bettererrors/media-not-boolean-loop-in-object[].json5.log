@@ -1,0 +1,8 @@
+/media/0/loop should be boolean
+   7 |   "version": "1.0.0",
+   8 |   "minimumCoreVersion": "0.7.5",
+>  9 |   "media": [{ "type": "video", "url": "http://good.com", "loop": 1 }]
+     |                                                                  ^
+  10 | }
+  11 | 
+

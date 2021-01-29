@@ -1,0 +1,11 @@
+/packs/0/entity should be equal to one of the allowed values: 'Actor',
+'ChatMessage', 'Combat', 'Item', 'Folder', 'JournalEntry', 'Macro', 'Playlist',
+'RollTable', 'Scene', or 'User'
+  13 |       "system": "system-name",
+  14 |       "path": "./packs/pack-name.db",
+> 15 |       "entity": false
+     |                 ^^^^^
+  16 |     }
+  17 |   ]
+  18 | }
+

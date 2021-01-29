@@ -1,0 +1,8 @@
+/system should be a string or array of strings
+   8 |   "version": "1.0.0",
+   9 |   "minimumCoreVersion": "0.7.5",
+> 10 |   "system": false
+     |             ^^^^^
+  11 | }
+  12 | 
+

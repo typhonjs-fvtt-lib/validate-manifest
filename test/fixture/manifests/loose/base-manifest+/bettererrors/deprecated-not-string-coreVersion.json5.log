@@ -1,0 +1,9 @@
+/deprecated/coreVersion should be string
+   7 |   "minimumCoreVersion": "0.7.5",
+   8 |   "deprecated": {
+>  9 |     "coreVersion": false
+     |                    ^^^^^
+  10 |   }
+  11 | }
+  12 | 
+

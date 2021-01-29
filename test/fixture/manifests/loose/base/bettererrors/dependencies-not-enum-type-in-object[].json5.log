@@ -1,0 +1,9 @@
+/dependencies/0/type should be equal to one of the allowed values: 'module',
+'system', or 'world'
+   6 |   "version": "1.0.0",
+   7 |   "minimumCoreVersion": "0.7.5",
+>  8 |   "dependencies": [{ "name":  "dep", "type": "bad type" }]
+     |                                              ^^^^^^^^^^
+   9 | }
+  10 | 
+
