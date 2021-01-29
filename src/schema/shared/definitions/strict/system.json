@@ -122,7 +122,7 @@
             "type": "string",
             "pattern": "^(.+).db$",
             "errorMessage": {
-              "pattern": "should be a string that is a file ending in '*.db'"
+              "pattern": "should be a file path string ending in '.db'"
             }
           }
         },

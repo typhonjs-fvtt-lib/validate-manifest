@@ -117,7 +117,7 @@
         "type": "string",
         "pattern": "^(.+).js$",
         "errorMessage": {
-          "pattern": "should be a string that is a file ending in '*.js'"
+          "pattern": "should be a file path string ending in '.js'"
         }
       },
       "title": "An array of items",
@@ -150,7 +150,7 @@
             "type": "string",
             "pattern": "^(.+).json$",
             "errorMessage": {
-              "pattern": "should be a string that is a file ending in '*.json'"
+              "pattern": "should be a file path string ending in '.json'"
             }
           }
         },
@@ -215,7 +215,7 @@
         "type": "string",
         "pattern": "^(.+).js$",
         "errorMessage": {
-          "pattern": "should be a string that is a file ending in '*.js'"
+          "pattern": "should be a file path string ending in '.js'"
         }
       },
       "title": "An array of items",
@@ -239,7 +239,7 @@
         "type": "string",
         "pattern": "^(.+).css$",
         "errorMessage": {
-          "pattern": "should be a string that is a file ending in '*.css'"
+          "pattern": "should be a file path string ending in '.css'"
         }
       },
       "title": "An array of items",

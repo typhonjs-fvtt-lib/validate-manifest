@@ -13,7 +13,7 @@ module.exports = {
     return {
       pattern: '^(.+).css$',
       errorMessage: {
-        pattern: `should be a string that is a file ending in '*.css'`
+        pattern: `should be a file path string ending in '.css'`
       }
     };
   },
@@ -22,7 +22,7 @@ module.exports = {
     return {
       pattern: '^(.+).db$',
       errorMessage: {
-        pattern: `should be a string that is a file ending in '*.db'`
+        pattern: `should be a file path string ending in '.db'`
       }
     };
   },
@@ -31,7 +31,7 @@ module.exports = {
     return {
       pattern: '^(.+).js$',
       errorMessage: {
-        pattern: `should be a string that is a file ending in '*.js'`
+        pattern: `should be a file path string ending in '.js'`
       }
     };
   },
@@ -40,7 +40,7 @@ module.exports = {
     return {
       pattern: '^(.+).json$',
       errorMessage: {
-        pattern: `should be a string that is a file ending in '*.json'`
+        pattern: `should be a file path string ending in '.json'`
       }
     };
   },
