@@ -1,58 +1,16 @@
-change pattern-file-xxx error messages from
-  - should be a string that is a file ending in '*.js'
-  - to -> should be a file string ending in '*.js'
-
-------
-
-- rework required
-  - if one line keep columns
-  - if more than 2 lines exclude columns and limit line numbers to at max 3
-
-- rework type
-  - if params.types is array format complete message
-  - 'should be '
-  - system->primaryTokenAttribute-not-string-or-null.json5
-
-- enum
-  - add 'or' for final separator.
-
-- uniqueItems
-  - line numbers only and limit to 3 lines
-
-- additionalProperties
-  - treat like `required`
-
-- any more than 6 lines omit columns and limit line numbers
-
-------
-
-add in message wrapping max 120 characters - add config option
-
-const wrap = (s, w) => s.replace(
-    new RegExp(`(?![^\\n]{1,${w}}$)([^\\n]{1,${w}})\\s`, 'g'), '$1\n'
-);
-
-- verify strict->module->packs-not-enum-entity-in-object[].json5
-
-------
-
-search for JSON schema keywords to exclude -> control flow ones
-
-------
-
-add in usage of `object-hash` to hash error objects and remove duplicates
-
-------
------
-
-- comments in testing code
-- add comments to merge schema
 - add in schema descriptions / examples / titles
 - make a good README
   - proper examples
 - make an architecture overview
 
 -----
+
+off stream:
+publish better errors
+
+-----
+
+Add this info to the architecture overview.
 
 Monitor this issue:
 https://github.com/ajv-validator/ajv-errors/issues/83
