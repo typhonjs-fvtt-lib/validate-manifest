@@ -3,7 +3,6 @@
   "description": "Provides validation functions / JSON schemas for FVTT module / system manifests & manifest+ extensions.",
   "version": "0.0.1",
   "author": "typhonrt",
-  "private": true,
   "bugs": "https://github.com/typhonjs-fvtt/validate-manifest/issues",
   "dependencies": {},
   "devDependencies": {
@@ -29,8 +28,7 @@
   "main": "dist/validators.js",
   "files": [
     "/dist",
-    "/schema",
-    "ManifestPlus.md"
+    "/schema"
   ],
   "homepage": "https://github.com/typhonjs-fvtt/validate-manifest",
   "keywords": [
@@ -46,6 +44,8 @@
   "scripts": {
     "compile": "node src/merge/merge.js && node src/compile/compileSchema.js && ajv compile --all-errors --strict-types=false -r \"src/schema/shared/**/*.json\" -s \"src/schema/validators/**/*.json\" -c ajv-errors -o dist/validator-functions.js && prettier --write \"./dist/validator-functions.js\"",
     "create-specification": "gitdown ./.specification/ManifestPlus.md --output-file ./ManifestPlus.md",
+    "eslint": "eslint .",
+    "prepublishOnly": "npm run eslint && npm run test",
     "test": "npm run compile && nyc --reporter=lcov --reporter=text-summary mocha -colors \"test/src/**/*.test.js\""
   }
 }
