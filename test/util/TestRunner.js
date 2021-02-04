@@ -1,12 +1,11 @@
 const fs                = require('fs');
 const path              = require('path');
 
+const betterErrors      = require('@typhonjs-node-utils/better-ajv-errors');
 const chai              = require('chai');
 const stripJsonComments = require('strip-json-comments');
 
 const test              = require('./test');
-
-const betterErrors      = require('../../src/better-errors/bettererrors');
 
 /**
  * Captures the right hand schema path data for sanitizing error data.
@@ -72,7 +71,9 @@ class TestRunner
 
                if (!fs.existsSync(betterErrorFilepath) && test.createErrorData)
                {
-                  const betterData = betterErrors(testFunction.errors, invalid.file);
+                  const betterData = betterErrors(testFunction.errors,
+                   { file: invalid.file, highlightCode: false, wrapLength: 80 });
+
                   let betterOutput = '';
                   for (const betterEntry of betterData)
                   {

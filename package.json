@@ -8,10 +8,12 @@
   "dependencies": {},
   "devDependencies": {
     "@apidevtools/json-schema-ref-parser": "^9.0.0",
+    "@typhonjs-node-utils/better-ajv-errors": "^0.0.1",
     "ajv": "^7.0.0",
     "ajv-cli": "^4.0.0",
     "ajv-errors": "^2.0.0",
     "chai": "^4.0.0",
+    "codecov": "^3.0.0",
     "deepmerge": "^4.0.0",
     "eslint": "^7.0.0",
     "gitdown": "^3.0.0",
@@ -44,6 +46,6 @@
   "scripts": {
     "compile": "node src/merge/merge.js && node src/compile/compileSchema.js && ajv compile --all-errors --strict-types=false -r \"src/schema/shared/**/*.json\" -s \"src/schema/validators/**/*.json\" -c ajv-errors -o dist/validator-functions.js && prettier --write \"./dist/validator-functions.js\"",
     "create-specification": "gitdown ./.specification/ManifestPlus.md --output-file ./ManifestPlus.md",
-    "test": "npm run compile && nyc --reporter=lcov --reporter=text-summary mocha \"test/src/**/*.test.js\""
+    "test": "npm run compile && nyc --reporter=lcov --reporter=text-summary mocha -colors \"test/src/**/*.test.js\""
   }
 }
