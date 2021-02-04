@@ -41,7 +41,7 @@
     "fvtt",
     "foundry vtt"
   ],
-  "license": "MIT",
+  "license": "MPL-2.0",
   "repository": "typhonjs-fvtt/manifest-plus",
   "scripts": {
     "compile": "node src/merge/merge.js && node src/compile/compileSchema.js && ajv compile --all-errors --strict-types=false -r \"src/schema/shared/**/*.json\" -s \"src/schema/validators/**/*.json\" -c ajv-errors -o dist/validator-functions.js && prettier --write \"./dist/validator-functions.js\"",
