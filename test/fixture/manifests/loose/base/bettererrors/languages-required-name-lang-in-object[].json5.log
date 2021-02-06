@@ -1,8 +1,7 @@
-should have required property 'name'
+/languages/0 should have required property 'name'
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "languages": [{ "lang": "en", "path": "lang/en.json" }]
      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
    9 | }
   10 | 
-

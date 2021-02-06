@@ -16,4 +16,3 @@ with only underscore and hyphen separators
   16 |       "path": "./packs/pack-name.db",
   17 |       "entity": "Item"
   18 |     }
-

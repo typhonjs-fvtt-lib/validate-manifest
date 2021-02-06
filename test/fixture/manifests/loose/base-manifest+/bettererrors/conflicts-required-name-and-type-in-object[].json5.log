@@ -1,4 +1,4 @@
-should have required property 'name'
+/conflicts/0 should have required property 'name'
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "conflicts": [{}]
@@ -6,11 +6,10 @@ should have required property 'name'
    9 | }
   10 | 
 
-should have required property 'type'
+/conflicts/0 should have required property 'type'
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "conflicts": [{}]
      |                 ^^
    9 | }
   10 | 
-

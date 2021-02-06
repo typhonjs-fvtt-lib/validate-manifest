@@ -1,4 +1,4 @@
-should have required property 'name'
+/deprecated/alternatives/0 should have required property 'name'
    7 |   "minimumCoreVersion": "0.7.5",
    8 |   "deprecated": {
 >  9 |     "alternatives": [{ "manifest": "http://somewhere.com/system.json" }]
@@ -6,4 +6,3 @@ should have required property 'name'
   10 |   }
   11 | }
   12 | 
-

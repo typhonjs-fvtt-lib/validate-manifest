@@ -1,9 +1,7 @@
-should have required property 'version'
+ should have required property 'version'
 > 1 | {
 > 2 |   "name": "a-module",
 > 3 |   "title": "A Module",
-> 4 |   "description": "Some description",
+  4 |   "description": "Some description",
   5 |   "author": "typhonrt",
   6 |   "minimumCoreVersion": "0.7.5"
-  7 | }
-

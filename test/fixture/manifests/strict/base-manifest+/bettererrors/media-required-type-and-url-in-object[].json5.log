@@ -1,4 +1,4 @@
-should have required property 'type'
+/media/0 should have required property 'type'
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "media": [{}]
@@ -6,11 +6,10 @@ should have required property 'type'
    9 | }
   10 | 
 
-should have required property 'url'
+/media/0 should have required property 'url'
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "media": [{}]
      |             ^^
    9 | }
   10 | 
-

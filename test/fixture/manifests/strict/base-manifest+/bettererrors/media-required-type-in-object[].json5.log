@@ -1,8 +1,7 @@
-should have required property 'type'
+/media/0 should have required property 'type'
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "media": [{ "url": "http://good.com" }]
      |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
    9 | }
   10 | 
-

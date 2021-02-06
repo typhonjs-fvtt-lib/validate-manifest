@@ -1,7 +1,7 @@
 const fs                = require('fs');
 const path              = require('path');
 
-const betterErrors      = require('@typhonjs-node-utils/better-ajv-errors');
+const BetterErrors      = require('@typhonjs-node-utils/better-ajv-errors');
 const chai              = require('chai');
 const stripJsonComments = require('strip-json-comments');
 
@@ -69,17 +69,11 @@ class TestRunner
 
                const betterErrorFilepath = `${dirPath}${path.sep}bettererrors${path.sep}${key}.log`;
 
-               if (!fs.existsSync(betterErrorFilepath) && test.createErrorData)
+               // if (!fs.existsSync(betterErrorFilepath) && test.createErrorData)
+               if (test.createErrorData)
                {
-                  const betterData = betterErrors(testFunction.errors,
-                   { file: invalid.file, highlightCode: false, wrapLength: 80 });
-
-                  let betterOutput = '';
-                  for (const betterEntry of betterData)
-                  {
-                     betterOutput += `${betterEntry.message}\n${betterEntry.codeFrame}\n\n`;
-                  }
-                  fs.writeFileSync(betterErrorFilepath, betterOutput);
+                  fs.writeFileSync(betterErrorFilepath, BetterErrors.toString(BetterErrors.asArray(testFunction.errors,
+                   { file: invalid.file, highlightCode: false, wrapLength: 80 })));
                }
 
                chai.expect(testFunction.errors).to.be.deep.equal(errors.get(key).data);

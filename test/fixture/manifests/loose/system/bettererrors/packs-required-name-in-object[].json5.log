@@ -1,11 +1,9 @@
-should have required property 'name'
+/packs/0 should have required property 'name'
    7 |   "minimumCoreVersion": "0.7.5",
    8 |   "packs": [
 >  9 |     {
 > 10 |       "label": "Pack Title",
 > 11 |       "system": "system-name",
-> 12 |       "path": "./packs/pack-name.db",
+  12 |       "path": "./packs/pack-name.db",
   13 |       "entity": "Item"
   14 |     }
-  15 |   ]
-
