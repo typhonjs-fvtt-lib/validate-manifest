@@ -1,24 +1,6 @@
-- add in schema descriptions / examples / titles
-- make a good README
-  - proper examples
-- make an architecture overview
+- make sure patterns have type: string
 
------
+- add in schema / description / examples / title
 
-off stream:
-publish better errors
-
------
-
-Add this info to the architecture overview.
-
-Monitor this issue:
-https://github.com/ajv-validator/ajv-errors/issues/83
-
-Interim solution was to exclude `pattern` keyword from filtered error output.
-
-strict - module - invalid
-  packs-not-string[]-system-in-object[].json5
-
-strict - module - invalid
-  packs-not-pattern-system[]-in-object[].json5
+- publish better errors
+  - finish readme
