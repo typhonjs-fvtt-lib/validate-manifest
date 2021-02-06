@@ -7,7 +7,7 @@
   "dependencies": {},
   "devDependencies": {
     "@apidevtools/json-schema-ref-parser": "^9.0.0",
-    "@typhonjs-node-utils/better-ajv-errors": "^0.0.1",
+    "@typhonjs-node-utils/better-ajv-errors": "^0.0.4",
     "ajv": "^7.0.0",
     "ajv-cli": "^4.0.0",
     "ajv-errors": "^2.0.0",
