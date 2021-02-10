@@ -6,58 +6,50 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "author": {
-      "default": "",
-      "examples": [
-        "typhonrt"
-      ],
-      "title": "A string value",
+      "description": "Provide your name as the package creator. This field can be any string if you wish to include an email address or other contact information also.",
+      "title": "Package Author",
       "type": "string"
     },
     "bugs": {
-      "default": "",
-      "examples": [
-        "https://github.com/some-user/a-module/issues"
-      ],
-      "title": "A string value",
+      "description": "A publicly accessible URL where issues, suggestions, and bug reports may be filed.",
+      "title": "Bugs URL",
       "type": "string"
     },
     "changelog": {
-      "default": "",
-      "examples": [
-        "https://github.com/some-user/a-module/releases"
-      ],
-      "title": "A string value",
+      "description": "A publicly accessible URL where update and release notes about the package may be found.",
+      "title": "Changelog URL",
       "type": "string"
     },
     "compatibleCoreVersion": {
-      "default": "",
+      "description": "Specify the latest Foundry VTT version with which this system's features are confirmed to function properly.",
       "examples": [
-        "1.0.0"
+        "0.7.9"
       ],
-      "title": "A string value",
+      "title": "Compatible Core Version",
       "type": "string"
     },
     "dependencies": {
+      "description": "Packages can require other modules, systems, or worlds be installed to allow their use. If a package has been installed with dependencies, but its dependencies are missing it cannot be enabled.",
       "items": {
         "properties": {
           "manifest": {
-            "default": "",
+            "description": "The manifest attribute provides an explicit manifest URL to be used for downloading the dependency. If a manifest is not provided, the dependency package must exist in the Foundry VTT website directory.",
             "examples": [
-              "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/2.0.3/module/module.json"
+              "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/master/module/module.json"
             ],
-            "title": "A string value",
+            "title": "Manifest URL",
             "type": "string"
           },
           "name": {
-            "default": "",
+            "description": "Dependency entries require the name attribute. If only a name is provided, additional details about the package will be discovered from the Foundry VTT website listing.",
             "examples": [
               "dice-so-nice"
             ],
-            "title": "A string value",
+            "title": "Package Name",
             "type": "string"
           },
           "type": {
-            "default": "",
+            "description": "The type attribute instructs Foundry VTT that the dependency may be on a different type of package. By default dependencies are assumed to be module, so if you want to depend on a system or world you should be explicit.",
             "enum": [
               "module",
               "system",
@@ -66,66 +58,63 @@
             "examples": [
               "module"
             ],
-            "title": "A string value"
+            "title": "Package Type"
           }
         },
         "required": [
           "name"
         ],
-        "title": "An object value",
+        "title": "Dependency Entry",
         "type": "object"
       },
-      "title": "An array of items",
+      "title": "Dependencies",
       "type": "array"
     },
     "description": {
-      "default": "",
-      "examples": [
-        "Some description"
-      ],
-      "title": "A string value",
+      "description": "This field can contain a more lengthy description of the module. This text can be used to describe the functionality, list contact information, provide recommendations to contributors or testers, or any other information you feel is important to provide. This field can contain HTML to structure and style your text.",
+      "title": "Package Description",
       "type": "string"
     },
     "download": {
-      "default": "",
-      "examples": [
-        "https://someaddress.com/module.zip"
-      ],
-      "title": "A string value",
+      "description": "A public URL that provides a zip archive of the package for the manifest version which points to it. The archive at this URL is retrieved during the installation or update process.",
+      "title": "Download URL",
       "type": "string"
     },
     "esmodules": {
+      "description": "In addition to including traditional JavaScript script files, you may also include JS files which use the newer ES module specification. These files are identified separately in the manifest so they may be correctly loaded as an ES module rather than a script.",
       "items": {
-        "default": "",
+        "description": "An ES module file path relative to the root directory of the manifest.",
         "examples": [
           "index.js"
         ],
-        "title": "A string value",
+        "title": "ES Module File",
         "type": "string"
       },
-      "title": "An array of items",
+      "title": "ES Modules",
       "type": "array"
     },
     "languages": {
+      "description": "The package may designate an array of languages specifications that it supports by default. Each element in the languages array is an object which defines the language tag, label, and path to its localization file.",
       "items": {
         "properties": {
           "lang": {
-            "default": "",
+            "description": "A language code in lower-case letters, for example 'en' for English. See: https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes",
             "examples": [
               "en"
             ],
-            "title": "A string value",
+            "title": "Language Code",
             "type": "string"
           },
           "name": {
-            "default": "",
+            "description": "The formal and readable name for the language.",
             "examples": [
               "English"
             ],
-            "title": "A string value",
+            "title": "Language Name",
             "type": "string"
           },
           "path": {
+            "description": "A file path relative to the root directory of the manifest where localization strings are provided in JSON format.",
             "examples": [
               "lang/en.json"
             ],
@@ -138,14 +127,14 @@
           "name",
           "path"
         ],
-        "title": "An object value",
+        "title": "Language Entry",
         "type": "object"
       },
-      "title": "An array of items",
+      "title": "Languages",
       "type": "array"
     },
     "license": {
-      "default": "",
+      "description": "A path to a license file relative to the root directory of the manifest or a publicly accessible URL which contains the software license that applies to this package.\n\n",
       "examples": [
         "LICENSE"
       ],
