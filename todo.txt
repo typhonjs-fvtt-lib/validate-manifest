@@ -1,6 +1,0 @@
-- make sure patterns have type: string
-
-- add in schema / description / examples / title
-
-- publish better errors
-  - finish readme
