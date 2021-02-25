@@ -1,17 +1,29 @@
-The Manifest+ specification is an unofficial community developed extension of the official Foundry manifest intended to add additional data which can be used by packages within Foundry and by external application.
+The Manifest+ specification is an unofficial community developed extension to the official Foundry VTT manifest 
+specification for module and system development intended to add additional data which can be used by packages within 
+Foundry VTT and by external applications.
 
-This specification was developed by The League of FVTT developers. While the Core Foundry software simply ignores these additions, the full data of the manifest is still available to packages running within Foundry. Additionally, a number of external applications including The Bazaar package browser on The Forge use this extended data to give users a more rich experience by adding cover images, icons, enhanced contact details, and more.
+This specification is developed by The League of Extraordinary Foundry Developers. The core Foundry VTT software 
+simply ignores these additional manifest fields. A number of external applications including 
+[The Bazaar](https://forge-vtt.com/bazaar) package browser on The Forge and 
+[Foundry Hub](https://www.foundryvtt-hub.com/packages/) use this extended data to give the general public a rich 
+experience by adding cover images, icons, enhanced contact details, and more.
 
 ## Package Manifest Standard Fields
-The Foundry manifest contains a number of required and optional fields which act as metadata for your package. The official properties are documented in the official Core docs at the [Introduction to Module Development](https://foundryvtt.com/article/module-development/) page.
+The Foundry VTT manifest contains a number of required and optional fields which act as metadata for your package. The 
+official fields are documented in the core documentation for modules and systems respectively:
 
-Manifest+ does not replace the standard manifest, but enhances it. Most of the properties added here don't touch any of the Core files at all. The exception is the `authors` field.
+- [Introduction to Module Development](https://foundryvtt.com/article/module-development/)
+- [Introduction to System Development](https://foundryvtt.com/article/system-development/)
+
+Manifest+ does not replace the standard manifest, but enhances it. Most of the fields added do not touch any of 
+the core attributes at all except the `authors` field.
 
 {"gitdown": "include", "file": "./sections/authors.md"}
 
 ## Manifest+
 
-All Manifest+ properties are *optional* but they are all usful. We recommend including as many of these properties as reasonable in order to provide enriched metadata.
+All Manifest+ fields are *optional*, but they are all useful. We recommend including as many of these fields as 
+reasonable in order to provide enriched metadata for your package.
 
 {"gitdown": "include", "file": "./sections/version.md"}
 
