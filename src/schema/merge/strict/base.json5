@@ -61,11 +61,6 @@
     "url": {
       // Replace with pattern-url include
       "$$include": { "target": "pattern-url" }
-    },
-    "version": {
-      "type": "string",
-      // Replace with pattern-semver include
-      "$$include": { "target": "pattern-semver" }
     }
   }
 }

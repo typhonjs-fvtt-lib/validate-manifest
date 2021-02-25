@@ -142,83 +142,89 @@
       "type": "string"
     },
     "minimumCoreVersion": {
-      "default": "",
+      "description": "Specify the latest Foundry VTT version which this package features are confirmed to function properly.",
       "examples": [
-        "0.7.5"
+        "0.7.9"
       ],
-      "title": "A string value",
+      "title": "Minimum Core Version",
       "type": "string"
     },
     "name": {
-      "default": "",
+      "description": "Choose a unique package identifier. This should be an all lower-case string with no special characters. This name must align with the name of the parent directory within which you create the package.",
       "examples": [
-        "a-module"
+        "my-package-name"
       ],
-      "title": "A string value",
+      "title": "Package Name",
       "type": "string"
     },
     "readme": {
-      "default": "",
+      "description": "A path to a readme file relative to the root module folder or a publicly accessible URL which contains instructions or information about the package.",
       "examples": [
-        "README.md"
+        "README.md",
+        "https://github.com/my-user-or-org/my-package/blob/main/README.md"
       ],
-      "title": "A string value",
+      "title": "Read Me",
       "type": "string"
     },
     "scripts": {
+      "description": "An array of JavaScript file paths included whenever this package is enabled. Each listed script path should be relative to the package root directory. All scripts which exist will be automatically included in the game session and loaded in their listed order.",
       "items": {
-        "default": "",
+        "description": "JavaScript file path; should be relative to the package root directory.",
         "examples": [
           "ascript.js"
         ],
-        "title": "A string value",
+        "title": "Script Entry",
         "type": "string"
       },
-      "title": "An array of items",
+      "title": "Scripts",
       "type": "array"
     },
     "socket": {
-      "default": false,
+      "description": "A package may request a specialized socket namespace to be provided allowing data messages to be passed between connected clients. If set to true, a socket event will be handled by the server with the event name `module.{name}` or `system.{name}` depending on your package type. This event name relays arbitrary data packets between the sending client and all other connected clients.",
       "examples": [
         true
       ],
-      "title": "A boolean value",
+      "title": "Socket",
       "type": "boolean"
     },
     "styles": {
+      "description": "You can designate CSS files which are included in the game session whenever this package is enabled. Each listed stylesheet file path should be relative to the system root directory. All stylesheets which exist will be automatically included in the game session and loaded in their listed order.",
       "items": {
-        "default": "",
+        "description": "CSS file path; should be relative to the system root directory.",
         "examples": [
           "styles.css"
         ],
-        "title": "A string value",
+        "title": "Style Entry",
         "type": "string"
       },
-      "title": "An array of items",
+      "title": "Styles",
       "type": "array"
     },
     "title": {
-      "default": "",
+      "description": "Provide a human readable title for the package which is displayed as the visible name in the Foundry VTT setup menu and elsewhere.",
       "examples": [
-        "A Module"
+        "A Module ...",
+        "A System ..."
       ],
-      "title": "A string value",
+      "title": "Title",
       "type": "string"
     },
     "url": {
-      "default": "",
+      "description": "A public URL that links to the repository or documentation pages for the package. This link is displayed to users allowing them to find more information about your package. If your package is hosted in version control like GitHub or GitLab, linking to the repository in this field is a good choice.",
       "examples": [
-        "https://someaddress.com/"
+        "https://github.com/my-user-or-org/my-package"
       ],
-      "title": "A string value",
+      "title": "URL",
       "type": "string"
     },
     "version": {
-      "default": "",
+      "description": "The package version number can be a number or a string which denotes the version of your package. We recommend using semantic versioning but this is not strictly required. When making changes to your package, incrementing the version number in your manifest file is used to signal to users that an update is available.",
+      "errorMessage": "should be a string or number",
       "examples": [
         "1.0.0"
       ],
-      "title": "A string value"
+      "oneOf": [{ "type": "string" }, { "type": "number" }],
+      "title": "Version"
     }
   }
 }
