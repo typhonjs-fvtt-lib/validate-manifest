@@ -3,15 +3,17 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "authors": {
+      "description": "Instead of listing a single author name you may also provide an array of authors, each of which is an object that can contain the keys: 'name', 'email', and 'url'.",
       "items": {
         "$ref": "#/definitions/properties-author",
-        "title": "An object value",
+        "title": "Author Entry",
         "type": "object"
       },
-      "title": "An array of items",
+      "title": "Authors",
       "type": "array"
     },
     "authors+": {
+      "description": "Instead of listing a single author name you may also provide an array of authors, each of which is an object that can contain the keys: 'name', 'discord', 'email', 'patreon', 'reddit', 'twitter', and 'url'.",
       "items": {
         "allOf": [
           {
@@ -22,35 +24,35 @@
           }
         ],
         "type": "object",
-        "title": "An object value"
+        "title": "Author Entry"
       },
-      "title": "An array of items",
+      "title": "Authors",
       "type": "array"
     },
     "properties-author": {
       "properties": {
         "email": {
-          "default": "",
+          "description": "An email address.",
           "examples": [
             "admin@foundryvtt.com"
           ],
-          "title": "A string value",
+          "title": "Author Email",
           "type": "string"
         },
         "name": {
-          "default": "",
+          "description": "An author name.",
           "examples": [
             "Atropos"
           ],
-          "title": "A string value",
+          "title": "Author Name",
           "type": "string"
         },
         "url": {
-          "default": "",
+          "description": "An URL for the author.",
           "examples": [
             "https://foundryvtt.com"
           ],
-          "title": "A string value",
+          "title": "Author URL",
           "type": "string"
         }
       },
@@ -61,35 +63,35 @@
     "properties-author+": {
       "properties": {
         "discord": {
-          "default": "",
+          "description": "A Discord user ID.",
           "examples": [
             "discordID#0001"
           ],
-          "title": "A string value",
+          "title": "Author Discord",
           "type": "string"
         },
         "patreon": {
-          "default": "",
+          "description": "A Patreon user name.",
           "examples": [
             "patreonName"
           ],
-          "title": "A string value",
+          "title": "Author Patreon",
           "type": "string"
         },
         "reddit": {
-          "default": "",
+          "description": "A Reddit user name.",
           "examples": [
             "u/RedditUsername"
           ],
-          "title": "A string value",
+          "title": "Author Reddit",
           "type": "string"
         },
         "twitter": {
-          "default": "",
+          "default": "A Twitter user handle.",
           "examples": [
             "@TwitterHandle"
           ],
-          "title": "A string value",
+          "title": "Author Twitter",
           "type": "string"
         }
       }

@@ -56,7 +56,9 @@
               "world"
             ],
             "examples": [
-              "module"
+              "module",
+              "system",
+              "world"
             ],
             "title": "Package Type"
           }

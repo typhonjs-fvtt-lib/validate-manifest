@@ -3,15 +3,17 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "authors": {
+      "description": "Instead of listing a single author name you may also provide an array of authors, each of which is an object that can contain the keys: 'name', 'email', and 'url'.",
       "items": {
         "$ref": "#/definitions/properties-author",
-        "title": "An object value",
+        "title": "Author Entry",
         "type": "object"
       },
-      "title": "An array of items",
+      "title": "Authors",
       "type": "array"
     },
     "authors+": {
+      "description": "Instead of listing a single author name you may also provide an array of authors, each of which is an object that can contain the keys: 'name', 'discord', 'email', 'patreon', 'reddit', 'twitter', and 'url'.",
       "items": {
         "allOf": [
           {
@@ -22,19 +24,19 @@
           }
         ],
         "type": "object",
-        "title": "An object value"
+        "title": "Author Entry"
       },
-      "title": "An array of items",
+      "title": "Authors",
       "type": "array"
     },
     "properties-author": {
       "properties": {
         "email": {
-          "default": "",
+          "description": "An email address.",
           "examples": [
             "admin@foundryvtt.com"
           ],
-          "title": "A string value",
+          "title": "Author Email",
           "type": "string",
           "pattern": "^(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$",
           "errorMessage": {
@@ -42,19 +44,19 @@
           }
         },
         "name": {
-          "default": "",
+          "description": "An author name.",
           "examples": [
             "Atropos"
           ],
-          "title": "A string value",
+          "title": "Author Name",
           "type": "string"
         },
         "url": {
-          "default": "",
+          "description": "An URL for the author.",
           "examples": [
             "https://foundryvtt.com"
           ],
-          "title": "A string value",
+          "title": "Author URL",
           "type": "string",
           "pattern": "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
           "errorMessage": {
@@ -69,11 +71,11 @@
     "properties-author+": {
       "properties": {
         "discord": {
-          "default": "",
+          "description": "A Discord user ID.",
           "examples": [
             "discordID#0001"
           ],
-          "title": "A string value",
+          "title": "Author Discord",
           "type": "string",
           "pattern": "^.{3,32}#[0-9]{4}$",
           "errorMessage": {
@@ -81,19 +83,19 @@
           }
         },
         "patreon": {
-          "default": "",
+          "description": "A Patreon user name.",
           "examples": [
             "patreonName"
           ],
-          "title": "A string value",
+          "title": "Author Patreon",
           "type": "string"
         },
         "reddit": {
-          "default": "",
+          "description": "A Reddit user name.",
           "examples": [
             "u/RedditUsername"
           ],
-          "title": "A string value",
+          "title": "Author Reddit",
           "type": "string",
           "pattern": "^u/[A-Za-z0-9_-]+$",
           "errorMessage": {
@@ -101,11 +103,11 @@
           }
         },
         "twitter": {
-          "default": "",
+          "default": "A Twitter user handle.",
           "examples": [
             "@TwitterHandle"
           ],
-          "title": "A string value",
+          "title": "Author Twitter",
           "type": "string",
           "pattern": "^@[A-Za-z0-9_]{1,15}$",
           "errorMessage": {
