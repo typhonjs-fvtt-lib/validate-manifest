@@ -1,4 +1,4 @@
-/version should be string
+/version should be a string or number
   4 |   "description": "Some description",
   5 |   "author": "typhonrt",
 > 6 |   "version": true,
