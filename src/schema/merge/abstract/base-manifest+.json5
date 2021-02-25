@@ -6,27 +6,33 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "conflicts": {
+      "description": "The `conflicts` field is similar to the `dependencies` field in the core Foundry VTT manifest specification, but provides a mapping of packages which can not interoperate with the given package.",
       "items": {
         "properties": {
           "name": {
+            "description": "The name of the conflict package.",
             "examples": [
               "dice-so-nice"
             ],
-            "title": "A string value",
+            "title": "Conflict Package Name",
             "type": "string"
           },
           "type": {
+            "description": "The type of the conflict package",
             "enum": [
               "module",
               "system",
               "world"
             ],
             "examples": [
-              "module"
+              "module",
+              "system",
+              "world"
             ],
-            "title": "A string value"
+            "title": "Conflict Package Type"
           },
           "versionMax": {
+            "description": "Defines a maximum version number for the package within which the conflict occurs.",
             "errorMessage": "should be a string or number",
             "examples": [
               "1.0.0"
@@ -39,9 +45,10 @@
                 "type": "number"
               }
             ],
-            "title": "A string value"
+            "title": "Conflict Maximum Version"
           },
           "versionMin": {
+            "description": "Defines a minimum version number for the package within which the conflict occurs.",
             "errorMessage": "should be a string or number",
             "examples": [
               "1.0.0"
@@ -54,36 +61,40 @@
                 "type": "number"
               }
             ],
-            "title": "A string value"
+            "title": "Conflict Minimum Version"
           }
         },
         "required": [
           "name",
           "type"
         ],
-        "title": "An object value",
+        "title": "Conflict Entry",
         "type": "object"
       },
-      "title": "An array of items",
+      "title": "Conflicts",
       "type": "array"
     },
     "deprecated": {
+      "description": "This field is intended to be added to the manifest of a package that is no longer being maintained and / or is no longer functional / useful.",
       "properties": {
         "alternatives": {
+          "description": "An array of objects each providing data about another package which could act as a replacement for the deprecated package.",
           "items": {
             "properties": {
               "name": {
+                "description": "Deprecated package name",
                 "examples": [
-                  "dice-so-nice"
+                  "module-name"
                 ],
-                "title": "A string value",
+                "title": "Alternate Package Name",
                 "type": "string"
               },
               "manifest": {
+                "description": "The URL of the manifest for the alternative package from which it can be downloaded.",
                 "examples": [
-                  "https://link.com/to/manifest.json"
+                  "https://link.com/to/module.json"
                 ],
-                "title": "A string value",
+                "title": "Alternate Package Manifest",
                 "type": "string"
               }
             },
@@ -91,61 +102,67 @@
               "name",
               "manifest"
             ],
-            "title": "An object value",
+            "title": "Alternative Entry",
             "type": "object"
           },
-          "title": "An array of items",
+          "title": "Alternatives",
           "type": "array"
         },
         "coreVersion": {
+          "description": "If set the package is assumed to be a module that has been deprecated by a Foundry VTT core update. This field is the core version number as a string.",
           "examples": [
-            "0.7.5"
+            "0.7.9"
           ],
-          "title": "A string value",
+          "title": "Core Version",
           "type": "string"
         },
         "reason": {
+          "description": "A human-readable string explaining why the package was deprecated.",
           "examples": [
             "This was added to foundry core."
           ],
-          "title": "A string value",
+          "title": "Reason",
           "type": "string"
         }
       },
-      "title": "An object",
+      "title": "Deprecated",
       "type": "object"
     },
     "includes": {
+      "description": "The `includes` field is an array of strings where each string is a relative file path that should be included in the package zip archive.",
       "items": {
         "examples": [
           "relative/path/to/files/script.js",
           "relative/path/to/templates/template.html",
           "path/to/image/assets/folder"
         ],
-        "title": "A string value",
+        "title": "Include Entry",
         "type": "string"
       },
-      "title": "An array of items",
+      "title": "Includes",
       "type": "array"
     },
     "library": {
+      "description": "The `library` field is a boolean that indicates whether the package is a library intended for other packages to depend on and consume.",
       "examples": [
         true
       ],
-      "title": "A boolean value",
+      "title": "Library",
       "type": "boolean"
     },
     "manifestPlusVersion": {
+      "description": "Denotes which version of Manifest+ you have implemented.",
       "examples": [
-        "1.0.0"
+        "1.1.0"
       ],
-      "title": "A string value",
+      "title": "Manifest+ Version",
       "type": "string"
     },
     "media": {
+      "description": "An array of objects that each provide data for a single multimedia item. This data includes a `type` field which indicates what kind of media is being provided as well as an `url` field which provides the address of the media resource.",
       "items": {
       },
-      "title": "An array of items",
+      "title": "Media",
       "type": "array"
     },
     "media-item-loose": {
