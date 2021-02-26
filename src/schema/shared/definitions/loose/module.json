@@ -3,14 +3,14 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "manifest": {
+      "description": "A stable URL that describes the latest release version of your manifest file.",
       "examples": [
         "https://someaddress.com/module.json"
       ],
-      "title": "A string value",
+      "title": "Manifest",
       "type": "string"
     },
     "packs": {
-      "title": "Packs",
       "items": {
         "required": [
           "module",
@@ -21,23 +21,22 @@
         ],
         "properties": {
           "system": {
+            "description": "A system ID or array of system IDs which are required in order to use this module. For example, specifying \"system\": \"dnd5e\" will only allow the module to be used by Worlds which are running the dnd5e game system.",
             "examples": [
               "dnd5e"
             ],
             "oneOf": [
               {
-                "title": "A string value",
                 "type": "string"
               },
               {
                 "items": {
-                  "title": "A string value",
                   "type": "string"
                 },
-                "title": "An array of items",
                 "type": "array"
               }
             ],
+            "title": "Pack System",
             "errorMessage": "should be a string or array of strings"
           },
           "entity": {
@@ -93,26 +92,26 @@
         "type": "object"
       },
       "description": "An array of objects that define all compendium packs.",
+      "title": "Packs",
       "type": "array"
     },
     "system": {
+      "description": "A system ID or array of system IDs which are required in order to use this module. For example, specifying \"system\": \"dnd5e\" will only allow the module to be used by Worlds which are running the dnd5e game system.",
       "examples": [
         "dnd5e"
       ],
       "oneOf": [
         {
-          "title": "A string value",
           "type": "string"
         },
         {
           "items": {
-            "title": "A string value",
             "type": "string"
           },
-          "title": "An array of items",
           "type": "array"
         }
       ],
+      "title": "System",
       "errorMessage": "should be a string or array of strings"
     }
   }
