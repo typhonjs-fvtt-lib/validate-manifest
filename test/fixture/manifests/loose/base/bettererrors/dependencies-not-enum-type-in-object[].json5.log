@@ -5,4 +5,4 @@
 >  8 |   "dependencies": [{ "name":  "dep", "type": "bad type" }]
      |                                              ^^^^^^^^^^
    9 | }
-  10 | 
+  10 |

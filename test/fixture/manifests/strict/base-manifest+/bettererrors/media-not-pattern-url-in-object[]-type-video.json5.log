@@ -4,4 +4,4 @@
 >  8 |   "media": [{ "type": "video", "url": "not an url" }]
      |                                       ^^^^^^^^^^^^
    9 | }
-  10 | 
+  10 |

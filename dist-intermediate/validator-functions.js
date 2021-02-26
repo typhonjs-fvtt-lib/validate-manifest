@@ -35,73 +35,85 @@ const schema29 = {
   },
 };
 const schema52 = {
+  description:
+    "A stable URL that describes the latest release version of your manifest file.",
   examples: ["https://someaddress.com/module.json"],
-  title: "A string value",
+  title: "Manifest",
   type: "string",
 };
 const schema53 = {
-  title: "An array of items",
   items: {
     required: ["module", "name", "label", "path", "entity"],
     properties: {
       system: {
+        description:
+          'A system ID or array of system IDs which are required in order to use this module. For example, specifying "system": "dnd5e" will only allow the module to be used by Worlds which are running the dnd5e game system.',
         examples: ["dnd5e"],
         oneOf: [
-          { title: "A string value", type: "string" },
-          {
-            items: { title: "A string value", type: "string" },
-            title: "An array of items",
-            type: "array",
-          },
+          { type: "string" },
+          { items: { type: "string" }, type: "array" },
         ],
+        title: "Pack System",
         errorMessage: "should be a string or array of strings",
       },
       entity: {
-        title: "A string value",
-        default: "",
-        examples: ["Item"],
+        description:
+          "Each compendium pack must designate a specific Entity type that it contains.",
+        examples: [
+          "Actor",
+          "Item",
+          "Scene",
+          "JournalEntry",
+          "Macro",
+          "RollTable",
+          "Playlist",
+        ],
+        title: "Pack Entity",
         type: "string",
       },
       label: {
-        title: "A string value",
-        default: "",
+        description:
+          "The compendium pack label - this should be a human readable string label which is displayed in the Compendium sidebar in-game.",
         examples: ["Pack Title"],
+        title: "Pack Label",
         type: "string",
       },
       module: {
-        title: "A string value",
-        default: "",
-        examples: ["module-name"],
+        description:
+          "The module attribute of each compendium pack designates which content module provided the pack. If coming from a system this field can be excluded or list the system name.",
+        examples: ["module-name", "system-name"],
+        title: "Pack Module",
         type: "string",
       },
       name: {
-        title: "A string value",
-        default: "",
+        description:
+          "The compendium pack name - this should be a unique lower-case string with no special characters.",
         examples: ["pack-name"],
+        title: "Pack Name",
         type: "string",
       },
       path: {
-        title: "A string value",
-        default: "",
+        description:
+          "The path for each compendium pack should designate a database file with the .db extension.",
         examples: ["./packs/pack-name.db"],
+        title: "Pack Path",
         type: "string",
       },
     },
-    title: "An object value",
+    description: "An object defining a single compendium pack.",
+    title: "Pack",
     type: "object",
   },
+  description: "An array of objects that define all compendium packs.",
+  title: "Packs",
   type: "array",
 };
 const schema54 = {
+  description:
+    'A system ID or array of system IDs which are required in order to use this module. For example, specifying "system": "dnd5e" will only allow the module to be used by Worlds which are running the dnd5e game system.',
   examples: ["dnd5e"],
-  oneOf: [
-    { title: "A string value", type: "string" },
-    {
-      items: { title: "A string value", type: "string" },
-      title: "An array of items",
-      type: "array",
-    },
-  ],
+  oneOf: [{ type: "string" }, { items: { type: "string" }, type: "array" }],
+  title: "System",
   errorMessage: "should be a string or array of strings",
 };
 const schema30 = {
@@ -157,178 +169,209 @@ const schema30 = {
   },
 };
 const schema32 = {
-  default: "",
-  examples: ["typhonrt"],
-  title: "A string value",
+  description:
+    "Provide your name as the package creator. This field can be any string if you wish to include an email address or other contact information also.",
+  title: "Package Author",
   type: "string",
 };
 const schema33 = {
-  default: "",
-  examples: ["https://github.com/some-user/a-module/issues"],
-  title: "A string value",
+  description:
+    "A publicly accessible URL where issues, suggestions, and bug reports may be filed.",
+  title: "Bugs URL",
   type: "string",
 };
 const schema34 = {
-  default: "",
-  examples: ["https://github.com/some-user/a-module/releases"],
-  title: "A string value",
+  description:
+    "A publicly accessible URL where update and release notes about the package may be found.",
+  title: "Changelog URL",
   type: "string",
 };
 const schema35 = {
-  default: "",
-  examples: ["1.0.0"],
-  title: "A string value",
+  description:
+    "Specify the latest Foundry VTT version with which this system's features are confirmed to function properly.",
+  examples: ["0.7.9"],
+  title: "Compatible Core Version",
   type: "string",
 };
 const schema36 = {
+  description:
+    "Packages can require other modules, systems, or worlds be installed to allow their use. If a package has been installed with dependencies, but its dependencies are missing it cannot be enabled.",
   items: {
     properties: {
       manifest: {
-        default: "",
+        description:
+          "The manifest attribute provides an explicit manifest URL to be used for downloading the dependency. If a manifest is not provided, the dependency package must exist in the Foundry VTT website directory.",
         examples: [
-          "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/2.0.3/module/module.json",
+          "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/master/module/module.json",
         ],
-        title: "A string value",
+        title: "Manifest URL",
         type: "string",
       },
       name: {
-        default: "",
+        description:
+          "Dependency entries require the name attribute. If only a name is provided, additional details about the package will be discovered from the Foundry VTT website listing.",
         examples: ["dice-so-nice"],
-        title: "A string value",
+        title: "Package Name",
         type: "string",
       },
       type: {
-        default: "",
+        description:
+          "The type attribute instructs Foundry VTT that the dependency may be on a different type of package. By default dependencies are assumed to be module, so if you want to depend on a system or world you should be explicit.",
         enum: ["module", "system", "world"],
-        examples: ["module"],
-        title: "A string value",
+        examples: ["module", "system", "world"],
+        title: "Package Type",
       },
     },
     required: ["name"],
-    title: "An object value",
+    title: "Dependency Entry",
     type: "object",
   },
-  title: "An array of items",
+  title: "Dependencies",
   type: "array",
 };
 const schema37 = {
-  default: "",
-  examples: ["Some description"],
-  title: "A string value",
+  description:
+    "This field can contain a more lengthy description of the module. This text can be used to describe the functionality, list contact information, provide recommendations to contributors or testers, or any other information you feel is important to provide. This field can contain HTML to structure and style your text.",
+  title: "Package Description",
   type: "string",
 };
 const schema38 = {
-  default: "",
-  examples: ["https://someaddress.com/module.zip"],
-  title: "A string value",
+  description:
+    "A public URL that provides a zip archive of the package for the manifest version which points to it. The archive at this URL is retrieved during the installation or update process.",
+  title: "Download URL",
   type: "string",
 };
 const schema39 = {
+  description:
+    "In addition to including traditional JavaScript script files, you may also include JS files which use the newer ES module specification. These files are identified separately in the manifest so they may be correctly loaded as an ES module rather than a script.",
   items: {
-    default: "",
+    description:
+      "An ES module file path relative to the root directory of the manifest.",
     examples: ["index.js"],
-    title: "A string value",
+    title: "ES Module File",
     type: "string",
   },
-  title: "An array of items",
+  title: "ES Modules",
   type: "array",
 };
 const schema40 = {
+  description:
+    "The package may designate an array of languages specifications that it supports by default. Each element in the languages array is an object which defines the language tag, label, and path to its localization file.",
   items: {
     properties: {
       lang: {
-        default: "",
+        description:
+          "A language code in lower-case letters, for example 'en' for English. See: https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes",
         examples: ["en"],
-        title: "A string value",
+        title: "Language Code",
         type: "string",
       },
       name: {
-        default: "",
+        description: "The formal and readable name for the language.",
         examples: ["English"],
-        title: "A string value",
+        title: "Language Name",
         type: "string",
       },
       path: {
+        description:
+          "A file path relative to the root directory of the manifest where localization strings are provided in JSON format.",
         examples: ["lang/en.json"],
         title: "A string value",
         type: "string",
       },
     },
     required: ["lang", "name", "path"],
-    title: "An object value",
+    title: "Language Entry",
     type: "object",
   },
-  title: "An array of items",
+  title: "Languages",
   type: "array",
 };
 const schema41 = {
-  default: "",
+  description:
+    "A path to a license file relative to the root directory of the manifest or a publicly accessible URL which contains the software license that applies to this package.\n\n",
   examples: ["LICENSE"],
   title: "A string value",
   type: "string",
 };
 const schema42 = {
-  default: "",
-  examples: ["0.7.5"],
-  title: "A string value",
+  description:
+    "Specify the latest Foundry VTT version which this package features are confirmed to function properly.",
+  examples: ["0.7.9"],
+  title: "Minimum Core Version",
   type: "string",
 };
 const schema43 = {
-  default: "",
-  examples: ["a-module"],
-  title: "A string value",
+  description:
+    "Choose a unique package identifier. This should be an all lower-case string with no special characters. This name must align with the name of the parent directory within which you create the package.",
+  examples: ["my-package-name"],
+  title: "Package Name",
   type: "string",
 };
 const schema44 = {
-  default: "",
-  examples: ["README.md"],
-  title: "A string value",
+  description:
+    "A path to a readme file relative to the root module folder or a publicly accessible URL which contains instructions or information about the package.",
+  examples: [
+    "README.md",
+    "https://github.com/my-user-or-org/my-package/blob/main/README.md",
+  ],
+  title: "Read Me",
   type: "string",
 };
 const schema45 = {
+  description:
+    "An array of JavaScript file paths included whenever this package is enabled. Each listed script path should be relative to the package root directory. All scripts which exist will be automatically included in the game session and loaded in their listed order.",
   items: {
-    default: "",
+    description:
+      "JavaScript file path; should be relative to the package root directory.",
     examples: ["ascript.js"],
-    title: "A string value",
+    title: "Script Entry",
     type: "string",
   },
-  title: "An array of items",
+  title: "Scripts",
   type: "array",
 };
 const schema46 = {
-  default: false,
+  description:
+    "A package may request a specialized socket namespace to be provided allowing data messages to be passed between connected clients. If set to true, a socket event will be handled by the server with the event name `module.{name}` or `system.{name}` depending on your package type. This event name relays arbitrary data packets between the sending client and all other connected clients.",
   examples: [true],
-  title: "A boolean value",
+  title: "Socket",
   type: "boolean",
 };
 const schema47 = {
+  description:
+    "You can designate CSS files which are included in the game session whenever this package is enabled. Each listed stylesheet file path should be relative to the system root directory. All stylesheets which exist will be automatically included in the game session and loaded in their listed order.",
   items: {
-    default: "",
+    description:
+      "CSS file path; should be relative to the system root directory.",
     examples: ["styles.css"],
-    title: "A string value",
+    title: "Style Entry",
     type: "string",
   },
-  title: "An array of items",
+  title: "Styles",
   type: "array",
 };
 const schema48 = {
-  default: "",
-  examples: ["A Module"],
-  title: "A string value",
+  description:
+    "Provide a human readable title for the package which is displayed as the visible name in the Foundry VTT setup menu and elsewhere.",
+  examples: ["A Module ...", "A System ..."],
+  title: "Title",
   type: "string",
 };
 const schema49 = {
-  default: "",
-  examples: ["https://someaddress.com/"],
-  title: "A string value",
+  description:
+    "A public URL that links to the repository or documentation pages for the package. This link is displayed to users allowing them to find more information about your package. If your package is hosted in version control like GitHub or GitLab, linking to the repository in this field is a good choice.",
+  examples: ["https://github.com/my-user-or-org/my-package"],
+  title: "URL",
   type: "string",
 };
 const schema50 = {
-  default: "",
-  examples: ["1.0.0"],
-  title: "A string value",
+  description:
+    "The package version number can be a number or a string which denotes the version of your package. We recommend using semantic versioning but this is not strictly required. When making changes to your package, incrementing the version number in your manifest file is used to signal to users that an update is available.",
   errorMessage: "should be a string or number",
+  examples: ["1.0.0"],
   oneOf: [{ type: "string" }, { type: "number" }],
+  title: "Version",
 };
 const func0 = require("ajv/dist/compile/equal");
 function validate27(
@@ -1039,10 +1082,10 @@ function validate27(
     }
     if (data.version !== undefined) {
       let data29 = data.version;
-      const _errs49 = errors;
-      let valid27 = false;
+      const _errs78 = errors;
+      let valid32 = false;
       let passing0 = null;
-      const _errs50 = errors;
+      const _errs79 = errors;
       if (typeof data29 !== "string") {
         const err39 = {
           keyword: "type",
@@ -1059,12 +1102,12 @@ function validate27(
         }
         errors++;
       }
-      var _valid0 = _errs50 === errors;
+      var _valid0 = _errs79 === errors;
       if (_valid0) {
-        valid27 = true;
+        valid32 = true;
         passing0 = 0;
       }
-      const _errs51 = errors;
+      const _errs81 = errors;
       if (!(typeof data29 == "number" && isFinite(data29))) {
         const err40 = {
           keyword: "type",
@@ -1081,17 +1124,17 @@ function validate27(
         }
         errors++;
       }
-      var _valid0 = _errs51 === errors;
-      if (_valid0 && valid27) {
-        valid27 = false;
+      var _valid0 = _errs81 === errors;
+      if (_valid0 && valid32) {
+        valid32 = false;
         passing0 = [passing0, 1];
       } else {
         if (_valid0) {
-          valid27 = true;
+          valid32 = true;
           passing0 = 1;
         }
       }
-      if (!valid27) {
+      if (!valid32) {
         const err41 = {
           keyword: "oneOf",
           dataPath: dataPath + "/version",
@@ -1107,10 +1150,10 @@ function validate27(
         }
         errors++;
       } else {
-        errors = _errs49;
+        errors = _errs78;
         if (vErrors !== null) {
-          if (_errs49) {
-            vErrors.length = _errs49;
+          if (_errs78) {
+            vErrors.length = _errs78;
           } else {
             vErrors = null;
           }
@@ -1301,10 +1344,10 @@ function validate26(
             }
             if (data2.system !== undefined) {
               let data3 = data2.system;
-              const _errs7 = errors;
-              let valid6 = false;
+              const _errs11 = errors;
+              let valid7 = false;
               let passing0 = null;
-              const _errs8 = errors;
+              const _errs12 = errors;
               if (typeof data3 !== "string") {
                 const err6 = {
                   keyword: "type",
@@ -1321,12 +1364,12 @@ function validate26(
                 }
                 errors++;
               }
-              var _valid0 = _errs8 === errors;
+              var _valid0 = _errs12 === errors;
               if (_valid0) {
-                valid6 = true;
+                valid7 = true;
                 passing0 = 0;
               }
-              const _errs9 = errors;
+              const _errs14 = errors;
               if (Array.isArray(data3)) {
                 const len1 = data3.length;
                 for (let i1 = 0; i1 < len1; i1++) {
@@ -1363,17 +1406,17 @@ function validate26(
                 }
                 errors++;
               }
-              var _valid0 = _errs9 === errors;
-              if (_valid0 && valid6) {
-                valid6 = false;
+              var _valid0 = _errs14 === errors;
+              if (_valid0 && valid7) {
+                valid7 = false;
                 passing0 = [passing0, 1];
               } else {
                 if (_valid0) {
-                  valid6 = true;
+                  valid7 = true;
                   passing0 = 1;
                 }
               }
-              if (!valid6) {
+              if (!valid7) {
                 const err9 = {
                   keyword: "oneOf",
                   dataPath: dataPath + "/packs/" + i0 + "/system",
@@ -1389,10 +1432,10 @@ function validate26(
                 }
                 errors++;
               } else {
-                errors = _errs7;
+                errors = _errs11;
                 if (vErrors !== null) {
-                  if (_errs7) {
-                    vErrors.length = _errs7;
+                  if (_errs11) {
+                    vErrors.length = _errs11;
                   } else {
                     vErrors = null;
                   }
@@ -1575,10 +1618,10 @@ function validate26(
     }
     if (data.system !== undefined) {
       let data10 = data.system;
-      const _errs18 = errors;
-      let valid9 = false;
+      const _errs30 = errors;
+      let valid11 = false;
       let passing1 = null;
-      const _errs19 = errors;
+      const _errs31 = errors;
       if (typeof data10 !== "string") {
         const err20 = {
           keyword: "type",
@@ -1595,12 +1638,12 @@ function validate26(
         }
         errors++;
       }
-      var _valid1 = _errs19 === errors;
+      var _valid1 = _errs31 === errors;
       if (_valid1) {
-        valid9 = true;
+        valid11 = true;
         passing1 = 0;
       }
-      const _errs20 = errors;
+      const _errs33 = errors;
       if (Array.isArray(data10)) {
         const len2 = data10.length;
         for (let i2 = 0; i2 < len2; i2++) {
@@ -1637,17 +1680,17 @@ function validate26(
         }
         errors++;
       }
-      var _valid1 = _errs20 === errors;
-      if (_valid1 && valid9) {
-        valid9 = false;
+      var _valid1 = _errs33 === errors;
+      if (_valid1 && valid11) {
+        valid11 = false;
         passing1 = [passing1, 1];
       } else {
         if (_valid1) {
-          valid9 = true;
+          valid11 = true;
           passing1 = 1;
         }
       }
-      if (!valid9) {
+      if (!valid11) {
         const err23 = {
           keyword: "oneOf",
           dataPath: dataPath + "/system",
@@ -1663,10 +1706,10 @@ function validate26(
         }
         errors++;
       } else {
-        errors = _errs18;
+        errors = _errs30;
         if (vErrors !== null) {
-          if (_errs18) {
-            vErrors.length = _errs18;
+          if (_errs30) {
+            vErrors.length = _errs30;
           } else {
             vErrors = null;
           }
@@ -1737,32 +1780,34 @@ function validate26(
   return errors === 0;
 }
 const schema56 = {
+  description:
+    "Instead of listing a single author name you may also provide an array of authors, each of which is an object that can contain the keys: 'name', 'email', and 'url'.",
   items: {
     $ref: "#/definitions/properties-author",
-    title: "An object value",
+    title: "Author Entry",
     type: "object",
   },
-  title: "An array of items",
+  title: "Authors",
   type: "array",
 };
 const schema57 = {
   properties: {
     email: {
-      default: "",
+      description: "An email address.",
       examples: ["admin@foundryvtt.com"],
-      title: "A string value",
+      title: "Author Email",
       type: "string",
     },
     name: {
-      default: "",
+      description: "An author name.",
       examples: ["Atropos"],
-      title: "A string value",
+      title: "Author Name",
       type: "string",
     },
     url: {
-      default: "",
+      description: "An URL for the author.",
       examples: ["https://foundryvtt.com"],
-      title: "A string value",
+      title: "Author URL",
       type: "string",
     },
   },
@@ -2057,111 +2102,156 @@ const schema60 = {
   },
 };
 const schema62 = {
+  description:
+    "The `conflicts` field is similar to the `dependencies` field in the core Foundry VTT manifest specification, but provides a mapping of packages which can not interoperate with the given package.",
   items: {
     properties: {
       name: {
+        description: "The name of the conflict package.",
         examples: ["dice-so-nice"],
-        title: "A string value",
+        title: "Conflict Package Name",
         type: "string",
       },
       type: {
+        description: "The type of the conflict package",
         enum: ["module", "system", "world"],
-        examples: ["module"],
-        title: "A string value",
+        examples: ["module", "system", "world"],
+        title: "Conflict Package Type",
       },
       versionMax: {
+        description:
+          "Defines a maximum version number for the package within which the conflict occurs.",
         errorMessage: "should be a string or number",
         examples: ["1.0.0"],
         oneOf: [{ type: "string" }, { type: "number" }],
-        title: "A string value",
+        title: "Conflict Maximum Version",
       },
       versionMin: {
+        description:
+          "Defines a minimum version number for the package within which the conflict occurs.",
         errorMessage: "should be a string or number",
         examples: ["1.0.0"],
         oneOf: [{ type: "string" }, { type: "number" }],
-        title: "A string value",
+        title: "Conflict Minimum Version",
       },
     },
     required: ["name", "type"],
-    title: "An object value",
+    title: "Conflict Entry",
     type: "object",
   },
-  title: "An array of items",
+  title: "Conflicts",
   type: "array",
 };
 const schema63 = {
+  description:
+    "This field is intended to be added to the manifest of a package that is no longer being maintained and / or is no longer functional / useful.",
   properties: {
     alternatives: {
+      description:
+        "An array of objects each providing data about another package which could act as a replacement for the deprecated package.",
       items: {
         properties: {
           name: {
-            examples: ["dice-so-nice"],
-            title: "A string value",
+            description: "Deprecated package name",
+            examples: ["module-name"],
+            title: "Alternate Package Name",
             type: "string",
           },
           manifest: {
-            examples: ["https://link.com/to/manifest.json"],
-            title: "A string value",
+            description:
+              "The URL of the manifest for the alternative package from which it can be downloaded.",
+            examples: ["https://link.com/to/module.json"],
+            title: "Alternate Package Manifest",
             type: "string",
           },
         },
         required: ["name", "manifest"],
-        title: "An object value",
+        title: "Alternative Entry",
         type: "object",
       },
-      title: "An array of items",
+      title: "Alternatives",
       type: "array",
     },
     coreVersion: {
-      examples: ["0.7.5"],
-      title: "A string value",
+      description:
+        "If set the package is assumed to be a module that has been deprecated by a Foundry VTT core update. This field is the core version number as a string.",
+      examples: ["0.7.9"],
+      title: "Core Version",
       type: "string",
     },
     reason: {
+      description:
+        "A human-readable string explaining why the package was deprecated.",
       examples: ["This was added to foundry core."],
-      title: "A string value",
+      title: "Reason",
       type: "string",
     },
   },
-  title: "An object",
+  title: "Deprecated",
   type: "object",
 };
 const schema64 = {
+  description:
+    "The `includes` field is an array of strings where each string is a relative file path that should be included in the package zip archive.",
   items: {
     examples: [
       "relative/path/to/files/script.js",
       "relative/path/to/templates/template.html",
       "path/to/image/assets/folder",
     ],
-    title: "A string value",
+    title: "Include Entry",
     type: "string",
   },
-  title: "An array of items",
+  title: "Includes",
   type: "array",
 };
 const schema65 = {
+  description:
+    "The `library` field is a boolean that indicates whether the package is a library intended for other packages to depend on and consume.",
   examples: [true],
-  title: "A boolean value",
+  title: "Library",
   type: "boolean",
 };
 const schema66 = {
-  examples: ["1.0.0"],
-  title: "A string value",
+  description: "Denotes which version of Manifest+ you have implemented.",
+  examples: ["1.1.0"],
+  title: "Manifest+ Version",
   type: "string",
 };
 const schema67 = {
+  description:
+    "An array of objects that each provide data for a single multimedia item. This data includes a `type` field which indicates what kind of media is being provided as well as an `url` field which provides the address of the media resource.",
   items: { $ref: "#/definitions/media-item-loose" },
-  title: "An array of items",
+  title: "Media",
   type: "array",
 };
 const schema68 = {
-  type: "object",
+  description: "An object that provides data for a single multimedia item.",
   required: ["type", "url"],
+  title: "Media Entry",
+  type: "object",
   properties: {
-    type: { enum: ["cover", "icon", "screenshot", "video"] },
-    url: { type: "string" },
-    loop: { type: "boolean" },
-    thumbnail: { type: "string" },
+    type: {
+      description: "Indicates what kind of media.",
+      enum: ["cover", "icon", "screenshot", "video"],
+      title: "Media Type",
+    },
+    url: {
+      description: "Public URL of the media resource.",
+      title: "Media URL",
+      type: "string",
+    },
+    loop: {
+      description:
+        "Optional field specific to video media. If loop is set to true, the video is expected to be treated as an animated image, like a GIF (i.e. muted and looped).",
+      title: "Video Loop",
+      type: "boolean",
+    },
+    thumbnail: {
+      description: "Optional URL to provide a video thumbnail.",
+      title: "Video Thumbnail",
+      type: "string",
+    },
   },
 };
 function validate40(
@@ -2405,10 +2495,10 @@ function validate38(
             }
             if (data1.versionMax !== undefined) {
               let data4 = data1.versionMax;
-              const _errs6 = errors;
-              let valid4 = false;
+              const _errs10 = errors;
+              let valid5 = false;
               let passing0 = null;
-              const _errs7 = errors;
+              const _errs11 = errors;
               if (typeof data4 !== "string") {
                 const err4 = {
                   keyword: "type",
@@ -2425,12 +2515,12 @@ function validate38(
                 }
                 errors++;
               }
-              var _valid0 = _errs7 === errors;
+              var _valid0 = _errs11 === errors;
               if (_valid0) {
-                valid4 = true;
+                valid5 = true;
                 passing0 = 0;
               }
-              const _errs8 = errors;
+              const _errs13 = errors;
               if (!(typeof data4 == "number" && isFinite(data4))) {
                 const err5 = {
                   keyword: "type",
@@ -2447,17 +2537,17 @@ function validate38(
                 }
                 errors++;
               }
-              var _valid0 = _errs8 === errors;
-              if (_valid0 && valid4) {
-                valid4 = false;
+              var _valid0 = _errs13 === errors;
+              if (_valid0 && valid5) {
+                valid5 = false;
                 passing0 = [passing0, 1];
               } else {
                 if (_valid0) {
-                  valid4 = true;
+                  valid5 = true;
                   passing0 = 1;
                 }
               }
-              if (!valid4) {
+              if (!valid5) {
                 const err6 = {
                   keyword: "oneOf",
                   dataPath: dataPath + "/conflicts/" + i0 + "/versionMax",
@@ -2473,10 +2563,10 @@ function validate38(
                 }
                 errors++;
               } else {
-                errors = _errs6;
+                errors = _errs10;
                 if (vErrors !== null) {
-                  if (_errs6) {
-                    vErrors.length = _errs6;
+                  if (_errs10) {
+                    vErrors.length = _errs10;
                   } else {
                     vErrors = null;
                   }
@@ -2536,10 +2626,10 @@ function validate38(
             }
             if (data1.versionMin !== undefined) {
               let data5 = data1.versionMin;
-              const _errs10 = errors;
-              let valid5 = false;
+              const _errs16 = errors;
+              let valid6 = false;
               let passing1 = null;
-              const _errs11 = errors;
+              const _errs17 = errors;
               if (typeof data5 !== "string") {
                 const err10 = {
                   keyword: "type",
@@ -2556,12 +2646,12 @@ function validate38(
                 }
                 errors++;
               }
-              var _valid1 = _errs11 === errors;
+              var _valid1 = _errs17 === errors;
               if (_valid1) {
-                valid5 = true;
+                valid6 = true;
                 passing1 = 0;
               }
-              const _errs12 = errors;
+              const _errs19 = errors;
               if (!(typeof data5 == "number" && isFinite(data5))) {
                 const err11 = {
                   keyword: "type",
@@ -2578,17 +2668,17 @@ function validate38(
                 }
                 errors++;
               }
-              var _valid1 = _errs12 === errors;
-              if (_valid1 && valid5) {
-                valid5 = false;
+              var _valid1 = _errs19 === errors;
+              if (_valid1 && valid6) {
+                valid6 = false;
                 passing1 = [passing1, 1];
               } else {
                 if (_valid1) {
-                  valid5 = true;
+                  valid6 = true;
                   passing1 = 1;
                 }
               }
-              if (!valid5) {
+              if (!valid6) {
                 const err12 = {
                   keyword: "oneOf",
                   dataPath: dataPath + "/conflicts/" + i0 + "/versionMin",
@@ -2604,10 +2694,10 @@ function validate38(
                 }
                 errors++;
               } else {
-                errors = _errs10;
+                errors = _errs16;
                 if (vErrors !== null) {
-                  if (_errs10) {
-                    vErrors.length = _errs10;
+                  if (_errs16) {
+                    vErrors.length = _errs16;
                   } else {
                     vErrors = null;
                   }
@@ -2980,41 +3070,43 @@ function validate38(
   return errors === 0;
 }
 const schema69 = {
+  description:
+    "Instead of listing a single author name you may also provide an array of authors, each of which is an object that can contain the keys: 'name', 'discord', 'email', 'patreon', 'reddit', 'twitter', and 'url'.",
   items: {
     allOf: [
       { $ref: "#/definitions/properties-author" },
       { $ref: "#/definitions/properties-author+" },
     ],
     type: "object",
-    title: "An object value",
+    title: "Author Entry",
   },
-  title: "An array of items",
+  title: "Authors",
   type: "array",
 };
 const schema71 = {
   properties: {
     discord: {
-      default: "",
+      description: "A Discord user ID.",
       examples: ["discordID#0001"],
-      title: "A string value",
+      title: "Author Discord",
       type: "string",
     },
     patreon: {
-      default: "",
+      description: "A Patreon user name.",
       examples: ["patreonName"],
-      title: "A string value",
+      title: "Author Patreon",
       type: "string",
     },
     reddit: {
-      default: "",
+      description: "A Reddit user name.",
       examples: ["u/RedditUsername"],
-      title: "A string value",
+      title: "Author Reddit",
       type: "string",
     },
     twitter: {
-      default: "",
+      description: "A Twitter user handle.",
       examples: ["@TwitterHandle"],
-      title: "A string value",
+      title: "Author Twitter",
       type: "string",
     },
   },
@@ -3393,92 +3485,115 @@ const schema74 = {
   },
 };
 const schema76 = {
-  default: 0,
+  description:
+    "This field designates the default amount of distance that a single grid space should typically represent under this game system. This value configures the default value used when a new Scene is created, but can always be changed for each Scene independently.",
   examples: [5],
-  title: "An integer value",
+  title: "Grid Distance",
   type: "integer",
 };
 const schema77 = {
-  default: "",
+  description:
+    "This field designates the standard unit of measure used to describe distances under this game system. This defines the default value used when new a new Scene is created, but can always be changed for each Scene independently.",
   examples: ["ft, m"],
-  title: "A string value",
+  title: "Grid Units",
   type: "string",
 };
 const schema78 = {
-  default: "",
+  description:
+    "Not every game system uses the concept of initiative, but this field provides the default dice rolling formula that can be used to determine the turn order of Tokens within the combat tracker.",
   examples: ["1d20"],
-  title: "A string value",
+  title: "Initiative",
   type: "string",
 };
 const schema79 = {
-  default: "",
+  description:
+    "A stable URL that describes the latest release version of your manifest file.",
   examples: ["https://someaddress.com/system.json"],
-  title: "A string value",
+  title: "Manifest",
   type: "string",
 };
 const schema80 = {
-  title: "An array of items",
   items: {
     required: ["system", "name", "label", "path", "entity"],
     properties: {
       system: {
-        title: "A string value",
-        default: "",
+        description:
+          "Since you are creating compendium content specifically for your system, be sure to reference that the content inside each compendium pack requires the system by providing the system name that you chose.",
         examples: ["system-name"],
+        title: "Pack System",
         type: "string",
       },
       entity: {
-        title: "A string value",
-        default: "",
-        examples: ["Item"],
+        description:
+          "Each compendium pack must designate a specific Entity type that it contains.",
+        examples: [
+          "Actor",
+          "Item",
+          "Scene",
+          "JournalEntry",
+          "Macro",
+          "RollTable",
+          "Playlist",
+        ],
+        title: "Pack Entity",
         type: "string",
       },
       label: {
-        title: "A string value",
-        default: "",
+        description:
+          "The compendium pack label - this should be a human readable string label which is displayed in the Compendium sidebar in-game.",
         examples: ["Pack Title"],
+        title: "Pack Label",
         type: "string",
       },
       module: {
-        title: "A string value",
-        default: "",
-        examples: ["module-name"],
+        description:
+          "The module attribute of each compendium pack designates which content module provided the pack. If coming from a system this field can be excluded or list the system name.",
+        examples: ["module-name", "system-name"],
+        title: "Pack Module",
         type: "string",
       },
       name: {
-        title: "A string value",
-        default: "",
+        description:
+          "The compendium pack name - this should be a unique lower-case string with no special characters.",
         examples: ["pack-name"],
+        title: "Pack Name",
         type: "string",
       },
       path: {
-        title: "A string value",
-        default: "",
+        description:
+          "The path for each compendium pack should designate a database file with the .db extension.",
         examples: ["./packs/pack-name.db"],
+        title: "Pack Path",
         type: "string",
       },
     },
-    title: "An object value",
+    description: "An object defining a single compendium pack.",
+    title: "Pack",
     type: "object",
   },
+  description: "An array of objects that define all compendium packs.",
+  title: "Packs",
   type: "array",
 };
 const schema81 = {
-  default: "",
+  description:
+    "An attribute path within the system data model that points to an object that contains both a value and max key. The prototype Token for each Actor created in this system will automatically have this resource assigned as it's primary bar. Omit this key or set it to null for no default attribute.",
   examples: ["resources.health"],
-  title: "A string value or null",
+  title: "Primary Token Attribute",
   type: ["null", "string"],
 };
 const schema82 = {
-  default: "",
+  description:
+    "An attribute path within the system data model that points to an object that contains both a value and max key. The prototype Token for each Actor created in this system will automatically have this resource assigned as it's secondary bar. Omit this key or set it to null for no default attribute.",
   examples: ["resources.power"],
-  title: "A string value or null",
+  title: "Secondary Token Attribute",
   type: ["null", "string"],
 };
 const schema83 = {
-  default: 0,
+  description:
+    "The version of the system `template.json`; increment this value when the schema changes.",
   examples: [2],
-  title: "An integer value",
+  title: "Template Version",
   type: "integer",
 };
 function validate49(
@@ -4502,67 +4617,72 @@ const schema93 = {
   },
 };
 const schema116 = {
+  description:
+    "A stable URL that describes the latest release version of your manifest file.",
   examples: ["https://someaddress.com/module.json"],
-  title: "A string value",
+  title: "Manifest",
   type: "string",
   pattern:
     "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/module.json$",
   errorMessage: { pattern: "should be an URL string ending in 'module.json'" },
 };
 const schema117 = {
-  title: "An array of items",
   items: {
     required: ["module", "name", "label", "path", "entity"],
     properties: {
       system: {
+        description:
+          'A system ID or array of system IDs which are required in order to use this module. For example, specifying "system": "dnd5e" will only allow the module to be used by Worlds which are running the dnd5e game system.',
         examples: ["dnd5e"],
         oneOf: [
-          {
-            title: "A string value",
-            type: "string",
-            pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
-          },
+          { type: "string", pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" },
           {
             items: {
-              title: "A string value",
               type: "string",
               pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
             },
-            title: "An array of items",
             type: "array",
           },
         ],
+        title: "Pack System",
         errorMessage:
           "should be a string or array of strings that are alpha-numeric with only underscore and hyphen separators",
       },
       entity: {
-        title: "A string value",
-        default: "",
-        examples: ["Item"],
-        enum: [
+        description:
+          "Each compendium pack must designate a specific Entity type that it contains.",
+        examples: [
           "Actor",
-          "ChatMessage",
-          "Combat",
           "Item",
-          "Folder",
+          "Scene",
           "JournalEntry",
           "Macro",
-          "Playlist",
           "RollTable",
+          "Playlist",
+        ],
+        title: "Pack Entity",
+        enum: [
+          "Actor",
+          "Item",
           "Scene",
-          "User",
+          "JournalEntry",
+          "Macro",
+          "RollTable",
+          "Playlist",
         ],
       },
       label: {
-        title: "A string value",
-        default: "",
+        description:
+          "The compendium pack label - this should be a human readable string label which is displayed in the Compendium sidebar in-game.",
         examples: ["Pack Title"],
+        title: "Pack Label",
         type: "string",
       },
       module: {
-        title: "A string value",
-        default: "",
-        examples: ["module-name"],
+        description:
+          "The module attribute of each compendium pack designates which content module provided the pack. If coming from a system this field can be excluded or list the system name.",
+        examples: ["module-name", "system-name"],
+        title: "Pack Module",
         type: "string",
         pattern: "^([a-z0-9]+-?)*[a-z0-9]+$",
         errorMessage: {
@@ -4571,9 +4691,10 @@ const schema117 = {
         },
       },
       name: {
-        title: "A string value",
-        default: "",
+        description:
+          "The compendium pack name - this should be a unique lower-case string with no special characters.",
         examples: ["pack-name"],
+        title: "Pack Name",
         type: "string",
         pattern: "^([a-z0-9]+-?)*[a-z0-9]+$",
         errorMessage: {
@@ -4582,9 +4703,10 @@ const schema117 = {
         },
       },
       path: {
-        title: "A string value",
-        default: "",
+        description:
+          "The path for each compendium pack should designate a database file with the .db extension.",
         examples: ["./packs/pack-name.db"],
+        title: "Pack Path",
         type: "string",
         pattern: "^(.+).db$",
         errorMessage: {
@@ -4592,29 +4714,26 @@ const schema117 = {
         },
       },
     },
-    title: "An object value",
+    description: "An object defining a single compendium pack.",
+    title: "Pack",
     type: "object",
   },
+  description: "An array of objects that define all compendium packs.",
+  title: "Packs",
   type: "array",
 };
 const schema118 = {
+  description:
+    'A system ID or array of system IDs which are required in order to use this module. For example, specifying "system": "dnd5e" will only allow the module to be used by Worlds which are running the dnd5e game system.',
   examples: ["dnd5e"],
   oneOf: [
+    { type: "string", pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" },
     {
-      title: "A string value",
-      type: "string",
-      pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
-    },
-    {
-      items: {
-        title: "A string value",
-        type: "string",
-        pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
-      },
-      title: "An array of items",
+      items: { type: "string", pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$" },
       type: "array",
     },
   ],
+  title: "System",
   errorMessage:
     "should be a string or array of strings that are alpha-numeric with only underscore and hyphen separators",
 };
@@ -4678,112 +4797,126 @@ const schema94 = {
   },
 };
 const schema96 = {
-  default: "",
-  examples: ["typhonrt"],
-  title: "A string value",
+  description:
+    "Provide your name as the package creator. This field can be any string if you wish to include an email address or other contact information also.",
+  title: "Package Author",
   type: "string",
 };
 const schema97 = {
-  default: "",
-  examples: ["https://github.com/some-user/a-module/issues"],
-  title: "A string value",
+  description:
+    "A publicly accessible URL where issues, suggestions, and bug reports may be filed.",
+  title: "Bugs URL",
   type: "string",
   pattern:
     "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
   errorMessage: { pattern: "should be an URL string" },
 };
 const schema98 = {
-  default: "",
-  examples: ["https://github.com/some-user/a-module/releases"],
-  title: "A string value",
+  description:
+    "A publicly accessible URL where update and release notes about the package may be found.",
+  title: "Changelog URL",
   type: "string",
   pattern:
     "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
   errorMessage: { pattern: "should be an URL string" },
 };
 const schema99 = {
-  default: "",
-  examples: ["1.0.0"],
-  title: "A string value",
+  description:
+    "Specify the latest Foundry VTT version with which this system's features are confirmed to function properly.",
+  examples: ["0.7.9"],
+  title: "Compatible Core Version",
   type: "string",
   pattern:
     "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
   errorMessage: { pattern: "should be a string that uses semantic versioning" },
 };
 const schema100 = {
+  description:
+    "Packages can require other modules, systems, or worlds be installed to allow their use. If a package has been installed with dependencies, but its dependencies are missing it cannot be enabled.",
   items: {
     properties: {
       manifest: {
-        default: "",
+        description:
+          "The manifest attribute provides an explicit manifest URL to be used for downloading the dependency. If a manifest is not provided, the dependency package must exist in the Foundry VTT website directory.",
         examples: [
-          "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/2.0.3/module/module.json",
+          "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/master/module/module.json",
         ],
-        title: "A string value",
+        title: "Manifest URL",
         type: "string",
       },
       name: {
-        default: "",
+        description:
+          "Dependency entries require the name attribute. If only a name is provided, additional details about the package will be discovered from the Foundry VTT website listing.",
         examples: ["dice-so-nice"],
-        title: "A string value",
+        title: "Package Name",
         type: "string",
       },
       type: {
-        default: "",
+        description:
+          "The type attribute instructs Foundry VTT that the dependency may be on a different type of package. By default dependencies are assumed to be module, so if you want to depend on a system or world you should be explicit.",
         enum: ["module", "system", "world"],
-        examples: ["module"],
-        title: "A string value",
+        examples: ["module", "system", "world"],
+        title: "Package Type",
       },
     },
     required: ["name"],
-    title: "An object value",
+    title: "Dependency Entry",
     type: "object",
   },
-  title: "An array of items",
+  title: "Dependencies",
   type: "array",
 };
 const schema101 = {
-  default: "",
-  examples: ["Some description"],
-  title: "A string value",
+  description:
+    "This field can contain a more lengthy description of the module. This text can be used to describe the functionality, list contact information, provide recommendations to contributors or testers, or any other information you feel is important to provide. This field can contain HTML to structure and style your text.",
+  title: "Package Description",
   type: "string",
 };
 const schema102 = {
-  default: "",
-  examples: ["https://someaddress.com/module.zip"],
-  title: "A string value",
+  description:
+    "A public URL that provides a zip archive of the package for the manifest version which points to it. The archive at this URL is retrieved during the installation or update process.",
+  title: "Download URL",
   type: "string",
   pattern:
     "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(.+).zip$",
   errorMessage: { pattern: "should be an URL string ending in '.zip'" },
 };
 const schema103 = {
+  description:
+    "In addition to including traditional JavaScript script files, you may also include JS files which use the newer ES module specification. These files are identified separately in the manifest so they may be correctly loaded as an ES module rather than a script.",
   items: {
-    default: "",
+    description:
+      "An ES module file path relative to the root directory of the manifest.",
     examples: ["index.js"],
-    title: "A string value",
+    title: "ES Module File",
     type: "string",
     pattern: "^(.+).js$",
     errorMessage: { pattern: "should be a file path string ending in '.js'" },
   },
-  title: "An array of items",
+  title: "ES Modules",
   type: "array",
 };
 const schema104 = {
+  description:
+    "The package may designate an array of languages specifications that it supports by default. Each element in the languages array is an object which defines the language tag, label, and path to its localization file.",
   items: {
     properties: {
       lang: {
-        default: "",
+        description:
+          "A language code in lower-case letters, for example 'en' for English. See: https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes",
         examples: ["en"],
-        title: "A string value",
+        title: "Language Code",
         type: "string",
       },
       name: {
-        default: "",
+        description: "The formal and readable name for the language.",
         examples: ["English"],
-        title: "A string value",
+        title: "Language Name",
         type: "string",
       },
       path: {
+        description:
+          "A file path relative to the root directory of the manifest where localization strings are provided in JSON format.",
         examples: ["lang/en.json"],
         title: "A string value",
         type: "string",
@@ -4794,31 +4927,34 @@ const schema104 = {
       },
     },
     required: ["lang", "name", "path"],
-    title: "An object value",
+    title: "Language Entry",
     type: "object",
   },
-  title: "An array of items",
+  title: "Languages",
   type: "array",
 };
 const schema105 = {
-  default: "",
+  description:
+    "A path to a license file relative to the root directory of the manifest or a publicly accessible URL which contains the software license that applies to this package.\n\n",
   examples: ["LICENSE"],
   title: "A string value",
   type: "string",
 };
 const schema106 = {
-  default: "",
-  examples: ["0.7.5"],
-  title: "A string value",
+  description:
+    "Specify the latest Foundry VTT version which this package features are confirmed to function properly.",
+  examples: ["0.7.9"],
+  title: "Minimum Core Version",
   type: "string",
   pattern:
     "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
   errorMessage: { pattern: "should be a string that uses semantic versioning" },
 };
 const schema107 = {
-  default: "",
-  examples: ["a-module"],
-  title: "A string value",
+  description:
+    "Choose a unique package identifier. This should be an all lower-case string with no special characters. This name must align with the name of the parent directory within which you create the package.",
+  examples: ["my-package-name"],
+  title: "Package Name",
   type: "string",
   pattern: "^([a-z0-9]+-?)*[a-z0-9]+$",
   errorMessage: {
@@ -4827,58 +4963,66 @@ const schema107 = {
   },
 };
 const schema109 = {
+  description:
+    "An array of JavaScript file paths included whenever this package is enabled. Each listed script path should be relative to the package root directory. All scripts which exist will be automatically included in the game session and loaded in their listed order.",
   items: {
-    default: "",
+    description:
+      "JavaScript file path; should be relative to the package root directory.",
     examples: ["ascript.js"],
-    title: "A string value",
+    title: "Script Entry",
     type: "string",
     pattern: "^(.+).js$",
     errorMessage: { pattern: "should be a file path string ending in '.js'" },
   },
-  title: "An array of items",
+  title: "Scripts",
   type: "array",
 };
 const schema110 = {
-  default: false,
+  description:
+    "A package may request a specialized socket namespace to be provided allowing data messages to be passed between connected clients. If set to true, a socket event will be handled by the server with the event name `module.{name}` or `system.{name}` depending on your package type. This event name relays arbitrary data packets between the sending client and all other connected clients.",
   examples: [true],
-  title: "A boolean value",
+  title: "Socket",
   type: "boolean",
 };
 const schema111 = {
+  description:
+    "You can designate CSS files which are included in the game session whenever this package is enabled. Each listed stylesheet file path should be relative to the system root directory. All stylesheets which exist will be automatically included in the game session and loaded in their listed order.",
   items: {
-    default: "",
+    description:
+      "CSS file path; should be relative to the system root directory.",
     examples: ["styles.css"],
-    title: "A string value",
+    title: "Style Entry",
     type: "string",
     pattern: "^(.+).css$",
     errorMessage: { pattern: "should be a file path string ending in '.css'" },
   },
-  title: "An array of items",
+  title: "Styles",
   type: "array",
 };
 const schema112 = {
-  default: "",
-  examples: ["A Module"],
-  title: "A string value",
+  description:
+    "Provide a human readable title for the package which is displayed as the visible name in the Foundry VTT setup menu and elsewhere.",
+  examples: ["A Module ...", "A System ..."],
+  title: "Title",
   type: "string",
 };
 const schema113 = {
-  default: "",
-  examples: ["https://someaddress.com/"],
-  title: "A string value",
+  description:
+    "A public URL that links to the repository or documentation pages for the package. This link is displayed to users allowing them to find more information about your package. If your package is hosted in version control like GitHub or GitLab, linking to the repository in this field is a good choice.",
+  examples: ["https://github.com/my-user-or-org/my-package"],
+  title: "URL",
   type: "string",
   pattern:
     "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
   errorMessage: { pattern: "should be an URL string" },
 };
 const schema114 = {
-  default: "",
+  description:
+    "The package version number can be a number or a string which denotes the version of your package. We recommend using semantic versioning but this is not strictly required. When making changes to your package, incrementing the version number in your manifest file is used to signal to users that an update is available.",
+  errorMessage: "should be a string or number",
   examples: ["1.0.0"],
-  title: "A string value",
-  type: "string",
-  pattern:
-    "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
-  errorMessage: { pattern: "should be a string that uses semantic versioning" },
+  oneOf: [{ type: "string" }, { type: "number" }],
+  title: "Version",
 };
 const pattern0 = new RegExp(
   "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
@@ -6369,37 +6513,40 @@ function validate66(
     }
     if (data.version !== undefined) {
       let data29 = data.version;
-      if (typeof data29 === "string") {
-        if (!pattern2.test(data29)) {
-          const err83 = {
-            keyword: "pattern",
-            dataPath: dataPath + "/version",
-            schemaPath:
-              "../../definitions/strict/base.json#/definitions/version/pattern",
-            params: {
-              pattern:
-                "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
-            },
-            message:
-              'should match pattern "' +
-              "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$" +
-              '"',
-          };
-          if (vErrors === null) {
-            vErrors = [err83];
-          } else {
-            vErrors.push(err83);
-          }
-          errors++;
+      const _errs78 = errors;
+      let valid32 = false;
+      let passing0 = null;
+      const _errs79 = errors;
+      if (typeof data29 !== "string") {
+        const err83 = {
+          keyword: "type",
+          dataPath: dataPath + "/version",
+          schemaPath:
+            "../../definitions/strict/base.json#/definitions/version/oneOf/0/type",
+          params: { type: "string" },
+          message: "should be string",
+        };
+        if (vErrors === null) {
+          vErrors = [err83];
+        } else {
+          vErrors.push(err83);
         }
-      } else {
+        errors++;
+      }
+      var _valid0 = _errs79 === errors;
+      if (_valid0) {
+        valid32 = true;
+        passing0 = 0;
+      }
+      const _errs81 = errors;
+      if (!(typeof data29 == "number" && isFinite(data29))) {
         const err84 = {
           keyword: "type",
           dataPath: dataPath + "/version",
           schemaPath:
-            "../../definitions/strict/base.json#/definitions/version/type",
-          params: { type: "string" },
-          message: "should be string",
+            "../../definitions/strict/base.json#/definitions/version/oneOf/1/type",
+          params: { type: "number" },
+          message: "should be number",
         };
         if (vErrors === null) {
           vErrors = [err84];
@@ -6408,57 +6555,89 @@ function validate66(
         }
         errors++;
       }
+      var _valid0 = _errs81 === errors;
+      if (_valid0 && valid32) {
+        valid32 = false;
+        passing0 = [passing0, 1];
+      } else {
+        if (_valid0) {
+          valid32 = true;
+          passing0 = 1;
+        }
+      }
+      if (!valid32) {
+        const err85 = {
+          keyword: "oneOf",
+          dataPath: dataPath + "/version",
+          schemaPath:
+            "../../definitions/strict/base.json#/definitions/version/oneOf",
+          params: { passingSchemas: passing0 },
+          message: "should match exactly one schema in oneOf",
+        };
+        if (vErrors === null) {
+          vErrors = [err85];
+        } else {
+          vErrors.push(err85);
+        }
+        errors++;
+      } else {
+        errors = _errs78;
+        if (vErrors !== null) {
+          if (_errs78) {
+            vErrors.length = _errs78;
+          } else {
+            vErrors = null;
+          }
+        }
+      }
       if (errors > 0) {
-        const emErrors11 = { pattern: [] };
-        const templates11 = {};
-        for (const err85 of vErrors) {
+        const emErrs11 = [];
+        for (const err86 of vErrors) {
           if (
-            err85.keyword !== "errorMessage" &&
-            !err85.emUsed &&
-            err85.dataPath === dataPath + "/version" &&
-            err85.keyword in emErrors11 &&
-            err85.schemaPath.indexOf(
+            err86.keyword !== "errorMessage" &&
+            !err86.emUsed &&
+            (err86.dataPath === dataPath + "/version" ||
+              (err86.dataPath.indexOf(dataPath + "/version") === 0 &&
+                err86.dataPath[dataPath + "/version".length] === "/")) &&
+            err86.schemaPath.indexOf(
               "../../definitions/strict/base.json#/definitions/version"
             ) === 0 &&
-            /^\/[^\/]*$/.test(err85.schemaPath.slice(55))
+            err86.schemaPath[
+              "../../definitions/strict/base.json#/definitions/version".length
+            ] === "/"
           ) {
-            emErrors11[err85.keyword].push(err85);
-            err85.emUsed = true;
+            emErrs11.push(err86);
+            err86.emUsed = true;
           }
         }
-        for (const key11 in emErrors11) {
-          if (emErrors11[key11].length) {
-            const err86 = {
-              keyword: "errorMessage",
-              dataPath: dataPath + "/version",
-              schemaPath:
-                "../../definitions/strict/base.json#/definitions/version/errorMessage",
-              params: { errors: emErrors11[key11] },
-              message:
-                key11 in templates11
-                  ? templates11[key11]()
-                  : schema114.errorMessage[key11],
-            };
-            if (vErrors === null) {
-              vErrors = [err86];
-            } else {
-              vErrors.push(err86);
-            }
-            errors++;
+        if (emErrs11.length) {
+          const err87 = {
+            keyword: "errorMessage",
+            dataPath: dataPath + "/version",
+            schemaPath:
+              "../../definitions/strict/base.json#/definitions/version/errorMessage",
+            params: { errors: emErrs11 },
+            message: "should be a string or number",
+          };
+          if (vErrors === null) {
+            vErrors = [err87];
+          } else {
+            vErrors.push(err87);
+          }
+          errors++;
+        }
+        const emErrs12 = [];
+        for (const err88 of vErrors) {
+          if (!err88.emUsed) {
+            emErrs12.push(err88);
           }
         }
-        const emErrs11 = [];
-        for (const err87 of vErrors) {
-          if (!err87.emUsed) {
-            emErrs11.push(err87);
-          }
-        }
-        vErrors = emErrs11;
-        errors = emErrs11.length;
+        vErrors = emErrs12;
+        errors = emErrs12.length;
       }
     }
   } else {
-    const err88 = {
+    const err89 = {
       keyword: "type",
       dataPath,
       schemaPath: "#/type",
@@ -6466,21 +6645,21 @@ function validate66(
       message: "should be object",
     };
     if (vErrors === null) {
-      vErrors = [err88];
+      vErrors = [err89];
     } else {
-      vErrors.push(err88);
+      vErrors.push(err89);
     }
     errors++;
   }
   validate66.errors = vErrors;
   return errors === 0;
 }
-const pattern12 = new RegExp(
+const pattern11 = new RegExp(
   "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/module.json$",
   "u"
 );
-const pattern13 = new RegExp("^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$", "u");
-const pattern17 = new RegExp("^(.+).db$", "u");
+const pattern12 = new RegExp("^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$", "u");
+const pattern16 = new RegExp("^(.+).db$", "u");
 function validate65(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
@@ -6498,7 +6677,7 @@ function validate65(
     if (data.manifest !== undefined) {
       let data0 = data.manifest;
       if (typeof data0 === "string") {
-        if (!pattern12.test(data0)) {
+        if (!pattern11.test(data0)) {
           const err0 = {
             keyword: "pattern",
             dataPath: dataPath + "/manifest",
@@ -6674,12 +6853,12 @@ function validate65(
             }
             if (data2.system !== undefined) {
               let data3 = data2.system;
-              const _errs7 = errors;
-              let valid6 = false;
+              const _errs11 = errors;
+              let valid7 = false;
               let passing0 = null;
-              const _errs8 = errors;
+              const _errs12 = errors;
               if (typeof data3 === "string") {
-                if (!pattern13.test(data3)) {
+                if (!pattern12.test(data3)) {
                   const err10 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/system",
@@ -6714,18 +6893,18 @@ function validate65(
                 }
                 errors++;
               }
-              var _valid0 = _errs8 === errors;
+              var _valid0 = _errs12 === errors;
               if (_valid0) {
-                valid6 = true;
+                valid7 = true;
                 passing0 = 0;
               }
-              const _errs9 = errors;
+              const _errs14 = errors;
               if (Array.isArray(data3)) {
                 const len1 = data3.length;
                 for (let i1 = 0; i1 < len1; i1++) {
                   let data4 = data3[i1];
                   if (typeof data4 === "string") {
-                    if (!pattern13.test(data4)) {
+                    if (!pattern12.test(data4)) {
                       const err12 = {
                         keyword: "pattern",
                         dataPath: dataPath + "/packs/" + i0 + "/system/" + i1,
@@ -6779,17 +6958,17 @@ function validate65(
                 }
                 errors++;
               }
-              var _valid0 = _errs9 === errors;
-              if (_valid0 && valid6) {
-                valid6 = false;
+              var _valid0 = _errs14 === errors;
+              if (_valid0 && valid7) {
+                valid7 = false;
                 passing0 = [passing0, 1];
               } else {
                 if (_valid0) {
-                  valid6 = true;
+                  valid7 = true;
                   passing0 = 1;
                 }
               }
-              if (!valid6) {
+              if (!valid7) {
                 const err15 = {
                   keyword: "oneOf",
                   dataPath: dataPath + "/packs/" + i0 + "/system",
@@ -6805,10 +6984,10 @@ function validate65(
                 }
                 errors++;
               } else {
-                errors = _errs7;
+                errors = _errs11;
                 if (vErrors !== null) {
-                  if (_errs7) {
-                    vErrors.length = _errs7;
+                  if (_errs11) {
+                    vErrors.length = _errs11;
                   } else {
                     vErrors = null;
                   }
@@ -6871,16 +7050,12 @@ function validate65(
               if (
                 !(
                   data5 === "Actor" ||
-                  data5 === "ChatMessage" ||
-                  data5 === "Combat" ||
                   data5 === "Item" ||
-                  data5 === "Folder" ||
+                  data5 === "Scene" ||
                   data5 === "JournalEntry" ||
                   data5 === "Macro" ||
-                  data5 === "Playlist" ||
                   data5 === "RollTable" ||
-                  data5 === "Scene" ||
-                  data5 === "User"
+                  data5 === "Playlist"
                 )
               ) {
                 const err19 = {
@@ -7098,7 +7273,7 @@ function validate65(
             if (data2.path !== undefined) {
               let data9 = data2.path;
               if (typeof data9 === "string") {
-                if (!pattern17.test(data9)) {
+                if (!pattern16.test(data9)) {
                   const err31 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/path",
@@ -7215,12 +7390,12 @@ function validate65(
     }
     if (data.system !== undefined) {
       let data10 = data.system;
-      const _errs18 = errors;
-      let valid9 = false;
+      const _errs29 = errors;
+      let valid11 = false;
       let passing1 = null;
-      const _errs19 = errors;
+      const _errs30 = errors;
       if (typeof data10 === "string") {
-        if (!pattern13.test(data10)) {
+        if (!pattern12.test(data10)) {
           const err38 = {
             keyword: "pattern",
             dataPath: dataPath + "/system",
@@ -7255,18 +7430,18 @@ function validate65(
         }
         errors++;
       }
-      var _valid1 = _errs19 === errors;
+      var _valid1 = _errs30 === errors;
       if (_valid1) {
-        valid9 = true;
+        valid11 = true;
         passing1 = 0;
       }
-      const _errs20 = errors;
+      const _errs32 = errors;
       if (Array.isArray(data10)) {
         const len2 = data10.length;
         for (let i2 = 0; i2 < len2; i2++) {
           let data11 = data10[i2];
           if (typeof data11 === "string") {
-            if (!pattern13.test(data11)) {
+            if (!pattern12.test(data11)) {
               const err40 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/system/" + i2,
@@ -7318,17 +7493,17 @@ function validate65(
         }
         errors++;
       }
-      var _valid1 = _errs20 === errors;
-      if (_valid1 && valid9) {
-        valid9 = false;
+      var _valid1 = _errs32 === errors;
+      if (_valid1 && valid11) {
+        valid11 = false;
         passing1 = [passing1, 1];
       } else {
         if (_valid1) {
-          valid9 = true;
+          valid11 = true;
           passing1 = 1;
         }
       }
-      if (!valid9) {
+      if (!valid11) {
         const err43 = {
           keyword: "oneOf",
           dataPath: dataPath + "/system",
@@ -7344,10 +7519,10 @@ function validate65(
         }
         errors++;
       } else {
-        errors = _errs18;
+        errors = _errs29;
         if (vErrors !== null) {
-          if (_errs18) {
-            vErrors.length = _errs18;
+          if (_errs29) {
+            vErrors.length = _errs29;
           } else {
             vErrors = null;
           }
@@ -7419,20 +7594,22 @@ function validate65(
   return errors === 0;
 }
 const schema120 = {
+  description:
+    "Instead of listing a single author name you may also provide an array of authors, each of which is an object that can contain the keys: 'name', 'email', and 'url'.",
   items: {
     $ref: "#/definitions/properties-author",
-    title: "An object value",
+    title: "Author Entry",
     type: "object",
   },
-  title: "An array of items",
+  title: "Authors",
   type: "array",
 };
 const schema121 = {
   properties: {
     email: {
-      default: "",
+      description: "An email address.",
       examples: ["admin@foundryvtt.com"],
-      title: "A string value",
+      title: "Author Email",
       type: "string",
       pattern:
         '^(([^<>()\\[\\]\\\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@"]+)*)|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$',
@@ -7441,15 +7618,15 @@ const schema121 = {
       },
     },
     name: {
-      default: "",
+      description: "An author name.",
       examples: ["Atropos"],
-      title: "A string value",
+      title: "Author Name",
       type: "string",
     },
     url: {
-      default: "",
+      description: "An URL for the author.",
       examples: ["https://foundryvtt.com"],
-      title: "A string value",
+      title: "Author URL",
       type: "string",
       pattern:
         "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
@@ -7458,7 +7635,7 @@ const schema121 = {
   },
   required: ["name"],
 };
-const pattern20 = new RegExp(
+const pattern19 = new RegExp(
   '^(([^<>()\\[\\]\\\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@"]+)*)|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$',
   "u"
 );
@@ -7506,7 +7683,7 @@ function validate72(
         if (data0.email !== undefined) {
           let data1 = data0.email;
           if (typeof data1 === "string") {
-            if (!pattern20.test(data1)) {
+            if (!pattern19.test(data1)) {
               const err2 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/email",
@@ -7896,11 +8073,14 @@ const schema124 = {
   },
 };
 const schema126 = {
+  description:
+    "The `conflicts` field is similar to the `dependencies` field in the core Foundry VTT manifest specification, but provides a mapping of packages which can not interoperate with the given package.",
   items: {
     properties: {
       name: {
+        description: "The name of the conflict package.",
         examples: ["dice-so-nice"],
-        title: "A string value",
+        title: "Conflict Package Name",
         type: "string",
         pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
         errorMessage: {
@@ -7909,38 +8089,48 @@ const schema126 = {
         },
       },
       type: {
+        description: "The type of the conflict package",
         enum: ["module", "system", "world"],
-        examples: ["module"],
-        title: "A string value",
+        examples: ["module", "system", "world"],
+        title: "Conflict Package Type",
       },
       versionMax: {
+        description:
+          "Defines a maximum version number for the package within which the conflict occurs.",
         errorMessage: "should be a string or number",
         examples: ["1.0.0"],
         oneOf: [{ type: "string" }, { type: "number" }],
-        title: "A string value",
+        title: "Conflict Maximum Version",
       },
       versionMin: {
+        description:
+          "Defines a minimum version number for the package within which the conflict occurs.",
         errorMessage: "should be a string or number",
         examples: ["1.0.0"],
         oneOf: [{ type: "string" }, { type: "number" }],
-        title: "A string value",
+        title: "Conflict Minimum Version",
       },
     },
     required: ["name", "type"],
-    title: "An object value",
+    title: "Conflict Entry",
     type: "object",
   },
-  title: "An array of items",
+  title: "Conflicts",
   type: "array",
 };
 const schema127 = {
+  description:
+    "This field is intended to be added to the manifest of a package that is no longer being maintained and / or is no longer functional / useful.",
   properties: {
     alternatives: {
+      description:
+        "An array of objects each providing data about another package which could act as a replacement for the deprecated package.",
       items: {
         properties: {
           name: {
-            examples: ["dice-so-nice"],
-            title: "A string value",
+            description: "Deprecated package name",
+            examples: ["module-name"],
+            title: "Alternate Package Name",
             type: "string",
             pattern: "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$",
             errorMessage: {
@@ -7949,8 +8139,10 @@ const schema127 = {
             },
           },
           manifest: {
-            examples: ["https://link.com/to/manifest.json"],
-            title: "A string value",
+            description:
+              "The URL of the manifest for the alternative package from which it can be downloaded.",
+            examples: ["https://link.com/to/module.json"],
+            title: "Alternate Package Manifest",
             type: "string",
             pattern:
               "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(module|system).json$",
@@ -7961,15 +8153,17 @@ const schema127 = {
           },
         },
         required: ["name", "manifest"],
-        title: "An object value",
+        title: "Alternative Entry",
         type: "object",
       },
-      title: "An array of items",
+      title: "Alternatives",
       type: "array",
     },
     coreVersion: {
-      examples: ["0.7.5"],
-      title: "A string value",
+      description:
+        "If set the package is assumed to be a module that has been deprecated by a Foundry VTT core update. This field is the core version number as a string.",
+      examples: ["0.7.9"],
+      title: "Core Version",
       type: "string",
       pattern:
         "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
@@ -7978,71 +8172,95 @@ const schema127 = {
       },
     },
     reason: {
+      description:
+        "A human-readable string explaining why the package was deprecated.",
       examples: ["This was added to foundry core."],
-      title: "A string value",
+      title: "Reason",
       type: "string",
     },
   },
-  title: "An object",
+  title: "Deprecated",
   type: "object",
 };
 const schema128 = {
+  description:
+    "The `includes` field is an array of strings where each string is a relative file path that should be included in the package zip archive.",
   items: {
     examples: [
       "relative/path/to/files/script.js",
       "relative/path/to/templates/template.html",
       "path/to/image/assets/folder",
     ],
-    title: "A string value",
+    title: "Include Entry",
     type: "string",
   },
-  title: "An array of items",
+  title: "Includes",
   type: "array",
   uniqueItems: true,
 };
 const schema129 = {
+  description:
+    "The `library` field is a boolean that indicates whether the package is a library intended for other packages to depend on and consume.",
   examples: [true],
-  title: "A boolean value",
+  title: "Library",
   type: "boolean",
 };
 const schema130 = {
-  examples: ["1.0.0"],
-  title: "A string value",
+  description: "Denotes which version of Manifest+ you have implemented.",
+  examples: ["1.1.0"],
+  title: "Manifest+ Version",
   type: "string",
   pattern:
     "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
   errorMessage: { pattern: "should be a string that uses semantic versioning" },
 };
-const pattern24 = new RegExp(
+const pattern23 = new RegExp(
   "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(module|system).json$",
   "u"
 );
 const schema131 = {
+  description:
+    "An array of objects that each provide data for a single multimedia item. This data includes a `type` field which indicates what kind of media is being provided as well as an `url` field which provides the address of the media resource.",
   items: { $ref: "#/definitions/media-item-strict" },
-  title: "An array of items",
+  title: "Media",
   type: "array",
 };
 const schema132 = {
-  type: "object",
+  description: "An object that provides data for a single multimedia item.",
   required: ["type", "url"],
+  title: "Media Entry",
+  type: "object",
   if: { properties: { type: { const: "video" } } },
   then: {
     properties: {
-      type: { const: "video" },
-      loop: { type: "boolean" },
+      type: {
+        description: "Indicates what kind of media.",
+        const: "video",
+        title: "Media Type",
+      },
+      url: {
+        description: "Public URL of the media resource.",
+        title: "Media URL",
+        type: "string",
+        pattern:
+          "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+        errorMessage: { pattern: "should be an URL string" },
+      },
+      loop: {
+        description:
+          "Optional field specific to video media. If loop is set to true, the video is expected to be treated as an animated image, like a GIF (i.e. muted and looped).",
+        title: "Video Loop",
+        type: "boolean",
+      },
       thumbnail: {
+        description: "Optional URL to provide a video thumbnail.",
+        title: "Video Thumbnail",
         type: "string",
         pattern:
           "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$",
         errorMessage: {
           pattern: "should be a valid image URL string for <img> tags",
         },
-      },
-      url: {
-        type: "string",
-        pattern:
-          "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
-        errorMessage: { pattern: "should be an URL string" },
       },
     },
     additionalProperties: false,
@@ -8051,8 +8269,14 @@ const schema132 = {
     if: { properties: { type: { enum: ["cover", "icon", "screenshot"] } } },
     then: {
       properties: {
-        type: { enum: ["cover", "icon", "screenshot"] },
+        type: {
+          description: "Indicates what kind of media.",
+          enum: ["cover", "icon", "screenshot"],
+          title: "Media Type",
+        },
         url: {
+          description: "Public URL of the media resource.",
+          title: "Media URL",
           type: "string",
           pattern:
             "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$",
@@ -8064,7 +8288,13 @@ const schema132 = {
       additionalProperties: false,
     },
     else: {
-      properties: { type: { enum: ["cover", "icon", "screenshot", "video"] } },
+      properties: {
+        type: {
+          description: "Indicates what kind of media.",
+          enum: ["cover", "icon", "screenshot", "video"],
+          title: "Media Type",
+        },
+      },
     },
   },
 };
@@ -8082,9 +8312,9 @@ function validate79(
     const len0 = data.length;
     for (let i0 = 0; i0 < len0; i0++) {
       let data0 = data[i0];
-      const _errs2 = errors;
-      let valid2 = true;
-      const _errs3 = errors;
+      const _errs4 = errors;
+      let valid3 = true;
+      const _errs5 = errors;
       if (data0 && typeof data0 == "object" && !Array.isArray(data0)) {
         if (data0.type !== undefined) {
           if (!func0(data0.type, "video")) {
@@ -8098,26 +8328,26 @@ function validate79(
           }
         }
       }
-      var _valid0 = _errs3 === errors;
-      errors = _errs2;
+      var _valid0 = _errs5 === errors;
+      errors = _errs4;
       if (vErrors !== null) {
-        if (_errs2) {
-          vErrors.length = _errs2;
+        if (_errs4) {
+          vErrors.length = _errs4;
         } else {
           vErrors = null;
         }
       }
       let ifClause0;
       if (_valid0) {
-        const _errs5 = errors;
+        const _errs7 = errors;
         if (data0 && typeof data0 == "object" && !Array.isArray(data0)) {
           for (const key0 in data0) {
             if (
               !(
                 key0 === "type" ||
+                key0 === "url" ||
                 key0 === "loop" ||
-                key0 === "thumbnail" ||
-                key0 === "url"
+                key0 === "thumbnail"
               )
             ) {
               const err1 = {
@@ -8154,121 +8384,11 @@ function validate79(
               errors++;
             }
           }
-          if (data0.loop !== undefined) {
-            if (typeof data0.loop !== "boolean") {
-              const err3 = {
-                keyword: "type",
-                dataPath: dataPath + "/" + i0 + "/loop",
-                schemaPath:
-                  "#/definitions/media-item-strict/then/properties/loop/type",
-                params: { type: "boolean" },
-                message: "should be boolean",
-              };
-              if (vErrors === null) {
-                vErrors = [err3];
-              } else {
-                vErrors.push(err3);
-              }
-              errors++;
-            }
-          }
-          if (data0.thumbnail !== undefined) {
-            let data4 = data0.thumbnail;
-            if (typeof data4 === "string") {
-              if (!pattern27.test(data4)) {
-                const err4 = {
-                  keyword: "pattern",
-                  dataPath: dataPath + "/" + i0 + "/thumbnail",
-                  schemaPath:
-                    "#/definitions/media-item-strict/then/properties/thumbnail/pattern",
-                  params: {
-                    pattern:
-                      "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$",
-                  },
-                  message:
-                    'should match pattern "' +
-                    "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$" +
-                    '"',
-                };
-                if (vErrors === null) {
-                  vErrors = [err4];
-                } else {
-                  vErrors.push(err4);
-                }
-                errors++;
-              }
-            } else {
-              const err5 = {
-                keyword: "type",
-                dataPath: dataPath + "/" + i0 + "/thumbnail",
-                schemaPath:
-                  "#/definitions/media-item-strict/then/properties/thumbnail/type",
-                params: { type: "string" },
-                message: "should be string",
-              };
-              if (vErrors === null) {
-                vErrors = [err5];
-              } else {
-                vErrors.push(err5);
-              }
-              errors++;
-            }
-            if (errors > 0) {
-              const emErrors0 = { pattern: [] };
-              const templates0 = {};
-              for (const err6 of vErrors) {
-                if (
-                  err6.keyword !== "errorMessage" &&
-                  !err6.emUsed &&
-                  err6.dataPath === dataPath + "/" + i0 + "/thumbnail" &&
-                  err6.keyword in emErrors0 &&
-                  err6.schemaPath.indexOf(
-                    "#/definitions/media-item-strict/then/properties/thumbnail"
-                  ) === 0 &&
-                  /^\/[^\/]*$/.test(err6.schemaPath.slice(57))
-                ) {
-                  emErrors0[err6.keyword].push(err6);
-                  err6.emUsed = true;
-                }
-              }
-              for (const key1 in emErrors0) {
-                if (emErrors0[key1].length) {
-                  const err7 = {
-                    keyword: "errorMessage",
-                    dataPath: dataPath + "/" + i0 + "/thumbnail",
-                    schemaPath:
-                      "#/definitions/media-item-strict/then/properties/thumbnail/errorMessage",
-                    params: { errors: emErrors0[key1] },
-                    message:
-                      key1 in templates0
-                        ? templates0[key1]()
-                        : schema132.then.properties.thumbnail.errorMessage[
-                            key1
-                          ],
-                  };
-                  if (vErrors === null) {
-                    vErrors = [err7];
-                  } else {
-                    vErrors.push(err7);
-                  }
-                  errors++;
-                }
-              }
-              const emErrs0 = [];
-              for (const err8 of vErrors) {
-                if (!err8.emUsed) {
-                  emErrs0.push(err8);
-                }
-              }
-              vErrors = emErrs0;
-              errors = emErrs0.length;
-            }
-          }
           if (data0.url !== undefined) {
-            let data5 = data0.url;
-            if (typeof data5 === "string") {
-              if (!pattern0.test(data5)) {
-                const err9 = {
+            let data3 = data0.url;
+            if (typeof data3 === "string") {
+              if (!pattern0.test(data3)) {
+                const err3 = {
                   keyword: "pattern",
                   dataPath: dataPath + "/" + i0 + "/url",
                   schemaPath:
@@ -8283,6 +8403,114 @@ function validate79(
                     '"',
                 };
                 if (vErrors === null) {
+                  vErrors = [err3];
+                } else {
+                  vErrors.push(err3);
+                }
+                errors++;
+              }
+            } else {
+              const err4 = {
+                keyword: "type",
+                dataPath: dataPath + "/" + i0 + "/url",
+                schemaPath:
+                  "#/definitions/media-item-strict/then/properties/url/type",
+                params: { type: "string" },
+                message: "should be string",
+              };
+              if (vErrors === null) {
+                vErrors = [err4];
+              } else {
+                vErrors.push(err4);
+              }
+              errors++;
+            }
+            if (errors > 0) {
+              const emErrors0 = { pattern: [] };
+              const templates0 = {};
+              for (const err5 of vErrors) {
+                if (
+                  err5.keyword !== "errorMessage" &&
+                  !err5.emUsed &&
+                  err5.dataPath === dataPath + "/" + i0 + "/url" &&
+                  err5.keyword in emErrors0 &&
+                  err5.schemaPath.indexOf(
+                    "#/definitions/media-item-strict/then/properties/url"
+                  ) === 0 &&
+                  /^\/[^\/]*$/.test(err5.schemaPath.slice(51))
+                ) {
+                  emErrors0[err5.keyword].push(err5);
+                  err5.emUsed = true;
+                }
+              }
+              for (const key1 in emErrors0) {
+                if (emErrors0[key1].length) {
+                  const err6 = {
+                    keyword: "errorMessage",
+                    dataPath: dataPath + "/" + i0 + "/url",
+                    schemaPath:
+                      "#/definitions/media-item-strict/then/properties/url/errorMessage",
+                    params: { errors: emErrors0[key1] },
+                    message:
+                      key1 in templates0
+                        ? templates0[key1]()
+                        : schema132.then.properties.url.errorMessage[key1],
+                  };
+                  if (vErrors === null) {
+                    vErrors = [err6];
+                  } else {
+                    vErrors.push(err6);
+                  }
+                  errors++;
+                }
+              }
+              const emErrs0 = [];
+              for (const err7 of vErrors) {
+                if (!err7.emUsed) {
+                  emErrs0.push(err7);
+                }
+              }
+              vErrors = emErrs0;
+              errors = emErrs0.length;
+            }
+          }
+          if (data0.loop !== undefined) {
+            if (typeof data0.loop !== "boolean") {
+              const err8 = {
+                keyword: "type",
+                dataPath: dataPath + "/" + i0 + "/loop",
+                schemaPath:
+                  "#/definitions/media-item-strict/then/properties/loop/type",
+                params: { type: "boolean" },
+                message: "should be boolean",
+              };
+              if (vErrors === null) {
+                vErrors = [err8];
+              } else {
+                vErrors.push(err8);
+              }
+              errors++;
+            }
+          }
+          if (data0.thumbnail !== undefined) {
+            let data5 = data0.thumbnail;
+            if (typeof data5 === "string") {
+              if (!pattern27.test(data5)) {
+                const err9 = {
+                  keyword: "pattern",
+                  dataPath: dataPath + "/" + i0 + "/thumbnail",
+                  schemaPath:
+                    "#/definitions/media-item-strict/then/properties/thumbnail/pattern",
+                  params: {
+                    pattern:
+                      "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$",
+                  },
+                  message:
+                    'should match pattern "' +
+                    "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$" +
+                    '"',
+                };
+                if (vErrors === null) {
                   vErrors = [err9];
                 } else {
                   vErrors.push(err9);
@@ -8292,9 +8520,9 @@ function validate79(
             } else {
               const err10 = {
                 keyword: "type",
-                dataPath: dataPath + "/" + i0 + "/url",
+                dataPath: dataPath + "/" + i0 + "/thumbnail",
                 schemaPath:
-                  "#/definitions/media-item-strict/then/properties/url/type",
+                  "#/definitions/media-item-strict/then/properties/thumbnail/type",
                 params: { type: "string" },
                 message: "should be string",
               };
@@ -8312,12 +8540,12 @@ function validate79(
                 if (
                   err11.keyword !== "errorMessage" &&
                   !err11.emUsed &&
-                  err11.dataPath === dataPath + "/" + i0 + "/url" &&
+                  err11.dataPath === dataPath + "/" + i0 + "/thumbnail" &&
                   err11.keyword in emErrors1 &&
                   err11.schemaPath.indexOf(
-                    "#/definitions/media-item-strict/then/properties/url"
+                    "#/definitions/media-item-strict/then/properties/thumbnail"
                   ) === 0 &&
-                  /^\/[^\/]*$/.test(err11.schemaPath.slice(51))
+                  /^\/[^\/]*$/.test(err11.schemaPath.slice(57))
                 ) {
                   emErrors1[err11.keyword].push(err11);
                   err11.emUsed = true;
@@ -8327,14 +8555,16 @@ function validate79(
                 if (emErrors1[key2].length) {
                   const err12 = {
                     keyword: "errorMessage",
-                    dataPath: dataPath + "/" + i0 + "/url",
+                    dataPath: dataPath + "/" + i0 + "/thumbnail",
                     schemaPath:
-                      "#/definitions/media-item-strict/then/properties/url/errorMessage",
+                      "#/definitions/media-item-strict/then/properties/thumbnail/errorMessage",
                     params: { errors: emErrors1[key2] },
                     message:
                       key2 in templates1
                         ? templates1[key2]()
-                        : schema132.then.properties.url.errorMessage[key2],
+                        : schema132.then.properties.thumbnail.errorMessage[
+                            key2
+                          ],
                   };
                   if (vErrors === null) {
                     vErrors = [err12];
@@ -8355,14 +8585,14 @@ function validate79(
             }
           }
         }
-        var _valid0 = _errs5 === errors;
-        valid2 = _valid0;
+        var _valid0 = _errs7 === errors;
+        valid3 = _valid0;
         ifClause0 = "then";
       } else {
-        const _errs11 = errors;
-        const _errs12 = errors;
-        let valid5 = true;
-        const _errs13 = errors;
+        const _errs16 = errors;
+        const _errs17 = errors;
+        let valid6 = true;
+        const _errs18 = errors;
         if (data0 && typeof data0 == "object" && !Array.isArray(data0)) {
           if (data0.type !== undefined) {
             let data6 = data0.type;
@@ -8379,18 +8609,18 @@ function validate79(
             }
           }
         }
-        var _valid1 = _errs13 === errors;
-        errors = _errs12;
+        var _valid1 = _errs18 === errors;
+        errors = _errs17;
         if (vErrors !== null) {
-          if (_errs12) {
-            vErrors.length = _errs12;
+          if (_errs17) {
+            vErrors.length = _errs17;
           } else {
             vErrors = null;
           }
         }
         let ifClause1;
         if (_valid1) {
-          const _errs15 = errors;
+          const _errs20 = errors;
           if (data0 && typeof data0 == "object" && !Array.isArray(data0)) {
             for (const key3 in data0) {
               if (!(key3 === "type" || key3 === "url")) {
@@ -8530,11 +8760,11 @@ function validate79(
               }
             }
           }
-          var _valid1 = _errs15 === errors;
-          valid5 = _valid1;
+          var _valid1 = _errs20 === errors;
+          valid6 = _valid1;
           ifClause1 = "then";
         } else {
-          const _errs19 = errors;
+          const _errs25 = errors;
           if (data0 && typeof data0 == "object" && !Array.isArray(data0)) {
             if (data0.type !== undefined) {
               let data9 = data0.type;
@@ -8565,11 +8795,11 @@ function validate79(
               }
             }
           }
-          var _valid1 = _errs19 === errors;
-          valid5 = _valid1;
+          var _valid1 = _errs25 === errors;
+          valid6 = _valid1;
           ifClause1 = "else";
         }
-        if (!valid5) {
+        if (!valid6) {
           const err23 = {
             keyword: "if",
             dataPath: dataPath + "/" + i0,
@@ -8584,11 +8814,11 @@ function validate79(
           }
           errors++;
         }
-        var _valid0 = _errs11 === errors;
-        valid2 = _valid0;
+        var _valid0 = _errs16 === errors;
+        valid3 = _valid0;
         ifClause0 = "else";
       }
-      if (!valid2) {
+      if (!valid3) {
         const err24 = {
           keyword: "if",
           dataPath: dataPath + "/" + i0,
@@ -8717,7 +8947,7 @@ function validate77(
             if (data1.name !== undefined) {
               let data2 = data1.name;
               if (typeof data2 === "string") {
-                if (!pattern13.test(data2)) {
+                if (!pattern12.test(data2)) {
                   const err2 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/conflicts/" + i0 + "/name",
@@ -8826,10 +9056,10 @@ function validate77(
             }
             if (data1.versionMax !== undefined) {
               let data4 = data1.versionMax;
-              const _errs6 = errors;
-              let valid4 = false;
+              const _errs10 = errors;
+              let valid5 = false;
               let passing0 = null;
-              const _errs7 = errors;
+              const _errs11 = errors;
               if (typeof data4 !== "string") {
                 const err8 = {
                   keyword: "type",
@@ -8846,12 +9076,12 @@ function validate77(
                 }
                 errors++;
               }
-              var _valid0 = _errs7 === errors;
+              var _valid0 = _errs11 === errors;
               if (_valid0) {
-                valid4 = true;
+                valid5 = true;
                 passing0 = 0;
               }
-              const _errs8 = errors;
+              const _errs13 = errors;
               if (!(typeof data4 == "number" && isFinite(data4))) {
                 const err9 = {
                   keyword: "type",
@@ -8868,17 +9098,17 @@ function validate77(
                 }
                 errors++;
               }
-              var _valid0 = _errs8 === errors;
-              if (_valid0 && valid4) {
-                valid4 = false;
+              var _valid0 = _errs13 === errors;
+              if (_valid0 && valid5) {
+                valid5 = false;
                 passing0 = [passing0, 1];
               } else {
                 if (_valid0) {
-                  valid4 = true;
+                  valid5 = true;
                   passing0 = 1;
                 }
               }
-              if (!valid4) {
+              if (!valid5) {
                 const err10 = {
                   keyword: "oneOf",
                   dataPath: dataPath + "/conflicts/" + i0 + "/versionMax",
@@ -8894,10 +9124,10 @@ function validate77(
                 }
                 errors++;
               } else {
-                errors = _errs6;
+                errors = _errs10;
                 if (vErrors !== null) {
-                  if (_errs6) {
-                    vErrors.length = _errs6;
+                  if (_errs10) {
+                    vErrors.length = _errs10;
                   } else {
                     vErrors = null;
                   }
@@ -8957,10 +9187,10 @@ function validate77(
             }
             if (data1.versionMin !== undefined) {
               let data5 = data1.versionMin;
-              const _errs10 = errors;
-              let valid5 = false;
+              const _errs16 = errors;
+              let valid6 = false;
               let passing1 = null;
-              const _errs11 = errors;
+              const _errs17 = errors;
               if (typeof data5 !== "string") {
                 const err14 = {
                   keyword: "type",
@@ -8977,12 +9207,12 @@ function validate77(
                 }
                 errors++;
               }
-              var _valid1 = _errs11 === errors;
+              var _valid1 = _errs17 === errors;
               if (_valid1) {
-                valid5 = true;
+                valid6 = true;
                 passing1 = 0;
               }
-              const _errs12 = errors;
+              const _errs19 = errors;
               if (!(typeof data5 == "number" && isFinite(data5))) {
                 const err15 = {
                   keyword: "type",
@@ -8999,17 +9229,17 @@ function validate77(
                 }
                 errors++;
               }
-              var _valid1 = _errs12 === errors;
-              if (_valid1 && valid5) {
-                valid5 = false;
+              var _valid1 = _errs19 === errors;
+              if (_valid1 && valid6) {
+                valid6 = false;
                 passing1 = [passing1, 1];
               } else {
                 if (_valid1) {
-                  valid5 = true;
+                  valid6 = true;
                   passing1 = 1;
                 }
               }
-              if (!valid5) {
+              if (!valid6) {
                 const err16 = {
                   keyword: "oneOf",
                   dataPath: dataPath + "/conflicts/" + i0 + "/versionMin",
@@ -9025,10 +9255,10 @@ function validate77(
                 }
                 errors++;
               } else {
-                errors = _errs10;
+                errors = _errs16;
                 if (vErrors !== null) {
-                  if (_errs10) {
-                    vErrors.length = _errs10;
+                  if (_errs16) {
+                    vErrors.length = _errs16;
                   } else {
                     vErrors = null;
                   }
@@ -9166,7 +9396,7 @@ function validate77(
                 if (data8.name !== undefined) {
                   let data9 = data8.name;
                   if (typeof data9 === "string") {
-                    if (!pattern13.test(data9)) {
+                    if (!pattern12.test(data9)) {
                       const err24 = {
                         keyword: "pattern",
                         dataPath:
@@ -9266,7 +9496,7 @@ function validate77(
                 if (data8.manifest !== undefined) {
                   let data10 = data8.manifest;
                   if (typeof data10 === "string") {
-                    if (!pattern24.test(data10)) {
+                    if (!pattern23.test(data10)) {
                       const err29 = {
                         keyword: "pattern",
                         dataPath:
@@ -9746,23 +9976,25 @@ function validate77(
   return errors === 0;
 }
 const schema133 = {
+  description:
+    "Instead of listing a single author name you may also provide an array of authors, each of which is an object that can contain the keys: 'name', 'discord', 'email', 'patreon', 'reddit', 'twitter', and 'url'.",
   items: {
     allOf: [
       { $ref: "#/definitions/properties-author" },
       { $ref: "#/definitions/properties-author+" },
     ],
     type: "object",
-    title: "An object value",
+    title: "Author Entry",
   },
-  title: "An array of items",
+  title: "Authors",
   type: "array",
 };
 const schema135 = {
   properties: {
     discord: {
-      default: "",
+      description: "A Discord user ID.",
       examples: ["discordID#0001"],
-      title: "A string value",
+      title: "Author Discord",
       type: "string",
       pattern: "^.{3,32}#[0-9]{4}$",
       errorMessage: {
@@ -9770,15 +10002,15 @@ const schema135 = {
       },
     },
     patreon: {
-      default: "",
+      description: "A Patreon user name.",
       examples: ["patreonName"],
-      title: "A string value",
+      title: "Author Patreon",
       type: "string",
     },
     reddit: {
-      default: "",
+      description: "A Reddit user name.",
       examples: ["u/RedditUsername"],
-      title: "A string value",
+      title: "Author Reddit",
       type: "string",
       pattern: "^u/[A-Za-z0-9_-]+$",
       errorMessage: {
@@ -9786,9 +10018,9 @@ const schema135 = {
       },
     },
     twitter: {
-      default: "",
+      description: "A Twitter user handle.",
       examples: ["@TwitterHandle"],
-      title: "A string value",
+      title: "Author Twitter",
       type: "string",
       pattern: "^@[A-Za-z0-9_]{1,15}$",
       errorMessage: {
@@ -9797,9 +10029,9 @@ const schema135 = {
     },
   },
 };
-const pattern32 = new RegExp("^.{3,32}#[0-9]{4}$", "u");
-const pattern33 = new RegExp("^u/[A-Za-z0-9_-]+$", "u");
-const pattern34 = new RegExp("^@[A-Za-z0-9_]{1,15}$", "u");
+const pattern31 = new RegExp("^.{3,32}#[0-9]{4}$", "u");
+const pattern32 = new RegExp("^u/[A-Za-z0-9_-]+$", "u");
+const pattern33 = new RegExp("^@[A-Za-z0-9_]{1,15}$", "u");
 function validate83(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
@@ -9844,7 +10076,7 @@ function validate83(
         if (data0.email !== undefined) {
           let data1 = data0.email;
           if (typeof data1 === "string") {
-            if (!pattern20.test(data1)) {
+            if (!pattern19.test(data1)) {
               const err2 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/email",
@@ -10043,7 +10275,7 @@ function validate83(
         if (data0.discord !== undefined) {
           let data4 = data0.discord;
           if (typeof data4 === "string") {
-            if (!pattern32.test(data4)) {
+            if (!pattern31.test(data4)) {
               const err13 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/discord",
@@ -10145,7 +10377,7 @@ function validate83(
         if (data0.reddit !== undefined) {
           let data6 = data0.reddit;
           if (typeof data6 === "string") {
-            if (!pattern33.test(data6)) {
+            if (!pattern32.test(data6)) {
               const err19 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/reddit",
@@ -10229,7 +10461,7 @@ function validate83(
         if (data0.twitter !== undefined) {
           let data7 = data0.twitter;
           if (typeof data7 === "string") {
-            if (!pattern34.test(data7)) {
+            if (!pattern33.test(data7)) {
               const err24 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/twitter",
@@ -10517,41 +10749,45 @@ const schema138 = {
   },
 };
 const schema140 = {
-  default: 0,
+  description:
+    "This field designates the default amount of distance that a single grid space should typically represent under this game system. This value configures the default value used when a new Scene is created, but can always be changed for each Scene independently.",
   examples: [5],
-  title: "An integer value",
+  title: "Grid Distance",
   type: "integer",
 };
 const schema141 = {
-  default: "",
+  description:
+    "This field designates the standard unit of measure used to describe distances under this game system. This defines the default value used when new a new Scene is created, but can always be changed for each Scene independently.",
   examples: ["ft, m"],
-  title: "A string value",
+  title: "Grid Units",
   type: "string",
 };
 const schema142 = {
-  default: "",
+  description:
+    "Not every game system uses the concept of initiative, but this field provides the default dice rolling formula that can be used to determine the turn order of Tokens within the combat tracker.",
   examples: ["1d20"],
-  title: "A string value",
+  title: "Initiative",
   type: "string",
 };
 const schema143 = {
-  default: "",
+  description:
+    "A stable URL that describes the latest release version of your manifest file.",
   examples: ["https://someaddress.com/system.json"],
-  title: "A string value",
+  title: "Manifest",
   type: "string",
   pattern:
     "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/system.json$",
   errorMessage: { pattern: "should be an URL string ending in 'system.json'" },
 };
 const schema144 = {
-  title: "An array of items",
   items: {
     required: ["system", "name", "label", "path", "entity"],
     properties: {
       system: {
-        title: "A string value",
-        default: "",
+        description:
+          "Since you are creating compendium content specifically for your system, be sure to reference that the content inside each compendium pack requires the system by providing the system name that you chose.",
         examples: ["system-name"],
+        title: "Pack System",
         type: "string",
         pattern: "^([a-z0-9]+-?)*[a-z0-9]+$",
         errorMessage: {
@@ -10560,33 +10796,40 @@ const schema144 = {
         },
       },
       entity: {
-        title: "A string value",
-        default: "",
-        examples: ["Item"],
-        enum: [
+        description:
+          "Each compendium pack must designate a specific Entity type that it contains.",
+        examples: [
           "Actor",
-          "ChatMessage",
-          "Combat",
           "Item",
-          "Folder",
+          "Scene",
           "JournalEntry",
           "Macro",
-          "Playlist",
           "RollTable",
+          "Playlist",
+        ],
+        title: "Pack Entity",
+        enum: [
+          "Actor",
+          "Item",
           "Scene",
-          "User",
+          "JournalEntry",
+          "Macro",
+          "RollTable",
+          "Playlist",
         ],
       },
       label: {
-        title: "A string value",
-        default: "",
+        description:
+          "The compendium pack label - this should be a human readable string label which is displayed in the Compendium sidebar in-game.",
         examples: ["Pack Title"],
+        title: "Pack Label",
         type: "string",
       },
       module: {
-        title: "A string value",
-        default: "",
-        examples: ["module-name"],
+        description:
+          "The module attribute of each compendium pack designates which content module provided the pack. If coming from a system this field can be excluded or list the system name.",
+        examples: ["module-name", "system-name"],
+        title: "Pack Module",
         type: "string",
         pattern: "^([a-z0-9]+-?)*[a-z0-9]+$",
         errorMessage: {
@@ -10595,9 +10838,10 @@ const schema144 = {
         },
       },
       name: {
-        title: "A string value",
-        default: "",
+        description:
+          "The compendium pack name - this should be a unique lower-case string with no special characters.",
         examples: ["pack-name"],
+        title: "Pack Name",
         type: "string",
         pattern: "^([a-z0-9]+-?)*[a-z0-9]+$",
         errorMessage: {
@@ -10606,9 +10850,10 @@ const schema144 = {
         },
       },
       path: {
-        title: "A string value",
-        default: "",
+        description:
+          "The path for each compendium pack should designate a database file with the .db extension.",
         examples: ["./packs/pack-name.db"],
+        title: "Pack Path",
         type: "string",
         pattern: "^(.+).db$",
         errorMessage: {
@@ -10616,30 +10861,36 @@ const schema144 = {
         },
       },
     },
-    title: "An object value",
+    description: "An object defining a single compendium pack.",
+    title: "Pack",
     type: "object",
   },
+  description: "An array of objects that define all compendium packs.",
+  title: "Packs",
   type: "array",
 };
 const schema145 = {
-  default: "",
+  description:
+    "An attribute path within the system data model that points to an object that contains both a value and max key. The prototype Token for each Actor created in this system will automatically have this resource assigned as it's primary bar. Omit this key or set it to null for no default attribute.",
   examples: ["resources.health"],
-  title: "A string value or null",
+  title: "Primary Token Attribute",
   type: ["null", "string"],
 };
 const schema146 = {
-  default: "",
+  description:
+    "An attribute path within the system data model that points to an object that contains both a value and max key. The prototype Token for each Actor created in this system will automatically have this resource assigned as it's secondary bar. Omit this key or set it to null for no default attribute.",
   examples: ["resources.power"],
-  title: "A string value or null",
+  title: "Secondary Token Attribute",
   type: ["null", "string"],
 };
 const schema147 = {
-  default: 0,
+  description:
+    "The version of the system `template.json`; increment this value when the schema changes.",
   examples: [2],
-  title: "An integer value",
+  title: "Template Version",
   type: "integer",
 };
-const pattern35 = new RegExp(
+const pattern34 = new RegExp(
   "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/system.json$",
   "u"
 );
@@ -10722,7 +10973,7 @@ function validate88(
     if (data.manifest !== undefined) {
       let data3 = data.manifest;
       if (typeof data3 === "string") {
-        if (!pattern35.test(data3)) {
+        if (!pattern34.test(data3)) {
           const err3 = {
             keyword: "pattern",
             dataPath: dataPath + "/manifest",
@@ -10990,16 +11241,12 @@ function validate88(
               if (
                 !(
                   data7 === "Actor" ||
-                  data7 === "ChatMessage" ||
-                  data7 === "Combat" ||
                   data7 === "Item" ||
-                  data7 === "Folder" ||
+                  data7 === "Scene" ||
                   data7 === "JournalEntry" ||
                   data7 === "Macro" ||
-                  data7 === "Playlist" ||
                   data7 === "RollTable" ||
-                  data7 === "Scene" ||
-                  data7 === "User"
+                  data7 === "Playlist"
                 )
               ) {
                 const err18 = {
@@ -11217,7 +11464,7 @@ function validate88(
             if (data5.path !== undefined) {
               let data11 = data5.path;
               if (typeof data11 === "string") {
-                if (!pattern17.test(data11)) {
+                if (!pattern16.test(data11)) {
                   const err30 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/path",
@@ -11458,7 +11705,7 @@ function validate92(
         if (data0.email !== undefined) {
           let data1 = data0.email;
           if (typeof data1 === "string") {
-            if (!pattern20.test(data1)) {
+            if (!pattern19.test(data1)) {
               const err2 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/email",
@@ -11861,7 +12108,7 @@ function validate99(
         if (data0.email !== undefined) {
           let data1 = data0.email;
           if (typeof data1 === "string") {
-            if (!pattern20.test(data1)) {
+            if (!pattern19.test(data1)) {
               const err2 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/email",
@@ -12060,7 +12307,7 @@ function validate99(
         if (data0.discord !== undefined) {
           let data4 = data0.discord;
           if (typeof data4 === "string") {
-            if (!pattern32.test(data4)) {
+            if (!pattern31.test(data4)) {
               const err13 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/discord",
@@ -12162,7 +12409,7 @@ function validate99(
         if (data0.reddit !== undefined) {
           let data6 = data0.reddit;
           if (typeof data6 === "string") {
-            if (!pattern33.test(data6)) {
+            if (!pattern32.test(data6)) {
               const err19 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/reddit",
@@ -12246,7 +12493,7 @@ function validate99(
         if (data0.twitter !== undefined) {
           let data7 = data0.twitter;
           if (typeof data7 === "string") {
-            if (!pattern34.test(data7)) {
+            if (!pattern33.test(data7)) {
               const err24 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/twitter",

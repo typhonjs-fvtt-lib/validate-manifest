@@ -5,4 +5,4 @@
 >  8 |   "media": [{ "type": "foobar", "url": "http://good.com" }]
      |                       ^^^^^^^^
    9 | }
-  10 | 
+  10 |

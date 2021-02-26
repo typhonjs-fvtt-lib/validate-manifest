@@ -1,7 +1,7 @@
-const {validateModule, validateModuleStrict} = require('./validator-rollup');
-const {validateModulePlus, validateModulePlusStrict} = require('./validator-rollup');
-const {validateSystem, validateSystemStrict} = require('./validator-rollup');
-const {validateSystemPlus, validateSystemPlusStrict} = require('./validator-rollup');
+const {validateModule, validateModuleStrict} = require('./validator-functions');
+const {validateModulePlus, validateModulePlusStrict} = require('./validator-functions');
+const {validateSystem, validateSystemStrict} = require('./validator-functions');
+const {validateSystemPlus, validateSystemPlusStrict} = require('./validator-functions');
 
 /**
  * Wrap all validation functions and filter any errors for `ajv` keywords that are "superfluous".

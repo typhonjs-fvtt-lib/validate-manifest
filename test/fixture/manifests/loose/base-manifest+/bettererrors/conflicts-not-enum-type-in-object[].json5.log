@@ -5,4 +5,4 @@
 >  8 |   "conflicts": [{ "name":  "dep", "type": "bad type" }]
      |                                           ^^^^^^^^^^
    9 | }
-  10 | 
+  10 |

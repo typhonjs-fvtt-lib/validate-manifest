@@ -4,4 +4,4 @@
 >  8 |   "media": [{ "type": "icon", "url": "http://good.com/image.png", "foo": "bar" }]
      |                                                                   ^^^^^
    9 | }
-  10 | 
+  10 |

@@ -4,4 +4,4 @@
 >  8 |   "languages": [{ "lang": "en", "name": false, "path": "lang/en.json" }]
      |                                         ^^^^^
    9 | }
-  10 | 
+  10 |

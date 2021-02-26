@@ -4,4 +4,4 @@
 >  8 |   "media": [{ "type": "video", "url": "http://good.com/image.png", "thumbnail": "http://bad.com/image" }]
      |                                                                                 ^^^^^^^^^^^^^^^^^^^^^^
    9 | }
-  10 | 
+  10 |

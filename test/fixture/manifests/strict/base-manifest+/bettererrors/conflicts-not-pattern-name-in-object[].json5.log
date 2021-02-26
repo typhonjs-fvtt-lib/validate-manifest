@@ -5,4 +5,4 @@ and hyphen separators
 >  8 |   "conflicts": [{ "name": "a bad package name", "type": "module" }]
      |                           ^^^^^^^^^^^^^^^^^^^^
    9 | }
-  10 | 
+  10 |

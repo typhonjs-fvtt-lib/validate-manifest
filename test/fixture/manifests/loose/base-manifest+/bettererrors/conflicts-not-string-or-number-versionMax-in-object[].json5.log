@@ -4,4 +4,4 @@
 >  8 |   "conflicts": [{ "name":  "dep", "type": "module", "versionMax": false }]
      |                                                                   ^^^^^
    9 | }
-  10 | 
+  10 |

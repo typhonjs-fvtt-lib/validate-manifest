@@ -4,4 +4,4 @@
 >  8 |   "authors": [{ "name": "typhonrt", "url": "https:/bad-address" }]
      |                                            ^^^^^^^^^^^^^^^^^^^^
    9 | }
-  10 | 
+  10 |
