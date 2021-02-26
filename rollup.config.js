@@ -8,7 +8,7 @@ import { terser } from 'rollup-plugin-terser';        // Terser is used for mini
 const s_DEPLOY_PATH = './dist';
 
 // Produce sourcemaps or not
-const s_SOURCEMAP = false;
+const s_SOURCEMAP = true;
 
 export default () =>
 {
