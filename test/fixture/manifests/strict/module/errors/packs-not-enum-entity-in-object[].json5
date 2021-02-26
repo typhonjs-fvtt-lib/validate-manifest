@@ -6,16 +6,12 @@
       "params": {
          "allowedValues": [
             "Actor",
-            "ChatMessage",
-            "Combat",
             "Item",
-            "Folder",
+            "Scene",
             "JournalEntry",
             "Macro",
-            "Playlist",
             "RollTable",
-            "Scene",
-            "User"
+            "Playlist"
          ]
       },
       "message": "should be equal to one of the allowed values"

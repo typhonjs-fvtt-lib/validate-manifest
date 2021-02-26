@@ -2,8 +2,8 @@
 'Scene', 'JournalEntry', 'Macro', 'RollTable', or 'Playlist'
   13 |       "system": "system-name",
   14 |       "path": "./packs/pack-name.db",
-> 15 |       "entity": false
-     |                 ^^^^^
+> 15 |       "entity": "NOT IN ENUM LIST"
+     |                 ^^^^^^^^^^^^^^^^^^
   16 |     }
   17 |   ]
   18 | }
