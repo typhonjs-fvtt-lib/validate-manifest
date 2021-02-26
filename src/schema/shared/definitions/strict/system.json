@@ -39,7 +39,7 @@
       }
     },
     "packs": {
-      "title": "An array of items",
+      "title": "Packs",
       "items": {
         "required": [
           "system",
@@ -62,39 +62,42 @@
             }
           },
           "entity": {
-            "title": "A string value",
-            "default": "",
+            "description": "Each compendium pack must designate a specific Entity type that it contains.",
             "examples": [
-              "Item"
-            ],
-            "enum": [
               "Actor",
-              "ChatMessage",
-              "Combat",
               "Item",
-              "Folder",
+              "Scene",
               "JournalEntry",
               "Macro",
-              "Playlist",
               "RollTable",
+              "Playlist"
+            ],
+            "title": "Pack Entity",
+            "enum": [
+              "Actor",
+              "Item",
               "Scene",
-              "User"
+              "JournalEntry",
+              "Macro",
+              "RollTable",
+              "Playlist"
             ]
           },
           "label": {
-            "title": "A string value",
-            "default": "",
+            "description": "The compendium pack label - this should be a human readable string label which is displayed in the Compendium sidebar in-game.",
             "examples": [
               "Pack Title"
             ],
+            "title": "Pack Label",
             "type": "string"
           },
           "module": {
-            "title": "A string value",
-            "default": "",
+            "description": "The module attribute of each compendium pack designates which content module provided the pack. If coming from a system this field can be excluded or list the system name.",
             "examples": [
-              "module-name"
+              "module-name",
+              "system-name"
             ],
+            "title": "Pack Module",
             "type": "string",
             "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
             "errorMessage": {
@@ -102,11 +105,11 @@
             }
           },
           "name": {
-            "title": "A string value",
-            "default": "",
+            "description": "The compendium pack name - this should be a unique lower-case string with no special characters.",
             "examples": [
               "pack-name"
             ],
+            "title": "Pack Name",
             "type": "string",
             "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
             "errorMessage": {
@@ -114,11 +117,11 @@
             }
           },
           "path": {
-            "title": "A string value",
-            "default": "",
+            "description": "The path for each compendium pack should designate a database file with the .db extension.",
             "examples": [
               "./packs/pack-name.db"
             ],
+            "title": "Pack Path",
             "type": "string",
             "pattern": "^(.+).db$",
             "errorMessage": {
@@ -126,9 +129,11 @@
             }
           }
         },
-        "title": "An object value",
+        "description": "An object defining a single compendium pack.",
+        "title": "Pack",
         "type": "object"
       },
+      "description": "An array of objects that define all compendium packs.",
       "type": "array"
     },
     "primaryTokenAttribute": {

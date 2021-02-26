@@ -16,8 +16,7 @@
         "properties": {
           "entity": {
             "enum": [
-              "Actor", "ChatMessage", "Combat", "Item", "Folder", "JournalEntry", "Macro", "Playlist", "RollTable",
-              "Scene", "User"
+              "Actor", "Item", "Scene", "JournalEntry", "Macro", "RollTable", "Playlist"
             ]
           },
           "module": {

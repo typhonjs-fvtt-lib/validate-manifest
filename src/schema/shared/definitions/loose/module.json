@@ -10,7 +10,7 @@
       "type": "string"
     },
     "packs": {
-      "title": "An array of items",
+      "title": "Packs",
       "items": {
         "required": [
           "module",
@@ -41,49 +41,58 @@
             "errorMessage": "should be a string or array of strings"
           },
           "entity": {
-            "title": "A string value",
-            "default": "",
+            "description": "Each compendium pack must designate a specific Entity type that it contains.",
             "examples": [
-              "Item"
+              "Actor",
+              "Item",
+              "Scene",
+              "JournalEntry",
+              "Macro",
+              "RollTable",
+              "Playlist"
             ],
+            "title": "Pack Entity",
             "type": "string"
           },
           "label": {
-            "title": "A string value",
-            "default": "",
+            "description": "The compendium pack label - this should be a human readable string label which is displayed in the Compendium sidebar in-game.",
             "examples": [
               "Pack Title"
             ],
+            "title": "Pack Label",
             "type": "string"
           },
           "module": {
-            "title": "A string value",
-            "default": "",
+            "description": "The module attribute of each compendium pack designates which content module provided the pack. If coming from a system this field can be excluded or list the system name.",
             "examples": [
-              "module-name"
+              "module-name",
+              "system-name"
             ],
+            "title": "Pack Module",
             "type": "string"
           },
           "name": {
-            "title": "A string value",
-            "default": "",
+            "description": "The compendium pack name - this should be a unique lower-case string with no special characters.",
             "examples": [
               "pack-name"
             ],
+            "title": "Pack Name",
             "type": "string"
           },
           "path": {
-            "title": "A string value",
-            "default": "",
+            "description": "The path for each compendium pack should designate a database file with the .db extension.",
             "examples": [
               "./packs/pack-name.db"
             ],
+            "title": "Pack Path",
             "type": "string"
           }
         },
-        "title": "An object value",
+        "description": "An object defining a single compendium pack.",
+        "title": "Pack",
         "type": "object"
       },
+      "description": "An array of objects that define all compendium packs.",
       "type": "array"
     },
     "system": {

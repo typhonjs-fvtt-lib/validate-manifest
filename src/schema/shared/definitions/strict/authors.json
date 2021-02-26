@@ -103,7 +103,7 @@
           }
         },
         "twitter": {
-          "default": "A Twitter user handle.",
+          "description": "A Twitter user handle.",
           "examples": [
             "@TwitterHandle"
           ],
