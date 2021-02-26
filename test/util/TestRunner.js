@@ -13,6 +13,9 @@ const test              = require('./test');
  */
 const s_SCHEMAPATH_REGEX = /^.*(#.*)$/;
 
+// Test intermediate functions. May give more detailed code coverage
+//  const s_VALIDATORS = '../../dist-intermediate/validators';
+
 const s_VALIDATORS = '../../dist/validators';
 
 /**
