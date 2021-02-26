@@ -164,37 +164,49 @@
       "type": "array"
     },
     "media-item-loose": {
-      "type": "object",
+      "description": "An object that provides data for a single multimedia item.",
       "required": [
         "type",
         "url"
       ],
+      "title": "Media Entry",
+      "type": "object",
       "properties": {
         "type": {
+          "description": "Indicates what kind of media.",
           "enum": [
             "cover",
             "icon",
             "screenshot",
             "video"
-          ]
+          ],
+          "title": "Media Type"
         },
         "url": {
+          "description": "Public URL of the media resource.",
+          "title": "Media URL",
           "type": "string"
         },
         "loop": {
+          "description": "Optional field specific to video media. If loop is set to true, the video is expected to be treated as an animated image, like a GIF (i.e. muted and looped).",
+          "title": "Video Loop",
           "type": "boolean"
         },
         "thumbnail": {
+          "description": "Optional URL to provide a video thumbnail.",
+          "title": "Video Thumbnail",
           "type": "string"
         }
       }
     },
     "media-item-strict": {
-      "type": "object",
+      "description": "An object that provides data for a single multimedia item.",
       "required": [
         "type",
         "url"
       ],
+      "title": "Media Entry",
+      "type": "object",
       "if": {
         "properties": {
           "type": {
@@ -205,15 +217,23 @@
       "then": {
         "properties": {
           "type": {
-            "const": "video"
+            "description": "Indicates what kind of media.",
+            "const": "video",
+            "title": "Media Type"
+          },
+          "url": {
+            "description": "Public URL of the media resource.",
+            "title": "Media URL",
+            "type": "string"
           },
           "loop": {
+            "description": "Optional field specific to video media. If loop is set to true, the video is expected to be treated as an animated image, like a GIF (i.e. muted and looped).",
+            "title": "Video Loop",
             "type": "boolean"
           },
           "thumbnail": {
-            "type": "string"
-          },
-          "url": {
+            "description": "Optional URL to provide a video thumbnail.",
+            "title": "Video Thumbnail",
             "type": "string"
           }
         },
@@ -234,13 +254,17 @@
         "then": {
           "properties": {
             "type": {
+              "description": "Indicates what kind of media.",
               "enum": [
                 "cover",
                 "icon",
                 "screenshot"
-              ]
+              ],
+              "title": "Media Type"
             },
             "url": {
+              "description": "Public URL of the media resource.",
+              "title": "Media URL",
               "type": "string"
             }
           },
@@ -249,12 +273,14 @@
         "else": {
           "properties": {
             "type": {
+              "description": "Indicates what kind of media.",
               "enum": [
                 "cover",
                 "icon",
                 "screenshot",
                 "video"
-              ]
+              ],
+              "title": "Media Type"
             }
           }
         }
