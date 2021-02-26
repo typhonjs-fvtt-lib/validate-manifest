@@ -13,6 +13,8 @@ const test              = require('./test');
  */
 const s_SCHEMAPATH_REGEX = /^.*(#.*)$/;
 
+const s_VALIDATORS = '../../dist/validators';
+
 /**
  * Provides convenience methods to setup Mocha tests based on JSON data files.
  */
@@ -173,7 +175,7 @@ class TestRunner
       {
          if (!test.functionName[functionName]) { continue; }
 
-         const testFunction = require('../../dist/validators')[functionName];
+         const testFunction = require(s_VALIDATORS)[functionName];
 
          const data = test.functionData[functionName];
 
