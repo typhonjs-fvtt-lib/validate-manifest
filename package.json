@@ -29,7 +29,6 @@
   },
   "main": "dist/validators.js",
   "files": [
-    "/dist/validator-rollup.js",
     "/dist/validators.js",
     "/schema"
   ],
@@ -48,7 +47,6 @@
     "compile": "node src/merge/merge.js && node src/compile/compileSchema.js && ajv compile --all-errors --strict-types=false -r \"src/schema/shared/**/*.json\" -s \"src/schema/validators/**/*.json\" -c ajv-errors -o dist-intermediate/validator-functions.js && prettier --write \"./dist-intermediate/validator-functions.js\" && rollup --config",
     "eslint": "eslint .",
     "prepublishOnly": "npm run eslint && npm run test",
-    "test": "npm run compile && nyc --reporter=lcov --reporter=text-summary mocha -colors \"test/src/**/*.test.js\"",
-    "test-nocompile": "nyc --reporter=lcov --reporter=text-summary mocha -colors \"test/src/**/*.test.js\""
+    "test": "npm run compile && nyc --reporter=lcov --reporter=text-summary mocha -colors \"test/src/**/*.test.js\""
   }
 }
