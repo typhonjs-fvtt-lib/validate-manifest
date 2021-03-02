@@ -276,7 +276,7 @@ const schema40 = {
         description:
           "A file path relative to the root directory of the manifest where localization strings are provided in JSON format.",
         examples: ["lang/en.json"],
-        title: "A string value",
+        title: "Language Path",
         type: "string",
       },
     },
@@ -291,7 +291,7 @@ const schema41 = {
   description:
     "A path to a license file relative to the root directory of the manifest or a publicly accessible URL which contains the software license that applies to this package.\n\n",
   examples: ["LICENSE"],
-  title: "A string value",
+  title: "License",
   type: "string",
 };
 const schema42 = {
@@ -310,7 +310,7 @@ const schema43 = {
 };
 const schema44 = {
   description:
-    "A path to a readme file relative to the root module folder or a publicly accessible URL which contains instructions or information about the package.",
+    "A path to a readme file relative to the root package folder or a publicly accessible URL which contains instructions or information about the package.",
   examples: [
     "README.md",
     "https://github.com/my-user-or-org/my-package/blob/main/README.md",
@@ -4623,7 +4623,7 @@ const schema116 = {
   title: "Manifest",
   type: "string",
   pattern:
-    "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/module.json$",
+    "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/module.json$",
   errorMessage: { pattern: "should be an URL string ending in 'module.json'" },
 };
 const schema117 = {
@@ -4710,7 +4710,8 @@ const schema117 = {
         type: "string",
         pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$",
         errorMessage: {
-          pattern: "should be a file path string ending in '.db'",
+          pattern:
+            "should be a relative file path from the package root ending in '.db'",
         },
       },
     },
@@ -4783,7 +4784,7 @@ const schema94 = {
         "../../definitions/strict/base.json#/definitions/minimumCoreVersion",
     },
     name: { $ref: "../../definitions/strict/base.json#/definitions/name" },
-    readme: { $ref: "../../definitions/loose/base.json#/definitions/readme" },
+    readme: { $ref: "../../definitions/strict/base.json#/definitions/readme" },
     scripts: {
       $ref: "../../definitions/strict/base.json#/definitions/scripts",
     },
@@ -4808,7 +4809,7 @@ const schema97 = {
   title: "Bugs URL",
   type: "string",
   pattern:
-    "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+    "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
   errorMessage: { pattern: "should be an URL string" },
 };
 const schema98 = {
@@ -4817,7 +4818,7 @@ const schema98 = {
   title: "Changelog URL",
   type: "string",
   pattern:
-    "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+    "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
   errorMessage: { pattern: "should be an URL string" },
 };
 const schema99 = {
@@ -4878,7 +4879,7 @@ const schema102 = {
   title: "Download URL",
   type: "string",
   pattern:
-    "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(.+).zip$",
+    "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(.+).zip$",
   errorMessage: { pattern: "should be an URL string ending in '.zip'" },
 };
 const schema103 = {
@@ -4891,7 +4892,10 @@ const schema103 = {
     title: "ES Module File",
     type: "string",
     pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$",
-    errorMessage: { pattern: "should be a file path string ending in '.js'" },
+    errorMessage: {
+      pattern:
+        "should be a relative file path from the package root ending in '.js'",
+    },
   },
   title: "ES Modules",
   type: "array",
@@ -4918,11 +4922,12 @@ const schema104 = {
         description:
           "A file path relative to the root directory of the manifest where localization strings are provided in JSON format.",
         examples: ["lang/en.json"],
-        title: "A string value",
+        title: "Language Path",
         type: "string",
         pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$",
         errorMessage: {
-          pattern: "should be a file path string ending in '.json'",
+          pattern:
+            "should be a relative file path from the package root ending in '.json'",
         },
       },
     },
@@ -4937,8 +4942,19 @@ const schema105 = {
   description:
     "A path to a license file relative to the root directory of the manifest or a publicly accessible URL which contains the software license that applies to this package.\n\n",
   examples: ["LICENSE"],
-  title: "A string value",
+  title: "License",
   type: "string",
+  oneOf: [
+    {
+      pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+(\\.[^\\/\\\\]+)?$",
+    },
+    {
+      pattern:
+        "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+    },
+  ],
+  errorMessage:
+    "should be a relative file path from the package root or a public URL",
 };
 const schema106 = {
   description:
@@ -4962,6 +4978,27 @@ const schema107 = {
       "should be a string that is lowercase alpha-numeric with only separating hyphens",
   },
 };
+const schema108 = {
+  description:
+    "A path to a readme file relative to the root package folder or a publicly accessible URL which contains instructions or information about the package.",
+  examples: [
+    "README.md",
+    "https://github.com/my-user-or-org/my-package/blob/main/README.md",
+  ],
+  title: "Read Me",
+  type: "string",
+  oneOf: [
+    {
+      pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+(\\.[^\\/\\\\]+)?$",
+    },
+    {
+      pattern:
+        "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+    },
+  ],
+  errorMessage:
+    "should be a relative file path from the package root or a public URL",
+};
 const schema109 = {
   description:
     "An array of JavaScript file paths included whenever this package is enabled. Each listed script path should be relative to the package root directory. All scripts which exist will be automatically included in the game session and loaded in their listed order.",
@@ -4972,7 +5009,10 @@ const schema109 = {
     title: "Script Entry",
     type: "string",
     pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$",
-    errorMessage: { pattern: "should be a file path string ending in '.js'" },
+    errorMessage: {
+      pattern:
+        "should be a relative file path from the package root ending in '.js'",
+    },
   },
   title: "Scripts",
   type: "array",
@@ -4994,7 +5034,10 @@ const schema111 = {
     title: "Style Entry",
     type: "string",
     pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.css$",
-    errorMessage: { pattern: "should be a file path string ending in '.css'" },
+    errorMessage: {
+      pattern:
+        "should be a relative file path from the package root ending in '.css'",
+    },
   },
   title: "Styles",
   type: "array",
@@ -5013,7 +5056,7 @@ const schema113 = {
   title: "URL",
   type: "string",
   pattern:
-    "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+    "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
   errorMessage: { pattern: "should be an URL string" },
 };
 const schema114 = {
@@ -5025,7 +5068,7 @@ const schema114 = {
   title: "Version",
 };
 const pattern0 = new RegExp(
-  "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+  "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
   "u"
 );
 const pattern2 = new RegExp(
@@ -5033,7 +5076,7 @@ const pattern2 = new RegExp(
   "u"
 );
 const pattern3 = new RegExp(
-  "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(.+).zip$",
+  "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(.+).zip$",
   "u"
 );
 const pattern4 = new RegExp(
@@ -5044,8 +5087,12 @@ const pattern5 = new RegExp(
   "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$",
   "u"
 );
-const pattern7 = new RegExp("^([a-z0-9]+-?)*[a-z0-9]+$", "u");
-const pattern9 = new RegExp(
+const pattern6 = new RegExp(
+  "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+(\\.[^\\/\\\\]+)?$",
+  "u"
+);
+const pattern9 = new RegExp("^([a-z0-9]+-?)*[a-z0-9]+$", "u");
+const pattern13 = new RegExp(
   "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.css$",
   "u"
 );
@@ -5175,11 +5222,11 @@ function validate66(
               "../../definitions/strict/base.json#/definitions/bugs/pattern",
             params: {
               pattern:
-                "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+                "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
             },
             message:
               'should match pattern "' +
-              "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
+              "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
               '"',
           };
           if (vErrors === null) {
@@ -5265,11 +5312,11 @@ function validate66(
               "../../definitions/strict/base.json#/definitions/changelog/pattern",
             params: {
               pattern:
-                "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+                "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
             },
             message:
               'should match pattern "' +
-              "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
+              "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
               '"',
           };
           if (vErrors === null) {
@@ -5579,11 +5626,11 @@ function validate66(
               "../../definitions/strict/base.json#/definitions/download/pattern",
             params: {
               pattern:
-                "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(.+).zip$",
+                "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(.+).zip$",
             },
             message:
               'should match pattern "' +
-              "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(.+).zip$" +
+              "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(.+).zip$" +
               '"',
           };
           if (vErrors === null) {
@@ -5985,7 +6032,8 @@ function validate66(
       }
     }
     if (data.license !== undefined) {
-      if (typeof data.license !== "string") {
+      let data18 = data.license;
+      if (typeof data18 !== "string") {
         const err52 = {
           keyword: "type",
           dataPath: dataPath + "/license",
@@ -6001,12 +6049,151 @@ function validate66(
         }
         errors++;
       }
+      const _errs48 = errors;
+      let valid19 = false;
+      let passing0 = null;
+      const _errs49 = errors;
+      if (typeof data18 === "string") {
+        if (!pattern6.test(data18)) {
+          const err53 = {
+            keyword: "pattern",
+            dataPath: dataPath + "/license",
+            schemaPath:
+              "../../definitions/strict/base.json#/definitions/license/oneOf/0/pattern",
+            params: {
+              pattern:
+                "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+(\\.[^\\/\\\\]+)?$",
+            },
+            message:
+              'should match pattern "' +
+              "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+(\\.[^\\/\\\\]+)?$" +
+              '"',
+          };
+          if (vErrors === null) {
+            vErrors = [err53];
+          } else {
+            vErrors.push(err53);
+          }
+          errors++;
+        }
+      }
+      var _valid0 = _errs49 === errors;
+      if (_valid0) {
+        valid19 = true;
+        passing0 = 0;
+      }
+      const _errs50 = errors;
+      if (typeof data18 === "string") {
+        if (!pattern0.test(data18)) {
+          const err54 = {
+            keyword: "pattern",
+            dataPath: dataPath + "/license",
+            schemaPath:
+              "../../definitions/strict/base.json#/definitions/license/oneOf/1/pattern",
+            params: {
+              pattern:
+                "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+            },
+            message:
+              'should match pattern "' +
+              "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
+              '"',
+          };
+          if (vErrors === null) {
+            vErrors = [err54];
+          } else {
+            vErrors.push(err54);
+          }
+          errors++;
+        }
+      }
+      var _valid0 = _errs50 === errors;
+      if (_valid0 && valid19) {
+        valid19 = false;
+        passing0 = [passing0, 1];
+      } else {
+        if (_valid0) {
+          valid19 = true;
+          passing0 = 1;
+        }
+      }
+      if (!valid19) {
+        const err55 = {
+          keyword: "oneOf",
+          dataPath: dataPath + "/license",
+          schemaPath:
+            "../../definitions/strict/base.json#/definitions/license/oneOf",
+          params: { passingSchemas: passing0 },
+          message: "should match exactly one schema in oneOf",
+        };
+        if (vErrors === null) {
+          vErrors = [err55];
+        } else {
+          vErrors.push(err55);
+        }
+        errors++;
+      } else {
+        errors = _errs48;
+        if (vErrors !== null) {
+          if (_errs48) {
+            vErrors.length = _errs48;
+          } else {
+            vErrors = null;
+          }
+        }
+      }
+      if (errors > 0) {
+        const emErrs6 = [];
+        for (const err56 of vErrors) {
+          if (
+            err56.keyword !== "errorMessage" &&
+            !err56.emUsed &&
+            (err56.dataPath === dataPath + "/license" ||
+              (err56.dataPath.indexOf(dataPath + "/license") === 0 &&
+                err56.dataPath[dataPath + "/license".length] === "/")) &&
+            err56.schemaPath.indexOf(
+              "../../definitions/strict/base.json#/definitions/license"
+            ) === 0 &&
+            err56.schemaPath[
+              "../../definitions/strict/base.json#/definitions/license".length
+            ] === "/"
+          ) {
+            emErrs6.push(err56);
+            err56.emUsed = true;
+          }
+        }
+        if (emErrs6.length) {
+          const err57 = {
+            keyword: "errorMessage",
+            dataPath: dataPath + "/license",
+            schemaPath:
+              "../../definitions/strict/base.json#/definitions/license/errorMessage",
+            params: { errors: emErrs6 },
+            message:
+              "should be a relative file path from the package root or a public URL",
+          };
+          if (vErrors === null) {
+            vErrors = [err57];
+          } else {
+            vErrors.push(err57);
+          }
+          errors++;
+        }
+        const emErrs7 = [];
+        for (const err58 of vErrors) {
+          if (!err58.emUsed) {
+            emErrs7.push(err58);
+          }
+        }
+        vErrors = emErrs7;
+        errors = emErrs7.length;
+      }
     }
     if (data.minimumCoreVersion !== undefined) {
       let data19 = data.minimumCoreVersion;
       if (typeof data19 === "string") {
         if (!pattern2.test(data19)) {
-          const err53 = {
+          const err59 = {
             keyword: "pattern",
             dataPath: dataPath + "/minimumCoreVersion",
             schemaPath:
@@ -6021,14 +6208,14 @@ function validate66(
               '"',
           };
           if (vErrors === null) {
-            vErrors = [err53];
+            vErrors = [err59];
           } else {
-            vErrors.push(err53);
+            vErrors.push(err59);
           }
           errors++;
         }
       } else {
-        const err54 = {
+        const err60 = {
           keyword: "type",
           dataPath: dataPath + "/minimumCoreVersion",
           schemaPath:
@@ -6037,33 +6224,33 @@ function validate66(
           message: "should be string",
         };
         if (vErrors === null) {
-          vErrors = [err54];
+          vErrors = [err60];
         } else {
-          vErrors.push(err54);
+          vErrors.push(err60);
         }
         errors++;
       }
       if (errors > 0) {
         const emErrors6 = { pattern: [] };
         const templates6 = {};
-        for (const err55 of vErrors) {
+        for (const err61 of vErrors) {
           if (
-            err55.keyword !== "errorMessage" &&
-            !err55.emUsed &&
-            err55.dataPath === dataPath + "/minimumCoreVersion" &&
-            err55.keyword in emErrors6 &&
-            err55.schemaPath.indexOf(
+            err61.keyword !== "errorMessage" &&
+            !err61.emUsed &&
+            err61.dataPath === dataPath + "/minimumCoreVersion" &&
+            err61.keyword in emErrors6 &&
+            err61.schemaPath.indexOf(
               "../../definitions/strict/base.json#/definitions/minimumCoreVersion"
             ) === 0 &&
-            /^\/[^\/]*$/.test(err55.schemaPath.slice(66))
+            /^\/[^\/]*$/.test(err61.schemaPath.slice(66))
           ) {
-            emErrors6[err55.keyword].push(err55);
-            err55.emUsed = true;
+            emErrors6[err61.keyword].push(err61);
+            err61.emUsed = true;
           }
         }
         for (const key6 in emErrors6) {
           if (emErrors6[key6].length) {
-            const err56 = {
+            const err62 = {
               keyword: "errorMessage",
               dataPath: dataPath + "/minimumCoreVersion",
               schemaPath:
@@ -6075,28 +6262,28 @@ function validate66(
                   : schema106.errorMessage[key6],
             };
             if (vErrors === null) {
-              vErrors = [err56];
+              vErrors = [err62];
             } else {
-              vErrors.push(err56);
+              vErrors.push(err62);
             }
             errors++;
           }
         }
-        const emErrs6 = [];
-        for (const err57 of vErrors) {
-          if (!err57.emUsed) {
-            emErrs6.push(err57);
+        const emErrs8 = [];
+        for (const err63 of vErrors) {
+          if (!err63.emUsed) {
+            emErrs8.push(err63);
           }
         }
-        vErrors = emErrs6;
-        errors = emErrs6.length;
+        vErrors = emErrs8;
+        errors = emErrs8.length;
       }
     }
     if (data.name !== undefined) {
       let data20 = data.name;
       if (typeof data20 === "string") {
-        if (!pattern7.test(data20)) {
-          const err58 = {
+        if (!pattern9.test(data20)) {
+          const err64 = {
             keyword: "pattern",
             dataPath: dataPath + "/name",
             schemaPath:
@@ -6106,14 +6293,14 @@ function validate66(
               'should match pattern "' + "^([a-z0-9]+-?)*[a-z0-9]+$" + '"',
           };
           if (vErrors === null) {
-            vErrors = [err58];
+            vErrors = [err64];
           } else {
-            vErrors.push(err58);
+            vErrors.push(err64);
           }
           errors++;
         }
       } else {
-        const err59 = {
+        const err65 = {
           keyword: "type",
           dataPath: dataPath + "/name",
           schemaPath:
@@ -6122,33 +6309,33 @@ function validate66(
           message: "should be string",
         };
         if (vErrors === null) {
-          vErrors = [err59];
+          vErrors = [err65];
         } else {
-          vErrors.push(err59);
+          vErrors.push(err65);
         }
         errors++;
       }
       if (errors > 0) {
         const emErrors7 = { pattern: [] };
         const templates7 = {};
-        for (const err60 of vErrors) {
+        for (const err66 of vErrors) {
           if (
-            err60.keyword !== "errorMessage" &&
-            !err60.emUsed &&
-            err60.dataPath === dataPath + "/name" &&
-            err60.keyword in emErrors7 &&
-            err60.schemaPath.indexOf(
+            err66.keyword !== "errorMessage" &&
+            !err66.emUsed &&
+            err66.dataPath === dataPath + "/name" &&
+            err66.keyword in emErrors7 &&
+            err66.schemaPath.indexOf(
               "../../definitions/strict/base.json#/definitions/name"
             ) === 0 &&
-            /^\/[^\/]*$/.test(err60.schemaPath.slice(52))
+            /^\/[^\/]*$/.test(err66.schemaPath.slice(52))
           ) {
-            emErrors7[err60.keyword].push(err60);
-            err60.emUsed = true;
+            emErrors7[err66.keyword].push(err66);
+            err66.emUsed = true;
           }
         }
         for (const key7 in emErrors7) {
           if (emErrors7[key7].length) {
-            const err61 = {
+            const err67 = {
               keyword: "errorMessage",
               dataPath: dataPath + "/name",
               schemaPath:
@@ -6160,39 +6347,179 @@ function validate66(
                   : schema107.errorMessage[key7],
             };
             if (vErrors === null) {
-              vErrors = [err61];
+              vErrors = [err67];
             } else {
-              vErrors.push(err61);
+              vErrors.push(err67);
             }
             errors++;
           }
         }
-        const emErrs7 = [];
-        for (const err62 of vErrors) {
-          if (!err62.emUsed) {
-            emErrs7.push(err62);
+        const emErrs9 = [];
+        for (const err68 of vErrors) {
+          if (!err68.emUsed) {
+            emErrs9.push(err68);
           }
         }
-        vErrors = emErrs7;
-        errors = emErrs7.length;
+        vErrors = emErrs9;
+        errors = emErrs9.length;
       }
     }
     if (data.readme !== undefined) {
-      if (typeof data.readme !== "string") {
-        const err63 = {
+      let data21 = data.readme;
+      if (typeof data21 !== "string") {
+        const err69 = {
           keyword: "type",
           dataPath: dataPath + "/readme",
           schemaPath:
-            "../../definitions/loose/base.json#/definitions/readme/type",
+            "../../definitions/strict/base.json#/definitions/readme/type",
           params: { type: "string" },
           message: "should be string",
         };
         if (vErrors === null) {
-          vErrors = [err63];
+          vErrors = [err69];
         } else {
-          vErrors.push(err63);
+          vErrors.push(err69);
         }
         errors++;
+      }
+      const _errs60 = errors;
+      let valid23 = false;
+      let passing1 = null;
+      const _errs61 = errors;
+      if (typeof data21 === "string") {
+        if (!pattern6.test(data21)) {
+          const err70 = {
+            keyword: "pattern",
+            dataPath: dataPath + "/readme",
+            schemaPath:
+              "../../definitions/strict/base.json#/definitions/readme/oneOf/0/pattern",
+            params: {
+              pattern:
+                "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+(\\.[^\\/\\\\]+)?$",
+            },
+            message:
+              'should match pattern "' +
+              "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+(\\.[^\\/\\\\]+)?$" +
+              '"',
+          };
+          if (vErrors === null) {
+            vErrors = [err70];
+          } else {
+            vErrors.push(err70);
+          }
+          errors++;
+        }
+      }
+      var _valid1 = _errs61 === errors;
+      if (_valid1) {
+        valid23 = true;
+        passing1 = 0;
+      }
+      const _errs62 = errors;
+      if (typeof data21 === "string") {
+        if (!pattern0.test(data21)) {
+          const err71 = {
+            keyword: "pattern",
+            dataPath: dataPath + "/readme",
+            schemaPath:
+              "../../definitions/strict/base.json#/definitions/readme/oneOf/1/pattern",
+            params: {
+              pattern:
+                "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+            },
+            message:
+              'should match pattern "' +
+              "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
+              '"',
+          };
+          if (vErrors === null) {
+            vErrors = [err71];
+          } else {
+            vErrors.push(err71);
+          }
+          errors++;
+        }
+      }
+      var _valid1 = _errs62 === errors;
+      if (_valid1 && valid23) {
+        valid23 = false;
+        passing1 = [passing1, 1];
+      } else {
+        if (_valid1) {
+          valid23 = true;
+          passing1 = 1;
+        }
+      }
+      if (!valid23) {
+        const err72 = {
+          keyword: "oneOf",
+          dataPath: dataPath + "/readme",
+          schemaPath:
+            "../../definitions/strict/base.json#/definitions/readme/oneOf",
+          params: { passingSchemas: passing1 },
+          message: "should match exactly one schema in oneOf",
+        };
+        if (vErrors === null) {
+          vErrors = [err72];
+        } else {
+          vErrors.push(err72);
+        }
+        errors++;
+      } else {
+        errors = _errs60;
+        if (vErrors !== null) {
+          if (_errs60) {
+            vErrors.length = _errs60;
+          } else {
+            vErrors = null;
+          }
+        }
+      }
+      if (errors > 0) {
+        const emErrs10 = [];
+        for (const err73 of vErrors) {
+          if (
+            err73.keyword !== "errorMessage" &&
+            !err73.emUsed &&
+            (err73.dataPath === dataPath + "/readme" ||
+              (err73.dataPath.indexOf(dataPath + "/readme") === 0 &&
+                err73.dataPath[dataPath + "/readme".length] === "/")) &&
+            err73.schemaPath.indexOf(
+              "../../definitions/strict/base.json#/definitions/readme"
+            ) === 0 &&
+            err73.schemaPath[
+              "../../definitions/strict/base.json#/definitions/readme".length
+            ] === "/"
+          ) {
+            emErrs10.push(err73);
+            err73.emUsed = true;
+          }
+        }
+        if (emErrs10.length) {
+          const err74 = {
+            keyword: "errorMessage",
+            dataPath: dataPath + "/readme",
+            schemaPath:
+              "../../definitions/strict/base.json#/definitions/readme/errorMessage",
+            params: { errors: emErrs10 },
+            message:
+              "should be a relative file path from the package root or a public URL",
+          };
+          if (vErrors === null) {
+            vErrors = [err74];
+          } else {
+            vErrors.push(err74);
+          }
+          errors++;
+        }
+        const emErrs11 = [];
+        for (const err75 of vErrors) {
+          if (!err75.emUsed) {
+            emErrs11.push(err75);
+          }
+        }
+        vErrors = emErrs11;
+        errors = emErrs11.length;
       }
     }
     if (data.scripts !== undefined) {
@@ -6203,7 +6530,7 @@ function validate66(
           let data23 = data22[i3];
           if (typeof data23 === "string") {
             if (!pattern4.test(data23)) {
-              const err64 = {
+              const err76 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/scripts/" + i3,
                 schemaPath:
@@ -6217,14 +6544,14 @@ function validate66(
                   '"',
               };
               if (vErrors === null) {
-                vErrors = [err64];
+                vErrors = [err76];
               } else {
-                vErrors.push(err64);
+                vErrors.push(err76);
               }
               errors++;
             }
           } else {
-            const err65 = {
+            const err77 = {
               keyword: "type",
               dataPath: dataPath + "/scripts/" + i3,
               schemaPath:
@@ -6233,33 +6560,33 @@ function validate66(
               message: "should be string",
             };
             if (vErrors === null) {
-              vErrors = [err65];
+              vErrors = [err77];
             } else {
-              vErrors.push(err65);
+              vErrors.push(err77);
             }
             errors++;
           }
           if (errors > 0) {
             const emErrors8 = { pattern: [] };
             const templates8 = {};
-            for (const err66 of vErrors) {
+            for (const err78 of vErrors) {
               if (
-                err66.keyword !== "errorMessage" &&
-                !err66.emUsed &&
-                err66.dataPath === dataPath + "/scripts/" + i3 &&
-                err66.keyword in emErrors8 &&
-                err66.schemaPath.indexOf(
+                err78.keyword !== "errorMessage" &&
+                !err78.emUsed &&
+                err78.dataPath === dataPath + "/scripts/" + i3 &&
+                err78.keyword in emErrors8 &&
+                err78.schemaPath.indexOf(
                   "../../definitions/strict/base.json#/definitions/scripts/items"
                 ) === 0 &&
-                /^\/[^\/]*$/.test(err66.schemaPath.slice(61))
+                /^\/[^\/]*$/.test(err78.schemaPath.slice(61))
               ) {
-                emErrors8[err66.keyword].push(err66);
-                err66.emUsed = true;
+                emErrors8[err78.keyword].push(err78);
+                err78.emUsed = true;
               }
             }
             for (const key8 in emErrors8) {
               if (emErrors8[key8].length) {
-                const err67 = {
+                const err79 = {
                   keyword: "errorMessage",
                   dataPath: dataPath + "/scripts/" + i3,
                   schemaPath:
@@ -6271,25 +6598,25 @@ function validate66(
                       : schema109.items.errorMessage[key8],
                 };
                 if (vErrors === null) {
-                  vErrors = [err67];
+                  vErrors = [err79];
                 } else {
-                  vErrors.push(err67);
+                  vErrors.push(err79);
                 }
                 errors++;
               }
             }
-            const emErrs8 = [];
-            for (const err68 of vErrors) {
-              if (!err68.emUsed) {
-                emErrs8.push(err68);
+            const emErrs12 = [];
+            for (const err80 of vErrors) {
+              if (!err80.emUsed) {
+                emErrs12.push(err80);
               }
             }
-            vErrors = emErrs8;
-            errors = emErrs8.length;
+            vErrors = emErrs12;
+            errors = emErrs12.length;
           }
         }
       } else {
-        const err69 = {
+        const err81 = {
           keyword: "type",
           dataPath: dataPath + "/scripts",
           schemaPath:
@@ -6298,16 +6625,16 @@ function validate66(
           message: "should be array",
         };
         if (vErrors === null) {
-          vErrors = [err69];
+          vErrors = [err81];
         } else {
-          vErrors.push(err69);
+          vErrors.push(err81);
         }
         errors++;
       }
     }
     if (data.socket !== undefined) {
       if (typeof data.socket !== "boolean") {
-        const err70 = {
+        const err82 = {
           keyword: "type",
           dataPath: dataPath + "/socket",
           schemaPath:
@@ -6316,9 +6643,9 @@ function validate66(
           message: "should be boolean",
         };
         if (vErrors === null) {
-          vErrors = [err70];
+          vErrors = [err82];
         } else {
-          vErrors.push(err70);
+          vErrors.push(err82);
         }
         errors++;
       }
@@ -6330,8 +6657,8 @@ function validate66(
         for (let i4 = 0; i4 < len4; i4++) {
           let data26 = data25[i4];
           if (typeof data26 === "string") {
-            if (!pattern9.test(data26)) {
-              const err71 = {
+            if (!pattern13.test(data26)) {
+              const err83 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/styles/" + i4,
                 schemaPath:
@@ -6345,14 +6672,14 @@ function validate66(
                   '"',
               };
               if (vErrors === null) {
-                vErrors = [err71];
+                vErrors = [err83];
               } else {
-                vErrors.push(err71);
+                vErrors.push(err83);
               }
               errors++;
             }
           } else {
-            const err72 = {
+            const err84 = {
               keyword: "type",
               dataPath: dataPath + "/styles/" + i4,
               schemaPath:
@@ -6361,33 +6688,33 @@ function validate66(
               message: "should be string",
             };
             if (vErrors === null) {
-              vErrors = [err72];
+              vErrors = [err84];
             } else {
-              vErrors.push(err72);
+              vErrors.push(err84);
             }
             errors++;
           }
           if (errors > 0) {
             const emErrors9 = { pattern: [] };
             const templates9 = {};
-            for (const err73 of vErrors) {
+            for (const err85 of vErrors) {
               if (
-                err73.keyword !== "errorMessage" &&
-                !err73.emUsed &&
-                err73.dataPath === dataPath + "/styles/" + i4 &&
-                err73.keyword in emErrors9 &&
-                err73.schemaPath.indexOf(
+                err85.keyword !== "errorMessage" &&
+                !err85.emUsed &&
+                err85.dataPath === dataPath + "/styles/" + i4 &&
+                err85.keyword in emErrors9 &&
+                err85.schemaPath.indexOf(
                   "../../definitions/strict/base.json#/definitions/styles/items"
                 ) === 0 &&
-                /^\/[^\/]*$/.test(err73.schemaPath.slice(60))
+                /^\/[^\/]*$/.test(err85.schemaPath.slice(60))
               ) {
-                emErrors9[err73.keyword].push(err73);
-                err73.emUsed = true;
+                emErrors9[err85.keyword].push(err85);
+                err85.emUsed = true;
               }
             }
             for (const key9 in emErrors9) {
               if (emErrors9[key9].length) {
-                const err74 = {
+                const err86 = {
                   keyword: "errorMessage",
                   dataPath: dataPath + "/styles/" + i4,
                   schemaPath:
@@ -6399,25 +6726,25 @@ function validate66(
                       : schema111.items.errorMessage[key9],
                 };
                 if (vErrors === null) {
-                  vErrors = [err74];
+                  vErrors = [err86];
                 } else {
-                  vErrors.push(err74);
+                  vErrors.push(err86);
                 }
                 errors++;
               }
             }
-            const emErrs9 = [];
-            for (const err75 of vErrors) {
-              if (!err75.emUsed) {
-                emErrs9.push(err75);
+            const emErrs13 = [];
+            for (const err87 of vErrors) {
+              if (!err87.emUsed) {
+                emErrs13.push(err87);
               }
             }
-            vErrors = emErrs9;
-            errors = emErrs9.length;
+            vErrors = emErrs13;
+            errors = emErrs13.length;
           }
         }
       } else {
-        const err76 = {
+        const err88 = {
           keyword: "type",
           dataPath: dataPath + "/styles",
           schemaPath:
@@ -6426,16 +6753,16 @@ function validate66(
           message: "should be array",
         };
         if (vErrors === null) {
-          vErrors = [err76];
+          vErrors = [err88];
         } else {
-          vErrors.push(err76);
+          vErrors.push(err88);
         }
         errors++;
       }
     }
     if (data.title !== undefined) {
       if (typeof data.title !== "string") {
-        const err77 = {
+        const err89 = {
           keyword: "type",
           dataPath: dataPath + "/title",
           schemaPath:
@@ -6444,9 +6771,9 @@ function validate66(
           message: "should be string",
         };
         if (vErrors === null) {
-          vErrors = [err77];
+          vErrors = [err89];
         } else {
-          vErrors.push(err77);
+          vErrors.push(err89);
         }
         errors++;
       }
@@ -6455,29 +6782,29 @@ function validate66(
       let data28 = data.url;
       if (typeof data28 === "string") {
         if (!pattern0.test(data28)) {
-          const err78 = {
+          const err90 = {
             keyword: "pattern",
             dataPath: dataPath + "/url",
             schemaPath:
               "../../definitions/strict/base.json#/definitions/url/pattern",
             params: {
               pattern:
-                "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+                "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
             },
             message:
               'should match pattern "' +
-              "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
+              "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
               '"',
           };
           if (vErrors === null) {
-            vErrors = [err78];
+            vErrors = [err90];
           } else {
-            vErrors.push(err78);
+            vErrors.push(err90);
           }
           errors++;
         }
       } else {
-        const err79 = {
+        const err91 = {
           keyword: "type",
           dataPath: dataPath + "/url",
           schemaPath:
@@ -6486,33 +6813,33 @@ function validate66(
           message: "should be string",
         };
         if (vErrors === null) {
-          vErrors = [err79];
+          vErrors = [err91];
         } else {
-          vErrors.push(err79);
+          vErrors.push(err91);
         }
         errors++;
       }
       if (errors > 0) {
         const emErrors10 = { pattern: [] };
         const templates10 = {};
-        for (const err80 of vErrors) {
+        for (const err92 of vErrors) {
           if (
-            err80.keyword !== "errorMessage" &&
-            !err80.emUsed &&
-            err80.dataPath === dataPath + "/url" &&
-            err80.keyword in emErrors10 &&
-            err80.schemaPath.indexOf(
+            err92.keyword !== "errorMessage" &&
+            !err92.emUsed &&
+            err92.dataPath === dataPath + "/url" &&
+            err92.keyword in emErrors10 &&
+            err92.schemaPath.indexOf(
               "../../definitions/strict/base.json#/definitions/url"
             ) === 0 &&
-            /^\/[^\/]*$/.test(err80.schemaPath.slice(51))
+            /^\/[^\/]*$/.test(err92.schemaPath.slice(51))
           ) {
-            emErrors10[err80.keyword].push(err80);
-            err80.emUsed = true;
+            emErrors10[err92.keyword].push(err92);
+            err92.emUsed = true;
           }
         }
         for (const key10 in emErrors10) {
           if (emErrors10[key10].length) {
-            const err81 = {
+            const err93 = {
               keyword: "errorMessage",
               dataPath: dataPath + "/url",
               schemaPath:
@@ -6524,31 +6851,31 @@ function validate66(
                   : schema113.errorMessage[key10],
             };
             if (vErrors === null) {
-              vErrors = [err81];
+              vErrors = [err93];
             } else {
-              vErrors.push(err81);
+              vErrors.push(err93);
             }
             errors++;
           }
         }
-        const emErrs10 = [];
-        for (const err82 of vErrors) {
-          if (!err82.emUsed) {
-            emErrs10.push(err82);
+        const emErrs14 = [];
+        for (const err94 of vErrors) {
+          if (!err94.emUsed) {
+            emErrs14.push(err94);
           }
         }
-        vErrors = emErrs10;
-        errors = emErrs10.length;
+        vErrors = emErrs14;
+        errors = emErrs14.length;
       }
     }
     if (data.version !== undefined) {
       let data29 = data.version;
-      const _errs78 = errors;
-      let valid32 = false;
-      let passing0 = null;
-      const _errs79 = errors;
+      const _errs84 = errors;
+      let valid34 = false;
+      let passing2 = null;
+      const _errs85 = errors;
       if (typeof data29 !== "string") {
-        const err83 = {
+        const err95 = {
           keyword: "type",
           dataPath: dataPath + "/version",
           schemaPath:
@@ -6557,20 +6884,20 @@ function validate66(
           message: "should be string",
         };
         if (vErrors === null) {
-          vErrors = [err83];
+          vErrors = [err95];
         } else {
-          vErrors.push(err83);
+          vErrors.push(err95);
         }
         errors++;
       }
-      var _valid0 = _errs79 === errors;
-      if (_valid0) {
-        valid32 = true;
-        passing0 = 0;
+      var _valid2 = _errs85 === errors;
+      if (_valid2) {
+        valid34 = true;
+        passing2 = 0;
       }
-      const _errs81 = errors;
+      const _errs87 = errors;
       if (!(typeof data29 == "number" && isFinite(data29))) {
-        const err84 = {
+        const err96 = {
           keyword: "type",
           dataPath: dataPath + "/version",
           schemaPath:
@@ -6579,95 +6906,95 @@ function validate66(
           message: "should be number",
         };
         if (vErrors === null) {
-          vErrors = [err84];
+          vErrors = [err96];
         } else {
-          vErrors.push(err84);
+          vErrors.push(err96);
         }
         errors++;
       }
-      var _valid0 = _errs81 === errors;
-      if (_valid0 && valid32) {
-        valid32 = false;
-        passing0 = [passing0, 1];
+      var _valid2 = _errs87 === errors;
+      if (_valid2 && valid34) {
+        valid34 = false;
+        passing2 = [passing2, 1];
       } else {
-        if (_valid0) {
-          valid32 = true;
-          passing0 = 1;
+        if (_valid2) {
+          valid34 = true;
+          passing2 = 1;
         }
       }
-      if (!valid32) {
-        const err85 = {
+      if (!valid34) {
+        const err97 = {
           keyword: "oneOf",
           dataPath: dataPath + "/version",
           schemaPath:
             "../../definitions/strict/base.json#/definitions/version/oneOf",
-          params: { passingSchemas: passing0 },
+          params: { passingSchemas: passing2 },
           message: "should match exactly one schema in oneOf",
         };
         if (vErrors === null) {
-          vErrors = [err85];
+          vErrors = [err97];
         } else {
-          vErrors.push(err85);
+          vErrors.push(err97);
         }
         errors++;
       } else {
-        errors = _errs78;
+        errors = _errs84;
         if (vErrors !== null) {
-          if (_errs78) {
-            vErrors.length = _errs78;
+          if (_errs84) {
+            vErrors.length = _errs84;
           } else {
             vErrors = null;
           }
         }
       }
       if (errors > 0) {
-        const emErrs11 = [];
-        for (const err86 of vErrors) {
+        const emErrs15 = [];
+        for (const err98 of vErrors) {
           if (
-            err86.keyword !== "errorMessage" &&
-            !err86.emUsed &&
-            (err86.dataPath === dataPath + "/version" ||
-              (err86.dataPath.indexOf(dataPath + "/version") === 0 &&
-                err86.dataPath[dataPath + "/version".length] === "/")) &&
-            err86.schemaPath.indexOf(
+            err98.keyword !== "errorMessage" &&
+            !err98.emUsed &&
+            (err98.dataPath === dataPath + "/version" ||
+              (err98.dataPath.indexOf(dataPath + "/version") === 0 &&
+                err98.dataPath[dataPath + "/version".length] === "/")) &&
+            err98.schemaPath.indexOf(
               "../../definitions/strict/base.json#/definitions/version"
             ) === 0 &&
-            err86.schemaPath[
+            err98.schemaPath[
               "../../definitions/strict/base.json#/definitions/version".length
             ] === "/"
           ) {
-            emErrs11.push(err86);
-            err86.emUsed = true;
+            emErrs15.push(err98);
+            err98.emUsed = true;
           }
         }
-        if (emErrs11.length) {
-          const err87 = {
+        if (emErrs15.length) {
+          const err99 = {
             keyword: "errorMessage",
             dataPath: dataPath + "/version",
             schemaPath:
               "../../definitions/strict/base.json#/definitions/version/errorMessage",
-            params: { errors: emErrs11 },
+            params: { errors: emErrs15 },
             message: "should be a string or number",
           };
           if (vErrors === null) {
-            vErrors = [err87];
+            vErrors = [err99];
           } else {
-            vErrors.push(err87);
+            vErrors.push(err99);
           }
           errors++;
         }
-        const emErrs12 = [];
-        for (const err88 of vErrors) {
-          if (!err88.emUsed) {
-            emErrs12.push(err88);
+        const emErrs16 = [];
+        for (const err100 of vErrors) {
+          if (!err100.emUsed) {
+            emErrs16.push(err100);
           }
         }
-        vErrors = emErrs12;
-        errors = emErrs12.length;
+        vErrors = emErrs16;
+        errors = emErrs16.length;
       }
     }
   } else {
-    const err89 = {
+    const err101 = {
       keyword: "type",
       dataPath,
       schemaPath: "#/type",
@@ -6675,21 +7002,21 @@ function validate66(
       message: "should be object",
     };
     if (vErrors === null) {
-      vErrors = [err89];
+      vErrors = [err101];
     } else {
-      vErrors.push(err89);
+      vErrors.push(err101);
     }
     errors++;
   }
   validate66.errors = vErrors;
   return errors === 0;
 }
-const pattern11 = new RegExp(
-  "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/module.json$",
+const pattern15 = new RegExp(
+  "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/module.json$",
   "u"
 );
-const pattern12 = new RegExp("^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$", "u");
-const pattern16 = new RegExp(
+const pattern16 = new RegExp("^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$", "u");
+const pattern20 = new RegExp(
   "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$",
   "u"
 );
@@ -6710,7 +7037,7 @@ function validate65(
     if (data.manifest !== undefined) {
       let data0 = data.manifest;
       if (typeof data0 === "string") {
-        if (!pattern11.test(data0)) {
+        if (!pattern15.test(data0)) {
           const err0 = {
             keyword: "pattern",
             dataPath: dataPath + "/manifest",
@@ -6718,11 +7045,11 @@ function validate65(
               "../../definitions/strict/module.json#/definitions/manifest/pattern",
             params: {
               pattern:
-                "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/module.json$",
+                "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/module.json$",
             },
             message:
               'should match pattern "' +
-              "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/module.json$" +
+              "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/module.json$" +
               '"',
           };
           if (vErrors === null) {
@@ -6891,7 +7218,7 @@ function validate65(
               let passing0 = null;
               const _errs12 = errors;
               if (typeof data3 === "string") {
-                if (!pattern12.test(data3)) {
+                if (!pattern16.test(data3)) {
                   const err10 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/system",
@@ -6937,7 +7264,7 @@ function validate65(
                 for (let i1 = 0; i1 < len1; i1++) {
                   let data4 = data3[i1];
                   if (typeof data4 === "string") {
-                    if (!pattern12.test(data4)) {
+                    if (!pattern16.test(data4)) {
                       const err12 = {
                         keyword: "pattern",
                         dataPath: dataPath + "/packs/" + i0 + "/system/" + i1,
@@ -7130,7 +7457,7 @@ function validate65(
             if (data2.module !== undefined) {
               let data7 = data2.module;
               if (typeof data7 === "string") {
-                if (!pattern7.test(data7)) {
+                if (!pattern9.test(data7)) {
                   const err21 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/module",
@@ -7219,7 +7546,7 @@ function validate65(
             if (data2.name !== undefined) {
               let data8 = data2.name;
               if (typeof data8 === "string") {
-                if (!pattern7.test(data8)) {
+                if (!pattern9.test(data8)) {
                   const err26 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/name",
@@ -7306,7 +7633,7 @@ function validate65(
             if (data2.path !== undefined) {
               let data9 = data2.path;
               if (typeof data9 === "string") {
-                if (!pattern16.test(data9)) {
+                if (!pattern20.test(data9)) {
                   const err31 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/path",
@@ -7434,7 +7761,7 @@ function validate65(
       let passing1 = null;
       const _errs30 = errors;
       if (typeof data10 === "string") {
-        if (!pattern12.test(data10)) {
+        if (!pattern16.test(data10)) {
           const err38 = {
             keyword: "pattern",
             dataPath: dataPath + "/system",
@@ -7480,7 +7807,7 @@ function validate65(
         for (let i2 = 0; i2 < len2; i2++) {
           let data11 = data10[i2];
           if (typeof data11 === "string") {
-            if (!pattern12.test(data11)) {
+            if (!pattern16.test(data11)) {
               const err40 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/system/" + i2,
@@ -7668,13 +7995,13 @@ const schema121 = {
       title: "Author URL",
       type: "string",
       pattern:
-        "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+        "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
       errorMessage: { pattern: "should be an URL string" },
     },
   },
   required: ["name"],
 };
-const pattern19 = new RegExp(
+const pattern23 = new RegExp(
   '^(([^<>()\\[\\]\\\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@"]+)*)|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$',
   "u"
 );
@@ -7722,7 +8049,7 @@ function validate72(
         if (data0.email !== undefined) {
           let data1 = data0.email;
           if (typeof data1 === "string") {
-            if (!pattern19.test(data1)) {
+            if (!pattern23.test(data1)) {
               const err2 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/email",
@@ -7838,11 +8165,11 @@ function validate72(
                   "#/definitions/properties-author/properties/url/pattern",
                 params: {
                   pattern:
-                    "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+                    "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
                 },
                 message:
                   'should match pattern "' +
-                  "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
+                  "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
                   '"',
               };
               if (vErrors === null) {
@@ -8184,7 +8511,7 @@ const schema127 = {
             title: "Alternate Package Manifest",
             type: "string",
             pattern:
-              "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(module|system).json$",
+              "^(?:(?:(?:https?):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(module|system).json$",
             errorMessage: {
               pattern:
                 "should be an URL string ending in 'module.json' or 'system.json'",
@@ -8253,8 +8580,8 @@ const schema130 = {
     "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
   errorMessage: { pattern: "should be a string that uses semantic versioning" },
 };
-const pattern23 = new RegExp(
-  "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(module|system).json$",
+const pattern27 = new RegExp(
+  "^(?:(?:(?:https?):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(module|system).json$",
   "u"
 );
 const schema131 = {
@@ -8282,7 +8609,7 @@ const schema132 = {
         title: "Media URL",
         type: "string",
         pattern:
-          "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+          "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
         errorMessage: { pattern: "should be an URL string" },
       },
       loop: {
@@ -8296,7 +8623,7 @@ const schema132 = {
         title: "Video Thumbnail",
         type: "string",
         pattern:
-          "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$",
+          "^(?:(?:(?:https?):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$",
         errorMessage: {
           pattern: "should be a valid image URL string for <img> tags",
         },
@@ -8318,7 +8645,7 @@ const schema132 = {
           title: "Media URL",
           type: "string",
           pattern:
-            "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$",
+            "^(?:(?:(?:https?):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$",
           errorMessage: {
             pattern: "should be a valid image URL string for <img> tags",
           },
@@ -8337,8 +8664,8 @@ const schema132 = {
     },
   },
 };
-const pattern27 = new RegExp(
-  "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$",
+const pattern31 = new RegExp(
+  "^(?:(?:(?:https?):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$",
   "u"
 );
 function validate79(
@@ -8434,11 +8761,11 @@ function validate79(
                     "#/definitions/media-item-strict/then/properties/url/pattern",
                   params: {
                     pattern:
-                      "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+                      "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
                   },
                   message:
                     'should match pattern "' +
-                    "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
+                    "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
                     '"',
                 };
                 if (vErrors === null) {
@@ -8534,7 +8861,7 @@ function validate79(
           if (data0.thumbnail !== undefined) {
             let data5 = data0.thumbnail;
             if (typeof data5 === "string") {
-              if (!pattern27.test(data5)) {
+              if (!pattern31.test(data5)) {
                 const err9 = {
                   keyword: "pattern",
                   dataPath: dataPath + "/" + i0 + "/thumbnail",
@@ -8542,11 +8869,11 @@ function validate79(
                     "#/definitions/media-item-strict/then/properties/thumbnail/pattern",
                   params: {
                     pattern:
-                      "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$",
+                      "^(?:(?:(?:https?):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$",
                   },
                   message:
                     'should match pattern "' +
-                    "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$" +
+                    "^(?:(?:(?:https?):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$" +
                     '"',
                 };
                 if (vErrors === null) {
@@ -8709,7 +9036,7 @@ function validate79(
             if (data0.url !== undefined) {
               let data8 = data0.url;
               if (typeof data8 === "string") {
-                if (!pattern27.test(data8)) {
+                if (!pattern31.test(data8)) {
                   const err17 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/" + i0 + "/url",
@@ -8717,11 +9044,11 @@ function validate79(
                       "#/definitions/media-item-strict/else/then/properties/url/pattern",
                     params: {
                       pattern:
-                        "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$",
+                        "^(?:(?:(?:https?):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$",
                     },
                     message:
                       'should match pattern "' +
-                      "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$" +
+                      "^(?:(?:(?:https?):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/([a-zA-Z0-9%._-])+.(apng|avif|gif|jpg|jpeg|jfif|pjpeg|pjp|png|svg|webp)$" +
                       '"',
                   };
                   if (vErrors === null) {
@@ -8986,7 +9313,7 @@ function validate77(
             if (data1.name !== undefined) {
               let data2 = data1.name;
               if (typeof data2 === "string") {
-                if (!pattern12.test(data2)) {
+                if (!pattern16.test(data2)) {
                   const err2 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/conflicts/" + i0 + "/name",
@@ -9435,7 +9762,7 @@ function validate77(
                 if (data8.name !== undefined) {
                   let data9 = data8.name;
                   if (typeof data9 === "string") {
-                    if (!pattern12.test(data9)) {
+                    if (!pattern16.test(data9)) {
                       const err24 = {
                         keyword: "pattern",
                         dataPath:
@@ -9535,7 +9862,7 @@ function validate77(
                 if (data8.manifest !== undefined) {
                   let data10 = data8.manifest;
                   if (typeof data10 === "string") {
-                    if (!pattern23.test(data10)) {
+                    if (!pattern27.test(data10)) {
                       const err29 = {
                         keyword: "pattern",
                         dataPath:
@@ -9547,11 +9874,11 @@ function validate77(
                           "../../definitions/strict/base-manifest+.json#/definitions/deprecated/properties/alternatives/items/properties/manifest/pattern",
                         params: {
                           pattern:
-                            "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(module|system).json$",
+                            "^(?:(?:(?:https?):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(module|system).json$",
                         },
                         message:
                           'should match pattern "' +
-                          "^(?:(?:(?:https?|ftp):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(module|system).json$" +
+                          "^(?:(?:(?:https?):)?\\/\\/)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9¡-￿][a-z0-9¡-￿_-]{0,62})?[a-z0-9¡-￿]\\.)+(?:[a-z¡-￿]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(module|system).json$" +
                           '"',
                       };
                       if (vErrors === null) {
@@ -10068,9 +10395,9 @@ const schema135 = {
     },
   },
 };
-const pattern31 = new RegExp("^.{3,32}#[0-9]{4}$", "u");
-const pattern32 = new RegExp("^u/[A-Za-z0-9_-]+$", "u");
-const pattern33 = new RegExp("^@[A-Za-z0-9_]{1,15}$", "u");
+const pattern35 = new RegExp("^.{3,32}#[0-9]{4}$", "u");
+const pattern36 = new RegExp("^u/[A-Za-z0-9_-]+$", "u");
+const pattern37 = new RegExp("^@[A-Za-z0-9_]{1,15}$", "u");
 function validate83(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
@@ -10115,7 +10442,7 @@ function validate83(
         if (data0.email !== undefined) {
           let data1 = data0.email;
           if (typeof data1 === "string") {
-            if (!pattern19.test(data1)) {
+            if (!pattern23.test(data1)) {
               const err2 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/email",
@@ -10231,11 +10558,11 @@ function validate83(
                   "#/definitions/properties-author/properties/url/pattern",
                 params: {
                   pattern:
-                    "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+                    "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
                 },
                 message:
                   'should match pattern "' +
-                  "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
+                  "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
                   '"',
               };
               if (vErrors === null) {
@@ -10314,7 +10641,7 @@ function validate83(
         if (data0.discord !== undefined) {
           let data4 = data0.discord;
           if (typeof data4 === "string") {
-            if (!pattern31.test(data4)) {
+            if (!pattern35.test(data4)) {
               const err13 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/discord",
@@ -10416,7 +10743,7 @@ function validate83(
         if (data0.reddit !== undefined) {
           let data6 = data0.reddit;
           if (typeof data6 === "string") {
-            if (!pattern32.test(data6)) {
+            if (!pattern36.test(data6)) {
               const err19 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/reddit",
@@ -10500,7 +10827,7 @@ function validate83(
         if (data0.twitter !== undefined) {
           let data7 = data0.twitter;
           if (typeof data7 === "string") {
-            if (!pattern33.test(data7)) {
+            if (!pattern37.test(data7)) {
               const err24 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/twitter",
@@ -10815,7 +11142,7 @@ const schema143 = {
   title: "Manifest",
   type: "string",
   pattern:
-    "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/system.json$",
+    "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/system.json$",
   errorMessage: { pattern: "should be an URL string ending in 'system.json'" },
 };
 const schema144 = {
@@ -10896,7 +11223,8 @@ const schema144 = {
         type: "string",
         pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$",
         errorMessage: {
-          pattern: "should be a file path string ending in '.db'",
+          pattern:
+            "should be a relative file path from the package root ending in '.db'",
         },
       },
     },
@@ -10929,8 +11257,8 @@ const schema147 = {
   title: "Template Version",
   type: "integer",
 };
-const pattern34 = new RegExp(
-  "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/system.json$",
+const pattern38 = new RegExp(
+  "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/system.json$",
   "u"
 );
 function validate88(
@@ -11012,7 +11340,7 @@ function validate88(
     if (data.manifest !== undefined) {
       let data3 = data.manifest;
       if (typeof data3 === "string") {
-        if (!pattern34.test(data3)) {
+        if (!pattern38.test(data3)) {
           const err3 = {
             keyword: "pattern",
             dataPath: dataPath + "/manifest",
@@ -11020,11 +11348,11 @@ function validate88(
               "../../definitions/strict/system.json#/definitions/manifest/pattern",
             params: {
               pattern:
-                "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/system.json$",
+                "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/system.json$",
             },
             message:
               'should match pattern "' +
-              "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/system.json$" +
+              "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/system.json$" +
               '"',
           };
           if (vErrors === null) {
@@ -11189,7 +11517,7 @@ function validate88(
             if (data5.system !== undefined) {
               let data6 = data5.system;
               if (typeof data6 === "string") {
-                if (!pattern7.test(data6)) {
+                if (!pattern9.test(data6)) {
                   const err13 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/system",
@@ -11327,7 +11655,7 @@ function validate88(
             if (data5.module !== undefined) {
               let data9 = data5.module;
               if (typeof data9 === "string") {
-                if (!pattern7.test(data9)) {
+                if (!pattern9.test(data9)) {
                   const err20 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/module",
@@ -11416,7 +11744,7 @@ function validate88(
             if (data5.name !== undefined) {
               let data10 = data5.name;
               if (typeof data10 === "string") {
-                if (!pattern7.test(data10)) {
+                if (!pattern9.test(data10)) {
                   const err25 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/name",
@@ -11503,7 +11831,7 @@ function validate88(
             if (data5.path !== undefined) {
               let data11 = data5.path;
               if (typeof data11 === "string") {
-                if (!pattern16.test(data11)) {
+                if (!pattern20.test(data11)) {
                   const err30 = {
                     keyword: "pattern",
                     dataPath: dataPath + "/packs/" + i0 + "/path",
@@ -11750,7 +12078,7 @@ function validate92(
         if (data0.email !== undefined) {
           let data1 = data0.email;
           if (typeof data1 === "string") {
-            if (!pattern19.test(data1)) {
+            if (!pattern23.test(data1)) {
               const err2 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/email",
@@ -11866,11 +12194,11 @@ function validate92(
                   "#/definitions/properties-author/properties/url/pattern",
                 params: {
                   pattern:
-                    "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+                    "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
                 },
                 message:
                   'should match pattern "' +
-                  "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
+                  "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
                   '"',
               };
               if (vErrors === null) {
@@ -12153,7 +12481,7 @@ function validate99(
         if (data0.email !== undefined) {
           let data1 = data0.email;
           if (typeof data1 === "string") {
-            if (!pattern19.test(data1)) {
+            if (!pattern23.test(data1)) {
               const err2 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/email",
@@ -12269,11 +12597,11 @@ function validate99(
                   "#/definitions/properties-author/properties/url/pattern",
                 params: {
                   pattern:
-                    "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
+                    "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$",
                 },
                 message:
                   'should match pattern "' +
-                  "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
+                  "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$" +
                   '"',
               };
               if (vErrors === null) {
@@ -12352,7 +12680,7 @@ function validate99(
         if (data0.discord !== undefined) {
           let data4 = data0.discord;
           if (typeof data4 === "string") {
-            if (!pattern31.test(data4)) {
+            if (!pattern35.test(data4)) {
               const err13 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/discord",
@@ -12454,7 +12782,7 @@ function validate99(
         if (data0.reddit !== undefined) {
           let data6 = data0.reddit;
           if (typeof data6 === "string") {
-            if (!pattern32.test(data6)) {
+            if (!pattern36.test(data6)) {
               const err19 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/reddit",
@@ -12538,7 +12866,7 @@ function validate99(
         if (data0.twitter !== undefined) {
           let data7 = data0.twitter;
           if (typeof data7 === "string") {
-            if (!pattern33.test(data7)) {
+            if (!pattern37.test(data7)) {
               const err24 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/twitter",
