@@ -1,9 +1,15 @@
 {
   "name": "@typhonjs-fvtt/validate-manifest",
   "description": "Provides validation functions / JSON schemas for FVTT module / system manifests & manifest+ extensions.",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "author": "typhonrt",
   "bugs": "https://github.com/typhonjs-fvtt/validate-manifest/issues",
+  "type": "module",
+  "main": "./dist/cjs/validators.js",
+  "exports": {
+    "./dist/esm": "./dist/esm/validators.js"
+  },
+  "module": "./dist/esm/validators.js",
   "devDependencies": {
     "@apidevtools/json-schema-ref-parser": "^9.0.0",
     "@rollup/plugin-commonjs": "^16.0.0",
@@ -27,9 +33,9 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "main": "dist/validators.js",
   "files": [
-    "/dist/validators.js",
+    "/dist/cjs",
+    "/dist/esm",
     "/schema"
   ],
   "homepage": "https://github.com/typhonjs-fvtt/validate-manifest",

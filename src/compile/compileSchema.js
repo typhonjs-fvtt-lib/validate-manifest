@@ -1,6 +1,6 @@
-const fs          = require('fs');
+import fs         from 'fs';
 
-const $RefParser  = require("@apidevtools/json-schema-ref-parser");
+import $RefParser from '@apidevtools/json-schema-ref-parser';
 
 /**
  * The Async IIFE below invokes `json-schema-ref-parser` to bundle / dereference the various shared JSON schema

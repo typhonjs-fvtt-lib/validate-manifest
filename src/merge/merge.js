@@ -1,9 +1,9 @@
-const fs                = require('fs');
+import fs                  from 'fs';
 
-const deepmerge         = require('deepmerge');
-const stripJsonComments = require('strip-json-comments');
+import deepmerge           from 'deepmerge';
+import stripJsonComments   from 'strip-json-comments';
 
-const includes          = require('./includes');
+import includes            from './includes.js';
 
 // Authors
 process(['abstract/authors'], 'loose/authors');
