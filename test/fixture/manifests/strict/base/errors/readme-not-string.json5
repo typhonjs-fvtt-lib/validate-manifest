@@ -1,0 +1,35 @@
+[
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/readme",
+      "schemaPath": "#/definitions/readme/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "type",
+               "dataPath": "/readme",
+               "schemaPath": "#/definitions/readme/type",
+               "params": {
+                  "type": "string"
+               },
+               "message": "should be string",
+               "emUsed": true
+            },
+            {
+               "keyword": "oneOf",
+               "dataPath": "/readme",
+               "schemaPath": "#/definitions/readme/oneOf",
+               "params": {
+                  "passingSchemas": [
+                     0,
+                     1
+                  ]
+               },
+               "message": "should match exactly one schema in oneOf",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "should be a relative file path from the package root or a public URL"
+   }
+]

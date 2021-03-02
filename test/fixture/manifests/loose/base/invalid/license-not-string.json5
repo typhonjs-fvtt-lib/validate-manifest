@@ -1,4 +1,5 @@
 {
+  "__strictskip": true,
   "name": "a-module",
   "title": "A Module",
   "description": "Some description",

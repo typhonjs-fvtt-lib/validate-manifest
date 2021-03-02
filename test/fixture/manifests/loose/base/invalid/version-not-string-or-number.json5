@@ -1,6 +1,5 @@
 // Skips for strict validation which is tested with /strict/base/version-not-string.json5
 {
-  "__strictskip": true,
   "name": "a-module",
   "title": "A Module",
   "description": "Some description",

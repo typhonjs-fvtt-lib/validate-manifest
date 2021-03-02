@@ -1,0 +1,35 @@
+[
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/license",
+      "schemaPath": "#/definitions/license/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "type",
+               "dataPath": "/license",
+               "schemaPath": "#/definitions/license/type",
+               "params": {
+                  "type": "string"
+               },
+               "message": "should be string",
+               "emUsed": true
+            },
+            {
+               "keyword": "oneOf",
+               "dataPath": "/license",
+               "schemaPath": "#/definitions/license/oneOf",
+               "params": {
+                  "passingSchemas": [
+                     0,
+                     1
+                  ]
+               },
+               "message": "should match exactly one schema in oneOf",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "should be a relative file path from the package root or a public URL"
+   }
+]

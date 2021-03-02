@@ -1,8 +1,8 @@
 /version should be a string or number
-   6 |   "description": "Some description",
-   7 |   "author": "typhonrt",
->  8 |   "version": true,
+   5 |   "description": "Some description",
+   6 |   "author": "typhonrt",
+>  7 |   "version": true,
      |              ^^^^
-   9 |   "minimumCoreVersion": "0.7.5"
-  10 | }
-  11 |
+   8 |   "minimumCoreVersion": "0.7.5"
+   9 | }
+  10 |
