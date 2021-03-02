@@ -106,7 +106,7 @@
         "type": "string",
         "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$",
         "errorMessage": {
-          "pattern": "should be a file path string ending in '.js'"
+          "pattern": "should be a relative file path from the package root ending in '.js'"
         }
       },
       "title": "ES Modules",
@@ -141,7 +141,7 @@
             "type": "string",
             "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$",
             "errorMessage": {
-              "pattern": "should be a file path string ending in '.json'"
+              "pattern": "should be a relative file path from the package root ending in '.json'"
             }
           }
         },
@@ -208,7 +208,7 @@
         "type": "string",
         "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$",
         "errorMessage": {
-          "pattern": "should be a file path string ending in '.js'"
+          "pattern": "should be a relative file path from the package root ending in '.js'"
         }
       },
       "title": "Scripts",
@@ -233,7 +233,7 @@
         "type": "string",
         "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.css$",
         "errorMessage": {
-          "pattern": "should be a file path string ending in '.css'"
+          "pattern": "should be a relative file path from the package root ending in '.css'"
         }
       },
       "title": "Styles",

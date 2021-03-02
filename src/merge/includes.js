@@ -25,12 +25,21 @@ module.exports = {
       }
     };
   },
+  'pattern-file': () =>  // See: unit tests - https://regex101.com/r/r98YyH/1
+  {
+    return {
+      pattern: '^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+(\\.[^\\/\\\\]+)?$',
+      errorMessage: {
+        pattern: `should be a relative file path from the package root`
+      }
+    };
+  },
   'pattern-file-css': () =>  // See: unit tests - https://regex101.com/r/z998Bw/1
   {
     return {
       pattern: '^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.css$',
       errorMessage: {
-        pattern: `should be a file path string ending in '.css'`
+        pattern: `should be a relative file path from the package root ending in '.css'`
       }
     };
   },
@@ -39,7 +48,7 @@ module.exports = {
     return {
       pattern: '^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$',
       errorMessage: {
-        pattern: `should be a file path string ending in '.db'`
+        pattern: `should be a relative file path from the package root ending in '.db'`
       }
     };
   },
@@ -48,7 +57,7 @@ module.exports = {
     return {
       pattern: '^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$',
       errorMessage: {
-        pattern: `should be a file path string ending in '.js'`
+        pattern: `should be a relative file path from the package root ending in '.js'`
       }
     };
   },
@@ -57,7 +66,7 @@ module.exports = {
     return {
       pattern: '^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$',
       errorMessage: {
-        pattern: `should be a file path string ending in '.json'`
+        pattern: `should be a relative file path from the package root ending in '.json'`
       }
     };
   },

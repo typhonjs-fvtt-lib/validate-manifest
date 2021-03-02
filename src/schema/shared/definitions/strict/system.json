@@ -124,7 +124,7 @@
             "type": "string",
             "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$",
             "errorMessage": {
-              "pattern": "should be a file path string ending in '.db'"
+              "pattern": "should be a relative file path from the package root ending in '.db'"
             }
           }
         },
