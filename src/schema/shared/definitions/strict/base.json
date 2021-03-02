@@ -104,7 +104,7 @@
         ],
         "title": "ES Module File",
         "type": "string",
-        "pattern": "^(.+).js$",
+        "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$",
         "errorMessage": {
           "pattern": "should be a file path string ending in '.js'"
         }
@@ -139,7 +139,7 @@
             ],
             "title": "A string value",
             "type": "string",
-            "pattern": "^(.+).json$",
+            "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$",
             "errorMessage": {
               "pattern": "should be a file path string ending in '.json'"
             }
@@ -206,7 +206,7 @@
         ],
         "title": "Script Entry",
         "type": "string",
-        "pattern": "^(.+).js$",
+        "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$",
         "errorMessage": {
           "pattern": "should be a file path string ending in '.js'"
         }
@@ -231,7 +231,7 @@
         ],
         "title": "Style Entry",
         "type": "string",
-        "pattern": "^(.+).css$",
+        "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.css$",
         "errorMessage": {
           "pattern": "should be a file path string ending in '.css'"
         }

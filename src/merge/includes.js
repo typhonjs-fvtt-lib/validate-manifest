@@ -16,48 +16,48 @@ module.exports = {
       }
     };
   },
-  'pattern-file-css': () =>
-  {
-    return {
-      pattern: '^(.+).css$',
-      errorMessage: {
-        pattern: `should be a file path string ending in '.css'`
-      }
-    };
-  },
-  'pattern-file-db': () =>
-  {
-    return {
-      pattern: '^(.+).db$',
-      errorMessage: {
-        pattern: `should be a file path string ending in '.db'`
-      }
-    };
-  },
-  'pattern-file-js': () =>
-  {
-    return {
-      pattern: '^(.+).js$',
-      errorMessage: {
-        pattern: `should be a file path string ending in '.js'`
-      }
-    };
-  },
-  'pattern-file-json': () =>
-  {
-    return {
-      pattern: '^(.+).json$',
-      errorMessage: {
-        pattern: `should be a file path string ending in '.json'`
-      }
-    };
-  },
-  'pattern-email': () =>   // https://www.codespot.org/javascript-email-validation/
+  'pattern-email': () =>     // https://www.codespot.org/javascript-email-validation/
   {
     return {
       pattern: '^(([^<>()\\[\\]\\\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@"]+)*)|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$',
       errorMessage: {
         pattern: `should be a string that is a valid email address`
+      }
+    };
+  },
+  'pattern-file-css': () =>  // See: unit tests - https://regex101.com/r/z998Bw/1
+  {
+    return {
+      pattern: '^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.css$',
+      errorMessage: {
+        pattern: `should be a file path string ending in '.css'`
+      }
+    };
+  },
+  'pattern-file-db': () =>  // See: unit tests - https://regex101.com/r/BjuMOT/1
+  {
+    return {
+      pattern: '^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$',
+      errorMessage: {
+        pattern: `should be a file path string ending in '.db'`
+      }
+    };
+  },
+  'pattern-file-js': () =>  // See: unit tests - https://regex101.com/r/vgKsj3/2
+  {
+    return {
+      pattern: '^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$',
+      errorMessage: {
+        pattern: `should be a file path string ending in '.js'`
+      }
+    };
+  },
+  'pattern-file-json': () =>  // See: unit tests - https://regex101.com/r/YcyGLh/1
+  {
+    return {
+      pattern: '^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$',
+      errorMessage: {
+        pattern: `should be a file path string ending in '.json'`
       }
     };
   },

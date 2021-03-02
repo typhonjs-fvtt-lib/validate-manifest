@@ -122,7 +122,7 @@
             ],
             "title": "Pack Path",
             "type": "string",
-            "pattern": "^(.+).db$",
+            "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$",
             "errorMessage": {
               "pattern": "should be a file path string ending in '.db'"
             }
