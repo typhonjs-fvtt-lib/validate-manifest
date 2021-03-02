@@ -4708,7 +4708,7 @@ const schema117 = {
         examples: ["./packs/pack-name.db"],
         title: "Pack Path",
         type: "string",
-        pattern: "^(.+).db$",
+        pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$",
         errorMessage: {
           pattern: "should be a file path string ending in '.db'",
         },
@@ -4890,7 +4890,7 @@ const schema103 = {
     examples: ["index.js"],
     title: "ES Module File",
     type: "string",
-    pattern: "^(.+).js$",
+    pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$",
     errorMessage: { pattern: "should be a file path string ending in '.js'" },
   },
   title: "ES Modules",
@@ -4920,7 +4920,7 @@ const schema104 = {
         examples: ["lang/en.json"],
         title: "A string value",
         type: "string",
-        pattern: "^(.+).json$",
+        pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$",
         errorMessage: {
           pattern: "should be a file path string ending in '.json'",
         },
@@ -4971,7 +4971,7 @@ const schema109 = {
     examples: ["ascript.js"],
     title: "Script Entry",
     type: "string",
-    pattern: "^(.+).js$",
+    pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$",
     errorMessage: { pattern: "should be a file path string ending in '.js'" },
   },
   title: "Scripts",
@@ -4993,7 +4993,7 @@ const schema111 = {
     examples: ["styles.css"],
     title: "Style Entry",
     type: "string",
-    pattern: "^(.+).css$",
+    pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.css$",
     errorMessage: { pattern: "should be a file path string ending in '.css'" },
   },
   title: "Styles",
@@ -5036,10 +5036,19 @@ const pattern3 = new RegExp(
   "^(?:(?:(?:https?|ftp):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/(.+).zip$",
   "u"
 );
-const pattern4 = new RegExp("^(.+).js$", "u");
-const pattern5 = new RegExp("^(.+).json$", "u");
+const pattern4 = new RegExp(
+  "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$",
+  "u"
+);
+const pattern5 = new RegExp(
+  "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$",
+  "u"
+);
 const pattern7 = new RegExp("^([a-z0-9]+-?)*[a-z0-9]+$", "u");
-const pattern9 = new RegExp("^(.+).css$", "u");
+const pattern9 = new RegExp(
+  "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.css$",
+  "u"
+);
 function validate66(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
@@ -5662,8 +5671,13 @@ function validate66(
                 dataPath: dataPath + "/esmodules/" + i1,
                 schemaPath:
                   "../../definitions/strict/base.json#/definitions/esmodules/items/pattern",
-                params: { pattern: "^(.+).js$" },
-                message: 'should match pattern "' + "^(.+).js$" + '"',
+                params: {
+                  pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$",
+                },
+                message:
+                  'should match pattern "' +
+                  "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$" +
+                  '"',
               };
               if (vErrors === null) {
                 vErrors = [err34];
@@ -5854,8 +5868,14 @@ function validate66(
                     dataPath: dataPath + "/languages/" + i2 + "/path",
                     schemaPath:
                       "../../definitions/strict/base.json#/definitions/languages/items/properties/path/pattern",
-                    params: { pattern: "^(.+).json$" },
-                    message: 'should match pattern "' + "^(.+).json$" + '"',
+                    params: {
+                      pattern:
+                        "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$",
+                    },
+                    message:
+                      'should match pattern "' +
+                      "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$" +
+                      '"',
                   };
                   if (vErrors === null) {
                     vErrors = [err45];
@@ -6188,8 +6208,13 @@ function validate66(
                 dataPath: dataPath + "/scripts/" + i3,
                 schemaPath:
                   "../../definitions/strict/base.json#/definitions/scripts/items/pattern",
-                params: { pattern: "^(.+).js$" },
-                message: 'should match pattern "' + "^(.+).js$" + '"',
+                params: {
+                  pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$",
+                },
+                message:
+                  'should match pattern "' +
+                  "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$" +
+                  '"',
               };
               if (vErrors === null) {
                 vErrors = [err64];
@@ -6311,8 +6336,13 @@ function validate66(
                 dataPath: dataPath + "/styles/" + i4,
                 schemaPath:
                   "../../definitions/strict/base.json#/definitions/styles/items/pattern",
-                params: { pattern: "^(.+).css$" },
-                message: 'should match pattern "' + "^(.+).css$" + '"',
+                params: {
+                  pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.css$",
+                },
+                message:
+                  'should match pattern "' +
+                  "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.css$" +
+                  '"',
               };
               if (vErrors === null) {
                 vErrors = [err71];
@@ -6659,7 +6689,10 @@ const pattern11 = new RegExp(
   "u"
 );
 const pattern12 = new RegExp("^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$", "u");
-const pattern16 = new RegExp("^(.+).db$", "u");
+const pattern16 = new RegExp(
+  "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$",
+  "u"
+);
 function validate65(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
@@ -7279,8 +7312,14 @@ function validate65(
                     dataPath: dataPath + "/packs/" + i0 + "/path",
                     schemaPath:
                       "../../definitions/strict/module.json#/definitions/packs/items/properties/path/pattern",
-                    params: { pattern: "^(.+).db$" },
-                    message: 'should match pattern "' + "^(.+).db$" + '"',
+                    params: {
+                      pattern:
+                        "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$",
+                    },
+                    message:
+                      'should match pattern "' +
+                      "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$" +
+                      '"',
                   };
                   if (vErrors === null) {
                     vErrors = [err31];
@@ -10855,7 +10894,7 @@ const schema144 = {
         examples: ["./packs/pack-name.db"],
         title: "Pack Path",
         type: "string",
-        pattern: "^(.+).db$",
+        pattern: "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$",
         errorMessage: {
           pattern: "should be a file path string ending in '.db'",
         },
@@ -11470,8 +11509,14 @@ function validate88(
                     dataPath: dataPath + "/packs/" + i0 + "/path",
                     schemaPath:
                       "../../definitions/strict/system.json#/definitions/packs/items/properties/path/pattern",
-                    params: { pattern: "^(.+).db$" },
-                    message: 'should match pattern "' + "^(.+).db$" + '"',
+                    params: {
+                      pattern:
+                        "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$",
+                    },
+                    message:
+                      'should match pattern "' +
+                      "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$" +
+                      '"',
                   };
                   if (vErrors === null) {
                     vErrors = [err30];
