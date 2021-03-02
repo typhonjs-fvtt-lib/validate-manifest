@@ -1,4 +1,5 @@
-/packs/0/path should be a file path string ending in '.db'
+/packs/0/path should be a relative file path from the package root ending in
+'.db'
   12 |       "module": "a-module",
   13 |       "system": "system-name",
 > 14 |       "path": "./packs/notdbfile",

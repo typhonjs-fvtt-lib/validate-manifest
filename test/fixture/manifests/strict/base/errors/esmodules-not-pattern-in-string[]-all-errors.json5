@@ -17,7 +17,7 @@
             }
          ]
       },
-      "message": "should be a file path string ending in '.js'"
+      "message": "should be a relative file path from the package root ending in '.js'"
    },
    {
       "keyword": "errorMessage",
@@ -37,7 +37,7 @@
             }
          ]
       },
-      "message": "should be a file path string ending in '.js'"
+      "message": "should be a relative file path from the package root ending in '.js'"
    },
    {
       "keyword": "errorMessage",
@@ -57,7 +57,7 @@
             }
          ]
       },
-      "message": "should be a file path string ending in '.js'"
+      "message": "should be a relative file path from the package root ending in '.js'"
    },
    {
       "keyword": "errorMessage",
@@ -77,7 +77,7 @@
             }
          ]
       },
-      "message": "should be a file path string ending in '.js'"
+      "message": "should be a relative file path from the package root ending in '.js'"
    },
    {
       "keyword": "errorMessage",
@@ -97,7 +97,7 @@
             }
          ]
       },
-      "message": "should be a file path string ending in '.js'"
+      "message": "should be a relative file path from the package root ending in '.js'"
    },
    {
       "keyword": "errorMessage",
@@ -117,7 +117,7 @@
             }
          ]
       },
-      "message": "should be a file path string ending in '.js'"
+      "message": "should be a relative file path from the package root ending in '.js'"
    },
    {
       "keyword": "errorMessage",
@@ -137,7 +137,7 @@
             }
          ]
       },
-      "message": "should be a file path string ending in '.js'"
+      "message": "should be a relative file path from the package root ending in '.js'"
    },
    {
       "keyword": "errorMessage",
@@ -157,7 +157,7 @@
             }
          ]
       },
-      "message": "should be a file path string ending in '.js'"
+      "message": "should be a relative file path from the package root ending in '.js'"
    },
    {
       "keyword": "errorMessage",
@@ -177,7 +177,7 @@
             }
          ]
       },
-      "message": "should be a file path string ending in '.js'"
+      "message": "should be a relative file path from the package root ending in '.js'"
    },
    {
       "keyword": "errorMessage",
@@ -197,6 +197,6 @@
             }
          ]
       },
-      "message": "should be a file path string ending in '.js'"
+      "message": "should be a relative file path from the package root ending in '.js'"
    }
 ]

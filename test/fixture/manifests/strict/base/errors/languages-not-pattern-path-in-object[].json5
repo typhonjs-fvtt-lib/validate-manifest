@@ -17,6 +17,6 @@
             }
          ]
       },
-      "message": "should be a file path string ending in '.json'"
+      "message": "should be a relative file path from the package root ending in '.json'"
    }
 ]

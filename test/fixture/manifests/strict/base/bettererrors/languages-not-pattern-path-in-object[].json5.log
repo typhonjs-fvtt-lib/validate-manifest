@@ -1,4 +1,5 @@
-/languages/0/path should be a file path string ending in '.json'
+/languages/0/path should be a relative file path from the package root ending in
+'.json'
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "languages": [{ "lang": "en", "name": "English", "path": "lang/en.jso" }]

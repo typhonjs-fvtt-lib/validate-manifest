@@ -1,4 +1,5 @@
-/esmodules/0 should be a file path string ending in '.js'
+/esmodules/0 should be a relative file path from the package root ending in
+'.js'
   11 |   "minimumCoreVersion": "0.7.5",
   12 |   "esmodules": [
 > 13 |     "no_js_extension",
@@ -7,7 +8,8 @@
   15 |     "../../a.js",
   16 |     "/a.js",
 
-/esmodules/1 should be a file path string ending in '.js'
+/esmodules/1 should be a relative file path from the package root ending in
+'.js'
   12 |   "esmodules": [
   13 |     "no_js_extension",
 > 14 |     "../a.js",
@@ -16,7 +18,8 @@
   16 |     "/a.js",
   17 |     "a//b.js",
 
-/esmodules/2 should be a file path string ending in '.js'
+/esmodules/2 should be a relative file path from the package root ending in
+'.js'
   13 |     "no_js_extension",
   14 |     "../a.js",
 > 15 |     "../../a.js",
@@ -25,7 +28,8 @@
   17 |     "a//b.js",
   18 |     ".\\a.js",
 
-/esmodules/3 should be a file path string ending in '.js'
+/esmodules/3 should be a relative file path from the package root ending in
+'.js'
   14 |     "../a.js",
   15 |     "../../a.js",
 > 16 |     "/a.js",
@@ -34,7 +38,8 @@
   18 |     ".\\a.js",
   19 |     "\\a.js",
 
-/esmodules/4 should be a file path string ending in '.js'
+/esmodules/4 should be a relative file path from the package root ending in
+'.js'
   15 |     "../../a.js",
   16 |     "/a.js",
 > 17 |     "a//b.js",
@@ -43,7 +48,8 @@
   19 |     "\\a.js",
   20 |     "\\a\\b.js",
 
-/esmodules/5 should be a file path string ending in '.js'
+/esmodules/5 should be a relative file path from the package root ending in
+'.js'
   16 |     "/a.js",
   17 |     "a//b.js",
 > 18 |     ".\\a.js",
@@ -52,7 +58,8 @@
   20 |     "\\a\\b.js",
   21 |     "a/.js",
 
-/esmodules/6 should be a file path string ending in '.js'
+/esmodules/6 should be a relative file path from the package root ending in
+'.js'
   17 |     "a//b.js",
   18 |     ".\\a.js",
 > 19 |     "\\a.js",
@@ -61,7 +68,8 @@
   21 |     "a/.js",
   22 |     ".js"
 
-/esmodules/7 should be a file path string ending in '.js'
+/esmodules/7 should be a relative file path from the package root ending in
+'.js'
   18 |     ".\\a.js",
   19 |     "\\a.js",
 > 20 |     "\\a\\b.js",
@@ -70,7 +78,8 @@
   22 |     ".js"
   23 |   ]
 
-/esmodules/8 should be a file path string ending in '.js'
+/esmodules/8 should be a relative file path from the package root ending in
+'.js'
   19 |     "\\a.js",
   20 |     "\\a\\b.js",
 > 21 |     "a/.js",
@@ -79,7 +88,8 @@
   23 |   ]
   24 | }
 
-/esmodules/9 should be a file path string ending in '.js'
+/esmodules/9 should be a relative file path from the package root ending in
+'.js'
   20 |     "\\a\\b.js",
   21 |     "a/.js",
 > 22 |     ".js"

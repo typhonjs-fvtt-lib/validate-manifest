@@ -1,4 +1,4 @@
-/scripts/0 should be a file path string ending in '.js'
+/scripts/0 should be a relative file path from the package root ending in '.js'
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "scripts": ["no_js_extension"]
