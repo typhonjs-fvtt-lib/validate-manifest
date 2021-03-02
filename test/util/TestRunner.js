@@ -74,8 +74,7 @@ class TestRunner
 
                const betterErrorFilepath = `${dirPath}${path.sep}bettererrors${path.sep}${key}.log`;
 
-               // if (!fs.existsSync(betterErrorFilepath) && test.createErrorData)
-               if (test.createErrorData)
+               if (!fs.existsSync(betterErrorFilepath) && test.createErrorData)
                {
                   fs.writeFileSync(betterErrorFilepath, BetterErrors.toString(BetterErrors.asArray(testFunction.errors,
                    { file: invalid.file, highlightCode: false, wrapLength: 80 })));

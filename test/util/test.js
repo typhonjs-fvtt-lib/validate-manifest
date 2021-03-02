@@ -35,7 +35,7 @@ module.exports = {
    invalid: true,
 
    // When error data does not exist it will be created when TestUtil.invalid is invoked.
-   createErrorData: true,
+   createErrorData: false,
 
    // Defines the function to run and the associated categories, type, and if it is strict.
    functionData: {
