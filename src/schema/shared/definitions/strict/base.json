@@ -137,7 +137,7 @@
             "examples": [
               "lang/en.json"
             ],
-            "title": "A string value",
+            "title": "Language Path",
             "type": "string",
             "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$",
             "errorMessage": {
@@ -161,8 +161,17 @@
       "examples": [
         "LICENSE"
       ],
-      "title": "A string value",
-      "type": "string"
+      "title": "License",
+      "type": "string",
+      "oneOf": [
+        {
+          "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+(\\.[^\\/\\\\]+)?$"
+        },
+        {
+          "pattern": "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$"
+        }
+      ],
+      "errorMessage": "should be a relative file path from the package root or a public URL"
     },
     "minimumCoreVersion": {
       "description": "Specify the latest Foundry VTT version which this package features are confirmed to function properly.",
@@ -189,13 +198,22 @@
       }
     },
     "readme": {
-      "description": "A path to a readme file relative to the root module folder or a publicly accessible URL which contains instructions or information about the package.",
+      "description": "A path to a readme file relative to the root package folder or a publicly accessible URL which contains instructions or information about the package.",
       "examples": [
         "README.md",
         "https://github.com/my-user-or-org/my-package/blob/main/README.md"
       ],
       "title": "Read Me",
-      "type": "string"
+      "type": "string",
+      "oneOf": [
+        {
+          "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+(\\.[^\\/\\\\]+)?$"
+        },
+        {
+          "pattern": "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?$"
+        }
+      ],
+      "errorMessage": "should be a relative file path from the package root or a public URL"
     },
     "scripts": {
       "description": "An array of JavaScript file paths included whenever this package is enabled. Each listed script path should be relative to the package root directory. All scripts which exist will be automatically included in the game session and loaded in their listed order.",

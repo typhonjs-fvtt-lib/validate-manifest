@@ -49,7 +49,7 @@
       "$ref": "../../definitions/strict/base.json#/definitions/name"
     },
     "readme": {
-      "$ref": "../../definitions/loose/base.json#/definitions/readme"
+      "$ref": "../../definitions/strict/base.json#/definitions/readme"
     },
     "scripts": {
       "$ref": "../../definitions/strict/base.json#/definitions/scripts"

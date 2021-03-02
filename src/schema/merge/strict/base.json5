@@ -38,6 +38,10 @@
         }
       }
     },
+    "license": {
+      // Replace with pattern-oneof-file-or-url include
+      "$$include": { "target": "pattern-oneof-file-or-url" }
+    },
     "minimumCoreVersion": {
       // Replace with pattern-semver include
       "$$include": { "target": "pattern-semver" }
@@ -45,6 +49,10 @@
     "name": {
       // Replace with pattern-package-name include
       "$$include": { "target": "pattern-package-name" }
+    },
+    "readme": {
+      // Replace with pattern-oneof-file-or-url include
+      "$$include": { "target": "pattern-oneof-file-or-url" }
     },
     "scripts": {
       "items": {

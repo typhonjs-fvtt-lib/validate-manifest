@@ -120,7 +120,7 @@
             "examples": [
               "lang/en.json"
             ],
-            "title": "A string value",
+            "title": "Language Path",
             "type": "string"
           }
         },
@@ -140,7 +140,7 @@
       "examples": [
         "LICENSE"
       ],
-      "title": "A string value",
+      "title": "License",
       "type": "string"
     },
     "minimumCoreVersion": {
@@ -160,7 +160,7 @@
       "type": "string"
     },
     "readme": {
-      "description": "A path to a readme file relative to the root module folder or a publicly accessible URL which contains instructions or information about the package.",
+      "description": "A path to a readme file relative to the root package folder or a publicly accessible URL which contains instructions or information about the package.",
       "examples": [
         "README.md",
         "https://github.com/my-user-or-org/my-package/blob/main/README.md"
