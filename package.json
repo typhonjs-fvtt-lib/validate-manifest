@@ -11,7 +11,7 @@
     "@apidevtools/json-schema-ref-parser": "^9.0.0",
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
-    "@typhonjs-node-utils/better-ajv-errors": "^0.0.4",
+    "@typhonjs-node-utils/better-ajv-errors": "^0.0.5",
     "ajv": "^7.0.0",
     "ajv-cli": "^4.0.0",
     "ajv-errors": "^2.0.0",

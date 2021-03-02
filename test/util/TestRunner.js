@@ -71,6 +71,7 @@ export default class TestRunner
 
                const betterErrorFilepath = `${dirPath}${path.sep}bettererrors${path.sep}${key}.log`;
 
+               // if (test.createErrorData)   Always write better errors files.
                if (!fs.existsSync(betterErrorFilepath) && test.createErrorData)
                {
                   fs.writeFileSync(betterErrorFilepath, BetterErrors.toString(BetterErrors.asArray(testFunction.errors,
