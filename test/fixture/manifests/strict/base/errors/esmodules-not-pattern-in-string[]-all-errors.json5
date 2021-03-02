@@ -1,0 +1,202 @@
+[
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/esmodules/0",
+      "schemaPath": "#/definitions/esmodules/items/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/esmodules/0",
+               "schemaPath": "#/definitions/esmodules/items/pattern",
+               "params": {
+                  "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
+               },
+               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "should be a file path string ending in '.js'"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/esmodules/1",
+      "schemaPath": "#/definitions/esmodules/items/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/esmodules/1",
+               "schemaPath": "#/definitions/esmodules/items/pattern",
+               "params": {
+                  "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
+               },
+               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "should be a file path string ending in '.js'"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/esmodules/2",
+      "schemaPath": "#/definitions/esmodules/items/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/esmodules/2",
+               "schemaPath": "#/definitions/esmodules/items/pattern",
+               "params": {
+                  "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
+               },
+               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "should be a file path string ending in '.js'"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/esmodules/3",
+      "schemaPath": "#/definitions/esmodules/items/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/esmodules/3",
+               "schemaPath": "#/definitions/esmodules/items/pattern",
+               "params": {
+                  "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
+               },
+               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "should be a file path string ending in '.js'"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/esmodules/4",
+      "schemaPath": "#/definitions/esmodules/items/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/esmodules/4",
+               "schemaPath": "#/definitions/esmodules/items/pattern",
+               "params": {
+                  "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
+               },
+               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "should be a file path string ending in '.js'"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/esmodules/5",
+      "schemaPath": "#/definitions/esmodules/items/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/esmodules/5",
+               "schemaPath": "#/definitions/esmodules/items/pattern",
+               "params": {
+                  "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
+               },
+               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "should be a file path string ending in '.js'"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/esmodules/6",
+      "schemaPath": "#/definitions/esmodules/items/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/esmodules/6",
+               "schemaPath": "#/definitions/esmodules/items/pattern",
+               "params": {
+                  "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
+               },
+               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "should be a file path string ending in '.js'"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/esmodules/7",
+      "schemaPath": "#/definitions/esmodules/items/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/esmodules/7",
+               "schemaPath": "#/definitions/esmodules/items/pattern",
+               "params": {
+                  "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
+               },
+               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "should be a file path string ending in '.js'"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/esmodules/8",
+      "schemaPath": "#/definitions/esmodules/items/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/esmodules/8",
+               "schemaPath": "#/definitions/esmodules/items/pattern",
+               "params": {
+                  "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
+               },
+               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "should be a file path string ending in '.js'"
+   },
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/esmodules/9",
+      "schemaPath": "#/definitions/esmodules/items/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/esmodules/9",
+               "schemaPath": "#/definitions/esmodules/items/pattern",
+               "params": {
+                  "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
+               },
+               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "should be a file path string ending in '.js'"
+   }
+]

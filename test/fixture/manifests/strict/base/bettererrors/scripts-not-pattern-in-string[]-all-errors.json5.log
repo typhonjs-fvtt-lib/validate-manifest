@@ -1,0 +1,89 @@
+/scripts/0 should be a file path string ending in '.js'
+   7 |   "minimumCoreVersion": "0.7.5",
+   8 |   "scripts": [
+>  9 |     "no_js_extension",
+     |     ^^^^^^^^^^^^^^^^^
+  10 |     "../a.js",
+  11 |     "../../a.js",
+  12 |     "/a.js",
+
+/scripts/1 should be a file path string ending in '.js'
+   8 |   "scripts": [
+   9 |     "no_js_extension",
+> 10 |     "../a.js",
+     |     ^^^^^^^^^
+  11 |     "../../a.js",
+  12 |     "/a.js",
+  13 |     "a//b.js",
+
+/scripts/2 should be a file path string ending in '.js'
+   9 |     "no_js_extension",
+  10 |     "../a.js",
+> 11 |     "../../a.js",
+     |     ^^^^^^^^^^^^
+  12 |     "/a.js",
+  13 |     "a//b.js",
+  14 |     ".\\a.js",
+
+/scripts/3 should be a file path string ending in '.js'
+  10 |     "../a.js",
+  11 |     "../../a.js",
+> 12 |     "/a.js",
+     |     ^^^^^^^
+  13 |     "a//b.js",
+  14 |     ".\\a.js",
+  15 |     "\\a.js",
+
+/scripts/4 should be a file path string ending in '.js'
+  11 |     "../../a.js",
+  12 |     "/a.js",
+> 13 |     "a//b.js",
+     |     ^^^^^^^^^
+  14 |     ".\\a.js",
+  15 |     "\\a.js",
+  16 |     "\\a\\b.js",
+
+/scripts/5 should be a file path string ending in '.js'
+  12 |     "/a.js",
+  13 |     "a//b.js",
+> 14 |     ".\\a.js",
+     |     ^^^^^^^^^
+  15 |     "\\a.js",
+  16 |     "\\a\\b.js",
+  17 |     "a/.js",
+
+/scripts/6 should be a file path string ending in '.js'
+  13 |     "a//b.js",
+  14 |     ".\\a.js",
+> 15 |     "\\a.js",
+     |     ^^^^^^^^
+  16 |     "\\a\\b.js",
+  17 |     "a/.js",
+  18 |     ".js"
+
+/scripts/7 should be a file path string ending in '.js'
+  14 |     ".\\a.js",
+  15 |     "\\a.js",
+> 16 |     "\\a\\b.js",
+     |     ^^^^^^^^^^^
+  17 |     "a/.js",
+  18 |     ".js"
+  19 |   ]
+
+/scripts/8 should be a file path string ending in '.js'
+  15 |     "\\a.js",
+  16 |     "\\a\\b.js",
+> 17 |     "a/.js",
+     |     ^^^^^^^
+  18 |     ".js"
+  19 |   ]
+  20 | }
+
+/scripts/9 should be a file path string ending in '.js'
+  16 |     "\\a\\b.js",
+  17 |     "a/.js",
+> 18 |     ".js"
+     |     ^^^^^
+  19 |   ]
+  20 | }
+  21 |

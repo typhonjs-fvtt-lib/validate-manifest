@@ -10,9 +10,9 @@
                "dataPath": "/styles/0",
                "schemaPath": "#/definitions/styles/items/pattern",
                "params": {
-                  "pattern": "^(.+).css$"
+                  "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.css$"
                },
-               "message": "should match pattern \"^(.+).css$\"",
+               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.css$\"",
                "emUsed": true
             }
          ]

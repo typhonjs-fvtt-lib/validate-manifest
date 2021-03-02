@@ -10,9 +10,9 @@
                "dataPath": "/languages/0/path",
                "schemaPath": "#/definitions/languages/items/properties/path/pattern",
                "params": {
-                  "pattern": "^(.+).json$"
+                  "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$"
                },
-               "message": "should match pattern \"^(.+).json$\"",
+               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$\"",
                "emUsed": true
             }
          ]

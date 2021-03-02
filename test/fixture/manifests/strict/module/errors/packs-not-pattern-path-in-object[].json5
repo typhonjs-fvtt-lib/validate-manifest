@@ -10,9 +10,9 @@
                "dataPath": "/packs/0/path",
                "schemaPath": "#/definitions/packs/items/properties/path/pattern",
                "params": {
-                  "pattern": "^(.+).db$"
+                  "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$"
                },
-               "message": "should match pattern \"^(.+).db$\"",
+               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.db$\"",
                "emUsed": true
             }
          ]

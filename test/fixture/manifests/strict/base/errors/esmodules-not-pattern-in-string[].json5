@@ -10,9 +10,9 @@
                "dataPath": "/esmodules/0",
                "schemaPath": "#/definitions/esmodules/items/pattern",
                "params": {
-                  "pattern": "^(.+).js$"
+                  "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
                },
-               "message": "should match pattern \"^(.+).js$\"",
+               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
                "emUsed": true
             }
          ]
