@@ -8,7 +8,7 @@ import { terser } from 'rollup-plugin-terser';
 const s_DEPLOY_PATH = './dist';
 
 // Produce sourcemaps / minify or not
-const s_SOURCEMAP = false;
+const s_SOURCEMAP = true;
 const s_MINIFY = true;
 
 const outputPlugins = s_MINIFY ? [terser()] : [];
@@ -18,15 +18,7 @@ export default () =>
    return [{
       input: 'dist-intermediate/validators.js',
       output: [{
-         exports: 'named',
-         file: `${s_DEPLOY_PATH}${path.sep}cjs${path.sep}validators.js`,
-         format: 'cjs',
-         plugins: outputPlugins,
-         preferConst: true,
-         sourcemap: s_SOURCEMAP,
-      },
-      {
-         file: `${s_DEPLOY_PATH}${path.sep}esm${path.sep}validators.js`,
+         file: `${s_DEPLOY_PATH}${path.sep}validators.js`,
          format: 'es',
          plugins: outputPlugins,
          preferConst: true,

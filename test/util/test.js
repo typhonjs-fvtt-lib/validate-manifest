@@ -1,7 +1,7 @@
 /**
  * Defines which tests will be run by group and type.
  */
-module.exports = {
+export default {
    functionName: {
       validateModule: true,
       validateModuleStrict: true,

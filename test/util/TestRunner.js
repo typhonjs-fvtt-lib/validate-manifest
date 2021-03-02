@@ -1,11 +1,13 @@
-const fs                = require('fs');
-const path              = require('path');
+import * as validators     from '../../dist/validators.js';
 
-const BetterErrors      = require('@typhonjs-node-utils/better-ajv-errors');
-const chai              = require('chai');
-const stripJsonComments = require('strip-json-comments');
+import fs                  from 'fs';
+import path                from 'path';
 
-const test              = require('./test');
+import BetterErrors        from '@typhonjs-node-utils/better-ajv-errors';
+import chai                from 'chai';
+import stripJsonComments   from 'strip-json-comments';
+
+import test                from './test.js';
 
 /**
  * Captures the right hand schema path data for sanitizing error data.
@@ -13,15 +15,10 @@ const test              = require('./test');
  */
 const s_SCHEMAPATH_REGEX = /^.*(#.*)$/;
 
-// Test intermediate functions. May give more detailed code coverage
-//  const s_VALIDATORS = '../../dist-intermediate/validators';
-
-const s_VALIDATORS = '../../dist/cjs/validators';
-
 /**
  * Provides convenience methods to setup Mocha tests based on JSON data files.
  */
-class TestRunner
+export default class TestRunner
 {
    /**
     * Handles invalid validation tests opening a source JSON file and comparing validation errors to stored error data.
@@ -177,7 +174,7 @@ class TestRunner
       {
          if (!test.functionName[functionName]) { continue; }
 
-         const testFunction = require(s_VALIDATORS)[functionName];
+         const testFunction = validators[functionName];
 
          const data = test.functionData[functionName];
 
@@ -251,5 +248,3 @@ class TestRunner
       }
    }
 }
-
-module.exports = TestRunner;
