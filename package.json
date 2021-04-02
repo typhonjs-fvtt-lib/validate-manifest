@@ -30,8 +30,9 @@
     "node": ">=14.0.0"
   },
   "files": [
-    "./dist/validators.js",
-    "/schema"
+    "/dist",
+    "/schema",
+    "src/plugin/ValidateManifest.js"
   ],
   "homepage": "https://github.com/typhonjs-fvtt/validate-manifest",
   "keywords": [
