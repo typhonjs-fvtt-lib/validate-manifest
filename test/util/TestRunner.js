@@ -11,6 +11,7 @@ import test                from './test.js';
 
 /**
  * Captures the right hand schema path data for sanitizing error data.
+ *
  * @type {RegExp}
  */
 const s_SCHEMAPATH_REGEX = /^.*(#.*)$/;
@@ -23,7 +24,7 @@ export default class TestRunner
    /**
     * Handles invalid validation tests opening a source JSON file and comparing validation errors to stored error data.
     *
-    * @param {function} testFunction - The ajv validation function to test.
+    * @param {Function} testFunction - The ajv validation function to test.
     * @param {string}   dirPath - The directory to open error and invalid data.
     * @param {object}   functionDesc - Data describing the function.
     */
@@ -95,7 +96,7 @@ export default class TestRunner
     * @param {string} dir - Directory to read.
     * @param {string} extension - File extension to read.
     *
-    * @returns {Map<string, object>}
+    * @returns {Map<string, object>} A Map by file name and loaded JSON object.
     */
    static loadFiles(dir = '.', extension = '.json5')
    {
@@ -217,7 +218,7 @@ export default class TestRunner
    /**
     * Handles valid validation tests opening a source JSON file and expecting it to validate.
     *
-    * @param {function} testFunction - The ajv validation function to test.
+    * @param {Function} testFunction - The ajv validation function to test.
     * @param {string}   dirPath - The directory to open valid data.
     * @param {object}   functionDesc - Data describing the function.
     */

@@ -7,25 +7,24 @@
   "type": "module",
   "main": "./dist/validators.js",
   "module": "./dist/validators.js",
+  "exports": {
+    ".": "./dist/validators.js",
+    "./ValidateManifest": "./src/plugin/ValidateManifest.js"
+  },
   "devDependencies": {
     "@apidevtools/json-schema-ref-parser": "^9.0.0",
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
     "@typhonjs-node-utils/better-ajv-errors": "^0.0.5",
+    "@typhonjs-node-utils/build-test": "^0.1.0",
     "ajv": "^7.0.0",
     "ajv-cli": "^4.0.0",
     "ajv-errors": "^2.0.0",
-    "c8": "^7.0.0",
-    "chai": "^4.0.0",
-    "codecov": "^3.0.0",
     "deepmerge": "^4.0.0",
-    "eslint": "^7.0.0",
-    "mocha": "^8.0.0",
     "prettier": "^2.0.0",
     "rollup": "^2.0.0",
     "rollup-plugin-terser": "^7.0.0",
-    "strip-json-comments": "^3.0.0",
-    "typhonjs-config-eslint": "^0.6.0"
+    "typhonjs-plugin-manager": "^0.2.0"
   },
   "engines": {
     "node": ">=14.0.0"

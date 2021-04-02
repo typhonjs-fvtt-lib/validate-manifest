@@ -3091,6 +3091,12 @@ const schema71 = {
       title: "Author Discord",
       type: "string",
     },
+    "ko-fi": {
+      description: "A Ko-fi user name.",
+      examples: ["kofiName"],
+      title: "Author Ko-fi",
+      type: "string",
+    },
     patreon: {
       description: "A Patreon user name.",
       examples: ["patreonName"],
@@ -3225,13 +3231,13 @@ function validate44(
             errors++;
           }
         }
-        if (data0.patreon !== undefined) {
-          if (typeof data0.patreon !== "string") {
+        if (data0["ko-fi"] !== undefined) {
+          if (typeof data0["ko-fi"] !== "string") {
             const err6 = {
               keyword: "type",
-              dataPath: dataPath + "/" + i0 + "/patreon",
+              dataPath: dataPath + "/" + i0 + "/ko-fi",
               schemaPath:
-                "#/definitions/properties-author+/properties/patreon/type",
+                "#/definitions/properties-author+/properties/ko-fi/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -3243,13 +3249,13 @@ function validate44(
             errors++;
           }
         }
-        if (data0.reddit !== undefined) {
-          if (typeof data0.reddit !== "string") {
+        if (data0.patreon !== undefined) {
+          if (typeof data0.patreon !== "string") {
             const err7 = {
               keyword: "type",
-              dataPath: dataPath + "/" + i0 + "/reddit",
+              dataPath: dataPath + "/" + i0 + "/patreon",
               schemaPath:
-                "#/definitions/properties-author+/properties/reddit/type",
+                "#/definitions/properties-author+/properties/patreon/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -3261,13 +3267,13 @@ function validate44(
             errors++;
           }
         }
-        if (data0.twitter !== undefined) {
-          if (typeof data0.twitter !== "string") {
+        if (data0.reddit !== undefined) {
+          if (typeof data0.reddit !== "string") {
             const err8 = {
               keyword: "type",
-              dataPath: dataPath + "/" + i0 + "/twitter",
+              dataPath: dataPath + "/" + i0 + "/reddit",
               schemaPath:
-                "#/definitions/properties-author+/properties/twitter/type",
+                "#/definitions/properties-author+/properties/reddit/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -3279,10 +3285,28 @@ function validate44(
             errors++;
           }
         }
+        if (data0.twitter !== undefined) {
+          if (typeof data0.twitter !== "string") {
+            const err9 = {
+              keyword: "type",
+              dataPath: dataPath + "/" + i0 + "/twitter",
+              schemaPath:
+                "#/definitions/properties-author+/properties/twitter/type",
+              params: { type: "string" },
+              message: "should be string",
+            };
+            if (vErrors === null) {
+              vErrors = [err9];
+            } else {
+              vErrors.push(err9);
+            }
+            errors++;
+          }
+        }
       }
     }
   } else {
-    const err9 = {
+    const err10 = {
       keyword: "type",
       dataPath,
       schemaPath: "#/type",
@@ -3290,9 +3314,9 @@ function validate44(
       message: "should be array",
     };
     if (vErrors === null) {
-      vErrors = [err9];
+      vErrors = [err10];
     } else {
-      vErrors.push(err9);
+      vErrors.push(err10);
     }
     errors++;
   }
@@ -4374,13 +4398,13 @@ function validate60(
             errors++;
           }
         }
-        if (data0.patreon !== undefined) {
-          if (typeof data0.patreon !== "string") {
+        if (data0["ko-fi"] !== undefined) {
+          if (typeof data0["ko-fi"] !== "string") {
             const err6 = {
               keyword: "type",
-              dataPath: dataPath + "/" + i0 + "/patreon",
+              dataPath: dataPath + "/" + i0 + "/ko-fi",
               schemaPath:
-                "#/definitions/properties-author+/properties/patreon/type",
+                "#/definitions/properties-author+/properties/ko-fi/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -4392,13 +4416,13 @@ function validate60(
             errors++;
           }
         }
-        if (data0.reddit !== undefined) {
-          if (typeof data0.reddit !== "string") {
+        if (data0.patreon !== undefined) {
+          if (typeof data0.patreon !== "string") {
             const err7 = {
               keyword: "type",
-              dataPath: dataPath + "/" + i0 + "/reddit",
+              dataPath: dataPath + "/" + i0 + "/patreon",
               schemaPath:
-                "#/definitions/properties-author+/properties/reddit/type",
+                "#/definitions/properties-author+/properties/patreon/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -4410,13 +4434,13 @@ function validate60(
             errors++;
           }
         }
-        if (data0.twitter !== undefined) {
-          if (typeof data0.twitter !== "string") {
+        if (data0.reddit !== undefined) {
+          if (typeof data0.reddit !== "string") {
             const err8 = {
               keyword: "type",
-              dataPath: dataPath + "/" + i0 + "/twitter",
+              dataPath: dataPath + "/" + i0 + "/reddit",
               schemaPath:
-                "#/definitions/properties-author+/properties/twitter/type",
+                "#/definitions/properties-author+/properties/reddit/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -4428,10 +4452,28 @@ function validate60(
             errors++;
           }
         }
+        if (data0.twitter !== undefined) {
+          if (typeof data0.twitter !== "string") {
+            const err9 = {
+              keyword: "type",
+              dataPath: dataPath + "/" + i0 + "/twitter",
+              schemaPath:
+                "#/definitions/properties-author+/properties/twitter/type",
+              params: { type: "string" },
+              message: "should be string",
+            };
+            if (vErrors === null) {
+              vErrors = [err9];
+            } else {
+              vErrors.push(err9);
+            }
+            errors++;
+          }
+        }
       }
     }
   } else {
-    const err9 = {
+    const err10 = {
       keyword: "type",
       dataPath,
       schemaPath: "#/type",
@@ -4439,9 +4481,9 @@ function validate60(
       message: "should be array",
     };
     if (vErrors === null) {
-      vErrors = [err9];
+      vErrors = [err10];
     } else {
-      vErrors.push(err9);
+      vErrors.push(err10);
     }
     errors++;
   }
@@ -10367,6 +10409,12 @@ const schema135 = {
         pattern: "should be a string that is a valid Discord user name",
       },
     },
+    "ko-fi": {
+      description: "A Ko-fi user name.",
+      examples: ["kofiName"],
+      title: "Author Ko-fi",
+      type: "string",
+    },
     patreon: {
       description: "A Patreon user name.",
       examples: ["patreonName"],
@@ -10722,13 +10770,13 @@ function validate83(
             errors = emErrs2.length;
           }
         }
-        if (data0.patreon !== undefined) {
-          if (typeof data0.patreon !== "string") {
+        if (data0["ko-fi"] !== undefined) {
+          if (typeof data0["ko-fi"] !== "string") {
             const err18 = {
               keyword: "type",
-              dataPath: dataPath + "/" + i0 + "/patreon",
+              dataPath: dataPath + "/" + i0 + "/ko-fi",
               schemaPath:
-                "#/definitions/properties-author+/properties/patreon/type",
+                "#/definitions/properties-author+/properties/ko-fi/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -10740,11 +10788,29 @@ function validate83(
             errors++;
           }
         }
+        if (data0.patreon !== undefined) {
+          if (typeof data0.patreon !== "string") {
+            const err19 = {
+              keyword: "type",
+              dataPath: dataPath + "/" + i0 + "/patreon",
+              schemaPath:
+                "#/definitions/properties-author+/properties/patreon/type",
+              params: { type: "string" },
+              message: "should be string",
+            };
+            if (vErrors === null) {
+              vErrors = [err19];
+            } else {
+              vErrors.push(err19);
+            }
+            errors++;
+          }
+        }
         if (data0.reddit !== undefined) {
-          let data6 = data0.reddit;
-          if (typeof data6 === "string") {
-            if (!pattern36.test(data6)) {
-              const err19 = {
+          let data7 = data0.reddit;
+          if (typeof data7 === "string") {
+            if (!pattern36.test(data7)) {
+              const err20 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/reddit",
                 schemaPath:
@@ -10753,14 +10819,14 @@ function validate83(
                 message: 'should match pattern "' + "^u/[A-Za-z0-9_-]+$" + '"',
               };
               if (vErrors === null) {
-                vErrors = [err19];
+                vErrors = [err20];
               } else {
-                vErrors.push(err19);
+                vErrors.push(err20);
               }
               errors++;
             }
           } else {
-            const err20 = {
+            const err21 = {
               keyword: "type",
               dataPath: dataPath + "/" + i0 + "/reddit",
               schemaPath:
@@ -10769,33 +10835,33 @@ function validate83(
               message: "should be string",
             };
             if (vErrors === null) {
-              vErrors = [err20];
+              vErrors = [err21];
             } else {
-              vErrors.push(err20);
+              vErrors.push(err21);
             }
             errors++;
           }
           if (errors > 0) {
             const emErrors3 = { pattern: [] };
             const templates3 = {};
-            for (const err21 of vErrors) {
+            for (const err22 of vErrors) {
               if (
-                err21.keyword !== "errorMessage" &&
-                !err21.emUsed &&
-                err21.dataPath === dataPath + "/" + i0 + "/reddit" &&
-                err21.keyword in emErrors3 &&
-                err21.schemaPath.indexOf(
+                err22.keyword !== "errorMessage" &&
+                !err22.emUsed &&
+                err22.dataPath === dataPath + "/" + i0 + "/reddit" &&
+                err22.keyword in emErrors3 &&
+                err22.schemaPath.indexOf(
                   "#/definitions/properties-author+/properties/reddit"
                 ) === 0 &&
-                /^\/[^\/]*$/.test(err21.schemaPath.slice(50))
+                /^\/[^\/]*$/.test(err22.schemaPath.slice(50))
               ) {
-                emErrors3[err21.keyword].push(err21);
-                err21.emUsed = true;
+                emErrors3[err22.keyword].push(err22);
+                err22.emUsed = true;
               }
             }
             for (const key3 in emErrors3) {
               if (emErrors3[key3].length) {
-                const err22 = {
+                const err23 = {
                   keyword: "errorMessage",
                   dataPath: dataPath + "/" + i0 + "/reddit",
                   schemaPath:
@@ -10807,17 +10873,17 @@ function validate83(
                       : schema135.properties.reddit.errorMessage[key3],
                 };
                 if (vErrors === null) {
-                  vErrors = [err22];
+                  vErrors = [err23];
                 } else {
-                  vErrors.push(err22);
+                  vErrors.push(err23);
                 }
                 errors++;
               }
             }
             const emErrs3 = [];
-            for (const err23 of vErrors) {
-              if (!err23.emUsed) {
-                emErrs3.push(err23);
+            for (const err24 of vErrors) {
+              if (!err24.emUsed) {
+                emErrs3.push(err24);
               }
             }
             vErrors = emErrs3;
@@ -10825,10 +10891,10 @@ function validate83(
           }
         }
         if (data0.twitter !== undefined) {
-          let data7 = data0.twitter;
-          if (typeof data7 === "string") {
-            if (!pattern37.test(data7)) {
-              const err24 = {
+          let data8 = data0.twitter;
+          if (typeof data8 === "string") {
+            if (!pattern37.test(data8)) {
+              const err25 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/twitter",
                 schemaPath:
@@ -10838,14 +10904,14 @@ function validate83(
                   'should match pattern "' + "^@[A-Za-z0-9_]{1,15}$" + '"',
               };
               if (vErrors === null) {
-                vErrors = [err24];
+                vErrors = [err25];
               } else {
-                vErrors.push(err24);
+                vErrors.push(err25);
               }
               errors++;
             }
           } else {
-            const err25 = {
+            const err26 = {
               keyword: "type",
               dataPath: dataPath + "/" + i0 + "/twitter",
               schemaPath:
@@ -10854,33 +10920,33 @@ function validate83(
               message: "should be string",
             };
             if (vErrors === null) {
-              vErrors = [err25];
+              vErrors = [err26];
             } else {
-              vErrors.push(err25);
+              vErrors.push(err26);
             }
             errors++;
           }
           if (errors > 0) {
             const emErrors4 = { pattern: [] };
             const templates4 = {};
-            for (const err26 of vErrors) {
+            for (const err27 of vErrors) {
               if (
-                err26.keyword !== "errorMessage" &&
-                !err26.emUsed &&
-                err26.dataPath === dataPath + "/" + i0 + "/twitter" &&
-                err26.keyword in emErrors4 &&
-                err26.schemaPath.indexOf(
+                err27.keyword !== "errorMessage" &&
+                !err27.emUsed &&
+                err27.dataPath === dataPath + "/" + i0 + "/twitter" &&
+                err27.keyword in emErrors4 &&
+                err27.schemaPath.indexOf(
                   "#/definitions/properties-author+/properties/twitter"
                 ) === 0 &&
-                /^\/[^\/]*$/.test(err26.schemaPath.slice(51))
+                /^\/[^\/]*$/.test(err27.schemaPath.slice(51))
               ) {
-                emErrors4[err26.keyword].push(err26);
-                err26.emUsed = true;
+                emErrors4[err27.keyword].push(err27);
+                err27.emUsed = true;
               }
             }
             for (const key4 in emErrors4) {
               if (emErrors4[key4].length) {
-                const err27 = {
+                const err28 = {
                   keyword: "errorMessage",
                   dataPath: dataPath + "/" + i0 + "/twitter",
                   schemaPath:
@@ -10892,17 +10958,17 @@ function validate83(
                       : schema135.properties.twitter.errorMessage[key4],
                 };
                 if (vErrors === null) {
-                  vErrors = [err27];
+                  vErrors = [err28];
                 } else {
-                  vErrors.push(err27);
+                  vErrors.push(err28);
                 }
                 errors++;
               }
             }
             const emErrs4 = [];
-            for (const err28 of vErrors) {
-              if (!err28.emUsed) {
-                emErrs4.push(err28);
+            for (const err29 of vErrors) {
+              if (!err29.emUsed) {
+                emErrs4.push(err29);
               }
             }
             vErrors = emErrs4;
@@ -10912,7 +10978,7 @@ function validate83(
       }
     }
   } else {
-    const err29 = {
+    const err30 = {
       keyword: "type",
       dataPath,
       schemaPath: "#/type",
@@ -10920,9 +10986,9 @@ function validate83(
       message: "should be array",
     };
     if (vErrors === null) {
-      vErrors = [err29];
+      vErrors = [err30];
     } else {
-      vErrors.push(err29);
+      vErrors.push(err30);
     }
     errors++;
   }
@@ -12761,13 +12827,13 @@ function validate99(
             errors = emErrs2.length;
           }
         }
-        if (data0.patreon !== undefined) {
-          if (typeof data0.patreon !== "string") {
+        if (data0["ko-fi"] !== undefined) {
+          if (typeof data0["ko-fi"] !== "string") {
             const err18 = {
               keyword: "type",
-              dataPath: dataPath + "/" + i0 + "/patreon",
+              dataPath: dataPath + "/" + i0 + "/ko-fi",
               schemaPath:
-                "#/definitions/properties-author+/properties/patreon/type",
+                "#/definitions/properties-author+/properties/ko-fi/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -12779,11 +12845,29 @@ function validate99(
             errors++;
           }
         }
+        if (data0.patreon !== undefined) {
+          if (typeof data0.patreon !== "string") {
+            const err19 = {
+              keyword: "type",
+              dataPath: dataPath + "/" + i0 + "/patreon",
+              schemaPath:
+                "#/definitions/properties-author+/properties/patreon/type",
+              params: { type: "string" },
+              message: "should be string",
+            };
+            if (vErrors === null) {
+              vErrors = [err19];
+            } else {
+              vErrors.push(err19);
+            }
+            errors++;
+          }
+        }
         if (data0.reddit !== undefined) {
-          let data6 = data0.reddit;
-          if (typeof data6 === "string") {
-            if (!pattern36.test(data6)) {
-              const err19 = {
+          let data7 = data0.reddit;
+          if (typeof data7 === "string") {
+            if (!pattern36.test(data7)) {
+              const err20 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/reddit",
                 schemaPath:
@@ -12792,14 +12876,14 @@ function validate99(
                 message: 'should match pattern "' + "^u/[A-Za-z0-9_-]+$" + '"',
               };
               if (vErrors === null) {
-                vErrors = [err19];
+                vErrors = [err20];
               } else {
-                vErrors.push(err19);
+                vErrors.push(err20);
               }
               errors++;
             }
           } else {
-            const err20 = {
+            const err21 = {
               keyword: "type",
               dataPath: dataPath + "/" + i0 + "/reddit",
               schemaPath:
@@ -12808,33 +12892,33 @@ function validate99(
               message: "should be string",
             };
             if (vErrors === null) {
-              vErrors = [err20];
+              vErrors = [err21];
             } else {
-              vErrors.push(err20);
+              vErrors.push(err21);
             }
             errors++;
           }
           if (errors > 0) {
             const emErrors3 = { pattern: [] };
             const templates3 = {};
-            for (const err21 of vErrors) {
+            for (const err22 of vErrors) {
               if (
-                err21.keyword !== "errorMessage" &&
-                !err21.emUsed &&
-                err21.dataPath === dataPath + "/" + i0 + "/reddit" &&
-                err21.keyword in emErrors3 &&
-                err21.schemaPath.indexOf(
+                err22.keyword !== "errorMessage" &&
+                !err22.emUsed &&
+                err22.dataPath === dataPath + "/" + i0 + "/reddit" &&
+                err22.keyword in emErrors3 &&
+                err22.schemaPath.indexOf(
                   "#/definitions/properties-author+/properties/reddit"
                 ) === 0 &&
-                /^\/[^\/]*$/.test(err21.schemaPath.slice(50))
+                /^\/[^\/]*$/.test(err22.schemaPath.slice(50))
               ) {
-                emErrors3[err21.keyword].push(err21);
-                err21.emUsed = true;
+                emErrors3[err22.keyword].push(err22);
+                err22.emUsed = true;
               }
             }
             for (const key3 in emErrors3) {
               if (emErrors3[key3].length) {
-                const err22 = {
+                const err23 = {
                   keyword: "errorMessage",
                   dataPath: dataPath + "/" + i0 + "/reddit",
                   schemaPath:
@@ -12846,17 +12930,17 @@ function validate99(
                       : schema135.properties.reddit.errorMessage[key3],
                 };
                 if (vErrors === null) {
-                  vErrors = [err22];
+                  vErrors = [err23];
                 } else {
-                  vErrors.push(err22);
+                  vErrors.push(err23);
                 }
                 errors++;
               }
             }
             const emErrs3 = [];
-            for (const err23 of vErrors) {
-              if (!err23.emUsed) {
-                emErrs3.push(err23);
+            for (const err24 of vErrors) {
+              if (!err24.emUsed) {
+                emErrs3.push(err24);
               }
             }
             vErrors = emErrs3;
@@ -12864,10 +12948,10 @@ function validate99(
           }
         }
         if (data0.twitter !== undefined) {
-          let data7 = data0.twitter;
-          if (typeof data7 === "string") {
-            if (!pattern37.test(data7)) {
-              const err24 = {
+          let data8 = data0.twitter;
+          if (typeof data8 === "string") {
+            if (!pattern37.test(data8)) {
+              const err25 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/twitter",
                 schemaPath:
@@ -12877,14 +12961,14 @@ function validate99(
                   'should match pattern "' + "^@[A-Za-z0-9_]{1,15}$" + '"',
               };
               if (vErrors === null) {
-                vErrors = [err24];
+                vErrors = [err25];
               } else {
-                vErrors.push(err24);
+                vErrors.push(err25);
               }
               errors++;
             }
           } else {
-            const err25 = {
+            const err26 = {
               keyword: "type",
               dataPath: dataPath + "/" + i0 + "/twitter",
               schemaPath:
@@ -12893,33 +12977,33 @@ function validate99(
               message: "should be string",
             };
             if (vErrors === null) {
-              vErrors = [err25];
+              vErrors = [err26];
             } else {
-              vErrors.push(err25);
+              vErrors.push(err26);
             }
             errors++;
           }
           if (errors > 0) {
             const emErrors4 = { pattern: [] };
             const templates4 = {};
-            for (const err26 of vErrors) {
+            for (const err27 of vErrors) {
               if (
-                err26.keyword !== "errorMessage" &&
-                !err26.emUsed &&
-                err26.dataPath === dataPath + "/" + i0 + "/twitter" &&
-                err26.keyword in emErrors4 &&
-                err26.schemaPath.indexOf(
+                err27.keyword !== "errorMessage" &&
+                !err27.emUsed &&
+                err27.dataPath === dataPath + "/" + i0 + "/twitter" &&
+                err27.keyword in emErrors4 &&
+                err27.schemaPath.indexOf(
                   "#/definitions/properties-author+/properties/twitter"
                 ) === 0 &&
-                /^\/[^\/]*$/.test(err26.schemaPath.slice(51))
+                /^\/[^\/]*$/.test(err27.schemaPath.slice(51))
               ) {
-                emErrors4[err26.keyword].push(err26);
-                err26.emUsed = true;
+                emErrors4[err27.keyword].push(err27);
+                err27.emUsed = true;
               }
             }
             for (const key4 in emErrors4) {
               if (emErrors4[key4].length) {
-                const err27 = {
+                const err28 = {
                   keyword: "errorMessage",
                   dataPath: dataPath + "/" + i0 + "/twitter",
                   schemaPath:
@@ -12931,17 +13015,17 @@ function validate99(
                       : schema135.properties.twitter.errorMessage[key4],
                 };
                 if (vErrors === null) {
-                  vErrors = [err27];
+                  vErrors = [err28];
                 } else {
-                  vErrors.push(err27);
+                  vErrors.push(err28);
                 }
                 errors++;
               }
             }
             const emErrs4 = [];
-            for (const err28 of vErrors) {
-              if (!err28.emUsed) {
-                emErrs4.push(err28);
+            for (const err29 of vErrors) {
+              if (!err29.emUsed) {
+                emErrs4.push(err29);
               }
             }
             vErrors = emErrs4;
@@ -12951,7 +13035,7 @@ function validate99(
       }
     }
   } else {
-    const err29 = {
+    const err30 = {
       keyword: "type",
       dataPath,
       schemaPath: "#/type",
@@ -12959,9 +13043,9 @@ function validate99(
       message: "should be array",
     };
     if (vErrors === null) {
-      vErrors = [err29];
+      vErrors = [err30];
     } else {
-      vErrors.push(err29);
+      vErrors.push(err30);
     }
     errors++;
   }

@@ -125,7 +125,7 @@ function processIncludes(data)
  *
  * @param {object}   options - deepmerge options
  *
- * @returns {*}
+ * @returns {*} The merged target / source.
  */
 function combineMerge(target, source, options)
 {

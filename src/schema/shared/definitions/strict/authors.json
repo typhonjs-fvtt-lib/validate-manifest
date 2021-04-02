@@ -82,6 +82,14 @@
             "pattern": "should be a string that is a valid Discord user name"
           }
         },
+        "ko-fi": {
+          "description": "A Ko-fi user name.",
+          "examples": [
+            "kofiName"
+          ],
+          "title": "Author Ko-fi",
+          "type": "string"
+        },
         "patreon": {
           "description": "A Patreon user name.",
           "examples": [

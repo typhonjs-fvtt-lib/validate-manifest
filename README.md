@@ -4,11 +4,11 @@
 [![Code Style](https://img.shields.io/badge/code%20style-allman-yellowgreen.svg?style=flat)](https://en.wikipedia.org/wiki/Indent_style#Allman_style)
 [![License](https://img.shields.io/badge/license-MPLv2-yellowgreen.svg?style=flat)](https://github.com/typhonjs-fvtt/validate-manifest/blob/main/LICENSE)
 
-![Build Status](https://github.com/typhonjs-fvtt/validate-manifest/workflows/CI/CD/badge.svg)
+[![Build Status](https://github.com/typhonjs-fvtt/validate-manifest/workflows/CI/CD/badge.svg)](#)
 [![Coverage](https://img.shields.io/codecov/c/github/typhonjs-fvtt/validate-manifest.svg)](https://codecov.io/github/typhonjs-fvtt/validate-manifest)
 [![Dependency Status](https://david-dm.org/typhonjs-fvtt/validate-manifest.svg)](https://david-dm.org/typhonjs-fvtt/validate-manifest)
 
-Providing JSON schemas for Foundry VTT module.json / system.json manifests & League of Extradionary Foundry developers 
+Providing JSON schemas for Foundry VTT module.json / system.json manifests & League of Extraordinary Foundry Developers 
 manifest plus extensions in addition to compiled validator functions.
 
 There are loose and strict variations for the four schema variations. Loose variations follow the officially posted 

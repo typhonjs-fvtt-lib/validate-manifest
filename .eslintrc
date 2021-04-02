@@ -4,5 +4,5 @@
  * NPM: https://www.npmjs.com/package/typhonjs-config-eslint
  */
 {
-  "extends": "./node_modules/typhonjs-config-eslint/3.0/basic/es8/server/node/.eslintrc"
+  "extends": "@typhonjs-config/eslint-config/esm/2020/node"
 }
