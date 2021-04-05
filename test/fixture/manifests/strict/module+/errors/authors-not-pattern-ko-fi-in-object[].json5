@@ -1,0 +1,22 @@
+[
+   {
+      "keyword": "errorMessage",
+      "dataPath": "/authors/0/ko-fi",
+      "schemaPath": "#/definitions/properties-author+/properties/ko-fi/errorMessage",
+      "params": {
+         "errors": [
+            {
+               "keyword": "pattern",
+               "dataPath": "/authors/0/ko-fi",
+               "schemaPath": "#/definitions/properties-author+/properties/ko-fi/pattern",
+               "params": {
+                  "pattern": "^[A-Za-z0-9_]{3,30}$"
+               },
+               "message": "should match pattern \"^[A-Za-z0-9_]{3,30}$\"",
+               "emUsed": true
+            }
+         ]
+      },
+      "message": "should be a string that is a valid Ko-fi user name"
+   }
+]
