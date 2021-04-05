@@ -70,6 +70,15 @@ export default {
       }
     };
   },
+  'pattern-ko-fi': () =>
+  {
+    return {
+      pattern: '^[A-Za-z0-9_]{3,30}$',
+      errorMessage: {
+        pattern: `should be a string that is a valid Ko-fi user name`
+      }
+    };
+  },
   'pattern-oneof-file-or-url': () =>  // See: unit tests - https://regex101.com/r/r98YyH/1
   {
     return {

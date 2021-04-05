@@ -20,6 +20,10 @@
     },
     "properties-author+": {
       "properties": {
+        "ko-fi": {
+          // Replace with pattern-ko-fi include
+          "$$include": { "target": "pattern-ko-fi" }
+        },
         "discord": {
           // Replace with pattern-discord include
           "$$include": { "target": "pattern-discord" }

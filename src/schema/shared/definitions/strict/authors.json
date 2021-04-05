@@ -88,7 +88,11 @@
             "kofiName"
           ],
           "title": "Author Ko-fi",
-          "type": "string"
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_]{3,30}$",
+          "errorMessage": {
+            "pattern": "should be a string that is a valid Ko-fi user name"
+          }
         },
         "patreon": {
           "description": "A Patreon user name.",
