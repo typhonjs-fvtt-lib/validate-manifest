@@ -10414,6 +10414,10 @@ const schema135 = {
       examples: ["kofiName"],
       title: "Author Ko-fi",
       type: "string",
+      pattern: "^[A-Za-z0-9_]{3,30}$",
+      errorMessage: {
+        pattern: "should be a string that is a valid Ko-fi user name",
+      },
     },
     patreon: {
       description: "A Patreon user name.",
@@ -10444,8 +10448,9 @@ const schema135 = {
   },
 };
 const pattern35 = new RegExp("^.{3,32}#[0-9]{4}$", "u");
-const pattern36 = new RegExp("^u/[A-Za-z0-9_-]+$", "u");
-const pattern37 = new RegExp("^@[A-Za-z0-9_]{1,15}$", "u");
+const pattern36 = new RegExp("^[A-Za-z0-9_]{3,30}$", "u");
+const pattern37 = new RegExp("^u/[A-Za-z0-9_-]+$", "u");
+const pattern38 = new RegExp("^@[A-Za-z0-9_]{1,15}$", "u");
 function validate83(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
@@ -10771,30 +10776,31 @@ function validate83(
           }
         }
         if (data0["ko-fi"] !== undefined) {
-          if (typeof data0["ko-fi"] !== "string") {
-            const err18 = {
+          let data5 = data0["ko-fi"];
+          if (typeof data5 === "string") {
+            if (!pattern36.test(data5)) {
+              const err18 = {
+                keyword: "pattern",
+                dataPath: dataPath + "/" + i0 + "/ko-fi",
+                schemaPath:
+                  "#/definitions/properties-author+/properties/ko-fi/pattern",
+                params: { pattern: "^[A-Za-z0-9_]{3,30}$" },
+                message:
+                  'should match pattern "' + "^[A-Za-z0-9_]{3,30}$" + '"',
+              };
+              if (vErrors === null) {
+                vErrors = [err18];
+              } else {
+                vErrors.push(err18);
+              }
+              errors++;
+            }
+          } else {
+            const err19 = {
               keyword: "type",
               dataPath: dataPath + "/" + i0 + "/ko-fi",
               schemaPath:
                 "#/definitions/properties-author+/properties/ko-fi/type",
-              params: { type: "string" },
-              message: "should be string",
-            };
-            if (vErrors === null) {
-              vErrors = [err18];
-            } else {
-              vErrors.push(err18);
-            }
-            errors++;
-          }
-        }
-        if (data0.patreon !== undefined) {
-          if (typeof data0.patreon !== "string") {
-            const err19 = {
-              keyword: "type",
-              dataPath: dataPath + "/" + i0 + "/patreon",
-              schemaPath:
-                "#/definitions/properties-author+/properties/patreon/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -10805,12 +10811,78 @@ function validate83(
             }
             errors++;
           }
+          if (errors > 0) {
+            const emErrors3 = { pattern: [] };
+            const templates3 = {};
+            for (const err20 of vErrors) {
+              if (
+                err20.keyword !== "errorMessage" &&
+                !err20.emUsed &&
+                err20.dataPath === dataPath + "/" + i0 + "/ko-fi" &&
+                err20.keyword in emErrors3 &&
+                err20.schemaPath.indexOf(
+                  "#/definitions/properties-author+/properties/ko-fi"
+                ) === 0 &&
+                /^\/[^\/]*$/.test(err20.schemaPath.slice(49))
+              ) {
+                emErrors3[err20.keyword].push(err20);
+                err20.emUsed = true;
+              }
+            }
+            for (const key3 in emErrors3) {
+              if (emErrors3[key3].length) {
+                const err21 = {
+                  keyword: "errorMessage",
+                  dataPath: dataPath + "/" + i0 + "/ko-fi",
+                  schemaPath:
+                    "#/definitions/properties-author+/properties/ko-fi/errorMessage",
+                  params: { errors: emErrors3[key3] },
+                  message:
+                    key3 in templates3
+                      ? templates3[key3]()
+                      : schema135.properties["ko-fi"].errorMessage[key3],
+                };
+                if (vErrors === null) {
+                  vErrors = [err21];
+                } else {
+                  vErrors.push(err21);
+                }
+                errors++;
+              }
+            }
+            const emErrs3 = [];
+            for (const err22 of vErrors) {
+              if (!err22.emUsed) {
+                emErrs3.push(err22);
+              }
+            }
+            vErrors = emErrs3;
+            errors = emErrs3.length;
+          }
+        }
+        if (data0.patreon !== undefined) {
+          if (typeof data0.patreon !== "string") {
+            const err23 = {
+              keyword: "type",
+              dataPath: dataPath + "/" + i0 + "/patreon",
+              schemaPath:
+                "#/definitions/properties-author+/properties/patreon/type",
+              params: { type: "string" },
+              message: "should be string",
+            };
+            if (vErrors === null) {
+              vErrors = [err23];
+            } else {
+              vErrors.push(err23);
+            }
+            errors++;
+          }
         }
         if (data0.reddit !== undefined) {
           let data7 = data0.reddit;
           if (typeof data7 === "string") {
-            if (!pattern36.test(data7)) {
-              const err20 = {
+            if (!pattern37.test(data7)) {
+              const err24 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/reddit",
                 schemaPath:
@@ -10819,14 +10891,14 @@ function validate83(
                 message: 'should match pattern "' + "^u/[A-Za-z0-9_-]+$" + '"',
               };
               if (vErrors === null) {
-                vErrors = [err20];
+                vErrors = [err24];
               } else {
-                vErrors.push(err20);
+                vErrors.push(err24);
               }
               errors++;
             }
           } else {
-            const err21 = {
+            const err25 = {
               keyword: "type",
               dataPath: dataPath + "/" + i0 + "/reddit",
               schemaPath:
@@ -10835,66 +10907,66 @@ function validate83(
               message: "should be string",
             };
             if (vErrors === null) {
-              vErrors = [err21];
+              vErrors = [err25];
             } else {
-              vErrors.push(err21);
+              vErrors.push(err25);
             }
             errors++;
           }
           if (errors > 0) {
-            const emErrors3 = { pattern: [] };
-            const templates3 = {};
-            for (const err22 of vErrors) {
+            const emErrors4 = { pattern: [] };
+            const templates4 = {};
+            for (const err26 of vErrors) {
               if (
-                err22.keyword !== "errorMessage" &&
-                !err22.emUsed &&
-                err22.dataPath === dataPath + "/" + i0 + "/reddit" &&
-                err22.keyword in emErrors3 &&
-                err22.schemaPath.indexOf(
+                err26.keyword !== "errorMessage" &&
+                !err26.emUsed &&
+                err26.dataPath === dataPath + "/" + i0 + "/reddit" &&
+                err26.keyword in emErrors4 &&
+                err26.schemaPath.indexOf(
                   "#/definitions/properties-author+/properties/reddit"
                 ) === 0 &&
-                /^\/[^\/]*$/.test(err22.schemaPath.slice(50))
+                /^\/[^\/]*$/.test(err26.schemaPath.slice(50))
               ) {
-                emErrors3[err22.keyword].push(err22);
-                err22.emUsed = true;
+                emErrors4[err26.keyword].push(err26);
+                err26.emUsed = true;
               }
             }
-            for (const key3 in emErrors3) {
-              if (emErrors3[key3].length) {
-                const err23 = {
+            for (const key4 in emErrors4) {
+              if (emErrors4[key4].length) {
+                const err27 = {
                   keyword: "errorMessage",
                   dataPath: dataPath + "/" + i0 + "/reddit",
                   schemaPath:
                     "#/definitions/properties-author+/properties/reddit/errorMessage",
-                  params: { errors: emErrors3[key3] },
+                  params: { errors: emErrors4[key4] },
                   message:
-                    key3 in templates3
-                      ? templates3[key3]()
-                      : schema135.properties.reddit.errorMessage[key3],
+                    key4 in templates4
+                      ? templates4[key4]()
+                      : schema135.properties.reddit.errorMessage[key4],
                 };
                 if (vErrors === null) {
-                  vErrors = [err23];
+                  vErrors = [err27];
                 } else {
-                  vErrors.push(err23);
+                  vErrors.push(err27);
                 }
                 errors++;
               }
             }
-            const emErrs3 = [];
-            for (const err24 of vErrors) {
-              if (!err24.emUsed) {
-                emErrs3.push(err24);
+            const emErrs4 = [];
+            for (const err28 of vErrors) {
+              if (!err28.emUsed) {
+                emErrs4.push(err28);
               }
             }
-            vErrors = emErrs3;
-            errors = emErrs3.length;
+            vErrors = emErrs4;
+            errors = emErrs4.length;
           }
         }
         if (data0.twitter !== undefined) {
           let data8 = data0.twitter;
           if (typeof data8 === "string") {
-            if (!pattern37.test(data8)) {
-              const err25 = {
+            if (!pattern38.test(data8)) {
+              const err29 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/twitter",
                 schemaPath:
@@ -10904,14 +10976,14 @@ function validate83(
                   'should match pattern "' + "^@[A-Za-z0-9_]{1,15}$" + '"',
               };
               if (vErrors === null) {
-                vErrors = [err25];
+                vErrors = [err29];
               } else {
-                vErrors.push(err25);
+                vErrors.push(err29);
               }
               errors++;
             }
           } else {
-            const err26 = {
+            const err30 = {
               keyword: "type",
               dataPath: dataPath + "/" + i0 + "/twitter",
               schemaPath:
@@ -10920,65 +10992,65 @@ function validate83(
               message: "should be string",
             };
             if (vErrors === null) {
-              vErrors = [err26];
+              vErrors = [err30];
             } else {
-              vErrors.push(err26);
+              vErrors.push(err30);
             }
             errors++;
           }
           if (errors > 0) {
-            const emErrors4 = { pattern: [] };
-            const templates4 = {};
-            for (const err27 of vErrors) {
+            const emErrors5 = { pattern: [] };
+            const templates5 = {};
+            for (const err31 of vErrors) {
               if (
-                err27.keyword !== "errorMessage" &&
-                !err27.emUsed &&
-                err27.dataPath === dataPath + "/" + i0 + "/twitter" &&
-                err27.keyword in emErrors4 &&
-                err27.schemaPath.indexOf(
+                err31.keyword !== "errorMessage" &&
+                !err31.emUsed &&
+                err31.dataPath === dataPath + "/" + i0 + "/twitter" &&
+                err31.keyword in emErrors5 &&
+                err31.schemaPath.indexOf(
                   "#/definitions/properties-author+/properties/twitter"
                 ) === 0 &&
-                /^\/[^\/]*$/.test(err27.schemaPath.slice(51))
+                /^\/[^\/]*$/.test(err31.schemaPath.slice(51))
               ) {
-                emErrors4[err27.keyword].push(err27);
-                err27.emUsed = true;
+                emErrors5[err31.keyword].push(err31);
+                err31.emUsed = true;
               }
             }
-            for (const key4 in emErrors4) {
-              if (emErrors4[key4].length) {
-                const err28 = {
+            for (const key5 in emErrors5) {
+              if (emErrors5[key5].length) {
+                const err32 = {
                   keyword: "errorMessage",
                   dataPath: dataPath + "/" + i0 + "/twitter",
                   schemaPath:
                     "#/definitions/properties-author+/properties/twitter/errorMessage",
-                  params: { errors: emErrors4[key4] },
+                  params: { errors: emErrors5[key5] },
                   message:
-                    key4 in templates4
-                      ? templates4[key4]()
-                      : schema135.properties.twitter.errorMessage[key4],
+                    key5 in templates5
+                      ? templates5[key5]()
+                      : schema135.properties.twitter.errorMessage[key5],
                 };
                 if (vErrors === null) {
-                  vErrors = [err28];
+                  vErrors = [err32];
                 } else {
-                  vErrors.push(err28);
+                  vErrors.push(err32);
                 }
                 errors++;
               }
             }
-            const emErrs4 = [];
-            for (const err29 of vErrors) {
-              if (!err29.emUsed) {
-                emErrs4.push(err29);
+            const emErrs5 = [];
+            for (const err33 of vErrors) {
+              if (!err33.emUsed) {
+                emErrs5.push(err33);
               }
             }
-            vErrors = emErrs4;
-            errors = emErrs4.length;
+            vErrors = emErrs5;
+            errors = emErrs5.length;
           }
         }
       }
     }
   } else {
-    const err30 = {
+    const err34 = {
       keyword: "type",
       dataPath,
       schemaPath: "#/type",
@@ -10986,9 +11058,9 @@ function validate83(
       message: "should be array",
     };
     if (vErrors === null) {
-      vErrors = [err30];
+      vErrors = [err34];
     } else {
-      vErrors.push(err30);
+      vErrors.push(err34);
     }
     errors++;
   }
@@ -11323,7 +11395,7 @@ const schema147 = {
   title: "Template Version",
   type: "integer",
 };
-const pattern38 = new RegExp(
+const pattern39 = new RegExp(
   "^(?:(?:(?:https?):)?//)(?:\\S+(?::\\S*)?@)?(?:(?!(?:10|127)(?:\\.\\d{1,3}){3})(?!(?:169\\.254|192\\.168)(?:\\.\\d{1,3}){2})(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z0-9\\u00a1-\\uffff][a-z0-9\\u00a1-\\uffff_-]{0,62})?[a-z0-9\\u00a1-\\uffff]\\.)+(?:[a-z\\u00a1-\\uffff]{2,}\\.?))(?::\\d{2,5})?(?:[/?#]\\S*)?\\/system.json$",
   "u"
 );
@@ -11406,7 +11478,7 @@ function validate88(
     if (data.manifest !== undefined) {
       let data3 = data.manifest;
       if (typeof data3 === "string") {
-        if (!pattern38.test(data3)) {
+        if (!pattern39.test(data3)) {
           const err3 = {
             keyword: "pattern",
             dataPath: dataPath + "/manifest",
@@ -12828,30 +12900,31 @@ function validate99(
           }
         }
         if (data0["ko-fi"] !== undefined) {
-          if (typeof data0["ko-fi"] !== "string") {
-            const err18 = {
+          let data5 = data0["ko-fi"];
+          if (typeof data5 === "string") {
+            if (!pattern36.test(data5)) {
+              const err18 = {
+                keyword: "pattern",
+                dataPath: dataPath + "/" + i0 + "/ko-fi",
+                schemaPath:
+                  "#/definitions/properties-author+/properties/ko-fi/pattern",
+                params: { pattern: "^[A-Za-z0-9_]{3,30}$" },
+                message:
+                  'should match pattern "' + "^[A-Za-z0-9_]{3,30}$" + '"',
+              };
+              if (vErrors === null) {
+                vErrors = [err18];
+              } else {
+                vErrors.push(err18);
+              }
+              errors++;
+            }
+          } else {
+            const err19 = {
               keyword: "type",
               dataPath: dataPath + "/" + i0 + "/ko-fi",
               schemaPath:
                 "#/definitions/properties-author+/properties/ko-fi/type",
-              params: { type: "string" },
-              message: "should be string",
-            };
-            if (vErrors === null) {
-              vErrors = [err18];
-            } else {
-              vErrors.push(err18);
-            }
-            errors++;
-          }
-        }
-        if (data0.patreon !== undefined) {
-          if (typeof data0.patreon !== "string") {
-            const err19 = {
-              keyword: "type",
-              dataPath: dataPath + "/" + i0 + "/patreon",
-              schemaPath:
-                "#/definitions/properties-author+/properties/patreon/type",
               params: { type: "string" },
               message: "should be string",
             };
@@ -12862,12 +12935,78 @@ function validate99(
             }
             errors++;
           }
+          if (errors > 0) {
+            const emErrors3 = { pattern: [] };
+            const templates3 = {};
+            for (const err20 of vErrors) {
+              if (
+                err20.keyword !== "errorMessage" &&
+                !err20.emUsed &&
+                err20.dataPath === dataPath + "/" + i0 + "/ko-fi" &&
+                err20.keyword in emErrors3 &&
+                err20.schemaPath.indexOf(
+                  "#/definitions/properties-author+/properties/ko-fi"
+                ) === 0 &&
+                /^\/[^\/]*$/.test(err20.schemaPath.slice(49))
+              ) {
+                emErrors3[err20.keyword].push(err20);
+                err20.emUsed = true;
+              }
+            }
+            for (const key3 in emErrors3) {
+              if (emErrors3[key3].length) {
+                const err21 = {
+                  keyword: "errorMessage",
+                  dataPath: dataPath + "/" + i0 + "/ko-fi",
+                  schemaPath:
+                    "#/definitions/properties-author+/properties/ko-fi/errorMessage",
+                  params: { errors: emErrors3[key3] },
+                  message:
+                    key3 in templates3
+                      ? templates3[key3]()
+                      : schema135.properties["ko-fi"].errorMessage[key3],
+                };
+                if (vErrors === null) {
+                  vErrors = [err21];
+                } else {
+                  vErrors.push(err21);
+                }
+                errors++;
+              }
+            }
+            const emErrs3 = [];
+            for (const err22 of vErrors) {
+              if (!err22.emUsed) {
+                emErrs3.push(err22);
+              }
+            }
+            vErrors = emErrs3;
+            errors = emErrs3.length;
+          }
+        }
+        if (data0.patreon !== undefined) {
+          if (typeof data0.patreon !== "string") {
+            const err23 = {
+              keyword: "type",
+              dataPath: dataPath + "/" + i0 + "/patreon",
+              schemaPath:
+                "#/definitions/properties-author+/properties/patreon/type",
+              params: { type: "string" },
+              message: "should be string",
+            };
+            if (vErrors === null) {
+              vErrors = [err23];
+            } else {
+              vErrors.push(err23);
+            }
+            errors++;
+          }
         }
         if (data0.reddit !== undefined) {
           let data7 = data0.reddit;
           if (typeof data7 === "string") {
-            if (!pattern36.test(data7)) {
-              const err20 = {
+            if (!pattern37.test(data7)) {
+              const err24 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/reddit",
                 schemaPath:
@@ -12876,14 +13015,14 @@ function validate99(
                 message: 'should match pattern "' + "^u/[A-Za-z0-9_-]+$" + '"',
               };
               if (vErrors === null) {
-                vErrors = [err20];
+                vErrors = [err24];
               } else {
-                vErrors.push(err20);
+                vErrors.push(err24);
               }
               errors++;
             }
           } else {
-            const err21 = {
+            const err25 = {
               keyword: "type",
               dataPath: dataPath + "/" + i0 + "/reddit",
               schemaPath:
@@ -12892,66 +13031,66 @@ function validate99(
               message: "should be string",
             };
             if (vErrors === null) {
-              vErrors = [err21];
+              vErrors = [err25];
             } else {
-              vErrors.push(err21);
+              vErrors.push(err25);
             }
             errors++;
           }
           if (errors > 0) {
-            const emErrors3 = { pattern: [] };
-            const templates3 = {};
-            for (const err22 of vErrors) {
+            const emErrors4 = { pattern: [] };
+            const templates4 = {};
+            for (const err26 of vErrors) {
               if (
-                err22.keyword !== "errorMessage" &&
-                !err22.emUsed &&
-                err22.dataPath === dataPath + "/" + i0 + "/reddit" &&
-                err22.keyword in emErrors3 &&
-                err22.schemaPath.indexOf(
+                err26.keyword !== "errorMessage" &&
+                !err26.emUsed &&
+                err26.dataPath === dataPath + "/" + i0 + "/reddit" &&
+                err26.keyword in emErrors4 &&
+                err26.schemaPath.indexOf(
                   "#/definitions/properties-author+/properties/reddit"
                 ) === 0 &&
-                /^\/[^\/]*$/.test(err22.schemaPath.slice(50))
+                /^\/[^\/]*$/.test(err26.schemaPath.slice(50))
               ) {
-                emErrors3[err22.keyword].push(err22);
-                err22.emUsed = true;
+                emErrors4[err26.keyword].push(err26);
+                err26.emUsed = true;
               }
             }
-            for (const key3 in emErrors3) {
-              if (emErrors3[key3].length) {
-                const err23 = {
+            for (const key4 in emErrors4) {
+              if (emErrors4[key4].length) {
+                const err27 = {
                   keyword: "errorMessage",
                   dataPath: dataPath + "/" + i0 + "/reddit",
                   schemaPath:
                     "#/definitions/properties-author+/properties/reddit/errorMessage",
-                  params: { errors: emErrors3[key3] },
+                  params: { errors: emErrors4[key4] },
                   message:
-                    key3 in templates3
-                      ? templates3[key3]()
-                      : schema135.properties.reddit.errorMessage[key3],
+                    key4 in templates4
+                      ? templates4[key4]()
+                      : schema135.properties.reddit.errorMessage[key4],
                 };
                 if (vErrors === null) {
-                  vErrors = [err23];
+                  vErrors = [err27];
                 } else {
-                  vErrors.push(err23);
+                  vErrors.push(err27);
                 }
                 errors++;
               }
             }
-            const emErrs3 = [];
-            for (const err24 of vErrors) {
-              if (!err24.emUsed) {
-                emErrs3.push(err24);
+            const emErrs4 = [];
+            for (const err28 of vErrors) {
+              if (!err28.emUsed) {
+                emErrs4.push(err28);
               }
             }
-            vErrors = emErrs3;
-            errors = emErrs3.length;
+            vErrors = emErrs4;
+            errors = emErrs4.length;
           }
         }
         if (data0.twitter !== undefined) {
           let data8 = data0.twitter;
           if (typeof data8 === "string") {
-            if (!pattern37.test(data8)) {
-              const err25 = {
+            if (!pattern38.test(data8)) {
+              const err29 = {
                 keyword: "pattern",
                 dataPath: dataPath + "/" + i0 + "/twitter",
                 schemaPath:
@@ -12961,14 +13100,14 @@ function validate99(
                   'should match pattern "' + "^@[A-Za-z0-9_]{1,15}$" + '"',
               };
               if (vErrors === null) {
-                vErrors = [err25];
+                vErrors = [err29];
               } else {
-                vErrors.push(err25);
+                vErrors.push(err29);
               }
               errors++;
             }
           } else {
-            const err26 = {
+            const err30 = {
               keyword: "type",
               dataPath: dataPath + "/" + i0 + "/twitter",
               schemaPath:
@@ -12977,65 +13116,65 @@ function validate99(
               message: "should be string",
             };
             if (vErrors === null) {
-              vErrors = [err26];
+              vErrors = [err30];
             } else {
-              vErrors.push(err26);
+              vErrors.push(err30);
             }
             errors++;
           }
           if (errors > 0) {
-            const emErrors4 = { pattern: [] };
-            const templates4 = {};
-            for (const err27 of vErrors) {
+            const emErrors5 = { pattern: [] };
+            const templates5 = {};
+            for (const err31 of vErrors) {
               if (
-                err27.keyword !== "errorMessage" &&
-                !err27.emUsed &&
-                err27.dataPath === dataPath + "/" + i0 + "/twitter" &&
-                err27.keyword in emErrors4 &&
-                err27.schemaPath.indexOf(
+                err31.keyword !== "errorMessage" &&
+                !err31.emUsed &&
+                err31.dataPath === dataPath + "/" + i0 + "/twitter" &&
+                err31.keyword in emErrors5 &&
+                err31.schemaPath.indexOf(
                   "#/definitions/properties-author+/properties/twitter"
                 ) === 0 &&
-                /^\/[^\/]*$/.test(err27.schemaPath.slice(51))
+                /^\/[^\/]*$/.test(err31.schemaPath.slice(51))
               ) {
-                emErrors4[err27.keyword].push(err27);
-                err27.emUsed = true;
+                emErrors5[err31.keyword].push(err31);
+                err31.emUsed = true;
               }
             }
-            for (const key4 in emErrors4) {
-              if (emErrors4[key4].length) {
-                const err28 = {
+            for (const key5 in emErrors5) {
+              if (emErrors5[key5].length) {
+                const err32 = {
                   keyword: "errorMessage",
                   dataPath: dataPath + "/" + i0 + "/twitter",
                   schemaPath:
                     "#/definitions/properties-author+/properties/twitter/errorMessage",
-                  params: { errors: emErrors4[key4] },
+                  params: { errors: emErrors5[key5] },
                   message:
-                    key4 in templates4
-                      ? templates4[key4]()
-                      : schema135.properties.twitter.errorMessage[key4],
+                    key5 in templates5
+                      ? templates5[key5]()
+                      : schema135.properties.twitter.errorMessage[key5],
                 };
                 if (vErrors === null) {
-                  vErrors = [err28];
+                  vErrors = [err32];
                 } else {
-                  vErrors.push(err28);
+                  vErrors.push(err32);
                 }
                 errors++;
               }
             }
-            const emErrs4 = [];
-            for (const err29 of vErrors) {
-              if (!err29.emUsed) {
-                emErrs4.push(err29);
+            const emErrs5 = [];
+            for (const err33 of vErrors) {
+              if (!err33.emUsed) {
+                emErrs5.push(err33);
               }
             }
-            vErrors = emErrs4;
-            errors = emErrs4.length;
+            vErrors = emErrs5;
+            errors = emErrs5.length;
           }
         }
       }
     }
   } else {
-    const err30 = {
+    const err34 = {
       keyword: "type",
       dataPath,
       schemaPath: "#/type",
@@ -13043,9 +13182,9 @@ function validate99(
       message: "should be array",
     };
     if (vErrors === null) {
-      vErrors = [err30];
+      vErrors = [err34];
     } else {
-      vErrors.push(err30);
+      vErrors.push(err34);
     }
     errors++;
   }
