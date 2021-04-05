@@ -9,7 +9,7 @@
 [![Dependency Status](https://david-dm.org/typhonjs-fvtt/validate-manifest.svg)](https://david-dm.org/typhonjs-fvtt/validate-manifest)
 
 Providing JSON schemas for Foundry VTT module.json / system.json manifests & League of Extraordinary Foundry Developers 
-manifest plus extensions in addition to compiled validator functions.
+manifest+ extensions in addition to compiled validator functions. The current manifest+ support is `v1.1.0`.
 
 There are loose and strict variations for the four schema variations. Loose variations follow the officially posted 
 manifest and manifest plus specifications and only check that types are correct. The strict variations enforce extra 
@@ -53,9 +53,9 @@ There are 8 validator functions:
 A trivial example of using the `validateModule` function.
 
 ``` js
-const fs                 = require('fs');
+import fs                 from 'fs';
 
-const { validateModule } = require('@typhonjs-fvtt/validate-manifest');
+import { validateModule } from '@typhonjs-fvtt/validate-manifest';
 
 const moduleJSONObject = JSON.parse(fs.readFileSync('./src/module.json', 'utf8'););  // load from some location.
 
@@ -77,22 +77,17 @@ which formats the errors array with user readable messages and associated code f
 `better-ajv-errors` module.
 
 ``` js
-const fs                 = require('fs');
+import fs                 from 'fs';
 
-const betterErrors       = require('@typhonjs-node-utils/better-ajv-errors');
-const { validateModule } = require('@typhonjs-fvtt/validate-manifest');
+import BetterErrors       from '@typhonjs-node-utils/better-ajv-errors';
+import { validateModule } from '@typhonjs-fvtt/validate-manifest';
 
 const moduleJSONFile = fs.readFileSync('./src/module.json', 'utf8');   // load the text string for the manifest.
 const moduleJSONObject = JSON.parse(moduleJSONFile);                   // parse the manifest file.
 
 if (!validateModule(moduleJSONObject))
 {
-   const errors = betterErrors(validateModule.errors, { file: moduleJSONFile });
-
-   for (const entry of errors)
-   {
-      console.log(`${entry.message}\n${entry.codeFrame}\n\n`);
-   }
+   console.log(BetterErrors.asString(validateModule.errors, { file: moduleJSONFile }));
 }
 ```
 
