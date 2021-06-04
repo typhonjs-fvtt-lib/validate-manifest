@@ -3,7 +3,7 @@ import * as validators     from '../../dist/validators.js';
 import fs                  from 'fs';
 import path                from 'path';
 
-import BetterErrors        from '@typhonjs-node-utils/better-ajv-errors';
+import BetterErrors        from '@typhonjs-utils/better-ajv-errors';
 import chai                from 'chai';
 import stripJsonComments   from 'strip-json-comments';
 
@@ -25,7 +25,9 @@ export default class TestRunner
     * Handles invalid validation tests opening a source JSON file and comparing validation errors to stored error data.
     *
     * @param {Function} testFunction - The ajv validation function to test.
+    *
     * @param {string}   dirPath - The directory to open error and invalid data.
+    *
     * @param {object}   functionDesc - Data describing the function.
     */
    static invalid(testFunction, dirPath, functionDesc)
@@ -94,6 +96,7 @@ export default class TestRunner
     * Returns a Map of all files found in the directory provided.
     *
     * @param {string} dir - Directory to read.
+    *
     * @param {string} extension - File extension to read.
     *
     * @returns {Map<string, object>} A Map by file name and loaded JSON object.
@@ -219,7 +222,9 @@ export default class TestRunner
     * Handles valid validation tests opening a source JSON file and expecting it to validate.
     *
     * @param {Function} testFunction - The ajv validation function to test.
+    *
     * @param {string}   dirPath - The directory to open valid data.
+    *
     * @param {object}   functionDesc - Data describing the function.
     */
    static valid(testFunction, dirPath, functionDesc)

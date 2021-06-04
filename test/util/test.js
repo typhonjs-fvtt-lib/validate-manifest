@@ -22,12 +22,12 @@ export default {
 
    // Run different types of tests.
    type: {
-      "base": true,
-      "base-manifest+": true,
-      "module": true,
-      "module+": true,
-      "system": true,
-      "system+": true,
+      base: true,
+      'base-manifest+': true,
+      module: true,
+      'module+': true,
+      system: true,
+      'system+': true,
    },
 
    // Run valid / invalid tests.

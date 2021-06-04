@@ -1,12 +1,11 @@
 import { assert }       from 'chai';
 
-import Events           from 'backbone-esnext-events';
-import PluginManager    from 'typhonjs-plugin-manager';
+import PluginManager    from '@typhonjs-plugin/manager';
 
 import ValidateManifest from '../../src/plugin/ValidateManifest.js';
 
-const eventbus = new Events();
-const pluginManager = new PluginManager({ eventbus });
+const pluginManager = new PluginManager();
+const eventbus = pluginManager.getEventbus();
 
 pluginManager.add({ name: '@typhonjs-fvtt/validate-manifest', instance: ValidateManifest });
 

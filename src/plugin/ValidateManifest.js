@@ -77,14 +77,38 @@ export default class ValidateManifest
    {
       const eventbus = ev.eventbus;
 
-      eventbus.on(`typhonjs:fvtt:validate:manifest:module`, ValidateManifest.validateModule);
-      eventbus.on(`typhonjs:fvtt:validate:manifest:module:strict`, ValidateManifest.validateModuleStrict);
-      eventbus.on(`typhonjs:fvtt:validate:manifest:plus:module`, ValidateManifest.validateModulePlus);
-      eventbus.on(`typhonjs:fvtt:validate:manifest:plus:module:strict`, ValidateManifest.validateModulePlusStrict);
-      eventbus.on(`typhonjs:fvtt:validate:manifest:system`, ValidateManifest.validateSystem);
-      eventbus.on(`typhonjs:fvtt:validate:manifest:system:strict`, ValidateManifest.validateSystemStrict);
-      eventbus.on(`typhonjs:fvtt:validate:manifest:plus:system`, ValidateManifest.validateSystemPlus);
-      eventbus.on(`typhonjs:fvtt:validate:manifest:plus:system:strict`, ValidateManifest.validateSystemPlusStrict);
+      const options = ev.pluginOptions;
+
+      let guard = true;
+
+      // Apply any plugin options.
+      if (typeof options === 'object')
+      {
+         /* c8 ignore next 1 */
+         if (typeof options.guard === 'boolean') { guard = options.guard; }
+      }
+
+      eventbus.on(`typhonjs:fvtt:validate:manifest:module`, ValidateManifest.validateModule, void 0, { guard });
+
+      eventbus.on(`typhonjs:fvtt:validate:manifest:module:strict`, ValidateManifest.validateModuleStrict, void 0,
+       { guard });
+
+      eventbus.on(`typhonjs:fvtt:validate:manifest:plus:module`, ValidateManifest.validateModulePlus, void 0,
+       { guard });
+
+      eventbus.on(`typhonjs:fvtt:validate:manifest:plus:module:strict`, ValidateManifest.validateModulePlusStrict,
+       void 0, { guard });
+
+      eventbus.on(`typhonjs:fvtt:validate:manifest:system`, ValidateManifest.validateSystem, void 0, { guard });
+
+      eventbus.on(`typhonjs:fvtt:validate:manifest:system:strict`, ValidateManifest.validateSystemStrict, void 0,
+       { guard });
+
+      eventbus.on(`typhonjs:fvtt:validate:manifest:plus:system`, ValidateManifest.validateSystemPlus, void 0,
+       { guard });
+
+      eventbus.on(`typhonjs:fvtt:validate:manifest:plus:system:strict`, ValidateManifest.validateSystemPlusStrict,
+       void 0, { guard });
    }
 }
 

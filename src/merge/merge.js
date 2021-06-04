@@ -30,6 +30,7 @@ process(['abstract/system', 'abstract/base-packs'], 'strict/system');
  * basename.
  *
  * @param {string[]} base - The directory / basename of abstract schema.
+ *
  * @param {string}   merge - The directory / basename of merge schema.
  */
 function process(base, merge)

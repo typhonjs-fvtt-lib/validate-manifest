@@ -136,8 +136,7 @@ const schema30 = {
       $ref: "../../definitions/loose/base.json#/definitions/changelog",
     },
     compatibleCoreVersion: {
-      $ref:
-        "../../definitions/loose/base.json#/definitions/compatibleCoreVersion",
+      $ref: "../../definitions/loose/base.json#/definitions/compatibleCoreVersion",
     },
     dependencies: {
       $ref: "../../definitions/loose/base.json#/definitions/dependencies",
@@ -1227,7 +1226,8 @@ function validate26(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
-  /*# sourceURL="shared/properties/loose/base-module.json" */ let vErrors = null;
+  /*# sourceURL="shared/properties/loose/base-module.json" */ let vErrors =
+    null;
   let errors = 0;
   if (
     !validate27(data, { dataPath, parentData, parentDataProperty, rootData })
@@ -2079,12 +2079,10 @@ const schema60 = {
   type: "object",
   properties: {
     conflicts: {
-      $ref:
-        "../../definitions/loose/base-manifest+.json#/definitions/conflicts",
+      $ref: "../../definitions/loose/base-manifest+.json#/definitions/conflicts",
     },
     deprecated: {
-      $ref:
-        "../../definitions/loose/base-manifest+.json#/definitions/deprecated",
+      $ref: "../../definitions/loose/base-manifest+.json#/definitions/deprecated",
     },
     includes: {
       $ref: "../../definitions/loose/base-manifest+.json#/definitions/includes",
@@ -2093,8 +2091,7 @@ const schema60 = {
       $ref: "../../definitions/loose/base-manifest+.json#/definitions/library",
     },
     manifestPlusVersion: {
-      $ref:
-        "../../definitions/loose/base-manifest+.json#/definitions/manifestPlusVersion",
+      $ref: "../../definitions/loose/base-manifest+.json#/definitions/manifestPlusVersion",
     },
     media: {
       $ref: "../../definitions/loose/base-manifest+.json#/definitions/media",
@@ -2410,7 +2407,8 @@ function validate38(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
-  /*# sourceURL="shared/properties/loose/base-manifest+.json" */ let vErrors = null;
+  /*# sourceURL="shared/properties/loose/base-manifest+.json" */ let vErrors =
+    null;
   let errors = 0;
   if (data && typeof data == "object" && !Array.isArray(data)) {
     if (data.conflicts !== undefined) {
@@ -3496,12 +3494,10 @@ const schema74 = {
     },
     packs: { $ref: "../../definitions/loose/system.json#/definitions/packs" },
     primaryTokenAttribute: {
-      $ref:
-        "../../definitions/loose/system.json#/definitions/primaryTokenAttribute",
+      $ref: "../../definitions/loose/system.json#/definitions/primaryTokenAttribute",
     },
     secondaryTokenAttribute: {
-      $ref:
-        "../../definitions/loose/system.json#/definitions/secondaryTokenAttribute",
+      $ref: "../../definitions/loose/system.json#/definitions/secondaryTokenAttribute",
     },
     templateVersion: {
       $ref: "../../definitions/loose/system.json#/definitions/templateVersion",
@@ -3624,7 +3620,8 @@ function validate49(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
-  /*# sourceURL="shared/properties/loose/base-system.json" */ let vErrors = null;
+  /*# sourceURL="shared/properties/loose/base-system.json" */ let vErrors =
+    null;
   let errors = 0;
   if (
     !validate27(data, { dataPath, parentData, parentDataProperty, rootData })
@@ -4800,8 +4797,7 @@ const schema94 = {
       $ref: "../../definitions/strict/base.json#/definitions/changelog",
     },
     compatibleCoreVersion: {
-      $ref:
-        "../../definitions/strict/base.json#/definitions/compatibleCoreVersion",
+      $ref: "../../definitions/strict/base.json#/definitions/compatibleCoreVersion",
     },
     dependencies: {
       $ref: "../../definitions/strict/base.json#/definitions/dependencies",
@@ -4822,8 +4818,7 @@ const schema94 = {
       $ref: "../../definitions/strict/base.json#/definitions/license",
     },
     minimumCoreVersion: {
-      $ref:
-        "../../definitions/strict/base.json#/definitions/minimumCoreVersion",
+      $ref: "../../definitions/strict/base.json#/definitions/minimumCoreVersion",
     },
     name: { $ref: "../../definitions/strict/base.json#/definitions/name" },
     readme: { $ref: "../../definitions/strict/base.json#/definitions/readme" },
@@ -7066,7 +7061,8 @@ function validate65(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
-  /*# sourceURL="shared/properties/strict/base-module.json" */ let vErrors = null;
+  /*# sourceURL="shared/properties/strict/base-module.json" */ let vErrors =
+    null;
   let errors = 0;
   if (
     !validate66(data, { dataPath, parentData, parentDataProperty, rootData })
@@ -8457,23 +8453,19 @@ const schema124 = {
   type: "object",
   properties: {
     conflicts: {
-      $ref:
-        "../../definitions/strict/base-manifest+.json#/definitions/conflicts",
+      $ref: "../../definitions/strict/base-manifest+.json#/definitions/conflicts",
     },
     deprecated: {
-      $ref:
-        "../../definitions/strict/base-manifest+.json#/definitions/deprecated",
+      $ref: "../../definitions/strict/base-manifest+.json#/definitions/deprecated",
     },
     includes: {
-      $ref:
-        "../../definitions/strict/base-manifest+.json#/definitions/includes",
+      $ref: "../../definitions/strict/base-manifest+.json#/definitions/includes",
     },
     library: {
       $ref: "../../definitions/strict/base-manifest+.json#/definitions/library",
     },
     manifestPlusVersion: {
-      $ref:
-        "../../definitions/strict/base-manifest+.json#/definitions/manifestPlusVersion",
+      $ref: "../../definitions/strict/base-manifest+.json#/definitions/manifestPlusVersion",
     },
     media: {
       $ref: "../../definitions/strict/base-manifest+.json#/definitions/media",
@@ -9310,7 +9302,8 @@ function validate77(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
-  /*# sourceURL="shared/properties/strict/base-manifest+.json" */ let vErrors = null;
+  /*# sourceURL="shared/properties/strict/base-manifest+.json" */ let vErrors =
+    null;
   let errors = 0;
   if (data && typeof data == "object" && !Array.isArray(data)) {
     if (data.conflicts !== undefined) {
@@ -11240,12 +11233,10 @@ const schema138 = {
     },
     packs: { $ref: "../../definitions/strict/system.json#/definitions/packs" },
     primaryTokenAttribute: {
-      $ref:
-        "../../definitions/strict/system.json#/definitions/primaryTokenAttribute",
+      $ref: "../../definitions/strict/system.json#/definitions/primaryTokenAttribute",
     },
     secondaryTokenAttribute: {
-      $ref:
-        "../../definitions/strict/system.json#/definitions/secondaryTokenAttribute",
+      $ref: "../../definitions/strict/system.json#/definitions/secondaryTokenAttribute",
     },
     templateVersion: {
       $ref: "../../definitions/strict/system.json#/definitions/templateVersion",
@@ -11403,7 +11394,8 @@ function validate88(
   data,
   { dataPath = "", parentData, parentDataProperty, rootData = data } = {}
 ) {
-  /*# sourceURL="shared/properties/strict/base-system.json" */ let vErrors = null;
+  /*# sourceURL="shared/properties/strict/base-system.json" */ let vErrors =
+    null;
   let errors = 0;
   if (
     !validate66(data, { dataPath, parentData, parentDataProperty, rootData })
