@@ -1,33 +1,33 @@
 {
   "name": "@typhonjs-fvtt/validate-manifest",
   "description": "Provides validation functions / JSON schemas for FVTT module / system manifests & manifest+ extensions.",
-  "version": "0.0.0",
-  "author": "typhonrt",
+  "version": "0.0.1",
+  "author": "Michael Leahy <support@typhonjs.io> (https://github.com/typhonrt)",
   "bugs": "https://github.com/typhonjs-fvtt/validate-manifest/issues",
   "type": "module",
   "main": "./dist/validators.js",
   "module": "./dist/validators.js",
   "exports": {
     ".": "./dist/validators.js",
-    "./ValidateManifest": "./src/plugin/ValidateManifest.js"
+    "./plugin": "./src/plugin/ValidateManifest.js"
   },
   "devDependencies": {
     "@apidevtools/json-schema-ref-parser": "^9.0.0",
-    "@rollup/plugin-commonjs": "^16.0.0",
-    "@rollup/plugin-node-resolve": "^10.0.0",
-    "@typhonjs-node-utils/better-ajv-errors": "^0.0.5",
-    "@typhonjs-node-utils/build-test": "^0.1.0",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@typhonjs-plugin/manager": "^0.0.10",
+    "@typhonjs-utils/better-ajv-errors": "^0.0.10",
+    "@typhonjs-utils/build-test": "^0.1.0",
     "ajv": "^7.0.0",
     "ajv-cli": "^4.0.0",
     "ajv-errors": "^2.0.0",
     "deepmerge": "^4.0.0",
     "prettier": "^2.0.0",
     "rollup": "^2.0.0",
-    "rollup-plugin-terser": "^7.0.0",
-    "typhonjs-plugin-manager": "^0.2.0"
+    "rollup-plugin-terser": "^7.0.0"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=12.0.0"
   },
   "files": [
     "/dist",
@@ -48,7 +48,8 @@
   "scripts": {
     "compile": "node src/merge/merge.js && node src/compile/compileSchema.js && ajv compile --all-errors --strict-types=false -r \"src/schema/shared/**/*.json\" -s \"src/schema/validators/**/*.json\" -c ajv-errors -o dist-intermediate/validator-functions.js && prettier --write \"./dist-intermediate/validator-functions.js\" && rollup --config",
     "eslint": "eslint .",
-    "prepublishOnly": "npm run eslint && npm run test",
+    "posttest": "npm run eslint",
+    "prepublishOnly": "npm compile && npm run test",
     "test": "npm run compile && c8 --reporter=lcov --reporter=text-summary mocha -colors \"test/src/**/*.test.js\""
   }
 }
