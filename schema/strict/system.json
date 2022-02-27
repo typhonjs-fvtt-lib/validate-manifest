@@ -214,7 +214,7 @@
                      ],
                      "title": "Package Name",
                      "type": "string",
-                     "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
+                     "pattern": "^([\\p{Lowercase_Letter}0-9]+-?)*[\\p{Lowercase_Letter}0-9]+$",
                      "errorMessage": {
                         "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
                      }
@@ -373,7 +373,7 @@
                         ],
                         "title": "Pack System",
                         "type": "string",
-                        "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
+                        "pattern": "^([\\p{Lowercase_Letter}0-9]+-?)*[\\p{Lowercase_Letter}0-9]+$",
                         "errorMessage": {
                            "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
                         }
@@ -416,7 +416,7 @@
                         ],
                         "title": "Pack Module",
                         "type": "string",
-                        "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
+                        "pattern": "^([\\p{Lowercase_Letter}0-9]+-?)*[\\p{Lowercase_Letter}0-9]+$",
                         "errorMessage": {
                            "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
                         }
@@ -428,7 +428,7 @@
                         ],
                         "title": "Pack Name",
                         "type": "string",
-                        "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$",
+                        "pattern": "^([\\p{Lowercase_Letter}0-9]+-?)*[\\p{Lowercase_Letter}0-9]+$",
                         "errorMessage": {
                            "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
                         }
