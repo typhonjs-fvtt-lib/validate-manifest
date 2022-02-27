@@ -214,7 +214,7 @@
                      ],
                      "title": "Package Name",
                      "type": "string",
-                     "pattern": "^([\\p{Lowercase Letters}0-9]+-?)*[\\p{Lowercase Letters}0-9]+$",
+                     "pattern": "^([\\p{Lowercase_Letter}0-9]+-?)*[\\p{Lowercase_Letter}0-9]+$",
                      "errorMessage": {
                         "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
                      }
@@ -350,12 +350,12 @@
                         "oneOf": [
                            {
                               "type": "string",
-                              "pattern": "^([\\p{Lowercase Letters}0-9]+-?)*[\\p{Lowercase Letters}0-9]+$"
+                              "pattern": "^([\\p{Lowercase_Letter}0-9]+-?)*[\\p{Lowercase_Letter}0-9]+$"
                            },
                            {
                               "items": {
                                  "type": "string",
-                                 "pattern": "^([\\p{Lowercase Letters}0-9]+-?)*[\\p{Lowercase Letters}0-9]+$"
+                                 "pattern": "^([\\p{Lowercase_Letter}0-9]+-?)*[\\p{Lowercase_Letter}0-9]+$"
                               },
                               "type": "array"
                            }
@@ -401,7 +401,7 @@
                         ],
                         "title": "Pack Module",
                         "type": "string",
-                        "pattern": "^([\\p{Lowercase Letters}0-9]+-?)*[\\p{Lowercase Letters}0-9]+$",
+                        "pattern": "^([\\p{Lowercase_Letter}0-9]+-?)*[\\p{Lowercase_Letter}0-9]+$",
                         "errorMessage": {
                            "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
                         }
@@ -413,7 +413,7 @@
                         ],
                         "title": "Pack Name",
                         "type": "string",
-                        "pattern": "^([\\p{Lowercase Letters}0-9]+-?)*[\\p{Lowercase Letters}0-9]+$",
+                        "pattern": "^([\\p{Lowercase_Letter}0-9]+-?)*[\\p{Lowercase_Letter}0-9]+$",
                         "errorMessage": {
                            "pattern": "should be a string that is lowercase alpha-numeric with only separating hyphens"
                         }
@@ -447,12 +447,12 @@
                "oneOf": [
                   {
                      "type": "string",
-                     "pattern": "^([\\p{Lowercase Letters}0-9]+-?)*[\\p{Lowercase Letters}0-9]+$"
+                     "pattern": "^([\\p{Lowercase_Letter}0-9]+-?)*[\\p{Lowercase_Letter}0-9]+$"
                   },
                   {
                      "items": {
                         "type": "string",
-                        "pattern": "^([\\p{Lowercase Letters}0-9]+-?)*[\\p{Lowercase Letters}0-9]+$"
+                        "pattern": "^([\\p{Lowercase_Letter}0-9]+-?)*[\\p{Lowercase_Letter}0-9]+$"
                      },
                      "type": "array"
                   }
