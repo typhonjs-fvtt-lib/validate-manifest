@@ -1,18 +1,18 @@
 [
    {
       "keyword": "errorMessage",
-      "dataPath": "/authors/0/twitter",
+      "instancePath": "/authors/0/twitter",
       "schemaPath": "#/definitions/properties-author+/properties/twitter/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/authors/0/twitter",
+               "instancePath": "/authors/0/twitter",
                "schemaPath": "#/definitions/properties-author+/properties/twitter/pattern",
                "params": {
                   "pattern": "^@[A-Za-z0-9_]{1,15}$"
                },
-               "message": "should match pattern \"^@[A-Za-z0-9_]{1,15}$\"",
+               "message": "must match pattern \"^@[A-Za-z0-9_]{1,15}$\"",
                "emUsed": true
             }
          ]

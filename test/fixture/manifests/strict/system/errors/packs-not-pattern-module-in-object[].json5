@@ -1,18 +1,18 @@
 [
    {
       "keyword": "errorMessage",
-      "dataPath": "/packs/0/module",
+      "instancePath": "/packs/0/module",
       "schemaPath": "#/definitions/packs/items/properties/module/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/packs/0/module",
+               "instancePath": "/packs/0/module",
                "schemaPath": "#/definitions/packs/items/properties/module/pattern",
                "params": {
                   "pattern": "^([a-z0-9]+-?)*[a-z0-9]+$"
                },
-               "message": "should match pattern \"^([a-z0-9]+-?)*[a-z0-9]+$\"",
+               "message": "must match pattern \"^([a-z0-9]+-?)*[a-z0-9]+$\"",
                "emUsed": true
             }
          ]

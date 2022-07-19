@@ -1,18 +1,18 @@
 [
    {
       "keyword": "errorMessage",
-      "dataPath": "/authors/0/discord",
+      "instancePath": "/authors/0/discord",
       "schemaPath": "#/definitions/properties-author+/properties/discord/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/authors/0/discord",
+               "instancePath": "/authors/0/discord",
                "schemaPath": "#/definitions/properties-author+/properties/discord/pattern",
                "params": {
                   "pattern": "^.{3,32}#[0-9]{4}$"
                },
-               "message": "should match pattern \"^.{3,32}#[0-9]{4}$\"",
+               "message": "must match pattern \"^.{3,32}#[0-9]{4}$\"",
                "emUsed": true
             }
          ]

@@ -1,18 +1,18 @@
 [
    {
       "keyword": "errorMessage",
-      "dataPath": "/deprecated/alternatives/0/name",
+      "instancePath": "/deprecated/alternatives/0/name",
       "schemaPath": "#/definitions/deprecated/properties/alternatives/items/properties/name/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/deprecated/alternatives/0/name",
+               "instancePath": "/deprecated/alternatives/0/name",
                "schemaPath": "#/definitions/deprecated/properties/alternatives/items/properties/name/pattern",
                "params": {
                   "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$"
                },
-               "message": "should match pattern \"^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$\"",
+               "message": "must match pattern \"^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$\"",
                "emUsed": true
             }
          ]

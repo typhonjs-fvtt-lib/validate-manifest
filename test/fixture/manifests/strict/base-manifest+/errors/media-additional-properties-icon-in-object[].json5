@@ -1,11 +1,11 @@
 [
    {
       "keyword": "additionalProperties",
-      "dataPath": "/media/0",
+      "instancePath": "/media/0",
       "schemaPath": "#/definitions/media-item-strict/else/then/additionalProperties",
       "params": {
          "additionalProperty": "foo"
       },
-      "message": "should NOT have additional properties"
+      "message": "must NOT have additional properties"
    }
 ]

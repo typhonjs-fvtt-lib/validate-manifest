@@ -1,18 +1,18 @@
 [
    {
       "keyword": "errorMessage",
-      "dataPath": "/conflicts/0/name",
+      "instancePath": "/conflicts/0/name",
       "schemaPath": "#/definitions/conflicts/items/properties/name/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/conflicts/0/name",
+               "instancePath": "/conflicts/0/name",
                "schemaPath": "#/definitions/conflicts/items/properties/name/pattern",
                "params": {
                   "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$"
                },
-               "message": "should match pattern \"^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$\"",
+               "message": "must match pattern \"^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$\"",
                "emUsed": true
             }
          ]

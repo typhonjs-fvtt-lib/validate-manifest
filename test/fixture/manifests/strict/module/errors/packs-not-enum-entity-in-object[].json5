@@ -1,7 +1,7 @@
 [
    {
       "keyword": "enum",
-      "dataPath": "/packs/0/entity",
+      "instancePath": "/packs/0/entity",
       "schemaPath": "#/definitions/packs/items/properties/entity/enum",
       "params": {
          "allowedValues": [
@@ -14,6 +14,6 @@
             "Playlist"
          ]
       },
-      "message": "should be equal to one of the allowed values"
+      "message": "must be equal to one of the allowed values"
    }
 ]

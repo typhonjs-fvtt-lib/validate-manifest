@@ -1,18 +1,18 @@
 [
    {
       "keyword": "errorMessage",
-      "dataPath": "/languages/0/path",
+      "instancePath": "/languages/0/path",
       "schemaPath": "#/definitions/languages/items/properties/path/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/languages/0/path",
+               "instancePath": "/languages/0/path",
                "schemaPath": "#/definitions/languages/items/properties/path/pattern",
                "params": {
                   "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$"
                },
-               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$\"",
+               "message": "must match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.json$\"",
                "emUsed": true
             }
          ]

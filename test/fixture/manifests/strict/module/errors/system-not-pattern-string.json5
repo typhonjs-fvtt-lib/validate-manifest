@@ -1,38 +1,38 @@
 [
    {
       "keyword": "errorMessage",
-      "dataPath": "/system",
+      "instancePath": "/system",
       "schemaPath": "#/definitions/system/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/system",
+               "instancePath": "/system",
                "schemaPath": "#/definitions/system/oneOf/0/pattern",
                "params": {
                   "pattern": "^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$"
                },
-               "message": "should match pattern \"^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$\"",
+               "message": "must match pattern \"^([a-zA-Z0-9]+[-_]?)*[a-zA-Z0-9]+$\"",
                "emUsed": true
             },
             {
                "keyword": "type",
-               "dataPath": "/system",
+               "instancePath": "/system",
                "schemaPath": "#/definitions/system/oneOf/1/type",
                "params": {
                   "type": "array"
                },
-               "message": "should be array",
+               "message": "must be array",
                "emUsed": true
             },
             {
                "keyword": "oneOf",
-               "dataPath": "/system",
+               "instancePath": "/system",
                "schemaPath": "#/definitions/system/oneOf",
                "params": {
                   "passingSchemas": null
                },
-               "message": "should match exactly one schema in oneOf",
+               "message": "must match exactly one schema in oneOf",
                "emUsed": true
             }
          ]

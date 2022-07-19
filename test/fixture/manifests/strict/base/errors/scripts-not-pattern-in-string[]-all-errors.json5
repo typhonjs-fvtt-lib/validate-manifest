@@ -1,18 +1,18 @@
 [
    {
       "keyword": "errorMessage",
-      "dataPath": "/scripts/0",
+      "instancePath": "/scripts/0",
       "schemaPath": "#/definitions/scripts/items/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/scripts/0",
+               "instancePath": "/scripts/0",
                "schemaPath": "#/definitions/scripts/items/pattern",
                "params": {
                   "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
                },
-               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "message": "must match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
                "emUsed": true
             }
          ]
@@ -21,18 +21,18 @@
    },
    {
       "keyword": "errorMessage",
-      "dataPath": "/scripts/1",
+      "instancePath": "/scripts/1",
       "schemaPath": "#/definitions/scripts/items/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/scripts/1",
+               "instancePath": "/scripts/1",
                "schemaPath": "#/definitions/scripts/items/pattern",
                "params": {
                   "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
                },
-               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "message": "must match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
                "emUsed": true
             }
          ]
@@ -41,18 +41,18 @@
    },
    {
       "keyword": "errorMessage",
-      "dataPath": "/scripts/2",
+      "instancePath": "/scripts/2",
       "schemaPath": "#/definitions/scripts/items/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/scripts/2",
+               "instancePath": "/scripts/2",
                "schemaPath": "#/definitions/scripts/items/pattern",
                "params": {
                   "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
                },
-               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "message": "must match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
                "emUsed": true
             }
          ]
@@ -61,18 +61,18 @@
    },
    {
       "keyword": "errorMessage",
-      "dataPath": "/scripts/3",
+      "instancePath": "/scripts/3",
       "schemaPath": "#/definitions/scripts/items/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/scripts/3",
+               "instancePath": "/scripts/3",
                "schemaPath": "#/definitions/scripts/items/pattern",
                "params": {
                   "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
                },
-               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "message": "must match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
                "emUsed": true
             }
          ]
@@ -81,18 +81,18 @@
    },
    {
       "keyword": "errorMessage",
-      "dataPath": "/scripts/4",
+      "instancePath": "/scripts/4",
       "schemaPath": "#/definitions/scripts/items/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/scripts/4",
+               "instancePath": "/scripts/4",
                "schemaPath": "#/definitions/scripts/items/pattern",
                "params": {
                   "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
                },
-               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "message": "must match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
                "emUsed": true
             }
          ]
@@ -101,18 +101,18 @@
    },
    {
       "keyword": "errorMessage",
-      "dataPath": "/scripts/5",
+      "instancePath": "/scripts/5",
       "schemaPath": "#/definitions/scripts/items/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/scripts/5",
+               "instancePath": "/scripts/5",
                "schemaPath": "#/definitions/scripts/items/pattern",
                "params": {
                   "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
                },
-               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "message": "must match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
                "emUsed": true
             }
          ]
@@ -121,18 +121,18 @@
    },
    {
       "keyword": "errorMessage",
-      "dataPath": "/scripts/6",
+      "instancePath": "/scripts/6",
       "schemaPath": "#/definitions/scripts/items/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/scripts/6",
+               "instancePath": "/scripts/6",
                "schemaPath": "#/definitions/scripts/items/pattern",
                "params": {
                   "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
                },
-               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "message": "must match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
                "emUsed": true
             }
          ]
@@ -141,18 +141,18 @@
    },
    {
       "keyword": "errorMessage",
-      "dataPath": "/scripts/7",
+      "instancePath": "/scripts/7",
       "schemaPath": "#/definitions/scripts/items/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/scripts/7",
+               "instancePath": "/scripts/7",
                "schemaPath": "#/definitions/scripts/items/pattern",
                "params": {
                   "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
                },
-               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "message": "must match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
                "emUsed": true
             }
          ]
@@ -161,18 +161,18 @@
    },
    {
       "keyword": "errorMessage",
-      "dataPath": "/scripts/8",
+      "instancePath": "/scripts/8",
       "schemaPath": "#/definitions/scripts/items/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/scripts/8",
+               "instancePath": "/scripts/8",
                "schemaPath": "#/definitions/scripts/items/pattern",
                "params": {
                   "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
                },
-               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "message": "must match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
                "emUsed": true
             }
          ]
@@ -181,18 +181,18 @@
    },
    {
       "keyword": "errorMessage",
-      "dataPath": "/scripts/9",
+      "instancePath": "/scripts/9",
       "schemaPath": "#/definitions/scripts/items/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "pattern",
-               "dataPath": "/scripts/9",
+               "instancePath": "/scripts/9",
                "schemaPath": "#/definitions/scripts/items/pattern",
                "params": {
                   "pattern": "^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$"
                },
-               "message": "should match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
+               "message": "must match pattern \"^(?!\\.\\.|\\/)([^\\/\\\\]+\\/)*[^\\/\\\\]+\\.js$\"",
                "emUsed": true
             }
          ]

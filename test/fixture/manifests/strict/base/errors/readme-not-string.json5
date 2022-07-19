@@ -1,23 +1,23 @@
 [
    {
       "keyword": "errorMessage",
-      "dataPath": "/readme",
+      "instancePath": "/readme",
       "schemaPath": "#/definitions/readme/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "type",
-               "dataPath": "/readme",
+               "instancePath": "/readme",
                "schemaPath": "#/definitions/readme/type",
                "params": {
                   "type": "string"
                },
-               "message": "should be string",
+               "message": "must be string",
                "emUsed": true
             },
             {
                "keyword": "oneOf",
-               "dataPath": "/readme",
+               "instancePath": "/readme",
                "schemaPath": "#/definitions/readme/oneOf",
                "params": {
                   "passingSchemas": [
@@ -25,7 +25,7 @@
                      1
                   ]
                },
-               "message": "should match exactly one schema in oneOf",
+               "message": "must match exactly one schema in oneOf",
                "emUsed": true
             }
          ]

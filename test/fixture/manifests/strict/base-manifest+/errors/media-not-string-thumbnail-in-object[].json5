@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/media/0/thumbnail",
+      "instancePath": "/media/0/thumbnail",
       "schemaPath": "#/definitions/media-item-strict/then/properties/thumbnail/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]
