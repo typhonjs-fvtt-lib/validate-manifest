@@ -1,7 +1,7 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/secondaryTokenAttribute",
+      "instancePath": "/secondaryTokenAttribute",
       "schemaPath": "#/definitions/secondaryTokenAttribute/type",
       "params": {
          "type": [
@@ -9,6 +9,6 @@
             "string"
          ]
       },
-      "message": "should be null,string"
+      "message": "must be null,string"
    }
 ]

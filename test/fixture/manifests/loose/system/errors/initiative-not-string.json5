@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/initiative",
+      "instancePath": "/initiative",
       "schemaPath": "#/definitions/initiative/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

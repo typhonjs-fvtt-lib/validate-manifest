@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/templateVersion",
+      "instancePath": "/templateVersion",
       "schemaPath": "#/definitions/templateVersion/type",
       "params": {
          "type": "integer"
       },
-      "message": "should be integer"
+      "message": "must be integer"
    }
 ]

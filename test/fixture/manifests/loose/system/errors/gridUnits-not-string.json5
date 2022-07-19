@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/gridUnits",
+      "instancePath": "/gridUnits",
       "schemaPath": "#/definitions/gridUnits/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

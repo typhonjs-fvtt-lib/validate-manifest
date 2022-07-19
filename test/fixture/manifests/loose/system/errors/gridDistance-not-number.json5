@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/gridDistance",
+      "instancePath": "/gridDistance",
       "schemaPath": "#/definitions/gridDistance/type",
       "params": {
          "type": "integer"
       },
-      "message": "should be integer"
+      "message": "must be integer"
    }
 ]

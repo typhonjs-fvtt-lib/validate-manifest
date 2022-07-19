@@ -3,14 +3,14 @@
  */
 export default {
    functionName: {
-      validateModule: true,
-      validateModuleStrict: true,
-      validateModulePlus: true,
-      validateModulePlusStrict: true,
-      // validateSystem: true,
-      // validateSystemStrict: true,
-      // validateSystemPlus: true,
-      // validateSystemPlusStrict: true
+      // validateModule: true,
+      // validateModuleStrict: true,
+      // validateModulePlus: true,
+      // validateModulePlusStrict: true,
+      validateSystem: true,
+      validateSystemStrict: true,
+      validateSystemPlus: true,
+      validateSystemPlusStrict: true
    },
 
    categories: {
