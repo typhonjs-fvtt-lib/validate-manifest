@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/compatibleCoreVersion",
+      "instancePath": "/compatibleCoreVersion",
       "schemaPath": "#/definitions/compatibleCoreVersion/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

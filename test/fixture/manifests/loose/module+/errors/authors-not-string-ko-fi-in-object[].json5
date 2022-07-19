@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/authors/0/ko-fi",
+      "instancePath": "/authors/0/ko-fi",
       "schemaPath": "#/definitions/properties-author+/properties/ko-fi/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

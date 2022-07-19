@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/bugs",
+      "instancePath": "/bugs",
       "schemaPath": "#/definitions/bugs/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

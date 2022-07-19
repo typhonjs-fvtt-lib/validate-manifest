@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/styles/0",
+      "instancePath": "/styles/0",
       "schemaPath": "#/definitions/styles/items/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

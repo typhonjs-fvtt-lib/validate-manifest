@@ -1,20 +1,20 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/esmodules/0",
+      "instancePath": "/esmodules/0",
       "schemaPath": "#/definitions/esmodules/items/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    },
    {
       "keyword": "type",
-      "dataPath": "/esmodules/1",
+      "instancePath": "/esmodules/1",
       "schemaPath": "#/definitions/esmodules/items/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

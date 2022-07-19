@@ -1,20 +1,20 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/scripts/0",
+      "instancePath": "/scripts/0",
       "schemaPath": "#/definitions/scripts/items/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    },
    {
       "keyword": "type",
-      "dataPath": "/scripts/1",
+      "instancePath": "/scripts/1",
       "schemaPath": "#/definitions/scripts/items/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/changelog",
+      "instancePath": "/changelog",
       "schemaPath": "#/definitions/changelog/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

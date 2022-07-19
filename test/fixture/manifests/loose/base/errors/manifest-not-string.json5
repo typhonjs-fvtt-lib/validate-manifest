@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/manifest",
+      "instancePath": "/manifest",
       "schemaPath": "#/definitions/manifest/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

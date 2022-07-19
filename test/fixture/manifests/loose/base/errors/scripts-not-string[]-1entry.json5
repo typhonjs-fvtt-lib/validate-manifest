@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/scripts/0",
+      "instancePath": "/scripts/0",
       "schemaPath": "#/definitions/scripts/items/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

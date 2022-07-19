@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/authors/0/name",
+      "instancePath": "/authors/0/name",
       "schemaPath": "#/definitions/properties-author/properties/name/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

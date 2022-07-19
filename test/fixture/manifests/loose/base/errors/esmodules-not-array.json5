@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/esmodules",
+      "instancePath": "/esmodules",
       "schemaPath": "#/definitions/esmodules/type",
       "params": {
          "type": "array"
       },
-      "message": "should be array"
+      "message": "must be array"
    }
 ]

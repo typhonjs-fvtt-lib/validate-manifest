@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/authors/0/reddit",
+      "instancePath": "/authors/0/reddit",
       "schemaPath": "#/definitions/properties-author+/properties/reddit/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

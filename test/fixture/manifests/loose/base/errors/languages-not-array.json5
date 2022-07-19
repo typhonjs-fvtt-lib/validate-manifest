@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/languages",
+      "instancePath": "/languages",
       "schemaPath": "#/definitions/languages/type",
       "params": {
          "type": "array"
       },
-      "message": "should be array"
+      "message": "must be array"
    }
 ]

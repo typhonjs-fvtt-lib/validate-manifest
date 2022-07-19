@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/dependencies/0",
+      "instancePath": "/dependencies/0",
       "schemaPath": "#/definitions/dependencies/items/type",
       "params": {
          "type": "object"
       },
-      "message": "should be object"
+      "message": "must be object"
    }
 ]

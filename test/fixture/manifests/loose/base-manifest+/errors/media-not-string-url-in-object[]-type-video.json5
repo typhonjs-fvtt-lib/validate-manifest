@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/media/0/url",
+      "instancePath": "/media/0/url",
       "schemaPath": "#/definitions/media-item-loose/properties/url/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

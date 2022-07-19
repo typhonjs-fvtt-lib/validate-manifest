@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/socket",
+      "instancePath": "/socket",
       "schemaPath": "#/definitions/socket/type",
       "params": {
          "type": "boolean"
       },
-      "message": "should be boolean"
+      "message": "must be boolean"
    }
 ]

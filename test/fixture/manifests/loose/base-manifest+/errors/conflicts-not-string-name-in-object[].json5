@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/conflicts/0/name",
+      "instancePath": "/conflicts/0/name",
       "schemaPath": "#/definitions/conflicts/items/properties/name/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

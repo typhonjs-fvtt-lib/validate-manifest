@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/deprecated/reason",
+      "instancePath": "/deprecated/reason",
       "schemaPath": "#/definitions/deprecated/properties/reason/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

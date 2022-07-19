@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/readme",
+      "instancePath": "/readme",
       "schemaPath": "#/definitions/readme/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

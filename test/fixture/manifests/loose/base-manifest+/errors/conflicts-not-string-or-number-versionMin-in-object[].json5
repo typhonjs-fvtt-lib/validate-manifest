@@ -1,38 +1,38 @@
 [
    {
       "keyword": "errorMessage",
-      "dataPath": "/conflicts/0/versionMin",
+      "instancePath": "/conflicts/0/versionMin",
       "schemaPath": "#/definitions/conflicts/items/properties/versionMin/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "type",
-               "dataPath": "/conflicts/0/versionMin",
+               "instancePath": "/conflicts/0/versionMin",
                "schemaPath": "#/definitions/conflicts/items/properties/versionMin/oneOf/0/type",
                "params": {
                   "type": "string"
                },
-               "message": "should be string",
+               "message": "must be string",
                "emUsed": true
             },
             {
                "keyword": "type",
-               "dataPath": "/conflicts/0/versionMin",
+               "instancePath": "/conflicts/0/versionMin",
                "schemaPath": "#/definitions/conflicts/items/properties/versionMin/oneOf/1/type",
                "params": {
                   "type": "number"
                },
-               "message": "should be number",
+               "message": "must be number",
                "emUsed": true
             },
             {
                "keyword": "oneOf",
-               "dataPath": "/conflicts/0/versionMin",
+               "instancePath": "/conflicts/0/versionMin",
                "schemaPath": "#/definitions/conflicts/items/properties/versionMin/oneOf",
                "params": {
                   "passingSchemas": null
                },
-               "message": "should match exactly one schema in oneOf",
+               "message": "must match exactly one schema in oneOf",
                "emUsed": true
             }
          ]

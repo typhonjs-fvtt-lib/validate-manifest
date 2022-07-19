@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/media/0/loop",
+      "instancePath": "/media/0/loop",
       "schemaPath": "#/definitions/media-item-loose/properties/loop/type",
       "params": {
          "type": "boolean"
       },
-      "message": "should be boolean"
+      "message": "must be boolean"
    }
 ]

@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/deprecated/alternatives/0/name",
+      "instancePath": "/deprecated/alternatives/0/name",
       "schemaPath": "#/definitions/deprecated/properties/alternatives/items/properties/name/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

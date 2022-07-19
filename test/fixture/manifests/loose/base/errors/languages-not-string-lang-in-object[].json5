@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/languages/0/lang",
+      "instancePath": "/languages/0/lang",
       "schemaPath": "#/definitions/languages/items/properties/lang/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/packs/0/name",
+      "instancePath": "/packs/0/name",
       "schemaPath": "#/definitions/packs/items/properties/name/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

@@ -1,11 +1,11 @@
 [
    {
       "keyword": "required",
-      "dataPath": "/media/0",
+      "instancePath": "/media/0",
       "schemaPath": "#/definitions/media-item-loose/required",
       "params": {
          "missingProperty": "url"
       },
-      "message": "should have required property 'url'"
+      "message": "must have required property 'url'"
    }
 ]

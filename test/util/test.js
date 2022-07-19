@@ -7,17 +7,17 @@ export default {
       validateModuleStrict: true,
       validateModulePlus: true,
       validateModulePlusStrict: true,
-      validateSystem: true,
-      validateSystemStrict: true,
-      validateSystemPlus: true,
-      validateSystemPlusStrict: true
+      // validateSystem: true,
+      // validateSystemStrict: true,
+      // validateSystemPlus: true,
+      // validateSystemPlusStrict: true
    },
 
    categories: {
       loose: true,
-      strict: true,
-      plus: true,
-      notplus: true
+      // strict: true,
+      // plus: true,
+      // notplus: true
    },
 
    // Run different types of tests.

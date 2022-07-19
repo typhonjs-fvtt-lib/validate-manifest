@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/description",
+      "instancePath": "/description",
       "schemaPath": "#/definitions/description/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/minimumCoreVersion",
+      "instancePath": "/minimumCoreVersion",
       "schemaPath": "#/definitions/minimumCoreVersion/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

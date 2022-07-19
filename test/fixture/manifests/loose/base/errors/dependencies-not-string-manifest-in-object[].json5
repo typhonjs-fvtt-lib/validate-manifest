@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/dependencies/0/manifest",
+      "instancePath": "/dependencies/0/manifest",
       "schemaPath": "#/definitions/dependencies/items/properties/manifest/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

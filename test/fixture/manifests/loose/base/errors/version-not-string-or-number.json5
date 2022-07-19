@@ -1,38 +1,38 @@
 [
    {
       "keyword": "errorMessage",
-      "dataPath": "/version",
+      "instancePath": "/version",
       "schemaPath": "#/definitions/version/errorMessage",
       "params": {
          "errors": [
             {
                "keyword": "type",
-               "dataPath": "/version",
+               "instancePath": "/version",
                "schemaPath": "#/definitions/version/oneOf/0/type",
                "params": {
                   "type": "string"
                },
-               "message": "should be string",
+               "message": "must be string",
                "emUsed": true
             },
             {
                "keyword": "type",
-               "dataPath": "/version",
+               "instancePath": "/version",
                "schemaPath": "#/definitions/version/oneOf/1/type",
                "params": {
                   "type": "number"
                },
-               "message": "should be number",
+               "message": "must be number",
                "emUsed": true
             },
             {
                "keyword": "oneOf",
-               "dataPath": "/version",
+               "instancePath": "/version",
                "schemaPath": "#/definitions/version/oneOf",
                "params": {
                   "passingSchemas": null
                },
-               "message": "should match exactly one schema in oneOf",
+               "message": "must match exactly one schema in oneOf",
                "emUsed": true
             }
          ]

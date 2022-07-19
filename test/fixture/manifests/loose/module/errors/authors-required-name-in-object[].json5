@@ -1,11 +1,11 @@
 [
    {
       "keyword": "required",
-      "dataPath": "/authors/0",
+      "instancePath": "/authors/0",
       "schemaPath": "#/definitions/properties-author/required",
       "params": {
          "missingProperty": "name"
       },
-      "message": "should have required property 'name'"
+      "message": "must have required property 'name'"
    }
 ]

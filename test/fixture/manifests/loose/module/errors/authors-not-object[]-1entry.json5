@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/authors/0",
+      "instancePath": "/authors/0",
       "schemaPath": "#/items/type",
       "params": {
          "type": "object"
       },
-      "message": "should be object"
+      "message": "must be object"
    }
 ]

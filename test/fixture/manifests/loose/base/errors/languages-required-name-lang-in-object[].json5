@@ -1,11 +1,11 @@
 [
    {
       "keyword": "required",
-      "dataPath": "/languages/0",
+      "instancePath": "/languages/0",
       "schemaPath": "#/definitions/languages/items/required",
       "params": {
          "missingProperty": "name"
       },
-      "message": "should have required property 'name'"
+      "message": "must have required property 'name'"
    }
 ]

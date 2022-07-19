@@ -1,11 +1,11 @@
 [
    {
       "keyword": "required",
-      "dataPath": "/conflicts/0",
+      "instancePath": "/conflicts/0",
       "schemaPath": "#/definitions/conflicts/items/required",
       "params": {
          "missingProperty": "name"
       },
-      "message": "should have required property 'name'"
+      "message": "must have required property 'name'"
    }
 ]

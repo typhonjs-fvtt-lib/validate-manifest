@@ -1,11 +1,11 @@
 [
    {
       "keyword": "required",
-      "dataPath": "",
+      "instancePath": "",
       "schemaPath": "#/required",
       "params": {
          "missingProperty": "version"
       },
-      "message": "should have required property 'version'"
+      "message": "must have required property 'version'"
    }
 ]

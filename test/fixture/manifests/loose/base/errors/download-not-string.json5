@@ -1,11 +1,11 @@
 [
    {
       "keyword": "type",
-      "dataPath": "/download",
+      "instancePath": "/download",
       "schemaPath": "#/definitions/download/type",
       "params": {
          "type": "string"
       },
-      "message": "should be string"
+      "message": "must be string"
    }
 ]

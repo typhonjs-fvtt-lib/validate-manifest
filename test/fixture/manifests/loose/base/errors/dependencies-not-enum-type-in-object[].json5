@@ -1,7 +1,7 @@
 [
    {
       "keyword": "enum",
-      "dataPath": "/dependencies/0/type",
+      "instancePath": "/dependencies/0/type",
       "schemaPath": "#/definitions/dependencies/items/properties/type/enum",
       "params": {
          "allowedValues": [
@@ -10,6 +10,6 @@
             "world"
          ]
       },
-      "message": "should be equal to one of the allowed values"
+      "message": "must be equal to one of the allowed values"
    }
 ]
