@@ -3,21 +3,21 @@
  */
 export default {
    functionName: {
-      // validateModule: true,
-      // validateModuleStrict: true,
-      // validateModulePlus: true,
-      // validateModulePlusStrict: true,
-      // validateSystem: true,
-      // validateSystemStrict: true,
-      // validateSystemPlus: true,
-      // validateSystemPlusStrict: true
+      validateModule: true,
+      validateModuleStrict: true,
+      validateModulePlus: true,
+      validateModulePlusStrict: true,
+      validateSystem: true,
+      validateSystemStrict: true,
+      validateSystemPlus: true,
+      validateSystemPlusStrict: true
    },
 
    categories: {
-      // loose: true,
+      loose: true,
       strict: true,
-      // plus: true,
-      // notplus: true
+      plus: true,
+      notplus: true
    },
 
    // Run different types of tests.
