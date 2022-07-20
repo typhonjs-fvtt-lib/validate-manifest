@@ -27,10 +27,8 @@ export default class TestRunner
     * @param {Function} testFunction - The ajv validation function to test.
     *
     * @param {string}   dirPath - The directory to open error and invalid data.
-    *
-    * @param {object}   functionDesc - Data describing the function.
     */
-   static invalid(testFunction, dirPath, functionDesc)
+   static invalid(testFunction, dirPath)
    {
       const betterErrorPath = `${dirPath}${path.sep}bettererrors`;
       const errorPath = `${dirPath}${path.sep}errors`;
@@ -46,8 +44,6 @@ export default class TestRunner
       for (const key of invalidData.keys())
       {
          const invalid = invalidData.get(key);
-
-         if (functionDesc.isStrict && '__strictskip' in invalid.data) { continue; }
 
          it(key, (done) =>
          {
@@ -224,10 +220,8 @@ export default class TestRunner
     * @param {Function} testFunction - The ajv validation function to test.
     *
     * @param {string}   dirPath - The directory to open valid data.
-    *
-    * @param {object}   functionDesc - Data describing the function.
     */
-   static valid(testFunction, dirPath, functionDesc)
+   static valid(testFunction, dirPath)
    {
       const validPath = `${dirPath}${path.sep}valid`;
 
@@ -238,8 +232,6 @@ export default class TestRunner
       for (const key of validData.keys())
       {
          const test = validData.get(key);
-
-         if (functionDesc.isStrict && '__strictskip' in test.data) { continue; }
 
          it(key, (done) =>
          {

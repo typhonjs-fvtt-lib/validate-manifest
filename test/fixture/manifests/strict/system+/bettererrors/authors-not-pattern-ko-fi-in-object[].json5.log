@@ -1,7 +1,0 @@
-/authors/0/ko-fi should be a string that is a valid Ko-fi user name
-   6 |   "version": "1.0.0",
-   7 |   "minimumCoreVersion": "0.7.5",
->  8 |   "authors": [{ "name": "typhonrt", "ko-fi": "not-ko-fi" }]
-     |                                              ^^^^^^^^^^^
-   9 | }
-  10 |

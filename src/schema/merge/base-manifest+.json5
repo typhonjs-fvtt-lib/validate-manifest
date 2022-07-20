@@ -1,0 +1,15 @@
+/**
+ * Modifies the qualifying the $id. Merged with `abstract/base-manifest+.json5` modifying the media->items array for the
+ * loose definition which only checks types.
+ */
+{
+  "$id": "shared/definitions/base-manifest+.json",
+
+  "definitions": {
+    "media": {
+      "items": {
+        "$ref": "#/definitions/media-item-loose"
+      }
+    }
+  }
+}

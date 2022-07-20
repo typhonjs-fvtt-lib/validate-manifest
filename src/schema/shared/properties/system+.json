@@ -1,0 +1,19 @@
+{
+  "$id": "shared/properties/system+.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FoundryVTT system.json & manifest+",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "base-manifest+.json"
+    },
+    {
+      "$ref": "base-system.json"
+    }
+  ],
+  "properties": {
+    "authors": {
+      "$ref": "../definitions/authors.json#/definitions/authors+"
+    }
+  }
+}

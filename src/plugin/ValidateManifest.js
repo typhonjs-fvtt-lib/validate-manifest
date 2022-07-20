@@ -6,13 +6,9 @@ import * as vm from '../../dist/validators.js';
  * The following event bindings take a JSON object and options to AJV validator function.
  *
  * `typhonjs:fvtt:validate:manifest:module` - Invokes validateModule
- * `typhonjs:fvtt:validate:manifest:module:strict` - Invokes validateModuleStrict
  * `typhonjs:fvtt:validate:manifest:plus:module` - Invokes validateModulePlus
- * `typhonjs:fvtt:validate:manifest:plus:module:strict` - Invokes validateModulePlusStrict
  * `typhonjs:fvtt:validate:manifest:system` - Invokes validateSystem
- * `typhonjs:fvtt:validate:manifest:system:strict` - Invokes validateSystemStrict
  * `typhonjs:fvtt:validate:manifest:plus:system` - Invokes validateSystemPlus
- * `typhonjs:fvtt:validate:manifest:plus:system:strict` - Invokes validateSystemPlusStrict
  */
 export default class ValidateManifest
 {
@@ -28,18 +24,6 @@ export default class ValidateManifest
       return { valid, errors: vm.validateModulePlus.errors, type: 'modulePlus' };
    }
 
-   static validateModulePlusStrict(data, options)
-   {
-      const valid = vm.validateModulePlusStrict(data, options);
-      return { valid, errors: vm.validateModulePlusStrict.errors, type: 'modulePlusStrict' };
-   }
-
-   static validateModuleStrict(data, options)
-   {
-      const valid = vm.validateModuleStrict(data, options);
-      return { valid, errors: vm.validateModuleStrict.errors, type: 'moduleStrict' };
-   }
-
    static validateSystem(data, options)
    {
       const valid = vm.validateSystem(data, options);
@@ -50,18 +34,6 @@ export default class ValidateManifest
    {
       const valid = vm.validateSystemPlus(data, options);
       return { valid, errors: vm.validateSystemPlus.errors, type: 'systemPlus' };
-   }
-
-   static validateSystemPlusStrict(data, options)
-   {
-      const valid = vm.validateSystemPlusStrict(data, options);
-      return { valid, errors: vm.validateSystemPlusStrict.errors, type: 'systemPlusStrict' };
-   }
-
-   static validateSystemStrict(data, options)
-   {
-      const valid = vm.validateSystemStrict(data, options);
-      return { valid, errors: vm.validateSystemStrict.errors, type: 'systemStrict' };
    }
 
    /**
@@ -90,25 +62,13 @@ export default class ValidateManifest
 
       eventbus.on(`typhonjs:fvtt:validate:manifest:module`, ValidateManifest.validateModule, void 0, { guard });
 
-      eventbus.on(`typhonjs:fvtt:validate:manifest:module:strict`, ValidateManifest.validateModuleStrict, void 0,
-       { guard });
-
       eventbus.on(`typhonjs:fvtt:validate:manifest:plus:module`, ValidateManifest.validateModulePlus, void 0,
        { guard });
 
-      eventbus.on(`typhonjs:fvtt:validate:manifest:plus:module:strict`, ValidateManifest.validateModulePlusStrict,
-       void 0, { guard });
-
       eventbus.on(`typhonjs:fvtt:validate:manifest:system`, ValidateManifest.validateSystem, void 0, { guard });
-
-      eventbus.on(`typhonjs:fvtt:validate:manifest:system:strict`, ValidateManifest.validateSystemStrict, void 0,
-       { guard });
 
       eventbus.on(`typhonjs:fvtt:validate:manifest:plus:system`, ValidateManifest.validateSystemPlus, void 0,
        { guard });
-
-      eventbus.on(`typhonjs:fvtt:validate:manifest:plus:system:strict`, ValidateManifest.validateSystemPlusStrict,
-       void 0, { guard });
    }
 }
 

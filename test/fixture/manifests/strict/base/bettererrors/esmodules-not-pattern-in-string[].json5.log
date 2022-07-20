@@ -1,8 +1,0 @@
-/esmodules/0 should be a relative file path from the package root ending in
-'.js'
-   6 |   "version": "1.0.0",
-   7 |   "minimumCoreVersion": "0.7.5",
->  8 |   "esmodules": ["no_js_extension"]
-     |                 ^^^^^^^^^^^^^^^^^
-   9 | }
-  10 |

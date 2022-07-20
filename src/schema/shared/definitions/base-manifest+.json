@@ -1,0 +1,290 @@
+{
+  "$id": "shared/definitions/base-manifest+.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "conflicts": {
+      "description": "The `conflicts` field is similar to the `dependencies` field in the core Foundry VTT manifest specification, but provides a mapping of packages which can not interoperate with the given package.",
+      "items": {
+        "properties": {
+          "name": {
+            "description": "The name of the conflict package.",
+            "examples": [
+              "dice-so-nice"
+            ],
+            "title": "Conflict Package Name",
+            "type": "string"
+          },
+          "type": {
+            "description": "The type of the conflict package",
+            "enum": [
+              "module",
+              "system",
+              "world"
+            ],
+            "examples": [
+              "module",
+              "system",
+              "world"
+            ],
+            "title": "Conflict Package Type"
+          },
+          "versionMax": {
+            "description": "Defines a maximum version number for the package within which the conflict occurs.",
+            "errorMessage": "should be a string or number",
+            "examples": [
+              "1.0.0"
+            ],
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "title": "Conflict Maximum Version"
+          },
+          "versionMin": {
+            "description": "Defines a minimum version number for the package within which the conflict occurs.",
+            "errorMessage": "should be a string or number",
+            "examples": [
+              "1.0.0"
+            ],
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "title": "Conflict Minimum Version"
+          }
+        },
+        "required": [
+          "name",
+          "type"
+        ],
+        "title": "Conflict Entry",
+        "type": "object"
+      },
+      "title": "Conflicts",
+      "type": "array"
+    },
+    "deprecated": {
+      "description": "This field is intended to be added to the manifest of a package that is no longer being maintained and / or is no longer functional / useful.",
+      "properties": {
+        "alternatives": {
+          "description": "An array of objects each providing data about another package which could act as a replacement for the deprecated package.",
+          "items": {
+            "properties": {
+              "name": {
+                "description": "Deprecated package name",
+                "examples": [
+                  "module-name"
+                ],
+                "title": "Alternate Package Name",
+                "type": "string"
+              },
+              "manifest": {
+                "description": "The URL of the manifest for the alternative package from which it can be downloaded.",
+                "examples": [
+                  "https://link.com/to/module.json"
+                ],
+                "title": "Alternate Package Manifest",
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "manifest"
+            ],
+            "title": "Alternative Entry",
+            "type": "object"
+          },
+          "title": "Alternatives",
+          "type": "array"
+        },
+        "coreVersion": {
+          "description": "If set the package is assumed to be a module that has been deprecated by a Foundry VTT core update. This field is the core version number as a string.",
+          "examples": [
+            "0.7.9"
+          ],
+          "title": "Core Version",
+          "type": "string"
+        },
+        "reason": {
+          "description": "A human-readable string explaining why the package was deprecated.",
+          "examples": [
+            "This was added to foundry core."
+          ],
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "title": "Deprecated",
+      "type": "object"
+    },
+    "includes": {
+      "description": "The `includes` field is an array of strings where each string is a relative file path that should be included in the package zip archive.",
+      "items": {
+        "examples": [
+          "relative/path/to/files/script.js",
+          "relative/path/to/templates/template.html",
+          "path/to/image/assets/folder"
+        ],
+        "title": "Include Entry",
+        "type": "string"
+      },
+      "title": "Includes",
+      "type": "array"
+    },
+    "library": {
+      "description": "The `library` field is a boolean that indicates whether the package is a library intended for other packages to depend on and consume.",
+      "examples": [
+        true
+      ],
+      "title": "Library",
+      "type": "boolean"
+    },
+    "manifestPlusVersion": {
+      "description": "Denotes which version of Manifest+ you have implemented.",
+      "examples": [
+        "1.1.0"
+      ],
+      "title": "Manifest+ Version",
+      "type": "string"
+    },
+    "media": {
+      "description": "An array of objects that each provide data for a single multimedia item. This data includes a `type` field which indicates what kind of media is being provided as well as an `url` field which provides the address of the media resource.",
+      "items": {
+        "$ref": "#/definitions/media-item-loose"
+      },
+      "title": "Media",
+      "type": "array"
+    },
+    "media-item-loose": {
+      "description": "An object that provides data for a single multimedia item.",
+      "required": [
+        "type",
+        "url"
+      ],
+      "title": "Media Entry",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Indicates what kind of media.",
+          "enum": [
+            "cover",
+            "icon",
+            "screenshot",
+            "video"
+          ],
+          "title": "Media Type"
+        },
+        "url": {
+          "description": "Public URL of the media resource.",
+          "title": "Media URL",
+          "type": "string"
+        },
+        "loop": {
+          "description": "Optional field specific to video media. If loop is set to true, the video is expected to be treated as an animated image, like a GIF (i.e. muted and looped).",
+          "title": "Video Loop",
+          "type": "boolean"
+        },
+        "thumbnail": {
+          "description": "Optional URL to provide a video thumbnail.",
+          "title": "Video Thumbnail",
+          "type": "string"
+        }
+      }
+    },
+    "media-item-strict": {
+      "description": "An object that provides data for a single multimedia item.",
+      "required": [
+        "type",
+        "url"
+      ],
+      "title": "Media Entry",
+      "type": "object",
+      "if": {
+        "properties": {
+          "type": {
+            "const": "video"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "type": {
+            "description": "Indicates what kind of media.",
+            "const": "video",
+            "title": "Media Type"
+          },
+          "url": {
+            "description": "Public URL of the media resource.",
+            "title": "Media URL",
+            "type": "string"
+          },
+          "loop": {
+            "description": "Optional field specific to video media. If loop is set to true, the video is expected to be treated as an animated image, like a GIF (i.e. muted and looped).",
+            "title": "Video Loop",
+            "type": "boolean"
+          },
+          "thumbnail": {
+            "description": "Optional URL to provide a video thumbnail.",
+            "title": "Video Thumbnail",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "else": {
+        "if": {
+          "properties": {
+            "type": {
+              "enum": [
+                "cover",
+                "icon",
+                "screenshot"
+              ]
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "type": {
+              "description": "Indicates what kind of media.",
+              "enum": [
+                "cover",
+                "icon",
+                "screenshot"
+              ],
+              "title": "Media Type"
+            },
+            "url": {
+              "description": "Public URL of the media resource.",
+              "title": "Media URL",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "else": {
+          "properties": {
+            "type": {
+              "description": "Indicates what kind of media.",
+              "enum": [
+                "cover",
+                "icon",
+                "screenshot",
+                "video"
+              ],
+              "title": "Media Type"
+            }
+          }
+        }
+      }
+    }
+  }
+}

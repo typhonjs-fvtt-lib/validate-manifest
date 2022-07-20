@@ -1,0 +1,118 @@
+{
+  "$id": "shared/definitions/module.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "manifest": {
+      "description": "A stable URL that describes the latest release version of your manifest file.",
+      "examples": [
+        "https://someaddress.com/module.json"
+      ],
+      "title": "Manifest",
+      "type": "string"
+    },
+    "packs": {
+      "items": {
+        "required": [
+          "module",
+          "name",
+          "label",
+          "path",
+          "entity"
+        ],
+        "properties": {
+          "system": {
+            "description": "A system ID or array of system IDs which are required in order to use this module. For example, specifying \"system\": \"dnd5e\" will only allow the module to be used by Worlds which are running the dnd5e game system.",
+            "examples": [
+              "dnd5e"
+            ],
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            ],
+            "title": "Pack System",
+            "errorMessage": "should be a string or array of strings"
+          },
+          "entity": {
+            "description": "Each compendium pack must designate a specific Entity type that it contains.",
+            "examples": [
+              "Actor",
+              "Item",
+              "Scene",
+              "JournalEntry",
+              "Macro",
+              "RollTable",
+              "Playlist"
+            ],
+            "title": "Pack Entity",
+            "type": "string"
+          },
+          "label": {
+            "description": "The compendium pack label - this should be a human readable string label which is displayed in the Compendium sidebar in-game.",
+            "examples": [
+              "Pack Title"
+            ],
+            "title": "Pack Label",
+            "type": "string"
+          },
+          "module": {
+            "description": "The module attribute of each compendium pack designates which content module provided the pack. If coming from a system this field can be excluded or list the system name.",
+            "examples": [
+              "module-name",
+              "system-name"
+            ],
+            "title": "Pack Module",
+            "type": "string"
+          },
+          "name": {
+            "description": "The compendium pack name - this should be a unique lower-case string with no special characters.",
+            "examples": [
+              "pack-name"
+            ],
+            "title": "Pack Name",
+            "type": "string"
+          },
+          "path": {
+            "description": "The path for each compendium pack should designate a database file with the .db extension.",
+            "examples": [
+              "./packs/pack-name.db"
+            ],
+            "title": "Pack Path",
+            "type": "string"
+          }
+        },
+        "description": "An object defining a single compendium pack.",
+        "title": "Pack",
+        "type": "object"
+      },
+      "description": "An array of objects that define all compendium packs.",
+      "title": "Packs",
+      "type": "array"
+    },
+    "system": {
+      "description": "A system ID or array of system IDs which are required in order to use this module. For example, specifying \"system\": \"dnd5e\" will only allow the module to be used by Worlds which are running the dnd5e game system.",
+      "examples": [
+        "dnd5e"
+      ],
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      ],
+      "title": "System",
+      "errorMessage": "should be a string or array of strings"
+    }
+  }
+}

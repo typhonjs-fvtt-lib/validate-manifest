@@ -1,9 +1,0 @@
-/packs/0/system should be a string or array of strings that are alpha-numeric
-with only underscore and hyphen separators
-  11 |       "label": "Pack Title",
-  12 |       "module": "module-name",
-> 13 |       "system": false,
-     |                 ^^^^^
-  14 |       "path": "./packs/pack-name.db",
-  15 |       "entity": "Item"
-  16 |     }
