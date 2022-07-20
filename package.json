@@ -1,7 +1,7 @@
 {
   "name": "@typhonjs-fvtt/validate-manifest",
   "description": "Provides validation functions / JSON schemas for FVTT module / system manifests & manifest+ extensions.",
-  "version": "0.1.0",
+  "version": "8.0.0",
   "author": "Michael Leahy <support@typhonjs.io> (https://github.com/typhonrt)",
   "bugs": "https://github.com/typhonjs-fvtt/validate-manifest/issues",
   "type": "module",

@@ -1,5 +1,5 @@
 # Changelog
-## Release 0.1.0
+## Release 8.0.0
 - Updated to AJV v8
 - Supports Foundry v8
-- Archived in branch `0.1.0-v8`
+- Archived in branch `8.0.0-v8`
