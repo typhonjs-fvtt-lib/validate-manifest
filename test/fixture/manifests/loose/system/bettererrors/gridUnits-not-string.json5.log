@@ -1,4 +1,4 @@
-/gridUnits should be string
+/gridUnits must be string
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "gridUnits": false

@@ -1,4 +1,4 @@
-/author should be string
+/author must be string
   3 |   "title": "A Module",
   4 |   "description": "Some description",
 > 5 |   "author": 1,

@@ -1,4 +1,4 @@
-/deprecated should be object
+/deprecated must be object
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "deprecated": false

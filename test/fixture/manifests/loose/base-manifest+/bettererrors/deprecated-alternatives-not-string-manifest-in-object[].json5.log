@@ -1,4 +1,4 @@
-/deprecated/alternatives/0/manifest should be string
+/deprecated/alternatives/0/manifest must be string
    7 |   "minimumCoreVersion": "0.7.5",
    8 |   "deprecated": {
 >  9 |     "alternatives": [{ "name": "a-module", "manifest": false }]

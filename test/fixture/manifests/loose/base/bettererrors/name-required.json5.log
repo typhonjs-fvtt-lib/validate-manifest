@@ -1,4 +1,4 @@
- should have required property 'name'
+must have required property 'name'
 > 1 | {
 > 2 |   "title": "A Module",
 > 3 |   "description": "Some description",

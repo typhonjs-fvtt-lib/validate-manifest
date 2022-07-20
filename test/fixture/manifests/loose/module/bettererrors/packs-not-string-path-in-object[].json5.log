@@ -1,4 +1,4 @@
-/packs/0/path should be string
+/packs/0/path must be string
   12 |       "module": "module-name",
   13 |       "system": "system-name",
 > 14 |       "path": false,

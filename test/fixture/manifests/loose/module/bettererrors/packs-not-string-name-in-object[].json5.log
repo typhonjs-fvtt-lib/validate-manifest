@@ -1,4 +1,4 @@
-/packs/0/name should be string
+/packs/0/name must be string
    8 |   "packs": [
    9 |     {
 > 10 |       "name": false,

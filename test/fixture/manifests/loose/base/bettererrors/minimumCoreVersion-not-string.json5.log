@@ -1,4 +1,4 @@
-/minimumCoreVersion should be string
+/minimumCoreVersion must be string
   5 |   "author": "typhonrt",
   6 |   "version": "1.0.0",
 > 7 |   "minimumCoreVersion": true

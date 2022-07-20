@@ -1,4 +1,4 @@
-/packs/0/entity should be equal to one of the allowed values: 'Actor', 'Item',
+/packs/0/entity must be equal to one of the allowed values: 'Actor', 'Item',
 'Scene', 'JournalEntry', 'Macro', 'RollTable', or 'Playlist'
   13 |       "system": "system-name",
   14 |       "path": "./packs/pack-name.db",

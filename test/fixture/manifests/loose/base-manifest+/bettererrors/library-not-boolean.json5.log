@@ -1,4 +1,4 @@
-/library should be boolean
+/library must be boolean
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "library": 1

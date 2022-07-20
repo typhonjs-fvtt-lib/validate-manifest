@@ -1,4 +1,4 @@
-/conflicts/0/type should be equal to one of the allowed values: 'module',
+/conflicts/0/type must be equal to one of the allowed values: 'module',
 'system', or 'world'
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",

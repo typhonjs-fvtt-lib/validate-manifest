@@ -1,4 +1,4 @@
-/packs/0/label should be string
+/packs/0/label must be string
    9 |     {
   10 |       "name": "pack-name",
 > 11 |       "label": false,

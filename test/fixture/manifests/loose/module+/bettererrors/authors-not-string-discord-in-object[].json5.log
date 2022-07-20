@@ -1,4 +1,4 @@
-/authors/0/discord should be string
+/authors/0/discord must be string
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "authors": [{ "name": "typhonrt", "discord": false }]

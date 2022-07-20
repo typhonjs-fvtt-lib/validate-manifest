@@ -1,4 +1,4 @@
-/media/0/type should be equal to one of the allowed values: 'cover', 'icon',
+/media/0/type must be equal to one of the allowed values: 'cover', 'icon',
 'screenshot', or 'video'
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",

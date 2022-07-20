@@ -1,4 +1,4 @@
-/socket should be boolean
+/socket must be boolean
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "socket": "should be a boolean"

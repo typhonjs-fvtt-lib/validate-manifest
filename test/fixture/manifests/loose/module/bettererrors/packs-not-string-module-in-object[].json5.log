@@ -1,4 +1,4 @@
-/packs/0/module should be string
+/packs/0/module must be string
   10 |       "name": "pack-name",
   11 |       "label": "Pack Title",
 > 12 |       "module": false,

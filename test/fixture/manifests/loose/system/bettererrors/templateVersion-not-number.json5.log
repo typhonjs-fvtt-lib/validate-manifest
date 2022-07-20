@@ -1,4 +1,4 @@
-/templateVersion should be integer
+/templateVersion must be integer
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "templateVersion": false

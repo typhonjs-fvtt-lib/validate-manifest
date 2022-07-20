@@ -1,4 +1,4 @@
-/url should be string
+/url must be string
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "url": false

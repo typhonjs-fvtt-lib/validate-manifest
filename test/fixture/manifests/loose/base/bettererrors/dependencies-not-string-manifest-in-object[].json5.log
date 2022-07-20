@@ -1,4 +1,4 @@
-/dependencies/0/manifest should be string
+/dependencies/0/manifest must be string
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "dependencies": [{ "name":  "dep", "manifest": false }]

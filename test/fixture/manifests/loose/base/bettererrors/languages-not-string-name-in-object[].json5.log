@@ -1,4 +1,4 @@
-/languages/0/name should be string
+/languages/0/name must be string
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "languages": [{ "lang": "en", "name": false, "path": "lang/en.json" }]

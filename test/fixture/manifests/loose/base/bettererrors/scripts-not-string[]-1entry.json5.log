@@ -1,4 +1,4 @@
-/scripts/0 should be string
+/scripts/0 must be string
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "scripts": [1]

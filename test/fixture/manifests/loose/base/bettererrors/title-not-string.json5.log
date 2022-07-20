@@ -1,4 +1,4 @@
-/title should be string
+/title must be string
   1 | {
   2 |   "name": "a-module",
 > 3 |   "title": 1,

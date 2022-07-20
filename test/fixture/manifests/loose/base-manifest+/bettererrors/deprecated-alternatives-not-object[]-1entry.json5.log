@@ -1,4 +1,4 @@
-/deprecated/alternatives/0 should be object
+/deprecated/alternatives/0 must be object
    7 |   "minimumCoreVersion": "0.7.5",
    8 |   "deprecated": {
 >  9 |     "alternatives": [1]

@@ -1,4 +1,4 @@
-/includes should NOT have duplicate items (items ## 1 and 0 are identical)
+/includes must NOT have duplicate items (items ## 1 and 0 are identical)
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "includes": [

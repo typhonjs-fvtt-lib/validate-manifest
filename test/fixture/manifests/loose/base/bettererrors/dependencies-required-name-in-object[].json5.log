@@ -1,4 +1,4 @@
-/dependencies/0 should have required property 'name'
+/dependencies/0 must have required property 'name'
    6 |   "version": "1.0.0",
    7 |   "minimumCoreVersion": "0.7.5",
 >  8 |   "dependencies": [{}]

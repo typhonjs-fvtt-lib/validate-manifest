@@ -1,4 +1,4 @@
-/deprecated/alternatives/0 should have required property 'manifest'
+/deprecated/alternatives/0 must have required property 'manifest'
    7 |   "minimumCoreVersion": "0.7.5",
    8 |   "deprecated": {
 >  9 |     "alternatives": [{ "name": "a-module" }]

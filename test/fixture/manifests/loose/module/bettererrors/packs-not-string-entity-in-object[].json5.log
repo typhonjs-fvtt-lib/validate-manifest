@@ -1,4 +1,4 @@
-/packs/0/entity should be string
+/packs/0/entity must be string
   16 |       "system": "system-name",
   17 |       "path": "./packs/pack-name.db",
 > 18 |       "entity": false

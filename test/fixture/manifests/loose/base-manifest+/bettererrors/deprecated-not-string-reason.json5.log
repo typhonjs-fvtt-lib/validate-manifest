@@ -1,4 +1,4 @@
-/deprecated/reason should be string
+/deprecated/reason must be string
    7 |   "minimumCoreVersion": "0.7.5",
    8 |   "deprecated": {
 >  9 |     "reason": false

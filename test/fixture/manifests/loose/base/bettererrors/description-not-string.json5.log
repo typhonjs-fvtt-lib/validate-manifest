@@ -1,4 +1,4 @@
-/description should be string
+/description must be string
   2 |   "name": "a-module",
   3 |   "title": "A Module",
 > 4 |   "description": 1,
