@@ -26,7 +26,7 @@ Foundry version.
 ### JSON Schema / IDE integration (manual installation)
 
 For end developers it is useful to set up the appropriate JSON schema with your IDE. Check these links for IDE info for
-[Webstorm](https://www.jetbrains.com/help/rider/Settings_Languages_JSON_Schema.html) or  
+[Webstorm](https://www.jetbrains.com/help/webstorm/json.html#ws_json_schema_add_custom) or 
 [VS Code](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings). Point to the relevant JSON 
 schema file found in `./schema` and enable intellisense in your IDE. For reference since this is a NPM module you will
 link `./node_modules/@typhonjs-fvtt/validate-manifest/schema/module+.json`. The schema files ending in `+` 
@@ -44,7 +44,7 @@ For Foundry VTT tools developers and anyone needing to validate manifest files. 
 by `ajv` and are located in the `./dist` directory. The main entry point for the NPM module points to the 
 `./dist/validators.js`.
 
-There are 8 validator functions:
+There are 4 validator functions:
 - validateModule
 - validateModulePlus
 - validateSystem
