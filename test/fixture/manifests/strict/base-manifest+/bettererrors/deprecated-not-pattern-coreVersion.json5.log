@@ -1,8 +1,0 @@
-/deprecated/coreVersion should be a string that uses semantic versioning
-   7 |   "minimumCoreVersion": "0.7.5",
-   8 |   "deprecated": {
->  9 |     "coreVersion": "A.0.0"
-     |                    ^^^^^^^
-  10 |   }
-  11 | }
-  12 |

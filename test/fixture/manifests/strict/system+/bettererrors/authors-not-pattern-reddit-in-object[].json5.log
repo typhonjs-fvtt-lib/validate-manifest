@@ -1,7 +1,0 @@
-/authors/0/reddit should be a string that is a valid Reddit user name
-   6 |   "version": "1.0.0",
-   7 |   "minimumCoreVersion": "0.7.5",
->  8 |   "authors": [{ "name": "typhonrt", "reddit": "u/not@reddit" }]
-     |                                               ^^^^^^^^^^^^^^
-   9 | }
-  10 |

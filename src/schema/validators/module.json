@@ -1,0 +1,14 @@
+{
+  "$id": "validateModule",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FoundryVTT module.json",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "../shared/properties/module.json"
+    }
+  ],
+  "errorMessage": {
+    "type": "package manifest should be an object"
+  }
+}

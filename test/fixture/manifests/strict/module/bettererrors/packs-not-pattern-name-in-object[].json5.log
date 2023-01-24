@@ -1,9 +1,0 @@
-/packs/0/name should be a string that is lowercase alpha-numeric with only
-separating hyphens
-   8 |   "packs": [
-   9 |     {
-> 10 |       "name": "bad pack name",
-     |               ^^^^^^^^^^^^^^^
-  11 |       "label": "Pack Title",
-  12 |       "module": "a-module",
-  13 |       "system": "system-name",

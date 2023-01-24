@@ -1,0 +1,14 @@
+{
+  "$id": "validateSystemPlus",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FoundryVTT system.json w/ manifest+",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "../shared/properties/system+.json"
+    }
+  ],
+  "errorMessage": {
+    "type": "package manifest should be an object"
+  }
+}

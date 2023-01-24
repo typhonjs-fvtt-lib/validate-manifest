@@ -1,7 +1,0 @@
-/changelog should be an URL string
-   6 |   "version": "1.0.0",
-   7 |   "minimumCoreVersion": "0.7.5",
->  8 |   "changelog": "httpblah://bad-url"
-     |                ^^^^^^^^^^^^^^^^^^^^
-   9 | }
-  10 |

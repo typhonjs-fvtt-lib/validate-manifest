@@ -1,0 +1,9 @@
+/**
+ * Modifies the qualifying the $id. Merged with `abstract/base.json5; presently no modifications at this level.
+ */
+{
+  "$id": "shared/definitions/base.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+  }
+}

@@ -1,7 +1,0 @@
-/license should be a relative file path from the package root or a public URL
-   6 |   "version": "1.0.0",
-   7 |   "minimumCoreVersion": "0.7.5",
->  8 |   "license": "/absolute/dir"
-     |              ^^^^^^^^^^^^^^^
-   9 | }
-  10 |

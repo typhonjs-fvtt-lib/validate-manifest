@@ -6,24 +6,19 @@ import stripJsonComments   from 'strip-json-comments';
 import includes            from './includes.js';
 
 // Authors
-process(['abstract/authors'], 'loose/authors');
-process(['abstract/authors'], 'strict/authors');
+process(['abstract/authors'], 'authors');
 
 // Base
-process(['abstract/base'], 'loose/base');
-process(['abstract/base'], 'strict/base');
+process(['abstract/base'], 'base');
 
 // Base Manifest+
-process(['abstract/base-manifest+'], 'loose/base-manifest+');
-process(['abstract/base-manifest+'], 'strict/base-manifest+');
+process(['abstract/base-manifest+'], 'base-manifest+');
 
 // Module
-process(['abstract/module', 'abstract/base-packs'], 'loose/module');
-process(['abstract/module', 'abstract/base-packs'], 'strict/module');
+process(['abstract/module', 'abstract/base-packs'], 'module');
 
 // System
-process(['abstract/system', 'abstract/base-packs'], 'loose/system');
-process(['abstract/system', 'abstract/base-packs'], 'strict/system');
+process(['abstract/system', 'abstract/base-packs'], 'system');
 
 /**
  * Processes abstract and a merge schema file and saves it in the shared schema definitions under the merge dir /

@@ -12,19 +12,19 @@
     "./plugin": "./src/plugin/ValidateManifest.js"
   },
   "devDependencies": {
-    "@apidevtools/json-schema-ref-parser": "^9.0.0",
-    "@rollup/plugin-commonjs": "^22",
-    "@rollup/plugin-node-resolve": "^13.3",
+    "@apidevtools/json-schema-ref-parser": "9.0.9",
+    "@rollup/plugin-commonjs": "^24",
+    "@rollup/plugin-node-resolve": "^15",
+    "@rollup/plugin-terser": "^0.4.0",
     "@typhonjs-plugin/manager": "^0.0.12",
     "@typhonjs-utils/better-ajv-errors": "^0.2.0",
-    "@typhonjs-build-test/node": "^0.0.2",
-    "ajv": "^8",
-    "ajv-cli": "^5.0.0",
-    "ajv-errors": "^3.0.0",
-    "deepmerge": "^4.0.0",
-    "prettier": "^2.0.0",
-    "rollup": "^2.0.0",
-    "rollup-plugin-terser": "^7.0.0"
+    "@typhonjs-build-test/node": "^0.0.4",
+    "ajv": "^8.12.0",
+    "ajv-cli": "^5",
+    "ajv-errors": "^3",
+    "deepmerge": "^4.2.0",
+    "prettier": "^2.8.0",
+    "rollup": "^3.10.0"
   },
   "engines": {
     "node": ">=12.0.0"

@@ -1,8 +1,0 @@
-/includes must NOT have duplicate items (items ## 1 and 0 are identical)
-   6 |   "version": "1.0.0",
-   7 |   "minimumCoreVersion": "0.7.5",
->  8 |   "includes": [
-     |   ^^^^^^^^^^
-   9 |     "some/path/to/something",
-  10 |     "some/path/to/something"
-  11 |   ]

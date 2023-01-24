@@ -1,0 +1,16 @@
+{
+  "$id": "shared/properties/module.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FoundryVTT module.json",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "base-module.json"
+    }
+  ],
+  "properties": {
+    "authors": {
+      "$ref": "../definitions/authors.json#/definitions/authors"
+    }
+  }
+}

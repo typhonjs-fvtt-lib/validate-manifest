@@ -1,9 +1,0 @@
-{
-  "name": "a-system",
-  "title": "A System",
-  "description": "Some description",
-  "author": "typhonrt",
-  "version": "1.0.0",
-  "minimumCoreVersion": "0.7.5",
-  "manifest": "http://good-url.com/system.json"
-}

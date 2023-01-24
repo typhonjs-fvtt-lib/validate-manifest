@@ -1,8 +1,0 @@
-/name should be a string that is lowercase alpha-numeric with only separating
-hyphens
-  1 | {
-> 2 |   "name": "no spaces alpha numeric only",
-    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  3 |   "title": "A Module",
-  4 |   "description": "Some description",
-  5 |   "author": "typhonrt",

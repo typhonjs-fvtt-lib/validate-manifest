@@ -1,6 +1,0 @@
-/**
- * No additional modifications necessary except qualifying the $id. Merged with `abstract/authors.json5
- */
-{
-  "$id": "shared/definitions/loose/authors.json"
-}

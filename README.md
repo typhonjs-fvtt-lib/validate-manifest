@@ -11,28 +11,32 @@
 Providing JSON schemas for Foundry VTT module.json / system.json manifests & League of Extraordinary Foundry Developers 
 manifest+ extensions in addition to compiled validator functions. The current manifest+ support is `v1.1.0`.
 
-There are loose and strict variations for the four schema variations. Loose variations follow the officially posted 
-manifest and manifest plus specifications and only check that types are correct. The strict variations enforce extra 
-rules such as semantic versioning where applicable and other pattern matching aspects to ensure correctness.
+There are four schema variations.
 
-### JSON Schema / IDE integration
+_ATTENTION_: `validate-manifest` needs contributors to help update the schema covered for the latest Foundry v11 
+manifests. The current released NPM version covers Foundry v8. The infrastructure for this project is thoroughly updated
+and working smoothly as of Jan '23. As the maintainer I'd be glad to help get any contributors onboarded with how to
+build and update the schemas.
+
+The schemas submitted to the JSON schema store are not from this effort. In an ideal world this project gets updated 
+for Foundry v11 and new schemas are submitted to the schema store. In the future this project can be potentially 
+versioned allowing manual installation of specific Foundry versions as the schema store gets updated for the latest 
+Foundry version.
+
+### JSON Schema / IDE integration (manual installation)
 
 For end developers it is useful to set up the appropriate JSON schema with your IDE. Check these links for IDE info for
 [Webstorm](https://www.jetbrains.com/help/rider/Settings_Languages_JSON_Schema.html) or  
 [VS Code](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings). Point to the relevant JSON 
 schema file found in `./schema` and enable intellisense in your IDE. For reference since this is a NPM module you will
-link `./node_modules/@typhonjs-fvtt/validate-manifest/schema/strict/module+.json`. The schema files ending in `+` 
+link `./node_modules/@typhonjs-fvtt/validate-manifest/schema/module+.json`. The schema files ending in `+` 
 include the standard manifest and manifest plus coverage.
 
-There are 8 schemas available:
-- `./schema/loose/module.json`
-- `./schema/loose/module+.json`
-- `./schema/loose/system.json`
-- `./schema/loose/system+.json`
-- `./schema/strict/module.json`
-- `./schema/strict/module+.json`
-- `./schema/strict/system.json`
-- `./schema/strict/system+.json`
+There are 4 schemas available:
+- `./schema/module.json`
+- `./schema/module+.json`
+- `./schema/system.json`
+- `./schema/system+.json`
 
 ### Foundry VTT tools developers
 
@@ -42,13 +46,9 @@ by `ajv` and are located in the `./dist` directory. The main entry point for the
 
 There are 8 validator functions:
 - validateModule
-- validateModuleStrict
 - validateModulePlus
-- validateModulePlusStrict
 - validateSystem
-- validateSystemStrict
 - validateSystemPlus
-- validateSystemPlusStrict
 
 A trivial example of using the `validateModule` function.
 
@@ -72,14 +72,14 @@ listed in the `errors` array. There is a comprehensive test suite which covers a
 with data contained in the manifest files.
 
 If you are planning on displaying error information to end users you may want to take a look at the 
-[@typhonjs-node-utils/better-ajv-errors](https://www.npmjs.com/package/@typhonjs-node-utils/better-ajv-errors) module 
+[@typhonjs-utils/better-ajv-errors](https://www.npmjs.com/package/@typhonjs-utils/better-ajv-errors) module 
 which formats the errors array with user readable messages and associated code frames. An example of using the 
 `better-ajv-errors` module.
 
 ``` js
 import fs                 from 'fs';
 
-import BetterErrors       from '@typhonjs-node-utils/better-ajv-errors';
+import BetterErrors       from '@typhonjs-utils/better-ajv-errors';
 import { validateModule } from '@typhonjs-fvtt/validate-manifest';
 
 const moduleJSONFile = fs.readFileSync('./src/module.json', 'utf8');   // load the text string for the manifest.
@@ -91,12 +91,16 @@ if (!validateModule(moduleJSONObject))
 }
 ```
 
-###Architecture
+### Architecture
 A very brief overview... The base source schemas is shared across all variations and located in `./src/schema` and is 
-compiled / dereferenced into single file loose and strict variations in `./schema` by the `compile` NPM script. There 
+compiled / dereferenced into single file variations in `./schema` by the `compile` NPM script. There 
 is a custom merge step with template includes found in `./src/schema/merge`. These are common definitions which are 
 then combined into the final schema files. 
 
 Please reach out and get in touch if you need any more assistance at the 
 [issues forum](https://github.com/typhonjs-fvtt/validate-manifest/issues).
 
+### Installation (contributors)
+- `npm install`
+- `npm run compile` - Compiles the schemas and validation code
+- `npm run test` - Compiles then runs tests.

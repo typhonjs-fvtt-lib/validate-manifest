@@ -1,9 +1,0 @@
-/packs/0/entity should be equal to one of the allowed values: 'Actor', 'Item',
-'Scene', 'JournalEntry', 'Macro', 'RollTable', or 'Playlist'
-  13 |       "system": "system-name",
-  14 |       "path": "./packs/pack-name.db",
-> 15 |       "entity": "NOT IN ENUM LIST"
-     |                 ^^^^^^^^^^^^^^^^^^
-  16 |     }
-  17 |   ]
-  18 | }

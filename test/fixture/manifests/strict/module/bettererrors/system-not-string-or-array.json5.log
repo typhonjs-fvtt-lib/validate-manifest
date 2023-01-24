@@ -1,8 +1,0 @@
-/system should be a string or array of strings that are alpha-numeric with only
-underscore and hyphen separators
-   6 |   "version": "1.0.0",
-   7 |   "minimumCoreVersion": "0.7.5",
->  8 |   "system": false
-     |             ^^^^^
-   9 | }
-  10 |
