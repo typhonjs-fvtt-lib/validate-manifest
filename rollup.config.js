@@ -2,7 +2,7 @@ import path       from 'path';
 
 import commonjs   from '@rollup/plugin-commonjs';
 import resolve    from '@rollup/plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
+import terser     from '@rollup/plugin-terser';
 
 // The deploy path for the rolled up validator functions
 const s_DEPLOY_PATH = './dist';
@@ -21,7 +21,7 @@ export default () =>
          file: `${s_DEPLOY_PATH}${path.sep}validators.js`,
          format: 'es',
          plugins: outputPlugins,
-         preferConst: true,
+         generatedCode: { constBindings: true },
          sourcemap: s_SOURCEMAP,
       }],
       plugins: [

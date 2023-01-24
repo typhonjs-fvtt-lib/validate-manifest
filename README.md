@@ -13,7 +13,17 @@ manifest+ extensions in addition to compiled validator functions. The current ma
 
 There are four schema variations.
 
-### JSON Schema / IDE integration
+_ATTENTION_: `validate-manifest` needs contributors to help update the schema covered for the latest Foundry v11 
+manifests. The current released NPM version covers Foundry v8. The infrastructure for this project is thoroughly updated
+and working smoothly as of Jan '23. As the maintainer I'd be glad to help get any contributors onboarded with how to
+build and update the schemas.
+
+The schemas submitted to the JSON schema store are not from this effort. In an ideal world this project gets updated 
+for Foundry v11 and new schemas are submitted to the schema store. In the future this project can be potentially 
+versioned allowing manual installation of specific Foundry versions as the schema store gets updated for the latest 
+Foundry version.
+
+### JSON Schema / IDE integration (manual installation)
 
 For end developers it is useful to set up the appropriate JSON schema with your IDE. Check these links for IDE info for
 [Webstorm](https://www.jetbrains.com/help/rider/Settings_Languages_JSON_Schema.html) or  
@@ -22,7 +32,7 @@ schema file found in `./schema` and enable intellisense in your IDE. For referen
 link `./node_modules/@typhonjs-fvtt/validate-manifest/schema/module+.json`. The schema files ending in `+` 
 include the standard manifest and manifest plus coverage.
 
-There are 8 schemas available:
+There are 4 schemas available:
 - `./schema/module.json`
 - `./schema/module+.json`
 - `./schema/system.json`
@@ -90,3 +100,7 @@ then combined into the final schema files.
 Please reach out and get in touch if you need any more assistance at the 
 [issues forum](https://github.com/typhonjs-fvtt/validate-manifest/issues).
 
+### Installation (contributors)
+- `npm install`
+- `npm run compile` - Compiles the schemas and validation code
+- `npm run test` - Compiles then runs tests.
