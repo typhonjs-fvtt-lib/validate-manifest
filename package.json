@@ -18,13 +18,13 @@
     "@rollup/plugin-terser": "^0.4.0",
     "@typhonjs-plugin/manager": "^0.0.12",
     "@typhonjs-utils/better-ajv-errors": "^0.2.0",
-    "@typhonjs-build-test/node": "^0.0.4",
+    "@typhonjs-build-test/node": "^0.0.5",
     "ajv": "^8.12.0",
     "ajv-cli": "^5",
     "ajv-errors": "^3",
-    "deepmerge": "^4.2.0",
+    "deepmerge": "^4.3.0",
     "prettier": "^2.8.0",
-    "rollup": "^3.10.0"
+    "rollup": "^3.21.0"
   },
   "engines": {
     "node": ">=12.0.0"
